@@ -1,0 +1,24 @@
+{
+  "id": "/",
+  "name": "XemBoi.vn – Xem lá số cùng thầy Ba",
+  "short_name": "XemBoi.vn",
+  "description": "Lập lá số tử vi, nghe thầy Ba luận giải, xem lịch âm dương, giờ hoàng đạo và chọn ngày tốt.",
+  "lang": "vi",
+  "start_url": "/?nguon=app",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1d1729",
+  "theme_color": "#1d1729",
+  "categories": ["lifestyle", "entertainment"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Hỏi thầy", "url": "/?tab=hoi", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Lịch âm hôm nay", "url": "/?tab=lich", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Xem ngày tốt", "url": "/?tab=ngay", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

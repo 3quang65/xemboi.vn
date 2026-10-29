@@ -1,0 +1,507 @@
+// prisma/schema.prisma
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [pgvector(map: "vector")] // Tích hợp sẵn pgvector nếu sau này nâng cấp AI luận giải
+}
+
+// ==========================================
+// 1. ENUMS CHUẨN HÓA NGŨ HÀNH & TỬ VI
+// ==========================================
+
+enum NguHanh {
+  KIM
+  MOC
+  THUY
+  HOA
+  THO
+}
+
+enum AmDuong {
+  DUONG
+  AM
+}
+
+enum GioiTinh {
+  NAM
+  NU
+}
+
+enum LoaiSao {
+  CHINH_TINH        // 14 Chính tinh
+  PHU_TINH_TOT      // Cát tinh (hiển thị bên trái cung)
+  PHU_TINH_XAU      // Sát/Hung tinh (hiển thị bên phải cung)
+  TU_HOA            // Hóa Lộc, Hóa Quyền, Hóa Khoa, Hóa Kỵ
+  VONG_TRUONG_SINH  // 12 sao vòng Trường Sinh
+  VONG_THAI_TUE     // 12 sao vòng Thái Tuế
+  VONG_LOC_TON      // 12 sao vòng Lộc Tồn
+  LUU_TINH          // Các sao Lưu theo năm xem hạn
+  TUAN_TRIET        // Tuần, Triệt
+}
+
+enum TrangThaiSao {
+  MIEU_DIA  // (M)
+  VUONG_DIA // (V)
+  DAC_DIA   // (Đ)
+  BINH_HOA  // (B)
+  HAM_DIA   // (H)
+  KHONG_XAC_DINH
+}
+
+enum CungChucNang {
+  MENH
+  PHU_MAU
+  PHUC_DUC
+  DIEN_TRACH
+  QUAN_LOC
+  NO_BOC
+  THIEN_DI
+  TAT_ACH
+  TAI_BACH
+  TU_TUC
+  PHU_THE
+  HUYNH_DE
+  THAN // Dùng khi luận riêng cung Thân
+}
+
+enum DiaChi {
+  TY     // Tý
+  SUU    // Sửu
+  DAN    // Dần
+  MAO    // Mão
+  THIN   // Thìn
+  TI     // Tỵ
+  NGO    // Ngọ
+  MUI    // Mùi
+  THAN   // Thân
+  DAU    // Dậu
+  TUAT   // Tuất
+  HOI    // Hợi
+}
+
+// ==========================================
+// 2. BẢNG LƯU TRỮ LÁ SỐ (HOROSCOPE CHARTS)
+// ==========================================
+
+model HoroscopeChart {
+  id              String   @id @default(cuid())
+  slug            String   @unique // VD: "la-so-tu-vi-nguyen-van-a-1990-nam-canh-ngo-x8k29a"
+  
+  // Thông tin đầu vào
+  fullName        String
+  gender          GioiTinh
+  isLunarInput    Boolean  @default(false)
+  
+  // Ngày giờ Dương lịch chuẩn
+  solarDay        Int
+  solarMonth      Int
+  solarYear       Int
+  solarHour       Int
+  solarMinute     Int      @default(0)
+
+  // Ngày giờ Âm lịch & Can Chi quy đổi (Thuật toán Hồ Ngọc Đức)
+  lunarDay        Int
+  lunarMonth      Int
+  lunarYear       Int
+  isLeapMonth     Boolean  @default(false)
+  canChiYear      String   // VD: "Canh Ngọ"
+  canChiMonth     String
+  canChiDay       String
+  canChiHour      String
+  gioDiaChi       DiaChi   // Giờ Tý, Sửu...
+  yearViewing     Int      // Năm xem hạn (VD: 2026)
+
+  // Thông số Thiên Bàn cốt lõi
+  amDuongNamNu    String   // VD: "Dương Nam", "Âm Nữ"
+  banMenh         String   // VD: "Lộ Bàng Thổ"
+  menhNguHanh     NguHanh
+  cucName         String   // VD: "Thổ ngũ cục"
+  cucNumber       Int      // 2, 3, 4, 5, 6
+  cungMenhDiaChi  DiaChi   // Cung Mệnh đóng tại đâu
+  cungThanDiaChi  DiaChi   // Cung Thân đóng tại đâu
+  menhChu         String   // Sao Mệnh chủ
+  thanChu         String   // Sao Thân chủ
+
+  // Toàn bộ dữ liệu 12 cung đã an sao & luận giải (lưu JSONB để render tức thì)
+  palacesData     Json     // Chứa mảng 12 cung: Chính tinh, Phụ tinh, Tuần/Triệt, Đại hạn, Tiểu hạn
+  interpretation  Json?    // Bản luận giải tổng hợp đã cache cho lá số này
+  
+  // Ảnh lá số đã xuất (có watermark xemboi.vn)
+  chartImageUrl   String?  
+  viewCount       Int      @default(1)
+
+  // Phục vụ Programmatic SEO cho xemboi.vn
+  seoTitle        String?
+  seoDescription  String?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([solarYear, solarMonth, solarDay, gioDiaChi, gender])
+  @@index([slug])
+}
+
+// ==========================================
+// 3. HỆ THỐNG DỮ LIỆU SAO & LUẬN GIẢI TỬ VI
+// ==========================================
+
+model Star {
+  id              String       @id @default(cuid())
+  code            String       @unique // VD: "TU_VI", "THIEN_CO", "KINH_DUONG"
+  name            String       // VD: "Tử Vi", "Thiên Cơ"
+  shortName       String?      // Tên viết tắt nếu cần
+  loaiSao         LoaiSao
+  nguHanh         NguHanh
+  amDuong         AmDuong?
+  hoaKhi          String?      // VD: "Đế Tinh", "Thiện Tinh", "Ám Tinh"
+  chuQuan         String?      // VD: "Quan Lộc", "Phúc Thọ"
+  cssColorClass   String       // Class màu sắc chuẩn theo Ngũ Hành trên UI xemboi.vn
+  description     String?      @db.Text // Tổng quan về sao
+  
+  // Quan hệ với bảng luận giải
+  interpretations StarInterpretation[]
+}
+
+// Bảng luận giải chi tiết khi 1 Sao đóng tại 1 Cung (hoặc Địa Chi)
+model StarInterpretation {
+  id              String        @id @default(cuid())
+  starId          String
+  star            Star          @relation(fields: [starId], references: [id], onDelete: Cascade)
+  
+  cungChucNang    CungChucNang  // Đóng tại cung nào (Mệnh, Tài, Quan, Phu Thê...)
+  diaChi          DiaChi?       // (Tùy chọn) Đóng tại ô Địa Chi nào (Tý, Sửu...)
+  trangThai       TrangThaiSao? // (Tùy chọn) Miếu/Vượng/Đắc/Bình/Hãm
+  gender          GioiTinh?     // (Tùy chọn) Luận riêng cho Nam hoặc Nữ
+  
+  title           String?       // VD: "Sao Tử Vi tọa thủ cung Mệnh"
+  content         String        @db.Text // Nội dung bình giải chi tiết (HTML/Markdown)
+  summary         String?       @db.Text // Tóm tắt ý chính
+  priority        Int           @default(0) // Thứ tự ưu tiên hiển thị trong bài luận
+
+  @@unique([starId, cungChucNang, diaChi, trangThai, gender])
+  @@index([cungChucNang, starId])
+}
+
+// Bảng luận giải Cách Cục (Tổ hợp nhiều sao hội họp, VD: "Tử Phủ Vũ Tướng", "Cơ Nguyệt Đồng Lương")
+model CachCucInterpretation {
+  id              String        @id @default(cuid())
+  code            String        @unique // VD: "TU_PHU_VU_TUONG", "MENH_VO_CHINH_DIEU"
+  name            String        // Tên cách cục
+  cungApDung      CungChucNang? // Thường áp dụng cho cung Mệnh, Thân, Tài, Quan
+  
+  // Điều kiện kích hoạt cách cục (Antigravity sẽ dùng JSON rule này để đối chiếu)
+  conditionRules  Json          // VD: {"requiredStars": ["TU_VI", "THIEN_PHU"], "excludeStars": ["TRIET"]}
+  
+  isGoodPattern   Boolean       @default(true) // Phú quý cách hay Bần tiện/Hung cách
+  poem            String?       @db.Text // Câu phú cổ tương ứng (nếu có)
+  content         String        @db.Text // Lời bình giải chi tiết
+  priority        Int           @default(10)
+}
+
+// Bảng luận giải Đại Hạn 10 năm & Tiểu Hạn 1 năm
+model TransitInterpretation {
+  id              String        @id @default(cuid())
+  type            String        // "DAI_HAN" hoặc "TIEU_HAN"
+  cungGoc         CungChucNang? // Cung gốc mà hạn đi qua
+  starCode        String?       // Sao chủ chốt trong hạn
+  content         String        @db.Text
+}
+
+// ==========================================
+// 4. CÁC CÔNG CỤ PHỤ TRỢ (TỨ TRỤ, LỊCH VẠN NIÊN, BÓI DỊCH)
+// ==========================================
+
+model AuxiliaryToolData {
+  id              String   @id @default(cuid())
+  toolType        String   // "LICH_VAN_NIEN", "XEM_NGAY_TOT", "BOI_QUE_DICH", "TU_TRU", "TUVI_TRON_DOI"
+  lookupKey       String   // Key tra cứu (VD: "1990_NAM", "QUE_THUAN_CAN", "NGAY_HOANG_DAO_DAN")
+  title           String
+  metadata        Json?    // Dữ liệu cấu trúc (Giờ hoàng đạo, hướng xuất hành, sao tốt/xấu...)
+  content         String   @db.Text // Nội dung bình giải chi tiết
+  
+  @@unique([toolType, lookupKey])
+  @@index([toolType, lookupKey])
+}
+
+// ==========================================
+// 5. HỆ THỐNG CMS BÀI VIẾT & SEO (XEMBOI.VN)
+// ==========================================
+
+model Category {
+  id              String     @id @default(cuid())
+  name            String
+  slug            String     @unique // VD: "kien-thuc-tu-vi", "phong-thuy-nha-o", "xem-tuong-so"
+  description     String?    @db.Text
+  parentId        String?
+  parent          Category?  @relation("CategoryToCategory", fields: [parentId], references: [id])
+  children        Category[] @relation("CategoryToCategory")
+  posts           Post[]
+  order           Int        @default(0)
+  
+  seoTitle        String?
+  seoDescription  String?
+}
+
+model Post {
+  id              String   @id @default(cuid())
+  title           String
+  slug            String   @unique
+  excerpt         String?  @db.Text
+  content         String   @db.Text
+  thumbnailUrl    String?
+  
+  categoryId      String
+  category        Category @relation(fields: [categoryId], references: [id])
+  
+  isPublished     Boolean  @default(true)
+  viewCount       Int      @default(0)
+  
+  // SEO Metadata chuẩn xemboi.vn
+  seoTitle        String?
+  seoDescription  String?
+  canonicalUrl    String?
+  schemaJsonLd    Json?    // Tự động lưu cấu trúc Article / FAQ Schema
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([slug])
+  @@index([categoryId, isPublished])
+}
+
+// ==========================================
+// 6. ĐƠN LỄ VIETQR, HỎI THẦY & ĐÁNH GIÁ (MỞ RỘNG)
+// ==========================================
+
+model ConsultationOrder {
+  id              String   @id // Mã đơn dạng XBxxxxxx / TVxxxxxx
+  orderType       String   // "daydu", "hop", "hoi"
+  sessionKey      String?
+  amount          Int
+  status          String   @default("cho") // "cho", "da_tra"
+  isManualUnlock  Boolean  @default(false)
+  birthPayload    Json
+  partnerPayload  Json?
+  topic           String?  @default("tongquan")
+  readingResult   Json?    // Lưu các phần đã luận giải
+  questionsLeft   Int      @default(0)
+  chatHistory     Json?    // Lịch sử hỏi đáp với Thầy Ba
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([sessionKey])
+  @@index([status])
+}
+
+model SectionFeedback {
+  id              String   @id @default(cuid())
+  kieu            String   // "mienphi", "daydu", "nam", "trondoi", "hop", "hopky"
+  muc             String
+  diem            Int      // 1 hoặc -1
+  lyDo            String?
+  createdAt       DateTime @default(now())
+
+  @@index([kieu, muc])
+}
+
+// ==========================================
+// 7. HỆ THỐNG TRACKING & ANALYTICS
+// ==========================================
+
+model VisitorSession {
+  id              String   @id @default(cuid())
+  visitorId       String   // Fingerprint / Cookie ID duy nhất của thiết bị
+  customerId      String?
+  customer        CustomerProfile? @relation(fields: [customerId], references: [id])
+  
+  ipAddress       String?
+  userAgent       String?
+  deviceType      String?  // Mobile, Desktop, Tablet
+  os              String?
+  browser         String?
+  referrer        String?  // Nguồn truy cập (Google, Facebook, Direct...)
+  utmSource       String?
+  utmMedium       String?
+  utmCampaign     String?
+  
+  startedAt       DateTime @default(now())
+  lastActiveAt    DateTime @default(now())
+  events          PageEvent[]
+
+  @@index([visitorId])
+  @@index([startedAt])
+}
+
+model PageEvent {
+  id              String   @id @default(cuid())
+  sessionId       String
+  session         VisitorSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  
+  eventType       String   // "PAGE_VIEW", "GENERATE_CHART", "DOWNLOAD_IMAGE", "OPEN_CHAT", "TOOL_USE"
+  path            String   // URL path (VD: "/la-so/...", "/lich-van-nien")
+  metadata        Json?    // Dữ liệu chi tiết của hành vi (VD: ID lá số vừa lập, thời gian ở lại trang)
+  createdAt       DateTime @default(now())
+
+  @@index([eventType, createdAt])
+  @@index([path])
+}
+
+// ==========================================
+// 8. QUẢN LÝ KHÁCH HÀNG TƯƠNG TÁC (CRM)
+// ==========================================
+
+model CustomerProfile {
+  id              String   @id @default(cuid())
+  visitorId       String?  @unique
+  fullName        String?
+  phone           String?  @unique
+  email           String?  @unique
+  zaloId          String?
+  
+  // Thông tin bản mệnh trích xuất tự động khi khách lập lá số hoặc chat
+  gender          GioiTinh?
+  solarBirthDate  DateTime?
+  lunarBirthInfo  Json?    // Ngày tháng năm âm, giờ sinh, Can Chi, Bản mệnh, Cục
+  
+  leadScore       Int      @default(1) // Điểm mức độ quan tâm (tự cộng khi lập lá số, hỏi chat nhiều)
+  tags            String[] // VD: ["Quan tâm Tình duyên", "Cần xem hạn 2026", "VIP"]
+  adminNotes      String?  @db.Text
+
+  // Liên kết lịch sử
+  chartIds        String[] // Danh sách các ID Lá số khách đã lập
+  sessions        VisitorSession[]
+  conversations   ChatConversation[]
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([phone, email])
+  @@index([createdAt])
+}
+
+// ==========================================
+// 9. HỆ THỐNG QUẢN LÝ AI AGENT & KHO TRI THỨC (RAG)
+// ==========================================
+
+model AiAgent {
+  id                  String   @id @default(cuid())
+  slug                String   @unique // VD: "thay-boi-tu-vi"
+  name                String   // VD: "Thầy Bói"
+  title               String   // VD: "Đại Sư Tử Vi & Huyền Học Phương Đông"
+  avatarUrl           String?
+  isActive            Boolean  @default(true)
+  isDefault           Boolean  @default(false)
+
+  // Cấu hình LLM & Nhân cách (Persona)
+  modelProvider       String   @default("openai") // "openai", "gemini", "anthropic"
+  modelName           String   @default("gpt-4o")
+  temperature         Float    @default(0.6)
+  systemPrompt        String   @db.Text // Prompt định hình văn phong, quy tắc luận giải
+  welcomeMessage      String   @db.Text // Lời chào đầu tiên khi khách mở khung chat
+  suggestedQuestions  String[] // Các câu hỏi gợi ý bấm nhanh trên khung chat
+  
+  // Cấu hình Giọng Đọc AI & Âm thanh Cổ Phong (Audio Persona & TTS)
+  voiceProvider       String   @default("edge_or_neural") // "edge_or_neural", "openai_tts", "elevenlabs"
+  voiceId             String   @default("vi-VN-NamMinhNeural") // Mã giọng đặc trưng
+  voiceSpeed          Float    @default(0.95)             // Tốc độ đọc (0.8 - 1.15)
+  voicePitch          String   @default("default")        // Trầm bổng ("deep-low", "-4st", "+2st"...)
+  ambientTrackUrl     String?  @default("/audio/bgm/co-cam-thien-dinh.mp3")
+  
+  // Quan hệ
+  knowledgeDocs       AgentKnowledgeDoc[]
+  conversations       ChatConversation[]
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model AgentKnowledgeDoc {
+  id              String   @id @default(cuid())
+  agentId         String
+  agent           AiAgent  @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  
+  title           String   // VD: "Bí quyết luận giải Tử Vi Đẩu Số Tân Biên - Thái Thứ Lang"
+  category        String   // "TU_VI", "TU_TRU", "KINH_DICH", "PHONG_THUY", "TUONG_SO", "TAM_LINH"
+  sourceType      String   // "CRAWLED", "MANUAL_UPLOAD", "SEEDED"
+  rawContent      String   @db.Text
+  status          String   @default("INDEXED") // "PENDING", "INDEXED", "FAILED"
+
+  chunks          AgentKnowledgeChunk[]
+  createdAt       DateTime @default(now())
+}
+
+model AgentKnowledgeChunk {
+  id              String   @id @default(cuid())
+  docId           String
+  doc             AgentKnowledgeDoc @relation(fields: [docId], references: [id], onDelete: Cascade)
+  
+  content         String   @db.Text // Đoạn văn bản đã băm nhỏ (500-800 tokens)
+  metadata        Json?    // Chứa tags: Tên sao, Tên cung, Cách cục liên quan
+  embedding       Unsupported("vector(1536)")? // Vector embedding phục vụ tìm kiếm ngữ nghĩa
+
+  @@index([docId])
+}
+
+// ==========================================
+// 10. LỊCH SỬ TRÒ CHUYỆN (CHAT SESSIONS)
+// ==========================================
+
+model ChatConversation {
+  id                  String   @id @default(cuid())
+  
+  // Phân biệt Chat 1-1 ("SINGLE_AGENT") và Phòng Hội Chẩn ("COUNCIL_CONSULTATION")
+  mode                String   @default("SINGLE_AGENT") 
+  title               String?  // VD: "Hội chẩn Lá Số: Nguyễn Văn A (Canh Ngọ 1990)"
+  
+  // Agent chủ trì (Mặc định là Thầy Minh Triết khi Hội chẩn)
+  agentId             String
+  agent               AiAgent  @relation(fields: [agentId], references: [id])
+  
+  // Danh sách các slug của các vị Thầy cùng tham gia trong phiên Hội chẩn này
+  participantSlugs    String[] @default([]) 
+  
+  customerId          String?
+  customer            CustomerProfile? @relation(fields: [customerId], references: [id])
+  activeChartId       String?  
+  
+  status              String   @default("ACTIVE") // "ACTIVE", "COUNCIL_DEBATING", "HUMAN_TAKEOVER", "CLOSED"
+  summary             String?  @db.Text // Bản đúc kết tổng hợp sau phiên hội chẩn
+  messages            ChatMessage[]
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([mode, status, updatedAt])
+  @@index([customerId, updatedAt])
+}
+
+model ChatMessage {
+  id              String   @id @default(cuid())
+  conversationId  String
+  conversation    ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  
+  role            String   // "user", "assistant", "system", "admin"
+  
+  // Định danh chính xác vị Thầy nào phát biểu câu này trong phiên Hội chẩn
+  senderAgentSlug String?  // VD: "thay-minh-triet", "thay-tam-an", "thay-thai-son"...
+  senderName      String?  // VD: "Thầy Minh Triết"
+  senderAvatar    String?  // VD: "/icons/agents/thay-minh-triet.svg"
+  senderBadge     String?  // VD: "Chủ trì - Tổng Quan Tử Vi"
+  
+  content         String   @db.Text
+  citedSources    Json?    
+  tokenUsage      Int?
+  
+  // Âm thanh Giọng đọc AI Caching
+  audioUrl        String?  // Đường dẫn tệp/blob audio giọng đọc đã sinh
+  audioDuration   Float?   // Thời lượng phát (giây)
+  
+  createdAt       DateTime @default(now())
+
+  @@index([conversationId, createdAt])
+}

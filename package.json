@@ -1,0 +1,39 @@
+{
+  "name": "xemboi-vn",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:seed": "node prisma/seed.mjs",
+    "seed:agents": "tsx prisma/seed-agents.ts",
+    "seed:knowledge": "tsx prisma/seed-knowledge-8-agents.ts",
+    "test:verify": "node scripts/cross-verify.mjs",
+    "test:browser": "node scripts/playwright-inspect.mjs"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "html2canvas": "^1.4.1",
+    "ioredis": "^5.4.1",
+    "msedge-tts": "^2.1.1",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.4.20",
+    "playwright-core": "^1.49.1",
+    "postcss": "^8.4.49",
+    "prisma": "^5.22.0",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

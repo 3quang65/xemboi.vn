@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="mt_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4c1d95" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="gold_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#eab308" />
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="url(#mt_grad)" stroke="#facc15" stroke-width="3" />
+  <!-- Yin Yang / Bagua symbol -->
+  <circle cx="50" cy="50" r="28" fill="#fff" stroke="#ca8a04" stroke-width="2" />
+  <path d="M 50,22 A 14,14 0 0 1 50,50 A 14,14 0 0 0 50,78 A 28,28 0 0 1 50,22 Z" fill="#1e1b4b" />
+  <circle cx="50" cy="36" r="4.5" fill="#ca8a04" />
+  <circle cx="50" cy="64" r="4.5" fill="#fef08a" />
+  <!-- Stars -->
+  <polygon points="50,6 53,15 62,15 55,20 58,29 50,24 42,29 45,20 38,15 47,15" fill="url(#gold_grad)" />
+  <circle cx="20" cy="24" r="2.5" fill="#fef08a" />
+  <circle cx="80" cy="24" r="2.5" fill="#fef08a" />
+  <circle cx="16" cy="60" r="2" fill="#fef08a" />
+  <circle cx="84" cy="60" r="2" fill="#fef08a" />
+</svg>

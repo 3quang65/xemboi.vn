@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="ts_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#78350f" />
+      <stop offset="100%" stop-color="#451a03" />
+    </linearGradient>
+    <linearGradient id="coin_gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="url(#ts_grad)" stroke="#f59e0b" stroke-width="3" />
+  <!-- Mountain Thái Sơn -->
+  <polygon points="50,22 76,68 24,68" fill="#92400e" stroke="#d97706" stroke-width="2" />
+  <polygon points="50,22 62,42 50,38 38,42" fill="#fef3c7" opacity="0.8" />
+  <polygon points="32,38 52,74 12,74" fill="#78350f" opacity="0.7" />
+  <polygon points="68,38 88,74 48,74" fill="#78350f" opacity="0.7" />
+  <!-- Ancient Coin in foreground -->
+  <circle cx="50" cy="66" r="16" fill="url(#coin_gold)" stroke="#78350f" stroke-width="2" />
+  <rect x="44" y="60" width="12" height="12" fill="#78350f" />
+  <!-- Sun/Crown -->
+  <circle cx="50" cy="18" r="6" fill="#fef08a" stroke="#d97706" stroke-width="1.5" />
+</svg>

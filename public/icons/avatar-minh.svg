@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="112" fill="#1e293b"/>
+  <!-- Modern stylized gentleman avatar -->
+  <circle cx="256" cy="190" r="85" fill="#f8fafc" opacity="0.95"/>
+  <path d="M190 170 C190 110, 322 110, 322 170 C322 135, 290 120, 256 120 C222 120, 190 135, 190 170 Z" fill="#0f172a"/>
+  <!-- Eyes & smile -->
+  <circle cx="225" cy="190" r="8" fill="#1e293b"/>
+  <circle cx="287" cy="190" r="8" fill="#1e293b"/>
+  <path d="M236 220 Q256 235 276 220" stroke="#1e293b" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Shoulders / suit -->
+  <path d="M140 400 C140 300, 372 300, 372 400 Z" fill="#334155"/>
+  <polygon points="256,310 230,400 282,400" fill="#f8fafc"/>
+  <polygon points="256,330 245,400 267,400" fill="#c8402f"/>
+  <!-- Decorative badge 1986 -->
+  <rect x="180" y="420" width="152" height="42" rx="21" fill="#f2c76b"/>
+  <text x="256" y="448" fill="#1d1729" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" text-anchor="middle">MINH 1986</text>
+</svg>
