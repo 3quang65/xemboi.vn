@@ -31,6 +31,8 @@ export async function generateMetadata({
   return {
     title,
     description,
+    // Lá số chứa ngày giờ sinh người dùng: không bao giờ cho index (anh Cường quyết 21/11/2026).
+    robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
     alternates: {
       canonical: `https://xemboi.vn/la-so/${slug}`,
     },

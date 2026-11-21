@@ -113,7 +113,6 @@ export default function AdminAgentsPage() {
           action: 'UPDATE_LLM_CONFIG',
           provider: llmConfig.provider,
           modelName: llmConfig.modelName,
-          apiKey: llmConfig.apiKeyInput || undefined,
           temperature: llmConfig.temperature,
         }),
       });
@@ -403,15 +402,8 @@ export default function AdminAgentsPage() {
               />
             </div>
 
-            <div>
-              <label style={{ display: 'block', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>API Key (Bảo mật):</label>
-              <input
-                type="password"
-                value={llmConfig.apiKeyInput || ''}
-                onChange={(e) => setLlmConfig({ ...llmConfig, apiKeyInput: e.target.value })}
-                placeholder={llmConfig.hasApiKey ? 'Nhập key mới nếu muốn thay đổi...' : 'Dán GEMINI_API_KEY hoặc OPENAI_API_KEY...'}
-                style={{ width: '100%', padding: '8px 12px', borderRadius: 6, border: '1px solid var(--line)', background: 'var(--card)' }}
-              />
+            <div style={{ fontSize: 12, color: 'var(--muted)' }}>
+              API key: {llmConfig.hasApiKey ? 'đã cấu hình trên máy chủ' : 'chưa có'}. Chỉ đặt qua biến môi trường, không nhập ở đây.
             </div>
 
             <div>

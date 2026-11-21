@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/quan-tri', '/api/'],
+        disallow: ['/quan-tri', '/admin', '/api/'],
       },
     ],
     sitemap: 'https://xemboi.vn/sitemap.xml',

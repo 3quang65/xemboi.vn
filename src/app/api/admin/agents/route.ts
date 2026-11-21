@@ -1,3 +1,4 @@
+import { yeuCauQuanTri } from '@/lib/r1/admin-auth';
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
@@ -28,7 +29,9 @@ function saveFewShots(list: any[]): void {
   }
 }
 
-export async function GET() {
+export async function GET(req: Request) {
+  const chan = yeuCauQuanTri(req);
+  if (chan) return chan;
   const activeLlm = getActiveLlmConfig();
   const safeLlmInfo = {
     provider: activeLlm.provider,
@@ -36,7 +39,7 @@ export async function GET() {
     temperature: activeLlm.temperature,
     hasApiKey: Boolean(activeLlm.apiKey),
     maskedApiKey: activeLlm.apiKey
-      ? `${activeLlm.apiKey.slice(0, 4)}••••${activeLlm.apiKey.slice(-4)}`
+      ? '••••' + activeLlm.apiKey.slice(-4)
       : '',
   };
 
@@ -92,6 +95,8 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+  const chan = yeuCauQuanTri(req);
+  if (chan) return chan;
   try {
     const body = await req.json();
 
@@ -100,7 +105,7 @@ export async function POST(req: Request) {
       updateRuntimeLlmConfig({
         provider: body.provider,
         modelName: body.modelName,
-        apiKey: body.apiKey || undefined,
+        // Đợt 0: không nhận API key từ giao diện nữa; khóa chỉ đọc từ biến môi trường trên máy chủ.
         temperature: typeof body.temperature === 'number' ? body.temperature : undefined,
       });
       const activeLlm = getActiveLlmConfig();
@@ -113,7 +118,7 @@ export async function POST(req: Request) {
           temperature: activeLlm.temperature,
           hasApiKey: Boolean(activeLlm.apiKey),
           maskedApiKey: activeLlm.apiKey
-            ? `${activeLlm.apiKey.slice(0, 4)}••••${activeLlm.apiKey.slice(-4)}`
+            ? '••••' + activeLlm.apiKey.slice(-4)
             : '',
         },
       });

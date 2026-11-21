@@ -1,8 +1,11 @@
+import { yeuCauQuanTri } from '@/lib/r1/admin-auth';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { inMemoryChunks } from '@/lib/ai/rag-engine';
 
 export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const chan = yeuCauQuanTri(req);
+  if (chan) return chan;
   const { id } = await params;
   try {
     const docs = await prisma.agentKnowledgeDoc.findMany({
@@ -30,6 +33,8 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
 }
 
 export async function POST(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const chan = yeuCauQuanTri(req);
+  if (chan) return chan;
   try {
     const { id } = await params;
     const body = await req.json();

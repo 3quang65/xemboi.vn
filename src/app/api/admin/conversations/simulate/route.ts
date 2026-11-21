@@ -1,8 +1,11 @@
+import { yeuCauQuanTri } from '@/lib/r1/admin-auth';
 import { NextResponse } from 'next/server';
 import { getNextSimulationTurn } from '@/lib/ai/dialogue-simulation';
 import { getMinhChart } from '@/lib/ai/agent-persona';
 
 export async function POST(req: Request) {
+  const chan = yeuCauQuanTri(req);
+  if (chan) return chan;
   try {
     const body = await req.json();
     const { messages = [], speaker = 'minh' } = body;

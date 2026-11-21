@@ -1,7 +1,10 @@
+import { yeuCauQuanTri } from '@/lib/r1/admin-auth';
 import { NextResponse } from 'next/server';
 import { listCustomers, upsertCustomerLead } from '@/lib/crm/customer-service';
 
 export async function GET(req: Request) {
+  const chan = yeuCauQuanTri(req);
+  if (chan) return chan;
   const { searchParams } = new URL(req.url);
   const page = parseInt(searchParams.get('page') || '1', 10);
   const limit = parseInt(searchParams.get('limit') || '20', 10);
@@ -13,6 +16,8 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
+  const chan = yeuCauQuanTri(req);
+  if (chan) return chan;
   try {
     const body = await req.json();
     const result = await upsertCustomerLead(body);

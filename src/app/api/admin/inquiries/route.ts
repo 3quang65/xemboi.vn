@@ -1,7 +1,10 @@
+import { yeuCauQuanTri } from '@/lib/r1/admin-auth';
 import { NextResponse } from 'next/server';
 import { getAllInquiries, addInquiry } from '@/lib/ai/customer-inquiry-service';
 
 export async function GET(req: Request) {
+  const chan = yeuCauQuanTri(req);
+  if (chan) return chan;
   try {
     const { searchParams } = new URL(req.url);
     const category = searchParams.get('category') || 'ALL';
@@ -27,6 +30,8 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
+  const chan = yeuCauQuanTri(req);
+  if (chan) return chan;
   try {
     const body = await req.json();
     if (!body.question || !body.category) {
