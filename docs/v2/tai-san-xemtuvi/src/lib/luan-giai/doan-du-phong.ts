@@ -1,0 +1,2 @@
+/** Đoạn mẫu dự phòng cho màn chọn gói (nhẹ, dùng ở client). Bản sao quy tắc MENH-TA-01; test chon-goi-nhe.test.cjs giữ khớp với menh-chinh-tinh.json. */
+export const DOAN_MAU = { ma: "MENH-TA-01", cau: "Miếu ở Dậu, Tuất, Hợi (M), vượng ở Thân, Tý (V), đắc ở Sửu, Mùi (Đ): có xu hướng ôn hòa, nhân hậu, thanh tú, thông minh, có khiếu văn chương nghệ thuật; thuận về nhà đất và tích lũy. Bạn thử đối chiếu với trải nghiệm của mình xem nét nào đúng, nét nào chưa.", nguon: ["Tân Biên", "Toàn Thư"] };

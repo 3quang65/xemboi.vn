@@ -1,3 +1,5 @@
+> **ĐANG LÀM LẠI (v2, nhánh `lam-lai-v2`).** README này mô tả bản **v1** cũ. Đọc [`docs/v2/00-BAN-CU-BAN-MOI.md`](docs/v2/00-BAN-CU-BAN-MOI.md) trước để biết phần nào là v1, phần nào là v2, và site nào đang chạy ở đâu.
+
 # XemBoi.vn — Nền Tảng An Sao Tử Vi & Hội Đồng Bát Đại Danh Sư AI
 
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat&logo=next.js)](https://nextjs.org/)

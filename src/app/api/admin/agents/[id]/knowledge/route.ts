@@ -1,10 +1,10 @@
-import { yeuCauQuanTri } from '@/lib/r1/admin-auth';
+import { yeuCauQuanTri } from '@/lib/quan-tri/cu';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { inMemoryChunks } from '@/lib/ai/rag-engine';
 
 export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
-  const chan = yeuCauQuanTri(req);
+  const chan = await yeuCauQuanTri(req);
   if (chan) return chan;
   const { id } = await params;
   try {
@@ -33,7 +33,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
 }
 
 export async function POST(req: Request, { params }: { params: Promise<{ id: string }> }) {
-  const chan = yeuCauQuanTri(req);
+  const chan = await yeuCauQuanTri(req);
   if (chan) return chan;
   try {
     const { id } = await params;

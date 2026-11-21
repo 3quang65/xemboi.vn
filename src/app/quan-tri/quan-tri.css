@@ -1,0 +1,45 @@
+/* Khu quản trị /quan-tri (Đợt 1). Dùng biến màu chung trong globals.css. */
+.qt { display: flex; min-height: 100vh; background: var(--bg); color: var(--ink); font-size: 14px; }
+.qt-ben { width: 232px; flex: none; background: var(--card); border-right: 1px solid var(--line); padding: 18px 12px; display: flex; flex-direction: column; gap: 14px; }
+.qt-logo { font-family: 'Noto Serif', serif; font-weight: 700; color: var(--red); font-size: 17px; padding: 0 8px; }
+.qt-nhom { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding: 0 8px; margin-bottom: 4px; }
+.qt-ben a { display: block; padding: 6px 8px; border-radius: 6px; color: var(--ink); text-decoration: none; }
+.qt-ben a:hover { background: var(--line); }
+.qt-ben a[aria-current='page'] { background: var(--red); color: var(--red-ink); }
+.qt-nguoi { margin-top: auto; border-top: 1px solid var(--line); padding: 10px 8px 0; font-size: 12px; color: var(--muted); }
+.qt-nguoi b { color: var(--ink); display: block; }
+.qt-chinh { flex: 1; min-width: 0; padding: 24px 28px 48px; }
+.qt-chinh h1 { font-family: 'Noto Serif', serif; font-size: 22px; margin: 0 0 4px; }
+.qt-phu { color: var(--muted); margin: 0 0 18px; }
+.qt-the { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin-bottom: 16px; }
+.qt-the h2 { font-size: 15px; margin: 0 0 10px; }
+.qt-luoi { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.qt-so { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.qt-so .qt-so-nhan { color: var(--muted); font-size: 12px; }
+.qt-so .qt-so-gt { font-size: 22px; font-weight: 700; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.qt-bang { width: 100%; border-collapse: collapse; font-size: 13px; }
+.qt-bang th, .qt-bang td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.qt-bang th { color: var(--muted); font-weight: 600; font-size: 12px; position: sticky; top: 0; background: var(--card); }
+.qt-bang .qt-cot-so { text-align: right; font-variant-numeric: tabular-nums; }
+.qt-the-cuon { overflow: auto; max-height: 70vh; }
+.qt-nut { display: inline-block; border: 1px solid var(--red); background: var(--red); color: var(--red-ink); border-radius: 6px; padding: 6px 12px; cursor: pointer; font: inherit; text-decoration: none; }
+.qt-nut.phu { background: transparent; color: var(--red); }
+.qt-nut:disabled { opacity: .5; cursor: default; }
+.qt-o { border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 6px; padding: 6px 10px; font: inherit; }
+.qt-loc { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+.qt-nhan { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 99px; background: var(--line); color: var(--ink); border: 1px solid var(--line); }
+.qt-nhan.tot { background: var(--good-bg); color: var(--good); border-color: transparent; }
+.qt-nhan.xau { background: var(--bad-bg); color: var(--bad); border-color: transparent; }
+.qt-nhan.vua { background: var(--mid-bg); color: var(--mid); border-color: transparent; }
+.qt-bao { padding: 10px 12px; border-radius: 8px; background: var(--mid-bg); color: var(--mid); margin-bottom: 14px; }
+.qt-bao.loi { background: var(--bad-bg); color: var(--bad); }
+.qt-thanh { height: 8px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.qt-thanh > span { display: block; height: 100%; background: var(--good); }
+.qt-dn { min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--ink); padding: 16px; }
+.qt-dn form { width: 100%; max-width: 360px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px; display: grid; gap: 12px; }
+.qt-dn label { display: grid; gap: 4px; font-size: 13px; }
+@media (max-width: 760px) {
+  .qt { flex-direction: column; }
+  .qt-ben { width: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+  .qt-chinh { padding: 16px; }
+}

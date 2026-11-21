@@ -1,0 +1,489 @@
+{
+ "nguon": [
+  "《三命通会》 (Tam Mệnh Thông Hội, Vạn Dân Anh, 1578) — bảng 60 hoa giáp nạp âm",
+  "Tử Vi Đẩu Số Tân Biên (Vũ Tài Lục) — bảng ngũ hành nạp âm"
+ ],
+ "soDong": 60,
+ "rows": [
+  {
+   "stt": 1,
+   "can": "Giáp",
+   "chi": "Tý",
+   "hoaGiap": "Giáp Tý",
+   "napAm": "Hải Trung Kim",
+   "hanh": "Kim"
+  },
+  {
+   "stt": 2,
+   "can": "Ất",
+   "chi": "Sửu",
+   "hoaGiap": "Ất Sửu",
+   "napAm": "Hải Trung Kim",
+   "hanh": "Kim"
+  },
+  {
+   "stt": 3,
+   "can": "Bính",
+   "chi": "Dần",
+   "hoaGiap": "Bính Dần",
+   "napAm": "Lư Trung Hỏa",
+   "hanh": "Hỏa"
+  },
+  {
+   "stt": 4,
+   "can": "Đinh",
+   "chi": "Mão",
+   "hoaGiap": "Đinh Mão",
+   "napAm": "Lư Trung Hỏa",
+   "hanh": "Hỏa"
+  },
+  {
+   "stt": 5,
+   "can": "Mậu",
+   "chi": "Thìn",
+   "hoaGiap": "Mậu Thìn",
+   "napAm": "Đại Lâm Mộc",
+   "hanh": "Mộc"
+  },
+  {
+   "stt": 6,
+   "can": "Kỷ",
+   "chi": "Tỵ",
+   "hoaGiap": "Kỷ Tỵ",
+   "napAm": "Đại Lâm Mộc",
+   "hanh": "Mộc"
+  },
+  {
+   "stt": 7,
+   "can": "Canh",
+   "chi": "Ngọ",
+   "hoaGiap": "Canh Ngọ",
+   "napAm": "Lộ Bàng Thổ",
+   "hanh": "Thổ"
+  },
+  {
+   "stt": 8,
+   "can": "Tân",
+   "chi": "Mùi",
+   "hoaGiap": "Tân Mùi",
+   "napAm": "Lộ Bàng Thổ",
+   "hanh": "Thổ"
+  },
+  {
+   "stt": 9,
+   "can": "Nhâm",
+   "chi": "Thân",
+   "hoaGiap": "Nhâm Thân",
+   "napAm": "Kiếm Phong Kim",
+   "hanh": "Kim"
+  },
+  {
+   "stt": 10,
+   "can": "Quý",
+   "chi": "Dậu",
+   "hoaGiap": "Quý Dậu",
+   "napAm": "Kiếm Phong Kim",
+   "hanh": "Kim"
+  },
+  {
+   "stt": 11,
+   "can": "Giáp",
+   "chi": "Tuất",
+   "hoaGiap": "Giáp Tuất",
+   "napAm": "Sơn Đầu Hỏa",
+   "hanh": "Hỏa"
+  },
+  {
+   "stt": 12,
+   "can": "Ất",
+   "chi": "Hợi",
+   "hoaGiap": "Ất Hợi",
+   "napAm": "Sơn Đầu Hỏa",
+   "hanh": "Hỏa"
+  },
+  {
+   "stt": 13,
+   "can": "Bính",
+   "chi": "Tý",
+   "hoaGiap": "Bính Tý",
+   "napAm": "Giản Hạ Thủy",
+   "hanh": "Thủy"
+  },
+  {
+   "stt": 14,
+   "can": "Đinh",
+   "chi": "Sửu",
+   "hoaGiap": "Đinh Sửu",
+   "napAm": "Giản Hạ Thủy",
+   "hanh": "Thủy"
+  },
+  {
+   "stt": 15,
+   "can": "Mậu",
+   "chi": "Dần",
+   "hoaGiap": "Mậu Dần",
+   "napAm": "Thành Đầu Thổ",
+   "hanh": "Thổ"
+  },
+  {
+   "stt": 16,
+   "can": "Kỷ",
+   "chi": "Mão",
+   "hoaGiap": "Kỷ Mão",
+   "napAm": "Thành Đầu Thổ",
+   "hanh": "Thổ"
+  },
+  {
+   "stt": 17,
+   "can": "Canh",
+   "chi": "Thìn",
+   "hoaGiap": "Canh Thìn",
+   "napAm": "Bạch Lạp Kim",
+   "hanh": "Kim"
+  },
+  {
+   "stt": 18,
+   "can": "Tân",
+   "chi": "Tỵ",
+   "hoaGiap": "Tân Tỵ",
+   "napAm": "Bạch Lạp Kim",
+   "hanh": "Kim"
+  },
+  {
+   "stt": 19,
+   "can": "Nhâm",
+   "chi": "Ngọ",
+   "hoaGiap": "Nhâm Ngọ",
+   "napAm": "Dương Liễu Mộc",
+   "hanh": "Mộc"
+  },
+  {
+   "stt": 20,
+   "can": "Quý",
+   "chi": "Mùi",
+   "hoaGiap": "Quý Mùi",
+   "napAm": "Dương Liễu Mộc",
+   "hanh": "Mộc"
+  },
+  {
+   "stt": 21,
+   "can": "Giáp",
+   "chi": "Thân",
+   "hoaGiap": "Giáp Thân",
+   "napAm": "Tuyền Trung Thủy",
+   "hanh": "Thủy"
+  },
+  {
+   "stt": 22,
+   "can": "Ất",
+   "chi": "Dậu",
+   "hoaGiap": "Ất Dậu",
+   "napAm": "Tuyền Trung Thủy",
+   "hanh": "Thủy"
+  },
+  {
+   "stt": 23,
+   "can": "Bính",
+   "chi": "Tuất",
+   "hoaGiap": "Bính Tuất",
+   "napAm": "Ốc Thượng Thổ",
+   "hanh": "Thổ"
+  },
+  {
+   "stt": 24,
+   "can": "Đinh",
+   "chi": "Hợi",
+   "hoaGiap": "Đinh Hợi",
+   "napAm": "Ốc Thượng Thổ",
+   "hanh": "Thổ"
+  },
+  {
+   "stt": 25,
+   "can": "Mậu",
+   "chi": "Tý",
+   "hoaGiap": "Mậu Tý",
+   "napAm": "Tích Lịch Hỏa",
+   "hanh": "Hỏa"
+  },
+  {
+   "stt": 26,
+   "can": "Kỷ",
+   "chi": "Sửu",
+   "hoaGiap": "Kỷ Sửu",
+   "napAm": "Tích Lịch Hỏa",
+   "hanh": "Hỏa"
+  },
+  {
+   "stt": 27,
+   "can": "Canh",
+   "chi": "Dần",
+   "hoaGiap": "Canh Dần",
+   "napAm": "Tùng Bách Mộc",
+   "hanh": "Mộc"
+  },
+  {
+   "stt": 28,
+   "can": "Tân",
+   "chi": "Mão",
+   "hoaGiap": "Tân Mão",
+   "napAm": "Tùng Bách Mộc",
+   "hanh": "Mộc"
+  },
+  {
+   "stt": 29,
+   "can": "Nhâm",
+   "chi": "Thìn",
+   "hoaGiap": "Nhâm Thìn",
+   "napAm": "Trường Lưu Thủy",
+   "hanh": "Thủy"
+  },
+  {
+   "stt": 30,
+   "can": "Quý",
+   "chi": "Tỵ",
+   "hoaGiap": "Quý Tỵ",
+   "napAm": "Trường Lưu Thủy",
+   "hanh": "Thủy"
+  },
+  {
+   "stt": 31,
+   "can": "Giáp",
+   "chi": "Ngọ",
+   "hoaGiap": "Giáp Ngọ",
+   "napAm": "Sa Trung Kim",
+   "hanh": "Kim"
+  },
+  {
+   "stt": 32,
+   "can": "Ất",
+   "chi": "Mùi",
+   "hoaGiap": "Ất Mùi",
+   "napAm": "Sa Trung Kim",
+   "hanh": "Kim"
+  },
+  {
+   "stt": 33,
+   "can": "Bính",
+   "chi": "Thân",
+   "hoaGiap": "Bính Thân",
+   "napAm": "Sơn Hạ Hỏa",
+   "hanh": "Hỏa"
+  },
+  {
+   "stt": 34,
+   "can": "Đinh",
+   "chi": "Dậu",
+   "hoaGiap": "Đinh Dậu",
+   "napAm": "Sơn Hạ Hỏa",
+   "hanh": "Hỏa"
+  },
+  {
+   "stt": 35,
+   "can": "Mậu",
+   "chi": "Tuất",
+   "hoaGiap": "Mậu Tuất",
+   "napAm": "Bình Địa Mộc",
+   "hanh": "Mộc"
+  },
+  {
+   "stt": 36,
+   "can": "Kỷ",
+   "chi": "Hợi",
+   "hoaGiap": "Kỷ Hợi",
+   "napAm": "Bình Địa Mộc",
+   "hanh": "Mộc"
+  },
+  {
+   "stt": 37,
+   "can": "Canh",
+   "chi": "Tý",
+   "hoaGiap": "Canh Tý",
+   "napAm": "Bích Thượng Thổ",
+   "hanh": "Thổ"
+  },
+  {
+   "stt": 38,
+   "can": "Tân",
+   "chi": "Sửu",
+   "hoaGiap": "Tân Sửu",
+   "napAm": "Bích Thượng Thổ",
+   "hanh": "Thổ"
+  },
+  {
+   "stt": 39,
+   "can": "Nhâm",
+   "chi": "Dần",
+   "hoaGiap": "Nhâm Dần",
+   "napAm": "Kim Bạch Kim",
+   "hanh": "Kim"
+  },
+  {
+   "stt": 40,
+   "can": "Quý",
+   "chi": "Mão",
+   "hoaGiap": "Quý Mão",
+   "napAm": "Kim Bạch Kim",
+   "hanh": "Kim"
+  },
+  {
+   "stt": 41,
+   "can": "Giáp",
+   "chi": "Thìn",
+   "hoaGiap": "Giáp Thìn",
+   "napAm": "Phú Đăng Hỏa",
+   "hanh": "Hỏa"
+  },
+  {
+   "stt": 42,
+   "can": "Ất",
+   "chi": "Tỵ",
+   "hoaGiap": "Ất Tỵ",
+   "napAm": "Phú Đăng Hỏa",
+   "hanh": "Hỏa"
+  },
+  {
+   "stt": 43,
+   "can": "Bính",
+   "chi": "Ngọ",
+   "hoaGiap": "Bính Ngọ",
+   "napAm": "Thiên Hà Thủy",
+   "hanh": "Thủy"
+  },
+  {
+   "stt": 44,
+   "can": "Đinh",
+   "chi": "Mùi",
+   "hoaGiap": "Đinh Mùi",
+   "napAm": "Thiên Hà Thủy",
+   "hanh": "Thủy"
+  },
+  {
+   "stt": 45,
+   "can": "Mậu",
+   "chi": "Thân",
+   "hoaGiap": "Mậu Thân",
+   "napAm": "Đại Trạch Thổ",
+   "hanh": "Thổ"
+  },
+  {
+   "stt": 46,
+   "can": "Kỷ",
+   "chi": "Dậu",
+   "hoaGiap": "Kỷ Dậu",
+   "napAm": "Đại Trạch Thổ",
+   "hanh": "Thổ"
+  },
+  {
+   "stt": 47,
+   "can": "Canh",
+   "chi": "Tuất",
+   "hoaGiap": "Canh Tuất",
+   "napAm": "Thoa Xuyến Kim",
+   "hanh": "Kim"
+  },
+  {
+   "stt": 48,
+   "can": "Tân",
+   "chi": "Hợi",
+   "hoaGiap": "Tân Hợi",
+   "napAm": "Thoa Xuyến Kim",
+   "hanh": "Kim"
+  },
+  {
+   "stt": 49,
+   "can": "Nhâm",
+   "chi": "Tý",
+   "hoaGiap": "Nhâm Tý",
+   "napAm": "Tang Đố Mộc",
+   "hanh": "Mộc"
+  },
+  {
+   "stt": 50,
+   "can": "Quý",
+   "chi": "Sửu",
+   "hoaGiap": "Quý Sửu",
+   "napAm": "Tang Đố Mộc",
+   "hanh": "Mộc"
+  },
+  {
+   "stt": 51,
+   "can": "Giáp",
+   "chi": "Dần",
+   "hoaGiap": "Giáp Dần",
+   "napAm": "Đại Khê Thủy",
+   "hanh": "Thủy"
+  },
+  {
+   "stt": 52,
+   "can": "Ất",
+   "chi": "Mão",
+   "hoaGiap": "Ất Mão",
+   "napAm": "Đại Khê Thủy",
+   "hanh": "Thủy"
+  },
+  {
+   "stt": 53,
+   "can": "Bính",
+   "chi": "Thìn",
+   "hoaGiap": "Bính Thìn",
+   "napAm": "Sa Trung Thổ",
+   "hanh": "Thổ"
+  },
+  {
+   "stt": 54,
+   "can": "Đinh",
+   "chi": "Tỵ",
+   "hoaGiap": "Đinh Tỵ",
+   "napAm": "Sa Trung Thổ",
+   "hanh": "Thổ"
+  },
+  {
+   "stt": 55,
+   "can": "Mậu",
+   "chi": "Ngọ",
+   "hoaGiap": "Mậu Ngọ",
+   "napAm": "Thiên Thượng Hỏa",
+   "hanh": "Hỏa"
+  },
+  {
+   "stt": 56,
+   "can": "Kỷ",
+   "chi": "Mùi",
+   "hoaGiap": "Kỷ Mùi",
+   "napAm": "Thiên Thượng Hỏa",
+   "hanh": "Hỏa"
+  },
+  {
+   "stt": 57,
+   "can": "Canh",
+   "chi": "Thân",
+   "hoaGiap": "Canh Thân",
+   "napAm": "Thạch Lựu Mộc",
+   "hanh": "Mộc"
+  },
+  {
+   "stt": 58,
+   "can": "Tân",
+   "chi": "Dậu",
+   "hoaGiap": "Tân Dậu",
+   "napAm": "Thạch Lựu Mộc",
+   "hanh": "Mộc"
+  },
+  {
+   "stt": 59,
+   "can": "Nhâm",
+   "chi": "Tuất",
+   "hoaGiap": "Nhâm Tuất",
+   "napAm": "Đại Hải Thủy",
+   "hanh": "Thủy"
+  },
+  {
+   "stt": 60,
+   "can": "Quý",
+   "chi": "Hợi",
+   "hoaGiap": "Quý Hợi",
+   "napAm": "Đại Hải Thủy",
+   "hanh": "Thủy"
+  }
+ ]
+}

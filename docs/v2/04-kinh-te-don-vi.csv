@@ -1,0 +1,70 @@
+Nhóm,Hạng mục,Giá trị,Đơn vị,Phân loại nguồn,Nguồn hoặc công thức,Ghi chú
+01_Tham số chung,Tỷ giá USD/VNĐ,25940,VNĐ/USD,CÓ NGUỒN,Vietcombank bán ra ngày 20/11/2026 (portal.vietcombank.com.vn/Personal/TG/Pages/ty-gia.aspx),Dùng quy đổi chi phí AI và máy chủ
+01_Tham số chung,Giá Gói 2 — Lá Số Chuyên Sâu + Vận 2027 (MVP Tết),149000,VNĐ,ĐỀ XUẤT,Gói duy nhất bản ra mắt Tết 2027 (12 cung có căn cứ + Vận 2027 + 8 câu hỏi + HTML in được),Neo với Thái Âm 99k–199k; cao gấp ~7.5x Chợ Tử Vi 20k
+01_Tham số chung,Giá Gói 1 — Vận Hạn 2027 (Hoãn sau Tết),79000,VNĐ,ĐỀ XUẤT,Lưu niên 2027 + 3 câu hỏi (mở sau Tết hoặc thay Gói 2 nếu R1 chọn 79k),Hoãn khỏi MVP Tết để 1 người kịp ra mắt
+01_Tham số chung,Giá Gói 3 — Đôi / Gia Đình (Hoãn Q2/2027),299000,VNĐ,ĐỀ XUẤT,3 bản Gói 2 + phân tích hợp–khác cho 1 cặp chọn trước + 15 câu hỏi,Hoãn sang Quý 2/2027
+01_Tham số chung,Tỷ trọng bán cả năm — Gói 1 / Gói 2 / Gói 3,55/35/10,%,GIẢ ĐỊNH,Giả định cơ cấu cả năm sau khi mở đủ 3 gói,Bản ra mắt Tết chỉ mở 100% Gói 2 (149000đ)
+01_Tham số chung,Giá trị đơn hàng trung bình cả năm (AOV pha trộn),125500,VNĐ/đơn,CÔNG THỨC,0.55*79000 + 0.35*149000 + 0.10*299000,Khớp khung 99k–149k của tài liệu 02
+01_Tham số chung,Tỷ lệ hoàn tiền cơ sở (xem thêm độ nhạy 6% và 10%),3,%,GIẢ ĐỊNH,Chính sách hoàn 100% trong 7 ngày giới hạn 1 lần/STK chuyển tiền,Độ nhạy 3% / 6% / 10% nằm ở nhóm 03
+02_Chi phí AI năm 2027,Token Input Gói 2 (có gửi lại ngữ cảnh 8 lượt hỏi đáp),120000,tokens,GIẢ ĐỊNH,2 pass báo cáo (13k) + 8 lượt hỏi gửi lại lá số & lịch sử (~107k; không cache),Bắt buộc đo thật trên 3 lá số mẫu ở Tuần 5
+02_Chi phí AI năm 2027,Token Output Gói 2 (có trần thinking tokens),30000,tokens,GIẢ ĐỊNH,2 pass báo cáo (13k) + 8 lượt trả lời (17k; đặt max_thinking_tokens),Bản miễn phí = 0 VNĐ AI (kho văn tĩnh tự biên soạn)
+02_Chi phí AI năm 2027,Token Gói 1 (Input / Output) — sau Tết,38000/13000,tokens,GIẢ ĐỊNH,1 pass báo cáo (8k/7k) + 3 lượt hỏi đáp (30k/6k),Gói 3 = 3x Gói 2 (360k in / 90k out)
+02_Chi phí AI năm 2027,Gemini 3.5 Flash-Lite — Giá Input (ĐỀ XUẤT CHÍNH),0.30,USD/1M tokens,CÓ NGUỒN,https://aistudio.google.com/docs/pricing (tra 20/11/2026),Paid tier (Used to improve products = No); thay thế 2.5 Flash đã khai tử
+02_Chi phí AI năm 2027,Gemini 3.5 Flash-Lite — Giá Output (ĐỀ XUẤT CHÍNH),2.50,USD/1M tokens,CÓ NGUỒN,https://aistudio.google.com/docs/pricing (tra 20/11/2026),Bao gồm thinking tokens; cache input = $0.03/1M
+02_Chi phí AI năm 2027,Gemini 3.5 Flash-Lite — Chi phí Gói 2 (không cache),2880,VNĐ/bản,CÔNG THỨC,(0.120*0.30 + 0.030*2.50)*25940,Chiếm 1.93% giá bán 149k (có cache ~2249đ = 1.51%)
+02_Chi phí AI năm 2027,Gemini 3.5 Flash-Lite — Chi phí Gói 1 (không cache),1139,VNĐ/bản,CÔNG THỨC,(0.038*0.30 + 0.013*2.50)*25940,Chiếm 1.44% giá bán 79k
+02_Chi phí AI năm 2027,Gemini 3.5 Flash-Lite — Chi phí Gói 3 (không cache),8640,VNĐ/bản,CÔNG THỨC,3 * 2880,Chiếm 2.89% giá bán 299k
+02_Chi phí AI năm 2027,Gemini 3.8 Flash (giá 01/01/2027) — Input / Output,1.50/7.50,USD/1M tokens,CÓ NGUỒN,https://aistudio.google.com/docs/pricing (tra 20/11/2026),Tăng gấp đôi từ $0.75/$3.75 bắt đầu 01/01/2027
+02_Chi phí AI năm 2027,Gemini 3.8 Flash (giá 2027) — Chi phí Gói 2 toàn bộ,10506,VNĐ/bản,CÔNG THỨC,(0.120*1.50 + 0.030*7.50)*25940,Chiếm 7.05% giá bán 149k
+02_Chi phí AI năm 2027,Kiến trúc lai (3.8 Flash báo cáo + 3.5 Lite hỏi đáp) — Gói 2,4970,VNĐ/bản,CÔNG THỨC,(0.013*1.50+0.013*7.50 + 0.107*0.30+0.017*2.50)*25940,Chiếm 3.34% giá bán 149k; phương án nâng cấp nếu 3.5 Lite trượt R3
+02_Chi phí AI năm 2027,GPT-6.1 Terra (OpenAI dự phòng) — Giá Input / Output,1.00/5.00,USD/1M tokens,CÓ NGUỒN,Bảng giá OpenAI GPT-6 (tra 20/11/2026; thay thế GPT-4.1-mini & GPT-5-mini đã khai tử),Cần kiểm trực tiếp trên trình duyệt vì trang giá OpenAI trả 403 cho bot
+02_Chi phí AI năm 2027,GPT-6.1 Terra — Chi phí Gói 2,7004,VNĐ/bản,CÔNG THỨC,(0.120*1.00 + 0.030*5.00)*25940,Chiếm 4.70% giá bán 149k
+02_Chi phí AI năm 2027,DeepSeek V4.1-Flash (Peak giờ VN) — Giá Input / Output,0.30/1.20,USD/1M tokens,CÓ NGUỒN,https://api-docs.deepseek.com/quick_start/pricing (tra 20/11/2026),Peak 08h–11h & 13h–17h T2–T6 giờ VN; Off-Peak giảm 50%
+02_Chi phí AI năm 2027,DeepSeek V4.1-Flash — Chi phí Gói 2 (Peak),1868,VNĐ/bản,CÔNG THỨC,(0.120*0.30 + 0.030*1.20)*25940,Chiếm 1.25% giá bán 149k (Off-Peak = 934đ)
+03_Biên lợi nhuận và Độ nhạy,MVP Tết (Gói 2 149k) — Tổng COGS (AI 2880 + SePay 500 + Hoàn 3%),7850,VNĐ/đơn,CÔNG THỨC,2880 + 500 + 0.03*149000,Chiếm 5.27% giá bán (phí vượt SePay 500đ là GIẢ ĐỊNH)
+03_Biên lợi nhuận và Độ nhạy,MVP Tết (Gói 2 149k) — Lợi nhuận đóng góp (trước CAC),141150,VNĐ/đơn,CÔNG THỨC,149000 - 7850,Biên lợi nhuận gộp = 94.73%
+03_Biên lợi nhuận và Độ nhạy,Cả năm (AOV 125.5k) — Chi phí AI pha trộn (3.5 Flash-Lite),2500,VNĐ/đơn,CÔNG THỨC,0.55*1139 + 0.35*2880 + 0.10*8640 (=2498đ làm tròn 2500đ),Chiếm 1.99% AOV
+03_Biên lợi nhuận và Độ nhạy,Phí giao dịch vượt hạn mức SePay (trên 180 GD/tháng),500,VNĐ/đơn,GIẢ ĐỊNH,sepay.vn/bang-gia.html không công bố đơn giá vượt hạn mức,Đổi nhãn sang GIẢ ĐỊNH theo phản biện N4
+03_Biên lợi nhuận và Độ nhạy,Dự phòng hoàn tiền cơ sở (3% AOV 125.5k),3765,VNĐ/đơn,CÔNG THỨC,0.03 * 125500,Chiếm 3.00% AOV
+03_Biên lợi nhuận và Độ nhạy,Thuế trực tiếp Hộ KD (doanh thu <= 1 tỷ/năm),0,VNĐ/đơn,CÓ NGUỒN,Nghị định 141/2026/NĐ-CP (02 mục 4.1),Miễn GTGT và TNCN <= 1 tỷ/năm; vượt 1 tỷ [CHƯA KIỂM]
+03_Biên lợi nhuận và Độ nhạy,Cả năm (AOV 125.5k) — Tổng COGS Web VietQR (hoàn 3%),6765,VNĐ/đơn,CÔNG THỨC,2500 + 500 + 3765 + 0,Chiếm 5.39% AOV
+03_Biên lợi nhuận và Độ nhạy,Cả năm (AOV 125.5k) — Lợi nhuận đóng góp cơ sở (hoàn 3%),118735,VNĐ/đơn,CÔNG THỨC,125500 - 6765,Biên lợi nhuận gộp = 94.61%
+03_Biên lợi nhuận và Độ nhạy,Độ nhạy N8 — Lợi nhuận đóng góp nếu hoàn tiền 6%,114970,VNĐ/đơn,CÔNG THỨC,125500 - (2500 + 500 + 0.06*125500),Biên gộp = 91.61%
+03_Biên lợi nhuận và Độ nhạy,Độ nhạy N8 — Lợi nhuận đóng góp nếu hoàn tiền 10%,109950,VNĐ/đơn,CÔNG THỨC,125500 - (2500 + 500 + 0.10*125500),Biên gộp = 87.61%
+03_Biên lợi nhuận và Độ nhạy,Độ nhạy C3 — Lợi nhuận đóng góp nếu dùng 3.8 Flash giá 2027 (hoàn 3%),112135,VNĐ/đơn,CÔNG THỨC,125500 - (9100 + 500 + 3765),AI pha trộn 3.8 Flash ~9100đ; biên gộp = 89.35%
+03_Biên lợi nhuận và Độ nhạy,Tham khảo — Lợi nhuận đóng góp nếu dùng Ví điện tử (2% MDR),116725,VNĐ/đơn,CÔNG THỨC,125500 - (2500 + 0.02*125500 + 3765),MDR VNPay/MoMo 1.5%–2.5% (vnpay.vn); biên = 93.01%
+03_Biên lợi nhuận và Độ nhạy,Tham khảo — Lợi nhuận đóng góp nếu bán App Store/Play (15%),100410,VNĐ/đơn,CÔNG THỨC,125500 - (2500 + 0.15*125500 + 3765),Apple SBP & Google Play 15% (<$1M/năm); biên = 80.01%
+04_Chi phí cố định tháng,VPS DigitalOcean Basic (2GB RAM / 1 vCPU / 50GB SSD),312000,VNĐ/tháng,CÓ NGUỒN,https://www.digitalocean.com/pricing/droplets ($12 * 25940),Chạy Next.js và PostgreSQL
+04_Chi phí cố định tháng,Sao lưu DB và dịch vụ Email giao dịch,100000,VNĐ/tháng,GIẢ ĐỊNH,Backup ~20% Droplet + gói email cơ bản,Dự phòng hạ tầng
+04_Chi phí cố định tháng,Cổng thanh toán SePay — Gói Startup (180 GD/tháng),120000,VNĐ/tháng,CÓ NGUỒN,https://sepay.vn/bang-gia.html (tra 20/11/2026),Sửa từ 96k sang 120k theo N4; vượt 180 GD mùa Tết cần nâng gói
+04_Chi phí cố định tháng,Phí duy trì tên miền xemboi.vn,30000,VNĐ/tháng,CÓ NGUỒN,Biểu phí VNNIC 350000đ/năm chia 12 (vnnic.vn),Không chịu thuế GTGT
+04_Chi phí cố định tháng,Công cụ phần mềm cơ bản,500000,VNĐ/tháng,GIẢ ĐỊNH,Thiết kế / dựng video / công cụ phát triển,Giữ mức tinh gọn
+04_Chi phí cố định tháng,TỔNG CỐ ĐỊNH MỨC 1 — Hạ tầng thuần (1 người tự làm),1062000,VNĐ/tháng,CÔNG THỨC,312000 + 100000 + 120000 + 30000 + 500000,Tương đương 12.744.000 VNĐ/năm
+04_Chi phí cố định tháng,Thuê CTV dựng video ngắn / biên tập SEO bán thời gian,4000000,VNĐ/tháng,GIẢ ĐỊNH,Tùy chọn thuê nếu 1 người không đủ giờ duy trì tần suất video,Không bắt buộc ở giai đoạn đầu
+04_Chi phí cố định tháng,Sổ sách hộ kinh doanh và dự phòng quản trị,500000,VNĐ/tháng,GIẢ ĐỊNH,Ghi sổ doanh thu theo NĐ 141/2026 & chi phí phát sinh,Giữ an toàn pháp lý
+04_Chi phí cố định tháng,TỔNG CỐ ĐỊNH MỨC 2 — Vận hành có CTV,5562000,VNĐ/tháng,CÔNG THỨC,1062000 + 4000000 + 500000,Tương đương 66.744.000 VNĐ/năm
+04_Chi phí cố định tháng,Lương cơ hội 1 founder toàn thời gian,15000000,VNĐ/tháng,GIẢ ĐỊNH,Mức tối thiểu tính hòa vốn toàn thời gian,180.000.000 VNĐ/năm
+04_Chi phí cố định tháng,TỔNG CỐ ĐỊNH MỨC 3 — Đầy đủ gồm lương founder,20562000,VNĐ/tháng,CÔNG THỨC,5562000 + 15000000,Tương đương 246.744.000 VNĐ/năm
+05_CAC theo kênh,CAC — Video ngắn hữu cơ (TikTok/Reels/Shorts),40000,VNĐ/khách,GIẢ ĐỊNH,2tr CTV / 50 đơn (0đ tiền mặt nếu tự làm; dao động 15k–80k),Kênh chính duy nhất cho Tết 2027
+05_CAC theo kênh,CAC — SEO Google (hữu cơ dài hạn),20000,VNĐ/khách,GIẢ ĐỊNH,2tr CTV / 100 đơn sau 3–6 tháng (0đ nếu tự viết),Đầu tư cho 2027–2028; không kỳ vọng kịp Tết 2027
+05_CAC theo kênh,CAC — Giới thiệu bạn bè (hoãn Q2/2027),15500,VNĐ/khách,GIẢ ĐỊNH,Giảm 15000đ người mua mới + 3 câu hỏi AI (~500đ) cho người mời,Sửa theo G8 để khớp cơ chế thưởng
+05_CAC theo kênh,CAC — Facebook Ads lạnh (mức thấp),150000,VNĐ/khách,GIẢ ĐỊNH,CPC 1500đ / 40% lập lá số / 2.5% mua,LỖ ngay trên đơn đầu
+05_CAC theo kênh,CAC — Facebook Ads lạnh (mức cao),350000,VNĐ/khách,GIẢ ĐỊNH,CPC 3500đ / 40% lập lá số / 2.5% mua,KHÔNG dùng làm kênh chính
+05_CAC theo kênh,CAC — Facebook Ads Retargeting,45000,VNĐ/khách,GIẢ ĐỊNH,Bám đuổi người đã lập lá số (30k–60k); cần cookie consent & không gửi ngày sinh,Chỉ bật khi >= 3000 lá số/tháng
+06_Chuyển đổi và Hòa vốn,Tỷ lệ chuyển đổi Free->Paid — Kịch bản Thấp,1.2,%,GIẢ ĐỊNH,Tham khảo bối cảnh khác: RevenueCat 2026 app thuê bao 2.1% (revenuecat.com/state-of-subscription-apps-2026/),Phản ánh độ nhạy giá 149k vs 20k Chợ Tử Vi
+06_Chuyển đổi và Hòa vốn,Tỷ lệ chuyển đổi Free->Paid — Kịch bản Vừa (Cơ sở),2.5,%,GIẢ ĐỊNH,Giữ mốc lập kế hoạch nhất quán với 02 mục 5.3 (không phải số liệu kiểm chứng web tử vi VN),Sửa nhãn theo N3
+06_Chuyển đổi và Hòa vốn,Tỷ lệ chuyển đổi Free->Paid — Kịch bản Cao (Mùa Tết),4.5,%,GIẢ ĐỊNH,Tham khảo bối cảnh khác: First Page Sage SaaS B2B 2.1%–5.6% (firstpagesage.com/seo-blog/saas-freemium-conversion-rates/),Chỉ khả thi nếu đúng mùa Tết & bản miễn phí thuyết phục
+06_Chuyển đổi và Hòa vốn,Hòa vốn Mức 1 — Bản Tết 100% Gói 2 (hữu cơ),8,đơn/tháng,CÔNG THỨC,Làm tròn lên (1062000 / 141150),Doanh thu 1.192.000đ; cần 320 lá số/tháng ở CR 2.5%
+06_Chuyển đổi và Hòa vốn,Hòa vốn Mức 1 — Cả năm pha trộn (hữu cơ),9,đơn/tháng,CÔNG THỨC,Làm tròn lên (1062000 / 118735),Doanh thu 1.129.500đ; cần 360 lá số/tháng ở CR 2.5%
+06_Chuyển đổi và Hòa vốn,Hòa vốn Mức 1 — Cả năm pha trộn (có CAC 30k),12,đơn/tháng,CÔNG THỨC,Làm tròn lên (1062000 / 88735),Doanh thu 1.506.000đ; cần 480 lá số/tháng ở CR 2.5%
+06_Chuyển đổi và Hòa vốn,Hòa vốn Mức 2 — Vận hành có CTV,47,đơn/tháng,CÔNG THỨC,Làm tròn lên (5562000 / 118735),Doanh thu 5.898.500đ; cần 1880 lá số/tháng ở CR 2.5% (3.8 Flash = 50 đơn)
+06_Chuyển đổi và Hòa vốn,Hòa vốn Mức 3 — Đầy đủ gồm lương founder,174,đơn/tháng,CÔNG THỨC,Làm tròn lên (20562000 / 118735),Doanh thu 21.837.000đ; cần 6960 lá số/tháng ở CR 2.5% (3.8 Flash = 184 đơn)
+07_Nhất quán SOM năm 1,Lượt lập lá số giả định năm 1 (kiểm nhất quán 02),100000,lượt/năm,GIẢ ĐỊNH,Lấy cùng giả định của 02 mục 5.3 — chỉ kiểm tính nhất quán (không phải kiểm chứng độc lập),Lưu ý N2: bỏ cụm khả thi cao
+07_Nhất quán SOM năm 1,Năm 1 — Thấp (1.2%) — Số đơn / Doanh thu,150600000,VNĐ/năm,CÔNG THỨC,1200 đơn * 125500,Dưới khung SOM 250–370tr
+07_Nhất quán SOM năm 1,Năm 1 — Thấp (1.2%) — Lãi sau Mức 2,75738000,VNĐ/năm,CÔNG THỨC,150600000 - 1200*6765 - 66744000,Lãi bán thời gian; âm 104.26tr nếu tính đủ lương 180tr
+07_Nhất quán SOM năm 1,Năm 1 — Vừa (2.5%) — Số đơn / Doanh thu,313750000,VNĐ/năm,CÔNG THỨC,2500 đơn * 125500,Nhất quán giữa khung SOM 02 (250–370 triệu)
+07_Nhất quán SOM năm 1,Năm 1 — Vừa (2.5%) — Lãi sau Mức 2,230093500,VNĐ/năm,CÔNG THỨC,313750000 - 2500*6765 - 66744000,Lợi nhuận trước lương founder (~19.2tr/tháng)
+07_Nhất quán SOM năm 1,Năm 1 — Vừa (2.5%) — Lãi sau Mức 3,50093500,VNĐ/năm,CÔNG THỨC,230093500 - 180000000,Lãi ròng sau lương founder; miễn thuế < 1 tỷ/năm
+07_Nhất quán SOM năm 1,Năm 1 — Cao (4.5%) — Doanh thu,564750000,VNĐ/năm,CÔNG THỨC,4500 đơn * 125500,Vượt khung SOM 02; vẫn miễn thuế < 1 tỷ/năm
+07_Nhất quán SOM năm 1,Năm 1 — Cao (4.5%) — Lãi sau Mức 2,467563500,VNĐ/năm,CÔNG THỨC,564750000 - 4500*6765 - 66744000,Lợi nhuận trước lương founder
+07_Nhất quán SOM năm 1,Năm 1 — Cao (4.5%) — Lãi sau Mức 3,287563500,VNĐ/năm,CÔNG THỨC,467563500 - 180000000,Lãi ròng sau lương founder

@@ -13,7 +13,10 @@
     "seed:agents": "tsx prisma/seed-agents.ts",
     "seed:knowledge": "tsx prisma/seed-knowledge-8-agents.ts",
     "test:verify": "node scripts/cross-verify.mjs",
-    "test:browser": "node scripts/playwright-inspect.mjs"
+    "test:browser": "node scripts/playwright-inspect.mjs",
+    "test:tuvi": "node --test tests/tuvi-v2/*.test.cjs tests/tuvi-v2/*.test.mjs",
+    "test:r1": "tsx --test tests/r1/*.test.mjs",
+    "r1:xoa-han": "node scripts/r1-xoa-han.mjs"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",

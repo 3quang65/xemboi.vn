@@ -1,0 +1,222 @@
+{
+ "menh": {
+  "ten": "Mệnh",
+  "cungChinh": "Mệnh",
+  "cungLienQuan": [
+   "xung chiếu: Thiên Di",
+   "tam hợp: Quan Lộc",
+   "tam hợp: Tài Bạch"
+  ],
+  "muc": [
+   {
+    "id": "cach-cuc",
+    "tieuDe": "Cách cục",
+    "huongDan": "Thế sao nổi bật trong tam phương, nêu trước các nhận định từng sao"
+   },
+   {
+    "id": "tong-quan",
+    "tieuDe": "Tổng quan bản thân",
+    "huongDan": "Nét tính cách cốt lõi từ chính tinh tại Mệnh"
+   },
+   {
+    "id": "cung-lien-quan",
+    "tieuDe": "Cung hợp chiếu",
+    "huongDan": "Ảnh hưởng của Thiên Di, Quan Lộc, Tài Bạch"
+   },
+   {
+    "id": "tu-hoa",
+    "tieuDe": "Tứ hóa",
+    "huongDan": "Các điểm nhấn do Hóa Lộc, Quyền, Khoa, Kỵ"
+   },
+   {
+    "id": "phu-tinh",
+    "tieuDe": "Cát hung tinh đi kèm",
+    "huongDan": "Sao phụ làm rõ thêm xu hướng"
+   }
+  ]
+ },
+ "quan-loc": {
+  "ten": "Quan Lộc",
+  "cungChinh": "Quan Lộc",
+  "cungLienQuan": [
+   "xung chiếu: Phu Thê",
+   "tam hợp: Mệnh",
+   "tam hợp: Tài Bạch"
+  ],
+  "muc": [
+   {
+    "id": "cach-cuc",
+    "tieuDe": "Cách cục",
+    "huongDan": "Thế sao nổi bật trong tam phương, nêu trước các nhận định từng sao"
+   },
+   {
+    "id": "phong-cach",
+    "tieuDe": "Phong cách làm việc",
+    "huongDan": "Chính tinh tại Quan Lộc"
+   },
+   {
+    "id": "cung-lien-quan",
+    "tieuDe": "Cung hợp chiếu",
+    "huongDan": "Mệnh, Tài Bạch, Phu Thê"
+   },
+   {
+    "id": "tu-hoa",
+    "tieuDe": "Tứ hóa",
+    "huongDan": "Điểm nhấn sự nghiệp"
+   },
+   {
+    "id": "phu-tinh",
+    "tieuDe": "Sao hỗ trợ và thử thách",
+    "huongDan": "Sao phụ"
+   }
+  ]
+ },
+ "phu-the": {
+  "ten": "Phu Thê",
+  "cungChinh": "Phu Thê",
+  "cungLienQuan": [
+   "xung chiếu: Quan Lộc",
+   "tam hợp: Phúc Đức",
+   "tam hợp: Thiên Di"
+  ],
+  "muc": [
+   {
+    "id": "cach-cuc",
+    "tieuDe": "Cách cục",
+    "huongDan": "Thế sao nổi bật trong tam phương, nêu trước các nhận định từng sao"
+   },
+   {
+    "id": "phong-cach",
+    "tieuDe": "Cách yêu và gắn bó",
+    "huongDan": "Chính tinh tại Phu Thê"
+   },
+   {
+    "id": "cung-lien-quan",
+    "tieuDe": "Cung hợp chiếu",
+    "huongDan": "Quan Lộc, Phúc Đức, Thiên Di"
+   },
+   {
+    "id": "tu-hoa",
+    "tieuDe": "Tứ hóa",
+    "huongDan": "Điểm nhấn trong quan hệ"
+   },
+   {
+    "id": "phu-tinh",
+    "tieuDe": "Phụ tinh",
+    "huongDan": "Sao hỗ trợ và cần lưu ý"
+   }
+  ]
+ },
+ "tai-bach": {
+  "ten": "Tài Bạch",
+  "cungChinh": "Tài Bạch",
+  "cungLienQuan": [
+   "xung chiếu: Phúc Đức",
+   "tam hợp: Mệnh",
+   "tam hợp: Quan Lộc"
+  ],
+  "muc": [
+   {
+    "id": "cach-cuc",
+    "tieuDe": "Cách cục",
+    "huongDan": "Thế sao nổi bật trong tam phương, nêu trước các nhận định từng sao"
+   },
+   {
+    "id": "phong-cach",
+    "tieuDe": "Cách kiếm và giữ tiền",
+    "huongDan": "Chính tinh tại Tài Bạch"
+   },
+   {
+    "id": "cung-lien-quan",
+    "tieuDe": "Cung hợp chiếu",
+    "huongDan": "Mệnh, Quan Lộc, Phúc Đức"
+   },
+   {
+    "id": "tu-hoa",
+    "tieuDe": "Tứ hóa",
+    "huongDan": "Điểm nhấn tài chính"
+   },
+   {
+    "id": "phu-tinh",
+    "tieuDe": "Sao hỗ trợ và cần lưu ý",
+    "huongDan": "Sao phụ"
+   }
+  ]
+ },
+ "dien-trach": {
+  "ten": "Gia đạo",
+  "cungChinh": "Điền Trạch",
+  "cungLienQuan": [
+   "xung chiếu: Tử Tức",
+   "tam hợp: Huynh Đệ",
+   "tam hợp: Tật Ách"
+  ],
+  "muc": [
+   {
+    "id": "cach-cuc",
+    "tieuDe": "Cách cục",
+    "huongDan": "Thế sao nổi bật trong tam phương, nêu trước các nhận định từng sao"
+   },
+   {
+    "id": "phong-cach",
+    "tieuDe": "Nhà cửa và nếp nhà",
+    "huongDan": "Chính tinh tại Điền Trạch"
+   },
+   {
+    "id": "nguoi-than",
+    "tieuDe": "Cha mẹ, anh chị em, con cái",
+    "huongDan": "Chính tinh tại Phụ Mẫu, Huynh Đệ, Tử Tức"
+   },
+   {
+    "id": "cung-lien-quan",
+    "tieuDe": "Cung hợp chiếu",
+    "huongDan": "Tử Tức, Huynh Đệ, Tật Ách"
+   },
+   {
+    "id": "tu-hoa",
+    "tieuDe": "Tứ hóa",
+    "huongDan": "Điểm nhấn trong gia đạo"
+   },
+   {
+    "id": "phu-tinh",
+    "tieuDe": "Phụ tinh",
+    "huongDan": "Sao hỗ trợ và cần lưu ý"
+   }
+  ]
+ },
+ "van-10-nam": {
+  "ten": "Vận 10 năm",
+  "cungChinh": "Vận",
+  "cungLienQuan": [
+   "xung chiếu",
+   "tam hợp"
+  ],
+  "muc": [
+   {
+    "id": "chu-de",
+    "tieuDe": "Chủ đề nổi bật",
+    "huongDan": "Cung đại vận đang đi và việc thuộc cung đó"
+   },
+   {
+    "id": "thuan-loi",
+    "tieuDe": "Thuận lợi",
+    "huongDan": "Chính tinh, Tứ hóa và cát tinh hội về cung vận"
+   },
+   {
+    "id": "chu-y",
+    "tieuDe": "Điều cần chú ý",
+    "huongDan": "Sao hãm, sát tinh và điểm cần cẩn trọng trong 10 năm"
+   },
+   {
+    "id": "xung-quanh",
+    "tieuDe": "Ảnh hưởng xung quanh",
+    "huongDan": "Tuần, Triệt, vòng Thái Tuế và thế của các cung hợp chiếu"
+   },
+   {
+    "id": "goi-y",
+    "tieuDe": "Gợi ý",
+    "huongDan": "Cách tận dụng thuận lợi và cân bằng điểm cần chú ý"
+   }
+  ]
+ }
+}

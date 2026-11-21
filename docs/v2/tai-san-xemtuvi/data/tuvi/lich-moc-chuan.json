@@ -1,0 +1,1808 @@
+{
+ "nguon": "Hồ Ngọc Đức — amlich.js (bản gốc, UTC+7), tải từ github.com/vanng822/amlich/lib/amlich-aa98.js ngày 01/11/2026",
+ "ngayTao": "2026-11-01",
+ "soMoc": 200,
+ "saiKhiSoi": 0,
+ "moc": [
+  {
+   "duong": "03/01/1900",
+   "am": {
+    "ngay": 3,
+    "thang": 12,
+    "nam": 1899,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/1901",
+   "am": {
+    "ngay": 29,
+    "thang": 12,
+    "nam": 1900,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/1902",
+   "am": {
+    "ngay": 20,
+    "thang": 2,
+    "nam": 1902,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/1903",
+   "am": {
+    "ngay": 10,
+    "thang": 3,
+    "nam": 1903,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/1904",
+   "am": {
+    "ngay": 8,
+    "thang": 4,
+    "nam": 1904,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/1905",
+   "am": {
+    "ngay": 9,
+    "thang": 5,
+    "nam": 1905,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/1906",
+   "am": {
+    "ngay": 13,
+    "thang": 5,
+    "nam": 1906,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/1907",
+   "am": {
+    "ngay": 11,
+    "thang": 7,
+    "nam": 1907,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/1908",
+   "am": {
+    "ngay": 7,
+    "thang": 8,
+    "nam": 1908,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/1909",
+   "am": {
+    "ngay": 13,
+    "thang": 9,
+    "nam": 1909,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/1910",
+   "am": {
+    "ngay": 22,
+    "thang": 11,
+    "nam": 1909,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/1911",
+   "am": {
+    "ngay": 19,
+    "thang": 1,
+    "nam": 1911,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/1912",
+   "am": {
+    "ngay": 11,
+    "thang": 2,
+    "nam": 1912,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/1913",
+   "am": {
+    "ngay": 1,
+    "thang": 3,
+    "nam": 1913,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/1914",
+   "am": {
+    "ngay": 28,
+    "thang": 4,
+    "nam": 1914,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/1915",
+   "am": {
+    "ngay": 29,
+    "thang": 4,
+    "nam": 1915,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/1916",
+   "am": {
+    "ngay": 5,
+    "thang": 6,
+    "nam": 1916,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/1917",
+   "am": {
+    "ngay": 2,
+    "thang": 7,
+    "nam": 1917,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/1918",
+   "am": {
+    "ngay": 27,
+    "thang": 7,
+    "nam": 1918,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/1919",
+   "am": {
+    "ngay": 3,
+    "thang": 9,
+    "nam": 1919,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/1920",
+   "am": {
+    "ngay": 13,
+    "thang": 11,
+    "nam": 1919,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/1921",
+   "am": {
+    "ngay": 10,
+    "thang": 1,
+    "nam": 1921,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/1922",
+   "am": {
+    "ngay": 2,
+    "thang": 3,
+    "nam": 1922,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/1923",
+   "am": {
+    "ngay": 22,
+    "thang": 2,
+    "nam": 1923,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/1924",
+   "am": {
+    "ngay": 19,
+    "thang": 4,
+    "nam": 1924,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/1925",
+   "am": {
+    "ngay": 21,
+    "thang": 4,
+    "nam": 1925,
+    "nhuan": 1
+   }
+  },
+  {
+   "duong": "04/07/1926",
+   "am": {
+    "ngay": 25,
+    "thang": 5,
+    "nam": 1926,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/1927",
+   "am": {
+    "ngay": 22,
+    "thang": 7,
+    "nam": 1927,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/1928",
+   "am": {
+    "ngay": 19,
+    "thang": 7,
+    "nam": 1928,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/1929",
+   "am": {
+    "ngay": 24,
+    "thang": 9,
+    "nam": 1929,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/1930",
+   "am": {
+    "ngay": 4,
+    "thang": 12,
+    "nam": 1929,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/1931",
+   "am": {
+    "ngay": 1,
+    "thang": 1,
+    "nam": 1931,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/1932",
+   "am": {
+    "ngay": 23,
+    "thang": 2,
+    "nam": 1932,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/1933",
+   "am": {
+    "ngay": 13,
+    "thang": 3,
+    "nam": 1933,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/1934",
+   "am": {
+    "ngay": 10,
+    "thang": 4,
+    "nam": 1934,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/1935",
+   "am": {
+    "ngay": 11,
+    "thang": 5,
+    "nam": 1935,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/1936",
+   "am": {
+    "ngay": 16,
+    "thang": 5,
+    "nam": 1936,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/1937",
+   "am": {
+    "ngay": 14,
+    "thang": 7,
+    "nam": 1937,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/1938",
+   "am": {
+    "ngay": 9,
+    "thang": 8,
+    "nam": 1938,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/1939",
+   "am": {
+    "ngay": 14,
+    "thang": 9,
+    "nam": 1939,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/1940",
+   "am": {
+    "ngay": 24,
+    "thang": 11,
+    "nam": 1939,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/1941",
+   "am": {
+    "ngay": 22,
+    "thang": 1,
+    "nam": 1941,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/1942",
+   "am": {
+    "ngay": 13,
+    "thang": 2,
+    "nam": 1942,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/1943",
+   "am": {
+    "ngay": 3,
+    "thang": 3,
+    "nam": 1943,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/1944",
+   "am": {
+    "ngay": 1,
+    "thang": 4,
+    "nam": 1944,
+    "nhuan": 1
+   }
+  },
+  {
+   "duong": "11/06/1945",
+   "am": {
+    "ngay": 2,
+    "thang": 5,
+    "nam": 1945,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/1946",
+   "am": {
+    "ngay": 6,
+    "thang": 6,
+    "nam": 1946,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/1947",
+   "am": {
+    "ngay": 4,
+    "thang": 7,
+    "nam": 1947,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/1948",
+   "am": {
+    "ngay": 29,
+    "thang": 7,
+    "nam": 1948,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/1949",
+   "am": {
+    "ngay": 5,
+    "thang": 9,
+    "nam": 1949,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/1950",
+   "am": {
+    "ngay": 15,
+    "thang": 11,
+    "nam": 1949,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/1951",
+   "am": {
+    "ngay": 12,
+    "thang": 1,
+    "nam": 1951,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/1952",
+   "am": {
+    "ngay": 4,
+    "thang": 3,
+    "nam": 1952,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/1953",
+   "am": {
+    "ngay": 24,
+    "thang": 2,
+    "nam": 1953,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/1954",
+   "am": {
+    "ngay": 20,
+    "thang": 4,
+    "nam": 1954,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/1955",
+   "am": {
+    "ngay": 21,
+    "thang": 4,
+    "nam": 1955,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/1956",
+   "am": {
+    "ngay": 26,
+    "thang": 5,
+    "nam": 1956,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/1957",
+   "am": {
+    "ngay": 24,
+    "thang": 7,
+    "nam": 1957,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/1958",
+   "am": {
+    "ngay": 19,
+    "thang": 7,
+    "nam": 1958,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/1959",
+   "am": {
+    "ngay": 25,
+    "thang": 9,
+    "nam": 1959,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/1960",
+   "am": {
+    "ngay": 5,
+    "thang": 12,
+    "nam": 1959,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/1961",
+   "am": {
+    "ngay": 3,
+    "thang": 1,
+    "nam": 1961,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/1962",
+   "am": {
+    "ngay": 24,
+    "thang": 2,
+    "nam": 1962,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/1963",
+   "am": {
+    "ngay": 14,
+    "thang": 3,
+    "nam": 1963,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/1964",
+   "am": {
+    "ngay": 11,
+    "thang": 4,
+    "nam": 1964,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/1965",
+   "am": {
+    "ngay": 12,
+    "thang": 5,
+    "nam": 1965,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/1966",
+   "am": {
+    "ngay": 16,
+    "thang": 5,
+    "nam": 1966,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/1967",
+   "am": {
+    "ngay": 14,
+    "thang": 7,
+    "nam": 1967,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/1968",
+   "am": {
+    "ngay": 10,
+    "thang": 7,
+    "nam": 1968,
+    "nhuan": 1
+   }
+  },
+  {
+   "duong": "26/10/1969",
+   "am": {
+    "ngay": 16,
+    "thang": 9,
+    "nam": 1969,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/1970",
+   "am": {
+    "ngay": 26,
+    "thang": 11,
+    "nam": 1969,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/1971",
+   "am": {
+    "ngay": 22,
+    "thang": 1,
+    "nam": 1971,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/1972",
+   "am": {
+    "ngay": 15,
+    "thang": 2,
+    "nam": 1972,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/1973",
+   "am": {
+    "ngay": 5,
+    "thang": 3,
+    "nam": 1973,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/1974",
+   "am": {
+    "ngay": 1,
+    "thang": 4,
+    "nam": 1974,
+    "nhuan": 1
+   }
+  },
+  {
+   "duong": "11/06/1975",
+   "am": {
+    "ngay": 2,
+    "thang": 5,
+    "nam": 1975,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/1976",
+   "am": {
+    "ngay": 8,
+    "thang": 6,
+    "nam": 1976,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/1977",
+   "am": {
+    "ngay": 5,
+    "thang": 7,
+    "nam": 1977,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/1978",
+   "am": {
+    "ngay": 1,
+    "thang": 8,
+    "nam": 1978,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/1979",
+   "am": {
+    "ngay": 6,
+    "thang": 9,
+    "nam": 1979,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/1980",
+   "am": {
+    "ngay": 16,
+    "thang": 11,
+    "nam": 1979,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/1981",
+   "am": {
+    "ngay": 13,
+    "thang": 1,
+    "nam": 1981,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/1982",
+   "am": {
+    "ngay": 5,
+    "thang": 3,
+    "nam": 1982,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/1983",
+   "am": {
+    "ngay": 24,
+    "thang": 2,
+    "nam": 1983,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/1984",
+   "am": {
+    "ngay": 22,
+    "thang": 4,
+    "nam": 1984,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/1985",
+   "am": {
+    "ngay": 23,
+    "thang": 4,
+    "nam": 1985,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/1986",
+   "am": {
+    "ngay": 28,
+    "thang": 5,
+    "nam": 1986,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/1987",
+   "am": {
+    "ngay": 25,
+    "thang": 7,
+    "nam": 1987,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/1988",
+   "am": {
+    "ngay": 22,
+    "thang": 7,
+    "nam": 1988,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/1989",
+   "am": {
+    "ngay": 27,
+    "thang": 9,
+    "nam": 1989,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/1990",
+   "am": {
+    "ngay": 7,
+    "thang": 12,
+    "nam": 1989,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/1991",
+   "am": {
+    "ngay": 3,
+    "thang": 1,
+    "nam": 1991,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/1992",
+   "am": {
+    "ngay": 26,
+    "thang": 2,
+    "nam": 1992,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/1993",
+   "am": {
+    "ngay": 16,
+    "thang": 3,
+    "nam": 1993,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/1994",
+   "am": {
+    "ngay": 12,
+    "thang": 4,
+    "nam": 1994,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/1995",
+   "am": {
+    "ngay": 14,
+    "thang": 5,
+    "nam": 1995,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/1996",
+   "am": {
+    "ngay": 19,
+    "thang": 5,
+    "nam": 1996,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/1997",
+   "am": {
+    "ngay": 17,
+    "thang": 7,
+    "nam": 1997,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/1998",
+   "am": {
+    "ngay": 12,
+    "thang": 7,
+    "nam": 1998,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/1999",
+   "am": {
+    "ngay": 18,
+    "thang": 9,
+    "nam": 1999,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/2000",
+   "am": {
+    "ngay": 27,
+    "thang": 11,
+    "nam": 1999,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/2001",
+   "am": {
+    "ngay": 25,
+    "thang": 1,
+    "nam": 2001,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/2002",
+   "am": {
+    "ngay": 16,
+    "thang": 2,
+    "nam": 2002,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/2003",
+   "am": {
+    "ngay": 6,
+    "thang": 3,
+    "nam": 2003,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/2004",
+   "am": {
+    "ngay": 4,
+    "thang": 4,
+    "nam": 2004,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/2005",
+   "am": {
+    "ngay": 5,
+    "thang": 5,
+    "nam": 2005,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/2006",
+   "am": {
+    "ngay": 10,
+    "thang": 6,
+    "nam": 2006,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/2007",
+   "am": {
+    "ngay": 7,
+    "thang": 7,
+    "nam": 2007,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/2008",
+   "am": {
+    "ngay": 3,
+    "thang": 8,
+    "nam": 2008,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/2009",
+   "am": {
+    "ngay": 9,
+    "thang": 9,
+    "nam": 2009,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/2010",
+   "am": {
+    "ngay": 19,
+    "thang": 11,
+    "nam": 2009,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/2011",
+   "am": {
+    "ngay": 15,
+    "thang": 1,
+    "nam": 2011,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/2012",
+   "am": {
+    "ngay": 8,
+    "thang": 3,
+    "nam": 2012,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/2013",
+   "am": {
+    "ngay": 27,
+    "thang": 2,
+    "nam": 2013,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/2014",
+   "am": {
+    "ngay": 24,
+    "thang": 4,
+    "nam": 2014,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/2015",
+   "am": {
+    "ngay": 25,
+    "thang": 4,
+    "nam": 2015,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/2016",
+   "am": {
+    "ngay": 1,
+    "thang": 6,
+    "nam": 2016,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/2017",
+   "am": {
+    "ngay": 28,
+    "thang": 6,
+    "nam": 2017,
+    "nhuan": 1
+   }
+  },
+  {
+   "duong": "02/09/2018",
+   "am": {
+    "ngay": 23,
+    "thang": 7,
+    "nam": 2018,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/2019",
+   "am": {
+    "ngay": 28,
+    "thang": 9,
+    "nam": 2019,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/2020",
+   "am": {
+    "ngay": 9,
+    "thang": 12,
+    "nam": 2019,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/2021",
+   "am": {
+    "ngay": 6,
+    "thang": 1,
+    "nam": 2021,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/2022",
+   "am": {
+    "ngay": 27,
+    "thang": 2,
+    "nam": 2022,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/2023",
+   "am": {
+    "ngay": 17,
+    "thang": 2,
+    "nam": 2023,
+    "nhuan": 1
+   }
+  },
+  {
+   "duong": "22/05/2024",
+   "am": {
+    "ngay": 15,
+    "thang": 4,
+    "nam": 2024,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/2025",
+   "am": {
+    "ngay": 16,
+    "thang": 5,
+    "nam": 2025,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/2026",
+   "am": {
+    "ngay": 20,
+    "thang": 5,
+    "nam": 2026,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/2027",
+   "am": {
+    "ngay": 18,
+    "thang": 7,
+    "nam": 2027,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/2028",
+   "am": {
+    "ngay": 14,
+    "thang": 7,
+    "nam": 2028,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/2029",
+   "am": {
+    "ngay": 19,
+    "thang": 9,
+    "nam": 2029,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/2030",
+   "am": {
+    "ngay": 30,
+    "thang": 11,
+    "nam": 2029,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/2031",
+   "am": {
+    "ngay": 26,
+    "thang": 1,
+    "nam": 2031,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/2032",
+   "am": {
+    "ngay": 19,
+    "thang": 2,
+    "nam": 2032,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/2033",
+   "am": {
+    "ngay": 8,
+    "thang": 3,
+    "nam": 2033,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/2034",
+   "am": {
+    "ngay": 5,
+    "thang": 4,
+    "nam": 2034,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/2035",
+   "am": {
+    "ngay": 6,
+    "thang": 5,
+    "nam": 2035,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/2036",
+   "am": {
+    "ngay": 11,
+    "thang": 6,
+    "nam": 2036,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/2037",
+   "am": {
+    "ngay": 9,
+    "thang": 7,
+    "nam": 2037,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/2038",
+   "am": {
+    "ngay": 4,
+    "thang": 8,
+    "nam": 2038,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/2039",
+   "am": {
+    "ngay": 9,
+    "thang": 9,
+    "nam": 2039,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/2040",
+   "am": {
+    "ngay": 20,
+    "thang": 11,
+    "nam": 2039,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/2041",
+   "am": {
+    "ngay": 17,
+    "thang": 1,
+    "nam": 2041,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/2042",
+   "am": {
+    "ngay": 8,
+    "thang": 2,
+    "nam": 2042,
+    "nhuan": 1
+   }
+  },
+  {
+   "duong": "07/04/2043",
+   "am": {
+    "ngay": 28,
+    "thang": 2,
+    "nam": 2043,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/2044",
+   "am": {
+    "ngay": 25,
+    "thang": 4,
+    "nam": 2044,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/2045",
+   "am": {
+    "ngay": 26,
+    "thang": 4,
+    "nam": 2045,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/2046",
+   "am": {
+    "ngay": 1,
+    "thang": 6,
+    "nam": 2046,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/2047",
+   "am": {
+    "ngay": 28,
+    "thang": 6,
+    "nam": 2047,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/2048",
+   "am": {
+    "ngay": 24,
+    "thang": 7,
+    "nam": 2048,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/2049",
+   "am": {
+    "ngay": 1,
+    "thang": 10,
+    "nam": 2049,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/2050",
+   "am": {
+    "ngay": 10,
+    "thang": 12,
+    "nam": 2049,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/2051",
+   "am": {
+    "ngay": 7,
+    "thang": 1,
+    "nam": 2051,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/2052",
+   "am": {
+    "ngay": 29,
+    "thang": 2,
+    "nam": 2052,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/2053",
+   "am": {
+    "ngay": 19,
+    "thang": 2,
+    "nam": 2053,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/2054",
+   "am": {
+    "ngay": 15,
+    "thang": 4,
+    "nam": 2054,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/2055",
+   "am": {
+    "ngay": 17,
+    "thang": 5,
+    "nam": 2055,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/2056",
+   "am": {
+    "ngay": 22,
+    "thang": 5,
+    "nam": 2056,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/2057",
+   "am": {
+    "ngay": 20,
+    "thang": 7,
+    "nam": 2057,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/2058",
+   "am": {
+    "ngay": 15,
+    "thang": 7,
+    "nam": 2058,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/2059",
+   "am": {
+    "ngay": 21,
+    "thang": 9,
+    "nam": 2059,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/2060",
+   "am": {
+    "ngay": 1,
+    "thang": 12,
+    "nam": 2059,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/2061",
+   "am": {
+    "ngay": 28,
+    "thang": 1,
+    "nam": 2061,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/2062",
+   "am": {
+    "ngay": 19,
+    "thang": 2,
+    "nam": 2062,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/2063",
+   "am": {
+    "ngay": 9,
+    "thang": 3,
+    "nam": 2063,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/2064",
+   "am": {
+    "ngay": 7,
+    "thang": 4,
+    "nam": 2064,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/2065",
+   "am": {
+    "ngay": 8,
+    "thang": 5,
+    "nam": 2065,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/2066",
+   "am": {
+    "ngay": 12,
+    "thang": 5,
+    "nam": 2066,
+    "nhuan": 1
+   }
+  },
+  {
+   "duong": "19/08/2067",
+   "am": {
+    "ngay": 10,
+    "thang": 7,
+    "nam": 2067,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/2068",
+   "am": {
+    "ngay": 6,
+    "thang": 8,
+    "nam": 2068,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/2069",
+   "am": {
+    "ngay": 12,
+    "thang": 9,
+    "nam": 2069,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/2070",
+   "am": {
+    "ngay": 21,
+    "thang": 11,
+    "nam": 2069,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/2071",
+   "am": {
+    "ngay": 18,
+    "thang": 1,
+    "nam": 2071,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/2072",
+   "am": {
+    "ngay": 10,
+    "thang": 2,
+    "nam": 2072,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/2073",
+   "am": {
+    "ngay": 1,
+    "thang": 3,
+    "nam": 2073,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/2074",
+   "am": {
+    "ngay": 27,
+    "thang": 4,
+    "nam": 2074,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/2075",
+   "am": {
+    "ngay": 28,
+    "thang": 4,
+    "nam": 2075,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/2076",
+   "am": {
+    "ngay": 4,
+    "thang": 6,
+    "nam": 2076,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/2077",
+   "am": {
+    "ngay": 2,
+    "thang": 7,
+    "nam": 2077,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/2078",
+   "am": {
+    "ngay": 26,
+    "thang": 7,
+    "nam": 2078,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/2079",
+   "am": {
+    "ngay": 2,
+    "thang": 10,
+    "nam": 2079,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/2080",
+   "am": {
+    "ngay": 12,
+    "thang": 12,
+    "nam": 2079,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/2081",
+   "am": {
+    "ngay": 9,
+    "thang": 1,
+    "nam": 2081,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/2082",
+   "am": {
+    "ngay": 1,
+    "thang": 3,
+    "nam": 2082,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/2083",
+   "am": {
+    "ngay": 21,
+    "thang": 2,
+    "nam": 2083,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/2084",
+   "am": {
+    "ngay": 18,
+    "thang": 4,
+    "nam": 2084,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/2085",
+   "am": {
+    "ngay": 20,
+    "thang": 5,
+    "nam": 2085,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/2086",
+   "am": {
+    "ngay": 24,
+    "thang": 5,
+    "nam": 2086,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/2087",
+   "am": {
+    "ngay": 21,
+    "thang": 7,
+    "nam": 2087,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/2088",
+   "am": {
+    "ngay": 18,
+    "thang": 7,
+    "nam": 2088,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/2089",
+   "am": {
+    "ngay": 23,
+    "thang": 9,
+    "nam": 2089,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "03/01/2090",
+   "am": {
+    "ngay": 3,
+    "thang": 12,
+    "nam": 2089,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "17/02/2091",
+   "am": {
+    "ngay": 30,
+    "thang": 12,
+    "nam": 2090,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "29/03/2092",
+   "am": {
+    "ngay": 22,
+    "thang": 2,
+    "nam": 2092,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "07/04/2093",
+   "am": {
+    "ngay": 12,
+    "thang": 3,
+    "nam": 2093,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "22/05/2094",
+   "am": {
+    "ngay": 9,
+    "thang": 4,
+    "nam": 2094,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "11/06/2095",
+   "am": {
+    "ngay": 10,
+    "thang": 5,
+    "nam": 2095,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "04/07/2096",
+   "am": {
+    "ngay": 15,
+    "thang": 5,
+    "nam": 2096,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "19/08/2097",
+   "am": {
+    "ngay": 13,
+    "thang": 7,
+    "nam": 2097,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "02/09/2098",
+   "am": {
+    "ngay": 8,
+    "thang": 8,
+    "nam": 2098,
+    "nhuan": 0
+   }
+  },
+  {
+   "duong": "26/10/2099",
+   "am": {
+    "ngay": 13,
+    "thang": 9,
+    "nam": 2099,
+    "nhuan": 0
+   }
+  }
+ ]
+}

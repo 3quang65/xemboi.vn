@@ -1,0 +1,3903 @@
+[
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "tổng hợp",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-PP-02-KHUNG",
+  "lop": "nam",
+  "cung": "Năm",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-PP-02",
+   "VAN-PP-10",
+   "NAM-TRANH-01"
+  ],
+  "dieuKien": [],
+  "muc": "tong-quan",
+  "phan": "boi-canh",
+  "noiDung": "Xemtuvi.vn đọc một năm trên lá số theo ba lớp: đại vận là môi trường 10 năm bạn đang đi, cung Lưu Thái Tuế cho biết trọng điểm của năm, còn cung tiểu hạn chỉ ra phần việc riêng của bạn dễ được \"đánh thức\" trong năm. Ba lớp bổ sung cho nhau, không lớp nào thay lớp nào.",
+  "nguon": [
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Nghiệm Lý Toàn Thư (Thiên Lương)"
+  ],
+  "nguonChiTiet": "WV1; TB Phần 3 §2.1; NL tập 2",
+  "ghiChu": "Cách chia vai là quy ước xemtuvi.vn theo iztro; sách Việt (TB, KL) lấy tiểu hạn làm cung năm chính (NAM-TRANH-01, Đức M5-1). Không viết \"theo phái Việt\"."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-PP-01-NAM",
+  "lop": "nam",
+  "cung": "Năm",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-PP-01"
+  ],
+  "dieuKien": [],
+  "muc": "tong-quan",
+  "phan": "boi-canh",
+  "noiDung": "Năm âm lịch Đinh Mùi bắt đầu từ Tết 6/2/2027 và kéo dài đến hết 25/1/2028. Các tháng trong bài là tháng âm lịch, có ghi kèm ngày dương lịch bắt đầu để bạn dễ theo dõi.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "SPEC 7.1, 7.3; lịch engine"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-01-MENH",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TT-01",
+   "NAM-PP-07",
+   "NAM-PP-09"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Mệnh"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Lưu Thái Tuế đến cung Mùi, trên lá số của bạn là cung Mệnh. Vì vậy trọng điểm của năm thường xoay quanh bản thân: lựa chọn cá nhân, nhịp sống và hình ảnh của bạn trước người khác; không phải mọi việc trong năm đều thuộc chủ đề này, nhưng đây là nơi bạn nên dồn sự chú ý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn",
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "SPEC 7.3; WV1; NAM-PP-09"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TH-01-MENH",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TH-01",
+   "NAM-PP-07",
+   "NAM-PP-09"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Mệnh"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Tiểu hạn năm nay của bạn ở cung Mệnh, nên phần việc riêng dễ được khơi lên là bản thân: lựa chọn cá nhân, nhịp sống và hình ảnh của bạn trước người khác.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.2 安小限訣; SPEC 7.2; NAM-PP-09"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-THANG-03-MENH",
+  "lop": "thang",
+  "cung": "Tháng",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-THANG-03",
+   "NAM-PP-07",
+   "NAM-PP-09"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Mệnh"
+    ]
+   }
+  ],
+  "muc": "thang",
+  "noiDung": "Tháng này đi qua cung Mệnh: chủ đề nổi lên là bản thân: lựa chọn cá nhân, nhịp sống và hình ảnh của bạn trước người khác.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 斗君; SPEC 7.5"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-01-PHUMAU",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TT-01",
+   "NAM-PP-07",
+   "VAN-CUNG-03"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Phụ Mẫu"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Lưu Thái Tuế đến cung Mùi, trên lá số của bạn là cung Phụ Mẫu. Vì vậy trọng điểm của năm thường xoay quanh học hành, giấy tờ, quan hệ với cha mẹ, người dạy dỗ và cấp trên; không phải mọi việc trong năm đều thuộc chủ đề này, nhưng đây là nơi bạn nên dồn sự chú ý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn",
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "SPEC 7.3; WV1; VAN-CUNG-03"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TH-01-PHUMAU",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TH-01",
+   "NAM-PP-07",
+   "VAN-CUNG-03"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Phụ Mẫu"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Tiểu hạn năm nay của bạn ở cung Phụ Mẫu, nên phần việc riêng dễ được khơi lên là học hành, giấy tờ, quan hệ với cha mẹ, người dạy dỗ và cấp trên.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "TT q.2 安小限訣; SPEC 7.2; VAN-CUNG-03"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-THANG-03-PHUMAU",
+  "lop": "thang",
+  "cung": "Tháng",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-THANG-03",
+   "NAM-PP-07",
+   "VAN-CUNG-03"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Phụ Mẫu"
+    ]
+   }
+  ],
+  "muc": "thang",
+  "noiDung": "Tháng này đi qua cung Phụ Mẫu: chủ đề nổi lên là học hành, giấy tờ, quan hệ với cha mẹ, người dạy dỗ và cấp trên.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 斗君; SPEC 7.5"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-01-PHUC",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TT-01",
+   "NAM-PP-07",
+   "VAN-CUNG-13"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Phúc Đức"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Lưu Thái Tuế đến cung Mùi, trên lá số của bạn là cung Phúc Đức. Vì vậy trọng điểm của năm thường xoay quanh đời sống tinh thần, giá trị sống, gia tộc và sự an vui bên trong; không phải mọi việc trong năm đều thuộc chủ đề này, nhưng đây là nơi bạn nên dồn sự chú ý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn",
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)",
+   "Trung Châu phái (Vương Đình Chi)"
+  ],
+  "nguonChiTiet": "SPEC 7.3; WV1; VAN-CUNG-13"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TH-01-PHUC",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TH-01",
+   "NAM-PP-07",
+   "VAN-CUNG-13"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Phúc Đức"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Tiểu hạn năm nay của bạn ở cung Phúc Đức, nên phần việc riêng dễ được khơi lên là đời sống tinh thần, giá trị sống, gia tộc và sự an vui bên trong.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)",
+   "Trung Châu phái (Vương Đình Chi)"
+  ],
+  "nguonChiTiet": "TT q.2 安小限訣; SPEC 7.2; VAN-CUNG-13"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-THANG-03-PHUC",
+  "lop": "thang",
+  "cung": "Tháng",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-THANG-03",
+   "NAM-PP-07",
+   "VAN-CUNG-13"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Phúc Đức"
+    ]
+   }
+  ],
+  "muc": "thang",
+  "noiDung": "Tháng này đi qua cung Phúc Đức: chủ đề nổi lên là đời sống tinh thần, giá trị sống, gia tộc và sự an vui bên trong.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 斗君; SPEC 7.5"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-01-DIEN",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TT-01",
+   "NAM-PP-07",
+   "VAN-CUNG-12"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Điền Trạch"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Lưu Thái Tuế đến cung Mùi, trên lá số của bạn là cung Điền Trạch. Vì vậy trọng điểm của năm thường xoay quanh nhà cửa, tài sản cố định, tổ ấm và nơi làm việc; không phải mọi việc trong năm đều thuộc chủ đề này, nhưng đây là nơi bạn nên dồn sự chú ý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn",
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "SPEC 7.3; WV1; VAN-CUNG-12"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TH-01-DIEN",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TH-01",
+   "NAM-PP-07",
+   "VAN-CUNG-12"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Điền Trạch"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Tiểu hạn năm nay của bạn ở cung Điền Trạch, nên phần việc riêng dễ được khơi lên là nhà cửa, tài sản cố định, tổ ấm và nơi làm việc.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "TT q.2 安小限訣; SPEC 7.2; VAN-CUNG-12"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-THANG-03-DIEN",
+  "lop": "thang",
+  "cung": "Tháng",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-THANG-03",
+   "NAM-PP-07",
+   "VAN-CUNG-12"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Điền Trạch"
+    ]
+   }
+  ],
+  "muc": "thang",
+  "noiDung": "Tháng này đi qua cung Điền Trạch: chủ đề nổi lên là nhà cửa, tài sản cố định, tổ ấm và nơi làm việc.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 斗君; SPEC 7.5"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-01-QUAN",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TT-01",
+   "NAM-PP-07",
+   "VAN-CUNG-11"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Quan Lộc"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Lưu Thái Tuế đến cung Mùi, trên lá số của bạn là cung Quan Lộc. Vì vậy trọng điểm của năm thường xoay quanh sự nghiệp, vị trí và thành tựu nghề nghiệp; không phải mọi việc trong năm đều thuộc chủ đề này, nhưng đây là nơi bạn nên dồn sự chú ý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn",
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "SPEC 7.3; WV1; VAN-CUNG-11"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TH-01-QUAN",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TH-01",
+   "NAM-PP-07",
+   "VAN-CUNG-11"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Quan Lộc"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Tiểu hạn năm nay của bạn ở cung Quan Lộc, nên phần việc riêng dễ được khơi lên là sự nghiệp, vị trí và thành tựu nghề nghiệp.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "TT q.2 安小限訣; SPEC 7.2; VAN-CUNG-11"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-THANG-03-QUAN",
+  "lop": "thang",
+  "cung": "Tháng",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-THANG-03",
+   "NAM-PP-07",
+   "VAN-CUNG-11"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Quan Lộc"
+    ]
+   }
+  ],
+  "muc": "thang",
+  "noiDung": "Tháng này đi qua cung Quan Lộc: chủ đề nổi lên là sự nghiệp, vị trí và thành tựu nghề nghiệp.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 斗君; SPEC 7.5"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-01-NO",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TT-01",
+   "NAM-PP-07",
+   "VAN-CUNG-10"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Nô Bộc"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Lưu Thái Tuế đến cung Mùi, trên lá số của bạn là cung Nô Bộc. Vì vậy trọng điểm của năm thường xoay quanh bạn bè, đồng nghiệp, cấp dưới và mạng lưới quen biết; không phải mọi việc trong năm đều thuộc chủ đề này, nhưng đây là nơi bạn nên dồn sự chú ý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn",
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "SPEC 7.3; WV1; VAN-CUNG-10"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TH-01-NO",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TH-01",
+   "NAM-PP-07",
+   "VAN-CUNG-10"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Nô Bộc"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Tiểu hạn năm nay của bạn ở cung Nô Bộc, nên phần việc riêng dễ được khơi lên là bạn bè, đồng nghiệp, cấp dưới và mạng lưới quen biết.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "TT q.2 安小限訣; SPEC 7.2; VAN-CUNG-10"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-THANG-03-NO",
+  "lop": "thang",
+  "cung": "Tháng",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-THANG-03",
+   "NAM-PP-07",
+   "VAN-CUNG-10"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Nô Bộc"
+    ]
+   }
+  ],
+  "muc": "thang",
+  "noiDung": "Tháng này đi qua cung Nô Bộc: chủ đề nổi lên là bạn bè, đồng nghiệp, cấp dưới và mạng lưới quen biết.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 斗君; SPEC 7.5"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-01-DI",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TT-01",
+   "NAM-PP-07",
+   "VAN-CUNG-09"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Thiên Di"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Lưu Thái Tuế đến cung Mùi, trên lá số của bạn là cung Thiên Di. Vì vậy trọng điểm của năm thường xoay quanh đi xa, môi trường bên ngoài và các mối quan hệ mới; không phải mọi việc trong năm đều thuộc chủ đề này, nhưng đây là nơi bạn nên dồn sự chú ý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn",
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "SPEC 7.3; WV1; VAN-CUNG-09"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TH-01-DI",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TH-01",
+   "NAM-PP-07",
+   "VAN-CUNG-09"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Thiên Di"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Tiểu hạn năm nay của bạn ở cung Thiên Di, nên phần việc riêng dễ được khơi lên là đi xa, môi trường bên ngoài và các mối quan hệ mới.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "TT q.2 安小限訣; SPEC 7.2; VAN-CUNG-09"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-THANG-03-DI",
+  "lop": "thang",
+  "cung": "Tháng",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-THANG-03",
+   "NAM-PP-07",
+   "VAN-CUNG-09"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Thiên Di"
+    ]
+   }
+  ],
+  "muc": "thang",
+  "noiDung": "Tháng này đi qua cung Thiên Di: chủ đề nổi lên là đi xa, môi trường bên ngoài và các mối quan hệ mới.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 斗君; SPEC 7.5"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-01-TAT",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TT-01",
+   "NAM-PP-07",
+   "VAN-CUNG-08"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Tật Ách"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Lưu Thái Tuế đến cung Mùi, trên lá số của bạn là cung Tật Ách. Vì vậy trọng điểm của năm thường xoay quanh sức khỏe, nhịp sống và cách bạn đối diện áp lực; không phải mọi việc trong năm đều thuộc chủ đề này, nhưng đây là nơi bạn nên dồn sự chú ý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn",
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "SPEC 7.3; WV1; VAN-CUNG-08"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TH-01-TAT",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TH-01",
+   "NAM-PP-07",
+   "VAN-CUNG-08"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Tật Ách"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Tiểu hạn năm nay của bạn ở cung Tật Ách, nên phần việc riêng dễ được khơi lên là sức khỏe, nhịp sống và cách bạn đối diện áp lực.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.2 安小限訣; SPEC 7.2; VAN-CUNG-08"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-THANG-03-TAT",
+  "lop": "thang",
+  "cung": "Tháng",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-THANG-03",
+   "NAM-PP-07",
+   "VAN-CUNG-08"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Tật Ách"
+    ]
+   }
+  ],
+  "muc": "thang",
+  "noiDung": "Tháng này đi qua cung Tật Ách: chủ đề nổi lên là sức khỏe, nhịp sống và cách bạn đối diện áp lực.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 斗君; SPEC 7.5"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-01-TAI",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TT-01",
+   "NAM-PP-07",
+   "VAN-CUNG-07"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Tài Bạch"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Lưu Thái Tuế đến cung Mùi, trên lá số của bạn là cung Tài Bạch. Vì vậy trọng điểm của năm thường xoay quanh thu nhập, cách kiếm và quản lý tiền; không phải mọi việc trong năm đều thuộc chủ đề này, nhưng đây là nơi bạn nên dồn sự chú ý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn",
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "SPEC 7.3; WV1; VAN-CUNG-07"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TH-01-TAI",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TH-01",
+   "NAM-PP-07",
+   "VAN-CUNG-07"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Tài Bạch"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Tiểu hạn năm nay của bạn ở cung Tài Bạch, nên phần việc riêng dễ được khơi lên là thu nhập, cách kiếm và quản lý tiền.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "TT q.2 安小限訣; SPEC 7.2; VAN-CUNG-07"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-THANG-03-TAI",
+  "lop": "thang",
+  "cung": "Tháng",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-THANG-03",
+   "NAM-PP-07",
+   "VAN-CUNG-07"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Tài Bạch"
+    ]
+   }
+  ],
+  "muc": "thang",
+  "noiDung": "Tháng này đi qua cung Tài Bạch: chủ đề nổi lên là thu nhập, cách kiếm và quản lý tiền.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 斗君; SPEC 7.5"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-01-TU",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TT-01",
+   "NAM-PP-07",
+   "VAN-CUNG-06"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Tử Tức"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Lưu Thái Tuế đến cung Mùi, trên lá số của bạn là cung Tử Tức. Vì vậy trọng điểm của năm thường xoay quanh con cái, người nhỏ tuổi bạn chăm lo, học trò và những sản phẩm sáng tạo của bạn; không phải mọi việc trong năm đều thuộc chủ đề này, nhưng đây là nơi bạn nên dồn sự chú ý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn",
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "SPEC 7.3; WV1; VAN-CUNG-06"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TH-01-TU",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TH-01",
+   "NAM-PP-07",
+   "VAN-CUNG-06"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Tử Tức"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Tiểu hạn năm nay của bạn ở cung Tử Tức, nên phần việc riêng dễ được khơi lên là con cái, người nhỏ tuổi bạn chăm lo, học trò và những sản phẩm sáng tạo của bạn.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "TT q.2 安小限訣; SPEC 7.2; VAN-CUNG-06"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-THANG-03-TU",
+  "lop": "thang",
+  "cung": "Tháng",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-THANG-03",
+   "NAM-PP-07",
+   "VAN-CUNG-06"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Tử Tức"
+    ]
+   }
+  ],
+  "muc": "thang",
+  "noiDung": "Tháng này đi qua cung Tử Tức: chủ đề nổi lên là con cái, người nhỏ tuổi bạn chăm lo, học trò và những sản phẩm sáng tạo của bạn.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 斗君; SPEC 7.5"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-01-PHU",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TT-01",
+   "NAM-PP-07",
+   "VAN-CUNG-05"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Phu Thê"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Lưu Thái Tuế đến cung Mùi, trên lá số của bạn là cung Phu Thê. Vì vậy trọng điểm của năm thường xoay quanh tình cảm, hôn nhân và người đồng hành; không phải mọi việc trong năm đều thuộc chủ đề này, nhưng đây là nơi bạn nên dồn sự chú ý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn",
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "SPEC 7.3; WV1; VAN-CUNG-05"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TH-01-PHU",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TH-01",
+   "NAM-PP-07",
+   "VAN-CUNG-05"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Phu Thê"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Tiểu hạn năm nay của bạn ở cung Phu Thê, nên phần việc riêng dễ được khơi lên là tình cảm, hôn nhân và người đồng hành.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "TT q.2 安小限訣; SPEC 7.2; VAN-CUNG-05"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-THANG-03-PHU",
+  "lop": "thang",
+  "cung": "Tháng",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-THANG-03",
+   "NAM-PP-07",
+   "VAN-CUNG-05"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Phu Thê"
+    ]
+   }
+  ],
+  "muc": "thang",
+  "noiDung": "Tháng này đi qua cung Phu Thê: chủ đề nổi lên là tình cảm, hôn nhân và người đồng hành.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 斗君; SPEC 7.5"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-01-HUYNH",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TT-01",
+   "NAM-PP-07",
+   "VAN-CUNG-04"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Huynh Đệ"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Lưu Thái Tuế đến cung Mùi, trên lá số của bạn là cung Huynh Đệ. Vì vậy trọng điểm của năm thường xoay quanh anh chị em, bạn đồng trang lứa, đồng nghiệp ngang hàng và việc hợp tác; không phải mọi việc trong năm đều thuộc chủ đề này, nhưng đây là nơi bạn nên dồn sự chú ý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn",
+   "Tư liệu web: iztro \"运限\"",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "SPEC 7.3; WV1; VAN-CUNG-04"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TH-01-HUYNH",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-TH-01",
+   "NAM-PP-07",
+   "VAN-CUNG-04"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Huynh Đệ"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Tiểu hạn năm nay của bạn ở cung Huynh Đệ, nên phần việc riêng dễ được khơi lên là anh chị em, bạn đồng trang lứa, đồng nghiệp ngang hàng và việc hợp tác.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "TT q.2 安小限訣; SPEC 7.2; VAN-CUNG-04"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-THANG-03-HUYNH",
+  "lop": "thang",
+  "cung": "Tháng",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-THANG-03",
+   "NAM-PP-07",
+   "VAN-CUNG-04"
+  ],
+  "dieuKien": [
+   {
+    "tenCung": [
+     "Huynh Đệ"
+    ]
+   }
+  ],
+  "muc": "thang",
+  "noiDung": "Tháng này đi qua cung Huynh Đệ: chủ đề nổi lên là anh chị em, bạn đồng trang lứa, đồng nghiệp ngang hàng và việc hợp tác.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 斗君; SPEC 7.5"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-PP-08-DV",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-PP-08"
+  ],
+  "dieuKien": [
+   {
+    "trung": [
+     "dai-van"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "boi-canh",
+  "noiDung": "Lưu Thái Tuế năm nay rơi đúng cung đại vận bạn đang đi, nên chủ đề của cả giai đoạn 10 năm nổi rõ nhất trong năm này, cả phần thuận lợi lẫn phần cần cố gắng.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)"
+  ],
+  "nguonChiTiet": "TT q.1 問化權, 問化忌 (lớp chồng nhau)"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-PP-08-TH-DV",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-PP-08"
+  ],
+  "dieuKien": [
+   {
+    "trung": [
+     "dai-van"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "boi-canh",
+  "noiDung": "Tiểu hạn năm nay trùng cung đại vận, nên việc riêng của năm gắn chặt với chủ đề 10 năm: đây là năm chủ đề đó nổi rõ nhất.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)"
+  ],
+  "nguonChiTiet": "TT q.1"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-PP-08-TH-TT",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-PP-08"
+  ],
+  "dieuKien": [
+   {
+    "trung": [
+     "thai-tue"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "boi-canh",
+  "noiDung": "Tiểu hạn và Lưu Thái Tuế cùng ở một cung, nên một chủ đề gánh cả vai trọng điểm năm lẫn việc riêng của bạn; nên dồn sức có chọn lọc vào đó.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)"
+  ],
+  "nguonChiTiet": "TT q.1"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-TT-02",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-TT-02",
+   "VAN-SP-08"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Kình Dương"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Đinh Mùi, Kình Dương của năm đi cùng Lưu Thái Tuế, nên chủ đề trọng điểm đi kèm sức ép cạnh tranh và đòi hỏi quyết nhanh. Đây có thể là động lực nếu bạn chọn đúng việc đáng tranh và giữ bình tĩnh khi bàn bạc.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "TT q.2 安流祿流羊流陀訣, 安擎羊陀羅二星訣; SPEC 7.4; VAN-SP-08"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-03",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "CT",
+  "maNghienCuu": [
+   "NAM-TT-03",
+   "VAN-CT-TL-01"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thiên Lương"
+    ],
+    "viTri": "xung"
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Cung đối diện Lưu Thái Tuế (năm 2027 là cung Sửu) trên lá số của bạn có Thiên Lương. Toàn Thư có câu Thiên Lương gặp Thái Tuế xung thì \"thành phúc\"; áp vào năm, sức ép của năm thường đi kèm người giúp, lời khuyên đúng lúc.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)"
+  ],
+  "nguonChiTiet": "TT q.1 問天梁星所主若何: 太歲沖而為福 (đối chiếu TT-WS, TT-IZ); VAN-CT-TL-01; áp cho Lưu Thái Tuế: tổng hợp",
+  "ghiChu": "Vế Bạch Hổ chỉ dùng khi L. Bạch Hổ (Mão) ở đúng cung Thiên Lương."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-04",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-TT-04",
+   "VAN-SP-13",
+   "DI-SP-11"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Đà La"
+    ],
+    "viTri": "chinh"
+   },
+   {
+    "luuHoa": "Hóa Kỵ",
+    "viTri": "chinh"
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Cung Lưu Thái Tuế có Đà La và Hóa Kỵ của năm: quanh chủ đề trọng điểm dễ có hiểu lầm, lời qua tiếng lại. Giữ nguyên tắc minh bạch, lưu lại giấy tờ, tin nhắn quan trọng và nói rõ điều mình muốn ngay từ đầu.",
+  "nguon": [
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "KL (vòng Thái Tuế); TB tr. 179 §10.30"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-TT-05-TUOI",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-TT-05",
+   "VAN-SP-13",
+   "VAN-TRANH-09"
+  ],
+  "dieuKien": [
+   {
+    "chiNamSinh": [
+     "Mùi",
+     "Hợi",
+     "Mão"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Năm Mùi thuộc tam hợp tuổi của bạn: sách Việt coi đây là \"đất của mình\", năm nhiều chuyển biến và thuận để làm việc lớn nếu bạn chuẩn bị kỹ. Khảo Luận khuyên nên mừng nhiều hơn lo.",
+  "nguon": [
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)",
+   "Tử Vi Nghiệm Lý Toàn Thư (Thiên Lương)"
+  ],
+  "nguonChiTiet": "KL, NL (Thái Tuế – Quan Phù – Bạch Hổ)"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-TH-03-LOC",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-TH-03",
+   "VAN-HOA-02"
+  ],
+  "dieuKien": [
+   {
+    "hoa": "Hóa Lộc",
+    "viTri": "chinh"
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Hóa Lộc của lá số gốc nằm ở cung tiểu hạn: năm có tin vui về thu nhập hoặc cơ hội thăng tiến; nên chủ động nắm lấy khi cơ hội đến.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.1 問化祿: 小限逢之主進財入仕之喜; VAN-HOA-02"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-TH-03-QUYEN",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-TH-03",
+   "VAN-HOA-03"
+  ],
+  "dieuKien": [
+   {
+    "hoa": "Hóa Quyền",
+    "viTri": "chinh"
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Hóa Quyền của lá số gốc nằm ở cung tiểu hạn: năm thuận để nhận thêm vai trò, tự quyết việc của mình.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.1 問化權: 小限相逢無有不吉; VAN-HOA-03"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-TH-03-KHOA",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-TH-03",
+   "VAN-HOA-04"
+  ],
+  "dieuKien": [
+   {
+    "hoa": "Hóa Khoa",
+    "viTri": "chinh"
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Hóa Khoa của lá số gốc nằm ở cung tiểu hạn: năm được ghi nhận, thuận học thêm, thi cử, hồ sơ.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.1 化科星水: 上界應試之神 (q.2, mục 命宮); VAN-HOA-04"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-TH-03-KY",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-TH-03",
+   "VAN-HOA-05"
+  ],
+  "dieuKien": [
+   {
+    "hoa": "Hóa Kỵ",
+    "viTri": "chinh"
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Hóa Kỵ của lá số gốc nằm ở cung tiểu hạn: năm có một việc chưa trọn ý ngay, là lĩnh vực cần đầu tư công sức và sự kiên trì.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.1 問化忌: 小限逢之一年不足; VAN-HOA-05"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [
+   {
+    "motTrong": [
+     {
+      "sao": [
+       "Kình Dương",
+       "Đà La",
+       "L. Kình Dương",
+       "L. Đà La"
+      ],
+      "toiThieu": 1
+     },
+     {
+      "hoa": "Hóa Kỵ"
+     },
+     {
+      "luuHoa": "Hóa Kỵ"
+     }
+    ]
+   }
+  ],
+  "tongHop": false,
+  "id": "NAM-TH-04",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "CC",
+  "maNghienCuu": [
+   "NAM-TH-04",
+   "VAN-SP-06"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Văn Xương",
+     "L. Văn Khúc"
+    ],
+    "toiThieu": 1,
+    "viTri": "chinh"
+   },
+   {
+    "nhom": [
+     [
+      "Thiên Khôi",
+      "Thiên Việt",
+      "L. Thiên Khôi",
+      "L. Thiên Việt"
+     ],
+     [
+      "Tả Phù",
+      "Hữu Bật"
+     ],
+     [
+      "Tam Thai",
+      "Bát Tọa"
+     ],
+     [
+      "Thái Dương:sáng",
+      "Thái Âm:sáng"
+     ],
+     [
+      "hoa:Hóa Khoa",
+      "hoa:Hóa Quyền",
+      "hoa:Hóa Lộc",
+      "luuHoa:Hóa Khoa",
+      "luuHoa:Hóa Quyền",
+      "luuHoa:Hóa Lộc"
+     ],
+     [
+      "Thiên Mã",
+      "L. Thiên Mã"
+     ]
+    ],
+    "toiThieu": 2,
+    "viTri": "tam-phuong"
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Văn Xương hoặc Văn Khúc của năm ở ngay cung tiểu hạn, tam phương có thêm quý nhân và sao trợ lực: Toàn Thư coi đây là năm thuận cho thi cử, lấy bằng, được công nhận chuyên môn. Thuận là có lợi thế, còn kết quả vẫn đến từ phần chuẩn bị của bạn.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.1 問流年昌曲若何 (命限值之…若得二三拱照); VAN-SP-06",
+  "ghiChu": "Xương Khúc của năm phải tại cung (Đức Q2). Có Kình/Đà/Kỵ tại cung thì dùng bản -SAT."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-TH-04-SAT",
+  "lop": "tieu-han",
+  "cung": "Tiểu hạn",
+  "loai": "CC",
+  "maNghienCuu": [
+   "NAM-TH-04",
+   "VAN-SP-06"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Văn Xương",
+     "L. Văn Khúc"
+    ],
+    "toiThieu": 1,
+    "viTri": "chinh"
+   },
+   {
+    "nhom": [
+     [
+      "Thiên Khôi",
+      "Thiên Việt",
+      "L. Thiên Khôi",
+      "L. Thiên Việt"
+     ],
+     [
+      "Tả Phù",
+      "Hữu Bật"
+     ],
+     [
+      "Tam Thai",
+      "Bát Tọa"
+     ],
+     [
+      "Thái Dương:sáng",
+      "Thái Âm:sáng"
+     ],
+     [
+      "hoa:Hóa Khoa",
+      "hoa:Hóa Quyền",
+      "hoa:Hóa Lộc",
+      "luuHoa:Hóa Khoa",
+      "luuHoa:Hóa Quyền",
+      "luuHoa:Hóa Lộc"
+     ],
+     [
+      "Thiên Mã",
+      "L. Thiên Mã"
+     ]
+    ],
+    "toiThieu": 2,
+    "viTri": "tam-phuong"
+   },
+   {
+    "motTrong": [
+     {
+      "sao": [
+       "Kình Dương",
+       "Đà La",
+       "L. Kình Dương",
+       "L. Đà La"
+      ],
+      "toiThieu": 1
+     },
+     {
+      "hoa": "Hóa Kỵ"
+     },
+     {
+      "luuHoa": "Hóa Kỵ"
+     }
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tieu-han",
+  "noiDung": "Văn Xương hoặc Văn Khúc của năm ở ngay cung tiểu hạn, tam phương có thêm sao trợ lực, nên năm có yếu tố thuận cho học, thi, lấy chứng chỉ. Nhưng cùng cung có Kình Dương, Đà La hoặc Hóa Kỵ, nên giấy tờ dễ nhầm lẫn: rà soát kỹ hồ sơ, văn bản trước khi nộp.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.1 問流年昌曲若何; VAN-SP-06 (TT q.2 文昌入限: 更有羊陀火鈴忌)",
+  "ghiChu": "Vế loại trừ của NAM-TH-04 (phiếu Thư Q2)."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-TH-04-TT-SAT",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "CC",
+  "maNghienCuu": [
+   "NAM-TH-04",
+   "VAN-SP-06"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Văn Xương",
+     "L. Văn Khúc"
+    ],
+    "toiThieu": 1,
+    "viTri": "chinh"
+   },
+   {
+    "nhom": [
+     [
+      "Thiên Khôi",
+      "Thiên Việt",
+      "L. Thiên Khôi",
+      "L. Thiên Việt"
+     ],
+     [
+      "Tả Phù",
+      "Hữu Bật"
+     ],
+     [
+      "Tam Thai",
+      "Bát Tọa"
+     ],
+     [
+      "Thái Dương:sáng",
+      "Thái Âm:sáng"
+     ],
+     [
+      "hoa:Hóa Khoa",
+      "hoa:Hóa Quyền",
+      "hoa:Hóa Lộc",
+      "luuHoa:Hóa Khoa",
+      "luuHoa:Hóa Quyền",
+      "luuHoa:Hóa Lộc"
+     ],
+     [
+      "Thiên Mã",
+      "L. Thiên Mã"
+     ]
+    ],
+    "toiThieu": 2,
+    "viTri": "tam-phuong"
+   },
+   {
+    "motTrong": [
+     {
+      "sao": [
+       "Kình Dương",
+       "Đà La",
+       "L. Kình Dương",
+       "L. Đà La"
+      ],
+      "toiThieu": 1
+     },
+     {
+      "hoa": "Hóa Kỵ"
+     },
+     {
+      "luuHoa": "Hóa Kỵ"
+     }
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Văn Xương hoặc Văn Khúc của năm ở ngay cung Lưu Thái Tuế, tam phương có thêm sao trợ lực, nên năm có yếu tố thuận cho học, thi, lấy chứng chỉ. Nhưng cùng cung có Kình Dương, Đà La hoặc Hóa Kỵ, nên giấy tờ dễ nhầm lẫn: rà soát kỹ hồ sơ, văn bản trước khi nộp.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.1 問流年昌曲若何; VAN-SP-06 (TT q.2 文昌入限: 更有羊陀火鈴忌)",
+  "ghiChu": "Vế loại trừ của NAM-TH-04 (phiếu Thư Q2)."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "tổng hợp",
+  "khong": [
+   {
+    "saoLuu": [
+     "L. Văn Xương",
+     "L. Văn Khúc"
+    ],
+    "toiThieu": 1,
+    "viTri": "chinh"
+   },
+   {
+    "motTrong": [
+     {
+      "sao": [
+       "Kình Dương",
+       "Đà La",
+       "L. Kình Dương",
+       "L. Đà La"
+      ],
+      "toiThieu": 1
+     },
+     {
+      "hoa": "Hóa Kỵ"
+     },
+     {
+      "luuHoa": "Hóa Kỵ"
+     }
+    ]
+   }
+  ],
+  "tongHop": true,
+  "id": "NAM-TH-04-GOC",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "CC",
+  "maNghienCuu": [
+   "NAM-TH-04",
+   "VAN-SP-06"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Văn Xương",
+     "Văn Khúc"
+    ],
+    "toiThieu": 1,
+    "viTri": "chinh"
+   },
+   {
+    "nhom": [
+     [
+      "Thiên Khôi",
+      "Thiên Việt",
+      "L. Thiên Khôi",
+      "L. Thiên Việt"
+     ],
+     [
+      "Tả Phù",
+      "Hữu Bật"
+     ],
+     [
+      "Tam Thai",
+      "Bát Tọa"
+     ],
+     [
+      "Thái Dương:sáng",
+      "Thái Âm:sáng"
+     ],
+     [
+      "hoa:Hóa Khoa",
+      "hoa:Hóa Quyền",
+      "hoa:Hóa Lộc",
+      "luuHoa:Hóa Khoa",
+      "luuHoa:Hóa Quyền",
+      "luuHoa:Hóa Lộc"
+     ],
+     [
+      "Thiên Mã",
+      "L. Thiên Mã"
+     ]
+    ],
+    "toiThieu": 2,
+    "viTri": "tam-phuong"
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Văn Xương, Văn Khúc của lá số gốc ở ngay cung Lưu Thái Tuế, tam phương có thêm sao trợ lực: năm có yếu tố thuận cho học hành, được công nhận chuyên môn. Phần chuẩn bị vẫn là của bạn.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "Tổng hợp: VAN-SP-06 (Xương Khúc tại cung hạn) + NAM-TH-04(d); TT 問流年昌曲 chỉ nói Xương Khúc lưu niên",
+  "ghiChu": "Áp cả cho lop tieu-han cùng điều kiện. Có Kình/Đà/Kỵ tại cung thì dùng bản NAM-TH-04-GOC-SAT (VAN-SP-06; phiếu Thư vòng 2 N1)."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "tổng hợp",
+  "khong": [
+   {
+    "saoLuu": [
+     "L. Văn Xương",
+     "L. Văn Khúc"
+    ],
+    "toiThieu": 1,
+    "viTri": "chinh"
+   }
+  ],
+  "tongHop": true,
+  "id": "NAM-TH-04-GOC-SAT",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "CC",
+  "maNghienCuu": [
+   "NAM-TH-04",
+   "VAN-SP-06"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Văn Xương",
+     "Văn Khúc"
+    ],
+    "toiThieu": 1,
+    "viTri": "chinh"
+   },
+   {
+    "nhom": [
+     [
+      "Thiên Khôi",
+      "Thiên Việt",
+      "L. Thiên Khôi",
+      "L. Thiên Việt"
+     ],
+     [
+      "Tả Phù",
+      "Hữu Bật"
+     ],
+     [
+      "Tam Thai",
+      "Bát Tọa"
+     ],
+     [
+      "Thái Dương:sáng",
+      "Thái Âm:sáng"
+     ],
+     [
+      "hoa:Hóa Khoa",
+      "hoa:Hóa Quyền",
+      "hoa:Hóa Lộc",
+      "luuHoa:Hóa Khoa",
+      "luuHoa:Hóa Quyền",
+      "luuHoa:Hóa Lộc"
+     ],
+     [
+      "Thiên Mã",
+      "L. Thiên Mã"
+     ]
+    ],
+    "toiThieu": 2,
+    "viTri": "tam-phuong"
+   },
+   {
+    "motTrong": [
+     {
+      "sao": [
+       "Kình Dương",
+       "Đà La",
+       "L. Kình Dương",
+       "L. Đà La"
+      ],
+      "toiThieu": 1
+     },
+     {
+      "hoa": "Hóa Kỵ"
+     },
+     {
+      "luuHoa": "Hóa Kỵ"
+     }
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Văn Xương, Văn Khúc của lá số gốc ở ngay cung Lưu Thái Tuế, tam phương có thêm sao trợ lực, nên năm có yếu tố thuận cho học hành. Nhưng cùng cung có Kình Dương, Đà La hoặc Hóa Kỵ, nên giấy tờ dễ nhầm lẫn: rà soát kỹ hồ sơ, văn bản trước khi nộp.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "Tổng hợp: VAN-SP-06 (Xương Khúc tại cung hạn; TT q.2 文昌入限: 更有羊陀火鈴忌) + NAM-TH-04(c)(d)",
+  "ghiChu": "Vế loại trừ của NAM-TH-04-GOC (phiếu Thư vòng 2 N1). Năm 2027 Kình Dương của năm ở Mùi nên cung Thái Tuế luôn khớp bản này. Áp cả cho lop tieu-han cùng điều kiện."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [
+   {
+    "motTrong": [
+     {
+      "sao": [
+       "Kình Dương",
+       "Đà La",
+       "L. Kình Dương",
+       "L. Đà La"
+      ],
+      "toiThieu": 1
+     },
+     {
+      "hoa": "Hóa Kỵ"
+     },
+     {
+      "luuHoa": "Hóa Kỵ"
+     }
+    ]
+   }
+  ],
+  "tongHop": false,
+  "id": "NAM-TH-04-TT",
+  "lop": "thai-tue",
+  "cung": "Lưu Thái Tuế",
+  "loai": "CC",
+  "maNghienCuu": [
+   "NAM-TH-04",
+   "VAN-SP-06"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Văn Xương",
+     "L. Văn Khúc"
+    ],
+    "toiThieu": 1,
+    "viTri": "chinh"
+   },
+   {
+    "nhom": [
+     [
+      "Thiên Khôi",
+      "Thiên Việt",
+      "L. Thiên Khôi",
+      "L. Thiên Việt"
+     ],
+     [
+      "Tả Phù",
+      "Hữu Bật"
+     ],
+     [
+      "Tam Thai",
+      "Bát Tọa"
+     ],
+     [
+      "Thái Dương:sáng",
+      "Thái Âm:sáng"
+     ],
+     [
+      "hoa:Hóa Khoa",
+      "hoa:Hóa Quyền",
+      "hoa:Hóa Lộc",
+      "luuHoa:Hóa Khoa",
+      "luuHoa:Hóa Quyền",
+      "luuHoa:Hóa Lộc"
+     ],
+     [
+      "Thiên Mã",
+      "L. Thiên Mã"
+     ]
+    ],
+    "toiThieu": 2,
+    "viTri": "tam-phuong"
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "thai-tue",
+  "noiDung": "Văn Xương hoặc Văn Khúc của năm ở ngay cung Lưu Thái Tuế, tam phương có thêm quý nhân và sao trợ lực: Toàn Thư coi đây là năm thuận cho thi cử, lấy bằng, được công nhận chuyên môn. Thuận là có lợi thế, còn kết quả vẫn đến từ phần chuẩn bị của bạn.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.1 問流年昌曲若何 (命限值之…若得二三拱照); VAN-SP-06",
+  "ghiChu": "Xương Khúc của năm phải tại cung (Đức Q2). Có Kình/Đà/Kỵ tại cung thì dùng bản -SAT."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-HOA-LOC-SANG",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-04",
+   "CHUNG-HOA-TA-01",
+   "VAN-CT-TA-01"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thái Âm"
+    ],
+    "luuHoa": "Hóa Lộc",
+    "doSang": [
+     "Đắc",
+     "Vượng",
+     "Miếu"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Hóa Lộc của năm 2027 (Thái Âm) rơi vào cung {cung}: lĩnh vực này có nguồn lợi, cơ hội đến nhờ sự chu đáo, mềm dẻo và tích góp.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "CHUNG-HOA (TT, KL); WV1",
+  "ghiChu": "Chữ theo cung ở noiDungTheoCung (L-5f6b69), căn cứ từng cung ở maTheoCung (mục HOA của luan-giai-12-cung.md); noiDung chỉ là dự phòng.",
+  "noiDungTheoCung": {
+   "Mệnh": "Hóa Lộc của năm 2027 (Thái Âm, sáng) rơi vào cung Mệnh: bạn dễ có thêm thuận lợi và cơ hội cho chính mình, nhất là khi hành xử khéo léo, mềm dẻo; vị trí đang có cũng dễ được giữ vững.",
+   "Huynh Đệ": "Hóa Lộc của năm 2027 (Thái Âm, sáng) rơi vào cung Huynh Đệ: anh chị em, bạn đồng trang lứa dễ có thêm thuận lợi, và việc hợp tác ngang hàng dễ đem lại lợi cho cả hai khi bạn giữ cách làm việc chu đáo, mềm mỏng.",
+   "Phu Thê": "Hóa Lộc của năm 2027 (Thái Âm, sáng) rơi vào cung Phu Thê: người đồng hành dễ có thêm nguồn lợi, thuận lợi riêng; chuyện chung của hai người cũng êm hơn khi bạn chu đáo, mềm mỏng trong cách trao đổi.",
+   "Tử Tức": "Hóa Lộc của năm 2027 (Thái Âm, sáng) rơi vào cung Tử Tức: con cái hoặc người nhỏ tuổi bạn chăm lo dễ có thêm thuận lợi; công sức bạn dành cho con, cho học trò hay cho một sản phẩm sáng tạo của mình dễ thấy kết quả khi làm đều tay, kiên nhẫn.",
+   "Tài Bạch": "Hóa Lộc của năm 2027 (Thái Âm, sáng) rơi vào cung Tài Bạch: thu nhập dễ dồi dào hơn, nhất là nguồn đến từ tính toán chu đáo và tích góp đều; hợp để lập quỹ dự phòng hoặc một kế hoạch tiết kiệm rõ ràng.",
+   "Tật Ách": "Hóa Lộc của năm 2027 (Thái Âm, sáng) rơi vào cung Tật Ách: đây là dấu hỗ trợ cho sức khỏe, cơ thể dễ hồi phục khi bạn nghỉ ngơi điều độ; nếu cung này có nhiều sát tinh thì tác dụng giảm, nên vẫn giữ thói quen khám định kỳ.",
+   "Thiên Di": "Hóa Lộc của năm 2027 (Thái Âm, sáng) rơi vào cung Thiên Di: ra ngoài, đi lại vì công việc hay mở rộng quan hệ bên ngoài dễ đem lại lợi; bạn dễ được thiện cảm nhờ cách cư xử khéo léo, chu đáo.",
+   "Nô Bộc": "Hóa Lộc của năm 2027 (Thái Âm, sáng) rơi vào cung Nô Bộc: bạn bè, đồng nghiệp dễ đem lại cơ hội và thông tin có lợi; mối quan hệ bền nhờ sự chu đáo của bạn, chỉ nên giữ ranh giới rõ ràng trong việc chung.",
+   "Quan Lộc": "Hóa Lộc của năm 2027 (Thái Âm, sáng) rơi vào cung Quan Lộc: chính công việc là nơi nguồn lợi đến rõ nhất; cách làm cẩn thận, mềm dẻo giúp bạn có thêm thu nhập từ nghề.",
+   "Điền Trạch": "Hóa Lộc của năm 2027 (Thái Âm, sáng) rơi vào cung Điền Trạch: việc nhà cửa, tài sản và tổ ấm thuận hơn; hợp để sắp xếp, chăm sửa nhà hoặc tích góp cho tài sản lâu dài, chỉ nên cân nhắc các khoản chi cho tiện nghi.",
+   "Phúc Đức": "Hóa Lộc của năm 2027 (Thái Âm, sáng) rơi vào cung Phúc Đức: đời sống tinh thần dễ thư thái, có điều kiện nghỉ ngơi và chăm lo cho bản thân; hợp để dành thời gian cho gia đình, dòng họ và những điều nuôi dưỡng bạn.",
+   "Phụ Mẫu": "Hóa Lộc của năm 2027 (Thái Âm, sáng) rơi vào cung Phụ Mẫu: cha mẹ, bậc trên dễ có thêm thuận lợi, bạn cũng dễ nhận sự quan tâm, hỗ trợ từ họ; quan hệ với người dạy dỗ, cấp trên thuận hơn khi bạn chu đáo."
+  },
+  "maTheoCung": {
+   "Mệnh": [
+    "MENH-HOA-01",
+    "CHUNG-HOA-TA-01"
+   ],
+   "Huynh Đệ": [
+    "HUYNH-HOA-01",
+    "CHUNG-HOA-TA-01",
+    "NAM-THANG-03-HUYNH"
+   ],
+   "Phu Thê": [
+    "PHU-HOA-01",
+    "CHUNG-HOA-TA-01"
+   ],
+   "Tử Tức": [
+    "TU-HOA-01",
+    "CHUNG-HOA-TA-01",
+    "NAM-THANG-03-TU"
+   ],
+   "Tài Bạch": [
+    "TAI-HOA-01",
+    "CHUNG-HOA-TA-01"
+   ],
+   "Tật Ách": [
+    "TAT-HOA-01"
+   ],
+   "Thiên Di": [
+    "DI-HOA-01",
+    "CHUNG-HOA-TA-01"
+   ],
+   "Nô Bộc": [
+    "NO-HOA-01",
+    "CHUNG-HOA-TA-01"
+   ],
+   "Quan Lộc": [
+    "QUAN-HOA-02",
+    "QUAN-HOA-01",
+    "CHUNG-HOA-TA-01"
+   ],
+   "Điền Trạch": [
+    "DIEN-HOA-01"
+   ],
+   "Phúc Đức": [
+    "PHUC-HOA-01"
+   ],
+   "Phụ Mẫu": [
+    "PHUMAU-HOA-01",
+    "NAM-THANG-03-PHUMAU"
+   ]
+  }
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-HOA-LOC-HAM",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-04",
+   "CHUNG-HOA-05"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thái Âm"
+    ],
+    "luuHoa": "Hóa Lộc",
+    "doSang": [
+     "Hãm",
+     "Bình"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Hóa Lộc của năm 2027 (Thái Âm) rơi vào cung {cung} nhưng Thái Âm ở thế hãm: có lợi nhưng nhỏ và đến chậm, cần thêm công sức mới thấy kết quả.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "CHUNG-HOA-05; WV1"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-HOA-QUYEN-SANG",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-05",
+   "CHUNG-HOA-TD-01"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thiên Đồng"
+    ],
+    "luuHoa": "Hóa Quyền",
+    "doSang": [
+     "Đắc",
+     "Vượng",
+     "Miếu"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Hóa Quyền của năm (Thiên Đồng) rơi vào cung {cung}: bạn chủ động hơn ở lĩnh vực này, quyền đến nhờ khéo léo và hòa nhã chứ không nhờ cứng rắn.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "CHUNG-HOA (TT, KL); WV1",
+  "ghiChu": "Chữ theo cung ở noiDungTheoCung (L-91613b), căn cứ từng cung ở maTheoCung (mục HOA của luan-giai-12-cung.md); dùng chung cho mục năm và mục tháng; noiDung chỉ là dự phòng. Nô Bộc: TB và WQ5 đọc Hóa Quyền ngược nhau (NO-TRANH-03), chữ nêu cả hai.",
+  "noiDungTheoCung": {
+   "Mệnh": "Hóa Quyền của năm 2027 (Thiên Đồng, sáng) rơi vào cung Mệnh: bạn chủ động hơn trong việc của mình và dễ có tiếng nói; sức ảnh hưởng đến nhờ sự hòa nhã, khéo léo hơn là cứng rắn.",
+   "Huynh Đệ": "Hóa Quyền của năm 2027 (Thiên Đồng, sáng) rơi vào cung Huynh Đệ: anh chị em, bạn ngang hàng dễ có thêm vị thế; trong việc chung với họ, bạn dễ được tin để đứng ra sắp xếp khi giữ thái độ hòa nhã.",
+   "Phu Thê": "Hóa Quyền của năm 2027 (Thiên Đồng, sáng) rơi vào cung Phu Thê: người đồng hành dễ có thêm vị thế hoặc quyền quyết định trong việc của mình; chuyện chung êm khi hai người bàn bạc mềm mỏng, phân rõ ai lo phần nào.",
+   "Tử Tức": "Hóa Quyền của năm 2027 (Thiên Đồng, sáng) rơi vào cung Tử Tức: con cái hoặc người nhỏ tuổi bạn chăm lo dễ có chí, tự lập hơn; bạn đồng hành tốt nhất khi hướng dẫn nhẹ nhàng thay vì áp đặt.",
+   "Tài Bạch": "Hóa Quyền của năm 2027 (Thiên Đồng, sáng) rơi vào cung Tài Bạch: bạn chủ động hơn trong chuyện tiền bạc và dễ gặp người giúp; quyết định tài chính thuận khi bàn bạc khéo léo, không nóng vội.",
+   "Tật Ách": "Hóa Quyền của năm 2027 (Thiên Đồng, sáng) rơi vào cung Tật Ách: Hóa Quyền làm rõ thêm tính chất các sao khác trong cung: có sao cứu giải thì cơ thể hồi phục nhanh, có nhiều sát tinh thì nên khám sớm khi thấy dấu hiệu; giữ nhịp sinh hoạt thư thả.",
+   "Thiên Di": "Hóa Quyền của năm 2027 (Thiên Đồng, sáng) rơi vào cung Thiên Di: ra ngoài, bạn dễ được kính trọng và có tiếng nói; hợp để đứng ra kết nối, trao đổi với đối tác bằng sự hòa nhã.",
+   "Nô Bộc": "Hóa Quyền của năm 2027 (Thiên Đồng, sáng) rơi vào cung Nô Bộc: bạn dễ có vai trò điều phối bạn bè, đồng nghiệp; có sách lại cho rằng người trong nhóm dễ muốn có tiếng nói lớn hơn, nên phân rõ vai trò và lắng nghe ý họ.",
+   "Quan Lộc": "Hóa Quyền của năm 2027 (Thiên Đồng, sáng) rơi vào cung Quan Lộc: bạn dễ có quyền điều hành thực chất trong công việc, được giao phần việc quan trọng hơn; cách làm khéo léo, hòa nhã giúp mọi người cùng theo.",
+   "Điền Trạch": "Hóa Quyền của năm 2027 (Thiên Đồng, sáng) rơi vào cung Điền Trạch: bạn dễ nắm phần quản lý nhà cửa, tài sản gia đình; người trong nhà có thể nhiều ý kiến, nên bàn bạc hòa nhã trước khi quyết.",
+   "Phúc Đức": "Hóa Quyền của năm 2027 (Thiên Đồng, sáng) rơi vào cung Phúc Đức: ý chí vững hơn, bạn chủ động sắp xếp đời sống tinh thần của mình; hợp để giữ một thói quen tốt hoặc đứng ra lo việc chung của gia đình, dòng họ.",
+   "Phụ Mẫu": "Hóa Quyền của năm 2027 (Thiên Đồng, sáng) rơi vào cung Phụ Mẫu: cha mẹ, bậc trên dễ có tiếng nói lớn, có khi muốn quyết thay bạn; nên trao đổi thẳng thắn mà mềm mỏng để giữ được ý mình và vẫn giữ hòa khí."
+  },
+  "maTheoCung": {
+   "Mệnh": [
+    "MENH-HOA-02",
+    "CHUNG-HOA-TD-01"
+   ],
+   "Huynh Đệ": [
+    "HUYNH-HOA-01",
+    "CHUNG-HOA-TD-01"
+   ],
+   "Phu Thê": [
+    "PHU-HOA-02",
+    "CHUNG-HOA-TD-01"
+   ],
+   "Tử Tức": [
+    "TU-HOA-02",
+    "CHUNG-HOA-TD-01"
+   ],
+   "Tài Bạch": [
+    "TAI-HOA-02",
+    "CHUNG-HOA-TD-01"
+   ],
+   "Tật Ách": [
+    "TAT-HOA-02",
+    "CHUNG-HOA-TD-01"
+   ],
+   "Thiên Di": [
+    "DI-HOA-02",
+    "CHUNG-HOA-TD-01"
+   ],
+   "Nô Bộc": [
+    "NO-HOA-02",
+    "NO-HOA-01",
+    "CHUNG-HOA-TD-01"
+   ],
+   "Quan Lộc": [
+    "QUAN-HOA-02",
+    "QUAN-HOA-01",
+    "CHUNG-HOA-TD-01"
+   ],
+   "Điền Trạch": [
+    "DIEN-HOA-02",
+    "CHUNG-HOA-TD-01"
+   ],
+   "Phúc Đức": [
+    "PHUC-HOA-02",
+    "CHUNG-HOA-TD-01"
+   ],
+   "Phụ Mẫu": [
+    "PHUMAU-HOA-02",
+    "CHUNG-HOA-TD-01"
+   ]
+  }
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-HOA-QUYEN-HAM",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-05",
+   "CHUNG-HOA-05"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thiên Đồng"
+    ],
+    "luuHoa": "Hóa Quyền",
+    "doSang": [
+     "Hãm",
+     "Bình"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Hóa Quyền của năm (Thiên Đồng) rơi vào cung {cung}, Thiên Đồng ở thế hãm: có vai trò nhưng kèm nhiều việc vụn; nên chọn việc chính để giữ.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "CHUNG-HOA-05; WV1",
+  "noiDungTheoCung": {
+   "Mệnh": "Hóa Quyền của năm 2027 (Thiên Đồng) rơi vào cung Mệnh, Thiên Đồng ở thế hãm: bạn có thêm việc phải đứng ra lo nhưng phần nhiều là việc vụn; nên chọn một hai việc chính để giữ, bớt nhận thêm.",
+   "Huynh Đệ": "Hóa Quyền của năm 2027 (Thiên Đồng) rơi vào cung Huynh Đệ, Thiên Đồng ở thế hãm: việc chung với anh chị em, bạn ngang hàng dễ dồn về bạn mà khó quyết dứt điểm; nên chia việc rõ, mỗi người một phần.",
+   "Phu Thê": "Hóa Quyền của năm 2027 (Thiên Đồng) rơi vào cung Phu Thê, Thiên Đồng ở thế hãm: trong chuyện chung của hai người, ai quyết việc gì dễ chưa rõ, sinh nhiều việc nhỏ phải bàn; nên thống nhất trước vài việc chính.",
+   "Tử Tức": "Hóa Quyền của năm 2027 (Thiên Đồng) rơi vào cung Tử Tức, Thiên Đồng ở thế hãm: việc chăm lo con cái, người nhỏ tuổi có nhiều phần lặt vặt; nên giữ vài nếp chính, không cần quản từng chi tiết.",
+   "Tài Bạch": "Hóa Quyền của năm 2027 (Thiên Đồng) rơi vào cung Tài Bạch, Thiên Đồng ở thế hãm: bạn có quyền quyết chuyện tiền nhưng kèm nhiều khoản nhỏ phải lo; nên chọn khoản chính để giữ và ghi chép chi tiêu đều.",
+   "Tật Ách": "Hóa Quyền của năm 2027 (Thiên Đồng) rơi vào cung Tật Ách, Thiên Đồng ở thế hãm: sức khỏe cần để ý ở những việc nhỏ hằng ngày; nên giữ nếp ăn ngủ đều và khám sớm khi có dấu hiệu.",
+   "Thiên Di": "Hóa Quyền của năm 2027 (Thiên Đồng) rơi vào cung Thiên Di, Thiên Đồng ở thế hãm: ra ngoài bạn được giao vai trò nhưng kèm nhiều việc vụn; nên chọn việc chính để giữ, sắp lịch đi lại cho gọn.",
+   "Nô Bộc": "Hóa Quyền của năm 2027 (Thiên Đồng) rơi vào cung Nô Bộc, Thiên Đồng ở thế hãm: bạn dễ phải đứng ra điều phối nhóm trong khi việc vụn, ý kiến nhiều; nên giao rõ phần việc và chốt người chịu trách nhiệm.",
+   "Quan Lộc": "Hóa Quyền của năm 2027 (Thiên Đồng) rơi vào cung Quan Lộc, Thiên Đồng ở thế hãm: bạn có vai trò trong công việc nhưng kèm nhiều việc vụn; nên chọn việc chính để giữ, hỏi rõ phạm vi trước khi nhận thêm.",
+   "Điền Trạch": "Hóa Quyền của năm 2027 (Thiên Đồng) rơi vào cung Điền Trạch, Thiên Đồng ở thế hãm: việc nhà cửa, tài sản dễ dồn về bạn với nhiều việc lặt vặt; nên lên danh sách và làm từng việc.",
+   "Phúc Đức": "Hóa Quyền của năm 2027 (Thiên Đồng) rơi vào cung Phúc Đức, Thiên Đồng ở thế hãm: đầu óc dễ bận vì nhiều việc nhỏ; nên bớt ôm việc, giữ thời gian nghỉ ngơi cho mình.",
+   "Phụ Mẫu": "Hóa Quyền của năm 2027 (Thiên Đồng) rơi vào cung Phụ Mẫu, Thiên Đồng ở thế hãm: cha mẹ, bậc trên có nhiều việc nhỏ cần bạn lo hoặc góp ý; nên nói rõ việc nào bạn đảm nhận được."
+  },
+  "maTheoCung": {
+   "Mệnh": [
+    "MENH-HOA-02",
+    "CHUNG-HOA-TD-01",
+    "CHUNG-HOA-05"
+   ],
+   "Huynh Đệ": [
+    "HUYNH-HOA-01",
+    "CHUNG-HOA-TD-01",
+    "CHUNG-HOA-05"
+   ],
+   "Phu Thê": [
+    "PHU-HOA-02",
+    "CHUNG-HOA-TD-01",
+    "CHUNG-HOA-05"
+   ],
+   "Tử Tức": [
+    "TU-HOA-02",
+    "CHUNG-HOA-TD-01",
+    "CHUNG-HOA-05"
+   ],
+   "Tài Bạch": [
+    "TAI-HOA-02",
+    "CHUNG-HOA-TD-01",
+    "CHUNG-HOA-05"
+   ],
+   "Tật Ách": [
+    "TAT-HOA-02",
+    "CHUNG-HOA-TD-01",
+    "CHUNG-HOA-05"
+   ],
+   "Thiên Di": [
+    "DI-HOA-02",
+    "CHUNG-HOA-TD-01",
+    "CHUNG-HOA-05"
+   ],
+   "Nô Bộc": [
+    "NO-HOA-02",
+    "NO-HOA-01",
+    "CHUNG-HOA-TD-01",
+    "CHUNG-HOA-05"
+   ],
+   "Quan Lộc": [
+    "QUAN-HOA-02",
+    "QUAN-HOA-01",
+    "CHUNG-HOA-TD-01",
+    "CHUNG-HOA-05"
+   ],
+   "Điền Trạch": [
+    "DIEN-HOA-02",
+    "CHUNG-HOA-TD-01",
+    "CHUNG-HOA-05"
+   ],
+   "Phúc Đức": [
+    "PHUC-HOA-02",
+    "CHUNG-HOA-TD-01",
+    "CHUNG-HOA-05"
+   ],
+   "Phụ Mẫu": [
+    "PHUMAU-HOA-02",
+    "CHUNG-HOA-TD-01",
+    "CHUNG-HOA-05"
+   ]
+  },
+  "ghiChu": "Chữ theo cung ở noiDungTheoCung (L-91613b), căn cứ từng cung ở maTheoCung (mục HOA của luan-giai-12-cung.md); dùng chung cho mục năm và mục tháng; noiDung chỉ là dự phòng. Nô Bộc: TB và WQ5 đọc Hóa Quyền ngược nhau (NO-TRANH-03), chữ nêu cả hai."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-HOA-KHOA-SANG",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-06",
+   "CHUNG-HOA-TCO-01"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thiên Cơ"
+    ],
+    "luuHoa": "Hóa Khoa",
+    "doSang": [
+     "Đắc",
+     "Vượng",
+     "Miếu"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung {cung}: lĩnh vực này dễ được ghi nhận nhờ hiểu biết và cách tính toán kỹ.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "CHUNG-HOA (TT, KL); WV1",
+  "ghiChu": "Chữ theo cung ở noiDungTheoCung (L-91613b), căn cứ từng cung ở maTheoCung (mục HOA của luan-giai-12-cung.md); dùng chung cho mục năm và mục tháng; noiDung chỉ là dự phòng.",
+  "noiDungTheoCung": {
+   "Mệnh": "Hóa Khoa của năm 2027 (Thiên Cơ, sáng) rơi vào cung Mệnh: kiến thức, sự nhanh nhạy và cách bạn tính toán công việc dễ được người khác ghi nhận; thuận để học thêm, nâng tay nghề hoặc hoàn thiện hồ sơ, chứng chỉ.",
+   "Huynh Đệ": "Hóa Khoa của năm 2027 (Thiên Cơ, sáng) rơi vào cung Huynh Đệ: anh chị em, bạn đồng trang lứa dễ có tiếng tốt hoặc tiến bộ trong học hành; khi cần lời khuyên, bạn dễ gặp người ngang hàng hiểu việc, góp ý đúng chỗ.",
+   "Phu Thê": "Hóa Khoa của năm 2027 (Thiên Cơ, sáng) rơi vào cung Phu Thê: người đồng hành dễ được ghi nhận về học thức, chuyên môn hoặc vị trí; chuyện chung của hai người dễ bàn ra lẽ khi cả hai tính trước và nói rõ điều mình mong.",
+   "Tử Tức": "Hóa Khoa của năm 2027 (Thiên Cơ, sáng) rơi vào cung Tử Tức: con cái hoặc người nhỏ tuổi bạn chăm lo dễ tiến bộ trong học hành, được thầy cô, người lớn ghi nhận; bạn cũng dễ tìm ra cách đồng hành hợp với các con.",
+   "Tài Bạch": "Hóa Khoa của năm 2027 (Thiên Cơ, sáng) rơi vào cung Tài Bạch: tiền bạc dễ đến nhờ uy tín và sự tính toán kỹ; bạn dễ gặp người chỉ cách, cho thông tin đúng lúc, hợp để rà lại kế hoạch chi tiêu và sổ sách cho rõ ràng.",
+   "Tật Ách": "Hóa Khoa của năm 2027 (Thiên Cơ, sáng) rơi vào cung Tật Ách: đây là dấu cứu giải khá mạnh cho sức khỏe; khi cơ thể có điều cần lưu tâm, bạn dễ gặp đúng người, đúng cách chăm sóc; hợp để khám định kỳ và giữ nếp sinh hoạt điều độ.",
+   "Thiên Di": "Hóa Khoa của năm 2027 (Thiên Cơ, sáng) rơi vào cung Thiên Di: ra ngoài, bạn dễ được tôn trọng nhờ hiểu biết và cách xử lý linh hoạt; các chuyến đi, buổi gặp gỡ bên ngoài dễ mở thêm quan hệ có ích.",
+   "Nô Bộc": "Hóa Khoa của năm 2027 (Thiên Cơ, sáng) rơi vào cung Nô Bộc: bạn bè, đồng nghiệp dễ là người có hiểu biết, sẵn lòng chỉ việc và góp ý; việc chung trong nhóm dễ trôi chảy khi mỗi người được giao rõ phần.",
+   "Quan Lộc": "Hóa Khoa của năm 2027 (Thiên Cơ, sáng) rơi vào cung Quan Lộc: chuyên môn và tay nghề của bạn dễ được ghi nhận trong công việc; thuận để học thêm, nhận việc cần kiến thức hoặc hoàn thiện hồ sơ, chứng chỉ nghề.",
+   "Điền Trạch": "Hóa Khoa của năm 2027 (Thiên Cơ, sáng) rơi vào cung Điền Trạch: việc nhà cửa, tài sản dễ được sắp xếp ngăn nắp, nề nếp; hợp để rà lại giấy tờ nhà đất, lên kế hoạch giữ gìn tài sản và làm không khí trong nhà ấm áp hơn.",
+   "Phúc Đức": "Hóa Khoa của năm 2027 (Thiên Cơ, sáng) rơi vào cung Phúc Đức: tâm trí dễ sáng suốt, ôn hòa, bớt phiền muộn; hợp để đọc, học những điều nuôi dưỡng tinh thần và dành thời gian cho gia đình, dòng họ.",
+   "Phụ Mẫu": "Hóa Khoa của năm 2027 (Thiên Cơ, sáng) rơi vào cung Phụ Mẫu: quan hệ với cha mẹ, bậc trên dễ êm; người dạy dỗ hoặc cấp trên dễ ghi nhận bạn, giấy tờ cần người trên duyệt cũng dễ suôn sẻ hơn."
+  },
+  "maTheoCung": {
+   "Mệnh": [
+    "MENH-HOA-03",
+    "CHUNG-HOA-TCO-01"
+   ],
+   "Huynh Đệ": [
+    "HUYNH-HOA-01",
+    "CHUNG-HOA-TCO-01"
+   ],
+   "Phu Thê": [
+    "PHU-HOA-03",
+    "CHUNG-HOA-TCO-01"
+   ],
+   "Tử Tức": [
+    "TU-HOA-03",
+    "CHUNG-HOA-TCO-01"
+   ],
+   "Tài Bạch": [
+    "TAI-HOA-03",
+    "CHUNG-HOA-TCO-01"
+   ],
+   "Tật Ách": [
+    "TAT-HOA-03",
+    "CHUNG-HOA-TCO-01"
+   ],
+   "Thiên Di": [
+    "DI-HOA-02",
+    "CHUNG-HOA-TCO-01"
+   ],
+   "Nô Bộc": [
+    "NO-HOA-01",
+    "CHUNG-HOA-TCO-01"
+   ],
+   "Quan Lộc": [
+    "QUAN-HOA-02",
+    "QUAN-HOA-01",
+    "CHUNG-HOA-TCO-01"
+   ],
+   "Điền Trạch": [
+    "DIEN-HOA-03",
+    "CHUNG-HOA-TCO-01"
+   ],
+   "Phúc Đức": [
+    "PHUC-HOA-03",
+    "CHUNG-HOA-TCO-01"
+   ],
+   "Phụ Mẫu": [
+    "PHUMAU-HOA-03",
+    "CHUNG-HOA-TCO-01"
+   ]
+  }
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-HOA-KHOA-HAM",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-06",
+   "CHUNG-HOA-05"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thiên Cơ"
+    ],
+    "luuHoa": "Hóa Khoa",
+    "doSang": [
+     "Hãm",
+     "Bình"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Hóa Khoa của năm (Thiên Cơ) rơi vào cung {cung}, Thiên Cơ ở thế hãm: sự ghi nhận đến chậm, nên kiên trì hoàn thiện sản phẩm thay vì vội trình bày.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "CHUNG-HOA-05; WV1",
+  "noiDungTheoCung": {
+   "Mệnh": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung Mệnh, Thiên Cơ ở thế hãm: sự ghi nhận dành cho bạn đến chậm hơn mong đợi; nên kiên trì trau dồi, làm cho chắc thay vì vội thể hiện.",
+   "Huynh Đệ": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung Huynh Đệ, Thiên Cơ ở thế hãm: anh chị em, bạn ngang hàng có điểm tốt để bạn học hỏi nhưng chưa thấy rõ ngay; nên giữ trao đổi đều, đừng vội so sánh.",
+   "Phu Thê": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung Phu Thê, Thiên Cơ ở thế hãm: điểm tốt của người đồng hành cần thời gian mới được nhìn nhận rõ; nên kiên nhẫn lắng nghe, bàn kỹ trước khi kết luận về nhau.",
+   "Tử Tức": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung Tử Tức, Thiên Cơ ở thế hãm: việc học của con cái hoặc người nhỏ tuổi bạn chăm lo tiến chậm hơn mong muốn; nên kiên trì đồng hành, ghi nhận từng bước tiến nhỏ.",
+   "Tài Bạch": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung Tài Bạch, Thiên Cơ ở thế hãm: uy tín giúp bạn kiếm tiền nhưng kết quả đến chậm; nên giữ chữ tín, kiểm kỹ con số trước khi chốt.",
+   "Tật Ách": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung Tật Ách, Thiên Cơ ở thế hãm: tác dụng hỗ trợ cho sức khỏe nhẹ hơn; nên chủ động khám định kỳ, không tự đoán bệnh.",
+   "Thiên Di": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung Thiên Di, Thiên Cơ ở thế hãm: ra ngoài, sự tín nhiệm cần thời gian để gây dựng; nên chuẩn bị kỹ trước các buổi gặp, chuyến đi.",
+   "Nô Bộc": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung Nô Bộc, Thiên Cơ ở thế hãm: bạn bè, đồng nghiệp có lúc góp ý chưa đúng chỗ; nên hỏi thêm vài nguồn và giao việc chung cho rõ ràng.",
+   "Quan Lộc": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung Quan Lộc, Thiên Cơ ở thế hãm: chuyên môn của bạn được ghi nhận chậm; nên kiên trì hoàn thiện sản phẩm, kỹ năng thay vì vội trình bày.",
+   "Điền Trạch": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung Điền Trạch, Thiên Cơ ở thế hãm: việc sắp xếp nhà cửa, giấy tờ tài sản dễ kéo dài; nên làm từng phần và lưu giữ giấy tờ cẩn thận.",
+   "Phúc Đức": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung Phúc Đức, Thiên Cơ ở thế hãm: tâm trí có lúc nghĩ nhiều; nên chọn nhịp sống chậm, dành thời gian nghỉ ngơi để đầu óc sáng lại.",
+   "Phụ Mẫu": "Hóa Khoa của năm 2027 (Thiên Cơ) rơi vào cung Phụ Mẫu, Thiên Cơ ở thế hãm: sự ghi nhận từ cha mẹ, bậc trên đến chậm; nên kiên nhẫn trình bày rõ và chuẩn bị giấy tờ đầy đủ trước khi xin duyệt."
+  },
+  "maTheoCung": {
+   "Mệnh": [
+    "MENH-HOA-03",
+    "CHUNG-HOA-TCO-01",
+    "CHUNG-HOA-05"
+   ],
+   "Huynh Đệ": [
+    "HUYNH-HOA-01",
+    "CHUNG-HOA-TCO-01",
+    "CHUNG-HOA-05"
+   ],
+   "Phu Thê": [
+    "PHU-HOA-03",
+    "CHUNG-HOA-TCO-01",
+    "CHUNG-HOA-05"
+   ],
+   "Tử Tức": [
+    "TU-HOA-03",
+    "CHUNG-HOA-TCO-01",
+    "CHUNG-HOA-05"
+   ],
+   "Tài Bạch": [
+    "TAI-HOA-03",
+    "CHUNG-HOA-TCO-01",
+    "CHUNG-HOA-05"
+   ],
+   "Tật Ách": [
+    "TAT-HOA-03",
+    "CHUNG-HOA-TCO-01",
+    "CHUNG-HOA-05"
+   ],
+   "Thiên Di": [
+    "DI-HOA-02",
+    "CHUNG-HOA-TCO-01",
+    "CHUNG-HOA-05"
+   ],
+   "Nô Bộc": [
+    "NO-HOA-01",
+    "CHUNG-HOA-TCO-01",
+    "CHUNG-HOA-05"
+   ],
+   "Quan Lộc": [
+    "QUAN-HOA-02",
+    "QUAN-HOA-01",
+    "CHUNG-HOA-TCO-01",
+    "CHUNG-HOA-05"
+   ],
+   "Điền Trạch": [
+    "DIEN-HOA-03",
+    "CHUNG-HOA-TCO-01",
+    "CHUNG-HOA-05"
+   ],
+   "Phúc Đức": [
+    "PHUC-HOA-03",
+    "CHUNG-HOA-TCO-01",
+    "CHUNG-HOA-05"
+   ],
+   "Phụ Mẫu": [
+    "PHUMAU-HOA-03",
+    "CHUNG-HOA-TCO-01",
+    "CHUNG-HOA-05"
+   ]
+  },
+  "ghiChu": "Chữ theo cung ở noiDungTheoCung (L-91613b), căn cứ từng cung ở maTheoCung (mục HOA của luan-giai-12-cung.md); dùng chung cho mục năm và mục tháng; noiDung chỉ là dự phòng."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-HOA-KY-SANG",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-07",
+   "CHUNG-HOA-CM-01",
+   "VAN-CT-CM-01"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Cự Môn"
+    ],
+    "luuHoa": "Hóa Kỵ",
+    "doSang": [
+     "Đắc",
+     "Vượng",
+     "Miếu"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Hóa Kỵ của năm (Cự Môn) rơi vào cung {cung}: lĩnh vực này dễ có hiểu lầm, tranh luận. Cự Môn sáng nên bạn có thể biến tranh luận thành sức thuyết phục, miễn là chọn lời và chốt thỏa thuận thành văn bản.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "CHUNG-HOA (TT, KL); WV1",
+  "ghiChu": "Chữ theo cung ở noiDungTheoCung (L-91613b), căn cứ từng cung ở maTheoCung (mục HOA của luan-giai-12-cung.md); dùng chung cho mục năm và mục tháng; noiDung chỉ là dự phòng.",
+  "noiDungTheoCung": {
+   "Mệnh": "Hóa Kỵ của năm 2027 (Cự Môn, sáng) rơi vào cung Mệnh: bạn dễ nghĩ nhiều và vướng vào tranh luận. Cự Môn sáng nên lời nói của bạn có sức thuyết phục khi chọn lời kỹ; nên đặt kỳ vọng vừa phải và giữ giờ nghỉ ngơi để tinh thần thư thái.",
+   "Huynh Đệ": "Hóa Kỵ của năm 2027 (Cự Môn, sáng) rơi vào cung Huynh Đệ: với anh chị em, bạn ngang hàng dễ có bất đồng trong lời qua tiếng lại. Cự Môn sáng nên bạn nói thẳng mà vẫn thuyết phục được; chuyện tiền bạc chung nên ghi rõ.",
+   "Phu Thê": "Hóa Kỵ của năm 2027 (Cự Môn, sáng) rơi vào cung Phu Thê: giữa hai người dễ có hiểu lầm từ cách nói. Cự Môn sáng nên những lần bàn thẳng, có lý lẽ lại giúp hiểu nhau hơn; nên nói ra điều mình cần thay vì để người kia đoán.",
+   "Tử Tức": "Hóa Kỵ của năm 2027 (Cự Môn, sáng) rơi vào cung Tử Tức: giữa bạn và con cái hoặc người nhỏ tuổi bạn chăm lo dễ có lúc không cùng ý. Cự Môn sáng nên lời giải thích có lý lẽ sẽ được nghe; nên lắng nghe trước khi góp ý.",
+   "Tài Bạch": "Hóa Kỵ của năm 2027 (Cự Môn, sáng) rơi vào cung Tài Bạch: tiền bạc dễ vướng bận vì thỏa thuận chưa rõ. Cự Môn sáng nên bạn thương lượng được tốt; nên ghi thỏa thuận thành văn bản, quản lý chi tiêu và tránh đầu tư liều.",
+   "Tật Ách": "Hóa Kỵ của năm 2027 (Cự Môn, sáng) rơi vào cung Tật Ách: Cự Môn sáng nên phần vướng nhẹ hơn; nên chú ý sức khỏe tinh thần và nghỉ ngơi đủ, để ý tai, mắt, tiêu hóa và khám sớm khi có dấu hiệu.",
+   "Thiên Di": "Hóa Kỵ của năm 2027 (Cự Môn, sáng) rơi vào cung Thiên Di: ra ngoài dễ có hiểu lầm, tranh luận với người ngoài. Cự Môn sáng nên bạn có thể biến tranh luận thành sức thuyết phục, miễn là chọn lời và chốt thỏa thuận thành văn bản.",
+   "Nô Bộc": "Hóa Kỵ của năm 2027 (Cự Môn, sáng) rơi vào cung Nô Bộc: với bạn bè, đồng nghiệp dễ có lời ra tiếng vào. Cự Môn sáng nên bạn giải thích được rõ ràng; nên phản hồi minh bạch và giữ lời hứa.",
+   "Quan Lộc": "Hóa Kỵ của năm 2027 (Cự Môn, sáng) rơi vào cung Quan Lộc: công việc dễ có tranh luận, góp ý trái chiều. Cự Môn sáng nên bạn có thể biến tranh luận thành sức thuyết phục, hợp với việc cần phân tích, phản biện; nên chốt thỏa thuận thành văn bản.",
+   "Điền Trạch": "Hóa Kỵ của năm 2027 (Cự Môn, sáng) rơi vào cung Điền Trạch: giấy tờ, thỏa thuận về nhà đất dễ phải bàn nhiều. Cự Môn sáng nên bạn trao đổi được rõ ràng; nên kiểm tra pháp lý kỹ trước khi ký.",
+   "Phúc Đức": "Hóa Kỵ của năm 2027 (Cự Môn, sáng) rơi vào cung Phúc Đức: đầu óc dễ lo nghĩ, khó hài lòng. Cự Môn sáng nên viết ra hoặc nói ra điều mình nghĩ giúp nhẹ lòng; nên chọn nhịp sống chậm hơn.",
+   "Phụ Mẫu": "Hóa Kỵ của năm 2027 (Cự Môn, sáng) rơi vào cung Phụ Mẫu: với cha mẹ, cấp trên dễ có hiểu lầm qua lời nói hoặc giấy tờ. Cự Môn sáng nên trình bày có lý lẽ sẽ được nghe; nên trao đổi trực tiếp và ghi rõ những điều đã thống nhất."
+  },
+  "maTheoCung": {
+   "Mệnh": [
+    "MENH-HOA-04",
+    "CHUNG-HOA-03",
+    "CHUNG-HOA-CM-01"
+   ],
+   "Huynh Đệ": [
+    "HUYNH-HOA-02",
+    "CHUNG-HOA-CM-01"
+   ],
+   "Phu Thê": [
+    "PHU-HOA-04",
+    "CHUNG-HOA-CM-01"
+   ],
+   "Tử Tức": [
+    "TU-HOA-04",
+    "CHUNG-HOA-CM-01"
+   ],
+   "Tài Bạch": [
+    "TAI-HOA-04",
+    "CHUNG-HOA-CM-01"
+   ],
+   "Tật Ách": [
+    "TAT-HOA-04",
+    "TAT-CM-02",
+    "CHUNG-HOA-03",
+    "CHUNG-HOA-CM-01"
+   ],
+   "Thiên Di": [
+    "DI-HOA-03",
+    "CHUNG-HOA-CM-01"
+   ],
+   "Nô Bộc": [
+    "NO-HOA-03",
+    "CHUNG-HOA-CM-01"
+   ],
+   "Quan Lộc": [
+    "QUAN-HOA-03",
+    "CHUNG-HOA-CM-01"
+   ],
+   "Điền Trạch": [
+    "DIEN-HOA-04",
+    "CHUNG-HOA-CM-01"
+   ],
+   "Phúc Đức": [
+    "PHUC-HOA-04",
+    "CHUNG-HOA-CM-01"
+   ],
+   "Phụ Mẫu": [
+    "PHUMAU-HOA-04",
+    "CHUNG-HOA-CM-01"
+   ]
+  }
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-HOA-KY-HAM",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-07",
+   "CHUNG-HOA-CM-01",
+   "VAN-CT-CM-02"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Cự Môn"
+    ],
+    "luuHoa": "Hóa Kỵ",
+    "doSang": [
+     "Hãm",
+     "Bình"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Hóa Kỵ của năm (Cự Môn) rơi vào cung {cung}, Cự Môn ở thế hãm: lĩnh vực này cần thận trọng với lời nói; nên viết rõ thỏa thuận, tránh tranh cãi không cần thiết.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "CHUNG-HOA-05; WV1",
+  "noiDungTheoCung": {
+   "Mệnh": "Hóa Kỵ của năm 2027 (Cự Môn) rơi vào cung Mệnh, Cự Môn ở thế hãm: bạn dễ nghĩ nhiều, lời nói dễ bị hiểu sai; nên đặt kỳ vọng vừa phải, chọn lời chậm rãi và giữ giờ nghỉ ngơi để tinh thần thư thái.",
+   "Huynh Đệ": "Hóa Kỵ của năm 2027 (Cự Môn) rơi vào cung Huynh Đệ, Cự Môn ở thế hãm: với anh chị em, bạn ngang hàng nên thận trọng lời nói, tránh tranh cãi không cần thiết; chuyện tiền bạc chung nên ghi rõ.",
+   "Phu Thê": "Hóa Kỵ của năm 2027 (Cự Môn) rơi vào cung Phu Thê, Cự Môn ở thế hãm: giữa hai người dễ hiểu lầm vì lời nói; nên nói chậm, nói rõ điều mình cần và tránh bàn chuyện lớn lúc mệt hoặc đang nóng.",
+   "Tử Tức": "Hóa Kỵ của năm 2027 (Cự Môn) rơi vào cung Tử Tức, Cự Môn ở thế hãm: với con cái hoặc người nhỏ tuổi bạn chăm lo dễ có lúc không cùng ý; nên lắng nghe nhiều hơn, góp ý nhẹ nhàng, tránh nặng lời.",
+   "Tài Bạch": "Hóa Kỵ của năm 2027 (Cự Môn) rơi vào cung Tài Bạch, Cự Môn ở thế hãm: tiền bạc dễ vướng bận vì thỏa thuận miệng; nên ghi rõ mọi thỏa thuận, giữ chi tiêu chặt và tránh đầu tư liều.",
+   "Tật Ách": "Hóa Kỵ của năm 2027 (Cự Môn) rơi vào cung Tật Ách, Cự Môn ở thế hãm: nên chú ý sức khỏe tinh thần và ngủ nghỉ đủ; để ý tai, mắt, tiêu hóa và khám sớm khi có dấu hiệu.",
+   "Thiên Di": "Hóa Kỵ của năm 2027 (Cự Môn) rơi vào cung Thiên Di, Cự Môn ở thế hãm: ra ngoài nên thận trọng với lời nói, tránh tranh cãi với người lạ; thỏa thuận nên viết rõ.",
+   "Nô Bộc": "Hóa Kỵ của năm 2027 (Cự Môn) rơi vào cung Nô Bộc, Cự Môn ở thế hãm: với bạn bè, đồng nghiệp dễ có lời ra tiếng vào; nên phản hồi minh bạch, giữ lời hứa và tránh bàn chuyện người vắng mặt.",
+   "Quan Lộc": "Hóa Kỵ của năm 2027 (Cự Môn) rơi vào cung Quan Lộc, Cự Môn ở thế hãm: trong công việc nên thận trọng với lời nói và góp ý; nên viết rõ thỏa thuận, giao việc bằng văn bản, tránh tranh cãi không cần thiết.",
+   "Điền Trạch": "Hóa Kỵ của năm 2027 (Cự Môn) rơi vào cung Điền Trạch, Cự Môn ở thế hãm: giấy tờ, thỏa thuận nhà đất dễ trục trặc; nên kiểm tra pháp lý kỹ và không vội ký.",
+   "Phúc Đức": "Hóa Kỵ của năm 2027 (Cự Môn) rơi vào cung Phúc Đức, Cự Môn ở thế hãm: đầu óc dễ lo nghĩ, bất an; nên chọn nhịp sống chậm, chia sẻ với người tin cậy và giữ giờ nghỉ ngơi.",
+   "Phụ Mẫu": "Hóa Kỵ của năm 2027 (Cự Môn) rơi vào cung Phụ Mẫu, Cự Môn ở thế hãm: với cha mẹ, cấp trên dễ hiểu lầm qua lời nói; nên trao đổi bình tĩnh và chuẩn bị giấy tờ rõ ràng."
+  },
+  "maTheoCung": {
+   "Mệnh": [
+    "MENH-HOA-04",
+    "CHUNG-HOA-03",
+    "CHUNG-HOA-CM-01",
+    "CHUNG-HOA-05"
+   ],
+   "Huynh Đệ": [
+    "HUYNH-HOA-02",
+    "CHUNG-HOA-CM-01",
+    "CHUNG-HOA-05"
+   ],
+   "Phu Thê": [
+    "PHU-HOA-04",
+    "CHUNG-HOA-CM-01",
+    "CHUNG-HOA-05"
+   ],
+   "Tử Tức": [
+    "TU-HOA-04",
+    "CHUNG-HOA-CM-01",
+    "CHUNG-HOA-05"
+   ],
+   "Tài Bạch": [
+    "TAI-HOA-04",
+    "CHUNG-HOA-CM-01",
+    "CHUNG-HOA-05"
+   ],
+   "Tật Ách": [
+    "TAT-HOA-04",
+    "TAT-CM-02",
+    "CHUNG-HOA-03",
+    "CHUNG-HOA-CM-01",
+    "CHUNG-HOA-05"
+   ],
+   "Thiên Di": [
+    "DI-HOA-03",
+    "CHUNG-HOA-CM-01",
+    "CHUNG-HOA-05"
+   ],
+   "Nô Bộc": [
+    "NO-HOA-03",
+    "CHUNG-HOA-CM-01",
+    "CHUNG-HOA-05"
+   ],
+   "Quan Lộc": [
+    "QUAN-HOA-03",
+    "CHUNG-HOA-CM-01",
+    "CHUNG-HOA-05"
+   ],
+   "Điền Trạch": [
+    "DIEN-HOA-04",
+    "CHUNG-HOA-CM-01",
+    "CHUNG-HOA-05"
+   ],
+   "Phúc Đức": [
+    "PHUC-HOA-04",
+    "CHUNG-HOA-CM-01",
+    "CHUNG-HOA-05"
+   ],
+   "Phụ Mẫu": [
+    "PHUMAU-HOA-04",
+    "CHUNG-HOA-CM-01",
+    "CHUNG-HOA-05"
+   ]
+  },
+  "ghiChu": "Chữ theo cung ở noiDungTheoCung (L-91613b), căn cứ từng cung ở maTheoCung (mục HOA của luan-giai-12-cung.md); dùng chung cho mục năm và mục tháng; noiDung chỉ là dự phòng."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "tổng hợp",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-HOA-08-KY-LOC",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-08",
+   "VAN-HOA-07"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thái Âm"
+    ],
+    "hoa": "Hóa Kỵ",
+    "luuHoa": "Hóa Lộc"
+   },
+   {
+    "canNamSinh": [
+     "Ất"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Thái Âm vốn mang Hóa Kỵ trên lá số gốc, năm nay lại nhận Hóa Lộc của năm. Theo cách xét tổng hợp (hóa của năm chạm hóa gốc cùng sao), đây thường là lúc điểm vướng cũ có cơ hội chuyển thành có lợi, nếu bạn chủ động gỡ thay vì né.",
+  "nguon": [
+   "Trung Châu phái (Vương Đình Chi)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "VAN-HOA-07 (TC nói cho đại vận, qua WV3); WV1; áp cho năm: tổng hợp",
+  "ghiChu": "Tuổi Ất (Thái Âm Kỵ ở mọi bảng). Tuổi Canh dùng NAM-HOA-08-KY-LOC-CANH.",
+  "noiDungThang": "Thái Âm vốn mang Hóa Kỵ trên lá số gốc và nhận Hóa Lộc của năm; tháng này đi qua cung có sao đó. Theo cách xét tổng hợp (hóa của năm chạm hóa gốc cùng sao), đây là lúc hợp để chủ động gỡ một điểm vướng cũ thay vì né, vì nó có cơ hội chuyển thành có lợi."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "tổng hợp",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-HOA-08-KY-LOC-CANH",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-08",
+   "VAN-HOA-07"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thái Âm"
+    ],
+    "hoa": "Hóa Kỵ",
+    "luuHoa": "Hóa Lộc"
+   },
+   {
+    "canNamSinh": [
+     "Canh"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Thái Âm mang Hóa Kỵ trên lá số gốc (theo bảng Tứ hóa xemtuvi.vn dùng; can Canh khác bảng giữa các sách), năm nay lại nhận Hóa Lộc của năm. Theo cách xét tổng hợp (hóa của năm chạm hóa gốc cùng sao), đây thường là lúc điểm vướng cũ có cơ hội chuyển thành có lợi, nếu bạn chủ động gỡ thay vì né.",
+  "nguon": [
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)",
+   "Tử Vi Nghiệm Lý Toàn Thư (Thiên Lương)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "Bảng Canh: KL tr. 363–364, NL tập 3 tr. 194 (Âm Kỵ); TT, TC: Canh Kỵ Thiên Đồng; nguyên tắc chồng hóa: VAN-HOA-07, WV1 (tổng hợp)",
+  "ghiChu": "Phiếu Thư lỗi 1, Q1; Đức Q1. Không được gắn nhãn Trung Châu.",
+  "noiDungThang": "Thái Âm mang Hóa Kỵ trên lá số gốc (theo bảng Tứ hóa xemtuvi.vn dùng; can Canh khác bảng giữa các sách) và nhận Hóa Lộc của năm; tháng này đi qua cung có sao đó. Theo cách xét tổng hợp (hóa của năm chạm hóa gốc cùng sao), đây là lúc hợp để chủ động gỡ một điểm vướng cũ thay vì né, vì nó có cơ hội chuyển thành có lợi."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "tổng hợp",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-HOA-08-LOC-KY",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-08",
+   "VAN-HOA-07",
+   "CHUNG-HOA-07"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Cự Môn"
+    ],
+    "hoa": "Hóa Lộc",
+    "luuHoa": "Hóa Kỵ"
+   },
+   {
+    "canNamSinh": [
+     "Tân"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Cự Môn vốn mang Hóa Lộc trên lá số gốc, năm nay nhận Hóa Kỵ của năm. Theo cách xét tổng hợp (hóa của năm chạm hóa gốc cùng sao), lợi ban đầu dễ giảm và dễ vướng vì tiền: nên chốt điều khoản rõ ràng trước khi nhận việc, tránh hứa miệng.",
+  "nguon": [
+   "Trung Châu phái (Vương Đình Chi)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "VAN-HOA-07 (TC nói cho đại vận); CHUNG-HOA-07; WV1; áp cho năm: tổng hợp (Đức M5-2)",
+  "noiDungThang": "Cự Môn vốn mang Hóa Lộc trên lá số gốc và nhận Hóa Kỵ của năm; tháng này đi qua cung có sao đó. Theo cách xét tổng hợp (hóa của năm chạm hóa gốc cùng sao), lợi ban đầu dễ giảm và dễ vướng vì tiền: trong tháng nên chốt điều khoản rõ ràng trước khi nhận việc, tránh hứa miệng."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "tổng hợp",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-HOA-08-KY-KY",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-08",
+   "CHUNG-HOA-CM-01"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Cự Môn"
+    ],
+    "hoa": "Hóa Kỵ",
+    "luuHoa": "Hóa Kỵ"
+   },
+   {
+    "canNamSinh": [
+     "Đinh"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Cự Môn mang Hóa Kỵ ở lá số gốc, và năm nay nhận thêm Hóa Kỵ của năm. Đọc hai lớp riêng: lĩnh vực này vốn cần đầu tư công sức trong lời nói (gốc); năm 2027 chủ đề đó được nhấn mạnh thêm (năm). Nói ít mà rõ, ưu tiên văn bản.",
+  "nguon": [
+   "Trung Châu phái (Vương Đình Chi)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "VAN-HOA-07; NAM-HOA-08(c) hai lớp (Đức Q4a: không tìm thấy câu sách)",
+  "ghiChu": "Không viết \"gấp đôi\" (Đức Q4a).",
+  "noiDungThang": "Cự Môn mang Hóa Kỵ ở lá số gốc và nhận thêm Hóa Kỵ của năm; tháng này đi qua cung có sao đó. Đọc hai lớp riêng: lĩnh vực này vốn cần đầu tư công sức trong lời nói (gốc), và tháng này chủ đề đó được nhấn mạnh thêm. Nói ít mà rõ, ưu tiên văn bản."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "tổng hợp",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-HOA-08-LOC-LOC",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-08",
+   "NAM-HOA-03"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thái Âm"
+    ],
+    "hoa": "Hóa Lộc",
+    "luuHoa": "Hóa Lộc"
+   },
+   {
+    "canNamSinh": [
+     "Đinh"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Thái Âm mang Hóa Lộc ở lá số gốc, năm nay nhận thêm Hóa Lộc của năm. Đọc hai lớp riêng: nguồn lợi nhờ sự chu đáo, tích góp vốn là điểm của lá số; năm 2027 lĩnh vực của Thái Âm được nhấn mạnh thêm, cả mặt thuận lẫn mặt cần giữ.",
+  "nguon": [
+   "Trung Châu phái (Vương Đình Chi)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "NAM-HOA-08(d), tuổi Đinh; VAN-HOA-07; WV1 (tổng hợp, Đức Q4a: không tìm thấy câu sách)",
+  "ghiChu": "Tuổi Đinh: bốn hóa năm trùng bốn hóa gốc. Không viết \"gấp đôi\", không kết luận cát hung.",
+  "noiDungThang": "Thái Âm mang Hóa Lộc ở lá số gốc và nhận thêm Hóa Lộc của năm; tháng này đi qua cung có sao đó. Đọc hai lớp riêng: nguồn lợi nhờ sự chu đáo, tích góp vốn là điểm của lá số, và tháng này lĩnh vực của Thái Âm được nhấn mạnh thêm, cả mặt thuận lẫn mặt cần giữ."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "tổng hợp",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-HOA-08-QUYEN-QUYEN",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-08",
+   "NAM-HOA-03"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thiên Đồng"
+    ],
+    "hoa": "Hóa Quyền",
+    "luuHoa": "Hóa Quyền"
+   },
+   {
+    "canNamSinh": [
+     "Đinh"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Thiên Đồng mang Hóa Quyền ở lá số gốc, năm nay nhận thêm Hóa Quyền của năm. Đọc hai lớp riêng: vai trò chủ động có được nhờ khéo léo, hòa nhã vốn là điểm của lá số; năm 2027 lĩnh vực của Thiên Đồng được nhấn mạnh thêm, cả mặt thuận lẫn mặt cần giữ.",
+  "nguon": [
+   "Trung Châu phái (Vương Đình Chi)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "NAM-HOA-08(d), tuổi Đinh; VAN-HOA-07; WV1 (tổng hợp, Đức Q4a: không tìm thấy câu sách)",
+  "ghiChu": "Tuổi Đinh: bốn hóa năm trùng bốn hóa gốc. Không viết \"gấp đôi\", không kết luận cát hung.",
+  "noiDungThang": "Thiên Đồng mang Hóa Quyền ở lá số gốc và nhận thêm Hóa Quyền của năm; tháng này đi qua cung có sao đó. Đọc hai lớp riêng: vai trò chủ động có được nhờ khéo léo, hòa nhã vốn là điểm của lá số, và tháng này lĩnh vực của Thiên Đồng được nhấn mạnh thêm, cả mặt thuận lẫn mặt cần giữ."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "tổng hợp",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-HOA-08-KHOA-KHOA",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-08",
+   "NAM-HOA-03"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thiên Cơ"
+    ],
+    "hoa": "Hóa Khoa",
+    "luuHoa": "Hóa Khoa"
+   },
+   {
+    "canNamSinh": [
+     "Đinh"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "tu-hoa",
+  "noiDung": "Thiên Cơ mang Hóa Khoa ở lá số gốc, năm nay nhận thêm Hóa Khoa của năm. Đọc hai lớp riêng: sự ghi nhận về ý tưởng, tay nghề vốn là điểm của lá số; năm 2027 lĩnh vực của Thiên Cơ được nhấn mạnh thêm, cả mặt thuận lẫn mặt cần giữ.",
+  "nguon": [
+   "Trung Châu phái (Vương Đình Chi)",
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "NAM-HOA-08(d), tuổi Đinh; VAN-HOA-07; WV1 (tổng hợp, Đức Q4a: không tìm thấy câu sách)",
+  "ghiChu": "Tuổi Đinh: bốn hóa năm trùng bốn hóa gốc. Không viết \"gấp đôi\", không kết luận cát hung.",
+  "noiDungThang": "Thiên Cơ mang Hóa Khoa ở lá số gốc và nhận thêm Hóa Khoa của năm; tháng này đi qua cung có sao đó. Đọc hai lớp riêng: sự ghi nhận về ý tưởng, tay nghề vốn là điểm của lá số, và tháng này lĩnh vực của Thiên Cơ được nhấn mạnh thêm, cả mặt thuận lẫn mặt cần giữ."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-HOA-09",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "HOA",
+  "maNghienCuu": [
+   "NAM-HOA-09",
+   "VAN-SP-02"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Thái Âm",
+     "Lộc Tồn"
+    ],
+    "luuHoa": "Hóa Lộc"
+   }
+  ],
+  "muc": "tai-chinh",
+  "noiDung": "Hóa Lộc của năm đồng cung Lộc Tồn gốc (song Lộc): nguồn lợi có thật, nhưng Tân Biên lưu ý hai Lộc cùng cung không mạnh bằng khi chiếu nhau; nên giữ kỳ vọng vừa phải và tích lũy đều.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "TB §3.2.20, §3.2.25; KL"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [
+   {
+    "sao": [
+     "Địa Không",
+     "Địa Kiếp"
+    ],
+    "toiThieu": 1
+   }
+  ],
+  "tongHop": false,
+  "id": "NAM-LUU-01",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-LUU-01",
+   "VAN-SP-01"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Lộc Tồn"
+    ]
+   }
+  ],
+  "muc": "tai-chinh",
+  "noiDung": "Lộc Tồn của năm đến cung {cung}: lĩnh vực này có thêm nguồn lợi, việc mưu tính thuận.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.2 祿存入限; TB §3.2.20"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-LUU-01-KHONG",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-LUU-01",
+   "VAN-SP-01"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Lộc Tồn"
+    ]
+   },
+   {
+    "sao": [
+     "Địa Không",
+     "Địa Kiếp"
+    ],
+    "toiThieu": 1
+   }
+  ],
+  "muc": "tai-chinh",
+  "noiDung": "Lộc Tồn của năm đến cung {cung} nhưng gặp {sao:Địa Không|Địa Kiếp}: có nguồn lợi nhưng dễ hao hoặc dễ bị hứa hẹn quá mức; nên kiểm tra kỹ từng giao dịch trước khi xuống tiền.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.2 祿存入限: 最怕劫空相遇同; TB §3.2.20"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [
+   {
+    "sao": [
+     "Địa Không",
+     "Địa Kiếp"
+    ],
+    "toiThieu": 1
+   }
+  ],
+  "tongHop": false,
+  "id": "NAM-LUU-07-LOC",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-LUU-07"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Lộc Tồn"
+    ]
+   },
+   {
+    "saoLuu": [
+     "L. Lộc Tồn"
+    ]
+   },
+   {
+    "canNamSinh": [
+     "Đinh",
+     "Kỷ"
+    ]
+   }
+  ],
+  "muc": "tai-chinh",
+  "noiDung": "Lộc Tồn của năm trùng đúng Lộc Tồn trên lá số gốc ở cung {cung}: nguồn lợi ở lĩnh vực này năm nay rõ hơn thường lệ, thuận cho tích góp đều.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.3 論羊陀迭並; TB P3 §4.3 tr. 268–269 (sách diễn đạt nặng, đã trung tính hóa)",
+  "ghiChu": "Tuổi Đinh, Kỷ. Cấm câu thơ 羊陀迭並 và câu TB \"tai họa\" (NAM-CAM-02). Có Địa Không/Địa Kiếp tại cung thì nhường cho NAM-LUU-01-KHONG (phiếu Thư vòng 2 N3).",
+  "noiDungThang": "Lộc Tồn của năm trùng đúng Lộc Tồn trên lá số gốc ở cung {cung}, tháng này đi qua cung đó: nguồn lợi ở lĩnh vực này rõ hơn thường lệ, thuận cho tích góp đều."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-LUU-07-KINH",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-LUU-07"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Kình Dương"
+    ]
+   },
+   {
+    "saoLuu": [
+     "L. Kình Dương"
+    ]
+   },
+   {
+    "canNamSinh": [
+     "Đinh",
+     "Kỷ"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "noiDung": "Kình Dương của năm trùng Kình Dương trên lá số gốc ở cung {cung}: lĩnh vực này năm nay đòi hỏi bình tĩnh, làm chắc từng bước, tránh quyết vội; sức ép nếu có là để bạn sắp lại thứ tự ưu tiên.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.3 論羊陀迭並; TB P3 §4.3 tr. 268–269 (sách diễn đạt nặng, đã trung tính hóa)",
+  "phan": "sao-luu",
+  "ghiChu": "Tuổi Đinh, Kỷ. Cấm câu thơ 羊陀迭並 và câu TB \"tai họa\" (NAM-CAM-02).",
+  "noiDungThang": "Kình Dương của năm trùng Kình Dương trên lá số gốc ở cung {cung}, tháng này đi qua cung đó: lĩnh vực này đòi hỏi bình tĩnh, làm chắc từng bước, tránh quyết vội; sức ép nếu có là để bạn sắp lại thứ tự ưu tiên."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-LUU-07-DA",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-LUU-07"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Đà La"
+    ]
+   },
+   {
+    "saoLuu": [
+     "L. Đà La"
+    ]
+   },
+   {
+    "canNamSinh": [
+     "Đinh",
+     "Kỷ"
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "noiDung": "Đà La của năm trùng Đà La trên lá số gốc ở cung {cung}: việc của lĩnh vực này năm nay dễ kéo dài hơn dự tính; kiên nhẫn, làm chắc từng bước và tránh quyết vội.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.3 論羊陀迭並; TB P3 §4.3 tr. 268–269 (sách diễn đạt nặng, đã trung tính hóa)",
+  "phan": "sao-luu",
+  "ghiChu": "Tuổi Đinh, Kỷ. Cấm câu thơ 羊陀迭並 và câu TB \"tai họa\" (NAM-CAM-02).",
+  "noiDungThang": "Đà La của năm trùng Đà La trên lá số gốc ở cung {cung}, tháng này đi qua cung đó: việc của lĩnh vực này dễ kéo dài hơn dự tính; kiên nhẫn, làm chắc từng bước và tránh quyết vội."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-LUU-02",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-LUU-02",
+   "VAN-SP-03",
+   "VAN-SP-09",
+   "VAN-SP-06"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Thiên Mã",
+     "L. Đà La"
+    ],
+    "toiThieu": 2
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "sao-luu",
+  "noiDung": "Thiên Mã, Đà La và Văn Khúc của năm cùng ở cung {cung}: lĩnh vực này có di chuyển, thay đổi hoặc giấy tờ mới, nhưng tiến độ thường chậm hơn mong muốn. Nên chọn hướng rõ trước khi xê dịch và kiên nhẫn với thủ tục.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.2 天馬入限; TB §3.2.43; VAN-SP-09, SP-06"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-LUU-03",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-LUU-03",
+   "VAN-SP-07"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Thiên Khôi",
+     "L. Thiên Việt"
+    ],
+    "toiThieu": 1
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "sao-luu",
+  "noiDung": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung {cung}: bạn dễ được người có kinh nghiệm hoặc vị thế trong lĩnh vực này nâng đỡ, giới thiệu.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)"
+  ],
+  "nguonChiTiet": "VAN-SP-07 (TB); TT q.1 問流年昌曲",
+  "noiDungTheoCung": {
+   "Mệnh": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung Mệnh: bạn dễ được người trên để ý, nâng đỡ; thuận cho việc học và cho những lúc cần trình bày bản thân.",
+   "Huynh Đệ": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung Huynh Đệ: trong anh chị em hoặc bạn ngang hàng dễ có người ở vị thế tốt, sẵn lòng giới thiệu, hỗ trợ bạn; hợp tác với người cùng trang lứa thuận hơn.",
+   "Phu Thê": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung Phu Thê: người đồng hành dễ được người có vị thế nâng đỡ, hoặc chính họ là chỗ dựa, người giới thiệu tốt cho bạn; nếu đang tìm hiểu, người bạn gặp thường có học, đàng hoàng.",
+   "Tử Tức": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung Tử Tức: con cái, học trò hoặc người nhỏ tuổi bạn chăm lo dễ gặp thầy cô, người hướng dẫn tốt và có dịp thể hiện điểm nổi trội; với sản phẩm sáng tạo của bạn, dễ có người có tiếng nói giới thiệu.",
+   "Tài Bạch": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung Tài Bạch: trong chuyện tiền bạc, bạn dễ gặp người có kinh nghiệm chỉ đường hoặc giới thiệu nguồn thu, theo lối làm ăn đàng hoàng, rõ ràng.",
+   "Tật Ách": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung Tật Ách: khi cần chăm lo sức khỏe, bạn dễ gặp người có chuyên môn tận tâm chỉ dẫn; nên chủ động hỏi ý kiến bác sĩ khi thấy cần.",
+   "Thiên Di": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung Thiên Di: ra ngoài dễ gặp quý nhân, được gần người có vị thế; hợp để đi gặp gỡ, tham dự sự kiện của ngành.",
+   "Nô Bộc": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung Nô Bộc: trong bạn bè, đồng nghiệp có người có học thức, vị thế, sẵn lòng giới thiệu; nên chủ động kết nối với họ.",
+   "Quan Lộc": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung Quan Lộc: trong nghề, bạn dễ gặp người có vị thế hoặc kinh nghiệm tin cậy, giới thiệu; ý kiến và chuyên môn của bạn dễ được coi trọng, có dịp được mời góp ý hoặc cùng bàn những việc quan trọng.",
+   "Điền Trạch": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung Điền Trạch: việc nhà cửa, giấy tờ tài sản dễ có người hiểu việc giúp đỡ, tư vấn; thuận cho việc mua bán hay sắp xếp nhà nếu bạn đã có kế hoạch.",
+   "Phúc Đức": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung Phúc Đức: bạn dễ có người tốt bầu bạn, đời sống tinh thần vui vẻ, nhẹ nhõm hơn.",
+   "Phụ Mẫu": "Quý nhân của năm ({sao:L. Thiên Khôi|L. Thiên Việt} lưu) ở cung Phụ Mẫu: cha mẹ, bậc trên dễ có thêm uy tín; bạn được người dạy dỗ, cấp trên nâng đỡ, thuận cho học hành và giấy tờ."
+  },
+  "maTheoCung": {
+   "Mệnh": [
+    "MENH-SP-03",
+    "VAN-SP-07"
+   ],
+   "Huynh Đệ": [
+    "HUYNH-SP-03",
+    "NAM-THANG-03-HUYNH"
+   ],
+   "Phu Thê": [
+    "PHU-SP-02"
+   ],
+   "Tử Tức": [
+    "TU-SP-03",
+    "VAN-SP-07",
+    "NAM-THANG-03-TU"
+   ],
+   "Tài Bạch": [
+    "TAI-SP-03"
+   ],
+   "Tật Ách": [
+    "CHUNG-SP-01 (tổng hợp: chưa có quy tắc Khôi Việt riêng ở Tật Ách, TAT-TRANH-04 không dùng)"
+   ],
+   "Thiên Di": [
+    "DI-SP-01"
+   ],
+   "Nô Bộc": [
+    "NO-SP-01"
+   ],
+   "Quan Lộc": [
+    "QUAN-SP-02",
+    "VAN-SP-07"
+   ],
+   "Điền Trạch": [
+    "DIEN-SP-02"
+   ],
+   "Phúc Đức": [
+    "PHUC-SP-04"
+   ],
+   "Phụ Mẫu": [
+    "PHUMAU-SP-01",
+    "NAM-THANG-03-PHUMAU"
+   ]
+  },
+  "ghiChu": "Chữ theo cung ở noiDungTheoCung (L-5f6b69), căn cứ ở maTheoCung (mục SP của luan-giai-12-cung.md); Tật Ách là nhận xét tổng hợp từ CHUNG-SP-01."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [
+   {
+    "motTrong": [
+     {
+      "sao": [
+       "Kình Dương",
+       "Đà La",
+       "L. Kình Dương",
+       "L. Đà La"
+      ],
+      "toiThieu": 1
+     },
+     {
+      "hoa": "Hóa Kỵ"
+     },
+     {
+      "luuHoa": "Hóa Kỵ"
+     },
+     {
+      "sao": [
+       "Văn Xương"
+      ],
+      "doSang": [
+       "Hãm"
+      ]
+     }
+    ]
+   }
+  ],
+  "tongHop": false,
+  "id": "NAM-LUU-04",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-LUU-04",
+   "VAN-SP-06"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Văn Xương",
+     "L. Thiên Việt"
+    ],
+    "toiThieu": 2
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "sao-luu",
+  "noiDung": "Văn Xương và Thiên Việt của năm cùng ở cung {cung}: việc học, viết, hồ sơ liên quan lĩnh vực này thường thuận hơn, có người có vị thế giúp.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)"
+  ],
+  "nguonChiTiet": "VAN-SP-06; TT q.1 問流年昌曲"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-LUU-04-SAT",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-LUU-04",
+   "VAN-SP-06"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Văn Xương",
+     "L. Thiên Việt"
+    ],
+    "toiThieu": 2
+   },
+   {
+    "motTrong": [
+     {
+      "sao": [
+       "Kình Dương",
+       "Đà La",
+       "L. Kình Dương",
+       "L. Đà La"
+      ],
+      "toiThieu": 1
+     },
+     {
+      "hoa": "Hóa Kỵ"
+     },
+     {
+      "luuHoa": "Hóa Kỵ"
+     },
+     {
+      "sao": [
+       "Văn Xương"
+      ],
+      "doSang": [
+       "Hãm"
+      ]
+     }
+    ]
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "sao-luu",
+  "noiDung": "Văn Xương và Thiên Việt của năm cùng ở cung {cung}: có người có vị thế giúp việc hồ sơ ở lĩnh vực này, nhưng cùng cung có Kình Dương, Đà La, Hóa Kỵ hoặc Văn Xương gốc ở thế hãm nên giấy tờ dễ nhầm. Rà soát kỹ từng văn bản; việc lớn thì hỏi người có chuyên môn.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)"
+  ],
+  "nguonChiTiet": "VAN-SP-06; TT q.1 問流年昌曲",
+  "ghiChu": "Vế loại trừ theo VAN-SP-06 (phiếu Thư Q3, lỗi 2). Không dùng làm căn cứ khuyên thời điểm cho việc tài chính."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-LUU-05-PHU",
+  "lop": "cung-goc",
+  "cung": "Phu Thê",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-LUU-05",
+   "VAN-SP-14",
+   "PHU-CC-06"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Hồng Loan",
+     "L. Thiên Hỷ"
+    ],
+    "toiThieu": 1,
+    "viTri": "tam-phuong"
+   }
+  ],
+  "muc": "tinh-cam",
+  "noiDung": "Hồng Loan, Thiên Hỷ của năm chạm cung Phu Thê: năm có không khí vui trong chuyện tình cảm, thuận gặp gỡ và vun đắp. Sách đòi cả đại vận lẫn tiểu hạn cùng báo mới coi là thời điểm cưới hỏi, nên đây là một yếu tố thuận chứ chưa phải \"năm định\".",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "VAN-SP-14; PHU-CC-06",
+  "noiDungThang": "Hồng Loan, Thiên Hỷ của năm chạm cung Phu Thê, tháng này đi qua cung đó: chuyện tình cảm có không khí vui, thuận gặp gỡ và vun đắp. Sách đòi cả đại vận lẫn tiểu hạn cùng báo mới coi là thời điểm cưới hỏi, nên đây là một yếu tố thuận chứ chưa phải mốc định sẵn."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-MANG-06-PHU",
+  "lop": "cung-goc",
+  "cung": "Phu Thê",
+  "loai": "SP",
+  "maNghienCuu": [
+   "VAN-SP-10",
+   "NAM-MANG-04"
+  ],
+  "dieuKien": [
+   {
+    "sao": [
+     "Hỏa Tinh",
+     "Linh Tinh"
+    ],
+    "toiThieu": 1,
+    "doSang": [
+     "Hãm"
+    ]
+   },
+   {
+    "motTrong": [
+     {
+      "trung": [
+       "dai-van"
+      ]
+     },
+     {
+      "trung": [
+       "tieu-han"
+      ]
+     },
+     {
+      "trung": [
+       "thai-tue"
+      ]
+     }
+    ]
+   }
+  ],
+  "muc": "tinh-cam",
+  "noiDung": "{sao} ở thế hãm tại cung Phu Thê, mà năm nay cung này lại là cung hạn (đại vận, tiểu hạn hoặc Lưu Thái Tuế): chuyện tình cảm, với người đồng hành hay người bạn đang tìm hiểu, dễ có lúc nóng lời hoặc có việc bất ngờ xen vào kế hoạch chung. Nên giữ bình tĩnh khi trao đổi, để điều cần bàn sang lúc cả hai đã dịu.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "nguonChiTiet": "VAN-SP-10 (c) (TT q.2 火鈴二星入限: \"火鈴限陷\"; KL A.4); áp cho cung hạn của năm: NAM-MANG-04, NAM-MANG-01 (tổng hợp)",
+  "ghiChu": "Việc L-2381a4. Sao hãm: không viết câu thuận. Bỏ ý \"mất đồ, quan tai\" của sách (VAN-SP-10 (c) đã trung tính hóa; không nói kiện tụng). PHU-SP-06 chỉ mô tả, giữ làm mã phụ trong mã ẩn, không đưa vào maNghienCuu để TT-01 bám đúng VAN-SP-10/hãm. ⚑ tổng hợp: Đức cần kiểm việc áp câu nhập hạn của đại vận sang cung hạn năm.",
+  "noiDungThang": "{sao} ở thế hãm tại cung Phu Thê, mà cung này lại là cung hạn (đại vận, tiểu hạn hoặc Lưu Thái Tuế) và tháng này đi qua đó: chuyện tình cảm, với người đồng hành hay người bạn đang tìm hiểu, dễ có lúc nóng lời hoặc có việc bất ngờ xen vào kế hoạch chung. Nên giữ bình tĩnh khi trao đổi, để điều cần bàn sang lúc cả hai đã dịu."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-TT-06",
+  "lop": "cung-goc",
+  "cung": "*",
+  "loai": "SP",
+  "maNghienCuu": [
+   "NAM-TT-06",
+   "CHUNG-SP-09"
+  ],
+  "dieuKien": [
+   {
+    "saoLuu": [
+     "L. Tang Môn",
+     "L. Bạch Hổ",
+     "L. Thiên Khốc",
+     "L. Thiên Hư"
+    ],
+    "toiThieu": 1
+   }
+  ],
+  "muc": "tong-quan",
+  "phan": "sao-luu",
+  "noiDung": "Cung {cung} có sao lưu của vòng Thái Tuế (Tang Môn, Bạch Hổ, Khốc hoặc Hư của năm): việc của lĩnh vực này cần nhiều tâm sức hơn, cảm xúc có lúc chùng; nên dành thời gian và giữ nhịp nghỉ.",
+  "nguon": [
+   "Tử Vi Đẩu Số Toàn Thư (Hy Di Trần Đoàn)",
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TT q.2 安喪門白虎…; CHUNG-SP-09",
+  "ghiChu": "Chỉ tô thêm, tối đa một câu mỗi bài."
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-MANG-01-QUAN-NEN",
+  "lop": "cung-goc",
+  "cung": "Quan Lộc",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-MANG-01"
+  ],
+  "dieuKien": [
+   {
+    "khongCoYeuToNam": true
+   }
+  ],
+  "muc": "su-nghiep",
+  "noiDung": "Năm nay cung Quan Lộc không có yếu tố của năm chạm trực tiếp, nên mảng này chủ yếu đi theo nền sẵn có trên lá số; đó là năm để giữ nhịp đều hơn là chờ biến chuyển.",
+  "nguon": [
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "WV1"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-MANG-01-TAI-NEN",
+  "lop": "cung-goc",
+  "cung": "Tài Bạch",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-MANG-01"
+  ],
+  "dieuKien": [
+   {
+    "khongCoYeuToNam": true
+   }
+  ],
+  "muc": "tai-chinh",
+  "noiDung": "Năm nay cung Tài Bạch không có yếu tố của năm chạm trực tiếp, nên mảng này chủ yếu đi theo nền sẵn có trên lá số; đó là năm để giữ nhịp đều hơn là chờ biến chuyển.",
+  "nguon": [
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "WV1"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-MANG-01-PHU-NEN",
+  "lop": "cung-goc",
+  "cung": "Phu Thê",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-MANG-01"
+  ],
+  "dieuKien": [
+   {
+    "khongCoYeuToNam": true
+   }
+  ],
+  "muc": "tinh-cam",
+  "noiDung": "Năm nay cung Phu Thê không có yếu tố của năm chạm trực tiếp, nên mảng này chủ yếu đi theo nền sẵn có trên lá số; đó là năm để giữ nhịp đều hơn là chờ biến chuyển.",
+  "nguon": [
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "WV1"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": true,
+  "id": "NAM-MANG-01-TAT-NEN",
+  "lop": "cung-goc",
+  "cung": "Tật Ách",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-MANG-01"
+  ],
+  "dieuKien": [
+   {
+    "khongCoYeuToNam": true
+   }
+  ],
+  "muc": "suc-khoe",
+  "noiDung": "Năm nay cung Tật Ách không có yếu tố của năm chạm trực tiếp, nên mảng này chủ yếu đi theo nền sẵn có trên lá số; đó là năm để giữ nhịp đều hơn là chờ biến chuyển.",
+  "nguon": [
+   "Tư liệu web: iztro \"运限\""
+  ],
+  "nguonChiTiet": "WV1"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-MANG-05-NHIP",
+  "lop": "cung-goc",
+  "cung": "Tật Ách",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-MANG-05",
+   "VAN-CUNG-08",
+   "VAN-CAM-04"
+  ],
+  "dieuKien": [],
+  "muc": "suc-khoe",
+  "noiDung": "Phần sức khỏe trên lá số chỉ cho biết nhịp sống nên giữ, không thay cho khám bệnh. Giữ giấc ngủ, vận động đều và khám sức khỏe định kỳ là nền cho cả năm. Khi có dấu hiệu bất thường về sức khỏe, bạn nên hỏi ý kiến bác sĩ.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)"
+  ],
+  "nguonChiTiet": "TAT-YN-01; VAN-CUNG-08"
+ },
+ {
+  "chuyenDe": "van-nam",
+  "namXem": 2027,
+  "truongPhai": "Tam hợp phái Việt",
+  "khong": [],
+  "tongHop": false,
+  "id": "NAM-CAM-04",
+  "lop": "nam",
+  "cung": "Năm",
+  "loai": "YN",
+  "maNghienCuu": [
+   "NAM-CAM-04"
+  ],
+  "dieuKien": [],
+  "muc": "dau-bai",
+  "noiDung": "Nội dung do hệ thống tạo dựa trên lá số của bạn, mang tính tham khảo để hiểu mình và định hướng; không thay lời khuyên chuyên môn về y tế, tài chính hay pháp lý.",
+  "nguon": [
+   "Đặc tả an sao xemtuvi.vn"
+  ],
+  "nguonChiTiet": "Quy ước sản phẩm"
+ }
+]

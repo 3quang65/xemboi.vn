@@ -1,0 +1,2476 @@
+[
+ {
+  "maMau": "CV-01",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-HOA-07",
+   "MENH-CM-02",
+   "CHUNG-HOA-CM-01"
+  ],
+  "cau": "Sau mỗi buổi trao đổi quan trọng với {nguoiLienQuan}, gửi lại 3 dòng chốt kết luận trong ngày.",
+  "thuocDo": "≥ 80% buổi quan trọng có tin chốt, đếm theo tuần",
+  "thoiHanThang": 2
+ },
+ {
+  "maMau": "CV-02",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "MENH-THL-02",
+   "MENH-TL-02",
+   "MENH-TCO-02",
+   "CHUNG-HOA-TCO-01/Kỵ",
+   "NAM-TH-03/Kỵ"
+  ],
+  "cau": "Chọn một mục tiêu nghề nghiệp cho 12 tuần, viết ra một câu; mỗi tuần làm một việc nhỏ cho mục tiêu đó.",
+  "thuocDo": "≥ 9/12 tuần có việc hoàn thành",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "CHUNG-HOA-TCO-01/Kỵ": {
+    "saoKhopHoaGoc": "Hóa Kỵ"
+   },
+   "NAM-TH-03/Kỵ": {
+    "quyTacId": [
+     "NAM-TH-03-KY"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "CV-03",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "MENH-TT-02"
+  ],
+  "cau": "Trước khi nhận vai trò hay dự án mới, viết một trang: việc phải làm, nguồn lực đang có, người có thể hỏi.",
+  "thuocDo": "100% việc mới nhận trong 3 tháng có trang này",
+  "thoiHanThang": 3
+ },
+ {
+  "maMau": "CV-04",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "MENH-TDU-02",
+   "MENH-TD-02"
+  ],
+  "cau": "Giữ hai khung giờ cố định mỗi tuần cho việc quan trọng nhất, không xếp việc khác vào.",
+  "thuocDo": "≥ 10/12 tuần giữ đủ hai khung",
+  "thoiHanThang": 3
+ },
+ {
+  "maMau": "CV-05",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "MENH-HOA-04",
+   "TAI-HOA-04"
+  ],
+  "cau": "Với mỗi việc lớn, viết trước 3 tiêu chí \"đủ tốt\"; đạt đủ ba thì chốt, không sửa thêm.",
+  "thuocDo": "≥ 3 việc chốt đúng hạn theo tiêu chí viết trước",
+  "thoiHanThang": 2
+ },
+ {
+  "maMau": "CV-06",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "MENH-TS-02",
+   "MENH-LT-02",
+   "CHUNG-SP-11"
+  ],
+  "cau": "Khi gặp tin nhắn hay ý kiến khiến bạn bực, chờ ít nhất 2 giờ rồi mới trả lời.",
+  "thuocDo": "Ghi các lần gặp; ≥ 4/5 lần có chờ",
+  "thoiHanThang": 1
+ },
+ {
+  "maMau": "CV-07",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-SP-03",
+   "CHUNG-SP-01"
+  ],
+  "cau": "Mỗi tháng hẹn một người đi trước trong nghề, hỏi một câu cụ thể về việc bạn đang làm.",
+  "thuocDo": "3 cuộc hẹn trong 3 tháng",
+  "thoiHanThang": 3,
+  "maPhatHuy": [
+   "QUAN-SP-03",
+   "CHUNG-SP-01"
+  ]
+ },
+ {
+  "maMau": "CV-08",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "VAN-SP-06/thận trọng"
+  ],
+  "cau": "Nhờ một đồng nghiệp hoặc người được phép xem nội dung đọc soát văn bản gửi ra ngoài mang tên bạn (hợp đồng, báo cáo, đề xuất) trước khi gửi.",
+  "thuocDo": "100% văn bản loại này trong 3 tháng có người đọc soát",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "VAN-SP-06/thận trọng": {
+    "saoTrongCung": [
+     [
+      "Văn Xương",
+      "Văn Khúc",
+      "L. Văn Xương",
+      "L. Văn Khúc"
+     ],
+     [
+      "Kình Dương",
+      "Đà La",
+      "L. Kình Dương",
+      "L. Đà La",
+      "hoa:Hóa Kỵ",
+      "luuHoa:Hóa Kỵ"
+     ]
+    ]
+   }
+  },
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "TC-01",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "MENH-VK-02",
+   "TAI-THL-02",
+   "TAI-HOA-04",
+   "MENH-TP-02"
+  ],
+  "cau": "Ghi mọi khoản chi từ {mức bạn tự chọn} trở lên; cuối tuần cộng theo ba nhóm: cần, muốn, phát sinh.",
+  "thuocDo": "≥ 7/8 tuần ghi đủ",
+  "thoiHanThang": 2
+ },
+ {
+  "maMau": "TC-02",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "TAI-SP-07",
+   "MENH-SP-08",
+   "MENH-PQ-02"
+  ],
+  "cau": "Trước mỗi khoản chi lớn hơn {mức bạn tự chọn} không có trong kế hoạch, chờ 48 giờ rồi mới quyết.",
+  "thuocDo": "≥ 4/5 khoản có chờ đủ 48 giờ",
+  "thoiHanThang": 3
+ },
+ {
+  "maMau": "TC-03",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "MENH-SP-08",
+   "MENH-PQ-02",
+   "PHU-CC-07"
+  ],
+  "cau": "Mỗi lần nhận thu nhập, chuyển ngay {phần bạn tự chọn} vào một tài khoản riêng chỉ dùng cho việc bất ngờ.",
+  "thuocDo": "3/3 tháng chuyển đúng ngày",
+  "thoiHanThang": 3
+ },
+ {
+  "maMau": "TC-04",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "TAI-LT-02",
+   "HUYNH-HOA-02",
+   "HUYNH-TL-03",
+   "PHU-CC-07"
+  ],
+  "cau": "Mỗi khoản tiền chung, cho mượn hay góp vốn với người quen đều có một tin nhắn ghi số tiền, mục đích, hạn.",
+  "thuocDo": "100% khoản mới trong 3 tháng có tin nhắn",
+  "thoiHanThang": 3,
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "TC-05",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-LUU-01",
+   "DIEN-HOA-04"
+  ],
+  "cau": "Trước khi ký hay chuyển tiền cho giao dịch lớn, đọc lại toàn bộ giấy tờ và hỏi một người có chuyên môn.",
+  "thuocDo": "100% giao dịch lớn trong 3 tháng có bước này; không phát sinh giao dịch lớn thì ghi \"không có\"",
+  "thoiHanThang": 3,
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "TC-06",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "TAI-PQ-01",
+   "TAI-HOA-02",
+   "TAI-SP-03"
+  ],
+  "cau": "Liệt kê các nguồn thu hiện có; chọn một nguồn bạn làm tốt nhất và dành thêm một buổi mỗi tuần cho nó.",
+  "thuocDo": "≥ 8/12 tuần có buổi này",
+  "thoiHanThang": 3,
+  "maPhatHuy": [
+   "TAI-PQ-01",
+   "TAI-HOA-02",
+   "TAI-SP-03"
+  ]
+ },
+ {
+  "maMau": "TC-07",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "VAN-SP-06/thận trọng",
+   "NAM-LUU-04-SAT"
+  ],
+  "cau": "Gom giấy tờ tài chính đang có vào một chỗ, đọc lại từng tờ, đánh dấu điều chưa rõ để hỏi người có chuyên môn.",
+  "thuocDo": "Xong danh mục (có/không); 100% điều đánh dấu được hỏi",
+  "thoiHanThang": 1,
+  "dieuKien": {
+   "VAN-SP-06/thận trọng": {
+    "saoTrongCung": [
+     [
+      "Văn Xương",
+      "Văn Khúc",
+      "L. Văn Xương",
+      "L. Văn Khúc"
+     ],
+     [
+      "Kình Dương",
+      "Đà La",
+      "L. Kình Dương",
+      "L. Đà La",
+      "hoa:Hóa Kỵ",
+      "luuHoa:Hóa Kỵ"
+     ]
+    ]
+   },
+   "NAM-LUU-04-SAT": {
+    "quyTacId": [
+     "NAM-LUU-04-SAT"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TT-01",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "PHU-SP-06",
+   "PHU-HOA-04",
+   "PHU-LT-02",
+   "VAN-SP-10/hãm"
+  ],
+  "cau": "Cùng {nguoiLienQuan} thống nhất một quy ước: khi bất đồng, tạm dừng và hẹn lúc bình tĩnh trong ngày để nói tiếp.",
+  "thuocDo": "Ghi các lần bất đồng; ≥ 3/4 lần dùng quy ước",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "VAN-SP-10/hãm": {
+    "quyTacId": [
+     "NAM-MANG-06-PHU"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TT-02",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "PHU-SP-08",
+   "PHU-TL-02",
+   "NAM-TT-06"
+  ],
+  "cau": "Đặt một buổi cố định mỗi tuần cho hai người, không điện thoại, không bàn việc.",
+  "thuocDo": "≥ 10/12 tuần giữ được",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-TT-06": {
+    "quyTacId": [
+     "NAM-TT-06"
+    ],
+    "cung": [
+     "Phu Thê"
+    ],
+    "saoTrongCung": [
+     [
+      "L. Thiên Khốc",
+      "L. Thiên Hư",
+      "L. Tang Môn",
+      "L. Bạch Hổ"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TT-03",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "PHU-THL-02",
+   "PHU-SP-11",
+   "PHU-HOA-04"
+  ],
+  "cau": "Dành một buổi nói rõ ba điều mỗi người cần trong mối quan hệ; viết lại và xem lại sau một tháng.",
+  "thuocDo": "Có buổi nói chuyện + một lần xem lại",
+  "thoiHanThang": 2
+ },
+ {
+  "maMau": "TT-04",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "PHU-PQ-02",
+   "PHU-LT-02",
+   "PHU-YN-05"
+  ],
+  "cau": "Đang tìm hiểu ai đó: viết ba giá trị sống bạn cần ở người đồng hành; sau mỗi lần gặp, ghi người đó khớp mấy điều.",
+  "thuocDo": "Có danh sách + ghi chép sau mỗi lần gặp",
+  "thoiHanThang": 3
+ },
+ {
+  "maMau": "TT-05",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "PHU-YN-05",
+   "PHU-TS-02"
+  ],
+  "cau": "Trước khi tiến xa hơn, cùng nói chuyện về ba chủ đề thực tế: tiền bạc, nơi ở, kế hoạch vài năm tới.",
+  "thuocDo": "Đủ 3 buổi, mỗi buổi một chủ đề",
+  "thoiHanThang": 3
+ },
+ {
+  "maMau": "TT-06",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "MENH-VK-03"
+  ],
+  "cau": "Mỗi tuần chủ động kể với {nguoiLienQuan} một điều bạn đang nghĩ hay lo, không đợi được hỏi.",
+  "thuocDo": "≥ 10/12 tuần có",
+  "thoiHanThang": 3
+ },
+ {
+  "maMau": "SK-01",
+  "chuDe": "suc-khoe",
+  "maHuong": [
+   "TAT-TV-02",
+   "TAT-VK-02",
+   "CHUNG-SP-17",
+   "CHUNG-HOA-03",
+   "NAM-MANG-05"
+  ],
+  "cau": "Nếu đã hơn 12 tháng chưa khám sức khỏe tổng quát, đặt lịch khám trong 3 tháng tới.",
+  "thuocDo": "Đã đặt lịch / đã khám (có/không)",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-MANG-05": {
+    "saoTrongCung": [
+     [
+      "Vũ Khúc"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "SK-02",
+  "chuDe": "suc-khoe",
+  "maHuong": [
+   "TAT-LT-02"
+  ],
+  "cau": "Chọn một giờ đi ngủ cố định và giữ ít nhất 5 đêm mỗi tuần.",
+  "thuocDo": "≥ 6/8 tuần đạt 5 đêm",
+  "thoiHanThang": 2
+ },
+ {
+  "maMau": "SK-03",
+  "chuDe": "suc-khoe",
+  "maHuong": [
+   "TAT-TV-02",
+   "PHUC-YN-01"
+  ],
+  "cau": "Mỗi ngày làm việc, dành 15 phút nghỉ không màn hình vào cùng một khung giờ.",
+  "thuocDo": "≥ 4/5 ngày mỗi tuần, trong 8 tuần",
+  "thoiHanThang": 2
+ },
+ {
+  "maMau": "SK-04",
+  "chuDe": "suc-khoe",
+  "maHuong": [
+   "NAM-MANG-05",
+   "TAT-SP-04"
+  ],
+  "cau": "Ghi một dòng mỗi tối về mức năng lượng trong ngày (1–5); cuối tháng xem tuần nào thấp và vì sao.",
+  "thuocDo": "≥ 20 ngày ghi/tháng; 1 lần xem lại mỗi tháng",
+  "thoiHanThang": 3
+ },
+ {
+  "maMau": "HT-01",
+  "chuDe": "hoc-tap",
+  "maHuong": [
+   "NAM-TH-04",
+   "CHUNG-SP-01",
+   "MENH-HOA-03"
+  ],
+  "cau": "Chọn một kỹ năng hoặc chứng chỉ, chia lộ trình 12 tuần, học 3 buổi mỗi tuần.",
+  "thuocDo": "≥ 30/36 buổi",
+  "thoiHanThang": 3,
+  "maPhatHuy": [
+   "CHUNG-SP-01",
+   "MENH-HOA-03"
+  ],
+  "dieuKien": {
+   "NAM-TH-04": {
+    "quyTacId": [
+     "NAM-TH-04",
+     "NAM-TH-04-TT",
+     "NAM-TH-04-GOC"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "HT-02",
+  "chuDe": "hoc-tap",
+  "maHuong": [
+   "MENH-CM-02",
+   "MENH-TCO-02"
+  ],
+  "cau": "Chọn một chủ đề duy nhất và học xong một khóa hoặc một cuốn sách trước khi mở cái mới.",
+  "thuocDo": "Hoàn thành 1 khóa/1 cuốn, không mở mới giữa chừng",
+  "thoiHanThang": 3
+ },
+ {
+  "maMau": "HT-03",
+  "chuDe": "hoc-tap",
+  "maHuong": [
+   "QUAN-HOA-02",
+   "TAI-HOA-03"
+  ],
+  "cau": "Mỗi tháng viết hoặc chia sẻ một bài ngắn về điều bạn giỏi trong chuyên môn.",
+  "thuocDo": "3 bài trong 3 tháng",
+  "thoiHanThang": 3,
+  "maPhatHuy": [
+   "QUAN-HOA-02",
+   "TAI-HOA-03"
+  ]
+ },
+ {
+  "maMau": "GD-01",
+  "chuDe": "gia-dao",
+  "maHuong": [
+   "NAM-HOA-07",
+   "PHUMAU-YN-01"
+  ],
+  "cau": "Đặt một cuộc gọi cố định mỗi tuần với {nguoiLienQuan}; việc cần quyết thì nhắn lại bằng chữ sau cuộc gọi.",
+  "thuocDo": "≥ 10/12 tuần có cuộc gọi",
+  "thoiHanThang": 3,
+  "maPhatHuy": [
+   "PHUMAU-YN-01"
+  ],
+  "dieuKien": {
+   "NAM-HOA-07": {
+    "cung": [
+     "Phụ Mẫu"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "GD-02",
+  "chuDe": "gia-dao",
+  "maHuong": [
+   "HUYNH-HOA-02",
+   "HUYNH-TL-03"
+  ],
+  "cau": "Chuyện tiền bạc với anh chị em: mỗi khoản đều ghi lại bằng tin nhắn, ai góp bao nhiêu, dùng vào việc gì.",
+  "thuocDo": "100% khoản mới có ghi",
+  "thoiHanThang": 3,
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "GD-03",
+  "chuDe": "gia-dao",
+  "maHuong": [
+   "HUYNH-CC-04"
+  ],
+  "cau": "Khi cả nhà bàn chuyện chung, gửi trước nội dung cần bàn; trong buổi, mỗi người nói hết ý rồi mới quyết.",
+  "thuocDo": "Áp dụng ở ≥ 2 buổi bàn chuyện chung",
+  "thoiHanThang": 3
+ },
+ {
+  "maMau": "GD-04",
+  "chuDe": "gia-dao",
+  "maHuong": [
+   "DIEN-HOA-04"
+  ],
+  "cau": "Gom giấy tờ nhà ở vào một chỗ (bản giấy và bản chụp), kiểm tên, ngày, chỗ còn thiếu.",
+  "thuocDo": "Xong danh mục, có/không",
+  "thoiHanThang": 1,
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "GD-05",
+  "chuDe": "gia-dao",
+  "maHuong": [
+   "DIEN-HOA-03",
+   "PHUC-YN-01"
+  ],
+  "cau": "Chọn một góc trong nhà để sắp lại thành chỗ nghỉ ngơi hoặc làm việc yên tĩnh.",
+  "thuocDo": "Xong trong tháng, dùng ≥ 3 lần/tuần",
+  "thoiHanThang": 1,
+  "maPhatHuy": [
+   "DIEN-HOA-03",
+   "PHUC-YN-01"
+  ]
+ },
+ {
+  "maMau": "CV-09",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-TT-06"
+  ],
+  "cau": "Đặt một giờ kết thúc ngày làm việc và giữ ít nhất 4 ngày mỗi tuần; việc chưa xong ghi vào danh sách cho sáng hôm sau.",
+  "thuocDo": "≥ 6/8 tuần giữ đủ 4 ngày",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-TT-06": {
+    "quyTacId": [
+     "NAM-TT-06"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "L. Thiên Khốc",
+      "L. Thiên Hư",
+      "L. Tang Môn",
+      "L. Bạch Hổ"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "CV-10",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-HOA-07"
+  ],
+  "cau": "Với mỗi việc được giao hoặc nhận thêm, nhắn lại cho {nguoiLienQuan} ba điều: phạm vi, hạn, người duyệt, và xin xác nhận.",
+  "thuocDo": "100% việc mới trong 2 tháng có tin xác nhận",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-HOA-07": {
+    "quyTacId": [
+     "NAM-HOA-KY-SANG",
+     "NAM-HOA-KY-HAM"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "CV-11",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-HOA-08/Kỵ-Lộc"
+  ],
+  "cau": "Viết ra một điểm vướng lâu nay trong công việc; mỗi tháng làm một bước để gỡ: hỏi người liên quan, đề xuất cách làm, hoặc sắp lại việc.",
+  "thuocDo": "3 bước trong 3 tháng, mỗi bước ghi một dòng",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-08/Kỵ-Lộc": {
+    "quyTacId": [
+     "NAM-HOA-08-KY-LOC",
+     "NAM-HOA-08-KY-LOC-CANH"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "CV-12",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-HOA-04/hãm"
+  ],
+  "cau": "Chọn một việc chính ở chỗ làm; mỗi thứ Sáu ghi một dòng tiến độ để thấy kết quả tích lũy.",
+  "thuocDo": "≥ 10/12 tuần có dòng ghi",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-04/hãm": {
+    "quyTacId": [
+     "NAM-HOA-LOC-HAM"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "CV-13",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-HOA-05/hãm"
+  ],
+  "cau": "Mỗi sáng thứ Hai viết ra một việc chính của tuần và làm xong việc đó trước khi nhận thêm việc vụn.",
+  "thuocDo": "≥ 10/12 tuần việc chính xong trong tuần",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-05/hãm": {
+    "quyTacId": [
+     "NAM-HOA-QUYEN-HAM"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "CV-14",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-HOA-06/sáng"
+  ],
+  "cau": "Mỗi tháng gửi {nguoiLienQuan} một đề xuất ngắn, nửa trang, về một cách làm tốt hơn mà bạn đã thử.",
+  "thuocDo": "3 đề xuất trong 3 tháng",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-06/sáng": {
+    "quyTacId": [
+     "NAM-HOA-KHOA-SANG"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-HOA-06"
+  ],
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "CV-15",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-HOA-06/hãm"
+  ],
+  "cau": "Trước khi trình bày một kết quả, tự rà theo ba điểm cần hoàn thiện bạn viết sẵn, sửa xong mới gửi.",
+  "thuocDo": "100% bản trình bày trong 2 tháng có bước rà",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-HOA-06/hãm": {
+    "quyTacId": [
+     "NAM-HOA-KHOA-HAM"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "CV-16",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-HOA-05/sáng"
+  ],
+  "cau": "Trước mỗi đề xuất quan trọng, hỏi ý một người sẽ chịu ảnh hưởng và ghi điều họ lo vào bản đề xuất.",
+  "thuocDo": "≥ 3 đề xuất trong 3 tháng có bước hỏi ý",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-05/sáng": {
+    "quyTacId": [
+     "NAM-HOA-QUYEN-SANG"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-HOA-05"
+  ],
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "CV-17",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-LUU-03"
+  ],
+  "cau": "Ghi tên ba người có vị thế trong nghề từng giúp hoặc có thể giới thiệu bạn; mỗi tháng chủ động kể với một người về việc bạn đang làm.",
+  "thuocDo": "3 lần trong 3 tháng",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-LUU-03": {
+    "quyTacId": [
+     "NAM-LUU-03"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-LUU-03"
+  ]
+ },
+ {
+  "maMau": "CV-18",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-LUU-02"
+  ],
+  "cau": "Trước khi nhận việc mới, chuyển bộ phận hay đi công tác dài, viết một trang: lý do, điều được, điều mất, giấy tờ cần làm.",
+  "thuocDo": "100% thay đổi trong 3 tháng có trang này; không có thay đổi thì ghi \"không có\"",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-LUU-02": {
+    "quyTacId": [
+     "NAM-LUU-02"
+    ]
+   }
+  },
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "HT-04",
+  "chuDe": "hoc-tap",
+  "maHuong": [
+   "NAM-HOA-06/sáng"
+  ],
+  "cau": "Chọn một khóa học hoặc chứng chỉ gắn với lĩnh vực này, ghi ngày bắt đầu và học 2 buổi mỗi tuần.",
+  "thuocDo": "≥ 20/24 buổi trong 3 tháng",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-06/sáng": {
+    "quyTacId": [
+     "NAM-HOA-KHOA-SANG"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TC-08",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-LUU-03"
+  ],
+  "cau": "Hẹn hỏi một người có chuyên môn mà bạn tin một câu cụ thể về cách bạn đang ghi chép, sắp xếp thu chi; ghi lại ba điều rút ra.",
+  "thuocDo": "1 buổi hỏi trong 3 tháng, có ghi 3 điều",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-LUU-03": {
+    "quyTacId": [
+     "NAM-LUU-03"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-LUU-03"
+  ]
+ },
+ {
+  "maMau": "TC-09",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-TT-06"
+  ],
+  "cau": "Đặt một khung 20 phút cố định mỗi tuần để xem lại thu chi của tuần, chọn lúc bạn không mệt.",
+  "thuocDo": "≥ 10/12 tuần có buổi xem lại",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-TT-06": {
+    "quyTacId": [
+     "NAM-TT-06"
+    ],
+    "cung": [
+     "Tài Bạch"
+    ],
+    "saoTrongCung": [
+     [
+      "L. Thiên Khốc",
+      "L. Thiên Hư",
+      "L. Tang Môn",
+      "L. Bạch Hổ"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TC-10",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-07"
+  ],
+  "cau": "Chốt mỗi thỏa thuận có tiền (giá, hạn, phần của mỗi bên) bằng tin nhắn hoặc văn bản trước khi chuyển hay nhận tiền.",
+  "thuocDo": "100% thỏa thuận mới trong 3 tháng có bản chữ",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-07": {
+    "quyTacId": [
+     "NAM-HOA-KY-SANG",
+     "NAM-HOA-KY-HAM"
+    ]
+   }
+  },
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "TC-11",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-08/Lộc-Kỵ"
+  ],
+  "cau": "Trước khi nhận một việc có tiền công, ghi rõ điều khoản (khối lượng, mức trả, hạn trả) và gửi bên kia xác nhận.",
+  "thuocDo": "100% việc mới nhận trong 3 tháng có điều khoản đã xác nhận",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-08/Lộc-Kỵ": {
+    "quyTacId": [
+     "NAM-HOA-08-LOC-KY"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TC-12",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-08/Kỵ-Lộc"
+  ],
+  "cau": "Viết ra một việc tiền bạc còn vướng lâu nay (khoản chưa rõ, giấy tờ chưa xong); mỗi tháng làm một bước để làm rõ, cần thì hỏi người có chuyên môn.",
+  "thuocDo": "3 bước trong 3 tháng, mỗi bước ghi một dòng",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-08/Kỵ-Lộc": {
+    "quyTacId": [
+     "NAM-HOA-08-KY-LOC",
+     "NAM-HOA-08-KY-LOC-CANH"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TC-13",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-04/sáng"
+  ],
+  "cau": "Cùng người trong nhà lập danh sách chi tiêu gia đình cho tháng tới, mỗi nhóm một {mức bạn tự chọn}; cuối tháng xem lại.",
+  "thuocDo": "3/3 tháng có danh sách và một lần xem lại",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-04/sáng": {
+    "quyTacId": [
+     "NAM-HOA-LOC-SANG"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-HOA-04"
+  ],
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "TC-14",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-04/hãm"
+  ],
+  "cau": "Chọn một nguồn thu đang có; cuối mỗi tháng ghi số giờ bạn bỏ vào và số thu được để thấy kết quả tích lũy.",
+  "thuocDo": "3/3 tháng có dòng ghi",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-04/hãm": {
+    "quyTacId": [
+     "NAM-HOA-LOC-HAM"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TC-15",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-05/hãm"
+  ],
+  "cau": "Liệt kê các việc tiền bạc bạn đang lo; mỗi tuần chọn một việc chính, làm xong trước khi mở việc khác.",
+  "thuocDo": "≥ 10/12 tuần việc chính xong",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-05/hãm": {
+    "quyTacId": [
+     "NAM-HOA-QUYEN-HAM"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TC-16",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-06/sáng"
+  ],
+  "cau": "Đọc một cuốn sách hoặc học một khóa ngắn về quản lý tiền cá nhân; ghi ba điều sẽ áp dụng và làm thử một điều.",
+  "thuocDo": "Xong sách hoặc khóa, có 1 điều đã làm thử",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-06/sáng": {
+    "quyTacId": [
+     "NAM-HOA-KHOA-SANG"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TC-17",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-05/sáng"
+  ],
+  "cau": "Khi cần bàn chuyện tiền với {nguoiLienQuan}, gửi trước nội dung muốn bàn và hỏi ý họ trước khi nêu đề xuất của bạn.",
+  "thuocDo": "≥ 2 lần áp dụng trong 3 tháng; không có dịp thì ghi \"không có\"",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-05/sáng": {
+    "quyTacId": [
+     "NAM-HOA-QUYEN-SANG"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-HOA-05"
+  ]
+ },
+ {
+  "maMau": "TT-07",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "VAN-SP-06/thận trọng",
+   "NAM-LUU-04-SAT"
+  ],
+  "cau": "Gom giấy tờ chung của bạn với {nguoiLienQuan} hoặc của gia đình vào một chỗ, cùng đọc lại, đánh dấu điều chưa rõ để hỏi người có chuyên môn.",
+  "thuocDo": "Xong danh mục (có/không); 100% điều đánh dấu được hỏi",
+  "thoiHanThang": 1,
+  "dieuKien": {
+   "VAN-SP-06/thận trọng": {
+    "saoTrongCung": [
+     [
+      "Văn Xương",
+      "Văn Khúc",
+      "L. Văn Xương",
+      "L. Văn Khúc"
+     ],
+     [
+      "Kình Dương",
+      "Đà La",
+      "L. Kình Dương",
+      "L. Đà La",
+      "hoa:Hóa Kỵ",
+      "luuHoa:Hóa Kỵ"
+     ]
+    ]
+   },
+   "NAM-LUU-04-SAT": {
+    "quyTacId": [
+     "NAM-LUU-04-SAT"
+    ]
+   }
+  },
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "TT-08",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "NAM-TT-06"
+  ],
+  "cau": "Mỗi tuần dành 15 phút hỏi {nguoiLienQuan} điều gì làm họ mệt nhất trong tuần, chỉ nghe, chưa góp ý.",
+  "thuocDo": "≥ 10/12 tuần có",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-TT-06": {
+    "quyTacId": [
+     "NAM-TT-06"
+    ],
+    "cung": [
+     "Phu Thê"
+    ],
+    "saoTrongCung": [
+     [
+      "L. Thiên Khốc",
+      "L. Thiên Hư",
+      "L. Tang Môn",
+      "L. Bạch Hổ"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TT-09",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "NAM-LUU-03"
+  ],
+  "cau": "Mỗi tháng cùng {nguoiLienQuan} dành một buổi gặp người thân hoặc bạn bè mà cả hai quý trọng.",
+  "thuocDo": "3 buổi trong 3 tháng",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-LUU-03": {
+    "quyTacId": [
+     "NAM-LUU-03"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-LUU-03"
+  ]
+ },
+ {
+  "maMau": "TT-10",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "NAM-LUU-05"
+  ],
+  "cau": "Mỗi tháng cùng {nguoiLienQuan} làm một việc lần đầu làm cùng nhau: một món ăn, một nơi chưa tới, hay một lớp học ngắn.",
+  "thuocDo": "3 việc mới trong 3 tháng",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-LUU-05": {
+    "quyTacId": [
+     "NAM-LUU-05-PHU"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-LUU-05"
+  ]
+ },
+ {
+  "maMau": "TT-11",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "NAM-HOA-07"
+  ],
+  "cau": "Khi hai người thống nhất một việc chung (lịch, tiền, việc nhà), một người nhắn lại bằng chữ điều đã thống nhất trong ngày.",
+  "thuocDo": "≥ 4/5 việc thống nhất có tin nhắn lại",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-HOA-07": {
+    "quyTacId": [
+     "NAM-HOA-KY-SANG",
+     "NAM-HOA-KY-HAM"
+    ]
+   }
+  },
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "TT-12",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "NAM-HOA-08/Kỵ-Lộc"
+  ],
+  "cau": "Chọn một chuyện cũ hai người hay né, hẹn một buổi lúc cả hai thoải mái để nói; mỗi người nói hết ý rồi mới bàn cách làm.",
+  "thuocDo": "1 buổi trong 2 tháng, có một dòng ghi điều đã thống nhất",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-HOA-08/Kỵ-Lộc": {
+    "quyTacId": [
+     "NAM-HOA-08-KY-LOC",
+     "NAM-HOA-08-KY-LOC-CANH"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TT-13",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "NAM-HOA-04/sáng"
+  ],
+  "cau": "Mỗi tuần làm một việc chu đáo nhỏ cho {nguoiLienQuan} mà không cần được nhắc, rồi ghi lại một dòng.",
+  "thuocDo": "≥ 10/12 tuần có",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-04/sáng": {
+    "quyTacId": [
+     "NAM-HOA-LOC-SANG"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-HOA-04"
+  ]
+ },
+ {
+  "maMau": "TT-14",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "NAM-HOA-05/sáng"
+  ],
+  "cau": "Khi muốn đề nghị một điều với {nguoiLienQuan}, hỏi ý người ấy trước rồi mới nói mong muốn của bạn.",
+  "thuocDo": "Ghi các lần đề nghị; ≥ 3/4 lần có hỏi ý trước",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-HOA-05/sáng": {
+    "quyTacId": [
+     "NAM-HOA-QUYEN-SANG"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-HOA-05"
+  ]
+ },
+ {
+  "maMau": "TT-15",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "NAM-HOA-05/hãm"
+  ],
+  "cau": "Cùng {nguoiLienQuan} liệt kê các việc chung đang dồn; mỗi tháng chọn một việc chính để làm xong trước.",
+  "thuocDo": "3/3 tháng có việc chính xong",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-05/hãm": {
+    "quyTacId": [
+     "NAM-HOA-QUYEN-HAM"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TT-16",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "NAM-HOA-06/hãm"
+  ],
+  "cau": "Khi muốn nói một điều quan trọng với {nguoiLienQuan}, viết nháp trước, để qua một ngày rồi mới nói.",
+  "thuocDo": "Ghi các lần; ≥ 3/4 lần có nháp và chờ một ngày",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-HOA-06/hãm": {
+    "quyTacId": [
+     "NAM-HOA-KHOA-HAM"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TT-17",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "NAM-HOA-06/sáng"
+  ],
+  "cau": "Cùng {nguoiLienQuan} viết một kế hoạch chung 3 tháng: một việc muốn làm, một nơi muốn đến, một thói quen muốn giữ.",
+  "thuocDo": "Có kế hoạch, mỗi tháng xem lại một lần",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-06/sáng": {
+    "quyTacId": [
+     "NAM-HOA-KHOA-SANG"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-HOA-06"
+  ]
+ },
+ {
+  "maMau": "SK-05",
+  "chuDe": "suc-khoe",
+  "maHuong": [
+   "NAM-LUU-02"
+  ],
+  "cau": "Trong những tuần có chuyến đi hoặc đổi lịch sinh hoạt, giữ giờ đi ngủ cố định ít nhất 5 đêm.",
+  "thuocDo": "Ghi các tuần có thay đổi; ≥ 3/4 tuần giữ được",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-LUU-02": {
+    "quyTacId": [
+     "NAM-LUU-02"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "SK-06",
+  "chuDe": "suc-khoe",
+  "maHuong": [
+   "NAM-TT-06"
+  ],
+  "cau": "Chọn một buổi trong tuần không xếp việc, dành cho nghỉ ngơi hoặc vận động nhẹ.",
+  "thuocDo": "≥ 10/12 tuần giữ được",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-TT-06": {
+    "quyTacId": [
+     "NAM-TT-06"
+    ],
+    "cung": [
+     "Tật Ách"
+    ],
+    "saoTrongCung": [
+     [
+      "L. Thiên Khốc",
+      "L. Thiên Hư",
+      "L. Tang Môn",
+      "L. Bạch Hổ"
+     ]
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "CV-19",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-HOA-04/hãm"
+  ],
+  "cau": "Chia việc chính đang làm thành các bước nhỏ; mỗi tuần làm xong một bước và đánh dấu vào danh sách.",
+  "thuocDo": "≥ 10/12 tuần xong một bước",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-04/hãm": {
+    "quyTacId": [
+     "NAM-HOA-LOC-HAM"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "CV-20",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-HOA-08/Kỵ-Lộc"
+  ],
+  "cau": "Hẹn {nguoiLienQuan} một buổi nói thẳng về một việc lâu nay còn vướng giữa hai bên, mang theo một cách gỡ bạn đề xuất.",
+  "thuocDo": "1 buổi trong 2 tháng, có một dòng ghi kết quả",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-HOA-08/Kỵ-Lộc": {
+    "quyTacId": [
+     "NAM-HOA-08-KY-LOC",
+     "NAM-HOA-08-KY-LOC-CANH"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "CV-21",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-LUU-02"
+  ],
+  "cau": "Với mỗi thủ tục, giấy tờ công việc đang chờ, ghi ngày nộp và một ngày hỏi lại; đến ngày đó mới hỏi.",
+  "thuocDo": "100% thủ tục đang chờ trong 3 tháng có ngày hỏi lại",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-LUU-02": {
+    "quyTacId": [
+     "NAM-LUU-02"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TC-18",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-05/hãm"
+  ],
+  "cau": "Cuối mỗi tháng ghi ba việc tiền bạc quan trọng nhất của tháng sau, xếp thứ tự và làm theo thứ tự đó.",
+  "thuocDo": "3/3 tháng có danh sách xếp thứ tự",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-05/hãm": {
+    "quyTacId": [
+     "NAM-HOA-QUYEN-HAM"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TC-19",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-07"
+  ],
+  "cau": "Trước khi bàn chuyện tiền với ai, viết sẵn ba ý chính muốn nói; sau buổi bàn, nhắn lại điều đã thống nhất.",
+  "thuocDo": "≥ 3/4 lần bàn có ba ý viết trước và tin nhắn lại",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-07": {
+    "quyTacId": [
+     "NAM-HOA-KY-SANG",
+     "NAM-HOA-KY-HAM"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TC-20",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-LUU-03"
+  ],
+  "cau": "Ghi tên những người đã giúp hoặc giới thiệu cho bạn việc có thu nhập; mỗi tháng chủ động cảm ơn hoặc cập nhật một người.",
+  "thuocDo": "3 lần trong 3 tháng",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-LUU-03": {
+    "quyTacId": [
+     "NAM-LUU-03"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-LUU-03"
+  ]
+ },
+ {
+  "maMau": "TC-21",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-04/sáng"
+  ],
+  "cau": "Mỗi lần có khoản thu thêm ngoài thu nhập thường kỳ, để riêng ngay {phần bạn tự chọn} của khoản đó vào một chỗ tích góp.",
+  "thuocDo": "Ghi các khoản thu thêm; ≥ 4/5 khoản đã để riêng phần tích góp; không có khoản nào thì ghi \"không có\"",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-04/sáng": {
+    "quyTacId": [
+     "NAM-HOA-LOC-SANG"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-HOA-04"
+  ]
+ },
+ {
+  "maMau": "TC-22",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-08/Kỵ-Lộc"
+  ],
+  "cau": "Hẹn người liên quan một buổi nói rõ một khoản tiền còn chưa rõ giữa hai bên, rồi ghi lại kết quả bằng tin nhắn.",
+  "thuocDo": "1 buổi trong 2 tháng, có tin nhắn ghi kết quả",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-HOA-08/Kỵ-Lộc": {
+    "quyTacId": [
+     "NAM-HOA-08-KY-LOC",
+     "NAM-HOA-08-KY-LOC-CANH"
+    ]
+   }
+  },
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "TC-23",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-HOA-06/sáng"
+  ],
+  "cau": "Viết kế hoạch tiền bạc một trang cho 3 tháng tới (thu, chi, mục tiêu) và xem lại vào cuối mỗi tháng.",
+  "thuocDo": "Có bản kế hoạch, 3/3 lần xem lại",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-HOA-06/sáng": {
+    "quyTacId": [
+     "NAM-HOA-KHOA-SANG"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-HOA-06"
+  ]
+ },
+ {
+  "maMau": "TT-18",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "NAM-LUU-03"
+  ],
+  "cau": "Khi phân vân một chuyện tình cảm, hỏi ý một người từng trải mà bạn tin, rồi tự viết ra quyết định và lý do của mình.",
+  "thuocDo": "Mỗi lần phân vân có một lần hỏi và một dòng viết; không phát sinh thì ghi \"không có\"",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-LUU-03": {
+    "quyTacId": [
+     "NAM-LUU-03"
+    ]
+   }
+  },
+  "maPhatHuy": [
+   "NAM-LUU-03"
+  ]
+ },
+ {
+  "maMau": "TT-19",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "VAN-SP-06/thận trọng",
+   "NAM-LUU-04-SAT"
+  ],
+  "cau": "Trước khi ký hay gửi giấy tờ liên quan đến cả hai người, cùng {nguoiLienQuan} đọc lại từng trang và ghi điều chưa rõ.",
+  "thuocDo": "100% giấy tờ chung trong 3 tháng có bước đọc lại; không có thì ghi \"không có\"",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "VAN-SP-06/thận trọng": {
+    "saoTrongCung": [
+     [
+      "Văn Xương",
+      "Văn Khúc",
+      "L. Văn Xương",
+      "L. Văn Khúc"
+     ],
+     [
+      "Kình Dương",
+      "Đà La",
+      "L. Kình Dương",
+      "L. Đà La",
+      "hoa:Hóa Kỵ",
+      "luuHoa:Hóa Kỵ"
+     ]
+    ]
+   },
+   "NAM-LUU-04-SAT": {
+    "quyTacId": [
+     "NAM-LUU-04-SAT"
+    ]
+   }
+  },
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "TT-20",
+  "chuDe": "tinh-cam",
+  "maHuong": [
+   "NAM-HOA-07"
+  ],
+  "cau": "Khi có hiểu lầm, mỗi người viết một câu: mình đã hiểu người kia nói gì; đọc cho nhau nghe rồi mới bàn tiếp.",
+  "thuocDo": "Ghi các lần hiểu lầm; ≥ 3/4 lần dùng cách này",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-HOA-07": {
+    "quyTacId": [
+     "NAM-HOA-KY-SANG",
+     "NAM-HOA-KY-HAM"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "CV-22",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "NAM-TT-02"
+  ],
+  "cau": "Khi phải quyết nhanh ở chỗ làm, dành 10 phút viết hai phương án và một rủi ro của mỗi phương án rồi mới quyết.",
+  "thuocDo": "Ghi các lần phải quyết nhanh; ≥ 4/5 lần có 10 phút viết",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-TT-02": {
+    "quyTacId": [
+     "NAM-TT-02"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TC-24",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-TT-02"
+  ],
+  "cau": "Khi bị thúc quyết nhanh một việc tiền bạc, xin thêm ít nhất một ngày và ghi ra điều bạn cần hỏi thêm.",
+  "thuocDo": "Ghi các lần bị thúc; ≥ 4/5 lần có xin thêm thời gian",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-TT-02": {
+    "quyTacId": [
+     "NAM-TT-02"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "TC-25",
+  "chuDe": "tai-chinh",
+  "maHuong": [
+   "NAM-TT-02"
+  ],
+  "cau": "Khi một cơ hội kiếm tiền có nhiều người cùng nhắm, viết trước giới hạn bạn chấp nhận (tiền, thời gian) và lý do nó đáng theo; chạm giới hạn thì dừng lại cân nhắc.",
+  "thuocDo": "Ghi các cơ hội đã cân nhắc; 100% có giới hạn và lý do viết trước; không có dịp thì ghi \"không có\"",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "NAM-TT-02": {
+    "quyTacId": [
+     "NAM-TT-02"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "GD-06",
+  "chuDe": "gia-dao",
+  "maHuong": [
+   "NAM-TT-02"
+  ],
+  "cau": "Khi trong nhà bàn chuyện dễ căng, người nghe nhắc lại ý vừa nghe trước khi nói ý của mình.",
+  "thuocDo": "Áp dụng ở ≥ 3 lần bàn chuyện trong 2 tháng",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "NAM-TT-02": {
+    "quyTacId": [
+     "NAM-TT-02"
+    ]
+   }
+  }
+ },
+ {
+  "maMau": "CV-23",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-TV-05"
+  ],
+  "maPhatHuy": [
+   "QUAN-TV-05"
+  ],
+  "cau": "Chọn hai, ba người bạn tin để cùng làm một việc chung; chia rõ phần của mỗi người và gặp nhau 15 phút mỗi tuần để chốt bước tiếp theo.",
+  "thuocDo": "Có nhóm và bảng chia việc; ≥ 6/8 tuần có buổi gặp",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "QUAN-TV-05": {
+    "quyTacId": [
+     "QL-S01-TOT",
+     "QL-S01-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Tử Vi"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-TV-05: Vai trò điều hành, cần đội ngũ phụ tá mới phát huy hết (TT 卷一·問紫微: 「三宮最要左右守衛」); QL-S01: 'sớm xây vài cộng sự đáng tin'",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-24",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-TCO-04"
+  ],
+  "maPhatHuy": [
+   "QUAN-TCO-04"
+  ],
+  "cau": "Chọn một việc lặp lại trong công việc hoặc việc học; ghi các bước đang làm, nghĩ ra một cách cải tiến và thử trong 4 tuần, rồi ghi kết quả.",
+  "thuocDo": "Có bản ghi các bước, một cải tiến đã thử đủ 4 tuần và một dòng kết quả",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "QUAN-TCO-04": {
+    "quyTacId": [
+     "QL-S02-TOT",
+     "QL-S02-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Thiên Cơ"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-TCO-04: Tư duy phân tích, lên kế hoạch, thích cải tiến quy trình (TB tr. 160, §8.6); QL-S02: 'ghi lại sáng kiến của mình để được ghi nhận'",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-25",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-TDU-05/sáng"
+  ],
+  "maPhatHuy": [
+   "QUAN-TDU-05"
+  ],
+  "cau": "Mỗi tháng chia sẻ trước nhóm, lớp hoặc buổi họp một việc bạn đã làm được, trong 5–10 phút; sau đó ghi một câu góp ý nhận được.",
+  "thuocDo": "3 lần chia sẻ trong 3 tháng, mỗi lần một dòng góp ý",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "QUAN-TDU-05/sáng": {
+    "quyTacId": [
+     "QL-S03-TOT",
+     "QL-S03-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Thái Dương"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-TDU-05 vế sáng: 'Thái Dương sáng thì nổi bật sớm', hợp công việc xuất hiện, truyền đạt (TT 卷一·問太陽; WQ5). Vế hãm ('chọn chuyên môn sâu, bền bỉ') không dùng mẫu này.",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-26",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-VK-04"
+  ],
+  "maPhatHuy": [
+   "QUAN-VK-04"
+  ],
+  "cau": "Đặt cho việc chính của bạn một con số đo được (số việc xong, số bài, số giờ); cuối mỗi tuần ghi số đạt và so với tuần trước.",
+  "thuocDo": "≥ 10/12 tuần có số ghi",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "QUAN-VK-04": {
+    "quyTacId": [
+     "QL-S04-TOT",
+     "QL-S04-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Vũ Khúc"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-VK-04: Hợp môi trường có chỉ tiêu, đo kết quả rõ (KL Vũ khúc; TB tr. 159, §8.4)",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-27",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-TD-04"
+  ],
+  "maPhatHuy": [
+   "QUAN-TD-04"
+  ],
+  "cau": "Viết một mục tiêu cho 3 tháng tới và một cải tiến nhỏ muốn thử trong cách làm việc; cuối mỗi tháng ghi điều đã đổi được.",
+  "thuocDo": "Có mục tiêu viết ra; 3/3 tháng có dòng ghi",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "QUAN-TD-04": {
+    "quyTacId": [
+     "QL-S05-TOT",
+     "QL-S05-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Thiên Đồng"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-TD-04: Thiên Đồng thích thay đổi, cải tiến (KL: 'Thiên đồng và canh cải'; TB tr. 158–159, §8.3); QL-S05: 'đặt mục tiêu theo quý để giữ động lực'",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-28",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-LT-05"
+  ],
+  "maPhatHuy": [
+   "QUAN-LT-05"
+  ],
+  "cau": "Viết ra ba nguyên tắc làm việc bạn muốn giữ (ví dụ: hứa là làm, số liệu rõ nguồn, nói thẳng mà mềm); cuối mỗi tuần tự chấm mình giữ được mấy điều.",
+  "thuocDo": "≥ 10/12 tuần có tự chấm",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "QUAN-LT-05": {
+    "quyTacId": [
+     "QL-S06-TOT",
+     "QL-S06-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Liêm Trinh"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-LT-05: Nguyên tắc, hợp môi trường có luật lệ rõ; giữ cân bằng giữa tham vọng và liêm chính (TB tr. 158; TT 卷一·問廉貞)",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-29",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-TP-03"
+  ],
+  "maPhatHuy": [
+   "QUAN-TP-03"
+  ],
+  "cau": "Lập một danh mục nguồn lực của việc bạn phụ trách (tài liệu, công cụ, người liên hệ), xếp vào một chỗ dễ tìm và cập nhật mỗi cuối tháng.",
+  "thuocDo": "Có danh mục; 3/3 tháng có cập nhật",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "QUAN-TP-03": {
+    "quyTacId": [
+     "QL-S07-TOT",
+     "QL-S07-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Thiên Phủ"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-TP-03: Ổn định, giỏi giữ và quản lý nguồn lực (KL Thiên phủ: 'có tài tổ chức'; TT 卷一·問天府)",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-30",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-TA-04"
+  ],
+  "maPhatHuy": [
+   "QUAN-TA-04"
+  ],
+  "cau": "Mỗi tháng chọn một sản phẩm bạn làm ra (bài viết, bản thiết kế, báo cáo, bài làm), chăm chút đến khi bạn thật hài lòng và lưu vào một thư mục riêng.",
+  "thuocDo": "3 sản phẩm trong thư mục sau 3 tháng",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "QUAN-TA-04": {
+    "quyTacId": [
+     "QL-S08-TOT",
+     "QL-S08-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Thái Âm"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-TA-04: Tinh tế, chu đáo, có khiếu thẩm mỹ; hợp môi trường tôn trọng sự tỉ mỉ (KL Thái âm; TB tr. 160, §8.8)",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-31",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-THL-04"
+  ],
+  "maPhatHuy": [
+   "QUAN-THL-04"
+  ],
+  "cau": "Mỗi tháng chủ động làm quen hoặc nối lại với hai người trong nghề; ghi một việc có thể cùng làm, và chỉ chọn theo một việc mỗi tháng.",
+  "thuocDo": "6 người trong 3 tháng; mỗi tháng tối đa một việc mới được theo",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "QUAN-THL-04": {
+    "quyTacId": [
+     "QL-S09-TOT",
+     "QL-S09-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Tham Lang"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-THL-04: Năng động, giao tiếp giỏi; cần kỷ luật để không phân tán (TB tr. 161, §8.9; TT 卷一·問貪狼); QL-S09: 'tận dụng duyên giao tiếp… đặt mục tiêu rõ'",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43). tuoiTu 18: 'người trong nghề' và việc tự làm quen người mới không hợp người dưới 18 (phiếu Thư G1).",
+  "tuoiTu": 18
+ },
+ {
+  "maMau": "CV-32",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-CM-03"
+  ],
+  "maPhatHuy": [
+   "QUAN-CM-03"
+  ],
+  "cau": "Trước mỗi buổi cần thuyết phục (họp, tư vấn, thuyết trình), viết ba luận điểm và một câu mở đầu nhẹ nhàng; sau buổi ghi điều người nghe đã đồng ý.",
+  "thuocDo": "Ghi các buổi; ≥ 4/5 buổi có chuẩn bị và dòng ghi",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "QUAN-CM-03": {
+    "quyTacId": [
+     "QL-S10-TOT",
+     "QL-S10-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Cự Môn"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-CM-03: Làm việc bằng lời nói và lập luận; cần chú ý cách nói (KL Cự môn; TB tr. 161, §8.10)",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-33",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-TT-04"
+  ],
+  "maPhatHuy": [
+   "QUAN-TT-04"
+  ],
+  "cau": "Nhận làm đầu mối cho một việc nhiều người cùng làm; sau mỗi buổi phối hợp, gửi lại bảng ngắn ba cột: việc, người làm, hạn.",
+  "thuocDo": "≥ 80% buổi phối hợp có bảng gửi lại, đếm theo tuần",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "QUAN-TT-04": {
+    "quyTacId": [
+     "QL-S11-TOT",
+     "QL-S11-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Thiên Tướng"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-TT-04: Người điều phối, 'phó tướng' đáng tin, giữ chuẩn mực (TT 卷一·問天相: 「佐帝之位」)",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-34",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-TL-04"
+  ],
+  "maPhatHuy": [
+   "QUAN-TL-04"
+  ],
+  "cau": "Mỗi tháng dành một buổi chỉ dẫn một người mới hoặc ít kinh nghiệm hơn về việc bạn làm vững; ghi lại câu hỏi họ đưa ra.",
+  "thuocDo": "3 buổi trong 3 tháng, mỗi buổi có ghi câu hỏi",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "QUAN-TL-04": {
+    "quyTacId": [
+     "QL-S12-TOT",
+     "QL-S12-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Thiên Lương"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-TL-04: Người che chở, hướng dẫn, thích giúp đỡ (TT 卷一·問天梁; TB tr. 162, §8.12)",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-35",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-TS-04"
+  ],
+  "maPhatHuy": [
+   "QUAN-TS-04"
+  ],
+  "cau": "Nhận một việc khó do bạn tự phụ trách; chia thành ba mốc có ngày cụ thể, đến mỗi mốc tự kiểm và ghi một dòng kết quả.",
+  "thuocDo": "3/3 mốc có dòng ghi kết quả",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "QUAN-TS-04": {
+    "quyTacId": [
+     "QL-S13-TOT",
+     "QL-S13-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Thất Sát"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-TS-04: Quyết đoán, chịu áp lực, thích thử thách, làm độc lập (TT 卷二·九官祿); QL-S13: 'xử lý việc khó, kèm mốc kiểm tra rõ'",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-36",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-PQ-04"
+  ],
+  "maPhatHuy": [
+   "QUAN-PQ-04"
+  ],
+  "cau": "Chọn một cách làm cũ bạn muốn thay; viết cách mới trong nửa trang, nhờ một người cẩn thận góp ý rồi mới thử trong 4 tuần.",
+  "thuocDo": "Có bản nửa trang, có một lần góp ý, thử đủ 4 tuần",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "QUAN-PQ-04": {
+    "quyTacId": [
+     "QL-S14-TOT",
+     "QL-S14-BINH"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Phá Quân"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-PQ-04: Phá cũ lập mới; nên có đối tác giữ ổn định (TB tr. 163, §8.14; TT 卷二·九官祿)",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Chỉ nhận đoạn sáng/bình (TOT, BINH); đoạn hãm (HAM) giữ câu dẫn (phiếu Thư Đ1, Đ3); không dùng khi Quan Lộc có Hóa Kỵ hoặc sát tinh gốc (S3: dùng CV-39…CV-43)."
+ },
+ {
+  "maMau": "CV-37",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "CHUNG-VCD-02/không cát tinh"
+  ],
+  "cau": "Ghi ra ba việc bạn làm tốt và hay được nhờ nhất, trong công việc hoặc việc học; chọn một việc và mỗi tuần dành một buổi để làm sâu hơn.",
+  "thuocDo": "Có danh sách ba việc; ≥ 10/12 tuần có buổi làm sâu",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "CHUNG-VCD-02/không cát tinh": {
+    "quyTacId": [
+     "QL-VCD"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "catTinhTamPhuong": false,
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "i",
+  "tongHop": true,
+  "nguonChiTiet": "Bám CHUNG-VCD-02 vế 'không cát tinh': 'cần xây nền tảng' (TT, Cốt tủy phú, đã trung tính hóa); cùng lời khuyên của QL-VCD 'chọn hướng mình làm tốt nhất để theo lâu dài'. QUAN-CC-01 giữ trong maNghienCuu (phương pháp mượn sao xung chiếu), không làm mã bám (phiếu Thư Đ4).",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm. Vế 'có cát tinh' dùng CV-38."
+ },
+ {
+  "maMau": "CV-38",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "CHUNG-VCD-02/có cát tinh"
+  ],
+  "cau": "Ghi tên hai, ba người từng giúp hoặc chỉ dẫn bạn trong công việc hoặc việc học; mỗi tháng chủ động hỏi một người một góp ý cụ thể cho bước tiếp theo.",
+  "thuocDo": "3 lần hỏi trong 3 tháng, mỗi lần ghi một dòng góp ý",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "CHUNG-VCD-02/có cát tinh": {
+    "quyTacId": [
+     "QL-VCD"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "catTinhTamPhuong": true,
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh",
+     "Địa Không",
+     "Địa Kiếp"
+    ]
+   }
+  },
+  "dang": "ii",
+  "tongHop": true,
+  "nguonChiTiet": "Bám CHUNG-VCD-02 vế 'có cát tinh hội chiếu ở tam phương vẫn có thể tốt' (TT, Luận cách tinh số cao hạ: 「財官二宮有吉星拱照」); nghĩa nhóm cát tinh theo CHUNG-SP-01 (trợ lực, học vấn, quý nhân). Phần (b) phải có câu B3 'có cát tinh' của NAM-MANG-07.",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm.",
+  "maPhatHuy": [
+   "CHUNG-VCD-02"
+  ]
+ },
+ {
+  "maMau": "CV-39",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-HOA-03"
+  ],
+  "cau": "Trước mỗi việc quan trọng trong công việc hoặc việc học, viết ra ba điều cần chuẩn bị và người cần được báo; báo xong, chuẩn bị đủ rồi mới bắt đầu.",
+  "thuocDo": "Ghi các việc quan trọng; ≥ 4/5 việc có danh sách và tin báo trước",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "QUAN-HOA-03": {
+    "quyTacId": [
+     "QL-S01-TOT",
+     "QL-S01-BINH",
+     "QL-S02-TOT",
+     "QL-S02-BINH",
+     "QL-S03-TOT",
+     "QL-S03-BINH",
+     "QL-S04-TOT",
+     "QL-S04-BINH",
+     "QL-S05-TOT",
+     "QL-S05-BINH",
+     "QL-S06-TOT",
+     "QL-S06-BINH",
+     "QL-S07-TOT",
+     "QL-S07-BINH",
+     "QL-S08-TOT",
+     "QL-S08-BINH",
+     "QL-S09-TOT",
+     "QL-S09-BINH",
+     "QL-S10-TOT",
+     "QL-S10-BINH",
+     "QL-S11-TOT",
+     "QL-S11-BINH",
+     "QL-S12-TOT",
+     "QL-S12-BINH",
+     "QL-S13-TOT",
+     "QL-S13-BINH",
+     "QL-S14-TOT",
+     "QL-S14-BINH",
+     "QL-VCD"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "hoa:Hóa Kỵ"
+     ]
+    ]
+   }
+  },
+  "dang": "i",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-HOA-03 (Hóa Kỵ ở Quan Lộc: hay gặp chuyện phiền lòng; TB tr. 164, §8.19) qua lời khuyên của đoạn QL-HOA-3 'nên chuẩn bị kỹ và giao tiếp rõ ràng'. Phần (b) phải có câu QL-HOA-3.",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm."
+ },
+ {
+  "maMau": "CV-40",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-SP-06"
+  ],
+  "cau": "Khi muốn làm gấp một việc chưa có trong kế hoạch, ghi một dòng lý do và để qua một buổi rồi mới làm.",
+  "thuocDo": "Ghi các lần; ≥ 4/5 lần có dòng lý do và chờ một buổi",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "QUAN-SP-06": {
+    "quyTacId": [
+     "QL-S01-TOT",
+     "QL-S01-BINH",
+     "QL-S02-TOT",
+     "QL-S02-BINH",
+     "QL-S03-TOT",
+     "QL-S03-BINH",
+     "QL-S04-TOT",
+     "QL-S04-BINH",
+     "QL-S05-TOT",
+     "QL-S05-BINH",
+     "QL-S06-TOT",
+     "QL-S06-BINH",
+     "QL-S07-TOT",
+     "QL-S07-BINH",
+     "QL-S08-TOT",
+     "QL-S08-BINH",
+     "QL-S09-TOT",
+     "QL-S09-BINH",
+     "QL-S10-TOT",
+     "QL-S10-BINH",
+     "QL-S11-TOT",
+     "QL-S11-BINH",
+     "QL-S12-TOT",
+     "QL-S12-BINH",
+     "QL-S13-TOT",
+     "QL-S13-BINH",
+     "QL-S14-TOT",
+     "QL-S14-BINH",
+     "QL-VCD"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Kình Dương"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ"
+    ]
+   }
+  },
+  "dang": "i",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-SP-06 (Kình Dương ở Quan Lộc; TT 卷二·九官祿, TB §8.32–8.33) qua lời khuyên đoạn QL-PS-8 'cần kiểm soát sự nóng vội'. Phần (b) phải có câu QL-PS-8.",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm."
+ },
+ {
+  "maMau": "CV-41",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-SP-07/Đà La"
+  ],
+  "cau": "Với một việc bạn đang để chậm, chọn một bước nhỏ làm được trong 20 phút và làm ngay trong ngày; mỗi tuần làm như vậy ít nhất hai lần.",
+  "thuocDo": "≥ 6/8 tuần có ít nhất hai bước nhỏ đã làm",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "QUAN-SP-07/Đà La": {
+    "quyTacId": [
+     "QL-S01-TOT",
+     "QL-S01-BINH",
+     "QL-S02-TOT",
+     "QL-S02-BINH",
+     "QL-S03-TOT",
+     "QL-S03-BINH",
+     "QL-S04-TOT",
+     "QL-S04-BINH",
+     "QL-S05-TOT",
+     "QL-S05-BINH",
+     "QL-S06-TOT",
+     "QL-S06-BINH",
+     "QL-S07-TOT",
+     "QL-S07-BINH",
+     "QL-S08-TOT",
+     "QL-S08-BINH",
+     "QL-S09-TOT",
+     "QL-S09-BINH",
+     "QL-S10-TOT",
+     "QL-S10-BINH",
+     "QL-S11-TOT",
+     "QL-S11-BINH",
+     "QL-S12-TOT",
+     "QL-S12-BINH",
+     "QL-S13-TOT",
+     "QL-S13-BINH",
+     "QL-S14-TOT",
+     "QL-S14-BINH",
+     "QL-VCD"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Đà La"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương"
+    ]
+   }
+  },
+  "dang": "i",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-SP-07 vế Đà La ('độc thủ thì bình thường'; TT 卷二·九官祿) qua lời khuyên đoạn QL-PS-9 'dễ chần chừ, cần chủ động hơn'. Phần (b) phải có câu QL-PS-9.",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm."
+ },
+ {
+  "maMau": "CV-42",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-SP-07/Hỏa Linh"
+  ],
+  "cau": "Sau mỗi 90 phút làm việc hoặc học liên tục, nghỉ 10 phút rời chỗ ngồi; ngày nào thấy căng, ghi một dòng điều gì làm mình căng.",
+  "thuocDo": "≥ 4/5 ngày mỗi tuần có nghỉ đủ, trong 8 tuần",
+  "thoiHanThang": 2,
+  "dieuKien": {
+   "QUAN-SP-07/Hỏa Linh": {
+    "quyTacId": [
+     "QL-S01-TOT",
+     "QL-S01-BINH",
+     "QL-S02-TOT",
+     "QL-S02-BINH",
+     "QL-S03-TOT",
+     "QL-S03-BINH",
+     "QL-S04-TOT",
+     "QL-S04-BINH",
+     "QL-S05-TOT",
+     "QL-S05-BINH",
+     "QL-S06-TOT",
+     "QL-S06-BINH",
+     "QL-S07-TOT",
+     "QL-S07-BINH",
+     "QL-S08-TOT",
+     "QL-S08-BINH",
+     "QL-S09-TOT",
+     "QL-S09-BINH",
+     "QL-S10-TOT",
+     "QL-S10-BINH",
+     "QL-S11-TOT",
+     "QL-S11-BINH",
+     "QL-S12-TOT",
+     "QL-S12-BINH",
+     "QL-S13-TOT",
+     "QL-S13-BINH",
+     "QL-S14-TOT",
+     "QL-S14-BINH",
+     "QL-VCD"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Hỏa Tinh",
+      "Linh Tinh"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La"
+    ]
+   }
+  },
+  "dang": "i",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-SP-07 vế Hỏa Tinh, Linh Tinh (TT 卷二·九官祿: 火星「早年成敗」, 鈴星「獨守旺宮吉」) qua lời khuyên đoạn QL-PS-10 'nên tiết chế cảm xúc', QL-PS-11 'nên giữ nhịp nghỉ ngơi'. Chỉ nếp làm việc, không nêu sức khỏe. Phần (b) phải có câu QL-PS-10/11.",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm."
+ },
+ {
+  "maMau": "CV-43",
+  "chuDe": "cong-viec",
+  "maHuong": [
+   "QUAN-SP-08"
+  ],
+  "cau": "Với mỗi ý định đổi hướng hay ý tưởng mới trong công việc hoặc việc học, viết nửa trang: bước đầu tiên, điều cần có, điều có thể mất; chờ 3 ngày rồi mới quyết.",
+  "thuocDo": "100% ý định đổi hướng trong 3 tháng có bản nửa trang; không có thì ghi \"không có\"",
+  "thoiHanThang": 3,
+  "dieuKien": {
+   "QUAN-SP-08": {
+    "quyTacId": [
+     "QL-S01-TOT",
+     "QL-S01-BINH",
+     "QL-S02-TOT",
+     "QL-S02-BINH",
+     "QL-S03-TOT",
+     "QL-S03-BINH",
+     "QL-S04-TOT",
+     "QL-S04-BINH",
+     "QL-S05-TOT",
+     "QL-S05-BINH",
+     "QL-S06-TOT",
+     "QL-S06-BINH",
+     "QL-S07-TOT",
+     "QL-S07-BINH",
+     "QL-S08-TOT",
+     "QL-S08-BINH",
+     "QL-S09-TOT",
+     "QL-S09-BINH",
+     "QL-S10-TOT",
+     "QL-S10-BINH",
+     "QL-S11-TOT",
+     "QL-S11-BINH",
+     "QL-S12-TOT",
+     "QL-S12-BINH",
+     "QL-S13-TOT",
+     "QL-S13-BINH",
+     "QL-S14-TOT",
+     "QL-S14-BINH",
+     "QL-VCD"
+    ],
+    "cung": [
+     "Quan Lộc"
+    ],
+    "saoTrongCung": [
+     [
+      "Địa Không",
+      "Địa Kiếp"
+     ]
+    ],
+    "khongSaoTrongCung": [
+     "hoa:Hóa Kỵ",
+     "Kình Dương",
+     "Đà La",
+     "Hỏa Tinh",
+     "Linh Tinh"
+    ]
+   }
+  },
+  "dang": "i",
+  "tongHop": true,
+  "nguonChiTiet": "Bám QUAN-SP-08 (sát tinh ở Quan Lộc; TB tr. 163–164, §8.14) qua lời khuyên đoạn QL-PS-12 'cần thực tế hóa ý tưởng', QL-PS-13 'nên cân nhắc trước khi quyết'. Phần (b) phải có câu QL-PS-12/13.",
+  "ghiChu": "Việc L-5e7bce (sửa theo phiếu Thư L-5e7bce). Mẫu cho đoạn nền Quan Lộc theo NAM-MANG-07. Khi nạp vào src/.../viec-nen-lam.json chỉ lấy các trường máy đọc: maMau, chuDe, maHuong, maPhatHuy (nếu có), cau, thuocDo, thoiHanThang, dieuKien, tuoiTu (nếu có). Trường dieuKien mới: khongSaoTrongCung (không sao nào trong danh sách có ở cung của đoạn), catTinhTamPhuong (có/không lục cát tinh ở Quan Lộc, Mệnh, Tài Bạch, Phu Thê) — bộ ghép cần đọc thêm."
+ }
+]

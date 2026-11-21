@@ -1,0 +1,506 @@
+[
+  {
+    "id": "thang-nhuan-001",
+    "nhanCa": [
+      "thang-nhuan",
+      "nhuan-nua-dau"
+    ],
+    "ngayGioSinhDuong": {
+      "nam": 2009,
+      "thang": 6,
+      "ngay": 30,
+      "gio": 9,
+      "phut": 30
+    },
+    "gioiTinh": "nu",
+    "muiGio": "+07:00",
+    "mongDoi": {
+      "amLich": {
+        "nam": 2009,
+        "thang": 5,
+        "ngay": 8,
+        "nhuan": true
+      },
+      "canChi": {
+        "nam": "Kỷ Sửu",
+        "thang": "Canh Ngọ",
+        "ngay": "Bính Ngọ",
+        "gio": "Quý Tỵ"
+      },
+      "menhThan": {
+        "menh": "Sửu",
+        "than": "Hợi"
+      },
+      "cuc": "Thủy nhị cục",
+      "chinhTinh": {
+        "tuVi": "Tỵ",
+        "thienCo": "Thìn",
+        "thaiDuong": "Dần",
+        "vuKhuc": "Sửu",
+        "thienDong": "Tý",
+        "liemTrinh": "Dậu",
+        "thienPhu": "Hợi",
+        "thaiAm": "Tý",
+        "thamLang": "Sửu",
+        "cuMon": "Dần",
+        "thienTuong": "Mão",
+        "thienLuong": "Thìn",
+        "thatSat": "Tỵ",
+        "phaQuan": "Dậu"
+      },
+      "nguonDoiChieu": [
+        {
+          "ten": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md)",
+          "thamChieu": "python3 -I tuvi-ref-engine.py 2009 6 30 9 30 nu (giờ chuẩn UTC+7; lịch UTC+7) → âm 8/5 nhuận/2009"
+        },
+        {
+          "ten": "src/lib/tuvi/lich-raw.js (Hồ Ngọc Đức) đối chiếu ngày âm",
+          "thamChieu": "duongSangAm(30,6,2009,7) = 8/5/2009 nhuận=True — khớp engine"
+        },
+        {
+          "ten": "Trang/sách ngoài",
+          "thamChieu": "Chưa có nguồn: đối chiếu trang lập lá số ngoài (xemtuvi.vn bản cũ, tuvi.vn, thầy lập tay). Cách lấy: nhập đúng ngày giờ, giới tính, quy ước ở trên vào từng trang, chép kết quả; Minh/anh Cường cấp trang hoặc người lập tay."
+        }
+      ]
+    },
+    "quyUoc": "Tý muộn: cộng 1 ngày dương rồi đổi âm, canh giờ Tý (mặc định spec 1.4); tháng nhuận: an như tháng chính; múi giờ lịch: UTC+8 trước 1968, UTC+7 từ 1968. Tháng âm dùng để an: số tháng chính (mặc định spec 1.6/10.13, quy ước Việt). Hai biến thể dưới đây là cách khác của các trang khác.",
+    "bienThe": [
+      {
+        "moTa": "Ngày 16+ tính sang tháng sau (split15)",
+        "tuyChon": {
+          "leap_rule": "split15"
+        },
+        "khacMacDinh": "không khác"
+      },
+      {
+        "moTa": "Tính hẳn sang tháng sau (next)",
+        "tuyChon": {
+          "leap_rule": "next"
+        },
+        "khacMacDinh": "menhThan: menh Sửu→Dần, than Hợi→Tý; cuc Thủy nhị cục→Hỏa lục cục; chinhTinh: tuVi Tỵ→Mùi, thienCo Thìn→Ngọ, thaiDuong Dần→Thìn, vuKhuc Sửu→Mão, thienDong Tý→Dần, liemTrinh Dậu→Hợi, thienPhu Hợi→Dậu, thaiAm Tý→Tuất, thamLang Sửu→Hợi, cuMon Dần→Tý, thienTuong Mão→Sửu, thienLuong Thìn→Dần, thatSat Tỵ→Mão, phaQuan Dậu→Mùi"
+      }
+    ],
+    "nguon": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md); lich-raw.js khớp ngày âm.  Trang ngoài: chưa có nguồn (xem nguonDoiChieu).",
+    "ghiChu": "Tháng nhuận: Mệnh/Thân/cục/Tử Vi an theo tháng chính; can chi tháng theo tháng chính (spec 2.1)."
+  },
+  {
+    "id": "thang-nhuan-002",
+    "nhanCa": [
+      "thang-nhuan",
+      "nhuan-nua-dau"
+    ],
+    "ngayGioSinhDuong": {
+      "nam": 2017,
+      "thang": 7,
+      "ngay": 30,
+      "gio": 14,
+      "phut": 15
+    },
+    "gioiTinh": "nam",
+    "muiGio": "+07:00",
+    "mongDoi": {
+      "amLich": {
+        "nam": 2017,
+        "thang": 6,
+        "ngay": 8,
+        "nhuan": true
+      },
+      "canChi": {
+        "nam": "Đinh Dậu",
+        "thang": "Đinh Mùi",
+        "ngay": "Mậu Ngọ",
+        "gio": "Kỷ Mùi"
+      },
+      "menhThan": {
+        "menh": "Tý",
+        "than": "Dần"
+      },
+      "cuc": "Mộc tam cục",
+      "chinhTinh": {
+        "tuVi": "Mão",
+        "thienCo": "Dần",
+        "thaiDuong": "Tý",
+        "vuKhuc": "Hợi",
+        "thienDong": "Tuất",
+        "liemTrinh": "Mùi",
+        "thienPhu": "Sửu",
+        "thaiAm": "Dần",
+        "thamLang": "Mão",
+        "cuMon": "Thìn",
+        "thienTuong": "Tỵ",
+        "thienLuong": "Ngọ",
+        "thatSat": "Mùi",
+        "phaQuan": "Hợi"
+      },
+      "nguonDoiChieu": [
+        {
+          "ten": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md)",
+          "thamChieu": "python3 -I tuvi-ref-engine.py 2017 7 30 14 15 nam (giờ chuẩn UTC+7; lịch UTC+7) → âm 8/6 nhuận/2017"
+        },
+        {
+          "ten": "src/lib/tuvi/lich-raw.js (Hồ Ngọc Đức) đối chiếu ngày âm",
+          "thamChieu": "duongSangAm(30,7,2017,7) = 8/6/2017 nhuận=True — khớp engine"
+        },
+        {
+          "ten": "Trang/sách ngoài",
+          "thamChieu": "Chưa có nguồn: đối chiếu trang lập lá số ngoài (xemtuvi.vn bản cũ, tuvi.vn, thầy lập tay). Cách lấy: nhập đúng ngày giờ, giới tính, quy ước ở trên vào từng trang, chép kết quả; Minh/anh Cường cấp trang hoặc người lập tay."
+        }
+      ]
+    },
+    "quyUoc": "Tý muộn: cộng 1 ngày dương rồi đổi âm, canh giờ Tý (mặc định spec 1.4); tháng nhuận: an như tháng chính; múi giờ lịch: UTC+8 trước 1968, UTC+7 từ 1968. Tháng âm dùng để an: số tháng chính (mặc định spec 1.6/10.13, quy ước Việt). Hai biến thể dưới đây là cách khác của các trang khác.",
+    "bienThe": [
+      {
+        "moTa": "Ngày 16+ tính sang tháng sau (split15)",
+        "tuyChon": {
+          "leap_rule": "split15"
+        },
+        "khacMacDinh": "không khác"
+      },
+      {
+        "moTa": "Tính hẳn sang tháng sau (next)",
+        "tuyChon": {
+          "leap_rule": "next"
+        },
+        "khacMacDinh": "menhThan: menh Tý→Sửu, than Dần→Mão"
+      }
+    ],
+    "nguon": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md); lich-raw.js khớp ngày âm. lich-moc-chuan.json mốc 19/08/2017 = 28/6 nhuận → 30/07/2017 = 8/6 nhuận (lùi 20 ngày). Trang ngoài: chưa có nguồn (xem nguonDoiChieu).",
+    "ghiChu": "Tháng nhuận: Mệnh/Thân/cục/Tử Vi an theo tháng chính; can chi tháng theo tháng chính (spec 2.1)."
+  },
+  {
+    "id": "thang-nhuan-003",
+    "nhanCa": [
+      "thang-nhuan",
+      "nhuan-nua-dau"
+    ],
+    "ngayGioSinhDuong": {
+      "nam": 2023,
+      "thang": 3,
+      "ngay": 29,
+      "gio": 6,
+      "phut": 20
+    },
+    "gioiTinh": "nu",
+    "muiGio": "+07:00",
+    "mongDoi": {
+      "amLich": {
+        "nam": 2023,
+        "thang": 2,
+        "ngay": 8,
+        "nhuan": true
+      },
+      "canChi": {
+        "nam": "Quý Mão",
+        "thang": "Ất Mão",
+        "ngay": "Bính Tuất",
+        "gio": "Tân Mão"
+      },
+      "menhThan": {
+        "menh": "Tý",
+        "than": "Ngọ"
+      },
+      "cuc": "Kim tứ cục",
+      "chinhTinh": {
+        "tuVi": "Mão",
+        "thienCo": "Dần",
+        "thaiDuong": "Tý",
+        "vuKhuc": "Hợi",
+        "thienDong": "Tuất",
+        "liemTrinh": "Mùi",
+        "thienPhu": "Sửu",
+        "thaiAm": "Dần",
+        "thamLang": "Mão",
+        "cuMon": "Thìn",
+        "thienTuong": "Tỵ",
+        "thienLuong": "Ngọ",
+        "thatSat": "Mùi",
+        "phaQuan": "Hợi"
+      },
+      "nguonDoiChieu": [
+        {
+          "ten": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md)",
+          "thamChieu": "python3 -I tuvi-ref-engine.py 2023 3 29 6 20 nu (giờ chuẩn UTC+7; lịch UTC+7) → âm 8/2 nhuận/2023"
+        },
+        {
+          "ten": "src/lib/tuvi/lich-raw.js (Hồ Ngọc Đức) đối chiếu ngày âm",
+          "thamChieu": "duongSangAm(29,3,2023,7) = 8/2/2023 nhuận=True — khớp engine"
+        },
+        {
+          "ten": "Trang/sách ngoài",
+          "thamChieu": "Chưa có nguồn: đối chiếu trang lập lá số ngoài (xemtuvi.vn bản cũ, tuvi.vn, thầy lập tay). Cách lấy: nhập đúng ngày giờ, giới tính, quy ước ở trên vào từng trang, chép kết quả; Minh/anh Cường cấp trang hoặc người lập tay."
+        }
+      ]
+    },
+    "quyUoc": "Tý muộn: cộng 1 ngày dương rồi đổi âm, canh giờ Tý (mặc định spec 1.4); tháng nhuận: an như tháng chính; múi giờ lịch: UTC+8 trước 1968, UTC+7 từ 1968. Tháng âm dùng để an: số tháng chính (mặc định spec 1.6/10.13, quy ước Việt). Hai biến thể dưới đây là cách khác của các trang khác.",
+    "bienThe": [
+      {
+        "moTa": "Ngày 16+ tính sang tháng sau (split15)",
+        "tuyChon": {
+          "leap_rule": "split15"
+        },
+        "khacMacDinh": "không khác"
+      },
+      {
+        "moTa": "Tính hẳn sang tháng sau (next)",
+        "tuyChon": {
+          "leap_rule": "next"
+        },
+        "khacMacDinh": "menhThan: menh Tý→Sửu, than Ngọ→Mùi"
+      }
+    ],
+    "nguon": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md); lich-raw.js khớp ngày âm. lich-moc-chuan.json mốc 07/04/2023 = 17/2 nhuận → 29/03/2023 = 8/2 nhuận (lùi 9 ngày). Trang ngoài: chưa có nguồn (xem nguonDoiChieu).",
+    "ghiChu": "Tháng nhuận: Mệnh/Thân/cục/Tử Vi an theo tháng chính; can chi tháng theo tháng chính (spec 2.1)."
+  },
+  {
+    "id": "thang-nhuan-004",
+    "nhanCa": [
+      "thang-nhuan",
+      "nhuan-nua-sau"
+    ],
+    "ngayGioSinhDuong": {
+      "nam": 2006,
+      "thang": 9,
+      "ngay": 12,
+      "gio": 20,
+      "phut": 10
+    },
+    "gioiTinh": "nam",
+    "muiGio": "+07:00",
+    "mongDoi": {
+      "amLich": {
+        "nam": 2006,
+        "thang": 7,
+        "ngay": 20,
+        "nhuan": true
+      },
+      "canChi": {
+        "nam": "Bính Tuất",
+        "thang": "Bính Thân",
+        "ngay": "Giáp Thìn",
+        "gio": "Giáp Tuất"
+      },
+      "menhThan": {
+        "menh": "Tuất",
+        "than": "Ngọ"
+      },
+      "cuc": "Mộc tam cục",
+      "chinhTinh": {
+        "tuVi": "Mùi",
+        "thienCo": "Ngọ",
+        "thaiDuong": "Thìn",
+        "vuKhuc": "Mão",
+        "thienDong": "Dần",
+        "liemTrinh": "Hợi",
+        "thienPhu": "Dậu",
+        "thaiAm": "Tuất",
+        "thamLang": "Hợi",
+        "cuMon": "Tý",
+        "thienTuong": "Sửu",
+        "thienLuong": "Dần",
+        "thatSat": "Mão",
+        "phaQuan": "Mùi"
+      },
+      "nguonDoiChieu": [
+        {
+          "ten": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md)",
+          "thamChieu": "python3 -I tuvi-ref-engine.py 2006 9 12 20 10 nam (giờ chuẩn UTC+7; lịch UTC+7) → âm 20/7 nhuận/2006"
+        },
+        {
+          "ten": "src/lib/tuvi/lich-raw.js (Hồ Ngọc Đức) đối chiếu ngày âm",
+          "thamChieu": "duongSangAm(12,9,2006,7) = 20/7/2006 nhuận=True — khớp engine"
+        },
+        {
+          "ten": "Trang/sách ngoài",
+          "thamChieu": "Chưa có nguồn: đối chiếu trang lập lá số ngoài (xemtuvi.vn bản cũ, tuvi.vn, thầy lập tay). Cách lấy: nhập đúng ngày giờ, giới tính, quy ước ở trên vào từng trang, chép kết quả; Minh/anh Cường cấp trang hoặc người lập tay."
+        }
+      ]
+    },
+    "quyUoc": "Tý muộn: cộng 1 ngày dương rồi đổi âm, canh giờ Tý (mặc định spec 1.4); tháng nhuận: an như tháng chính; múi giờ lịch: UTC+8 trước 1968, UTC+7 từ 1968. Tháng âm dùng để an: số tháng chính (mặc định spec 1.6/10.13, quy ước Việt). Hai biến thể dưới đây là cách khác của các trang khác.",
+    "bienThe": [
+      {
+        "moTa": "Ngày 16+ tính sang tháng sau (split15)",
+        "tuyChon": {
+          "leap_rule": "split15"
+        },
+        "khacMacDinh": "menhThan: menh Tuất→Hợi, than Ngọ→Mùi"
+      },
+      {
+        "moTa": "Tính hẳn sang tháng sau (next)",
+        "tuyChon": {
+          "leap_rule": "next"
+        },
+        "khacMacDinh": "menhThan: menh Tuất→Hợi, than Ngọ→Mùi"
+      }
+    ],
+    "nguon": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md); lich-raw.js khớp ngày âm.  Trang ngoài: chưa có nguồn (xem nguonDoiChieu).",
+    "ghiChu": "Tháng nhuận: Mệnh/Thân/cục/Tử Vi an theo tháng chính; can chi tháng theo tháng chính (spec 2.1)."
+  },
+  {
+    "id": "thang-nhuan-005",
+    "nhanCa": [
+      "thang-nhuan",
+      "nhuan-nua-sau"
+    ],
+    "ngayGioSinhDuong": {
+      "nam": 2012,
+      "thang": 6,
+      "ngay": 10,
+      "gio": 11,
+      "phut": 45
+    },
+    "gioiTinh": "nu",
+    "muiGio": "+07:00",
+    "mongDoi": {
+      "amLich": {
+        "nam": 2012,
+        "thang": 4,
+        "ngay": 21,
+        "nhuan": true
+      },
+      "canChi": {
+        "nam": "Nhâm Thìn",
+        "thang": "Ất Tỵ",
+        "ngay": "Nhâm Dần",
+        "gio": "Bính Ngọ"
+      },
+      "menhThan": {
+        "menh": "Hợi",
+        "than": "Hợi"
+      },
+      "cuc": "Kim tứ cục",
+      "chinhTinh": {
+        "tuVi": "Thìn",
+        "thienCo": "Mão",
+        "thaiDuong": "Sửu",
+        "vuKhuc": "Tý",
+        "thienDong": "Hợi",
+        "liemTrinh": "Thân",
+        "thienPhu": "Tý",
+        "thaiAm": "Sửu",
+        "thamLang": "Dần",
+        "cuMon": "Mão",
+        "thienTuong": "Thìn",
+        "thienLuong": "Tỵ",
+        "thatSat": "Ngọ",
+        "phaQuan": "Tuất"
+      },
+      "nguonDoiChieu": [
+        {
+          "ten": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md)",
+          "thamChieu": "python3 -I tuvi-ref-engine.py 2012 6 10 11 45 nu (giờ chuẩn UTC+7; lịch UTC+7) → âm 21/4 nhuận/2012"
+        },
+        {
+          "ten": "src/lib/tuvi/lich-raw.js (Hồ Ngọc Đức) đối chiếu ngày âm",
+          "thamChieu": "duongSangAm(10,6,2012,7) = 21/4/2012 nhuận=True — khớp engine"
+        },
+        {
+          "ten": "Trang/sách ngoài",
+          "thamChieu": "Chưa có nguồn: đối chiếu trang lập lá số ngoài (xemtuvi.vn bản cũ, tuvi.vn, thầy lập tay). Cách lấy: nhập đúng ngày giờ, giới tính, quy ước ở trên vào từng trang, chép kết quả; Minh/anh Cường cấp trang hoặc người lập tay."
+        }
+      ]
+    },
+    "quyUoc": "Tý muộn: cộng 1 ngày dương rồi đổi âm, canh giờ Tý (mặc định spec 1.4); tháng nhuận: an như tháng chính; múi giờ lịch: UTC+8 trước 1968, UTC+7 từ 1968. Tháng âm dùng để an: số tháng chính (mặc định spec 1.6/10.13, quy ước Việt). Hai biến thể dưới đây là cách khác của các trang khác.",
+    "bienThe": [
+      {
+        "moTa": "Ngày 16+ tính sang tháng sau (split15)",
+        "tuyChon": {
+          "leap_rule": "split15"
+        },
+        "khacMacDinh": "menhThan: menh Hợi→Tý, than Hợi→Tý; cuc Kim tứ cục→Mộc tam cục; chinhTinh: tuVi Thìn→Thân, thienCo Mão→Mùi, thaiDuong Sửu→Tỵ, vuKhuc Tý→Thìn, thienDong Hợi→Mão, liemTrinh Thân→Tý, thienPhu Tý→Thân, thaiAm Sửu→Dậu, thamLang Dần→Tuất, cuMon Mão→Hợi, thienTuong Thìn→Tý, thienLuong Tỵ→Sửu, thatSat Ngọ→Dần, phaQuan Tuất→Ngọ"
+      },
+      {
+        "moTa": "Tính hẳn sang tháng sau (next)",
+        "tuyChon": {
+          "leap_rule": "next"
+        },
+        "khacMacDinh": "menhThan: menh Hợi→Tý, than Hợi→Tý; cuc Kim tứ cục→Mộc tam cục; chinhTinh: tuVi Thìn→Thân, thienCo Mão→Mùi, thaiDuong Sửu→Tỵ, vuKhuc Tý→Thìn, thienDong Hợi→Mão, liemTrinh Thân→Tý, thienPhu Tý→Thân, thaiAm Sửu→Dậu, thamLang Dần→Tuất, cuMon Mão→Hợi, thienTuong Thìn→Tý, thienLuong Tỵ→Sửu, thatSat Ngọ→Dần, phaQuan Tuất→Ngọ"
+      }
+    ],
+    "nguon": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md); lich-raw.js khớp ngày âm.  Trang ngoài: chưa có nguồn (xem nguonDoiChieu).",
+    "ghiChu": "Tháng nhuận: Mệnh/Thân/cục/Tử Vi an theo tháng chính; can chi tháng theo tháng chính (spec 2.1)."
+  },
+  {
+    "id": "thang-nhuan-006",
+    "nhanCa": [
+      "thang-nhuan",
+      "nhuan-nua-sau"
+    ],
+    "ngayGioSinhDuong": {
+      "nam": 2020,
+      "thang": 6,
+      "ngay": 12,
+      "gio": 17,
+      "phut": 0
+    },
+    "gioiTinh": "nam",
+    "muiGio": "+07:00",
+    "mongDoi": {
+      "amLich": {
+        "nam": 2020,
+        "thang": 4,
+        "ngay": 21,
+        "nhuan": true
+      },
+      "canChi": {
+        "nam": "Canh Tý",
+        "thang": "Tân Tỵ",
+        "ngay": "Bính Tuất",
+        "gio": "Đinh Dậu"
+      },
+      "menhThan": {
+        "menh": "Thân",
+        "than": "Dần"
+      },
+      "cuc": "Thủy nhị cục",
+      "chinhTinh": {
+        "tuVi": "Hợi",
+        "thienCo": "Tuất",
+        "thaiDuong": "Thân",
+        "vuKhuc": "Mùi",
+        "thienDong": "Ngọ",
+        "liemTrinh": "Mão",
+        "thienPhu": "Tỵ",
+        "thaiAm": "Ngọ",
+        "thamLang": "Mùi",
+        "cuMon": "Thân",
+        "thienTuong": "Dậu",
+        "thienLuong": "Tuất",
+        "thatSat": "Hợi",
+        "phaQuan": "Mão"
+      },
+      "nguonDoiChieu": [
+        {
+          "ten": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md)",
+          "thamChieu": "python3 -I tuvi-ref-engine.py 2020 6 12 17 0 nam (giờ chuẩn UTC+7; lịch UTC+7) → âm 21/4 nhuận/2020"
+        },
+        {
+          "ten": "src/lib/tuvi/lich-raw.js (Hồ Ngọc Đức) đối chiếu ngày âm",
+          "thamChieu": "duongSangAm(12,6,2020,7) = 21/4/2020 nhuận=True — khớp engine"
+        },
+        {
+          "ten": "Trang/sách ngoài",
+          "thamChieu": "Chưa có nguồn: đối chiếu trang lập lá số ngoài (xemtuvi.vn bản cũ, tuvi.vn, thầy lập tay). Cách lấy: nhập đúng ngày giờ, giới tính, quy ước ở trên vào từng trang, chép kết quả; Minh/anh Cường cấp trang hoặc người lập tay."
+        }
+      ]
+    },
+    "quyUoc": "Tý muộn: cộng 1 ngày dương rồi đổi âm, canh giờ Tý (mặc định spec 1.4); tháng nhuận: an như tháng chính; múi giờ lịch: UTC+8 trước 1968, UTC+7 từ 1968. Tháng âm dùng để an: số tháng chính (mặc định spec 1.6/10.13, quy ước Việt). Hai biến thể dưới đây là cách khác của các trang khác.",
+    "bienThe": [
+      {
+        "moTa": "Ngày 16+ tính sang tháng sau (split15)",
+        "tuyChon": {
+          "leap_rule": "split15"
+        },
+        "khacMacDinh": "menhThan: menh Thân→Dậu, than Dần→Mão"
+      },
+      {
+        "moTa": "Tính hẳn sang tháng sau (next)",
+        "tuyChon": {
+          "leap_rule": "next"
+        },
+        "khacMacDinh": "menhThan: menh Thân→Dậu, than Dần→Mão"
+      }
+    ],
+    "nguon": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md); lich-raw.js khớp ngày âm.  Trang ngoài: chưa có nguồn (xem nguonDoiChieu).",
+    "ghiChu": "Tháng nhuận: Mệnh/Thân/cục/Tử Vi an theo tháng chính; can chi tháng theo tháng chính (spec 2.1)."
+  }
+]

@@ -1,0 +1,11 @@
+# Cài vào venv NGOÀI repo: D:\VibeCode\Antigravity\may-tram\venv (Python 3.15.2)
+# torch bản CUDA lấy từ chỉ mục riêng của PyTorch (cu130; RTX 2080 Ti = sm_75 vẫn được hỗ trợ):
+#   python -I -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cu130
+#   python -I -m pip install -r tools/rag-may-tram/requirements.txt
+torch==2.14.1
+sentence-transformers==6.3.0
+transformers==5.24.0
+huggingface-hub==2.4.0
+numpy==2.5.5
+psycopg[binary]==3.3.9
+opencc-python-reimplemented==0.1.7

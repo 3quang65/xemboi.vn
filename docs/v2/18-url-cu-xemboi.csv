@@ -1,0 +1,117 @@
+url_cu_hoac_mau,nhom_sitemap,so_url,vi_du,quyet_dinh,page_id_v2,url_dich,ly_do
+/,static,1,https://xemboi.vn,GIU,HOME,/,Trang chủ v2 giữ nguyên đường dẫn /
+/tin-tuc,static,1,https://xemboi.vn/tin-tuc,301,KT,/kien-thuc,Hub bài viết/kiến thức v2 là /kien-thuc
+/lien-he,static,1,https://xemboi.vn/lien-he,CHO_QUYET,,,16-seo-trang.csv chưa có trang /lien-he; cần quyết giữ nguyên hay 301 về /phuong-phap
+/chinh-sach-ban-quyen,static,1,https://xemboi.vn/chinh-sach-ban-quyen,CHO_QUYET,,,16-seo-trang.csv chưa có trang chính sách bản quyền; cần quyết giữ nguyên hay chuẩn hóa slug pháp lý v2
+/chinh-sach-su-dung-va-khieu-nai,static,1,https://xemboi.vn/chinh-sach-su-dung-va-khieu-nai,CHO_QUYET,,,16-seo-trang.csv chưa có trang điều khoản sử dụng/khiếu nại; cần quyết giữ nguyên hay chuẩn hóa slug pháp lý v2
+/chinh-sach-bao-mat-va-cookies,static,1,https://xemboi.vn/chinh-sach-bao-mat-va-cookies,CHO_QUYET,,,16-seo-trang.csv chưa có trang chính sách bảo mật/cookies; cần quyết giữ nguyên hay chuẩn hóa slug pháp lý v2
+/chinh-sach-binh-luan-va-gop-y,static,1,https://xemboi.vn/chinh-sach-binh-luan-va-gop-y,CHO_QUYET,,,16-seo-trang.csv chưa có trang chính sách bình luận/góp ý; nếu v2 không mở bình luận có thể 301 về trang liên hệ hoặc 410
+/lich-van-su,lich-van-nien,1,https://xemboi.vn/lich-van-su,301,LICH-VANNIEN,/lich-am/lich-van-nien,Từ khóa lịch vạn sự gán vào LICH-VANNIEN (16-seo-trang.csv)
+/lich-van-nien,lich-van-nien,1,https://xemboi.vn/lich-van-nien,301,LICH-VANNIEN,/lich-am/lich-van-nien,Khớp trực tiếp công cụ lịch vạn niên v2 (LICH-VANNIEN)
+/lich-van-nien-nam-2025,lich-van-nien,1,https://xemboi.vn/lich-van-nien-nam-2025,301,LICH-NAM,/lich-am/2025,Khớp trang lập trình lịch âm năm 2025 (LICH-NAM)
+/lich-van-nien-nam-2026,lich-van-nien,1,https://xemboi.vn/lich-van-nien-nam-2026,301,LICH-NAM,/lich-am/2026,Khớp trang lập trình lịch âm năm 2026 (LICH-NAM)
+/lich-van-nien-nam-2027,lich-van-nien,1,https://xemboi.vn/lich-van-nien-nam-2027,301,LICH-NAM,/lich-am/2027,Khớp trang lập trình lịch âm năm 2027 (LICH-NAM)
+/lich-van-nien-nam-2028,lich-van-nien,1,https://xemboi.vn/lich-van-nien-nam-2028,301,LICH-NAM,/lich-am/2028,Khớp trang lập trình lịch âm năm 2028 (LICH-NAM)
+/lich-van-nien-nam-2029,lich-van-nien,1,https://xemboi.vn/lich-van-nien-nam-2029,301,LICH-NAM,/lich-am/2029,Khớp trang lập trình lịch âm năm 2029 (LICH-NAM)
+/lich-van-nien-nam-2030,lich-van-nien,1,https://xemboi.vn/lich-van-nien-nam-2030,301,LICH-NAM,/lich-am/2030,Khớp trang lập trình lịch âm năm 2030 (LICH-NAM)
+/lich-van-nien-nam-2031,lich-van-nien,1,https://xemboi.vn/lich-van-nien-nam-2031,301,LICH-NAM,/lich-am/2031,Khớp trang lập trình lịch âm năm 2031 (LICH-NAM)
+/lich-van-nien-nam-2032,lich-van-nien,1,https://xemboi.vn/lich-van-nien-nam-2032,301,LICH-NAM,/lich-am/2032,Khớp trang lập trình lịch âm năm 2032 (LICH-NAM)
+/lich-van-nien-nam-2033,lich-van-nien,1,https://xemboi.vn/lich-van-nien-nam-2033,301,LICH-NAM,/lich-am/2033,Khớp trang lập trình lịch âm năm 2033 (LICH-NAM)
+/lich-van-nien-nam-2034,lich-van-nien,1,https://xemboi.vn/lich-van-nien-nam-2034,301,LICH-NAM,/lich-am/2034,Khớp trang lập trình lịch âm năm 2034 (LICH-NAM)
+/lich-van-nien-nam-2035,lich-van-nien,1,https://xemboi.vn/lich-van-nien-nam-2035,301,LICH-NAM,/lich-am/2035,Khớp trang lập trình lịch âm năm 2035 (LICH-NAM)
+/xem-ngay-tot-xau-ngay-{d}-{m}-{yyyy},xem-ngay-tot-xau,730,/xem-ngay-tot-xau-ngay-1-1-2026; /xem-ngay-tot-xau-ngay-15-6-2026; /xem-ngay-tot-xau-ngay-31-12-2026; /xem-ngay-tot-xau-ngay-6-2-2027; /xem-ngay-tot-xau-ngay-31-12-2027,301,LICH-NGAY,/lich-am/{yyyy}/{mm}/{dd},"730 URL ngày lập trình (01/01/2026–31/12/2027) khớp ý định tra ngày cụ thể LICH-NGAY (chuẩn hóa 2 chữ số mm/dd; lưu ý LICH-NGAY đang noindex,follow trong v2)"
+/tin-tuc/xem-boi-hom-nay-2772026-giai-ma-van-han-va-diem-bao-12-con-giap,articles,1,https://xemboi.vn/tin-tuc/xem-boi-hom-nay-2772026-giai-ma-van-han-va-diem-bao-12-con-giap,410,,,LOAI:tu_vi_hang_ngay; LOAI:diem_bao_dan_gian — bài xem bói hằng ngày & điềm báo 12 con giáp bị loại theo định vị v2
+/tin-tuc/xem-boi-hom-nay-12-8-2026,articles,1,https://xemboi.vn/tin-tuc/xem-boi-hom-nay-12-8-2026,410,,,LOAI:tu_vi_hang_ngay — bài xem bói hằng ngày theo ngày cụ thể bị loại theo định vị v2
+/xem-tuoi,xem-tuoi,1,https://xemboi.vn/xem-tuoi,GIU,XT,/xem-tuoi,Trùng đường dẫn hub xem tuổi v2 (XT)
+/xem-sao-han-theo-tuoi,xem-tuoi,1,https://xemboi.vn/xem-sao-han-theo-tuoi,410,,,LOAI:sao_han_tra_cuu — công cụ tra sao hạn bị loại (gan-tu-khoa.csv: 92/99 cụm sao hạn bị loại; v2 chỉ giữ 1 mục từ điển /tu-dien/cuu-dieu)
+/xem-trach-tuoi-lam-nha,xem-tuoi,1,https://xemboi.vn/xem-trach-tuoi-lam-nha,301,XT-LAMNHA,/xem-tuoi/lam-nha,Ý định xem trạch tuổi làm nhà khớp công cụ XT-LAMNHA
+/xem-tuoi-thai-tue,xem-tuoi,1,https://xemboi.vn/xem-tuoi-thai-tue,301,XT-NAMTUOI,/xem-tuoi/nam-tuoi,Từ khóa thái tuế / phạm thái tuế gán vào XT-NAMTUOI
+/xem-tuoi-tam-tai,xem-tuoi,1,https://xemboi.vn/xem-tuoi-tam-tai,301,XT-TAMTAI,/xem-tuoi/tam-tai,Khớp trực tiếp XT-TAMTAI (125/139 cụm tam tai trong gan-tu-khoa.csv)
+/xem-tuoi-hoang-oc,xem-tuoi,1,https://xemboi.vn/xem-tuoi-hoang-oc,301,XT-HOANGOC,/xem-tuoi/hoang-oc,Khớp trực tiếp XT-HOANGOC
+/xem-tuoi-kim-lau,xem-tuoi,1,https://xemboi.vn/xem-tuoi-kim-lau,301,XT-KIMLAU,/xem-tuoi/kim-lau,Khớp trực tiếp XT-KIMLAU (166/166 cụm kim lâu trong gan-tu-khoa.csv)
+/xem-tuoi-xong-nha,xem-tuoi,1,https://xemboi.vn/xem-tuoi-xong-nha,301,XONGDAT,/xem-tuoi/xong-dat,Từ khóa tuổi xông nhà gán vào XONGDAT (9/11 cụm trong gan-tu-khoa.csv)
+/xem-tuoi-ket-hon,xem-tuoi,1,https://xemboi.vn/xem-tuoi-ket-hon,301,XT-VOCHONG,/xem-tuoi/vo-chong,Từ khóa xem tuổi kết hôn gán vào XT-VOCHONG
+/xem-cung-menh-theo-tuoi,xem-tuoi,1,https://xemboi.vn/xem-cung-menh-theo-tuoi,301,PT-CUNGPHI,/phong-thuy/cung-phi,Ý định tra cung mệnh bát trạch theo năm sinh khớp PT-CUNGPHI
+/xem-sao-han-hop-tuoi,xem-tuoi,1,https://xemboi.vn/xem-sao-han-hop-tuoi,410,,,LOAI:sao_han_tra_cuu — tra cứu sao hạn theo tuổi bị loại theo định vị v2
+/xem-so-hop-tuoi,xem-tuoi,1,https://xemboi.vn/xem-so-hop-tuoi,410,,,LOAI:sim_bien_so_so_dep — cụm số hợp tuổi/mệnh bị loại trong 16-quy-tac-gan-tu-khoa.json
+/xem-mau-hop-tuoi,xem-tuoi,1,https://xemboi.vn/xem-mau-hop-tuoi,301,CC-MAUHOP,/ngu-hanh/mau-hop-menh,Khớp ý định tra màu hợp mệnh/tuổi (CC-MAUHOP)
+/xem-tuoi-nao-hop,xem-tuoi,1,https://xemboi.vn/xem-tuoi-nao-hop,301,XT,/xem-tuoi,Từ khóa chung tuổi hợp / tuổi gì hợp gán vào hub XT
+/xem-tuoi-lam-an,xem-tuoi,1,https://xemboi.vn/xem-tuoi-lam-an,301,XT-LAMAN,/xem-tuoi/lam-an,Khớp trực tiếp công cụ xem tuổi hợp làm ăn (XT-LAMAN)
+/xem-tuoi-sinh-con,xem-tuoi,1,https://xemboi.vn/xem-tuoi-sinh-con,301,XT-SINHCON,/xem-tuoi/sinh-con,"Khớp trực tiếp XT-SINHCON (dạng bài phân tích truyền thống, không CTA)"
+/xem-tuoi-vo-chong,xem-tuoi,1,https://xemboi.vn/xem-tuoi-vo-chong,301,XT-VOCHONG,/xem-tuoi/vo-chong,Khớp trực tiếp công cụ xem tuổi vợ chồng (XT-VOCHONG)
+/xem-tuoi-lam-nha,xem-tuoi,1,https://xemboi.vn/xem-tuoi-lam-nha,301,XT-LAMNHA,/xem-tuoi/lam-nha,Khớp trực tiếp công cụ xem tuổi làm nhà (XT-LAMNHA)
+/xem-ngay,xem-ngay,1,https://xemboi.vn/xem-ngay,GIU,XN,/xem-ngay,Trùng đường dẫn hub xem ngày v2 (XN)
+/xem-ngay-tot-hoang-dao-hac-dao,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-hoang-dao-hac-dao,301,XN,/xem-ngay,Từ khóa ngày hoàng đạo / hắc đạo gán vào hub XN
+/xem-ngay-tot-an-tang,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-an-tang,410,,,LOAI:tang_le_trung_tang — nhóm an táng/tang lễ bị loại (3/3 cụm an táng trong gan-tu-khoa.csv)
+/xem-ngay-tot-xay-dung,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-xay-dung,301,XN-DONGTHO,/xem-ngay/dong-tho,Từ khóa ngày tốt khởi công xây dựng gán vào XN-DONGTHO
+/xem-ngay-tot-dat-bep-sua-bep,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-dat-bep-sua-bep,301,XN-DONGTHO,/xem-ngay/dong-tho,Ý định sửa nhà/đặt bếp gần nhất với XN-DONGTHO (gồm ngày tốt sửa nhà)
+/xem-ngay-tot-mua-nha,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-mua-nha,301,XN-MUAXE,/xem-ngay/mua-xe,16-quy-tac-gan-tu-khoa.json gán cụm ngày tốt mua nhà/đất/tài sản lớn vào XN-MUAXE
+/xem-ngay-tot-mua-xe,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-mua-xe,301,XN-MUAXE,/xem-ngay/mua-xe,Khớp trực tiếp XN-MUAXE
+/xem-ngay-tot-nhap-trach,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-nhap-trach,301,XN-NHAPTRACH,/xem-ngay/nhap-trach,Khớp trực tiếp XN-NHAPTRACH
+/xem-ngay-tot-chuyen-ban-tho,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-chuyen-ban-tho,301,VK-ANVI,/van-khan/an-vi-bat-huong,gan-tu-khoa.csv gán di chuyển bàn thờ vào VK-ANVI (XN-CHONNGAY loại trừ cụm bàn thờ)
+/xem-ngay-tot-do-tran-lop-mai,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-do-tran-lop-mai,301,XN-DONGTHO,/xem-ngay/dong-tho,Từ khóa ngày tốt đổ mái / cất nóc gán vào XN-DONGTHO
+/xem-ngay-tot-dong-tho,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-dong-tho,301,XN-DONGTHO,/xem-ngay/dong-tho,Khớp trực tiếp XN-DONGTHO
+/xem-ngay-tot-chuyen-nha,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-chuyen-nha,301,XN-NHAPTRACH,/xem-ngay/nhap-trach,Từ khóa ngày tốt chuyển nhà gán vào XN-NHAPTRACH
+/xem-ngay-tot-ky-hop-dong,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-ky-hop-dong,301,XN-KHAITRUONG,/xem-ngay/khai-truong,16-quy-tac-gan-tu-khoa.json gán ngày ký hợp đồng / giao dịch vào XN-KHAITRUONG
+/xem-ngay-tot-nhan-chuc,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-nhan-chuc,301,XN-KHAITRUONG,/xem-ngay/khai-truong,Ý định nhận việc/công việc mới gần nhất với XN-KHAITRUONG
+/xem-ngay-tot-khai-truong,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-khai-truong,301,XN-KHAITRUONG,/xem-ngay/khai-truong,Khớp trực tiếp XN-KHAITRUONG
+/xem-ngay-tot-xuat-hanh,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-xuat-hanh,301,XN-XUATHANH,/xem-ngay/xuat-hanh,Khớp trực tiếp XN-XUATHANH
+/xem-ngay-tot-ket-hon,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-ket-hon,301,XN-CUOI,/xem-ngay/cuoi-hoi,Từ khóa ngày tốt cưới hỏi / kết hôn gán vào XN-CUOI
+/xem-ngay-tot-xau-trong-thang,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-xau-trong-thang,301,XN,/xem-ngay,Xem ngày tốt xấu trong tháng (không cố định tháng cụ thể) về hub XN
+/xem-ngay-tot-xau-theo-ngay,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-xau-theo-ngay,301,XN,/xem-ngay,Công cụ tra ngày tốt xấu theo ngày về hub XN
+/xem-ngay-mai-tot-xau,xem-ngay,1,https://xemboi.vn/xem-ngay-mai-tot-xau,301,XN,/xem-ngay,Từ khóa ngày tốt xấu hôm nay và ngày mai gán vào hub XN
+/xem-ngay-tot-xau-hom-nay,xem-ngay,1,https://xemboi.vn/xem-ngay-tot-xau-hom-nay,301,XN,/xem-ngay,Từ khóa ngày tốt xấu hôm nay gán vào hub XN
+/xem-boi,xem-boi,1,https://xemboi.vn/xem-boi,301,HOME,/,Từ khóa xem bói gán vào trang chủ HOME (/)
+/xem-boi-hang-ngay,xem-boi,1,https://xemboi.vn/xem-boi-hang-ngay,410,,,LOAI:tu_vi_hang_ngay — xem bói hằng ngày bị loại theo định vị v2
+/boi-bai-hang-ngay,xem-boi,1,https://xemboi.vn/boi-bai-hang-ngay,301,TAROT,/boi-bai,Từ khóa bói bài hàng ngày gán vào TAROT (16-seo-trang.csv và 5/6 cụm gan-tu-khoa.csv)
+/boi-vo-oc,xem-boi,1,https://xemboi.vn/boi-vo-oc,410,,,LOAI:boi_vui_xep_hang — quy tắc loại rõ bói vỏ ốc
+/boi-tui-xach,xem-boi,1,https://xemboi.vn/boi-tui-xach,410,,,LOAI:boi_vui_xep_hang — bói vui theo đồ vật không có căn cứ sách
+/boi-not-ruoi-tren-ban-tay,xem-boi,1,https://xemboi.vn/boi-not-ruoi-tren-ban-tay,410,,,LOAI:not_ruoi; LOAI:chi_tay_sinh_trac — nhóm nốt ruồi/bàn tay bị loại hoàn toàn
+/boi-not-ruoi-tren-mat-phu-nu,xem-boi,1,https://xemboi.vn/boi-not-ruoi-tren-mat-phu-nu,410,,,LOAI:not_ruoi — nhóm nốt ruồi bị loại theo định vị v2
+/boi-not-ruoi-tren-mat-dan-ong,xem-boi,1,https://xemboi.vn/boi-not-ruoi-tren-mat-dan-ong,410,,,LOAI:not_ruoi — nhóm nốt ruồi bị loại theo định vị v2
+/boi-not-ruoi-tren-nguoi-phu-nu,xem-boi,1,https://xemboi.vn/boi-not-ruoi-tren-nguoi-phu-nu,410,,,LOAI:not_ruoi — nhóm nốt ruồi bị loại theo định vị v2
+/boi-not-ruoi-tren-nguoi-dan-ong,xem-boi,1,https://xemboi.vn/boi-not-ruoi-tren-nguoi-dan-ong,410,,,LOAI:not_ruoi — nhóm nốt ruồi bị loại theo định vị v2
+/boi-not-ruoi-tren-ban-chan,xem-boi,1,https://xemboi.vn/boi-not-ruoi-tren-ban-chan,410,,,LOAI:not_ruoi; LOAI:chi_tay_sinh_trac — nhóm nốt ruồi/bàn chân bị loại
+/boi-nhay-mat,xem-boi,1,https://xemboi.vn/boi-nhay-mat,410,,,LOAI:diem_bao_dan_gian; LOAI:boi_vui_xep_hang — quy tắc loại rõ nháy mắt
+/mo-cua-doan-viec,xem-boi,1,https://xemboi.vn/mo-cua-doan-viec,410,,,LOAI:diem_bao_dan_gian — bói điềm báo dân gian không có căn cứ
+/boi-hat-xi-hoi,xem-boi,1,https://xemboi.vn/boi-hat-xi-hoi,410,,,LOAI:diem_bao_dan_gian; LOAI:boi_vui_xep_hang — quy tắc loại rõ hắt xì
+/boi-so,xem-boi,1,https://xemboi.vn/boi-so,410,,,LOAI:sim_bien_so_so_dep — 3/3 cụm bói số bị loại trong gan-tu-khoa.csv
+/boi-cap-tinh-nhan,xem-boi,1,https://xemboi.vn/boi-cap-tinh-nhan,301,XT-BOITINHYEU,/boi-tinh-yeu,Ý định bói cặp đôi/tình yêu khớp XT-BOITINHYEU (lưu ý trang cần duyệt trong 16-seo-trang.csv)
+/boi-tinh-yeu,xem-boi,1,https://xemboi.vn/boi-tinh-yeu,GIU,XT-BOITINHYEU,/boi-tinh-yeu,Trùng đường dẫn XT-BOITINHYEU (lưu ý CẦN ANH DUYỆT trong 16-seo-trang.csv)
+/boi-ai-cap,xem-boi,1,https://xemboi.vn/boi-ai-cap,410,,,LOAI:boi_vui_xep_hang — quy tắc loại rõ bói ai cập (2/2 cụm trong gan-tu-khoa.csv)
+/boi-kieu,xem-boi,1,https://xemboi.vn/boi-kieu,410,,,LOAI:boi_vui_xep_hang — quy tắc loại rõ bói kiều (1/1 cụm trong gan-tu-khoa.csv)
+/boi-tinh-yeu-theo-ngay-sinh,xem-boi,1,https://xemboi.vn/boi-tinh-yeu-theo-ngay-sinh,301,XT-BOITINHYEU,/boi-tinh-yeu,Từ khóa bói tình yêu theo ngày sinh gán trực tiếp vào XT-BOITINHYEU
+/tu-vi,tu-vi,1,https://xemboi.vn/tu-vi,GIU,TUVI,/tu-vi,Trùng đường dẫn hub tử vi v2 (TUVI)
+/lap-la-so-bat-tu-tu-tru,tu-vi,1,https://xemboi.vn/lap-la-so-bat-tu-tu-tru,301,BT-LAPLASO,/bat-tu/lap-la-so,Khớp trực tiếp công cụ lập lá số bát tự tứ trụ v2 (BT-LAPLASO)
+/thong-ke-can-xuong-doan-so,tu-vi,1,https://xemboi.vn/thong-ke-can-xuong-doan-so,410,,,LOAI:boi_vui_xep_hang — quy tắc loại rõ cân xương trong 16-quy-tac-gan-tu-khoa.json
+/can-xuong-doan-so,tu-vi,1,https://xemboi.vn/can-xuong-doan-so,410,,,LOAI:boi_vui_xep_hang — quy tắc loại rõ cân xương trong 16-quy-tac-gan-tu-khoa.json
+/lap-la-so-tu-vi,tu-vi,1,https://xemboi.vn/lap-la-so-tu-vi,301,TUVI-LAPLASO,/tu-vi/lap-la-so,Khớp trực tiếp công cụ lập lá số tử vi v2 (TUVI-LAPLASO)
+/phong-thuy,phong-thuy,1,https://xemboi.vn/phong-thuy,GIU,PT,/phong-thuy,Trùng đường dẫn hub phong thủy v2 (PT)
+/xem-phong-thuy-sim-so,phong-thuy,1,https://xemboi.vn/xem-phong-thuy-sim-so,410,,,LOAI:sim_bien_so_so_dep — nhóm sim số đẹp bị loại hoàn toàn (167/168 cụm sim)
+/xem-huong-ban-tho,phong-thuy,1,https://xemboi.vn/xem-huong-ban-tho,301,PT-HUONGNHA,/phong-thuy/huong-nha,Từ khóa hướng bàn thờ gán vào PT-HUONGNHA
+/xem-huong-nha-tam-hop-tuoi,phong-thuy,1,https://xemboi.vn/xem-huong-nha-tam-hop-tuoi,301,PT-HUONGNHA,/phong-thuy/huong-nha,Từ khóa hướng nhà vệ sinh gán vào PT-HUONGNHA
+/xem-huong-phong-ngu,phong-thuy,1,https://xemboi.vn/xem-huong-phong-ngu,301,PT-HUONGNHA,/phong-thuy/huong-nha,Từ khóa hướng giường/phòng ngủ gán vào PT-HUONGNHA
+/xem-huong-bep,phong-thuy,1,https://xemboi.vn/xem-huong-bep,301,PT-HUONGNHA,/phong-thuy/huong-nha,Từ khóa hướng bếp gán vào PT-HUONGNHA
+/xem-huong-ban-lam-viec,phong-thuy,1,https://xemboi.vn/xem-huong-ban-lam-viec,301,PT-HUONGNHA,/phong-thuy/huong-nha,Từ khóa hướng bàn làm việc gán vào PT-HUONGNHA
+/xem-huong-nha,phong-thuy,1,https://xemboi.vn/xem-huong-nha,301,PT-HUONGNHA,/phong-thuy/huong-nha,Khớp trực tiếp công cụ hướng nhà v2 (PT-HUONGNHA)
+/thuoc-lo-ban,phong-thuy,1,https://xemboi.vn/thuoc-lo-ban,301,PT-LOBAN,/phong-thuy/thuoc-lo-ban,Khớp trực tiếp công cụ thước Lỗ Ban v2 (PT-LOBAN)
+/gieo-que-xin-xam,gieo-que-xin-xam,1,https://xemboi.vn/gieo-que-xin-xam,301,PTUC-XINXAM,/phong-tuc/xin-xam,Từ khóa gieo quẻ xin xăm gán vào bài văn hóa PTUC-XINXAM (lưu ý CẦN ANH DUYỆT; nếu bỏ thì chuyển 410)
+/gieo-que-mai-hoa-dich-so,gieo-que-xin-xam,1,https://xemboi.vn/gieo-que-mai-hoa-dich-so,301,KD-MAIHOA,/kinh-dich/mai-hoa-dich-so,Khớp trực tiếp KD-MAIHOA (58/71 cụm mai hoa trong gan-tu-khoa.csv)
+/que-kinh-dich,gieo-que-xin-xam,1,https://xemboi.vn/que-kinh-dich,301,KD-GIEOQUE,/kinh-dich/gieo-que,Từ khóa quẻ kinh dịch ưu tiên ý định gieo quẻ KD-GIEOQUE (16/29 cụm gan-tu-khoa.csv)
+/que-xam-ba-chua-xu,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-ba-chua-xu,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-quan-thanh-de-quan,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-quan-thanh-de-quan,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-quan-am,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-quan-am,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-bac-de,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-bac-de,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-hoang-dai-tien,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-hoang-dai-tien,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-quan-am-kim-tien,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-quan-am-kim-tien,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-ong-bon,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-ong-bon,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-ta-quan,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-ta-quan,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-cuu-thien-huyen-nu,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-cuu-thien-huyen-nu,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-te-cong,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-te-cong,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-trang-luong,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-trang-luong,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-van-vuong,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-van-vuong,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-khong-minh,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-khong-minh,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-dieu-cat-tuong,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-dieu-cat-tuong,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-quy-coc-tu,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-quy-coc-tu,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/que-xam-tan-vien-son-thanh,gieo-que-xin-xam,1,https://xemboi.vn/que-xam-tan-vien-son-thanh,301,PTUC-XINXAM,/phong-tuc/xin-xam,16-quy-tac-gan-tu-khoa.json gán nhóm quẻ xăm về bài văn hóa PTUC-XINXAM (không làm công cụ xin xăm; nếu không duyệt bài này thì 410)
+/nhan-tuong,nhan-tuong,1,https://xemboi.vn/nhan-tuong,301,KT-NHANTUONG,/kien-thuc/nhan-tuong-hoc,"Khớp trực tiếp bài kiến thức nhân tướng học v2 (KT-NHANTUONG, 99/190 cụm gan-tu-khoa.csv)"

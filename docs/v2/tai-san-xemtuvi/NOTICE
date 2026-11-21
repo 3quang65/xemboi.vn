@@ -1,0 +1,13 @@
+xemtuvi.vn
+
+Phần mềm này có sử dụng mã nguồn bên thứ ba:
+
+1. Bộ máy an sao Tử Vi (src/lib/tuvi/tuvi-raw.js)
+   Chuyển thể sang JavaScript từ bộ máy "ansaotuvi" trong dự án TuViMCP
+   Copyright (c) 2026 Manh Ha Nguyen
+   Giấy phép Apache License 2.0 — https://www.apache.org/licenses/LICENSE-2.0
+   Nguồn: https://github.com/nmhaaa3218/TuViMCP
+   Quy tắc an sao theo sách của cụ Thiên Lương.
+
+2. Thuật toán đổi lịch âm dương (src/lib/tuvi/lich-raw.js)
+   Theo thuật toán của Hồ Ngọc Đức, dựa trên "Astronomical Algorithms" (Jean Meeus).

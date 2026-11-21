@@ -1,0 +1,389 @@
+{
+ "QL-S01-TOT": [
+  "QUAN-TV-05"
+ ],
+ "QL-S01-BINH": [
+  "QUAN-TV-05"
+ ],
+ "QL-S01-HAM": [
+  "QUAN-TV-02",
+  "QUAN-TV-05"
+ ],
+ "QL-S01-C4": [
+  "QUAN-TV-05",
+  "QUAN-YN-04"
+ ],
+ "QL-S01-C5": [
+  "QUAN-TV-05",
+  "QUAN-YN-04"
+ ],
+ "QL-S01-C3": [
+  "QUAN-TV-05",
+  "QUAN-YN-04"
+ ],
+ "QL-S02-TOT": [
+  "QUAN-TCO-04"
+ ],
+ "QL-S02-BINH": [
+  "QUAN-TCO-04"
+ ],
+ "QL-S02-HAM": [
+  "QUAN-TCO-02",
+  "QUAN-TCO-04"
+ ],
+ "QL-S02-C4": [
+  "QUAN-TCO-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S02-C5": [
+  "QUAN-TCO-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S02-C3": [
+  "QUAN-TCO-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S03-TOT": [
+  "QUAN-TDU-05"
+ ],
+ "QL-S03-BINH": [
+  "QUAN-TDU-05"
+ ],
+ "QL-S03-HAM": [
+  "QUAN-TDU-02",
+  "QUAN-TDU-05"
+ ],
+ "QL-S03-C4": [
+  "QUAN-TDU-05",
+  "QUAN-YN-04"
+ ],
+ "QL-S03-C5": [
+  "QUAN-TDU-05",
+  "QUAN-YN-04"
+ ],
+ "QL-S03-C3": [
+  "QUAN-TDU-05",
+  "QUAN-YN-04"
+ ],
+ "QL-S04-TOT": [
+  "QUAN-VK-04"
+ ],
+ "QL-S04-BINH": [
+  "QUAN-VK-04"
+ ],
+ "QL-S04-HAM": [
+  "QUAN-VK-02",
+  "QUAN-VK-04"
+ ],
+ "QL-S04-C4": [
+  "QUAN-VK-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S04-C5": [
+  "QUAN-VK-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S04-C3": [
+  "QUAN-VK-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S05-TOT": [
+  "QUAN-TD-04"
+ ],
+ "QL-S05-BINH": [
+  "QUAN-TD-04"
+ ],
+ "QL-S05-HAM": [
+  "QUAN-TD-02",
+  "QUAN-TD-04"
+ ],
+ "QL-S05-C4": [
+  "QUAN-TD-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S05-C5": [
+  "QUAN-TD-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S05-C3": [
+  "QUAN-TD-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S06-TOT": [
+  "QUAN-LT-05"
+ ],
+ "QL-S06-BINH": [
+  "QUAN-LT-05"
+ ],
+ "QL-S06-HAM": [
+  "QUAN-LT-03",
+  "QUAN-LT-04",
+  "QUAN-LT-05"
+ ],
+ "QL-S06-C4": [
+  "QUAN-LT-05",
+  "QUAN-YN-04"
+ ],
+ "QL-S06-C5": [
+  "QUAN-LT-05",
+  "QUAN-YN-04"
+ ],
+ "QL-S06-C3": [
+  "QUAN-LT-05",
+  "QUAN-YN-04"
+ ],
+ "QL-S07-TOT": [
+  "QUAN-TP-03"
+ ],
+ "QL-S07-BINH": [
+  "QUAN-TP-03"
+ ],
+ "QL-S07-HAM": [
+  "QUAN-TP-02",
+  "QUAN-TP-03"
+ ],
+ "QL-S07-C4": [
+  "QUAN-TP-03",
+  "QUAN-YN-04"
+ ],
+ "QL-S07-C5": [
+  "QUAN-TP-03",
+  "QUAN-YN-04"
+ ],
+ "QL-S07-C3": [
+  "QUAN-TP-03",
+  "QUAN-YN-04"
+ ],
+ "QL-S08-TOT": [
+  "QUAN-TA-04"
+ ],
+ "QL-S08-BINH": [
+  "QUAN-TA-04"
+ ],
+ "QL-S08-HAM": [
+  "QUAN-TA-02",
+  "QUAN-TA-04"
+ ],
+ "QL-S08-C4": [
+  "QUAN-TA-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S08-C5": [
+  "QUAN-TA-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S08-C3": [
+  "QUAN-TA-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S09-TOT": [
+  "QUAN-THL-04"
+ ],
+ "QL-S09-BINH": [
+  "QUAN-THL-04"
+ ],
+ "QL-S09-HAM": [
+  "QUAN-THL-02",
+  "QUAN-THL-04"
+ ],
+ "QL-S09-C4": [
+  "QUAN-THL-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S09-C5": [
+  "QUAN-THL-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S09-C3": [
+  "QUAN-THL-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S10-TOT": [
+  "QUAN-CM-03"
+ ],
+ "QL-S10-BINH": [
+  "QUAN-CM-03"
+ ],
+ "QL-S10-HAM": [
+  "QUAN-CM-02",
+  "QUAN-CM-03"
+ ],
+ "QL-S10-C4": [
+  "QUAN-CM-03",
+  "QUAN-YN-04"
+ ],
+ "QL-S10-C5": [
+  "QUAN-CM-03",
+  "QUAN-YN-04"
+ ],
+ "QL-S10-C3": [
+  "QUAN-CM-03",
+  "QUAN-YN-04"
+ ],
+ "QL-S11-TOT": [
+  "QUAN-TT-04"
+ ],
+ "QL-S11-BINH": [
+  "QUAN-TT-04"
+ ],
+ "QL-S11-HAM": [
+  "QUAN-TT-02",
+  "QUAN-TT-04"
+ ],
+ "QL-S11-C4": [
+  "QUAN-TT-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S11-C5": [
+  "QUAN-TT-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S11-C3": [
+  "QUAN-TT-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S12-TOT": [
+  "QUAN-TL-04"
+ ],
+ "QL-S12-BINH": [
+  "QUAN-TL-04"
+ ],
+ "QL-S12-HAM": [
+  "QUAN-TL-02",
+  "QUAN-TL-04"
+ ],
+ "QL-S12-C4": [
+  "QUAN-TL-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S12-C5": [
+  "QUAN-TL-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S12-C3": [
+  "QUAN-TL-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S13-TOT": [
+  "QUAN-TS-04"
+ ],
+ "QL-S13-BINH": [
+  "QUAN-TS-04"
+ ],
+ "QL-S13-HAM": [
+  "QUAN-TS-02",
+  "QUAN-TS-04"
+ ],
+ "QL-S13-C4": [
+  "QUAN-TS-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S13-C5": [
+  "QUAN-TS-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S13-C3": [
+  "QUAN-TS-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S14-TOT": [
+  "QUAN-PQ-04"
+ ],
+ "QL-S14-BINH": [
+  "QUAN-PQ-04"
+ ],
+ "QL-S14-HAM": [
+  "QUAN-PQ-02",
+  "QUAN-PQ-04"
+ ],
+ "QL-S14-C4": [
+  "QUAN-PQ-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S14-C5": [
+  "QUAN-PQ-04",
+  "QUAN-YN-04"
+ ],
+ "QL-S14-C3": [
+  "QUAN-PQ-04",
+  "QUAN-YN-04"
+ ],
+ "QL-HOA-0": [
+  "QUAN-HOA-02",
+  "QUAN-HOA-01"
+ ],
+ "QL-HOA-1": [
+  "QUAN-HOA-02",
+  "QUAN-HOA-01"
+ ],
+ "QL-HOA-2": [
+  "QUAN-HOA-02",
+  "QUAN-HOA-01"
+ ],
+ "QL-HOA-3": [
+  "QUAN-HOA-03"
+ ],
+ "QL-VCD": [
+  "QUAN-CC-01",
+  "CHUNG-VCD-01",
+  "CHUNG-VCD-02",
+  "CHUNG-VCD-03"
+ ],
+ "QL-TT-TUẦN": [
+  "CHUNG-TUAN-02",
+  "CHUNG-TUAN-05"
+ ],
+ "QL-TT-TRIỆT": [
+  "CHUNG-TUAN-02",
+  "CHUNG-TUAN-05"
+ ],
+ "QL-PS-0": [
+  "QUAN-SP-03"
+ ],
+ "QL-PS-1": [
+  "QUAN-SP-03"
+ ],
+ "QL-PS-2": [
+  "QUAN-SP-01"
+ ],
+ "QL-PS-3": [
+  "QUAN-SP-01"
+ ],
+ "QL-PS-4": [
+  "QUAN-SP-02"
+ ],
+ "QL-PS-5": [
+  "QUAN-SP-02"
+ ],
+ "QL-PS-6": [
+  "QUAN-SP-04"
+ ],
+ "QL-PS-7": [
+  "QUAN-SP-05",
+  "CHUNG-SP-05"
+ ],
+ "QL-PS-8": [
+  "QUAN-SP-06"
+ ],
+ "QL-PS-9": [
+  "QUAN-SP-07"
+ ],
+ "QL-PS-10": [
+  "QUAN-SP-07"
+ ],
+ "QL-PS-11": [
+  "QUAN-SP-07"
+ ],
+ "QL-PS-12": [
+  "QUAN-SP-08"
+ ],
+ "QL-PS-13": [
+  "QUAN-SP-08"
+ ],
+ "QL-PS-14": [
+  "QUAN-SP-14"
+ ],
+ "QL-PS-15": [
+  "QUAN-SP-14"
+ ]
+}

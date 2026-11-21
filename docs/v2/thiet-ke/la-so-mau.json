@@ -1,0 +1,2120 @@
+{
+ "laSo": {
+  "ten": "",
+  "gioiTinh": "Nữ",
+  "amDuong": "Dương Nữ",
+  "amDuongLy": "Âm dương thuận lý",
+  "duong": {
+   "ngay": 15,
+   "thang": 8,
+   "nam": 1998
+  },
+  "am": {
+   "ngay": 24,
+   "thang": 6,
+   "nam": 1998,
+   "nhuan": false
+  },
+  "gio": {
+   "chi": "Tỵ",
+   "khoang": "09:00–10:59",
+   "canChi": "Kỷ Tỵ",
+   "dongHo": "09:30"
+  },
+  "canChi": {
+   "nam": "Mậu Dần",
+   "thang": "Kỷ Mùi",
+   "ngay": "Giáp Ngọ",
+   "gio": "Kỷ Tỵ"
+  },
+  "conGiap": "Hổ",
+  "banMenh": "Thành Đầu Thổ",
+  "hanhMenh": "Thổ",
+  "cuc": "Thủy Nhị Cục",
+  "cucHanh": "Thủy",
+  "sinhKhac": "Mệnh khắc Cục",
+  "menhTai": "Dần",
+  "thanTai": "Tý (cung Phu Thê)",
+  "menhChu": "Lộc Tồn",
+  "thanChu": "Thiên Lương",
+  "menhChuCach": {
+   "theoChiNam": "Lộc Tồn",
+   "theoCungMenh": "Lộc Tồn"
+  },
+  "tuan": "Thân–Dậu",
+  "triet": "Tý–Sửu",
+  "tuanCung": [
+   8,
+   9
+  ],
+  "trietCung": [
+   0,
+   1
+  ],
+  "gioChuan": {
+   "ngay": 15,
+   "thang": 8,
+   "nam": 1998,
+   "gio": "09:30",
+   "daQuyDoi": false
+  },
+  "nuocNgoai": null,
+  "amLichTz": 7,
+  "chiSo": {
+   "canNam": 4,
+   "chiNam": 2,
+   "thang": 6,
+   "gio": 5
+  },
+  "quyUoc": {
+   "gioTyMuon": "ngaySau",
+   "muiGioLich": "lichSu",
+   "chuanHoaGioMienNam": "iana",
+   "tuHoa": "viet",
+   "chieuHoaLinh": "viet",
+   "hoaLinh": "cauPhu",
+   "thienGiai": "thienLuong",
+   "khoiViet": "toanThu",
+   "phaToai": "iztro",
+   "luuHa": "trungQuoc",
+   "thienTruQuy": "tuat",
+   "thuongSu": "coDinh",
+   "thangNhuan": "thangChinh",
+   "menhChu": "chiNam",
+   "tuanTriet": "haiCung",
+   "bangDoSang": "viet",
+   "tuViTyNgo": "ansaotuvi",
+   "dacTinhHoa": "ansaotuvi",
+   "ranhGioiNam": "tet",
+   "gioMatTroiThuc": false
+  },
+  "cung": [
+   {
+    "chi": 0,
+    "tenChi": "Tý",
+    "can": "Giáp",
+    "ten": "Phu Thê",
+    "hanhCung": "Thủy",
+    "laThan": true,
+    "tuan": false,
+    "triet": true,
+    "chinhTinh": [
+     {
+      "key": "thienCo",
+      "ten": "Thiên Cơ",
+      "hanh": "Mộc",
+      "loai": "chinh",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": "Hóa Kỵ"
+     }
+    ],
+    "catTinh": [
+     {
+      "key": "tauThu",
+      "ten": "Tấu Thư",
+      "hanh": "Kim",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "diaGiai",
+      "ten": "Địa Giải",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "hungTinh": [
+     {
+      "key": "dieuKhach",
+      "ten": "Điếu Khách",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "hoaKy",
+      "ten": "Hóa Kỵ",
+      "hanh": "Thủy",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     }
+    ],
+    "phuTinh": [
+     {
+      "key": "tauThu",
+      "ten": "Tấu Thư",
+      "hanh": "Kim",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "dieuKhach",
+      "ten": "Điếu Khách",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "diaGiai",
+      "ten": "Địa Giải",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "hoaKy",
+      "ten": "Hóa Kỵ",
+      "hanh": "Thủy",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     }
+    ],
+    "trangSinh": "Mộ",
+    "daiVan": "22–31",
+    "daiVanTu": 22,
+    "tieuHan": "Ngọ"
+   },
+   {
+    "chi": 1,
+    "tenChi": "Sửu",
+    "can": "Ất",
+    "ten": "Huynh Đệ",
+    "hanhCung": "Thổ",
+    "laThan": false,
+    "tuan": false,
+    "triet": true,
+    "chinhTinh": [
+     {
+      "key": "tuVi",
+      "ten": "Tử Vi",
+      "hanh": "Thổ",
+      "loai": "chinh",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     },
+     {
+      "key": "phaQuan",
+      "ten": "Phá Quân",
+      "hanh": "Thủy",
+      "loai": "chinh",
+      "dacTinh": "V",
+      "dacTinhTen": "Vượng",
+      "hoa": null
+     }
+    ],
+    "catTinh": [
+     {
+      "key": "tuongQuan",
+      "ten": "Tướng Quân",
+      "hanh": "Mộc",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienKhoi",
+      "ten": "Thiên Khôi",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "hongLoan",
+      "ten": "Hồng Loan",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "quocAn",
+      "ten": "Quốc Ấn",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "hungTinh": [
+     {
+      "key": "trucPhu",
+      "ten": "Trực Phù",
+      "hanh": "Kim",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "quaTu",
+      "ten": "Quả Tú",
+      "hanh": "Thổ",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "phuTinh": [
+     {
+      "key": "tuongQuan",
+      "ten": "Tướng Quân",
+      "hanh": "Mộc",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "trucPhu",
+      "ten": "Trực Phù",
+      "hanh": "Kim",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienKhoi",
+      "ten": "Thiên Khôi",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "hongLoan",
+      "ten": "Hồng Loan",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "quaTu",
+      "ten": "Quả Tú",
+      "hanh": "Thổ",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "quocAn",
+      "ten": "Quốc Ấn",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "trangSinh": "Tử",
+    "daiVan": "12–21",
+    "daiVanTu": 12,
+    "tieuHan": "Tỵ"
+   },
+   {
+    "chi": 2,
+    "tenChi": "Dần",
+    "can": "Giáp",
+    "ten": "Mệnh",
+    "hanhCung": "Mộc",
+    "laThan": false,
+    "tuan": false,
+    "triet": false,
+    "chinhTinh": [],
+    "catTinh": [
+     {
+      "key": "thienTho",
+      "ten": "Thiên Thọ",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "dauQuan",
+      "ten": "Đẩu Quân",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "hungTinh": [
+     {
+      "key": "tieuHao",
+      "ten": "Tiểu Hao",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     },
+     {
+      "key": "thaiTue",
+      "ten": "Thái Tuế",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienHinh",
+      "ten": "Thiên Hình",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     }
+    ],
+    "phuTinh": [
+     {
+      "key": "tieuHao",
+      "ten": "Tiểu Hao",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     },
+     {
+      "key": "thaiTue",
+      "ten": "Thái Tuế",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienTho",
+      "ten": "Thiên Thọ",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienHinh",
+      "ten": "Thiên Hình",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     },
+     {
+      "key": "dauQuan",
+      "ten": "Đẩu Quân",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "trangSinh": "Bệnh",
+    "daiVan": "2–11",
+    "daiVanTu": 2,
+    "tieuHan": "Thìn"
+   },
+   {
+    "chi": 3,
+    "tenChi": "Mão",
+    "can": "Ất",
+    "ten": "Phụ Mẫu",
+    "hanhCung": "Mộc",
+    "laThan": false,
+    "tuan": false,
+    "triet": false,
+    "chinhTinh": [
+     {
+      "key": "thienPhu",
+      "ten": "Thiên Phủ",
+      "hanh": "Thổ",
+      "loai": "chinh",
+      "dacTinh": "B",
+      "dacTinhTen": "Bình",
+      "hoa": null
+     }
+    ],
+    "catTinh": [
+     {
+      "key": "thanhLong",
+      "ten": "Thanh Long",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thieuDuong",
+      "ten": "Thiếu Dương",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "anQuang",
+      "ten": "Ân Quang",
+      "hanh": "Mộc",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienQuan",
+      "ten": "Thiên Quan",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienPhuc",
+      "ten": "Thiên Phúc",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "daoHoa",
+      "ten": "Đào Hoa",
+      "hanh": "Mộc",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "hungTinh": [
+     {
+      "key": "thienKhong",
+      "ten": "Thiên Không",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "phuTinh": [
+     {
+      "key": "thanhLong",
+      "ten": "Thanh Long",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thieuDuong",
+      "ten": "Thiếu Dương",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienKhong",
+      "ten": "Thiên Không",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "anQuang",
+      "ten": "Ân Quang",
+      "hanh": "Mộc",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienQuan",
+      "ten": "Thiên Quan",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienPhuc",
+      "ten": "Thiên Phúc",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "daoHoa",
+      "ten": "Đào Hoa",
+      "hanh": "Mộc",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "trangSinh": "Suy",
+    "daiVan": "112–121",
+    "daiVanTu": 112,
+    "tieuHan": "Mão"
+   },
+   {
+    "chi": 4,
+    "tenChi": "Thìn",
+    "can": "Bính",
+    "ten": "Phúc Đức",
+    "hanhCung": "Thổ",
+    "laThan": false,
+    "tuan": false,
+    "triet": false,
+    "chinhTinh": [
+     {
+      "key": "thaiAm",
+      "ten": "Thái Âm",
+      "hanh": "Thủy",
+      "loai": "chinh",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": "Hóa Quyền"
+     }
+    ],
+    "catTinh": [
+     {
+      "key": "lucSi",
+      "ten": "Lực Sĩ",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienTai",
+      "ten": "Thiên Tài",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "hoaQuyen",
+      "ten": "Hóa Quyền",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     }
+    ],
+    "hungTinh": [
+     {
+      "key": "tangMon",
+      "ten": "Tang Môn",
+      "hanh": "Mộc",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "daLa",
+      "ten": "Đà La",
+      "hanh": "Kim",
+      "loai": "sat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     },
+     {
+      "key": "diaKiep",
+      "ten": "Địa Kiếp",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "thienKhoc",
+      "ten": "Thiên Khốc",
+      "hanh": "Thủy",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "thienLa",
+      "ten": "Thiên La",
+      "hanh": "Thổ",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "phuTinh": [
+     {
+      "key": "lucSi",
+      "ten": "Lực Sĩ",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "tangMon",
+      "ten": "Tang Môn",
+      "hanh": "Mộc",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "daLa",
+      "ten": "Đà La",
+      "hanh": "Kim",
+      "loai": "sat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     },
+     {
+      "key": "diaKiep",
+      "ten": "Địa Kiếp",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "thienKhoc",
+      "ten": "Thiên Khốc",
+      "hanh": "Thủy",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "thienTai",
+      "ten": "Thiên Tài",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienLa",
+      "ten": "Thiên La",
+      "hanh": "Thổ",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "hoaQuyen",
+      "ten": "Hóa Quyền",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     }
+    ],
+    "trangSinh": "Đế Vượng",
+    "daiVan": "102–111",
+    "daiVanTu": 102,
+    "tieuHan": "Dần"
+   },
+   {
+    "chi": 5,
+    "tenChi": "Tỵ",
+    "can": "Đinh",
+    "ten": "Điền Trạch",
+    "hanhCung": "Hỏa",
+    "laThan": false,
+    "tuan": false,
+    "triet": false,
+    "chinhTinh": [
+     {
+      "key": "liemTrinh",
+      "ten": "Liêm Trinh",
+      "hanh": "Hỏa",
+      "loai": "chinh",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "thamLang",
+      "ten": "Tham Lang",
+      "hanh": "Thủy",
+      "loai": "chinh",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": "Hóa Lộc"
+     }
+    ],
+    "catTinh": [
+     {
+      "key": "locTon",
+      "ten": "Lộc Tồn",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "bacSy",
+      "ten": "Bác Sỹ",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thieuAm",
+      "ten": "Thiếu Âm",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "huuBat",
+      "ten": "Hữu Bật",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": "Hóa Khoa"
+     },
+     {
+      "key": "vanXuong",
+      "ten": "Văn Xương",
+      "hanh": "Kim",
+      "loai": "cat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "hoaLoc",
+      "ten": "Hóa Lộc",
+      "hanh": "Mộc",
+      "loai": "cat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "hoaKhoa",
+      "ten": "Hóa Khoa",
+      "hanh": "Kim",
+      "loai": "cat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     }
+    ],
+    "hungTinh": [
+     {
+      "key": "coThan",
+      "ten": "Cô Thần",
+      "hanh": "Thổ",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "luuHa",
+      "ten": "Lưu Hà",
+      "hanh": "Thủy",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "phuTinh": [
+     {
+      "key": "locTon",
+      "ten": "Lộc Tồn",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "bacSy",
+      "ten": "Bác Sỹ",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thieuAm",
+      "ten": "Thiếu Âm",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "huuBat",
+      "ten": "Hữu Bật",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": "Hóa Khoa"
+     },
+     {
+      "key": "vanXuong",
+      "ten": "Văn Xương",
+      "hanh": "Kim",
+      "loai": "cat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "coThan",
+      "ten": "Cô Thần",
+      "hanh": "Thổ",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "hoaLoc",
+      "ten": "Hóa Lộc",
+      "hanh": "Mộc",
+      "loai": "cat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "hoaKhoa",
+      "ten": "Hóa Khoa",
+      "hanh": "Kim",
+      "loai": "cat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     },
+     {
+      "key": "luuHa",
+      "ten": "Lưu Hà",
+      "hanh": "Thủy",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "trangSinh": "Lâm Quan",
+    "daiVan": "92–101",
+    "daiVanTu": 92,
+    "tieuHan": "Sửu"
+   },
+   {
+    "chi": 6,
+    "tenChi": "Ngọ",
+    "can": "Mậu",
+    "ten": "Quan Lộc",
+    "hanhCung": "Hỏa",
+    "laThan": false,
+    "tuan": false,
+    "triet": false,
+    "chinhTinh": [
+     {
+      "key": "cuMon",
+      "ten": "Cự Môn",
+      "hanh": "Thủy",
+      "loai": "chinh",
+      "dacTinh": "V",
+      "dacTinhTen": "Vượng",
+      "hoa": null
+     }
+    ],
+    "catTinh": [
+     {
+      "key": "longTri",
+      "ten": "Long Trì",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "batToa",
+      "ten": "Bát Tọa",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienY",
+      "ten": "Thiên Y",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienGiai",
+      "ten": "Thiên Giải",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienTru",
+      "ten": "Thiên Trù",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "hungTinh": [
+     {
+      "key": "quanPhu2",
+      "ten": "Quan Phủ",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "quanPhu3",
+      "ten": "Quan Phù",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "kinhDuong",
+      "ten": "Kình Dương",
+      "hanh": "Kim",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "diaKhong",
+      "ten": "Địa Không",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "thienRieu",
+      "ten": "Thiên Riêu",
+      "hanh": "Thủy",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "phuTinh": [
+     {
+      "key": "quanPhu2",
+      "ten": "Quan Phủ",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "quanPhu3",
+      "ten": "Quan Phù",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "kinhDuong",
+      "ten": "Kình Dương",
+      "hanh": "Kim",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "diaKhong",
+      "ten": "Địa Không",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "longTri",
+      "ten": "Long Trì",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "batToa",
+      "ten": "Bát Tọa",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienRieu",
+      "ten": "Thiên Riêu",
+      "hanh": "Thủy",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienY",
+      "ten": "Thiên Y",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienGiai",
+      "ten": "Thiên Giải",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienTru",
+      "ten": "Thiên Trù",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "trangSinh": "Quan Đới",
+    "daiVan": "82–91",
+    "daiVanTu": 82,
+    "tieuHan": "Tý"
+   },
+   {
+    "chi": 7,
+    "tenChi": "Mùi",
+    "can": "Kỷ",
+    "ten": "Nô Bộc",
+    "hanhCung": "Thổ",
+    "laThan": false,
+    "tuan": false,
+    "triet": false,
+    "chinhTinh": [
+     {
+      "key": "thienTuong",
+      "ten": "Thiên Tướng",
+      "hanh": "Thủy",
+      "loai": "chinh",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     }
+    ],
+    "catTinh": [
+     {
+      "key": "nguyetDuc",
+      "ten": "Nguyệt Đức",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienViet",
+      "ten": "Thiên Việt",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienHy",
+      "ten": "Thiên Hỷ",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "phongCao",
+      "ten": "Phong Cáo",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "hungTinh": [
+     {
+      "key": "phucBinh",
+      "ten": "Phục Binh",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "tuPhu",
+      "ten": "Tử Phù",
+      "hanh": "Kim",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienThuong",
+      "ten": "Thiên Thương",
+      "hanh": "Thổ",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "phuTinh": [
+     {
+      "key": "phucBinh",
+      "ten": "Phục Binh",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "tuPhu",
+      "ten": "Tử Phù",
+      "hanh": "Kim",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "nguyetDuc",
+      "ten": "Nguyệt Đức",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienViet",
+      "ten": "Thiên Việt",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienHy",
+      "ten": "Thiên Hỷ",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "phongCao",
+      "ten": "Phong Cáo",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienThuong",
+      "ten": "Thiên Thương",
+      "hanh": "Thổ",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "trangSinh": "Mộc Dục",
+    "daiVan": "72–81",
+    "daiVanTu": 72,
+    "tieuHan": "Hợi"
+   },
+   {
+    "chi": 8,
+    "tenChi": "Thân",
+    "can": "Canh",
+    "ten": "Thiên Di",
+    "hanhCung": "Kim",
+    "laThan": false,
+    "tuan": true,
+    "triet": false,
+    "chinhTinh": [
+     {
+      "key": "thienDong",
+      "ten": "Thiên Đồng",
+      "hanh": "Thủy",
+      "loai": "chinh",
+      "dacTinh": "M",
+      "dacTinhTen": "Miếu",
+      "hoa": null
+     },
+     {
+      "key": "thienLuong",
+      "ten": "Thiên Lương",
+      "hanh": "Thổ",
+      "loai": "chinh",
+      "dacTinh": "V",
+      "dacTinhTen": "Vượng",
+      "hoa": null
+     }
+    ],
+    "catTinh": [
+     {
+      "key": "phuongCac",
+      "ten": "Phượng Các",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "giaiThan",
+      "ten": "Giải Thần",
+      "hanh": "Mộc",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "tamThai",
+      "ten": "Tam Thai",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "vanTinh",
+      "ten": "Văn Tinh",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienMa",
+      "ten": "Thiên Mã",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     }
+    ],
+    "hungTinh": [
+     {
+      "key": "daiHao",
+      "ten": "Đại Hao",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     },
+     {
+      "key": "tuePha",
+      "ten": "Tuế Phá",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "hoaTinh",
+      "ten": "Hỏa Tinh",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "linhTinh",
+      "ten": "Linh Tinh",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "thienHu",
+      "ten": "Thiên Hư",
+      "hanh": "Thủy",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     }
+    ],
+    "phuTinh": [
+     {
+      "key": "daiHao",
+      "ten": "Đại Hao",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     },
+     {
+      "key": "tuePha",
+      "ten": "Tuế Phá",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "hoaTinh",
+      "ten": "Hỏa Tinh",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "linhTinh",
+      "ten": "Linh Tinh",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "phuongCac",
+      "ten": "Phượng Các",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "giaiThan",
+      "ten": "Giải Thần",
+      "hanh": "Mộc",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "tamThai",
+      "ten": "Tam Thai",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienHu",
+      "ten": "Thiên Hư",
+      "hanh": "Thủy",
+      "loai": "sat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "vanTinh",
+      "ten": "Văn Tinh",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienMa",
+      "ten": "Thiên Mã",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     }
+    ],
+    "trangSinh": "Tràng Sinh",
+    "daiVan": "62–71",
+    "daiVanTu": 62,
+    "tieuHan": "Tuất"
+   },
+   {
+    "chi": 9,
+    "tenChi": "Dậu",
+    "can": "Tân",
+    "ten": "Tật Ách",
+    "hanhCung": "Kim",
+    "laThan": false,
+    "tuan": true,
+    "triet": false,
+    "chinhTinh": [
+     {
+      "key": "vuKhuc",
+      "ten": "Vũ Khúc",
+      "hanh": "Kim",
+      "loai": "chinh",
+      "dacTinh": "Đ",
+      "dacTinhTen": "Đắc",
+      "hoa": null
+     },
+     {
+      "key": "thatSat",
+      "ten": "Thất Sát",
+      "hanh": "Kim",
+      "loai": "chinh",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     }
+    ],
+    "catTinh": [
+     {
+      "key": "longDuc",
+      "ten": "Long Đức",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "taPhu",
+      "ten": "Tả Phù",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "vanKhuc",
+      "ten": "Văn Khúc",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     }
+    ],
+    "hungTinh": [
+     {
+      "key": "benhPhu",
+      "ten": "Bệnh Phù",
+      "hanh": "Thổ",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienSu",
+      "ten": "Thiên Sứ",
+      "hanh": "Thủy",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "phaToai",
+      "ten": "Phá Toái",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "phuTinh": [
+     {
+      "key": "benhPhu",
+      "ten": "Bệnh Phù",
+      "hanh": "Thổ",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "longDuc",
+      "ten": "Long Đức",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "taPhu",
+      "ten": "Tả Phù",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "vanKhuc",
+      "ten": "Văn Khúc",
+      "hanh": "Thủy",
+      "loai": "cat",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     },
+     {
+      "key": "thienSu",
+      "ten": "Thiên Sứ",
+      "hanh": "Thủy",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "phaToai",
+      "ten": "Phá Toái",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "trangSinh": "Dưỡng",
+    "daiVan": "52–61",
+    "daiVanTu": 52,
+    "tieuHan": "Dậu"
+   },
+   {
+    "chi": 10,
+    "tenChi": "Tuất",
+    "can": "Nhâm",
+    "ten": "Tài Bạch",
+    "hanhCung": "Thổ",
+    "laThan": false,
+    "tuan": false,
+    "triet": false,
+    "chinhTinh": [
+     {
+      "key": "thaiDuong",
+      "ten": "Thái Dương",
+      "hanh": "Hỏa",
+      "loai": "chinh",
+      "dacTinh": "H",
+      "dacTinhTen": "Hãm",
+      "hoa": null
+     }
+    ],
+    "catTinh": [
+     {
+      "key": "hyThan",
+      "ten": "Hỷ Thần",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "duongPhu",
+      "ten": "Đường Phù",
+      "hanh": "Mộc",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "hungTinh": [
+     {
+      "key": "bachHo",
+      "ten": "Bạch Hổ",
+      "hanh": "Kim",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "diaVong",
+      "ten": "Địa Võng",
+      "hanh": "Thổ",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "hoaCai",
+      "ten": "Hoa Cái",
+      "hanh": "Kim",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "phuTinh": [
+     {
+      "key": "hyThan",
+      "ten": "Hỷ Thần",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "bachHo",
+      "ten": "Bạch Hổ",
+      "hanh": "Kim",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "duongPhu",
+      "ten": "Đường Phù",
+      "hanh": "Mộc",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "diaVong",
+      "ten": "Địa Võng",
+      "hanh": "Thổ",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "hoaCai",
+      "ten": "Hoa Cái",
+      "hanh": "Kim",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "trangSinh": "Thai",
+    "daiVan": "42–51",
+    "daiVanTu": 42,
+    "tieuHan": "Thân"
+   },
+   {
+    "chi": 11,
+    "tenChi": "Hợi",
+    "can": "Quý",
+    "ten": "Tử Tức",
+    "hanhCung": "Thủy",
+    "laThan": false,
+    "tuan": false,
+    "triet": false,
+    "chinhTinh": [],
+    "catTinh": [
+     {
+      "key": "phiLiem",
+      "ten": "Phi Liêm",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "phucDuc",
+      "ten": "Phúc Đức",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienDuc",
+      "ten": "Thiên Đức",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienQuy",
+      "ten": "Thiên Quý",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thaiPhu",
+      "ten": "Thai Phụ",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "hungTinh": [
+     {
+      "key": "kiepSat",
+      "ten": "Kiếp Sát",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "phuTinh": [
+     {
+      "key": "phiLiem",
+      "ten": "Phi Liêm",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "phucDuc",
+      "ten": "Phúc Đức",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienDuc",
+      "ten": "Thiên Đức",
+      "hanh": "Hỏa",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thienQuy",
+      "ten": "Thiên Quý",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "thaiPhu",
+      "ten": "Thai Phụ",
+      "hanh": "Thổ",
+      "loai": "cat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     },
+     {
+      "key": "kiepSat",
+      "ten": "Kiếp Sát",
+      "hanh": "Hỏa",
+      "loai": "sat",
+      "dacTinh": null,
+      "dacTinhTen": null,
+      "hoa": null
+     }
+    ],
+    "trangSinh": "Tuyệt",
+    "daiVan": "32–41",
+    "daiVanTu": 32,
+    "tieuHan": "Mùi"
+   }
+  ]
+ },
+ "luuNien2027": {
+  "namXem": 2027,
+  "canChi": "Đinh Mùi",
+  "tuoiMu": 30,
+  "saoLuu": [
+   {
+    "key": "luu_thaiTue",
+    "ten": "L. Thái Tuế",
+    "chi": 7
+   },
+   {
+    "key": "luu_tangMon",
+    "ten": "L. Tang Môn",
+    "chi": 9
+   },
+   {
+    "key": "luu_bachHo",
+    "ten": "L. Bạch Hổ",
+    "chi": 3
+   },
+   {
+    "key": "luu_thienKhoc",
+    "ten": "L. Thiên Khốc",
+    "chi": 11
+   },
+   {
+    "key": "luu_thienHu",
+    "ten": "L. Thiên Hư",
+    "chi": 1
+   },
+   {
+    "key": "luu_locTon",
+    "ten": "L. Lộc Tồn",
+    "chi": 6
+   },
+   {
+    "key": "luu_kinhDuong",
+    "ten": "L. Kình Dương",
+    "chi": 7
+   },
+   {
+    "key": "luu_daLa",
+    "ten": "L. Đà La",
+    "chi": 5
+   },
+   {
+    "key": "luu_thienMa",
+    "ten": "L. Thiên Mã",
+    "chi": 5
+   }
+  ],
+  "luuTuHoa": [
+   {
+    "hoa": "Hóa Lộc",
+    "sao": "Thái Âm",
+    "chi": 4
+   },
+   {
+    "hoa": "Hóa Quyền",
+    "sao": "Thiên Đồng",
+    "chi": 8
+   },
+   {
+    "hoa": "Hóa Khoa",
+    "sao": "Thiên Cơ",
+    "chi": 0
+   },
+   {
+    "hoa": "Hóa Kỵ",
+    "sao": "Cự Môn",
+    "chi": 6
+   }
+  ],
+  "luuThaiTue": 7,
+  "daiVan": 0,
+  "tieuHan": 11,
+  "luuNguyet": [
+   7,
+   8,
+   9,
+   10,
+   11,
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ },
+ "moTaQuyUoc": [],
+ "nhanDinhMenhThan": [
+  {
+   "id": "menh-vo-chinh-dieu",
+   "nhom": "menh_than",
+   "canCu": "[Căn cứ: Cung Mệnh (Dần) Vô Chính Diệu – mượn Thiên Đồng và Thiên Lương tại Thiên Di (Thân)]",
+   "tieuDe": "Cung Mệnh vô chính diệu (mượn sao xung chiếu)",
+   "noiDung": "Thiên Đồng và Thiên Lương mượn sang lại bị Tuần hoặc Triệt nên ảnh hưởng càng nhẹ, bạn có xu hướng tự do định hình bản thân hơn nhưng cũng cần tự đặt khung rõ ràng cho mình.",
+   "nguon": [
+    "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+    "Tử Vi Nghiệm Lý Toàn Thư (Thiên Lương)",
+    "Tử Vi Kiến Giải, Đặng Xuân Xuyến (bài Tuần Triệt và những dấu hỏi)"
+   ],
+   "ghiChuKiemDuyet": "Kho câu tĩnh tổng hợp từ sách (chưa qua chuyên gia kiểm duyệt)."
+  },
+  {
+   "id": "menh-muon-thienDong",
+   "nhom": "menh_than",
+   "canCu": "[Căn cứ: Cung Thiên Di (Thân) chiếu Mệnh – Thiên Đồng (Miếu)]",
+   "tieuDe": "Ảnh hưởng mượn từ Thiên Đồng",
+   "noiDung": "Bạn có xu hướng hiền hòa, nhân hậu, vui vẻ và dễ gặp thuận lợi nhờ được lòng người; vì dễ hài lòng, hãy tự đặt một mục tiêu đủ thử thách để tài năng không bị phí.",
+   "nguon": [
+    "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+    "Tử Vi Đẩu Số Toàn Thư"
+   ],
+   "ghiChuKiemDuyet": "Kho câu tĩnh tổng hợp từ sách (chưa qua chuyên gia kiểm duyệt)."
+  },
+  {
+   "id": "than-cu-0",
+   "nhom": "menh_than",
+   "canCu": "[Căn cứ: Cung Phu Thê (Tý) – Thân cư Phu Thê – Thiên Cơ (Đắc, Hóa Kỵ)]",
+   "tieuDe": "Thân cư Phu Thê",
+   "noiDung": "Từ tuổi trưởng thành, người bạn đời và các mối quan hệ gắn bó thường ảnh hưởng lớn đến hướng đi của bạn, không phải là phụ thuộc; người cùng giá trị sống rất đáng chọn.",
+   "nguon": [
+    "Khoa Học Huyền Bí số 74, Trần Việt Sơn thuật kinh nghiệm cụ Thái Dương",
+    "Trung Châu phái, Vương Đình Chi (bản dịch Nguyên tắc luận đoán 12 cung)",
+    "Tử Vi Đẩu Số Toàn Thư"
+   ],
+   "ghiChuKiemDuyet": "Kho câu tĩnh tổng hợp từ sách (chưa qua chuyên gia kiểm duyệt)."
+  }
+ ],
+ "chuDe2027": {
+  "id": "chu-de-2027",
+  "nhom": "nam_2027",
+  "canCu": "[Căn cứ: Cung Nô Bộc (Mùi) – Lưu Thái Tuế 2027, Thiên Tướng (Đắc); Lưu Hóa Lộc tại Thái Âm – Cung Phúc Đức]",
+  "tieuDe": "Chủ đề năm Đinh Mùi 2027: Đồng nghiệp, bạn bè và mạng lưới cộng tác",
+  "noiDung": "Trọng tâm năm 2027 chạm cung Nô Bộc: kết quả công việc năm nay chịu ảnh hưởng khá rõ từ người cộng tác, bạn bè và cách bạn chọn lọc các mối quan hệ xung quanh. (đặt trong nền Đại vận 22–31 tuổi tại cung Phu Thê). Đồng thời, Lưu Hóa Lộc năm Đinh Mùi (sao Thái Âm) rơi vào cung Phúc Đức (Thìn), gợi ý hướng dễ mở thêm cơ hội thuận lợi nếu bạn chủ động tập trung vào mảng này.",
+  "nguon": [
+   "Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)",
+   "Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)"
+  ],
+  "ghiChuKiemDuyet": "Kho câu tĩnh tổng hợp từ sách (chưa qua chuyên gia kiểm duyệt)."
+ }
+}

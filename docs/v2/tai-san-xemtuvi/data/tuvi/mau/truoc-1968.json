@@ -1,0 +1,491 @@
+[
+  {
+    "id": "truoc-1968-001",
+    "nhanCa": [
+      "truoc-1968",
+      "mien-bac",
+      "lech-tz",
+      "thang-nhuan"
+    ],
+    "ngayGioSinhDuong": {
+      "nam": 1947,
+      "thang": 4,
+      "ngay": 15,
+      "gio": 10,
+      "phut": 20
+    },
+    "gioiTinh": "nam",
+    "muiGio": "+07:00",
+    "mongDoi": {
+      "amLich": {
+        "nam": 1947,
+        "thang": 2,
+        "ngay": 24,
+        "nhuan": true
+      },
+      "canChi": {
+        "nam": "Đinh Hợi",
+        "thang": "Quý Mão",
+        "ngay": "Giáp Tý",
+        "gio": "Kỷ Tỵ"
+      },
+      "menhThan": {
+        "menh": "Tuất",
+        "than": "Thân"
+      },
+      "cuc": "Kim tứ cục",
+      "chinhTinh": {
+        "tuVi": "Mùi",
+        "thienCo": "Ngọ",
+        "thaiDuong": "Thìn",
+        "vuKhuc": "Mão",
+        "thienDong": "Dần",
+        "liemTrinh": "Hợi",
+        "thienPhu": "Dậu",
+        "thaiAm": "Tuất",
+        "thamLang": "Hợi",
+        "cuMon": "Tý",
+        "thienTuong": "Sửu",
+        "thienLuong": "Dần",
+        "thatSat": "Mão",
+        "phaQuan": "Mùi"
+      },
+      "nguonDoiChieu": [
+        {
+          "ten": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md)",
+          "thamChieu": "python3 -I tuvi-ref-engine.py 1947 4 15 10 20 nam (giờ chuẩn UTC+7; lịch UTC+8) → âm 24/2 nhuận/1947"
+        },
+        {
+          "ten": "src/lib/tuvi/lich-raw.js (Hồ Ngọc Đức) đối chiếu ngày âm",
+          "thamChieu": "duongSangAm(15,4,1947,8) = 24/2/1947 nhuận=True — khớp engine"
+        },
+        {
+          "ten": "Trang/sách ngoài",
+          "thamChieu": "Chưa có nguồn: đối chiếu trang lập lá số ngoài (xemtuvi.vn bản cũ, tuvi.vn, thầy lập tay). Cách lấy: nhập đúng ngày giờ, giới tính, quy ước ở trên vào từng trang, chép kết quả; Minh/anh Cường cấp trang hoặc người lập tay."
+        }
+      ]
+    },
+    "quyUoc": "Miền Bắc: giờ đồng hồ UTC+7 (spec 1.2); lịch âm tính UTC+8 (spec 1.5/10.2). Giờ chuẩn quy về UTC+7 để tính canh giờ.",
+    "bienThe": [
+      {
+        "moTa": "Lịch UTC+7 mọi năm (engine repo cũ)",
+        "tuyChon": {
+          "tz_rule": "7"
+        },
+        "khacMacDinh": "amLich: ngay 24→25; chinhTinh: tuVi Mùi→Tỵ, thienCo Ngọ→Thìn, thaiDuong Thìn→Dần, vuKhuc Mão→Sửu, thienDong Dần→Tý, liemTrinh Hợi→Dậu, thienPhu Dậu→Hợi, thaiAm Tuất→Tý, thamLang Hợi→Sửu, cuMon Tý→Dần, thienTuong Sửu→Mão, thienLuong Dần→Thìn, thatSat Mão→Tỵ, phaQuan Mùi→Dậu"
+      }
+    ],
+    "nguon": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md); lich-raw.js khớp ngày âm.  Trang ngoài: chưa có nguồn (xem nguonDoiChieu).",
+    "ghiChu": "Lệch lịch UTC+7/UTC+8 (khoảng 22/3–20/4/1947); theo UTC+8 ngày này thuộc tháng 2 nhuận. Múi giờ đồng hồ trước 1960 và nguồn lịch sử cho 1947/1953: chưa có nguồn (IANA tz lịch sử nhiều lần đổi). Cách lấy: tra IANA tzdata Asia/Ho_Chi_Minh, Asia/Hanoi hoặc văn bản pháp luật đương thời; người cấp: Minh chuyển Kỹ thuật/chuyên gia lịch.",
+    "noiSinh": "mien-bac",
+    "muiGioLich": "+08:00",
+    "gioChuanUTC7": "15/04/1947 10:20"
+  },
+  {
+    "id": "truoc-1968-002",
+    "nhanCa": [
+      "truoc-1968",
+      "mien-bac",
+      "lech-tz"
+    ],
+    "ngayGioSinhDuong": {
+      "nam": 1953,
+      "thang": 8,
+      "ngay": 20,
+      "gio": 5,
+      "phut": 40
+    },
+    "gioiTinh": "nu",
+    "muiGio": "+07:00",
+    "mongDoi": {
+      "amLich": {
+        "nam": 1953,
+        "thang": 7,
+        "ngay": 11,
+        "nhuan": false
+      },
+      "canChi": {
+        "nam": "Quý Tỵ",
+        "thang": "Canh Thân",
+        "ngay": "Quý Mão",
+        "gio": "Ất Mão"
+      },
+      "menhThan": {
+        "menh": "Tỵ",
+        "than": "Hợi"
+      },
+      "cuc": "Thổ ngũ cục",
+      "chinhTinh": {
+        "tuVi": "Thân",
+        "thienCo": "Mùi",
+        "thaiDuong": "Tỵ",
+        "vuKhuc": "Thìn",
+        "thienDong": "Mão",
+        "liemTrinh": "Tý",
+        "thienPhu": "Thân",
+        "thaiAm": "Dậu",
+        "thamLang": "Tuất",
+        "cuMon": "Hợi",
+        "thienTuong": "Tý",
+        "thienLuong": "Sửu",
+        "thatSat": "Dần",
+        "phaQuan": "Ngọ"
+      },
+      "nguonDoiChieu": [
+        {
+          "ten": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md)",
+          "thamChieu": "python3 -I tuvi-ref-engine.py 1953 8 20 5 40 nu (giờ chuẩn UTC+7; lịch UTC+8) → âm 11/7/1953"
+        },
+        {
+          "ten": "src/lib/tuvi/lich-raw.js (Hồ Ngọc Đức) đối chiếu ngày âm",
+          "thamChieu": "duongSangAm(20,8,1953,8) = 11/7/1953 nhuận=False — khớp engine"
+        },
+        {
+          "ten": "Trang/sách ngoài",
+          "thamChieu": "Chưa có nguồn: đối chiếu trang lập lá số ngoài (xemtuvi.vn bản cũ, tuvi.vn, thầy lập tay). Cách lấy: nhập đúng ngày giờ, giới tính, quy ước ở trên vào từng trang, chép kết quả; Minh/anh Cường cấp trang hoặc người lập tay."
+        }
+      ]
+    },
+    "quyUoc": "Miền Bắc: giờ đồng hồ UTC+7 (spec 1.2); lịch âm tính UTC+8 (spec 1.5/10.2). Giờ chuẩn quy về UTC+7 để tính canh giờ.",
+    "bienThe": [
+      {
+        "moTa": "Lịch UTC+7 mọi năm (engine repo cũ)",
+        "tuyChon": {
+          "tz_rule": "7"
+        },
+        "khacMacDinh": "amLich: ngay 11→12; chinhTinh: tuVi Thân→Sửu, thienCo Mùi→Tý, thaiDuong Tỵ→Tuất, vuKhuc Thìn→Dậu, thienDong Mão→Thân, liemTrinh Tý→Tỵ, thienPhu Thân→Mão, thaiAm Dậu→Thìn, thamLang Tuất→Tỵ, cuMon Hợi→Ngọ, thienTuong Tý→Mùi, thienLuong Sửu→Thân, thatSat Dần→Dậu, phaQuan Ngọ→Sửu"
+      }
+    ],
+    "nguon": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md); lich-raw.js khớp ngày âm.  Trang ngoài: chưa có nguồn (xem nguonDoiChieu).",
+    "ghiChu": "Lệch lịch (09/8–07/9/1953). Múi giờ đồng hồ trước 1960 và nguồn lịch sử cho 1947/1953: chưa có nguồn (IANA tz lịch sử nhiều lần đổi). Cách lấy: tra IANA tzdata Asia/Ho_Chi_Minh, Asia/Hanoi hoặc văn bản pháp luật đương thời; người cấp: Minh chuyển Kỹ thuật/chuyên gia lịch.",
+    "noiSinh": "mien-bac",
+    "muiGioLich": "+08:00",
+    "gioChuanUTC7": "20/08/1953 05:40"
+  },
+  {
+    "id": "truoc-1968-003",
+    "nhanCa": [
+      "truoc-1968",
+      "mien-nam",
+      "lech-tz"
+    ],
+    "ngayGioSinhDuong": {
+      "nam": 1961,
+      "thang": 5,
+      "ngay": 20,
+      "gio": 7,
+      "phut": 30
+    },
+    "gioiTinh": "nam",
+    "muiGio": "+08:00",
+    "mongDoi": {
+      "amLich": {
+        "nam": 1961,
+        "thang": 4,
+        "ngay": 6,
+        "nhuan": false
+      },
+      "canChi": {
+        "nam": "Tân Sửu",
+        "thang": "Quý Tỵ",
+        "ngay": "Quý Sửu",
+        "gio": "Ất Mão"
+      },
+      "menhThan": {
+        "menh": "Dần",
+        "than": "Thân"
+      },
+      "cuc": "Mộc tam cục",
+      "chinhTinh": {
+        "tuVi": "Mão",
+        "thienCo": "Dần",
+        "thaiDuong": "Tý",
+        "vuKhuc": "Hợi",
+        "thienDong": "Tuất",
+        "liemTrinh": "Mùi",
+        "thienPhu": "Sửu",
+        "thaiAm": "Dần",
+        "thamLang": "Mão",
+        "cuMon": "Thìn",
+        "thienTuong": "Tỵ",
+        "thienLuong": "Ngọ",
+        "thatSat": "Mùi",
+        "phaQuan": "Hợi"
+      },
+      "nguonDoiChieu": [
+        {
+          "ten": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md)",
+          "thamChieu": "python3 -I tuvi-ref-engine.py 1961 5 20 6 30 nam (giờ chuẩn UTC+7; lịch UTC+8) → âm 6/4/1961"
+        },
+        {
+          "ten": "src/lib/tuvi/lich-raw.js (Hồ Ngọc Đức) đối chiếu ngày âm",
+          "thamChieu": "duongSangAm(20,5,1961,8) = 6/4/1961 nhuận=False — khớp engine"
+        },
+        {
+          "ten": "Trang/sách ngoài",
+          "thamChieu": "Chưa có nguồn: đối chiếu trang lập lá số ngoài (xemtuvi.vn bản cũ, tuvi.vn, thầy lập tay). Cách lấy: nhập đúng ngày giờ, giới tính, quy ước ở trên vào từng trang, chép kết quả; Minh/anh Cường cấp trang hoặc người lập tay."
+        }
+      ]
+    },
+    "quyUoc": "Miền Nam: giờ đồng hồ UTC+8 từ 1960 (spec 1.2) → đổi về UTC+7 trước khi tính canh giờ; lịch âm tính UTC+8. Giờ chuẩn quy về UTC+7 để tính canh giờ.",
+    "bienThe": [
+      {
+        "moTa": "Lịch UTC+7 mọi năm (engine repo cũ)",
+        "tuyChon": {
+          "tz_rule": "7"
+        },
+        "khacMacDinh": "amLich: ngay 6→7; chinhTinh: tuVi Mão→Ngọ, thienCo Dần→Tỵ, thaiDuong Tý→Mão, vuKhuc Hợi→Dần, thienDong Tuất→Sửu, liemTrinh Mùi→Tuất, thienPhu Sửu→Tuất, thaiAm Dần→Hợi, thamLang Mão→Tý, cuMon Thìn→Sửu, thienTuong Tỵ→Dần, thienLuong Ngọ→Mão, thatSat Mùi→Thìn, phaQuan Hợi→Thân"
+      }
+    ],
+    "nguon": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md); lich-raw.js khớp ngày âm.  Trang ngoài: chưa có nguồn (xem nguonDoiChieu).",
+    "ghiChu": "Đồng hồ miền Nam UTC+8 (1960–1975): 07:30 đồng hồ = 06:30 giờ chuẩn → giờ Mão (đọc thẳng 07:30 sẽ ra giờ Thìn, sai).",
+    "noiSinh": "mien-nam",
+    "muiGioLich": "+08:00",
+    "gioChuanUTC7": "20/05/1961 06:30"
+  },
+  {
+    "id": "truoc-1968-004",
+    "nhanCa": [
+      "truoc-1968",
+      "mien-nam",
+      "lech-tz",
+      "gio-ty-muon"
+    ],
+    "ngayGioSinhDuong": {
+      "nam": 1964,
+      "thang": 10,
+      "ngay": 10,
+      "gio": 0,
+      "phut": 30
+    },
+    "gioiTinh": "nu",
+    "muiGio": "+08:00",
+    "mongDoi": {
+      "amLich": {
+        "nam": 1964,
+        "thang": 9,
+        "ngay": 5,
+        "nhuan": false
+      },
+      "canChi": {
+        "nam": "Giáp Thìn",
+        "thang": "Giáp Tuất",
+        "ngay": "Nhâm Thìn",
+        "gio": "Canh Tý"
+      },
+      "menhThan": {
+        "menh": "Tuất",
+        "than": "Tuất"
+      },
+      "cuc": "Hỏa lục cục",
+      "chinhTinh": {
+        "tuVi": "Sửu",
+        "thienCo": "Tý",
+        "thaiDuong": "Tuất",
+        "vuKhuc": "Dậu",
+        "thienDong": "Thân",
+        "liemTrinh": "Tỵ",
+        "thienPhu": "Mão",
+        "thaiAm": "Thìn",
+        "thamLang": "Tỵ",
+        "cuMon": "Ngọ",
+        "thienTuong": "Mùi",
+        "thienLuong": "Thân",
+        "thatSat": "Dậu",
+        "phaQuan": "Sửu"
+      },
+      "nguonDoiChieu": [
+        {
+          "ten": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md)",
+          "thamChieu": "python3 -I tuvi-ref-engine.py 1964 10 9 23 30 nu (giờ chuẩn UTC+7; lịch UTC+8) → âm 5/9/1964"
+        },
+        {
+          "ten": "src/lib/tuvi/lich-raw.js (Hồ Ngọc Đức) đối chiếu ngày âm",
+          "thamChieu": "duongSangAm(10,10,1964,8) = 5/9/1964 nhuận=False — khớp engine"
+        },
+        {
+          "ten": "Trang/sách ngoài",
+          "thamChieu": "Chưa có nguồn: đối chiếu trang lập lá số ngoài (xemtuvi.vn bản cũ, tuvi.vn, thầy lập tay). Cách lấy: nhập đúng ngày giờ, giới tính, quy ước ở trên vào từng trang, chép kết quả; Minh/anh Cường cấp trang hoặc người lập tay."
+        }
+      ]
+    },
+    "quyUoc": "Miền Nam: giờ đồng hồ UTC+8 từ 1960 (spec 1.2) → đổi về UTC+7 trước khi tính canh giờ; lịch âm tính UTC+8. Giờ chuẩn quy về UTC+7 để tính canh giờ.",
+    "bienThe": [
+      {
+        "moTa": "Lịch UTC+7 mọi năm (engine repo cũ)",
+        "tuyChon": {
+          "tz_rule": "7"
+        },
+        "khacMacDinh": "amLich: ngay 5→6; chinhTinh: tuVi Sửu→Dần, thienCo Tý→Sửu, thaiDuong Tuất→Hợi, vuKhuc Dậu→Tuất, thienDong Thân→Dậu, liemTrinh Tỵ→Ngọ, thienPhu Mão→Dần, thaiAm Thìn→Mão, thamLang Tỵ→Thìn, cuMon Ngọ→Tỵ, thienTuong Mùi→Ngọ, thienLuong Thân→Mùi, thatSat Dậu→Thân, phaQuan Sửu→Tý"
+      }
+    ],
+    "nguon": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md); lich-raw.js khớp ngày âm.  Trang ngoài: chưa có nguồn (xem nguonDoiChieu).",
+    "ghiChu": "00:30 đồng hồ UTC+8 = 23:30 ngày 09/10 giờ chuẩn → giờ Tý muộn + đổi múi giờ cùng lúc.",
+    "noiSinh": "mien-nam",
+    "muiGioLich": "+08:00",
+    "gioChuanUTC7": "09/10/1964 23:30"
+  },
+  {
+    "id": "truoc-1968-005",
+    "nhanCa": [
+      "truoc-1968",
+      "mien-bac",
+      "lech-tz"
+    ],
+    "ngayGioSinhDuong": {
+      "nam": 1965,
+      "thang": 2,
+      "ngay": 15,
+      "gio": 18,
+      "phut": 10
+    },
+    "gioiTinh": "nam",
+    "muiGio": "+07:00",
+    "mongDoi": {
+      "amLich": {
+        "nam": 1965,
+        "thang": 1,
+        "ngay": 14,
+        "nhuan": false
+      },
+      "canChi": {
+        "nam": "Ất Tỵ",
+        "thang": "Mậu Dần",
+        "ngay": "Canh Tý",
+        "gio": "Ất Dậu"
+      },
+      "menhThan": {
+        "menh": "Tỵ",
+        "than": "Hợi"
+      },
+      "cuc": "Kim tứ cục",
+      "chinhTinh": {
+        "tuVi": "Mùi",
+        "thienCo": "Ngọ",
+        "thaiDuong": "Thìn",
+        "vuKhuc": "Mão",
+        "thienDong": "Dần",
+        "liemTrinh": "Hợi",
+        "thienPhu": "Dậu",
+        "thaiAm": "Tuất",
+        "thamLang": "Hợi",
+        "cuMon": "Tý",
+        "thienTuong": "Sửu",
+        "thienLuong": "Dần",
+        "thatSat": "Mão",
+        "phaQuan": "Mùi"
+      },
+      "nguonDoiChieu": [
+        {
+          "ten": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md)",
+          "thamChieu": "python3 -I tuvi-ref-engine.py 1965 2 15 18 10 nam (giờ chuẩn UTC+7; lịch UTC+8) → âm 14/1/1965"
+        },
+        {
+          "ten": "src/lib/tuvi/lich-raw.js (Hồ Ngọc Đức) đối chiếu ngày âm",
+          "thamChieu": "duongSangAm(15,2,1965,8) = 14/1/1965 nhuận=False — khớp engine"
+        },
+        {
+          "ten": "Trang/sách ngoài",
+          "thamChieu": "Chưa có nguồn: đối chiếu trang lập lá số ngoài (xemtuvi.vn bản cũ, tuvi.vn, thầy lập tay). Cách lấy: nhập đúng ngày giờ, giới tính, quy ước ở trên vào từng trang, chép kết quả; Minh/anh Cường cấp trang hoặc người lập tay."
+        }
+      ]
+    },
+    "quyUoc": "Miền Bắc: giờ đồng hồ UTC+7 (spec 1.2); lịch âm tính UTC+8 (spec 1.5/10.2). Giờ chuẩn quy về UTC+7 để tính canh giờ.",
+    "bienThe": [
+      {
+        "moTa": "Lịch UTC+7 mọi năm (engine repo cũ)",
+        "tuyChon": {
+          "tz_rule": "7"
+        },
+        "khacMacDinh": "amLich: ngay 14→15; chinhTinh: tuVi Mùi→Thìn, thienCo Ngọ→Mão, thaiDuong Thìn→Sửu, vuKhuc Mão→Tý, thienDong Dần→Hợi, liemTrinh Hợi→Thân, thienPhu Dậu→Tý, thaiAm Tuất→Sửu, thamLang Hợi→Dần, cuMon Tý→Mão, thienTuong Sửu→Thìn, thienLuong Dần→Tỵ, thatSat Mão→Ngọ, phaQuan Mùi→Tuất"
+      }
+    ],
+    "nguon": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md); lich-raw.js khớp ngày âm.  Trang ngoài: chưa có nguồn (xem nguonDoiChieu).",
+    "ghiChu": "Lệch lịch (01/2–02/3/1965), cùng đợt với TC07 trong tuvi-test-cases.json.",
+    "noiSinh": "mien-bac",
+    "muiGioLich": "+08:00",
+    "gioChuanUTC7": "15/02/1965 18:10"
+  },
+  {
+    "id": "truoc-1968-006",
+    "nhanCa": [
+      "truoc-1968",
+      "mien-nam",
+      "lech-tz",
+      "sat-1968"
+    ],
+    "ngayGioSinhDuong": {
+      "nam": 1967,
+      "thang": 12,
+      "ngay": 15,
+      "gio": 13,
+      "phut": 30
+    },
+    "gioiTinh": "nu",
+    "muiGio": "+08:00",
+    "mongDoi": {
+      "amLich": {
+        "nam": 1967,
+        "thang": 11,
+        "ngay": 14,
+        "nhuan": false
+      },
+      "canChi": {
+        "nam": "Đinh Mùi",
+        "thang": "Nhâm Tý",
+        "ngay": "Quý Sửu",
+        "gio": "Mậu Ngọ"
+      },
+      "menhThan": {
+        "menh": "Ngọ",
+        "than": "Ngọ"
+      },
+      "cuc": "Thủy nhị cục",
+      "chinhTinh": {
+        "tuVi": "Thân",
+        "thienCo": "Mùi",
+        "thaiDuong": "Tỵ",
+        "vuKhuc": "Thìn",
+        "thienDong": "Mão",
+        "liemTrinh": "Tý",
+        "thienPhu": "Thân",
+        "thaiAm": "Dậu",
+        "thamLang": "Tuất",
+        "cuMon": "Hợi",
+        "thienTuong": "Tý",
+        "thienLuong": "Sửu",
+        "thatSat": "Dần",
+        "phaQuan": "Ngọ"
+      },
+      "nguonDoiChieu": [
+        {
+          "ten": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md)",
+          "thamChieu": "python3 -I tuvi-ref-engine.py 1967 12 15 12 30 nu (giờ chuẩn UTC+7; lịch UTC+8) → âm 14/11/1967"
+        },
+        {
+          "ten": "src/lib/tuvi/lich-raw.js (Hồ Ngọc Đức) đối chiếu ngày âm",
+          "thamChieu": "duongSangAm(15,12,1967,8) = 14/11/1967 nhuận=False — khớp engine"
+        },
+        {
+          "ten": "Trang/sách ngoài",
+          "thamChieu": "Chưa có nguồn: đối chiếu trang lập lá số ngoài (xemtuvi.vn bản cũ, tuvi.vn, thầy lập tay). Cách lấy: nhập đúng ngày giờ, giới tính, quy ước ở trên vào từng trang, chép kết quả; Minh/anh Cường cấp trang hoặc người lập tay."
+        }
+      ]
+    },
+    "quyUoc": "Miền Nam: giờ đồng hồ UTC+8 từ 1960 (spec 1.2) → đổi về UTC+7 trước khi tính canh giờ; lịch âm tính UTC+8. Giờ chuẩn quy về UTC+7 để tính canh giờ.",
+    "bienThe": [
+      {
+        "moTa": "Lịch UTC+7 mọi năm (engine repo cũ)",
+        "tuyChon": {
+          "tz_rule": "7"
+        },
+        "khacMacDinh": "amLich: ngay 14→15"
+      }
+    ],
+    "nguon": "Engine tham chiếu docs/nghien-cuu/tuvi-ref-engine.py (viết độc lập theo tuvi-an-sao-spec.md); lich-raw.js khớp ngày âm.  Trang ngoài: chưa có nguồn (xem nguonDoiChieu).",
+    "ghiChu": "Sát mốc 1968, ngày lệch lịch (01–30/12/1967). 13:30 đồng hồ = 12:30 giờ chuẩn → giờ Ngọ (đọc thẳng ra Mùi, sai).",
+    "noiSinh": "mien-nam",
+    "muiGioLich": "+08:00",
+    "gioChuanUTC7": "15/12/1967 12:30"
+  }
+]

@@ -1,0 +1,26 @@
+[
+ {
+  "ten": "02-chotuvi",
+  "vp": "desktop",
+  "status": 200,
+  "title": "Chợ Tử Vi",
+  "bodyBg": "rgb(244, 234, 213)",
+  "bodyFont": "\"Be Vietnam Pro\", system-ui, sans-serif",
+  "hFont": "\"Noto Serif\", serif",
+  "hColor": "rgb(42, 29, 20)",
+  "adLike": 0,
+  "finalUrl": "https://www.chotuvi.com/"
+ },
+ {
+  "ten": "02-chotuvi",
+  "vp": "mobile",
+  "status": 200,
+  "title": "Chợ Tử Vi",
+  "bodyBg": "rgb(244, 234, 213)",
+  "bodyFont": "\"Be Vietnam Pro\", system-ui, sans-serif",
+  "hFont": "\"Noto Serif\", serif",
+  "hColor": "rgb(42, 29, 20)",
+  "adLike": 0,
+  "finalUrl": "https://www.chotuvi.com/"
+ }
+]

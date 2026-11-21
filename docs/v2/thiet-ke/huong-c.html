@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="vi" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hướng C · Ngôi nhà 12 gian — xemboi.vn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== TOKEN ===== */
+:root,[data-theme=light]{
+  --bg:#EEF2F3;--sf:#F8FAFA;--sf2:#E3E9EB;--ink:#1B2B34;--mu:#4E5F67;--ac:#A8441F;--ac-tx:#FFFFFF;
+  --bp:rgba(27,43,52,.07);--bp2:rgba(27,43,52,.13);--wall:#1B2B34;--mark:rgba(168,68,31,.10);
+}
+[data-theme=dark]{
+  --bg:#11181C;--sf:#172026;--sf2:#1F2A31;--ink:#E4EBED;--mu:#9DB0B8;--ac:#E98A5E;--ac-tx:#11181C;
+  --bp:rgba(228,235,237,.05);--bp2:rgba(228,235,237,.1);--wall:#C9D4D8;--mark:rgba(233,138,94,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font:400 16px/1.55 'Archivo',system-ui,sans-serif;font-stretch:100%;background:var(--bg);color:var(--ink);
+  background-image:linear-gradient(var(--bp2) 1px,transparent 1px),linear-gradient(90deg,var(--bp2) 1px,transparent 1px),linear-gradient(var(--bp) 1px,transparent 1px),linear-gradient(90deg,var(--bp) 1px,transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+.sp{font-family:'Spectral',Georgia,serif}
+.wrap{max-width:1300px;margin:0 auto;padding:0 20px}
+.lb{font-stretch:125%;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+.sec{padding:76px 0}
+.sec-h{display:flex;gap:18px;align-items:center;margin-bottom:30px;flex-wrap:wrap}
+.sec-h .tag-no{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-stretch:125%;font-weight:700;font-size:15px;flex:none}
+.sec-h h2{font-stretch:112%;font-weight:600;font-size:clamp(24px,3.2vw,38px);line-height:1.15;letter-spacing:-.01em}
+.sec-h h2 small{display:block;font:italic 400 17px/1.4 'Spectral',serif;color:var(--mu);letter-spacing:0;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg);border:1.5px solid var(--ink);padding:13px 22px;border-radius:4px;font-weight:600;font-stretch:112%;cursor:pointer;text-decoration:none;font-size:15.5px;letter-spacing:.02em}
+.btn.ac{background:var(--ac);border-color:var(--ac);color:var(--ac-tx)}
+.btn.ol{background:transparent;color:var(--ink)}
+.btn:hover{box-shadow:4px 4px 0 var(--bp2)}
+:focus-visible{outline:2px dashed var(--ac);outline-offset:3px}
+
+/* ===== NAV ===== */
+.nav{background:var(--sf);border-bottom:1.5px solid var(--ink)}
+.nav .wrap{display:flex;align-items:center;gap:24px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-stretch:118%;font-size:19px;letter-spacing:.01em}
+.logo svg{width:26px;height:26px}
+.nav ul{display:flex;gap:20px;list-style:none;font-size:14.5px;font-weight:500}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--ac)}
+.tg{margin-left:auto;border:1.5px solid var(--ink);background:none;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:13px;font-weight:600}
+@media(max-width:940px){.nav ul{display:none}}
+
+/* ===== 1 HERO ===== */
+.hero{padding:60px 0 64px;border-bottom:1.5px solid var(--ink)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-stretch:112%;font-weight:600;font-size:clamp(38px,5.6vw,72px);line-height:1.02;letter-spacing:-.025em;margin:14px 0 20px}
+.hero h1 em{font:italic 400 1em 'Spectral',serif;letter-spacing:-.01em;color:var(--ac)}
+.hero p{font:400 clamp(18px,1.6vw,21px)/1.5 'Spectral',serif;max-width:560px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.specline{display:flex;gap:0;margin-top:30px;border:1.5px solid var(--ink);max-width:560px;background:var(--sf)}
+.specline div{flex:1;padding:10px 12px;border-right:1px solid var(--ink);font-size:14px;font-weight:600}
+.specline div:last-child{border:0}
+.specline .lb{display:block;font-size:10px;margin-bottom:2px}
+.hero-plan{width:100%;max-width:520px;justify-self:end}
+.hero-plan svg{width:100%;height:auto;display:block}
+.hero-plan .w{fill:none;stroke:var(--wall);stroke-width:4}
+.hero-plan .t{fill:none;stroke:var(--wall);stroke-width:1.5}
+.hero-plan .d{fill:none;stroke:var(--mu);stroke-width:1}
+.hero-plan text{fill:var(--ink);font-family:'Archivo',sans-serif;font-stretch:118%;font-size:11px;font-weight:600;letter-spacing:.08em}
+.hero-plan .a{stroke:var(--ac);fill:none;stroke-width:2;stroke-dasharray:600;stroke-dashoffset:600;animation:draw 1.4s .3s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.hero-plan .a,.mini .a{animation:none;stroke-dashoffset:0}}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-plan{justify-self:center;max-width:360px;order:-1}.specline{flex-direction:column}.specline div{border-right:0;border-bottom:1px solid var(--ink)}}
+
+/* ===== 2 FORM ===== */
+.sheet{background:var(--sf);border:1.5px solid var(--ink);display:grid;grid-template-columns:repeat(12,1fr)}
+.cellf{grid-column:span 3;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.cellf.w6{grid-column:span 6}.cellf.w12{grid-column:span 12;border-right:0}
+.cellf input,.cellf select{border:0;border-bottom:1.5px solid var(--mu);background:transparent;font-size:22px;font-weight:600;font-stretch:112%;padding:4px 0;border-radius:0}
+.opt{display:flex;gap:18px;font-size:17px;font-weight:500;padding-top:4px}
+.opt label{display:flex;gap:8px;align-items:center;cursor:pointer}
+.opt input{accent-color:#A8441F;width:18px;height:18px}
+.sheet .foot{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;padding:16px 14px;grid-column:span 12}
+.sheet .note{font:italic 400 15.5px/1.5 'Spectral',serif;color:var(--mu);flex:1;min-width:260px}
+@media(max-width:760px){.cellf,.cellf.w6{grid-column:span 12;border-right:0}}
+
+/* ===== 3 MẶT BẰNG ===== */
+.plan-wrap{position:relative;padding:44px;background:var(--sf);border:1px solid var(--bp2)}
+.plan{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;border:6px solid var(--wall)}
+.room{position:relative;border-right:3px solid var(--wall);border-bottom:3px solid var(--wall);padding:12px 13px 14px;background:var(--sf);cursor:pointer;transition:background .25s;min-width:0}
+.room.c4{border-right:0}.room.r4{border-bottom:0}
+.room:hover{background:var(--sf2)}
+.room.on{background:var(--mark)}
+.room.on::after{content:"";position:absolute;inset:5px;border:1.5px dashed var(--ac);pointer-events:none}
+.room.me{background:linear-gradient(var(--mark),var(--mark)),var(--sf)}
+.rt{display:flex;gap:9px;align-items:flex-start}
+.rn{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-stretch:118%;font-weight:700;font-size:11.5px}
+.room.me .rn{background:var(--ac);border-color:var(--ac);color:var(--ac-tx)}
+.rt h4{font-stretch:122%;font-weight:700;font-size:14.5px;letter-spacing:.07em;text-transform:uppercase;line-height:1.2}
+.rt h4 small{display:block;font-stretch:100%;font-weight:400;font-size:12px;letter-spacing:.02em;text-transform:none;color:var(--mu);margin-top:2px}
+.tgs{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.tg2{font-stretch:118%;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink);padding:2px 6px}
+.tg2.a{border-color:var(--ac);color:var(--ac)}
+.fu{margin:9px 0 7px;display:flex;flex-direction:column;gap:3px}
+.s{display:inline}
+.fu .st{font-weight:700;font-size:16.5px;font-stretch:104%;line-height:1.3}
+.ds{display:inline-grid;place-items:center;min-width:17px;height:17px;border:1.2px solid currentColor;font-size:10.5px;font-weight:700;margin-left:5px;vertical-align:2px;font-style:normal;font-stretch:100%}
+.hoa{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--ac);margin-left:6px;vertical-align:1px;font-stretch:112%;letter-spacing:.03em;white-space:nowrap}
+.hoa::before{content:"";width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:8px solid var(--ac)}
+.vcd{font:italic 400 14.5px 'Spectral',serif;color:var(--mu)}
+.inv{display:grid;grid-template-columns:1fr 1fr;gap:0 10px;font-size:12.8px;line-height:1.5;font-stretch:96%}
+.inv>div>span{display:block}
+.inv .h{color:var(--mu)}
+.inv .ds{min-width:14px;height:14px;font-size:9px;margin-left:3px;vertical-align:1px}
+.inv .hoa{font-size:10px;margin-left:4px}
+.inv .hoa::before{border-left-width:4px;border-right-width:4px;border-bottom-width:6px}
+.lu{margin-top:7px;font-size:12px;font-weight:600;color:var(--ac);line-height:1.45;font-stretch:104%}
+.mk{outline:1.5px dashed transparent;outline-offset:2px;transition:outline-color .25s}
+.mk.on{outline-color:var(--ac);background:var(--mark)}
+.door{position:absolute;background:var(--sf);z-index:2}
+.door.h{width:34px;height:6px;margin-left:-17px}
+.door.v{height:34px;width:6px;margin-top:-17px}
+.door.h::before,.door.h::after{content:"";position:absolute;top:-3px;width:1.5px;height:12px;background:var(--wall)}
+.door.h::before{left:0}.door.h::after{right:0}
+.door.v::before,.door.v::after{content:"";position:absolute;left:-3px;height:1.5px;width:12px;background:var(--wall)}
+.door.v::before{top:0}.door.v::after{bottom:0}
+.hatch{position:absolute;z-index:3;background:repeating-linear-gradient(45deg,var(--ac) 0 2px,var(--sf) 2px 6px);border:1.5px solid var(--ac)}
+.court{grid-column:2/span 2;grid-row:2/span 2;border-right:3px solid var(--wall);border-bottom:3px solid var(--wall);position:relative;padding:20px;display:grid;grid-template-columns:1fr 150px;grid-template-rows:auto 1fr auto;gap:12px 18px;
+  background-color:var(--bg);background-image:linear-gradient(var(--bp2) 1px,transparent 1px),linear-gradient(90deg,var(--bp2) 1px,transparent 1px);background-size:24px 24px}
+.court .ttl{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5px solid var(--ink);padding-bottom:8px}
+.court .ttl b{font-stretch:125%;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.court .big{font-stretch:108%;font-weight:600;font-size:clamp(26px,2.8vw,40px);line-height:1.05;letter-spacing:-.015em}
+.court .big i{display:block;font:italic 400 .55em 'Spectral',serif;color:var(--mu);letter-spacing:0;margin-top:4px}
+.court dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:13.5px;margin-top:12px;background:var(--sf);border:1px solid var(--ink);padding:10px 12px}
+.court dt{color:var(--mu);font-weight:600;font-stretch:112%;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding-top:2px}
+.court .side{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.mini{background:var(--sf);border:1px solid var(--ink);padding:8px}
+.mini svg{width:100%;height:auto;display:block}
+.mini .g{fill:none;stroke:var(--mu);stroke-width:1}
+.mini .a{fill:none;stroke:var(--ac);stroke-width:2;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.2s .4s ease-out forwards}
+.mini .x{stroke-dasharray:4 4;animation:none;stroke-dashoffset:0}
+.mini .m{fill:var(--ac)}
+.mini p{font-size:11px;line-height:1.35;margin-top:6px;color:var(--mu)}
+.north{display:flex;gap:10px;align-items:center;font-size:11.5px;line-height:1.35;color:var(--mu)}
+.north svg{flex:none;width:30px;height:44px}
+.north b{color:var(--ink);font-stretch:118%}
+.lgd{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--mu);border-top:1px solid var(--ink);padding-top:8px;align-items:center}
+.lgd b{color:var(--ink)}
+.sw-h{display:inline-block;width:22px;height:9px;background:repeating-linear-gradient(45deg,var(--ac) 0 2px,transparent 2px 5px);border:1px solid var(--ac);vertical-align:-1px;margin-right:5px}
+.dim{position:absolute;display:flex;font-stretch:112%;font-size:11.5px;font-weight:600;color:var(--mu);letter-spacing:.03em}
+.dim.t,.dim.b{left:44px;right:44px;height:20px}
+.dim.t{top:12px}.dim.b{bottom:12px}
+.dim.l,.dim.r{top:44px;bottom:44px;width:20px;flex-direction:column}
+.dim.l{left:12px}.dim.r{right:12px}
+.dim span{flex:1;position:relative;display:grid;place-items:center;white-space:nowrap}
+.dim span em{display:inline-block}
+.dim.t span,.dim.b span{border-top:1px solid var(--mu)}
+.dim.b span{border-top:0;border-bottom:1px solid var(--mu)}
+.dim.t span::before,.dim.b span::before{content:"";position:absolute;left:-4px;top:-5px;width:9px;height:9px;border-left:1.2px solid var(--mu);transform:skewX(-45deg)}
+.dim.b span::before{top:auto;bottom:-5px}
+.dim.l span{border-left:1px solid var(--mu)}.dim.r span{border-right:1px solid var(--mu)}
+.dim.l span em,.dim.r span em{font-style:normal;transform:rotate(-90deg)}
+.dim.r span em{transform:rotate(90deg)}
+.dim.t span em,.dim.b span em{font-style:normal;background:var(--sf);padding:0 6px;position:relative;top:-1px}
+.dim.b span em{top:1px}
+.dim span.now{color:var(--ac)}
+.dim.t span em,.dim.b span em{transform:translateY(var(--ty,-50%))}
+.dim.b span em{--ty:50%}
+.list{display:none}
+.plan-note{margin-top:14px;font:italic 400 16px 'Spectral',serif;color:var(--mu)}
+details.qu{margin-top:16px;border:1.5px solid var(--ink);background:var(--sf);padding:12px 16px;font-size:15px}
+details.qu summary{cursor:pointer;font-weight:700;font-stretch:112%}
+details.qu ul{margin:10px 0 0 18px}
+@media(max-width:860px){
+  .wrap{padding:0 14px}
+  #pw{padding:10px}#pw .dim{display:none}
+  #plan{border-width:4px}
+  #plan .room{padding:5px 4px 7px;border-right-width:2px;border-bottom-width:2px}
+  #plan .rn,#plan .rt small,#plan .tgs,#plan .inv,#plan .lu{display:none}
+  #plan .rt h4{font-size:10px;letter-spacing:.02em;font-stretch:100%}
+  #plan .fu{margin:3px 0 0}#plan .fu .st{font-size:10.5px;font-weight:600;line-height:1.25}
+  #plan .hoa,#plan .ds{display:none}#plan .vcd{font-size:10px}
+  #plan .court{padding:8px;grid-template-columns:1fr;border-right-width:2px;border-bottom-width:2px}
+  #plan .court .side,#plan .court dl,#plan .court .lgd{display:none}
+  #plan .court .ttl b{font-size:8px}#plan .court .ttl span{display:none}
+  #plan .court .big{font-size:17px}
+  #plan .door{display:none}
+  .list{display:grid;gap:12px;margin-top:18px}
+  .list .room{border:1.5px solid var(--wall);padding:14px}
+}
+
+/* ===== 4 NHẬN ĐỊNH ===== */
+.note-sheet{display:grid;grid-template-columns:1.1fr .9fr;border:1.5px solid var(--ink);background:var(--sf)}
+.note-sheet .l{padding:28px;border-right:1px solid var(--ink)}
+.note-sheet .r{padding:28px;background:var(--bg);display:flex;flex-direction:column;gap:14px}
+.callout{display:flex;gap:12px;align-items:center}
+.callout .n{width:34px;height:34px;flex:none;border:1.5px solid var(--ac);color:var(--ac);display:grid;place-items:center;font-weight:700;font-stretch:118%;transform:rotate(45deg)}
+.callout .n span{transform:rotate(-45deg)}
+.note-sheet h3{font-stretch:108%;font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.2;margin:16px 0 14px}
+.note-sheet .body{font:400 19px/1.6 'Spectral',serif;max-width:60ch}
+.basis{margin-top:18px;border:1px solid var(--ink);background:var(--bg);padding:12px 14px;font-size:14px}
+.basis code{font-family:inherit;font-weight:600;display:block;margin-top:4px}
+.snip{background:var(--sf);border:3px solid var(--wall);position:relative}
+.snip .room{border:0;cursor:default}
+.snip .room::after{display:none}
+.src{font-size:14px}
+.src li{margin-left:16px}
+.warn{font:italic 400 15px 'Spectral',serif;color:var(--mu)}
+@media(max-width:860px){.note-sheet{grid-template-columns:1fr}.note-sheet .l{border-right:0;border-bottom:1px solid var(--ink)}.note-sheet .l,.note-sheet .r{padding:18px}}
+
+/* ===== 5 GIÁ ===== */
+.price{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pc{background:var(--sf);border:1.5px solid var(--ink);display:flex;flex-direction:column}
+.pc.paid{border:2.5px solid var(--ac)}
+.pc .hd{display:flex;justify-content:space-between;align-items:baseline;padding:18px 22px;border-bottom:1px solid var(--ink)}
+.pc .amt{font-stretch:118%;font-weight:600;font-size:clamp(36px,4.4vw,54px);letter-spacing:-.02em;line-height:1;padding:22px 22px 6px}
+.pc .per{padding:0 22px;font:italic 400 16px 'Spectral',serif;color:var(--mu)}
+.pc table{width:calc(100% - 44px);margin:20px 22px;border-collapse:collapse;font-size:15px}
+.pc td{border-top:1px solid var(--bp2);padding:9px 0;vertical-align:top}
+.pc td:first-child{width:44px;font-stretch:118%;font-weight:700;font-size:12px;color:var(--mu);padding-top:12px}
+.pc .btn{margin:auto 22px 0;align-self:flex-start}
+.pc .fine{padding:14px 22px 22px;font:italic 400 14.5px/1.5 'Spectral',serif;color:var(--mu)}
+@media(max-width:760px){.price{grid-template-columns:1fr}}
+
+/* ===== 6 BÁCH KHOA ===== */
+.site{border:1.5px solid var(--ink);background:var(--sf)}
+.site-top{display:grid;grid-template-columns:1fr 250px;border-bottom:1.5px solid var(--ink)}
+.site-top .q{padding:26px;border-right:1px solid var(--ink)}
+.site-top h3{font-stretch:112%;font-weight:600;font-size:clamp(28px,4vw,52px);line-height:1.05;letter-spacing:-.02em}
+.search{display:flex;margin-top:20px;border:1.5px solid var(--ink);background:var(--bg)}
+.search input{flex:1;border:0;background:transparent;padding:14px 16px;font-size:18px;min-width:0}
+.search .btn{border-radius:0;margin:-1.5px -1.5px -1.5px 0}
+.sugg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:14px;color:var(--mu)}
+.sugg a{text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+.today{padding:18px;display:flex;flex-direction:column;justify-content:center}
+.today .d{font-stretch:118%;font-weight:600;font-size:64px;line-height:1;letter-spacing:-.03em}
+.today p{font-size:14px;line-height:1.5}
+.blocks{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(130px,auto)}
+.blk{border-right:3px solid var(--wall);border-bottom:3px solid var(--wall);padding:16px;text-decoration:none;display:flex;flex-direction:column;gap:6px;position:relative;transition:background .2s}
+.blk:hover{background:var(--mark)}
+.blk .rn{width:28px;height:28px;font-size:10.5px}
+.blk h4{font-stretch:122%;font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase}
+.blk p{font:400 14.5px/1.45 'Spectral',serif;color:var(--mu)}
+.blk .st2{margin-top:auto;font-stretch:118%;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
+.blk .st2.live{color:var(--ac)}
+.blk.big{grid-column:span 3;grid-row:span 2}
+.blk.big h4{font-size:24px}
+.blk.big p{font-size:17px;max-width:40ch}
+.blk.w2{grid-column:span 2}.blk.w3{grid-column:span 3}
+.blk.e{border-right:0}
+.site-foot{display:flex;flex-wrap:wrap;gap:10px 26px;padding:14px 22px;font-weight:600;font-size:14.5px}
+@media(max-width:860px){.site-top{grid-template-columns:1fr}.site-top .q{border-right:0;border-bottom:1px solid var(--ink);padding:18px}.blocks{grid-template-columns:1fr 1fr}.blk,.blk.big,.blk.w2,.blk.w3{grid-column:span 1;grid-row:auto}.blk.big{grid-column:span 2}.blk:nth-child(odd):not(.big){border-right:3px solid var(--wall)}.blk.e{border-right:3px solid var(--wall)}}
+
+/* ===== 7 ẢNH CHIA SẺ ===== */
+.share-row{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:start}
+.share-box{width:calc(1080px * var(--s,.4));height:calc(1350px * var(--s,.4));overflow:hidden;border:1.5px solid var(--ink)}
+#anh-chia-se{width:1080px;height:1350px;transform:scale(var(--s,.4));transform-origin:0 0;overflow:hidden;position:relative;
+  --bg:#EEF2F3;--sf:#F8FAFA;--sf2:#E3E9EB;--ink:#1B2B34;--mu:#4E5F67;--ac:#A8441F;--ac-tx:#FFFFFF;--bp:rgba(27,43,52,.07);--bp2:rgba(27,43,52,.13);--wall:#1B2B34;--mark:rgba(168,68,31,.10);
+  background-color:#EEF2F3;color:#1B2B34;padding:34px 40px 28px;display:flex;flex-direction:column;
+  background-image:linear-gradient(var(--bp2) 1px,transparent 1px),linear-gradient(90deg,var(--bp2) 1px,transparent 1px),linear-gradient(var(--bp) 1px,transparent 1px),linear-gradient(90deg,var(--bp) 1px,transparent 1px);
+  background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+.chup .share-box{width:1080px;height:1350px;border:0}
+.chup #anh-chia-se{transform:none}
+.sh-top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #1B2B34;padding-bottom:12px}
+.sh-top .logo{font-size:30px}
+.sh-top .logo svg{width:36px;height:36px}
+.sh-top .r{text-align:right;font-stretch:125%;font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;line-height:1.5}
+.sh-top .r i{display:block;font:italic 400 18px 'Spectral',serif;letter-spacing:0;text-transform:none;color:#4E5F67}
+#anh-chia-se .plan-wrap{margin-top:14px;padding:38px;background:#F8FAFA}
+#anh-chia-se .dim.t,#anh-chia-se .dim.b{left:38px;right:38px}
+#anh-chia-se .dim.l,#anh-chia-se .dim.r{top:38px;bottom:38px}
+#anh-chia-se .dim.t{top:9px}#anh-chia-se .dim.b{bottom:9px}#anh-chia-se .dim.l{left:9px}#anh-chia-se .dim.r{right:9px}
+#anh-chia-se .plan{grid-auto-rows:258px}
+#anh-chia-se .room{padding:11px 11px 12px;overflow:hidden}
+#anh-chia-se .rt h4{font-size:15px}
+#anh-chia-se .tgs{display:none}
+#anh-chia-se .fu{margin:7px 0 5px}
+#anh-chia-se .fu .st{font-size:16px}
+#anh-chia-se .inv{font-size:12.5px;line-height:1.36}
+#anh-chia-se .lu{font-size:11.5px;margin-top:4px}
+#anh-chia-se .court .big{font-size:44px}
+#anh-chia-se .court dl{font-size:14.5px}
+/* Claude Code sửa 20/11/2026: sân trong của ảnh chia sẻ bị tràn xuống hàng dưới */
+#anh-chia-se .court{overflow:hidden;grid-template-columns:1fr 128px;padding:16px;gap:8px 14px}
+#anh-chia-se .court .big{font-size:34px}
+#anh-chia-se .court dl{font-size:13px;gap:2px 10px;padding:8px 10px;margin-top:8px}
+#anh-chia-se .court .lgd,#anh-chia-se .court .north,#anh-chia-se .court .mini p{display:none}
+.sh-foot{margin-top:auto;display:flex;justify-content:space-between;font-size:15px;font-weight:600;border-top:2px solid #1B2B34;padding-top:10px;font-stretch:108%}
+.sh-foot span:first-child{font:italic 400 16px 'Spectral',serif}
+.share-txt{font:400 18px/1.55 'Spectral',serif;max-width:520px}
+.share-txt p+p{margin-top:12px}
+@media(max-width:900px){.share-row{grid-template-columns:1fr}}
+
+/* ===== HỒ SƠ ===== */
+.spec{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--ink);background:var(--sf)}
+.spec>div{padding:22px;border-right:1px solid var(--ink);font-size:15px}
+.spec>div:last-child{border:0}
+.spec h4{margin-bottom:12px}
+.sw{display:grid;grid-template-columns:24px 1fr auto;gap:8px;align-items:center;font-size:13.5px;margin-bottom:6px}
+.sw i{width:24px;height:24px;border:1px solid var(--ink);display:block}
+.spec ul{margin-left:16px}
+.spec li+li{margin-top:6px}
+@media(max-width:900px){.spec{grid-template-columns:1fr}.spec>div{border-right:0;border-bottom:1px solid var(--ink)}}
+footer.pg{border-top:1.5px solid var(--ink);padding:34px 0 60px;font:italic 400 15px 'Spectral',serif;color:var(--mu)}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Điều hướng chính">
+  <div class="wrap">
+    <a class="logo" href="#"><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="1.5" y="1.5" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2.5"/><rect x="8" y="8" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13 18v6.5" stroke="#A8441F" stroke-width="2.5"/></svg>xemboi.vn</a>
+    <ul>
+      <li><a href="#la-so">Tử vi</a></li><li><a href="#bach-khoa">Lịch âm</a></li><li><a href="#bach-khoa">Mệnh theo năm sinh</a></li><li><a href="#bach-khoa">Bát tự</a></li><li><a href="#bach-khoa">Kinh Dịch</a></li><li><a href="#bach-khoa">Từ điển</a></li><li><a href="#bach-khoa">Phương pháp</a></li>
+    </ul>
+    <button class="tg" id="tg" type="button" aria-pressed="false">Nền tối</button>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="lb">Tử vi 2027 · Đinh Mùi</div>
+      <h1>Lá số là ngôi nhà 12 gian <em>của chính bạn.</em></h1>
+      <p>Mỗi gian là một mảng đời sống: công việc, tình cảm, gia đình, tiền bạc. Xemboi vẽ lá số như một bản vẽ nhà: rõ từng gian, từng sao, từng trục nối. Bạn tự đi một vòng và hiểu vì sao. Không hù dọa, không bán lễ giải hạn.</p>
+      <div class="cta"><a class="btn ac" href="#nhap">Lập lá số miễn phí</a><a class="btn ol" href="#la-so">Xem bản vẽ mẫu</a></div>
+      <div class="specline">
+        <div><span class="lb">Quy ước</span>Nam Phái, công khai</div>
+        <div><span class="lb">Thông tin cần</span>Ngày, giờ sinh</div>
+        <div><span class="lb">Quảng cáo</span>Không có</div>
+      </div>
+    </div>
+    <div class="hero-plan" aria-hidden="true">
+      <svg viewBox="0 0 420 420">
+        <rect class="w" x="30" y="30" width="360" height="360"/>
+        <path class="t" d="M120 30v90M210 30v90M300 30v90M30 120h360M30 210h90M300 210h90M30 300h360M120 300v90M210 300v90M300 300v90M120 120v180M300 120v180"/>
+        <path d="M150 119h30M240 119h30M150 301h30M240 301h30M119 150v30M119 240v30M301 150v30M301 240v30" stroke="var(--sf)" stroke-width="5" style="stroke:var(--bg)"/>
+        <path class="d" d="M30 14h360M30 10v8M120 10v8M210 10v8M300 10v8M390 10v8"/>
+        <text x="75" y="70" text-anchor="middle">ĐIỀN</text><text x="165" y="70" text-anchor="middle">QUAN</text><text x="255" y="70" text-anchor="middle">NÔ</text><text x="345" y="70" text-anchor="middle">DI</text>
+        <text x="75" y="160" text-anchor="middle">PHÚC</text><text x="345" y="160" text-anchor="middle">TẬT</text>
+        <text x="75" y="250" text-anchor="middle">PHỤ</text><text x="345" y="250" text-anchor="middle">TÀI</text>
+        <text x="75" y="340" text-anchor="middle" style="fill:var(--ac)">MỆNH</text><text x="165" y="340" text-anchor="middle">HUYNH</text><text x="255" y="340" text-anchor="middle">PHU</text><text x="345" y="340" text-anchor="middle">TỬ</text>
+        <path class="a" d="M75 345L165 75L345 255Z"/>
+        <path class="d" d="M75 345L345 75" stroke-dasharray="5 5" style="stroke:var(--ac)"/>
+        <text x="210" y="205" text-anchor="middle" style="font-size:10px;fill:var(--mu)">SÂN TRONG · THIÊN BÀN</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- 2. FORM -->
+<section class="sec" id="nhap">
+  <div class="wrap">
+    <div class="sec-h"><span class="tag-no">01</span><h2>Thông số đầu vào<small>Chỉ cần ngày và giờ sinh. Không cần tên, số điện thoại hay email.</small></h2></div>
+    <form class="sheet" onsubmit="return false" aria-label="Nhập ngày sinh (bản phác giao diện)">
+      <div class="cellf w6"><span class="lb">Loại lịch</span><div class="opt"><label><input type="radio" name="l" checked>Dương lịch</label><label><input type="radio" name="l">Âm lịch</label></div></div>
+      <div class="cellf w6" style="border-right:0"><span class="lb">Giới tính</span><div class="opt"><label><input type="radio" name="g" checked>Nữ</label><label><input type="radio" name="g">Nam</label></div></div>
+      <label class="cellf"><span class="lb">Ngày</span><input inputmode="numeric" value="15"></label>
+      <label class="cellf"><span class="lb">Tháng</span><input inputmode="numeric" value="8"></label>
+      <label class="cellf"><span class="lb">Năm</span><input inputmode="numeric" value="1998"></label>
+      <label class="cellf" style="border-right:0"><span class="lb">Giờ sinh</span><input type="time" value="09:30"></label>
+      <div class="foot">
+        <button class="btn ac" type="submit">Vẽ lá số</button>
+        <label class="opt" style="font-size:15px"><input type="checkbox">Mình chưa rõ giờ sinh</label>
+        <p class="note">Sinh 23:00–23:59 tính sang ngày hôm sau, tháng nhuận an như tháng chính (Nam Phái). Chưa rõ giờ sinh vẫn xem được tổng quan theo ngày sinh, nhưng chưa an được 12 cung.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 3. LÁ SỐ -->
+<section class="sec" id="la-so" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-h"><span class="tag-no">02</span><h2>Mặt bằng lá số mẫu<small>Nữ, sinh 15/8/1998, 09:30. Phương Nam (Ngọ) ở trên, như bản đồ cổ.</small></h2></div>
+    <div class="plan-wrap" id="pw">
+      <div class="plan" id="plan"></div>
+    </div>
+    <p class="plan-note">Số ghi ngoài tường là tuổi của từng đại vận. Gian tô nhạt là cung Mệnh. Vách gạch chéo là Tuần (Thân–Dậu) và Triệt (Tý–Sửu). Bấm một gian để đánh dấu.</p>
+    <div class="list" id="list"></div>
+    <details class="qu">
+      <summary>Quy ước an sao đang dùng (Nam Phái, công khai)</summary>
+      <ul>
+        <li>Giờ Tý muộn (23:00–23:59): tính sang ngày hôm sau.</li>
+        <li>Tháng nhuận: an sao như tháng chính.</li>
+        <li>Tứ Hóa theo bảng phái Việt; Tuần, Triệt an trên 2 cung.</li>
+        <li>Mệnh chủ tra theo chi năm sinh (Lộc Tồn; tra theo cung Mệnh cũng là Lộc Tồn).</li>
+        <li>Múi giờ lịch sử Việt Nam; ranh giới năm theo mùng 1 Tết.</li>
+      </ul>
+    </details>
+  </div>
+</section>
+
+<!-- 4. NHẬN ĐỊNH -->
+<section class="sec" id="nhan-dinh" style="border-top:1.5px solid var(--ink)">
+  <div class="wrap">
+    <div class="sec-h"><span class="tag-no">03</span><h2>Ghi chú trên bản vẽ<small>Một nhận định miễn phí, kèm đúng những gian và sao làm căn cứ.</small></h2></div>
+    <div class="note-sheet">
+      <div class="l">
+        <div class="callout"><span class="n"><span>1</span></span><span class="lb">Năm 2027 · Chủ đề năm</span></div>
+        <h3>Chủ đề năm Đinh Mùi 2027: Đồng nghiệp, bạn bè và mạng lưới cộng tác</h3>
+        <p class="body">Trọng tâm năm 2027 chạm cung Nô Bộc: kết quả công việc năm nay chịu ảnh hưởng khá rõ từ người cộng tác, bạn bè và cách bạn chọn lọc các mối quan hệ xung quanh. (đặt trong nền Đại vận 22–31 tuổi tại cung Phu Thê). Đồng thời, Lưu Hóa Lộc năm Đinh Mùi (sao Thái Âm) rơi vào cung Phúc Đức (Thìn), gợi ý hướng dễ mở thêm cơ hội thuận lợi nếu bạn chủ động tập trung vào mảng này.</p>
+        <div class="basis"><span class="lb">Nhãn căn cứ</span><code>[Căn cứ: Cung Nô Bộc (Mùi) – Lưu Thái Tuế 2027, Thiên Tướng (Đắc); Lưu Hóa Lộc tại Thái Âm – Cung Phúc Đức]</code></div>
+        <button class="btn ol" type="button" id="markBtn" style="margin-top:18px">Đánh dấu trên mặt bằng ↑</button>
+      </div>
+      <div class="r">
+        <span class="lb">Hai gian được nhắc tới</span>
+        <div class="snip" id="snip7"></div>
+        <div class="snip" id="snip4"></div>
+        <div class="src"><b>Nguồn sách</b><ul><li>Tử Vi Đẩu Số Tân Biên (Vân Đằng Thái Thứ Lang)</li><li>Tử Vi Khảo Luận (Hoàng Thường, Hàm Chương)</li></ul></div>
+        <p class="warn">Kho câu tĩnh tổng hợp từ sách (chưa qua chuyên gia kiểm duyệt).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. GIÁ -->
+<section class="sec" id="gia" style="border-top:1.5px solid var(--ink)">
+  <div class="wrap">
+    <div class="sec-h"><span class="tag-no">04</span><h2>Bảng hạng mục và giá<small>Hai mức, ghi rõ từ đầu. Không gạch giá, không đếm ngược.</small></h2></div>
+    <div class="price">
+      <div class="pc">
+        <div class="hd"><span class="lb">Hạng mục A</span><b>Miễn phí</b></div>
+        <div class="amt">0đ</div>
+        <div class="per">Không cần đăng ký.</div>
+        <table>
+          <tr><td>A.1</td><td>Lá số 12 cung đủ sao: chính tinh, phụ tinh, Tứ Hóa, Tuần, Triệt, đại vận, tiểu hạn, lưu niên 2027</td></tr>
+          <tr><td>A.2</td><td>3 nhận định về Mệnh, Thân và 1 chủ đề năm 2027, có nhãn căn cứ</td></tr>
+          <tr><td>A.3</td><td>Quy ước an sao công khai, giải thích tháng nhuận và giờ Tý</td></tr>
+          <tr><td>A.4</td><td>Ảnh lá số để lưu hoặc chia sẻ, đã ẩn họ tên</td></tr>
+        </table>
+        <a class="btn ol" href="#nhap" style="margin-bottom:22px">Vẽ lá số</a>
+      </div>
+      <div class="pc paid">
+        <div class="hd"><span class="lb" style="color:var(--ac)">Hạng mục B</span><b>Luận giải chuyên sâu</b></div>
+        <div class="amt">149.000đ</div>
+        <div class="per">Trả một lần qua VietQR. Không gia hạn tự động.</div>
+        <table>
+          <tr><td>B.1</td><td>Luận đủ 12 cung, mục nào cũng có nhãn [Căn cứ: Cung – Sao – Hóa]</td></tr>
+          <tr><td>B.2</td><td>Đại vận 10 năm và lộ trình 12 tháng năm 2027</td></tr>
+          <tr><td>B.3</td><td>8 câu hỏi riêng, trả lời bám đúng lá số của bạn</td></tr>
+          <tr><td>B.4</td><td>Trang kết quả in được, link xem lại 3 năm, xóa dữ liệu bằng 1 chạm</td></tr>
+        </table>
+        <a class="btn ac" href="#nhap">Mua bản 149.000đ</a>
+        <p class="fine">Hoàn 100% trong 7 ngày nếu lá số an sai so với quy ước đã công bố, hoặc có phần luận chính thiếu nhãn căn cứ. Xemboi không bán lễ, vật phẩm hay dịch vụ giải hạn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. BÁCH KHOA -->
+<section class="sec" id="bach-khoa" style="border-top:1.5px solid var(--ink)">
+  <div class="wrap">
+    <div class="sec-h"><span class="tag-no">05</span><h2>Phác thảo trang chủ bách khoa<small>Cả trang web là một tòa nhà nhiều gian. Tử vi là gian lớn đầu tiên.</small></h2></div>
+    <div class="site">
+      <div class="site-top">
+        <div class="q">
+          <h3>Tra cứu huyền học Việt, có nguồn và có phương pháp.</h3>
+          <form class="search" role="search" onsubmit="return false"><input type="search" placeholder="Một sao, một quẻ, một năm sinh…" aria-label="Tìm trong bách khoa"><button class="btn" type="submit">Tìm</button></form>
+          <div class="sugg">Thử: <a href="#">sao Thiên Cơ</a><a href="#">1998 mệnh gì</a><a href="#">Tết 2027 ngày nào</a><a href="#">quẻ Thuần Càn</a><a href="#">Thành Đầu Thổ</a></div>
+        </div>
+        <div class="today"><span class="lb">Hôm nay theo lịch</span><div class="d">12/10</div><p><b>Bính Ngọ</b> · ngày Mậu Tuất, tháng Kỷ Hợi<br>Thứ Sáu 20/11/2026</p></div>
+      </div>
+      <div class="blocks">
+        <a class="blk big" href="#la-so"><span class="rn">01</span><h4>Tử vi</h4><p>Lập lá số 12 cung, từ điển sao, cách đọc lá số, quy ước Nam Phái.</p><span class="st2 live">Đang mở</span></a>
+        <a class="blk w3 e" href="#"><span class="rn">02</span><h4>Lịch &amp; ngày</h4><p>Đổi ngày âm dương, lịch tháng, 24 tiết khí.</p><span class="st2">Sắp có</span></a>
+        <a class="blk w3 e" href="#"><span class="rn">03</span><h4>Can chi &amp; tuổi</h4><p>Mệnh theo năm sinh, 60 hoa giáp, nạp âm.</p><span class="st2">Sắp có</span></a>
+        <a class="blk w2" href="#"><span class="rn">04</span><h4>Bát tự</h4><p>Tứ trụ năm, tháng, ngày, giờ.</p><span class="st2">Sắp có</span></a>
+        <a class="blk w2" href="#"><span class="rn">05</span><h4>Kinh Dịch</h4><p>Gieo quẻ, tra 64 quẻ, có nguồn bản dịch.</p><span class="st2">Sắp có</span></a>
+        <a class="blk w2 e" href="#"><span class="rn">06</span><h4>Phong thủy</h4><p>Cung phi, hướng nhà theo năm sinh.</p><span class="st2">Sắp có</span></a>
+        <a class="blk w3" href="#"><span class="rn">07</span><h4>Số &amp; sao Tây</h4><p>Thần số học, cung hoàng đạo.</p><span class="st2">Sắp có</span></a>
+        <a class="blk w3 e" href="#"><span class="rn">08</span><h4>Phong tục</h4><p>Ngày lễ, phong tục đời người, Tết.</p><span class="st2">Sắp có</span></a>
+      </div>
+      <div class="site-foot"><a href="#">Từ điển A–Z</a><a href="#">Phương pháp &amp; trường phái</a><a href="#">Thư mục nguồn</a><a href="#">Người biên tập và duyệt</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ẢNH CHIA SẺ -->
+<section class="sec" id="chia-se" style="border-top:1.5px solid var(--ink)">
+  <div class="wrap">
+    <div class="sec-h"><span class="tag-no">06</span><h2>Ảnh chia sẻ 1080×1350<small>Bản vẽ lá số khổ 4:5 cho Facebook và Instagram.</small></h2></div>
+    <div class="share-row">
+      <div class="share-box" id="shareBox">
+        <div id="anh-chia-se">
+          <div class="sh-top">
+            <span class="logo"><svg viewBox="0 0 26 26"><rect x="1.5" y="1.5" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2.5"/><rect x="8" y="8" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13 18v6.5" stroke="#A8441F" stroke-width="2.5"/></svg>xemboi.vn</span>
+            <span class="r">Mặt bằng lá số Tử Vi<i>Nam Phái · năm xem Đinh Mùi 2027</i></span>
+          </div>
+          <div class="plan-wrap" id="pwS"><div class="plan" id="planS"></div></div>
+          <div class="sh-foot"><span>Đã ẩn họ tên. Quy ước an sao: xemboi.vn/phuong-phap</span><span>Vẽ lá số miễn phí tại xemboi.vn</span></div>
+        </div>
+      </div>
+      <div class="share-txt">
+        <p>Ở cỡ nhỏ trên bảng tin, ảnh trông như một bản vẽ nhà: tường đậm, sân trong, số đo bên ngoài. Hình này lạ với người xem tử vi, nên dễ khiến người ta dừng lại.</p>
+        <p>Phóng to ra thì đọc được đủ 12 cung, từng sao và độ sáng. Ảnh không có họ tên; chỉ người tò mò mới đọc tới dòng ngày sinh ở khung tên.</p>
+        <p class="lb" style="margin-top:18px">Chụp kích thước gốc: mở tệp với ?chup=1.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HỒ SƠ HƯỚNG -->
+<section class="sec" id="ho-so" style="border-top:1.5px solid var(--ink)">
+  <div class="wrap">
+    <div class="sec-h"><span class="tag-no">C</span><h2>Ngôi nhà 12 gian<small>Lá số là mặt bằng một ngôi nhà quanh sân trong.</small></h2></div>
+    <p class="sp" style="font-size:19px;max-width:820px;margin-bottom:24px">Một câu: <b>mỗi cung là một gian nhà, sao là đồ đạc trong gian, đại vận là số đo ngoài tường.</b> Với P1, "nhà" là hình ảnh yên ổn, dễ hiểu, không đáng sợ: lá số trở thành thứ để đi một vòng, không phải bản án. Với P2, bản vẽ kỹ thuật là ngôn ngữ của độ chính xác: có ký hiệu, chú giải, số đo, khung tên, và đặt phương Nam lên trên đúng như lá số truyền thống.</p>
+    <div class="spec">
+      <div>
+        <h4 class="lb">Màu · nền sáng (mặc định)</h4>
+        <div class="sw"><i style="background:#EEF2F3"></i>--bg giấy can #EEF2F3<span></span></div>
+        <div class="sw"><i style="background:#1B2B34"></i>--ink mực #1B2B34<span>12,9:1</span></div>
+        <div class="sw"><i style="background:#4E5F67"></i>--mu #4E5F67<span>5,9:1</span></div>
+        <div class="sw"><i style="background:#A8441F"></i>--ac đất nung #A8441F<span>5,3:1</span></div>
+        <h4 class="lb" style="margin-top:16px">Màu · nền tối</h4>
+        <div class="sw"><i style="background:#11181C"></i>--bg #11181C<span></span></div>
+        <div class="sw"><i style="background:#E4EBED"></i>--ink #E4EBED<span>14,8:1</span></div>
+        <div class="sw"><i style="background:#9DB0B8"></i>--mu #9DB0B8<span>8,0:1</span></div>
+        <div class="sw"><i style="background:#E98A5E"></i>--ac #E98A5E<span>7,0:1</span></div>
+        <p style="font-size:12.5px;color:var(--mu);margin-top:8px">Tỉ lệ so với --bg cùng chế độ, theo công thức WCAG 2.x.</p>
+      </div>
+      <div>
+        <h4 class="lb">Chữ</h4>
+        <ul>
+          <li><b>Archivo</b> biến thiên độ rộng 62–125%: bản rộng in hoa cho nhãn gian kiểu bản vẽ, bản thường cho thân bài, bản hẹp cho danh sách sao.</li>
+          <li><b>Spectral</b> 400/600 và nghiêng cho đoạn luận giải và chú thích.</li>
+          <li>Cả hai có subset <code>vietnamese</code> (đã tra metadata Google Fonts ngày 20/11/2026).</li>
+        </ul>
+        <h4 class="lb" style="margin-top:16px">Lưới · góc · nét</h4>
+        <ul>
+          <li>Nền giấy can có lưới 24px và lưới lớn 120px.</li>
+          <li>12 cột, rộng tối đa 1300px.</li>
+          <li>Góc bo 0 cho bản vẽ, 4px cho nút. Ba cấp nét: tường 6px, vách 3px, nét chú giải 1px.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="lb">Chuyển động</h4>
+        <ul>
+          <li>Trục tam hợp của cung Mệnh được "vẽ" ra bằng nét chạy trong 1,2 giây khi tải trang.</li>
+          <li>Bấm gian thì gian đó hiện khung nét đứt màu đất nung, như dấu sửa trên bản vẽ.</li>
+          <li>Tắt hết khi bật "giảm chuyển động".</li>
+        </ul>
+        <h4 class="lb" style="margin-top:16px">Lá số</h4>
+        <ul>
+          <li>Giữ đúng 12 vị trí truyền thống. Gian sát sân trong có cửa mở ra sân.</li>
+          <li>Tuần, Triệt là vách gạch chéo giữa hai gian.</li>
+          <li>Trên điện thoại: mặt bằng thu gọn (tên gian và chính tinh), bên dưới là 12 phiếu gian đầy đủ xếp từ cung Mệnh.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pg"><div class="wrap">Bản phác giao diện hướng C · dữ liệu lá số mẫu xuất từ engine (la-so-mau.json) · Ô "Hôm nay theo lịch" là dữ liệu mẫu, chưa kiểm bằng engine.</div></footer>
+
+<script>
+/* ===== DỮ LIỆU (chép từ la-so-mau.json; sao: "Tên|độ sáng|Hóa|độ sáng của sao Hóa") ===== */
+var CUNG=[
+["Tý","Giáp","Phu Thê","Thủy","TR",["Thiên Cơ|Đ|Kỵ|H"],["Tấu Thư","Địa Giải"],["Điếu Khách"],"Mộ","22–31",22,"Ngọ"],
+["Sửu","Ất","Huynh Đệ","Thổ","R",["Tử Vi|Đ","Phá Quân|V"],["Tướng Quân","Thiên Khôi","Hồng Loan","Quốc Ấn"],["Trực Phù","Quả Tú"],"Tử","12–21",12,"Tỵ"],
+["Dần","Giáp","Mệnh","Mộc","",[],["Thiên Thọ","Đẩu Quân"],["Tiểu Hao|Đ","Thái Tuế","Thiên Hình|Đ"],"Bệnh","2–11",2,"Thìn"],
+["Mão","Ất","Phụ Mẫu","Mộc","",["Thiên Phủ|B"],["Thanh Long","Thiếu Dương","Ân Quang","Thiên Quan","Thiên Phúc","Đào Hoa"],["Thiên Không"],"Suy","112–121",112,"Mão"],
+["Thìn","Bính","Phúc Đức","Thổ","",["Thái Âm|H|Quyền|Đ"],["Lực Sĩ","Thiên Tài"],["Tang Môn","Đà La|Đ","Địa Kiếp|H","Thiên Khốc|H","Thiên La"],"Đế Vượng","102–111",102,"Dần"],
+["Tỵ","Đinh","Điền Trạch","Hỏa","",["Liêm Trinh|H","Tham Lang|H|Lộc|H"],["Lộc Tồn","Bác Sỹ","Thiếu Âm","Hữu Bật||Khoa|Đ","Văn Xương|H"],["Cô Thần","Lưu Hà"],"Lâm Quan","92–101",92,"Sửu"],
+["Ngọ","Mậu","Quan Lộc","Hỏa","",["Cự Môn|V"],["Long Trì","Bát Tọa","Thiên Y","Thiên Giải","Thiên Trù"],["Quan Phủ","Quan Phù","Kình Dương|H","Địa Không|H","Thiên Riêu"],"Quan Đới","82–91",82,"Tý"],
+["Mùi","Kỷ","Nô Bộc","Thổ","",["Thiên Tướng|Đ"],["Nguyệt Đức","Thiên Việt","Thiên Hỷ","Phong Cáo"],["Phục Binh","Tử Phù","Thiên Thương"],"Mộc Dục","72–81",72,"Hợi"],
+["Thân","Canh","Thiên Di","Kim","U",["Thiên Đồng|M","Thiên Lương|V"],["Phượng Các","Giải Thần","Tam Thai","Văn Tinh","Thiên Mã|Đ"],["Đại Hao|Đ","Tuế Phá","Hỏa Tinh|H","Linh Tinh|H","Thiên Hư|H"],"Tràng Sinh","62–71",62,"Tuất"],
+["Dậu","Tân","Tật Ách","Kim","U",["Vũ Khúc|Đ","Thất Sát|H"],["Long Đức","Tả Phù","Văn Khúc|H"],["Bệnh Phù","Thiên Sứ","Phá Toái"],"Dưỡng","52–61",52,"Dậu"],
+["Tuất","Nhâm","Tài Bạch","Thổ","",["Thái Dương|H"],["Hỷ Thần","Đường Phù"],["Bạch Hổ","Địa Võng","Hoa Cái"],"Thai","42–51",42,"Thân"],
+["Hợi","Quý","Tử Tức","Thủy","",[],["Phi Liêm","Phúc Đức","Thiên Đức","Thiên Quý","Thai Phụ"],["Kiếp Sát"],"Tuyệt","32–41",32,"Mùi"]
+];
+var LUU={tuoi:30,thaiTue:7,daiVan:0,tieuHan:11,
+ sao:{7:["L. Thái Tuế","L. Kình Dương"],9:["L. Tang Môn"],3:["L. Bạch Hổ"],11:["L. Thiên Khốc"],1:["L. Thiên Hư"],6:["L. Lộc Tồn"],5:["L. Đà La","L. Thiên Mã"]},
+ hoa:{4:"L. Hóa Lộc (Thái Âm)",8:"L. Hóa Quyền (Thiên Đồng)",0:"L. Hóa Khoa (Thiên Cơ)",6:"L. Hóa Kỵ (Cự Môn)"}};
+
+var DS={"M":"Miếu","V":"Vượng","Đ":"Đắc","B":"Bình","H":"Hãm"};
+function P(s){var a=s.split("|");return{t:a[0],d:a[1]||"",h:a[2]||"",hd:a[3]||""};}
+var C=CUNG.map(function(r,i){return{i:i,chi:r[0],can:r[1],ten:r[2],hanh:r[3],than:r[4].indexOf("T")>-1,triet:r[4].indexOf("R")>-1,tuan:r[4].indexOf("U")>-1,
+  chinh:r[5].map(P),cat:r[6].map(P),hung:r[7].map(P),ts:r[8],dv:r[9],dvTu:r[10],th:r[11]};});
+var MENH=2,TAMHOP=[(MENH+4)%12,(MENH+8)%12],XUNG=(MENH+6)%12;
+var POS={5:[1,1],6:[2,1],7:[3,1],8:[4,1],4:[1,2],9:[4,2],3:[1,3],10:[4,3],2:[1,4],1:[2,4],0:[3,4],11:[4,4]};
+/* số gian: đếm từ Mệnh theo thứ tự 12 cung */
+function soGian(i){var n=(MENH-i+12)%12+1;return(n<10?"0":"")+n;}
+
+function sao(x,i,big){
+  return '<span class="s'+(big?" st":"")+'"><span class="mk" data-k="s'+i+':'+x.t+'">'+x.t+'</span>'+(x.d?'<i class="ds" title="'+DS[x.d]+'">'+x.d+'</i>':"")+
+    (x.h?'<span class="hoa" title="Hóa '+x.h+(x.hd?' (độ sáng của sao Hóa: '+DS[x.hd]+')':"")+'">Hóa '+x.h+'</span>':"")+'</span>';
+}
+function tags(c){var t="";
+  if(c.i===MENH)t+='<span class="tg2 a">Mệnh</span>';
+  if(c.than)t+='<span class="tg2 a">Thân</span>';
+  if(TAMHOP.indexOf(c.i)>-1)t+='<span class="tg2">Tam hợp Mệnh</span>';
+  if(c.i===XUNG)t+='<span class="tg2">Xung chiếu Mệnh</span>';
+  if(c.tuan)t+='<span class="tg2">Tuần</span>';
+  if(c.triet)t+='<span class="tg2">Triệt</span>';
+  if(c.i===LUU.thaiTue)t+='<span class="tg2 a">Lưu Thái Tuế</span>';
+  if(c.i===LUU.daiVan)t+='<span class="tg2 a">Đại vận 2027</span>';
+  if(c.i===LUU.tieuHan)t+='<span class="tg2 a">Tiểu hạn 2027</span>';
+  return t;}
+function gian(c,place){
+  var o=C[(c.i+6)%12],p=POS[c.i];
+  var fu=c.chinh.length?c.chinh.map(function(x){return sao(x,c.i,true);}).join("<br>"):
+    '<span class="vcd">Vô chính diệu · xung chiếu '+o.chinh.map(function(x){return x.t;}).join(", ")+'</span>';
+  var lu=[];if(LUU.hoa[c.i])lu.push(LUU.hoa[c.i]);if(LUU.sao[c.i])lu=lu.concat(LUU.sao[c.i]);
+  var cls="room"+(c.i===MENH?" me":"")+(p[0]===4?" c4":"")+(p[1]===4?" r4":"");
+  return '<div class="'+cls+'" data-i="'+c.i+'"'+(place?' style="grid-column:'+p[0]+';grid-row:'+p[1]+'"':"")+'>'+
+    '<div class="rt"><span class="rn">'+soGian(c.i)+'</span><h4>'+c.ten+'<small>'+c.can+' '+c.chi+' · '+c.hanh+' · '+c.ts+' · TH '+c.th+'</small></h4></div>'+
+    '<div class="tgs">'+tags(c)+'</div>'+
+    '<div class="fu">'+fu+'</div>'+
+    '<div class="inv"><div>'+c.cat.map(function(x){return sao(x,c.i);}).join("")+'</div><div class="h">'+c.hung.map(function(x){return sao(x,c.i);}).join("")+'</div></div>'+
+    (lu.length?'<div class="lu">2027: '+lu.map(function(t){return '<span class="mk" data-k="l'+c.i+':'+t+'">'+t+'</span>';}).join(" · ")+'</div>':"")+
+    '</div>';
+}
+var COURT='<div class="court">'+
+ '<div class="ttl"><b>Sân trong · Thiên bàn</b><span class="lb">Bản vẽ lá số</span></div>'+
+ '<div><div class="big">Thành Đầu Thổ<i>Thủy Nhị Cục · Mệnh khắc Cục</i></div>'+
+ '<dl><dt>Dương lịch</dt><dd>15/8/1998, 09:30 · Nữ</dd><dt>Âm lịch</dt><dd>24/6 Mậu Dần, giờ Tỵ</dd><dt>Tứ trụ</dt><dd>Mậu Dần · Kỷ Mùi · Giáp Ngọ · Kỷ Tỵ</dd>'+
+ '<dt>Âm dương</dt><dd>Dương Nữ, thuận lý</dd><dt>Mệnh · Thân</dt><dd>Mệnh Dần · Thân Tý (Phu Thê)</dd><dt>Chủ tinh</dt><dd>Mệnh chủ Lộc Tồn · Thân chủ Thiên Lương</dd>'+
+ '<dt>Tuần · Triệt</dt><dd>Tuần Thân–Dậu · Triệt Tý–Sửu</dd></dl></div>'+
+ '<div class="side"><div class="mini"><svg viewBox="0 0 100 100" aria-hidden="true"><path class="g" d="M2 2h96v96H2zM26 2v96M50 2v24M50 74v24M74 2v96M2 26h96M2 74h96M2 50h24M74 50h24"/>'+
+ '<path class="a" d="M14 86L38 14L86 62Z"/><path class="a x" d="M14 86L86 14"/><circle class="m" cx="14" cy="86" r="4"/></svg>'+
+ '<p>Trục của cung Mệnh: tam hợp Quan Lộc, Tài Bạch (nét liền); xung chiếu Thiên Di (nét đứt).</p></div>'+
+ '<div class="north"><svg viewBox="0 0 30 44" aria-hidden="true"><circle cx="15" cy="15" r="13" fill="none" stroke="currentColor"/><path d="M15 4L21 22H9Z" fill="none" stroke="currentColor" transform="rotate(180 15 15)"/><text x="15" y="42" text-anchor="middle" font-size="9" fill="currentColor" font-family="Archivo" font-weight="700">B</text></svg>'+
+ '<span><b>Bắc (Tý) ở dưới</b><br>Nam (Ngọ) ở trên, đúng cách đặt lá số truyền thống.</span></div></div>'+
+ '<div class="lgd"><span><b>M</b> Miếu · <b>V</b> Vượng · <b>Đ</b> Đắc · <b>B</b> Bình · <b>H</b> Hãm</span><span><span class="sw-h"></span>Tuần, Triệt</span><span>Độ sáng là mức phát huy của sao ở cung đó, không phải nhãn tốt xấu.</span></div>'+
+ '</div>';
+/* cửa: gian sát sân trong có cửa mở ra sân */
+var DOORS='<span class="door h" style="left:37.5%;top:calc(25% - 4.5px)"></span><span class="door h" style="left:62.5%;top:calc(25% - 4.5px)"></span>'+
+ '<span class="door h" style="left:37.5%;top:calc(75% - 4.5px)"></span><span class="door h" style="left:62.5%;top:calc(75% - 4.5px)"></span>'+
+ '<span class="door v" style="top:37.5%;left:calc(25% - 4.5px)"></span><span class="door v" style="top:62.5%;left:calc(25% - 4.5px)"></span>'+
+ '<span class="door v" style="top:37.5%;left:calc(75% - 4.5px)"></span><span class="door v" style="top:62.5%;left:calc(75% - 4.5px)"></span>';
+/* vách Tuần (giữa Thân và Dậu) và Triệt (giữa Sửu và Tý) */
+var HATCH='<span class="hatch" title="Tuần: Thân–Dậu" style="left:75%;width:25%;top:calc(25% - 6px);height:9px"></span>'+
+ '<span class="hatch" title="Triệt: Tý–Sửu" style="top:75%;height:25%;left:calc(50% - 6px);width:9px"></span>';
+function dims(){
+  function seg(list,side){return list.map(function(i){var c=i===null?null:C[i];
+    return '<span'+(c&&c.i===LUU.daiVan?' class="now"':"")+'>'+(c?'<em>'+(side?c.chi+" · ":"")+c.dv+(c.i===LUU.daiVan?" · 2027":"")+'</em>':"")+'</span>';}).join("");}
+  return '<div class="dim t" aria-hidden="true">'+seg([5,6,7,8],1)+'</div><div class="dim b" aria-hidden="true">'+seg([2,1,0,11],1)+'</div>'+
+    '<div class="dim l" aria-hidden="true">'+seg([null,4,3,null])+'</div><div class="dim r" aria-hidden="true">'+seg([null,9,10,null])+'</div>';
+}
+function dung(planId,wrapId){
+  document.getElementById(planId).innerHTML=C.map(function(c){return gian(c,true);}).join("")+COURT+DOORS+HATCH;
+  document.getElementById(wrapId).insertAdjacentHTML("beforeend",dims());
+}
+dung("plan","pw");dung("planS","pwS");
+var ord=[];for(var k=0;k<12;k++)ord.push((MENH-k+12)%12);
+document.getElementById("list").innerHTML=ord.map(function(i){return gian(C[i],false);}).join("");
+document.getElementById("snip7").innerHTML=gian(C[7],false);
+document.getElementById("snip4").innerHTML=gian(C[4],false);
+
+/* đánh dấu căn cứ */
+var CANCU=["s7:Thiên Tướng","l7:L. Thái Tuế","s4:Thái Âm","l4:L. Hóa Lộc (Thái Âm)"];
+function danhDau(on){
+  CANCU.forEach(function(k){document.querySelectorAll('#snip7 [data-k="'+k+'"],#snip4 [data-k="'+k+'"]').forEach(function(e){e.classList.add("on");});});
+  ["#plan","#list"].forEach(function(s){
+    document.querySelectorAll(s+" .room.on").forEach(function(e){e.classList.remove("on");});
+    document.querySelectorAll(s+" .mk.on").forEach(function(e){e.classList.remove("on");});
+    if(on){[7,4].forEach(function(i){var r=document.querySelector(s+' .room[data-i="'+i+'"]');if(r)r.classList.add("on");});
+      CANCU.forEach(function(k){document.querySelectorAll(s+' [data-k="'+k+'"]').forEach(function(e){e.classList.add("on");});});}
+  });
+}
+danhDau(false);
+document.getElementById("markBtn").addEventListener("click",function(){danhDau(true);document.getElementById("la-so").scrollIntoView({behavior:"smooth"});});
+document.getElementById("plan").addEventListener("click",function(e){
+  var r=e.target.closest(".room");if(!r)return;
+  var on=!r.classList.contains("on");
+  document.querySelectorAll("#plan .room.on").forEach(function(x){x.classList.remove("on");});
+  if(on)r.classList.add("on");
+  if(window.innerWidth<=860){var t=document.querySelector('#list .room[data-i="'+r.getAttribute("data-i")+'"]');if(t)t.scrollIntoView({behavior:"smooth",block:"start"});}
+});
+
+/* thu nhỏ ảnh chia sẻ */
+if(location.search.indexOf("chup")>-1)document.documentElement.classList.add("chup");
+function scaleShare(){var b=document.getElementById("shareBox"),w=b.parentElement.clientWidth;
+  var s=window.innerWidth>900?Math.min(.5,w*.55/1080):Math.min(.5,(w-4)/1080);
+  b.style.setProperty("--s",s.toFixed(4));document.getElementById("anh-chia-se").style.setProperty("--s",s.toFixed(4));}
+scaleShare();window.addEventListener("resize",scaleShare);
+
+var tg=document.getElementById("tg");
+tg.addEventListener("click",function(){var h=document.documentElement,d=h.getAttribute("data-theme")==="dark";
+  h.setAttribute("data-theme",d?"light":"dark");tg.textContent=d?"Nền tối":"Nền sáng";tg.setAttribute("aria-pressed",String(!d));});
+</script>
+</body>
+</html>

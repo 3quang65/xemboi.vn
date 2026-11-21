@@ -4,7 +4,12 @@ import type { NextRequest } from 'next/server';
 export const ADMIN_COOKIE_NAME = 'r1_admin_session';
 
 function layAdminKey(): string {
-  return (process.env.ADMIN_KEY || '').trim();
+  return choPhepAdminKey() ? (process.env.ADMIN_KEY || '').trim() : '';
+}
+
+/** ADMIN_KEY chỉ còn là khóa khẩn cấp; đặt CHO_PHEP_ADMIN_KEY=0 để tắt hẳn (docs/v2/17 mục 5.1). */
+export function choPhepAdminKey(): boolean {
+  return (process.env.CHO_PHEP_ADMIN_KEY ?? '1') !== '0';
 }
 
 export function taoTokenQuanTri(key: string): string {
@@ -54,8 +59,11 @@ function layCookie(req: Request, ten: string): string | undefined {
   return undefined;
 }
 
-/** Kiểm quyền cho route handler nhận `Request` thường. Trả về Response 401 nếu chưa đăng nhập, null nếu hợp lệ. */
-export function yeuCauQuanTri(req: Request): Response | null {
+/** Kiểm ADMIN_KEY (header x-admin-key hoặc cookie) cho Request thường. null nếu hợp lệ. */
+export function kiemAdminKey(req: Request): Response | null {
+  if (!choPhepAdminKey()) {
+    return Response.json({ ok: false, error: 'Chưa đăng nhập quản trị' }, { status: 401, headers: { 'Cache-Control': 'no-store' } });
+  }
   const key = layAdminKey();
   if (key) {
     const headerKey = req.headers.get('x-admin-key');

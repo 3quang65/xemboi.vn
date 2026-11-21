@@ -1,3 +1,4 @@
+// [v1] Trang chủ bản cũ "Bát Đại Danh Sư", CHƯA làm lại theo v2. Đừng lấy làm mẫu. Xem docs/v2/00-BAN-CU-BAN-MOI.md
 import Script from 'next/script';
 import { getHomeBodyHtml } from '@/lib/home-template';
 import CouncilChatEmbed from '@/components/CouncilChatEmbed';

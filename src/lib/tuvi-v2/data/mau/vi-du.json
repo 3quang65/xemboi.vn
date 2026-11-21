@@ -1,0 +1,59 @@
+{
+  "id": "du-lieu-gia-gio-ty-muon-001",
+  "nhanCa": [
+    "gio-ty-muon",
+    "cuc",
+    "tuan-triet",
+    "tu-hoa"
+  ],
+  "ngayGioSinhDuong": {
+    "nam": 2000,
+    "thang": 1,
+    "ngay": 1,
+    "gio": 23,
+    "phut": 30
+  },
+  "gioiTinh": "nam",
+  "muiGio": "+07:00",
+  "mongDoi": {
+    "amLich": {
+      "nam": 1999,
+      "thang": 11,
+      "ngay": 25,
+      "nhuan": false
+    },
+    "canChi": {
+      "nam": "Kỷ Mão",
+      "thang": "Bính Tý",
+      "ngay": "Mậu Ngọ",
+      "gio": "Nhâm Tý"
+    },
+    "menhThan": {
+      "menh": "Tý",
+      "than": "Tý"
+    },
+    "cuc": "Thủy nhị cục",
+    "chinhTinh": {
+      "tuVi": "Tý",
+      "thienCo": "Sửu",
+      "thaiDuong": "Dần",
+      "vuKhuc": "Mão",
+      "thienDong": "Thìn",
+      "liemTrinh": "Tỵ",
+      "thienPhu": "Ngọ",
+      "thaiAm": "Mùi",
+      "thamLang": "Thân",
+      "cuMon": "Dậu",
+      "thienTuong": "Tuất",
+      "thienLuong": "Hợi",
+      "thatSat": "Tý",
+      "phaQuan": "Sửu"
+    },
+    "nguonDoiChieu": [
+      {
+        "ten": "Dữ liệu minh họa lược đồ",
+        "thamChieu": "chưa có nguồn; các vị trí sao chỉ dùng để kiểm cấu trúc, không dùng làm mốc học thuật"
+      }
+    ]
+  }
+}
