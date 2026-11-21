@@ -14,6 +14,7 @@ Anh dặn dựng xong hết ở máy trạm rồi mới đưa lên VPS. Lúc đ�
    - `scripts/chuyen-bai-cu.ts`: bài `Post` và bài CMS → `NoiDung` (để `noindex` cho tới khi duyệt lại);
    - `scripts/chuyen-tri-thuc-cu.ts`: tài liệu trợ lý cũ → `RagNguon` hạng C, nội bộ.
    Em sẽ chạy `--thu` trước để anh xem số lượng.
+   Thêm 2 lịch chạy đêm (cron, user web): `scripts/seo-quet.ts https://<tên miền> --nghi=500` rồi `scripts/seo-goi-y-lien-ket.ts`; và nạp một lần `scripts/seo-nap-lich-mua.ts`.
 4. **Sao lưu trên VPS:** đặt lịch chạy `scripts/sao-luu-csdl.mjs` hằng đêm và có mã hóa bản sao lưu hay không. Mặc định em đề xuất: cron 3 giờ sáng, giữ 7 bản ngày + 4 bản tuần, chưa mã hóa (máy chỉ anh vào).
 
 ## B. Quyết định nội dung và SEO
@@ -34,7 +35,7 @@ Mục 1 (Đợt 0) đã xong. Các mục dưới đây em đang chạy theo mặ
 13. **Tài liệu RAG cũ thành `NOI_BO`**, chat công khai mất chúng cho tới khi xếp loại lại (mục 7). Mặc định: đồng ý (đã viết script theo hướng này).
 14. **Tách `quantri.xemboi.vn`** (mục 8). Mặc định: giữ một tiến trình tới hết Đợt 3.
 15. **Ngày mở tên miền chính** (mục 9), để đặt nhắc giấy phép.
-16. **Search Console của xemtuvi.vn, hoặc sitemap** (mục 10). Đợt 3 cũng cần **quyền Search Console của xemboi.vn** (tài khoản dịch vụ, chỉ đọc) để đồng bộ số liệu hằng ngày.
+16. **Search Console của xemtuvi.vn, hoặc sitemap** (mục 10). Đợt 3 cũng cần **quyền Search Console của xemboi.vn**: anh tạo một tài khoản dịch vụ Google Cloud (bật Search Console API), thêm email của nó vào property xemboi.vn với quyền **Restricted** (chỉ đọc là đủ), rồi đặt tệp khóa JSON ở `may-tram/` (ngoài repo). Chưa có thì em làm phần đồng bộ với dữ liệu giả và để tắt.
 17. **Ai được tạo tài khoản quản trị:** tên, vai trò; hồ sơ tác giả dùng tên thật hay bút danh (mục 11). Trang `/quan-tri/tai-khoan` đã làm xong, anh tự tạo được.
 18. **Đổi `prisma db push` sang `prisma migrate`** (mục 12). Cần trước khi deploy.
 19. **Bật Ahrefs?** (mục 13). Mặc định: không.

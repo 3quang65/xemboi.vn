@@ -2052,6 +2052,23 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
   - một báo cáo đánh giá có recall@10 cho ít nhất 2 mô hình.
 - **Rủi ro:** quét 7.400 trang trên VPS yếu (chạy ban đêm, giới hạn tốc độ); dữ liệu Search Console của tên miền mới còn ít.
 
+> **Tiến độ Đợt 3, 22/11/2026** (máy trạm, chưa lên VPS):
+> - **Bộ quét** `src/lib/seo/quet.ts` + `scripts/seo-quet.ts`:
+>   - hạt giống là `/`, mọi `<loc>` trong sitemap và trang `XUAT_BAN`; không theo chuyển hướng; 2 yêu cầu/giây mặc định;
+>   - ghi `SeoLienKet` (QUET, DANG_CO) khi cả hai đầu là `SeoTrang`; cập nhật `doSau`, `soLienKetVao/Ra`, `maHttpLanQuet`;
+>   - cảnh báo `MO_COI`, `QUA_SAU`, `LOI_HTTP` (hỏng và 3xx), `NOINDEX_TRONG_SITEMAP`, `CANONICAL_LECH`; lần sau hết lỗi thì tự đóng; quét dở (chạm trần) thì không đóng và không báo mồ côi;
+>   - báo cáo lần cuối ở `CaiDat` `SEO_QUET_LAN_CUOI`.
+>
+>   Chạy thật trên dev server: 216 trang, 71 giây, toàn bộ 200, 1.970 liên kết nội bộ; chỉ 7 trang có trong `SeoTrang` (150 trang còn `NHAP`). Kiểm tay 4 trang (`/`, `/kien-thuc`, một bài viết, `/tu-vi-2027`): danh sách liên kết khớp hoàn toàn với DOM trên trình duyệt. Nghiệm thu cần 20 trang: làm tiếp khi có thêm trang v2.
+>
+>   **Phát hiện thật:** `/tu-vi-2027` (trang v2 duy nhất đang chạy) **mồ côi**: không trang nào trỏ tới, và nó cũng không trỏ đi đâu. Cần gắn liên kết khi làm trang chủ và hub v2.
+> - **Quy tắc liên kết** `src/lib/seo/quy-tac-lien-ket.ts` + `scripts/seo-goi-y-lien-ket.ts`: 8 quy tắc 07 mục 2.4 (kế hoạch `lien_ket_ra` của 16-seo-trang.csv, cùng nhóm, form lập lá số, năm kề, `/phuong-phap`, bài "vì sao xem tuổi khác nhau", và 2 quy tắc chỉ hiển thị). Lần đầu sinh 579 gợi ý `DE_XUAT`; chạy lại không trùng; cặp đã bỏ qua không gợi ý lại.
+> - **Phân bố anchor** `src/lib/seo/anchor.ts`: 5 loại, 3 ngưỡng `[GIẢ ĐỊNH]`.
+> - **Lịch mùa vụ:** `scripts/seo-nap-lich-mua.ts` nạp 10 dòng 08 mục 7.2.
+> - Test `tests/dot3/`: thuần 7/7, CSDL 1/1.
+> - **Giao diện** `/quan-tri/seo/lien-ket`, khối liên kết trong `seo/trang/[id]`, `/quan-tri/seo/lich-mua`: giao Antigravity, `lenh-antigravity/23-lien-ket-lich-mua.md`.
+> - **Chưa làm:** đồng bộ Search Console (cần quyền, xem `viec-can-anh.md`); nhúng trang SEO + gợi ý ngữ nghĩa; `RagCauHoiChuan`/`RagDanhGia`, tìm lai RRF, bộ 100 câu; map nginx cho xemtuvi.vn (cần danh sách URL).
+
 ### Đợt 4: OCR, phiên âm, giấy phép, cứng hóa (55–80 giờ)
 
 - **Phạm vi:**
