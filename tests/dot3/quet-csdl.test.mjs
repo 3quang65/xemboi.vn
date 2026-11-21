@@ -70,10 +70,19 @@ test('quetSite: đồ thị, độ sâu, mồ côi, liên kết hỏng/chuyển,
   assert.equal(await db.seoLienKet.count({ where: { tuTrangId: { in: Object.values(id) } } }), 6);
 
   // Sửa lỗi: e có người trỏ tới → cảnh báo mồ côi tự đóng.
+  // Đồng thời: một gợi ý quy tắc b→e đang DE_XUAT; khi HTML đã có b→e thì chỉ còn MỘT dòng DANG_CO, giữ quyTacId.
+  await db.seoLienKet.create({ data: { tuTrangId: id['/b'], denTrangId: id['/e'], anchor: '[THỬ] gợi ý', nguon: 'QUY_TAC', trangThai: 'DE_XUAT', quyTacId: 'thu-quy-tac' } });
   SITE[`${T}/b`] += `<a href="${T}/e">E</a>`;
   const bc3 = await quetSite(db, { goc: 'http://localhost:3047', tai, taiSitemap, batDau: T, chiDuong: trong, nghiMs: 0 });
   assert.equal(bc3.moCoi, 0);
   assert.equal(bc3.canhBaoDong, 1);
   const mo3 = await db.seoCanhBao.count({ where: { trangThai: 'MO', OR: [{ trangId: { in: Object.values(id) } }, { chiTiet: { path: ['tu'], string_starts_with: T } }] } });
   assert.equal(mo3, mo1 - 1);
+  const be = await db.seoLienKet.findMany({ where: { tuTrangId: id['/b'], denTrangId: id['/e'] } });
+  assert.equal(be.length, 1);
+  assert.equal(be[0].trangThai, 'DANG_CO'); assert.equal(be[0].nguon, 'QUET'); assert.equal(be[0].quyTacId, 'thu-quy-tac'); assert.equal(be[0].anchor, 'E');
+  // Quét lại lần nữa: vẫn một dòng, vẫn giữ quyTacId.
+  await quetSite(db, { goc: 'http://localhost:3047', tai, taiSitemap, batDau: T, chiDuong: trong, nghiMs: 0 });
+  const be2 = await db.seoLienKet.findMany({ where: { tuTrangId: id['/b'], denTrangId: id['/e'] } });
+  assert.equal(be2.length, 1); assert.equal(be2[0].quyTacId, 'thu-quy-tac');
 });

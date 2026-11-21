@@ -57,6 +57,8 @@ export const MENU_QUAN_TRI: { nhom: string; muc: { ten: string; href: string; qu
       { ten: 'Từ khóa loại', href: '/quan-tri/seo/tu-khoa-loai', quyen: 'seo.xem' },
       { ten: 'Trang', href: '/quan-tri/seo/trang', quyen: 'seo.xem' },
       { ten: 'Chuyển hướng', href: '/quan-tri/seo/chuyen-huong', quyen: 'seo.xem' },
+      { ten: 'Liên kết nội bộ', href: '/quan-tri/seo/lien-ket', quyen: 'seo.xem' },
+      { ten: 'Lịch mùa vụ', href: '/quan-tri/seo/lich-mua', quyen: 'seo.xem' },
       { ten: 'Nhập tệp', href: '/quan-tri/seo/tu-khoa/nhap', quyen: 'seo.sua' },
     ],
   },

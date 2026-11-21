@@ -2066,7 +2066,9 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 > - **Phân bố anchor** `src/lib/seo/anchor.ts`: 5 loại, 3 ngưỡng `[GIẢ ĐỊNH]`.
 > - **Lịch mùa vụ:** `scripts/seo-nap-lich-mua.ts` nạp 10 dòng 08 mục 7.2.
 > - Test `tests/dot3/`: thuần 7/7, CSDL 1/1.
-> - **Giao diện** `/quan-tri/seo/lien-ket`, khối liên kết trong `seo/trang/[id]`, `/quan-tri/seo/lich-mua`: giao Antigravity, `lenh-antigravity/23-lien-ket-lich-mua.md`.
+> - **Giao diện: xong** (Antigravity, Lệnh 23, báo cáo `23-bao-cao.md`): `/quan-tri/seo/lien-ket` 6 tab (tổng quan, cảnh báo, trang mồ côi/quá sâu, gợi ý chấp nhận/bỏ qua, anchor, quy tắc bật/tắt), khối "Liên kết" trong `seo/trang/[id]`, `/quan-tri/seo/lich-mua`. Mọi thao tác cần `seo.sua`, ghi nhật ký `seo.canh_bao`, `seo.goi_y_lien_ket`, `seo.quy_tac_lien_ket`, `seo.lich_mua`. Claude Code đã soát mã, thêm 2 mục menu SEO, `kiem-dot1-quyen.mjs` kiểm 15 trang: đạt.
+>   - Sửa lõi theo đề nghị của Antigravity: trước đây gợi ý đã được chèn vào HTML bị đổi thành `DANG_CO` song song với dòng `QUET`, nên một cặp có hai dòng `DANG_CO`. Nay chỉ còn dòng `QUET`, mang theo `quyTacId` của gợi ý; dòng gợi ý bị bỏ. Có test.
+>   - Đề nghị còn lại (thêm quan hệ khóa ngoại `SeoLienKet.quyTacId`): để lần đổi schema sau.
 > - **Chưa làm:** đồng bộ Search Console (cần quyền, xem `viec-can-anh.md`); nhúng trang SEO + gợi ý ngữ nghĩa; `RagCauHoiChuan`/`RagDanhGia`, tìm lai RRF, bộ 100 câu; map nginx cho xemtuvi.vn (cần danh sách URL).
 
 ### Đợt 4: OCR, phiên âm, giấy phép, cứng hóa (55–80 giờ)

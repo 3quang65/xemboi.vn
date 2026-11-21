@@ -243,17 +243,29 @@ export async function quetSite(db: PrismaClient, o: TuyChon): Promise<BaoCaoQuet
     lienKetGhiCsdl = dong.length;
     const idDaQuet = daQuet.map((t) => t.id);
     await db.$transaction(async (tx) => {
-      // Liên kết QUET của các trang vừa quét: thay toàn bộ bằng kết quả mới. Liên kết đề xuất/tay giữ nguyên.
+      // Mỗi cặp (từ, đến) chỉ có MỘT dòng DANG_CO: dòng QUET. Liên kết đề xuất/tay chưa có trong HTML giữ nguyên.
+      // Giữ quyTacId qua các lần quét (lấy từ dòng QUET cũ, hoặc từ gợi ý vừa được chèn vào HTML).
+      const cap = (x: { tuTrangId: string; denTrangId: string }) => `${x.tuTrangId}|${x.denTrangId}`;
+      const quyTacCua = new Map<string, string>();
+      for (let i = 0; i < idDaQuet.length; i += 1000) {
+        const cu = await tx.seoLienKet.findMany({ where: { nguon: 'QUET', quyTacId: { not: null }, tuTrangId: { in: idDaQuet.slice(i, i + 1000) } }, select: { tuTrangId: true, denTrangId: true, quyTacId: true } });
+        for (const x of cu) quyTacCua.set(cap(x), x.quyTacId!);
+      }
+      // Gợi ý đã có thật trong HTML (cùng cặp với một dòng QUET mới): xong việc, bỏ dòng gợi ý để không trùng DANG_CO.
+      const capMoi = new Set(dong.map(cap));
+      const daThanh: string[] = [];
+      for (let i = 0; i < idDaQuet.length; i += 1000) {
+        const dx = await tx.seoLienKet.findMany({ where: { nguon: { not: 'QUET' }, tuTrangId: { in: idDaQuet.slice(i, i + 1000) } }, select: { id: true, tuTrangId: true, denTrangId: true, quyTacId: true, trangThai: true } });
+        for (const x of dx) {
+          if (!capMoi.has(cap(x)) || x.trangThai === 'BO_QUA') continue;
+          if (x.quyTacId && !quyTacCua.has(cap(x))) quyTacCua.set(cap(x), x.quyTacId);
+          daThanh.push(x.id);
+        }
+      }
+      if (daThanh.length) await tx.seoLienKet.deleteMany({ where: { id: { in: daThanh } } });
       for (let i = 0; i < idDaQuet.length; i += 1000) await tx.seoLienKet.deleteMany({ where: { nguon: 'QUET', tuTrangId: { in: idDaQuet.slice(i, i + 1000) } } });
       for (let i = 0; i < dong.length; i += 1000) {
-        await tx.seoLienKet.createMany({ data: dong.slice(i, i + 1000).map((d) => ({ ...d, nguon: 'QUET' as const, trangThai: 'DANG_CO' as const, quetLuc: luc })) });
-      }
-      // Đề xuất đã có thật trong HTML thì coi như xong.
-      if (dong.length) {
-        const cap = new Set(dong.map((d) => `${d.tuTrangId}|${d.denTrangId}`));
-        const deXuat = await tx.seoLienKet.findMany({ where: { nguon: { not: 'QUET' }, trangThai: { in: ['DE_XUAT', 'DA_DUYET'] } }, select: { id: true, tuTrangId: true, denTrangId: true } });
-        const xong = deXuat.filter((x) => cap.has(`${x.tuTrangId}|${x.denTrangId}`)).map((x) => x.id);
-        if (xong.length) await tx.seoLienKet.updateMany({ where: { id: { in: xong } }, data: { trangThai: 'DANG_CO', quetLuc: luc } });
+        await tx.seoLienKet.createMany({ data: dong.slice(i, i + 1000).map((d) => ({ ...d, quyTacId: quyTacCua.get(cap(d)) ?? null, nguon: 'QUET' as const, trangThai: 'DANG_CO' as const, quetLuc: luc })) });
       }
     }, { timeout: 120_000 });
     for (const t of daQuet) {
