@@ -3,8 +3,10 @@
  * Tự động chuyển đổi giữa Cloud LLM và High-Fidelity Heuristic Engine.
  */
 
+import { docCauHinhLlm, khoaApi } from './cau-hinh-llm';
+
 export interface LlmConfig {
-  provider: 'gemini' | 'openai' | 'deepseek' | 'offline';
+  provider: 'gemini' | 'openai' | 'deepseek' | '9router' | 'offline';
   modelName: string;
   apiKey?: string;
   temperature?: number;
@@ -238,6 +240,24 @@ export async function* streamLlmOrFallback(
   params: StreamLlmParams,
   fallbackGenerator: () => AsyncGenerator<string, void, unknown>
 ): AsyncGenerator<string, void, unknown> {
+  // 9router (cổng của anh) đứng trước, trừ khi trang /admin cũ đã đặt nhà cung cấp tạm thời trong bộ nhớ.
+  // Mô hình và nhiệt độ lấy từ CaiDat "LLM" (sửa ở /quan-tri/ai/mo-hinh); khóa chỉ ở NINEROUTER_API_KEY.
+  if (!runtimeConfig.provider && khoaApi()) {
+    const ch = await docCauHinhLlm();
+    const cfg9: LlmConfig = { provider: '9router', modelName: ch.moHinh.chat, apiKey: khoaApi(), temperature: ch.nhietDo.chat };
+    let daGui = false;
+    try {
+      for await (const chunk of callOpenAiCompatibleStream(cfg9, params, ch.baseUrl)) {
+        daGui = true;
+        yield chunk;
+      }
+      return;
+    } catch (err) {
+      console.warn('9router stream thất bại:', err instanceof Error ? err.message : err);
+      if (daGui) return; // đã gửi một phần cho khách: không nối thêm câu trả lời khác phía sau
+    }
+  }
+
   const config = getActiveLlmConfig();
 
   if (config.provider === 'gemini' && config.apiKey) {

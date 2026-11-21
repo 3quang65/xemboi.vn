@@ -28,7 +28,8 @@ Tệp này dành cho anh Cường, Claude Code và Antigravity. Mục đích là
 **Phần v1. Chưa làm lại; đừng lấy làm mẫu thiết kế:**
 - Trang chủ `src/app/page.tsx`, `src/lib/home-template.ts`.
 - `src/app/tu-vi-hom-nay`, `tu-vi-ngay-mai`, `tu-vi-tron-doi`, `tu-tru`, `boi-dich`, `kien-thuc`, `bai-viet`, `la-so`.
-- `src/app/admin/*` và `src/app/api/admin/*`: quản trị cũ. Đợt 0 đã khóa lại; khi khu `/quan-tri` đủ chức năng thì xóa.
+- `src/app/admin/*`: **đã xóa ngày 22/11/2026**. Bốn trang thay thế ở `/quan-tri/so-lieu`, `/quan-tri/khach-hang`, `/quan-tri/hoi-thoai`, `/quan-tri/ai/tro-ly`; đường cũ chuyển 308 (`src/middleware.ts`).
+- `src/app/api/admin/*`: API cũ, **vẫn còn** (trang hội thoại mới còn gọi). Đợt 0 đã khóa lại; sẽ tách sang `/api/quan-tri/*` rồi xóa.
 - `src/lib/core/*`: engine và dữ liệu cũ. Đọc thì được, **không sửa**.
 - `src/lib/ai/*`, `src/components/CouncilChat*`, `FloatingChatWidget`: "Bát Đại Danh Sư".
 - `README.md`: vẫn mô tả bản v1.

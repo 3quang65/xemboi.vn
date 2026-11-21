@@ -5,6 +5,7 @@ export const QUYEN = {
   'tai_khoan.quan_ly': ['QUAN_TRI'],
   'cai_dat.sua': ['QUAN_TRI'],
   'khach_hang.xem': ['QUAN_TRI'],
+  'khach_hang.sua': ['QUAN_TRI'],
   'hoi_thoai.xem': ['QUAN_TRI'],
   'r1.xem': ['QUAN_TRI'],
   'seo.xem': ['QUAN_TRI', 'BIEN_TAP', 'XEM_SO_LIEU'],
@@ -12,6 +13,7 @@ export const QUYEN = {
   'seo.redirect': ['QUAN_TRI', 'BIEN_TAP'],
   'seo.redirect_ten_mien': ['QUAN_TRI'],
   'seo.robots': ['QUAN_TRI'],
+  'noi_dung.xem': ['QUAN_TRI', 'BIEN_TAP', 'CHUYEN_GIA_DUYET'],
   'noi_dung.soan': ['QUAN_TRI', 'BIEN_TAP'],
   'noi_dung.duyet': ['QUAN_TRI', 'CHUYEN_GIA_DUYET'],
   'noi_dung.xuat_ban': ['QUAN_TRI', 'BIEN_TAP'],
@@ -24,6 +26,7 @@ export const QUYEN = {
   'giay_phep.sua': ['QUAN_TRI'],
   'so_lieu.xem': ['QUAN_TRI', 'BIEN_TAP', 'XEM_SO_LIEU'],
   'nhat_ky.xem': ['QUAN_TRI'],
+  'ai.tro_ly': ['QUAN_TRI'],
 } as const satisfies Record<string, readonly VaiTro[]>;
 
 export type Quyen = keyof typeof QUYEN;
@@ -58,6 +61,13 @@ export const MENU_QUAN_TRI: { nhom: string; muc: { ten: string; href: string; qu
     ],
   },
   {
+    nhom: 'Nội dung',
+    muc: [
+      { ten: 'Bài và mục từ', href: '/quan-tri/noi-dung', quyen: 'noi_dung.xem' },
+      { ten: 'Tạo mới', href: '/quan-tri/noi-dung/moi', quyen: 'noi_dung.soan' },
+    ],
+  },
+  {
     nhom: 'Thư viện RAG',
     muc: [
       { ten: 'Nguồn', href: '/quan-tri/rag/nguon', quyen: 'rag.xem_cong_khai' },
@@ -67,10 +77,19 @@ export const MENU_QUAN_TRI: { nhom: string; muc: { ten: string; href: string; qu
     ],
   },
   {
+    nhom: 'Khách và AI',
+    muc: [
+      { ten: 'Số liệu truy cập', href: '/quan-tri/so-lieu', quyen: 'so_lieu.xem' },
+      { ten: 'Khách hàng', href: '/quan-tri/khach-hang', quyen: 'khach_hang.xem' },
+      { ten: 'Hội thoại', href: '/quan-tri/hoi-thoai', quyen: 'hoi_thoai.xem' },
+      { ten: 'Trợ lý AI', href: '/quan-tri/ai/tro-ly', quyen: 'ai.tro_ly' },
+      { ten: 'Mô hình AI', href: '/quan-tri/ai/mo-hinh', quyen: 'ai.tro_ly' },
+    ],
+  },
+  {
     nhom: 'Khác',
     muc: [
       { ten: 'Thí nghiệm R1', href: '/quan-tri/r1', quyen: 'r1.xem' },
-      { ten: 'CRM cũ (/admin)', href: '/admin/dashboard', quyen: 'khach_hang.xem' },
       { ten: 'Tài khoản', href: '/quan-tri/tai-khoan', quyen: 'tai_khoan.quan_ly' },
       { ten: 'Nhật ký thao tác', href: '/quan-tri/nhat-ky', quyen: 'nhat_ky.xem' },
     ],

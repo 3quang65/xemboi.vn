@@ -12,7 +12,7 @@ import { getAgentBySlug } from '@/lib/ai/agent-persona';
 import { parseChartForCouncil, generateAdminSummonCommentary } from '@/lib/ai/council-orchestrator';
 
 export async function GET(req: Request) {
-  const chan = await yeuCauQuanTri(req);
+  const chan = await yeuCauQuanTri(req, 'hoi_thoai.xem');
   if (chan) return chan;
   try {
     const { searchParams } = new URL(req.url);
@@ -28,7 +28,7 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-  const chan = await yeuCauQuanTri(req);
+  const chan = await yeuCauQuanTri(req, 'hoi_thoai.xem');
   if (chan) return chan;
   try {
     const body = await req.json();

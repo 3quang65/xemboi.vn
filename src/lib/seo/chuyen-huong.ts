@@ -68,7 +68,15 @@ export async function timChuyenHuong(host: string | null, pathname: string): Pro
   for (const b of bd.bieuThuc) {
     if (b.tuMien !== mien) continue;
     const k = duong.match(b.re);
-    if (k) { ghiTruyMuon(b.muc.id); return { den: b.muc.den.replace(/\$(\d)/g, (_, i) => k[Number(i)] ?? ''), ma: b.muc.ma }; }
+    if (k) { ghiTruyMuon(b.muc.id); return { den: thayNhom(b.muc.den, k), ma: b.muc.ma }; }
   }
   return null;
+}
+
+/** Thay `$n` bằng nhóm n của biểu thức; `$n:w` đệm số 0 bên trái cho đủ w ký tự (ví dụ ngày 6 → `$1:2` → 06). */
+export function thayNhom(den: string, k: ArrayLike<string | undefined>): string {
+  return den.replace(/\$(\d)(?::(\d))?/g, (_, i: string, w?: string) => {
+    const v = k[Number(i)] ?? '';
+    return w ? v.padStart(Number(w), '0') : v;
+  });
 }

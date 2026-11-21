@@ -45,6 +45,7 @@ try {
     { tuDuongDan: '/_kiem-thu-301', denUrl: '/tu-vi-2027', ma: 301, nguon: 'TAY' },
     { tuDuongDan: '^/_kiem-thu-re/(\\d{4})$', denUrl: '/sinh-nam/$1', ma: 301, nguon: 'TAY', laBieuThuc: true },
     { tuDuongDan: '/_kiem-thu-410', denUrl: '/', ma: 410, nguon: 'TAY' },
+    { tuDuongDan: '^/_kiem-thu-ngay-(\\d{1,2})-(\\d{1,2})-(\\d{4})$', denUrl: '/lich-am/$3/$2:2/$1:2', ma: 301, nguon: 'TAY', laBieuThuc: true },
   ];
   await p.seoChuyenHuong.deleteMany({ where: { tuDuongDan: { in: THU.map((x) => x.tuDuongDan) } } });
   for (const x of THU) await p.seoChuyenHuong.create({ data: { ...x, ghiChu: 'kiem-dot1-seo, tự xóa' } });
@@ -57,6 +58,8 @@ try {
     ok(r2.status === 301 && (r2.headers.get('location') || '').endsWith('/sinh-nam/1990'), `regex → ${r2.status} ${r2.headers.get('location')}`);
     const r3 = await fetch(`${B}/_kiem-thu-410`, { redirect: 'manual' });
     ok(r3.status === 410, `410 → ${r3.status}`);
+    const r5 = await fetch(`${B}/_kiem-thu-ngay-6-2-2027`, { redirect: 'manual' });
+    ok(r5.status === 301 && (r5.headers.get('location') || '').endsWith('/lich-am/2027/02/06'), `regex đệm số 0 → ${r5.status} ${r5.headers.get('location')}`);
     const r4 = await fetch(`${B}/tu-vi-2027`, { redirect: 'manual' });
     ok(r4.status === 200, `trang thường không bị chuyển → ${r4.status}`);
     await cho(6_000); // bộ đếm lượt truy ghi sau 5 giây

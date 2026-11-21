@@ -16,6 +16,24 @@ const COOKIE_PHIEN = 'qt_phien';
 const MO_CONG_KHAI = new Set(['/quan-tri/dang-nhap', '/api/quan-tri/dang-nhap']);
 const KHU_QUAN_TRI = /^\/(admin|quan-tri|api\/admin|api\/quan-tri)(\/|$)/;
 
+// Khu /admin cũ đã gộp vào /quan-tri (Lệnh 22, 22/11/2026). Chỉ trang; /api/admin vẫn chạy cho tới khi tách route mới.
+const ADMIN_CU: [RegExp, (k: RegExpMatchArray) => string][] = [
+  [/^\/admin\/?$/, () => '/quan-tri'],
+  [/^\/admin\/(dashboard|analytics)\/?$/, () => '/quan-tri/so-lieu'],
+  [/^\/admin\/customers\/?$/, () => '/quan-tri/khach-hang'],
+  [/^\/admin\/customers\/([^/]+)\/?$/, (k) => `/quan-tri/khach-hang/${k[1]}`],
+  [/^\/admin\/conversations\/?$/, () => '/quan-tri/hoi-thoai'],
+  [/^\/admin\/agents\/?$/, () => '/quan-tri/ai/tro-ly'],
+  [/^\/admin\/inquiries\/?$/, () => '/quan-tri'],
+];
+function denAdminCu(duong: string): string | null {
+  for (const [re, f] of ADMIN_CU) {
+    const k = duong.match(re);
+    if (k) return f(k);
+  }
+  return null;
+}
+
 function themHeader(res: NextResponse) {
   res.headers.set('X-Robots-Tag', KHONG_INDEX);
   res.headers.set('Cache-Control', 'no-store');
@@ -24,6 +42,14 @@ function themHeader(res: NextResponse) {
 
 export async function middleware(req: NextRequest) {
   const duong = req.nextUrl.pathname;
+
+  const moi = duong.startsWith('/admin') ? denAdminCu(duong) : null;
+  if (moi) {
+    const url = req.nextUrl.clone();
+    url.pathname = moi;
+    url.search = '';
+    return themHeader(NextResponse.redirect(url, 308));
+  }
 
   if (KHU_QUAN_TRI.test(duong)) {
     if (MO_CONG_KHAI.has(duong) || req.cookies.get(COOKIE_PHIEN)?.value || daXacThucQuanTri(req)) {

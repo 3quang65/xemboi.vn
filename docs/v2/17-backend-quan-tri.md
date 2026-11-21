@@ -1935,12 +1935,13 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 >   - `scripts/kiem-dot1-quyen.mjs`: 4 vai trò, menu và quyền đúng;
 >   - `scripts/kiem-dot1-seo.mjs`: sitemap không có trang noindex hoặc nháp; 301, regex và 410 chạy đúng; robots đúng;
 >   - `tests/dot1/rag-pham-vi.test.mjs` 11/11.
+> - **Làm thêm ngày 22/11, sau commit `62074c0`:**
+>   - Sao lưu: `scripts/sao-luu-csdl.mjs` chạy `pg_dump -Fc` rồi `pg_restore --list` để kiểm, giữ 7 bản ngày và 4 bản tuần. Lần đầu: 126 MB, 23 giây, lưu ở `may-tram/sao-luu`. Chưa đặt lịch chạy, chưa mã hóa, chưa chạy trên VPS.
+>   - Chuyển hướng hỗ trợ `$n:w` (đệm số 0). Đã nạp 1 biểu thức thay 730 URL `xem-ngay-tot-xau-ngay-{d}-{m}-{yyyy}` → `/lich-am/{yyyy}/{mm}/{dd}`, đang tắt. `kiem-dot1-seo.mjs` có thêm bài kiểm cho trường hợp này.
+>   - **Không lọc đoạn ngắn**, bỏ mục này khỏi kế hoạch. 1.518 đoạn dưới 8 ký tự gồm 1.130 hào từ Kinh Dịch (ví dụ "九二：貞吉。") và 388 dòng cấu trúc quẻ ("巽下坎上"); 2.168 đoạn chú/sớ trỏ về chúng. Cách xử lý chuyển sang Đợt 3: khi nhúng, ghép thêm `duongDan` và đoạn cha làm ngữ cảnh, rồi đo recall.
 > - **Chưa làm:**
->   - sao lưu `pg_dump`;
 >   - nạp bảng `thuat_ngu`;
->   - tìm lai RRF;
->   - lọc đoạn quá ngắn (1.518 đoạn dưới 8 ký tự);
->   - biểu thức 301 cho 730 URL `xem-ngay-tot-xau` (cần đệm số 0);
+>   - tìm lai RRF (Đợt 3);
 >   - phân loại gõ sai (Levenshtein, 1.1.2).
 
 **Rủi ro:**
@@ -1965,6 +1966,75 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
   - sửa sau khi duyệt thì trạng thái quay lại chờ duyệt;
   - trang chưa có người duyệt tự `noindex`.
 - **Rủi ro:** chất lượng nháp AI với văn bản Hán cổ; chi phí token (đo ở `AiSoanViec`); giao diện soạn theo khối tốn công hơn dự tính.
+
+> **Tiến độ 22/11/2026** (chưa commit):
+> - **Phần lõi** (Claude Code) nằm ở `src/lib/noi-dung/`, gồm hàm thuần và test:
+>   - `khoi.ts`: 9 khối;
+>   - `trich-dan.ts`: bộ kiểm trích dẫn (mã bịa, khối 3 thiếu nguồn, trích nguyên văn dài);
+>   - `quy-trinh.ts`: luật chuyển trạng thái; AI chỉ viết nháp; sửa sau khi duyệt thì quay về chờ duyệt; duyệt pháp lý; tự noindex;
+>   - `onpage.ts`: 17 tiêu chí; tiêu chí 16 chờ đồ thị liên kết ở Đợt 3;
+>   - `ngu-canh-ai.ts`: `taoNguCanhAi` chỉ đọc view công khai.
+>
+>   Cả 4 tiêu chí nghiệm thu đều có test trong `tests/dot2/` (thuần 7/7, CSDL 1/1).
+> - Quyền `noi_dung.xem`, menu "Nội dung".
+> - Trang `/quan-tri/tai-khoan` (Claude Code):
+>   - tạo tài khoản, sửa vai trò và mảng duyệt, vô hiệu hóa, đặt lại mật khẩu, thu hồi phiên;
+>   - bớt quyền thì đăng xuất ngay;
+>   - chống tự khóa và giữ ít nhất một quản trị.
+> - **Giao diện soạn, duyệt, so sánh phiên bản, xem trước Google**, và trang `/quan-tri/nhat-ky`: Antigravity làm theo `lenh-antigravity/21-noi-dung-quan-tri.md`, **xong ngày 22/11**. Báo cáo ở `21-bao-cao.md`.
+>   - Antigravity đã chạy cả vòng trên trình duyệt: thiếu khối thì bị chặn, mã bịa bị báo; giao chuyên gia, chuyên gia đồng ý; sửa sau khi duyệt thì quay về chờ duyệt; xuất bản thì `noindex=false`. Dữ liệu thử đã dọn.
+>   - Claude Code đã soát: mọi action kiểm quyền ở dòng đầu, gọi lại `kiemChuyen` trên máy chủ, ghi nhật ký cùng giao dịch, không có SQL ghép chuỗi hay lớp CSS cũ.
+>   - Nút "AI soạn" do Claude Code gắn (`[id]/NutAiSoan.tsx`, `[id]/ai-soan-hanh-dong.ts`); kiểm bằng `scripts/kiem-dot2-ai-soan.mjs`.
+>   - Hai đề nghị sửa lõi:
+>     1. Đưa lỗi trích dẫn vào onpage cho mọi loại: **không sửa**, vì giao diện đã tự gộp; sửa ở lõi sẽ đếm lỗi hai lần.
+>     2. Điểm onpage vẫn trừ 10 cho T10 sau khi chuyên gia đã duyệt: **để Đợt 3**, việc quét đêm sẽ chấm lại `diemOnpage` theo duyệt thật.
+>   - Chưa thử luồng duyệt pháp lý và vài bộ lọc phụ trên trình duyệt.
+> - **Chuyển bài cũ** bằng `scripts/chuyen-bai-cu.ts` (có cờ `--thu` để chạy thử), chạy lại nhiều lần vẫn an toàn:
+>   - mỗi `Post` (khóa `post:<id>`) và mỗi bài trong `CMS_ARTICLES` (khóa `cms:<slug>`) thành một `NoiDung` loại BAI;
+>   - mỗi bài có một phiên bản `NHAP_CU` (thân giữ HTML cũ) và một `SeoTrang` `/bai-viet/<slug>`, `noindex=true`;
+>   - danh mục chuyển thành nhãn `mang`;
+>   - không xóa hay sửa bảng cũ.
+>
+>   Máy trạm có 0 Post và 4 bài CMS; đã chuyển 4/4, chạy lại thì báo "đã có 4". Trên VPS chưa chạy.
+>
+>   **Còn lại:** gộp danh mục thành trang HUB khi dựng trang hub.
+> - **Chuyển tri thức trợ lý cũ** bằng `scripts/chuyen-tri-thuc-cu.ts` (có cờ `--thu`; test `tests/dot2/chuyen-tri-thuc-cu.test.mjs` 1/1), làm bước 1–4 của 6.4:
+>   - mỗi `AgentKnowledgeDoc` thành một `RagNguon` hạng C, `chiNoiBo`, NOI_BO, gắn trợ lý cũ;
+>   - `rawContent` ghi ra `thu-vien-rag/noi-bo-xemboi/<ma>.txt`, rồi máy trạm chạy `chay.py xu-ly --nguon XB-…`. `chay.py` nay nhận thêm tiền tố `XB-`;
+>   - không chép vector 1536 chiều.
+>
+>   **Lệch 6.4:** mã là `XB-` cộng 10 ký tự hex đầu của sha256(id), không phải 8 ký tự đầu id. Lý do: cuid tạo gần nhau trùng phần đầu, vì phần đầu là dấu thời gian.
+>
+>   Máy trạm có 0 tài liệu cũ; dữ liệu thật nằm trên CSDL VPS, chưa chạy ở đó. Bước 5 (cờ `RAG_V2`, xóa route cũ sau 2 tuần) chưa làm.
+> - **LLM qua 9router** (anh chốt ngày 22/11: dùng dòng GPT trên 9router):
+>   - `src/lib/ai/cau-hinh-llm.ts`: cấu hình lưu `CaiDat` khóa `LLM`; khóa API chỉ ở `NINEROUTER_API_KEY`; hàm `goiLlm` gửi `stream:false`;
+>   - mặc định trợ lý chat dùng `cx/gpt-6-luna`, AI soạn dùng `cx/gpt-6.1-sol` (thử thật 22/11: cả hai model gọi đạt khoảng 1,1 giây; soạn một mục từ điển từ 6 đoạn mất 15 giây, trích dẫn 0 lỗi), cổng `https://token.vip.vn/v1`;
+>   - `llm-provider.ts` ưu tiên 9router khi có khóa, nếu không thì giữ đường cũ;
+>   - trang `/quan-tri/ai/mo-hinh` (quyền `ai.tro_ly`, chỉ quản trị): sửa mô hình và nhiệt độ, thử kết nối, ghi nhật ký `ai.doi_llm`;
+>   - test `tests/dot2/cau-hinh-llm.test.mjs` 5/5;
+>   - khóa `xemboi` (anh tạo) đã ghi vào `.env` máy trạm; khi đưa lên VPS cần thêm vào env của web.
+>
+>   Codex đi qua gói thuê bao nên không tính tiền theo token; vì vậy `GIA_TOKEN` để 0 và chỉ đếm token.
+> - **AI soạn (Đợt 2b): xong.** Phần lõi `src/lib/noi-dung/ai-soan.ts`:
+>   - `aiSoanNhap` lấy đoạn công khai, gọi `soan`, kiểm trích dẫn, rồi lưu phiên bản `AI`, các dòng trích dẫn và `AiSoanViec` (token; chi phí 0 vì đi qua thuê bao);
+>   - nhật ký ghi `nd.ai_soan`;
+>   - từ chối khi nội dung đang chờ duyệt hoặc đã duyệt.
+>
+>   Test `tests/dot2/ai-soan.test.mjs` 5/5 (mô hình giả). Nút "AI soạn" đã gắn vào trang soạn và thử với khóa thật.
+> - **Gộp `/admin/*` vào `/quan-tri/*`: xong** (Antigravity làm 4 trang theo `lenh-antigravity/22-gop-admin-vao-quan-tri.md`, báo cáo ở `22-bao-cao.md`):
+>   - `/quan-tri/so-lieu` (`so_lieu.xem`; `visitorId` chỉ hiện 6 ký tự);
+>   - `/quan-tri/khach-hang` và `[id]` (danh sách che SĐT và email; mở chi tiết ghi `khach_hang.xem_chi_tiet`; sửa nhãn, ghi chú, điểm qua `suaKhachHang` với quyền mới `khach_hang.sua`, ghi `khach_hang.sua`);
+>   - `/quan-tri/hoi-thoai` (vẫn gọi `/api/admin/conversations*`, nay kiểm quyền `hoi_thoai.xem`);
+>   - `/quan-tri/ai/tro-ly` (sửa persona và giọng, nhật ký `ai.sua_tro_ly` chỉ lưu độ dài và sha256 của `systemPrompt`; không có ô khóa API; few-shot chỉ đọc).
+>
+>   Claude Code đã soát mã, thêm nhóm menu "Khách và AI", bỏ mục "CRM cũ", thêm chuyển hướng 308 trong `src/middleware.ts` (`/admin/dashboard|analytics` → so-lieu, `/admin/customers[/id]` → khach-hang, `/admin/conversations` → hoi-thoai, `/admin/agents` → ai/tro-ly, `/admin`, `/admin/inquiries` → `/quan-tri`) và **xóa `src/app/admin/`** (anh đã cho phép). `kiem-dot1-quyen.mjs` kiểm 13 trang và 5 chuyển hướng: đạt.
+>
+>   Đề nghị của Antigravity, để sau:
+>   1. few-shot đang ghi đè tệp `src/lib/ai/few-shot-dialogues.json` lúc chạy (route cũ): chuyển vào CSDL;
+>   2. bảng `AiAgent` ở máy trạm trống (persona chỉ khai báo tĩnh): cần bước seed;
+>   3. tách `/api/admin/conversations*` sang `/api/quan-tri/hoi-thoai`, bỏ nhánh `ADMIN_KEY`, ghi nhật ký các thao tác POST;
+>   4. bỏ số liệu giả dự phòng trong `tracker-server.ts` và `customer-service.ts`.
+> - **Còn lại của Đợt 2:** chạy hai script chuyển dữ liệu trên VPS (khi deploy, xem `viec-can-anh.md`); bước 5 của 6.4 (cờ `RAG_V2`); 4 đề nghị trên.
 
 ### Đợt 3: liên kết, Search Console, đánh giá RAG (45–65 giờ)
 

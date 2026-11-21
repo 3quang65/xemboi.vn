@@ -4,7 +4,7 @@ import { getNextSimulationTurn } from '@/lib/ai/dialogue-simulation';
 import { getMinhChart } from '@/lib/ai/agent-persona';
 
 export async function POST(req: Request) {
-  const chan = await yeuCauQuanTri(req);
+  const chan = await yeuCauQuanTri(req, 'hoi_thoai.xem');
   if (chan) return chan;
   try {
     const body = await req.json();

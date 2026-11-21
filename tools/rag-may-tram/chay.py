@@ -413,8 +413,9 @@ def xu_ly(args) -> int:
             print(f"{ma}: không có trong rag_nguon (chạy nap-danh-muc trước)")
             loi_tong += 1
             continue
-        if not (ma.startswith("KR") or ma.startswith("WS")):
-            print(f"{ma}: ngoài phạm vi Đợt 1 (chỉ Kanripo/Wikisource văn bản sạch), bỏ qua")
+        # XB-: tri thức trợ lý cũ đã chuyển (scripts/chuyen-tri-thuc-cu.ts), văn bản thuần, luôn NOI_BO.
+        if not ma.startswith(("KR", "WS", "XB-")):
+            print(f"{ma}: ngoài phạm vi (chỉ Kanripo/Wikisource văn bản sạch và XB- nội bộ), bỏ qua")
             continue
         if ng["trangThaiTai"] != "đã tải" or not ng["duongDanCucBo"]:
             print(f"{ma}: chưa tải ({ng['trangThaiTai']}), bỏ qua")

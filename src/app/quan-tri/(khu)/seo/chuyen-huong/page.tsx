@@ -32,7 +32,7 @@ export default async function ChuyenHuong({ searchParams }: { searchParams: Prom
             <span>→</span>
             <input className="qt-o" name="denUrl" placeholder="/duong-moi" required aria-label="Đích" style={{ minWidth: 220 }} />
             <select className="qt-o" name="ma" defaultValue="301" aria-label="Mã HTTP"><option>301</option><option>308</option><option>302</option><option>307</option><option>410</option></select>
-            <label><input type="checkbox" name="laBieuThuc" /> biểu thức ($1…)</label>
+            <label><input type="checkbox" name="laBieuThuc" /> biểu thức ($1…; $1:2 = đệm 2 chữ số)</label>
           </div>
           <input className="qt-o" name="ghiChu" placeholder="Ghi chú (không bắt buộc)" />
           <div><button className="qt-nut" type="submit">Lưu</button></div>
