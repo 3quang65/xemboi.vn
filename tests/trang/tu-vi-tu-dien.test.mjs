@@ -21,3 +21,10 @@ test('Tử Vi hành Thổ; miếu hãm khớp bảng engine', () => {
   assert.ok(tv.mieuVuong.includes('Dần') && tv.mieuVuong.includes('Ngọ'));
   assert.equal(chinhTinhTheoSlug('thai-duong').hanh, 'Hỏa');
 });
+
+test('đủ dữ liệu cho mẫu SEO: lĩnh vực 12 cung, chữ Hán 14 chính tinh', async () => {
+  const { CUNG_TU_VI, CHINH_TINH } = await import('../../src/lib/trang/tu-vi-tu-dien.ts');
+  assert.ok(CUNG_TU_VI.every((c) => c.linhVuc.length > 0));
+  assert.ok(CHINH_TINH.every((s) => /^[一-鿿]{2}$/.test(s.han)));
+  assert.equal(CHINH_TINH.find((s) => s.slug === 'tu-vi').han, '紫微');
+});

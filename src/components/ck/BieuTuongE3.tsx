@@ -65,7 +65,9 @@ export type LoaiBieuTuongCongCu =
   | 'nap-am'
   | 'ngu-hanh'
   | 'mau-hop'
-  | 'con-giap';
+  | 'con-giap'
+  | 'xong-dat'
+  | 'kinh-dich';
 
 /** Biểu tượng nét vàng lá theo mẫu E3 cho các ô công cụ. */
 export function BieuTuongCongCu({ loai }: { loai: LoaiBieuTuongCongCu }) {
@@ -236,6 +238,20 @@ export function BieuTuongCongCu({ loai }: { loai: LoaiBieuTuongCongCu }) {
           <circle cx="24" cy="24" r="16" />
           <path d="M24 10v6M24 32v6M10 24h6M32 24h6M14 14l4.2 4.2M29.8 29.8L34 34M34 14l-4.2 4.2M18.2 29.8L14 34" />
           <circle cx="24" cy="24" r="6.5" fill="url(#ck-vl-i)" fillOpacity="0.25" />
+        </>
+      )}
+      {loai === 'xong-dat' && (
+        <>
+          <path d="M8 22L24 9l16 13" />
+          <path d="M12 20v19h24V20" fill="url(#ck-vl-i)" fillOpacity="0.14" />
+          <path d="M20 39V27h8v12" />
+          <circle cx="24" cy="18" r="2.2" fill="url(#ck-vl-i)" />
+        </>
+      )}
+      {loai === 'kinh-dich' && (
+        <>
+          <circle cx="24" cy="24" r="17" />
+          <path d="M14 16h20M14 22h8M26 22h8M14 28h20M14 34h8M26 34h8" />
         </>
       )}
     </svg>

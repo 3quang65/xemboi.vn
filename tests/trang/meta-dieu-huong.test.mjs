@@ -4,7 +4,8 @@ import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import { prisma } from '../../src/lib/prisma.ts';
 import { thongTinTrang, metaTrang, dienMau, chuanHoaDuongDan } from '../../src/lib/trang/meta.ts';
-import { menuChinh, chanTrang, breadcrumb, schemaBreadcrumb } from '../../src/lib/trang/dieu-huong.ts';
+import { menuChinh, chanTrang, breadcrumb, schemaBreadcrumb, trangDaDung } from '../../src/lib/trang/dieu-huong.ts';
+const trangDaDungF4 = () => trangDaDung(4);
 
 after(() => prisma.$disconnect());
 
@@ -53,7 +54,9 @@ test('menu chỉ hiện trang đã dựng; breadcrumb đi theo cha', () => {
   const f1 = menuChinh(1);
   assert.deepEqual(f1.map((m) => m.href), ['/tu-vi']);
   assert.deepEqual(f1[0].con.map((m) => m.href), ['/tu-vi/lap-la-so', '/tu-vi-2027']);
-  assert.equal(menuChinh(5).length, 5);
+  assert.equal(menuChinh(5).length, 6);
+  assert.ok(trangDaDungF4().has('/kinh-dich/gieo-que'));
+  assert.ok(!trangDaDungF4().has('/goi'));
   assert.ok(chanTrang(5).at(-1).muc.some((m) => m.href === '/lien-he'));
 
   assert.deepEqual(breadcrumb('/tu-vi/lap-la-so').map((m) => m.href), ['/', '/tu-vi', '/tu-vi/lap-la-so']);

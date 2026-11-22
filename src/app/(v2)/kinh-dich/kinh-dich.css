@@ -1,0 +1,243 @@
+/* CSS riêng cụm Kinh Dịch (F4) — tiền tố ck-, < 30 KB, dùng biến trên .ck */
+
+.ck-kd-khung-dieu-khien {
+  margin-bottom: 28px;
+}
+
+.ck-kd-cach-luoi {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.ck-kd-hop {
+  border-top: 3px solid var(--ck-son);
+}
+
+.ck-kd-hop h2 {
+  margin: 0 0 8px;
+  font: 700 22px/1.25 var(--ck-f-tieu);
+  color: var(--ck-son);
+}
+
+.ck-kd-hanh-dong {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ck-kd-nhap-tay {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dotted var(--ck-ke-dam);
+}
+
+.ck-kd-nhap-tay summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ck-son);
+  font-size: 14.5px;
+}
+
+.ck-kd-nhap-form {
+  margin-top: 12px;
+}
+
+.ck-kd-nhap-luoi {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ck-kd-nhap-luoi select {
+  width: 100%;
+  height: 40px;
+  padding: 0 28px 0 10px;
+  border: 1px solid var(--ck-vien-o);
+  background-color: #FFFDF8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%238E1B12' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  appearance: none;
+  border-radius: 2px;
+  font: 13.5px var(--ck-f-chu);
+  color: var(--ck-muc);
+}
+
+.ck-kd-thoi-diem {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-left: 4px solid var(--ck-vang-2);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 15.5px;
+  color: var(--ck-muc);
+}
+
+/* 3 quẻ đặt cạnh nhau */
+.ck-que-bo-ba {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ck-que-the {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-top: 3px solid var(--ck-son);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ck-que-nhan {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ck-muc-2);
+  background: var(--ck-nga-2);
+  border: 1px solid var(--ck-ke);
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+.ck-que-ten {
+  margin: 0;
+  font: 700 22px/1.25 var(--ck-f-tieu);
+  color: var(--ck-son);
+}
+
+.ck-que-so {
+  color: var(--ck-vang-3);
+  font-size: 18px;
+}
+
+.ck-que-quai {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ck-muc-2);
+}
+
+.ck-que-hinh {
+  margin-top: 6px;
+  padding: 12px;
+  background: var(--ck-nga-1);
+  border: 1px solid var(--ck-ke);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ck-hao-dong-hang {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) 74px;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 6px;
+  border-radius: 2px;
+}
+
+.ck-hao-dong-hang.ck-hao-dong {
+  background: #FFF4DC;
+  box-shadow: inset 0 0 0 1px rgba(142, 27, 18, 0.35);
+}
+
+.ck-hao-vi {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ck-muc-2);
+  white-space: nowrap;
+}
+
+.ck-hao-vi small {
+  font-weight: 400;
+  color: var(--ck-muc-3);
+}
+
+.ck-hao-vach {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: 12px;
+}
+
+.ck-vach-lien {
+  display: block;
+  width: 100%;
+  height: 7px;
+  background: var(--ck-muc);
+  border-radius: 1px;
+}
+
+.ck-vach-dut {
+  display: block;
+  width: calc(50% - 7px);
+  height: 7px;
+  background: var(--ck-muc);
+  border-radius: 1px;
+}
+
+.ck-hao-dong .ck-vach-lien,
+.ck-hao-dong .ck-vach-dut {
+  background: var(--ck-son);
+}
+
+.ck-hao-dau {
+  text-align: right;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.ck-hao-chu-dong {
+  font-weight: 700;
+  color: var(--ck-son);
+}
+
+.ck-hao-tinh {
+  color: var(--ck-muc-3);
+}
+
+.ck-que-rong {
+  justify-content: flex-start;
+}
+
+.ck-que-rong p {
+  margin: 0;
+  color: var(--ck-muc-2);
+  font-size: 15px;
+}
+
+.ck-kd-mota {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  padding: 16px 20px;
+}
+
+.ck-kd-mota ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--ck-muc-2);
+  line-height: 1.65;
+}
+
+@media (max-width: 1000px) {
+  .ck-que-bo-ba {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .ck-kd-cach-luoi,
+  .ck-kd-nhap-luoi,
+  .ck-que-bo-ba {
+    grid-template-columns: 1fr;
+  }
+}

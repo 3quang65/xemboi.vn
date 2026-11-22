@@ -170,3 +170,8 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Sửa lỗi ở lõi: Tý và Tỵ trùng slug `ty`. Nay Tỵ dùng `ti`, có test kèm. Tổng `tests/trang` là 43 test.
   - Đã nâng `DOT_DA_DUNG = 3` và thêm "Màu hợp mệnh" vào menu.
   - CSS cụm ở `src/components/ck/tu-dien.css` (13 KB).
+- 22/11: nghiệm thu Lệnh 28 (F4).
+  - 17 URL trả mã đúng. Quét 67 liên kết, không có 404. Đối chiếu tay bảng Bát tự 1/1/2000 (thập thần, tàng can, nạp âm, đếm hành) khớp. Gieo quẻ không có lỗi console.
+  - Liên kết từ lá số sang trang cung và sao: tên cung, tên sao của engine khớp slug từ điển.
+  - Lõi thêm `linhVuc` cho 12 cung, chữ Hán cho 14 chính tinh và `NGUON_AN_SAO`, để điền mẫu SEO `{lĩnh vực}`, `{Hán}`, `{nguồn}`.
+  - Đã nâng `DOT_DA_DUNG = 4`. Menu có thêm Kinh Dịch, tạm trỏ `/kinh-dich/gieo-que` vì hub để F6. `/goi` dời sang đợt 5 (chưa dựng). Tổng `tests/trang` là 44 test.

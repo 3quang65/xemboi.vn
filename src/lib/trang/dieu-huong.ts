@@ -4,7 +4,7 @@
 export type MucMenu = { ten: string; href: string; moTa?: string; con?: MucMenu[] };
 
 /** Đợt đã dựng xong. Tăng dần khi nghiệm thu từng đợt (F1 → F5). */
-export const DOT_DA_DUNG = 3;
+export const DOT_DA_DUNG = 4;
 
 const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
   {
@@ -53,6 +53,10 @@ const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
     con: [{ ten: 'Lập lá số bát tự', href: '/bat-tu/lap-la-so' }],
     conDot: [4],
   },
+  {
+    // Hub /kinh-dich và 64 trang quẻ làm ở F6; tạm trỏ thẳng công cụ gieo quẻ.
+    dot: 4, ten: 'Kinh Dịch', href: '/kinh-dich/gieo-que', moTa: 'Gieo quẻ đồng xu, Mai Hoa theo giờ',
+  },
 ];
 
 const locDot = (dot: number) => (m: (typeof TAT_CA)[number]): MucMenu => ({
@@ -77,7 +81,7 @@ export function chanTrang(dot = DOT_DA_DUNG): CotChanTrang[] {
     { dot: 5, ten: 'Nguồn sách', href: '/nguon' },
     { dot: 5, ten: 'Từ điển', href: '/tu-dien' },
     { dot: 5, ten: 'Kiến thức', href: '/kien-thuc' },
-    { dot: 4, ten: 'Bảng giá', href: '/goi' },
+    { dot: 5, ten: 'Bảng giá', href: '/goi' },
     { dot: 5, ten: 'Liên hệ', href: '/lien-he' },
     { dot: 5, ten: 'Chính sách bảo mật', href: '/chinh-sach-bao-mat-va-cookies' },
     { dot: 5, ten: 'Điều khoản sử dụng', href: '/chinh-sach-su-dung-va-khieu-nai' },

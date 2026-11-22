@@ -1,14 +1,17 @@
 'use client';
 
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { HoaVanGoc4, HoaVanMay } from '@/components/r1/HoaVanE3';
 import LaSo12Cung from '@/components/r1/LaSo12Cung';
+import { slugViet } from '@/lib/trang/can-chi';
 import type { KetQuaLaSo, PhanHoiLaSo } from '@/lib/trang/la-so';
 import { CANH_GIO_OPTIONS, gioSangCanhGioValue } from './BieuTuongE3';
 
 export interface FormLaSoProps {
   namXemMacDinh: number;
+  tronDoi?: boolean;
 }
 
 function kiemTraTrenTrinhDuyet(p: {
@@ -51,7 +54,7 @@ function kiemTraTrenTrinhDuyet(p: {
   return null;
 }
 
-export default function FormLaSo({ namXemMacDinh }: FormLaSoProps) {
+export default function FormLaSo({ namXemMacDinh, tronDoi = false }: FormLaSoProps) {
   const searchParams = useSearchParams();
 
   const [lich, setLich] = useState<'duong' | 'am'>('duong');
@@ -210,6 +213,16 @@ export default function FormLaSo({ namXemMacDinh }: FormLaSoProps) {
   }
 
   const dongTomTat = ketQua ? ketQua.tomTat.split('\n').filter(Boolean) : [];
+  const cungMenh = ketQua?.laSo.cung.find((c) => c.ten === 'Mệnh') ?? null;
+
+  const danhSach12Cung = useMemo(() => {
+    if (!ketQua) return [];
+    const menhChi = ketQua.laSo.cung.find((c) => c.ten === 'Mệnh')?.chi ?? 2;
+    return Array.from({ length: 12 }, (_, k) => {
+      const chi = (menhChi + k) % 12;
+      return ketQua.laSo.cung.find((c) => c.chi === chi);
+    }).filter((c): c is NonNullable<typeof c> => Boolean(c));
+  }, [ketQua]);
 
   return (
     <>
@@ -224,7 +237,9 @@ export default function FormLaSo({ namXemMacDinh }: FormLaSoProps) {
           <HoaVanGoc4 />
           <div className="ck-form-tit">
             <HoaVanMay />
-            <h2 id="ck-form-ls-tieu">Thông tin lập lá số</h2>
+            <h2 id="ck-form-ls-tieu">
+              {tronDoi ? 'Thông tin lập lá số trọn đời' : 'Thông tin lập lá số'}
+            </h2>
             <HoaVanMay flipped />
           </div>
 
@@ -405,7 +420,7 @@ export default function FormLaSo({ namXemMacDinh }: FormLaSoProps) {
           </div>
 
           <button type="submit" className="ck-nut ck-nut-son ck-nut-lon" disabled={dangTai}>
-            {dangTai ? 'Đang lập lá số…' : 'Lập lá số'}
+            {dangTai ? 'Đang lập lá số…' : tronDoi ? 'Lập lá số trọn đời' : 'Lập lá số'}
           </button>
 
           <p className="ck-ghi-nho">
@@ -424,7 +439,11 @@ export default function FormLaSo({ namXemMacDinh }: FormLaSoProps) {
         <section ref={ketQuaRef} className="ck-ket-qua" aria-labelledby="ck-kq-tieu">
           <div className="ck-ket-qua-dau">
             <h2 id="ck-kq-tieu">
-              {ketQua.laSo.ten ? `Lá số Tử Vi · ${ketQua.laSo.ten}` : 'Kết quả lá số Tử Vi'}
+              {ketQua.laSo.ten
+                ? `${tronDoi ? 'Lá số Tử Vi trọn đời' : 'Lá số Tử Vi'} · ${ketQua.laSo.ten}`
+                : tronDoi
+                  ? 'Kết quả lá số Tử Vi trọn đời'
+                  : 'Kết quả lá số Tử Vi'}
             </h2>
             <div className="ck-hanh-dong-in">
               <button
@@ -446,11 +465,68 @@ export default function FormLaSo({ namXemMacDinh }: FormLaSoProps) {
                 {dongTomTat.slice(0, 5).map((dong, idx) => (
                   <li key={idx}>{dong}</li>
                 ))}
+                {cungMenh && (
+                  <li>
+                    Chính tinh{' '}
+                    <Link href={`/tu-vi/cung/${slugViet(cungMenh.ten)}`}>cung {cungMenh.ten}</Link>:{' '}
+                    {cungMenh.chinhTinh.length > 0
+                      ? cungMenh.chinhTinh.map((s, i) => (
+                          <React.Fragment key={s.key}>
+                            {i > 0 ? ', ' : ''}
+                            <Link href={`/tu-vi/sao/${slugViet(s.ten)}`}>{s.ten}</Link>
+                            {s.dacTinh ? ` (${s.dacTinh})` : ''}
+                            {s.hoa ? ` · ${s.hoa}` : ''}
+                          </React.Fragment>
+                        ))
+                      : 'Vô chính diệu'}
+                  </li>
+                )}
               </ul>
-              {dongTomTat.length > 5 && (
+              {danhSach12Cung.length > 0 && (
                 <details>
                   <summary>Xem tóm tắt đủ 12 cung (dạng chữ)</summary>
-                  <pre>{ketQua.tomTat}</pre>
+                  <p className="ck-tom-tat-chu-thich">
+                    Ký hiệu đặc tính sao: M = miếu, V = vượng, Đ = đắc địa, B = bình hòa, H = hãm.
+                  </p>
+                  <ul className="ck-tom-tat-12cung">
+                    {danhSach12Cung.map((c) => {
+                      const nhanPhu: string[] = [];
+                      if (c.laThan) nhanPhu.push('có Thân');
+                      if (c.tuan) nhanPhu.push('bị Tuần');
+                      if (c.triet) nhanPhu.push('bị Triệt');
+                      return (
+                        <li key={c.chi}>
+                          <Link href={`/tu-vi/cung/${slugViet(c.ten)}`}>
+                            <strong>{c.ten}</strong>
+                          </Link>{' '}
+                          ({c.can} {c.tenChi}
+                          {nhanPhu.length ? `, ${nhanPhu.join(', ')}` : ''}, đại vận {c.daiVan},{' '}
+                          {c.trangSinh}):{' '}
+                          {c.chinhTinh.length > 0 ? (
+                            c.chinhTinh.map((s, i) => (
+                              <React.Fragment key={s.key}>
+                                {i > 0 ? ', ' : ''}
+                                <Link href={`/tu-vi/sao/${slugViet(s.ten)}`}>{s.ten}</Link>
+                                {s.dacTinh ? ` (${s.dacTinh})` : ''}
+                                {s.hoa ? ` · ${s.hoa}` : ''}
+                              </React.Fragment>
+                            ))
+                          ) : (
+                            <span>Vô chính diệu</span>
+                          )}
+                          {' · '}
+                          <span>
+                            Cát: {c.catTinh.length ? c.catTinh.map((x) => x.ten).join(', ') : 'không'}
+                          </span>
+                          {' · '}
+                          <span>
+                            Hung:{' '}
+                            {c.hungTinh.length ? c.hungTinh.map((x) => x.ten).join(', ') : 'không'}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </details>
               )}
             </div>
@@ -471,6 +547,112 @@ export default function FormLaSo({ namXemMacDinh }: FormLaSoProps) {
             luuNien2027={ketQua.luuNien}
             moTaQuyUoc={ketQua.moTaQuyUoc}
           />
+
+          {tronDoi && ketQua.daiVan.length > 0 && (
+            <>
+              <section className="ck-dv-muc" aria-labelledby="ck-dv-timeline-tieu">
+                <h3 id="ck-dv-timeline-tieu" className="ck-dv-tieu">
+                  Dòng thời gian 12 đại vận (mỗi đại vận 10 năm)
+                </h3>
+                <div className="ck-dv-cuon">
+                  <ol className="ck-dv-timeline">
+                    {ketQua.daiVan.map((dv) => (
+                      <li
+                        key={dv.tuTuoi}
+                        className={`ck-dv-moc${dv.dangChay ? ' ck-dv-dang-chay' : ''}`}
+                      >
+                        <span className="ck-dv-cham" aria-hidden="true" />
+                        <div className="ck-dv-tuoi">
+                          <strong>
+                            {dv.tuTuoi}–{dv.denTuoi} tuổi
+                          </strong>
+                          {dv.dangChay ? <em className="ck-dv-nhan">Đang chạy</em> : null}
+                        </div>
+                        <div className="ck-dv-nam">
+                          {dv.tuNam}–{dv.denNam}
+                        </div>
+                        <div className="ck-dv-cung">
+                          <Link href={`/tu-vi/cung/${slugViet(dv.tenCung)}`}>{dv.tenCung}</Link> ·{' '}
+                          <span>{dv.canChi}</span>
+                        </div>
+                        <div className="ck-dv-sao">
+                          {dv.chinhTinh.length > 0
+                            ? dv.chinhTinh.map((tenSao, i) => (
+                                <React.Fragment key={tenSao}>
+                                  {i > 0 ? ', ' : ''}
+                                  <Link href={`/tu-vi/sao/${slugViet(tenSao)}`}>{tenSao}</Link>
+                                </React.Fragment>
+                              ))
+                            : 'Vô chính diệu'}
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </section>
+
+              <section className="ck-dv-muc" aria-labelledby="ck-dv-bang-tieu">
+                <h3 id="ck-dv-bang-tieu" className="ck-dv-tieu">
+                  Bảng 12 đại vận theo tuổi âm và năm dương
+                </h3>
+                <div className="ck-bang-khung">
+                  <table className="ck-bang ck-bang-the ck-dv-bang">
+                    <thead>
+                      <tr>
+                        <th>Tuổi âm</th>
+                        <th>Năm dương</th>
+                        <th>Cung</th>
+                        <th>Can chi</th>
+                        <th>Chính tinh</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ketQua.daiVan.map((dv) => (
+                        <tr
+                          key={dv.tuTuoi}
+                          className={dv.dangChay ? 'ck-dv-dang-chay' : undefined}
+                        >
+                          <td data-nhan="Tuổi âm">
+                            <div>
+                              <strong>
+                                {dv.tuTuoi}–{dv.denTuoi}
+                              </strong>
+                              {dv.dangChay ? (
+                                <span className="ck-dv-nhan" style={{ marginLeft: 8 }}>
+                                  Đang chạy
+                                </span>
+                              ) : null}
+                            </div>
+                          </td>
+                          <td data-nhan="Năm dương">
+                            {dv.tuNam}–{dv.denNam}
+                          </td>
+                          <td data-nhan="Cung">
+                            <Link href={`/tu-vi/cung/${slugViet(dv.tenCung)}`}>
+                              <strong>{dv.tenCung}</strong>
+                            </Link>
+                          </td>
+                          <td data-nhan="Can chi">{dv.canChi}</td>
+                          <td data-nhan="Chính tinh">
+                            <div>
+                              {dv.chinhTinh.length > 0
+                                ? dv.chinhTinh.map((tenSao, i) => (
+                                    <React.Fragment key={tenSao}>
+                                      {i > 0 ? ', ' : ''}
+                                      <Link href={`/tu-vi/sao/${slugViet(tenSao)}`}>{tenSao}</Link>
+                                    </React.Fragment>
+                                  ))
+                                : 'Vô chính diệu'}
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            </>
+          )}
         </section>
       )}
     </>

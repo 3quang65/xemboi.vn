@@ -1,0 +1,292 @@
+/* CSS riêng cụm Bát tự (F4) — tiền tố ck-, < 30 KB, dùng biến trên .ck */
+
+.ck-bt-form-khung {
+  max-width: 760px;
+  margin: 0 auto 30px;
+}
+
+.ck-bt-ngan-khung {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.ck-bt-hang-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ck-bt-hang-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ck-bt-hang-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ck-bt-tom-tat {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-top: 3px solid var(--ck-son);
+  padding: 18px 20px;
+  margin-bottom: 26px;
+}
+
+.ck-bt-tom-tat-luoi {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ck-bt-bang-khung {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+}
+
+.ck-bt-bang {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 15px;
+}
+
+.ck-bt-bang caption {
+  caption-side: top;
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 13.5px;
+  color: var(--ck-muc-2);
+  background: var(--ck-nga-1);
+  border-bottom: 1px solid var(--ck-ke);
+}
+
+.ck-bt-bang th,
+.ck-bt-bang td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--ck-ke);
+  border-right: 1px solid var(--ck-ke);
+  vertical-align: top;
+}
+
+.ck-bt-bang th:last-child,
+.ck-bt-bang td:last-child {
+  border-right: 0;
+}
+
+.ck-bt-bang tbody tr:last-child th,
+.ck-bt-bang tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.ck-bt-bang thead th {
+  background: var(--ck-nga-2);
+  border-bottom: 1px solid var(--ck-ke-dam);
+  color: var(--ck-muc);
+  font-weight: 700;
+}
+
+.ck-bt-bang thead th small {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ck-muc-3);
+  margin-top: 2px;
+}
+
+.ck-bt-nhan-hang {
+  text-align: left;
+  font-weight: 700;
+  color: var(--ck-muc-2);
+  background: var(--ck-nga-1);
+  width: 130px;
+}
+
+.ck-bt-cot-ngay {
+  background: #FFF9EB;
+}
+
+.ck-bt-chu-lon {
+  display: inline-block;
+  font: 700 24px/1.2 var(--ck-f-tieu);
+}
+
+.ck-bt-hanh-phu {
+  display: block;
+  font-size: 12.5px;
+  color: var(--ck-muc-3);
+  margin-top: 2px;
+}
+
+.ck-bt-chu-kim { color: var(--ck-kim); }
+.ck-bt-chu-moc { color: var(--ck-moc); }
+.ck-bt-chu-thuy { color: var(--ck-thuy); }
+.ck-bt-chu-hoa { color: var(--ck-hoa); }
+.ck-bt-chu-tho { color: var(--ck-tho); }
+
+.ck-bt-tang-ds {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13.5px;
+}
+
+.ck-bt-tang-ds li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Đếm ngũ hành 8 chữ */
+.ck-bt-hanh-ds {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  padding: 16px 18px;
+}
+
+.ck-bt-hanh-o {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ck-bt-hanh-dau {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.ck-bt-hanh-thanh {
+  height: 10px;
+  background: var(--ck-nga-2);
+  border: 1px solid var(--ck-ke);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.ck-bt-hanh-muc {
+  height: 100%;
+  border-radius: 1px;
+}
+
+.ck-bt-muc-kim { background: var(--ck-kim); }
+.ck-bt-muc-moc { background: var(--ck-moc); }
+.ck-bt-muc-thuy { background: var(--ck-thuy); }
+.ck-bt-muc-hoa { background: var(--ck-hoa); }
+.ck-bt-muc-tho { background: var(--ck-tho); }
+
+.ck-bt-thieu-hanh {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--ck-nga-1);
+  border: 1px solid var(--ck-ke-dam);
+  border-left: 3px solid var(--ck-vang-2);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ck-muc);
+}
+
+/* Đại vận Bát tự */
+.ck-bt-khoi-van {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ck-muc);
+}
+
+.ck-bt-dv-chay td {
+  background: #FFF7DF;
+}
+
+.ck-bt-dv-chay td:first-child {
+  border-left: 4px solid var(--ck-son);
+}
+
+.ck-bt-nhan-chay {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--ck-son);
+  color: #FBF1DA;
+  border-radius: 2px;
+}
+
+.ck-bt-quy-uoc {
+  margin-top: 24px;
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-left: 4px solid var(--ck-vang-2);
+  padding: 14px 18px;
+}
+
+.ck-bt-quy-uoc summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--ck-son);
+}
+
+.ck-bt-quy-uoc ul {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  line-height: 1.65;
+  color: var(--ck-muc-2);
+}
+
+@media (max-width: 700px) {
+  .ck-bt-hang-4,
+  .ck-bt-hang-3,
+  .ck-bt-hang-2,
+  .ck-bt-tom-tat-luoi,
+  .ck-bt-hanh-ds {
+    grid-template-columns: 1fr;
+  }
+  .ck-bt-bang {
+    font-size: 13.5px;
+    min-width: 490px;
+  }
+  .ck-bt-bang th,
+  .ck-bt-bang td {
+    padding: 9px 8px;
+  }
+  .ck-bt-bang .ck-bt-nhan-hang {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    width: 96px;
+    border-right: 1px solid var(--ck-ke-dam);
+  }
+  .ck-bt-chu-lon {
+    font-size: 19px;
+  }
+  .ck-bt-dv-chay {
+    background: #FFF7DF;
+    border-left: 4px solid var(--ck-son);
+  }
+  .ck-bt-dv-chay td:first-child {
+    border-left: 0;
+  }
+}

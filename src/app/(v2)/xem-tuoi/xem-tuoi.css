@@ -1,0 +1,249 @@
+/* CSS riêng cụm Xem tuổi (F4) — tiền tố ck-, < 30 KB, dùng biến trên .ck */
+
+.ck-xt-mang {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ck-xt-tet-banner {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-left: 4px solid var(--ck-son);
+  padding: 16px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 18px;
+  margin-bottom: 24px;
+}
+
+.ck-xt-tet-banner p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ck-muc);
+}
+
+.ck-xt-tet-banner strong {
+  color: var(--ck-son);
+}
+
+.ck-xt-form-khung {
+  max-width: 780px;
+  margin: 0 auto 28px;
+}
+
+.ck-xt-form-2cot {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.ck-xt-hai-nguoi {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.ck-xt-nguoi-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(142, 27, 18, 0.35);
+}
+
+.ck-xt-nguoi-link:hover {
+  border-bottom-color: var(--ck-son);
+}
+
+/* Nhãn đánh giá nhẹ nhàng, không dùng màu đỏ chói */
+.ck-muc-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 58px;
+  padding: 3px 10px;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.ck-muc-tot {
+  background: #ECF5EE;
+  color: #1E5D2B;
+  border-color: #96C49F;
+}
+
+.ck-muc-binh {
+  background: #F4EFE3;
+  color: #5C4B38;
+  border-color: #C7B593;
+}
+
+.ck-muc-xau {
+  background: #F9EFE2;
+  color: #7C4A1A;
+  border-color: #CFA77A;
+}
+
+.ck-xt-tong {
+  margin-top: 16px;
+  padding: 15px 18px;
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-left: 4px solid var(--ck-vang-2);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ck-muc);
+}
+
+.ck-xt-luu-y {
+  margin: 12px 0 0;
+  font-size: 14.5px;
+  color: var(--ck-muc-2);
+}
+
+/* Xông đất */
+.ck-xd-tom-tat {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.ck-xd-tom-tat p {
+  margin: 0;
+  color: var(--ck-muc);
+}
+
+.ck-xd-tom-tat p + p {
+  margin-top: 6px;
+  color: var(--ck-muc-2);
+  font-size: 14.5px;
+}
+
+.ck-xd-ds {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ck-xd-the {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-top: 3px solid var(--ck-vang-2);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ck-xd-dau {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ck-xd-dau h3 {
+  margin: 0;
+  font: 700 20px/1.25 var(--ck-f-tieu);
+  color: var(--ck-son);
+}
+
+.ck-xd-dau h3 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(142, 27, 18, 0.35);
+}
+
+.ck-xd-dau h3 a:hover {
+  border-bottom-color: var(--ck-son);
+}
+
+.ck-xd-tuoi {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ck-muc-2);
+  background: var(--ck-nga-2);
+  padding: 2px 9px;
+  border: 1px solid var(--ck-ke);
+  border-radius: 2px;
+}
+
+.ck-xd-nap-am {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--ck-muc-2);
+}
+
+.ck-xd-chi-tiet {
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 1px dotted var(--ck-ke-dam);
+}
+
+.ck-xd-chi-tiet summary {
+  cursor: pointer;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ck-son);
+}
+
+.ck-xd-tieu-chi {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ck-xd-tieu-chi li {
+  background: var(--ck-nga-1);
+  border: 1px solid var(--ck-ke);
+  padding: 8px 10px;
+  font-size: 13.5px;
+}
+
+.ck-xd-tieu-chi-dau {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+
+.ck-xd-tieu-chi p {
+  margin: 0;
+  color: var(--ck-muc-2);
+}
+
+.ck-xd-rong {
+  background: var(--ck-the-nen);
+  border: 1px dashed var(--ck-ke-dam);
+  padding: 22px;
+  color: var(--ck-muc);
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .ck-xt-mang,
+  .ck-xt-form-2cot,
+  .ck-xt-hai-nguoi,
+  .ck-xd-ds {
+    grid-template-columns: 1fr;
+  }
+  .ck-xt-tet-banner {
+    padding: 14px 16px;
+  }
+}
