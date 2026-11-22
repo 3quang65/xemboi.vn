@@ -187,3 +187,60 @@ export function tietKhiNam(nam: number): { ten: string; ngay: string }[] {
 
 /** Tháng nhuận của năm âm (0 nếu không nhuận). */
 export { thangNhuan };
+
+// ---------- năm ----------
+export const NAM_LICH_INDEX_TU = 2020;
+export const NAM_LICH_INDEX_DEN = 2035;
+
+export type LeTrongNam = { ten: string; am: string; duong: string; thu: string };
+
+/** Các lễ âm lịch của năm âm `namAm`, kèm ngày dương (giao thừa tính theo tháng Chạp thật). */
+export function leAmTrongNam(namAm: number): LeTrongNam[] {
+  const kq: LeTrongNam[] = [];
+  for (const [k, ten] of Object.entries(LE_AM)) {
+    const [d, m] = k.split('-').map(Number);
+    const dg = amSangDuong(d, m, namAm);
+    if (!dg) continue;
+    kq.push({ ten, am: `${d}/${m}`, duong: isoDuong(dg), thu: THU[(soNgayJulius(dg.ngay, dg.thang, dg.nam) + 1) % 7] });
+  }
+  const tetSau = amSangDuong(1, 1, namAm + 1);
+  if (tetSau) {
+    const gt = tuSoNgayJulius(soNgayJulius(tetSau.ngay, tetSau.thang, tetSau.nam) - 1);
+    const am = duongSangAm(gt.ngay, gt.thang, gt.nam);
+    kq.push({ ten: 'Giao thừa', am: `${am.ngay}/12`, duong: isoDuong(gt), thu: THU[(soNgayJulius(gt.ngay, gt.thang, gt.nam) + 1) % 7] });
+  }
+  return kq.sort((a, b) => a.duong.localeCompare(b.duong));
+}
+
+export type TongQuanNam = {
+  nam: number; canChi: string; conGiap: string; tet: string; thuTet: string;
+  /** Tháng nhuận của năm âm `nam` (0 = không nhuận). */
+  thangNhuan: number;
+  tietKhi: { ten: string; ngay: string }[];
+  le: LeTrongNam[];
+  duocIndex: boolean;
+};
+
+/** Tổng quan năm `nam` cho trang /lich-am/{yyyy}: năm âm cùng số, Tết, nhuận, 24 tiết khí năm dương, các lễ. */
+export function tongQuanNam(nam: number): TongQuanNam {
+  if (!Number.isInteger(nam) || nam < 1900 || nam > 2100) throw new RangeError(`Năm ngoài khoảng 1900–2100: ${nam}`);
+  const cc = canChiNam(nam);
+  const tet = amSangDuong(1, 1, nam)!;
+  return {
+    nam, canChi: cc.ten, conGiap: TEN_CON_GIAP[cc.chi], tet: isoDuong(tet), thuTet: THU[(soNgayJulius(tet.ngay, tet.thang, tet.nam) + 1) % 7],
+    thangNhuan: thangNhuan(nam), tietKhi: tietKhiNam(nam), le: leAmTrongNam(nam),
+    duocIndex: nam >= NAM_LICH_INDEX_TU && nam <= NAM_LICH_INDEX_DEN,
+  };
+}
+
+/** Tết gần nhất sắp tới (hoặc hôm nay nếu đang là mùng 1) và số ngày còn lại, theo giờ Việt Nam. */
+export function tetSapToi(luc = new Date()): { namAm: number; canChi: string; ngay: string; thu: string; conNgay: number } {
+  const h = ngayHienTaiVN(luc);
+  const jdnNay = soNgayJulius(h.ngay, h.thang, h.nam);
+  for (const namAm of [h.nam, h.nam + 1]) {
+    const t = amSangDuong(1, 1, namAm)!;
+    const jdn = soNgayJulius(t.ngay, t.thang, t.nam);
+    if (jdn >= jdnNay) return { namAm, canChi: canChiNam(namAm).ten, ngay: isoDuong(t), thu: THU[(jdn + 1) % 7], conNgay: jdn - jdnNay };
+  }
+  throw new Error('Không tìm thấy Tết');
+}

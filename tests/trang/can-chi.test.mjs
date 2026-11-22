@@ -57,3 +57,7 @@ test('danh sách năm sinh 1930–2030 và năm của hoa giáp', () => {
   assert.equal(namSinhHopLe(1929), false);
   assert.throws(() => namSinh(2031), RangeError);
 });
+
+test('Lập xuân của năm sinh', () => {
+  assert.equal(namSinh(2026).lapXuan, '2026-02-04');
+});

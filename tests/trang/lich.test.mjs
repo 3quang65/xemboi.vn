@@ -67,3 +67,21 @@ test('kiểm hợp lệ', () => {
   assert.equal(tenThangAm(12), 'tháng Chạp');
   assert.equal(tenThangAm(4, true), 'tháng 4 nhuận');
 });
+
+test('tổng quan năm 2026 và Tết sắp tới', async () => {
+  const { tongQuanNam, leAmTrongNam, tetSapToi } = await import('../../src/lib/trang/lich.ts');
+  const n = tongQuanNam(2026);
+  assert.equal(n.canChi, 'Bính Ngọ');
+  assert.equal(n.tet, '2026-02-17');
+  assert.equal(n.duocIndex, true);
+  assert.equal(n.tietKhi.length, 24);
+  assert.equal(tongQuanNam(2025).thangNhuan, 6); // Ất Tỵ nhuận tháng 6
+  const le = leAmTrongNam(2026);
+  assert.ok(le.some((l) => l.ten === 'Tết Trung thu' && l.duong === '2026-09-25'));
+  assert.equal(le.at(-1).ten, 'Giao thừa');
+  assert.equal(le.at(-1).duong, '2027-02-05');
+  const t = tetSapToi(new Date('2026-11-22T03:00:00Z'));
+  assert.deepEqual([t.namAm, t.canChi, t.ngay], [2027, 'Đinh Mùi', '2027-02-06']);
+  assert.equal(t.conNgay, 76);
+  assert.equal(tetSapToi(new Date('2026-02-17T03:00:00Z')).conNgay, 0);
+});

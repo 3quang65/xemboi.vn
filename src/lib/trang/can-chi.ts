@@ -3,6 +3,7 @@
 // Nguồn bảng nạp âm: src/lib/tuvi-v2/data/nap-am.json (Tam Mệnh Thông Hội; Tử Vi Đẩu Số Tân Biên).
 import { DIA_CHI, TEN_CON_GIAP, THIEN_CAN, amSangDuong, canChiNam, soNgayJulius, tuSoNgayJulius } from '@/lib/tuvi-v2/am-lich';
 import bangNapAm from '@/lib/tuvi-v2/data/nap-am.json';
+import { tietKhiNam } from './lich';
 
 export type Hanh = 'Kim' | 'Mộc' | 'Thủy' | 'Hỏa' | 'Thổ';
 export const NGU_HANH: Hanh[] = ['Kim', 'Thủy', 'Mộc', 'Hỏa', 'Thổ']; // thứ tự tương sinh: Kim sinh Thủy sinh Mộc...
@@ -104,6 +105,8 @@ export type ThongTinNamSinh = {
   napAm: string; slugNapAm: string; hanh: Hanh; quanHe: QuanHeHanh;
   /** Năm âm bắt đầu từ Tết (mùng 1 tháng Giêng) và kết thúc trước Tết năm sau, ngày dương 'YYYY-MM-DD'. */
   tuNgay: string; denNgay: string;
+  /** Ngày Lập xuân của năm dương `nam` (ranh giới tuổi theo bát tự). */
+  lapXuan: string;
   cungPhiNam: CungPhi; cungPhiNu: CungPhi; mau: MauHopMenh;
   tuoiAm: (namXem: number) => number;
 };
@@ -125,7 +128,7 @@ export function namSinh(nam: number): ThongTinNamSinh {
   return {
     nam, canChi: cc.ten, can: THIEN_CAN[cc.can], chi: DIA_CHI[cc.chi], conGiap: TEN_CON_GIAP[cc.chi], hoaGiap: hg,
     napAm: hg.napAm, slugNapAm: hg.slugNapAm, hanh: hg.hanh, quanHe: quanHeHanh(hg.hanh),
-    tuNgay: isoTu(tet), denNgay: isoTu(truocTetSau),
+    tuNgay: isoTu(tet), denNgay: isoTu(truocTetSau), lapXuan: tietKhiNam(nam).find((t) => t.ten === 'Lập xuân')!.ngay,
     cungPhiNam: cungPhi(nam, 'nam'), cungPhiNu: cungPhi(nam, 'nu'), mau: mauHopMenh(hg.hanh),
     tuoiAm: (namXem: number) => namXem - nam + 1,
   };
