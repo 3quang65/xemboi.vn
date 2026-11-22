@@ -2074,7 +2074,12 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 >   - kéo từng ngày, 2 truy vấn: ngày×trang×truy vấn×thiết bị → `SeoGscNgay`, ngày×trang×thiết bị → `SeoGscTrangNgay`; tự phân trang 25.000 dòng; kéo lại ngày nào thì thay dữ liệu ngày đó. Mặc định kéo lại 5 ngày gần nhất (Google chốt chậm 2–3 ngày); `--lan-dau` kéo 16 tháng;
 >   - cảnh báo, mốc là ngày mới nhất có dữ liệu, so 7 ngày gần nhất với 28 ngày trước đó `[GIẢ ĐỊNH ngưỡng]`: `TUT_HANG` theo cặp trang–truy vấn (≥ 50 hiển thị trong 7 ngày và vị trí tụt ≥ 3) và theo trang (nhấp trung bình ngày giảm ≥ 40 %, cần ≥ 20 nhấp trong 28 ngày); `TRUNG_Y_DINH` (mục 1.1 bước 7b); cảnh báo hết đúng thì tự đóng. Báo cáo lần cuối ở `CaiDat` `SEO_GSC_LAN_CUOI`;
 >   - test `tests/dot3/gsc.test.mjs` 4/4 (khóa RSA tự sinh, fetch giả, dữ liệu `[THỬ]` năm 2099). Sửa một lỗi tìm ra khi test: so cột `DATE` với tham số `Date` bị lệch một ngày theo múi giờ phiên, nay so bằng chuỗi `::date`.
->   - Chưa làm: trang `/quan-tri/seo/xep-hang` (giao Antigravity khi có dữ liệu thật).
+>   - Trang `/quan-tri/seo/xep-hang` (Lệnh 24, Antigravity, 22/11) gồm 4 tab: tổng quan, theo trang, theo truy vấn, cảnh báo. Trang được dựng và kiểm trên dữ liệu giả `[THỬ]` từ `scripts/thu-gsc-gia.ts` (45 ngày, 3 URL `_thu-gsc`, 4 cảnh báo); khi có dữ liệu GSC thật thì chạy `--xoa` để dọn.
+> - **Lệnh 24, Antigravity làm, Claude Code duyệt 22/11:**
+>   - Trang `/quan-tri/rag/danh-gia` có 4 tab: bảng 29 cấu hình, so sánh A/B, từng câu, bộ câu hỏi chuẩn.
+>   - Trang `rag/thu` có thêm nút "Lưu thành câu hỏi chuẩn", mã câu dạng `G000001…`. Câu `Q…` không sửa hay xóa được từ giao diện.
+>   - Claude Code thêm vào menu hai mục "Xếp hạng" và "Đánh giá", đưa `seo/xep-hang` vào `kiem-dot1-quyen.mjs` (đạt 16/16 với quản trị), và nới cột tên cấu hình.
+>   - So cấu hình VPS (0,72) với cấu hình tốt nhất (0,87): B hơn 48 câu, A hơn 21 câu, bằng nhau 31 câu.
 > - **Gợi ý liên kết theo ngữ nghĩa** (`tools/rag-may-tram/nhung_trang_seo.py` + `src/lib/seo/goi-y-ngu-nghia.ts` + `scripts/seo-goi-y-ngu-nghia.ts`):
 >   - nhúng bge-m3 `title + H1 + 500 ký tự đầu của <main>` (đọc trang đang chạy, không theo chuyển hướng); trang chưa dựng thì dùng meta description. Lần đầu: 129 trang, 7 trang có nội dung thật, 122 trang dùng meta;
 >   - mỗi trang lấy 10 trang gần nhất, cosine ≥ 0,65 `[GIẢ ĐỊNH]` (0,6 ra 879 gợi ý, 0,65 ra 459, 0,7 ra 125), cộng 0,05 nếu cùng mảng, bỏ trang đích noindex và cặp đã có liên kết từ nguồn khác; cặp đã bỏ qua vẫn giữ chỗ nên không quay lại. Chạy lại không sinh thêm (459 → 0);

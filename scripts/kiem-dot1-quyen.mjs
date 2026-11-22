@@ -4,16 +4,16 @@
 import fs from 'node:fs';
 const B = process.argv[2] || 'http://localhost:3047';
 const TK = JSON.parse(fs.readFileSync('D:/VibeCode/Antigravity/may-tram/tai-khoan-thu.json', 'utf8'));
-const TRANG = ['/quan-tri/seo/tu-khoa', '/quan-tri/seo/do-phu', '/quan-tri/seo/tu-khoa-loai', '/quan-tri/seo/trang', '/quan-tri/seo/chuyen-huong', '/quan-tri/seo/lien-ket', '/quan-tri/seo/lich-mua', '/quan-tri/seo/tu-khoa/nhap', '/quan-tri/r1', '/quan-tri/tai-khoan', '/quan-tri/ai/mo-hinh', '/quan-tri/so-lieu', '/quan-tri/khach-hang', '/quan-tri/hoi-thoai', '/quan-tri/ai/tro-ly'];
+const TRANG = ['/quan-tri/seo/tu-khoa', '/quan-tri/seo/do-phu', '/quan-tri/seo/tu-khoa-loai', '/quan-tri/seo/trang', '/quan-tri/seo/chuyen-huong', '/quan-tri/seo/lien-ket', '/quan-tri/seo/lich-mua', '/quan-tri/seo/xep-hang', '/quan-tri/seo/tu-khoa/nhap', '/quan-tri/r1', '/quan-tri/tai-khoan', '/quan-tri/ai/mo-hinh', '/quan-tri/so-lieu', '/quan-tri/khach-hang', '/quan-tri/hoi-thoai', '/quan-tri/ai/tro-ly'];
 const CHI_QT = ['/quan-tri/r1', '/quan-tri/tai-khoan', '/quan-tri/ai/mo-hinh', '/quan-tri/khach-hang', '/quan-tri/hoi-thoai', '/quan-tri/ai/tro-ly'];
 // Trang phải chứa chuỗi này khi vào được (bắt lỗi trang trả 200 nhưng vỡ).
-const CHUA = { '/quan-tri/seo/lien-ket': 'Liên kết', '/quan-tri/seo/lich-mua': 'Tết 2027', '/quan-tri/ai/mo-hinh': 'Mô hình AI', '/quan-tri/tai-khoan': 'Tạo tài khoản' };
+const CHUA = { '/quan-tri/seo/lien-ket': 'Liên kết', '/quan-tri/seo/lich-mua': 'Tết 2027', '/quan-tri/seo/xep-hang': 'Search Console', '/quan-tri/ai/mo-hinh': 'Mô hình AI', '/quan-tri/tai-khoan': 'Tạo tài khoản' };
 // Kỳ vọng theo src/lib/quan-tri/quyen.ts
 const KY_VONG = {
   'qt@xemboi.test': TRANG,
   'bt@xemboi.test': TRANG.filter((t) => !CHI_QT.includes(t)),
   'cg@xemboi.test': [],
-  'sl@xemboi.test': ['/quan-tri/seo/tu-khoa', '/quan-tri/seo/do-phu', '/quan-tri/seo/tu-khoa-loai', '/quan-tri/seo/trang', '/quan-tri/seo/chuyen-huong', '/quan-tri/seo/lien-ket', '/quan-tri/seo/lich-mua', '/quan-tri/so-lieu'], // r1.xem chỉ QUAN_TRI (dữ liệu khách)
+  'sl@xemboi.test': ['/quan-tri/seo/tu-khoa', '/quan-tri/seo/do-phu', '/quan-tri/seo/tu-khoa-loai', '/quan-tri/seo/trang', '/quan-tri/seo/chuyen-huong', '/quan-tri/seo/lien-ket', '/quan-tri/seo/lich-mua', '/quan-tri/seo/xep-hang', '/quan-tri/so-lieu'], // r1.xem chỉ QUAN_TRI (dữ liệu khách)
 };
 let loi = 0;
 for (const [email, v] of Object.entries(TK)) {

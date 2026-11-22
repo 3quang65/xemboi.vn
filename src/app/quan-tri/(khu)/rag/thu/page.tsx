@@ -2,11 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 import { yeuCauQuyen } from '@/lib/quan-tri/phien';
+import { coQuyen } from '@/lib/quan-tri/quyen';
 import { Prisma } from '@prisma/client';
 import { duocXemNoiBo, nguCanhTruyVan } from '@/lib/rag/pham-vi';
 import { moRongThuatNgu, napBangThuatNgu, timLai } from '@/lib/rag/tim-lai';
 import { vietLaiCauHoi, MO_HINH_VIET_LAI, type KetQuaVietLai } from '@/lib/rag/viet-lai-cau';
-import { catVanBan, nhanLoaiDoan, nhanPhamVi, so } from '../HienThi';
+import { so, ThongBao } from '../HienThi';
+import { KetQuaVaLuuCauHoi } from './KetQuaVaLuuCauHoi';
 
 export const metadata: Metadata = { title: 'Thử truy vấn RAG' };
 export const dynamic = 'force-dynamic';
@@ -29,12 +31,13 @@ type KetQuaTruyVan = {
   diem: number;
 };
 
-type Tham = { q?: string; nguCanh?: string; cach?: string; vietLai?: string };
+type Tham = { q?: string; nguCanh?: string; cach?: string; vietLai?: string; bao?: string; loi?: string };
 
 export default async function ThuTruyVanRag({ searchParams }: { searchParams: Promise<Tham> }) {
   const nd = await yeuCauQuyen('rag.xem_cong_khai');
   const sp = await searchParams;
   const xemNoiBo = duocXemNoiBo(nd);
+  const sua = coQuyen(nd.vaiTro, 'rag.sua_doan');
   const q = (sp.q ?? '').trim().slice(0, 500);
   const nguCanh = nguCanhTruyVan(nd, sp.nguCanh);
 
@@ -186,6 +189,7 @@ export default async function ThuTruyVanRag({ searchParams }: { searchParams: Pr
         <b>Tìm lai</b> (mặc định): đổi tên sao, cung, quẻ… sang chữ Hán theo bảng thuật ngữ, nhờ LLM <code>{MO_HINH_VIET_LAI}</code> của cụm máy nhà
         đoán thêm thuật ngữ và một câu văn ngôn mẫu, rồi xếp hạng BM25 trên văn bản chuẩn. <b>Tìm cũ</b>: toàn văn + trigram. Lấy tối đa 20 đoạn.
       </p>
+      <ThongBao bao={sp.bao} loi={sp.loi} />
 
       <div className="qt-bao" role="note">
         Tìm vector chưa bật ở web; số đo các cách tìm ở <code>docs/v2/bao-cao-danh-gia-rag.md</code>.
@@ -242,66 +246,18 @@ export default async function ThuTruyVanRag({ searchParams }: { searchParams: Pr
             </div>
           )}
 
-          <div className="qt-the qt-the-cuon">
-            <table className="qt-bang">
-              <thead>
-                <tr>
-                  <th className="qt-cot-so">Hạng</th>
-                  <th className="qt-cot-so">Điểm</th>
-                  <th>Mã đoạn</th>
-                  <th>Nguồn &amp; Đường dẫn</th>
-                  <th>Nội dung</th>
-                  <th>Phạm vi</th>
-                </tr>
-              </thead>
-              <tbody>
-                {ketQua.length === 0 && (
-                  <tr>
-                    <td colSpan={6} style={{ color: 'var(--muted)' }}>
-                      Không có đoạn nào khớp từ khóa này.
-                    </td>
-                  </tr>
-                )}
-                {ketQua.map((r, i) => (
-                  <tr key={String(r.id)}>
-                    <td className="qt-cot-so">{i + 1}</td>
-                    <td className="qt-cot-so" style={{ whiteSpace: 'nowrap' }}>
-                      <div><b>{r.diem.toFixed(3)}</b></div>
-                      <div style={{ color: 'var(--muted)', fontSize: 11 }}>
-                        {cach === 'lai' ? 'BM25' : `tsv ${r.diemTsv.toFixed(2)} · trgm ${r.diemTrgm.toFixed(2)}`}
-                      </div>
-                    </td>
-                    <td style={{ whiteSpace: 'nowrap' }}>
-                      <Link href={`/quan-tri/rag/doan/${String(r.id)}`}><b>#{String(r.id)}</b></Link>
-                      <div style={{ marginTop: 4 }}>{nhanLoaiDoan(r.loai)}</div>
-                    </td>
-                    <td style={{ minWidth: 160 }}>
-                      <div>
-                        <Link href={`/quan-tri/rag/nguon/${r.nguonId}`}><b>{r.nguonMa}</b></Link> · {r.nguonTen}
-                      </div>
-                      <div style={{ color: 'var(--muted)', fontSize: 12 }}>
-                        {r.duongDan.join(' › ') || '–'}
-                      </div>
-                    </td>
-                    <td style={{ maxWidth: 500 }}>
-                      <div style={{ whiteSpace: 'pre-wrap' }}>{catVanBan(r.vanBanChuan ?? r.vanBan, 400)}</div>
-                      {r.hanViet && (
-                        <div style={{ marginTop: 4, fontSize: 12, color: 'var(--muted)' }}>
-                          <b>Hán Việt:</b> {catVanBan(r.hanViet, 200)}
-                        </div>
-                      )}
-                      {r.dichVi && (
-                        <div style={{ marginTop: 4, fontSize: 12, color: 'var(--muted)' }}>
-                          <b>Dịch Việt:</b> {catVanBan(r.dichVi, 200)}
-                        </div>
-                      )}
-                    </td>
-                    <td style={{ whiteSpace: 'nowrap' }}>{nhanPhamVi(r.phamVi)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <KetQuaVaLuuCauHoi
+            ketQua={ketQua.map((r) => ({ ...r, id: String(r.id) }))}
+            q={q}
+            cach={cach}
+            sua={sua}
+            quayVe={`/quan-tri/rag/thu?${new URLSearchParams({
+              q,
+              nguCanh,
+              cach,
+              vietLai: coVietLai ? '1' : '0',
+            }).toString()}`}
+          />
         </>
       )}
     </>

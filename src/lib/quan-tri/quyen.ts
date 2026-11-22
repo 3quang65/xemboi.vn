@@ -59,6 +59,7 @@ export const MENU_QUAN_TRI: { nhom: string; muc: { ten: string; href: string; qu
       { ten: 'Chuyển hướng', href: '/quan-tri/seo/chuyen-huong', quyen: 'seo.xem' },
       { ten: 'Liên kết nội bộ', href: '/quan-tri/seo/lien-ket', quyen: 'seo.xem' },
       { ten: 'Lịch mùa vụ', href: '/quan-tri/seo/lich-mua', quyen: 'seo.xem' },
+      { ten: 'Xếp hạng', href: '/quan-tri/seo/xep-hang', quyen: 'seo.xem' },
       { ten: 'Nhập tệp', href: '/quan-tri/seo/tu-khoa/nhap', quyen: 'seo.sua' },
     ],
   },
@@ -76,6 +77,7 @@ export const MENU_QUAN_TRI: { nhom: string; muc: { ten: string; href: string; qu
       { ten: 'Hàng đợi xử lý', href: '/quan-tri/rag/hang-doi', quyen: 'rag.quan_ly_nguon' },
       { ten: 'Đoạn', href: '/quan-tri/rag/doan', quyen: 'rag.xem_cong_khai' },
       { ten: 'Thử truy vấn', href: '/quan-tri/rag/thu', quyen: 'rag.xem_cong_khai' },
+      { ten: 'Đánh giá', href: '/quan-tri/rag/danh-gia', quyen: 'rag.xem_cong_khai' },
     ],
   },
   {

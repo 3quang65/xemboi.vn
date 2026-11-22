@@ -113,3 +113,18 @@
 .qt-lm-form { display: grid; gap: 6px; min-width: 280px; }
 .qt-lm-hang { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
 .qt-lm-ghichu { width: 100%; resize: vertical; font-family: inherit; font-size: 12px; line-height: 1.4; }
+
+/* Xếp hạng Search Console & Đánh giá RAG (Đợt 3 - Lệnh 24) */
+.qt-xg-chenh { font-size: 12px; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.qt-xg-tot { color: var(--good); }
+.qt-xg-xau { color: var(--bad); }
+.qt-xg-bieu-do { width: 100%; overflow-x: auto; }
+.qt-xg-chu-giai { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--muted); margin-bottom: 8px; align-items: center; }
+.qt-xg-cham { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+.qt-xg-vang { background: var(--mid-bg); }
+.qt-dg-tot-nhat { background: var(--good-bg); }
+.qt-dg-dung { background: var(--good-bg); }
+.qt-dg-chon { background: var(--line); }
+.qt-dg-chu-thich { margin: 12px 0 0; padding-left: 18px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.qt-dg-form-luu { display: grid; gap: 10px; }
+.qt-dg-luoi-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
