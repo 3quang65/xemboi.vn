@@ -2,7 +2,7 @@
 // của nội dung ở trạng thái DA_XUAT_BAN. Markdown được tách thành khối có cấu trúc (không sinh HTML thô) để
 // component React hiển thị an toàn, không cần dangerouslySetInnerHTML.
 import { cache } from 'react';
-import { prisma } from '@/lib/prisma';
+import { prisma, nemLoiKhiBuild } from '@/lib/prisma';
 import { KHOI, type KhoiMuc } from '@/lib/noi-dung/khoi';
 import { chuanHoaDuongDan } from './meta';
 
@@ -125,7 +125,8 @@ export const noiDungTheoDuongDan = cache(async (duongDan: string): Promise<NoiDu
       trichDan: pb.trichDan.map((c) => ({ khoi: c.khoi, tenSach: c.nguon ? c.nguon.tenHanViet || c.nguon.tenGoc : null, viTri: c.viTri, cauTrich: c.cauTrich })),
       ngayXuatBan: nd.ngayXuatBan, ngayDuyetChuyenGia: nd.ngayDuyetChuyenGia, capNhatLuc: nd.capNhatLuc,
     };
-  } catch {
+  } catch (e) {
+    nemLoiKhiBuild(e);
     return null; // CSDL lỗi: trang hiện phần dữ liệu tính được, không có diễn giải
   }
 });

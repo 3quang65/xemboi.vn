@@ -3,7 +3,7 @@
 // Trang lập trình (vd /sinh-nam/1990) không có dòng riêng thì dùng dòng mẫu (/sinh-nam/{yyyy}) và điền tham số.
 import type { Metadata } from 'next';
 import { cache } from 'react';
-import { prisma } from '@/lib/prisma';
+import { prisma, nemLoiKhiBuild } from '@/lib/prisma';
 import { GOC_SITE } from '@/lib/seo/sitemap';
 
 export type MacDinhTrang = { title: string; description?: string; h1?: string };
@@ -27,7 +27,8 @@ const CHON = { duongDan: true, title: true, metaDescription: true, h1: true, can
 const docDong = cache(async (duongDan: string) => {
   try {
     return await prisma.seoTrang.findUnique({ where: { duongDan }, select: CHON });
-  } catch {
+  } catch (e) {
+    nemLoiKhiBuild(e);
     return null; // CSDL lỗi: trang vẫn hiện, chỉ không được index
   }
 });

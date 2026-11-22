@@ -1,7 +1,7 @@
 // Dữ liệu cho các trang nền v2 (docs/v2/19 F5): nguồn sách, từ điển thuật ngữ, danh sách bài, bảng tháng nhuận.
 // Chỉ trả trường công khai. Nguồn sách: chỉ phamVi = CONG_KHAI; không trả đường dẫn cục bộ, ghi chú pháp lý nội bộ.
 import { cache } from 'react';
-import { prisma } from '@/lib/prisma';
+import { prisma, nemLoiKhiBuild } from '@/lib/prisma';
 import { thangNhuan, amSangDuong } from '@/lib/tuvi-v2/am-lich';
 import { CON_GIAP, HOA_GIAP, NAP_AM, slugViet } from './can-chi';
 import { CHINH_TINH, CUNG_TU_VI } from './tu-vi-tu-dien';
@@ -54,7 +54,8 @@ export const danhSachNguonCongKhai = cache(async (): Promise<NguonCongKhai[]> =>
         mang: chuanHoaMang(n.mang), tenLoai: TEN_LOAI_NGUON[n.loaiNguon] ?? n.loaiNguon,
       };
     });
-  } catch {
+  } catch (e) {
+    nemLoiKhiBuild(e);
     return [];
   }
 });
@@ -71,7 +72,8 @@ export const soBaiTrichNguon = cache(async (ma: string): Promise<number> => {
       select: { phienBan: { select: { noiDungId: true } } },
     });
     return new Set(ds.map((d) => d.phienBan.noiDungId)).size;
-  } catch {
+  } catch (e) {
+    nemLoiKhiBuild(e);
     return 0;
   }
 });
@@ -116,7 +118,8 @@ export const danhSachThuatNgu = cache(async (): Promise<{ mang: string; ten: str
     return [...nhom.entries()]
       .sort((a, b) => thuTu(a[0]) - thuTu(b[0]))
       .map(([mang, muc]) => ({ mang, ten: TEN_MANG[mang] ?? mang, muc: muc.sort((a, b) => a.hanViet.localeCompare(b.hanViet, 'vi')) }));
-  } catch {
+  } catch (e) {
+    nemLoiKhiBuild(e);
     return [];
   }
 });
@@ -143,7 +146,8 @@ export const danhSachBaiViet = cache(async (tienTo?: string): Promise<BaiTomTat[
     return ds.filter((d) => d.trang).map((d) => ({
       tieuDe: d.tieuDe, duongDan: d.trang!.duongDan, tomTat: tt.get(d.phienBanXuatBanId!) ?? null, ngayXuatBan: d.ngayXuatBan, mang: d.mang,
     }));
-  } catch {
+  } catch (e) {
+    nemLoiKhiBuild(e);
     return [];
   }
 });
