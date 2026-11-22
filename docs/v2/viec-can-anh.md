@@ -2,7 +2,7 @@
 
 > Em (Claude Code) cứ làm tiếp theo kế hoạch ở máy trạm. Việc nào bắt buộc cần anh thì ghi vào đây; anh rảnh thì xử lý một lượt.
 > Mỗi mục ghi: việc gì, vì sao cần anh, và **em đang tạm làm theo mặc định nào** để không chặn việc khác.
-> Cập nhật lần cuối: 22/11/2026, sau F5 (thêm mục 7–12).
+> Cập nhật lần cuối: 22/11/2026, sau khi rà trang P1 (thêm mục 13).
 
 ## Còn chờ anh
 
@@ -28,6 +28,11 @@
 10. **Người duyệt học thuật** (`/phuong-phap/nguoi-duyet`): bảng hồ sơ tác giả đang trống. Cần tên (hoặc bút danh), lý lịch ngắn của người viết và người duyệt. **Em đang để:** chỗ giữ, `noindex`.
 11. **Xuất bản nội dung nền:** các trang `/phuong-phap/*`, `/nguon`, `/tu-dien`, `/kien-thuc/*` đã có dòng SEO ở trạng thái nháp và chưa có bài. Trang có dữ liệu tính được (bảng quy ước, bảng tháng nhuận, thư mục 164 nguồn, 336 thuật ngữ) vẫn dùng được ngay nhưng để `noindex` tới khi biên tập viên viết phần bài và bấm xuất bản.
 12. **Bốn bài cũ ở `/bai-viet/*`** đã đăng, giữ nguyên đường dẫn. Kế hoạch SEO định chuyển 301 hai bài sang `/tu-vi/cach-doc-la-so` và `/phuong-phap/gio-ty`; em chỉ bật khi trang đích có bài đã duyệt, để không chuyển người đọc sang trang trống.
+13. **Trang P1 còn 404 lúc triển khai (7/55).** Các trang khác trong `16-seo-trang.csv` đều đã dựng. Bảy trang còn thiếu đều cần anh quyết hoặc cần người viết:
+    - `/goi`, `/tu-vi/luan-giai`: chờ mục 7.
+    - `/boi-tinh-yeu`: CSV ghi "cần anh duyệt". Từ khóa lớn nhưng dễ thành nội dung bói vui không có sách. **Em đang để:** chưa dựng. Nếu anh duyệt, em đề xuất dựng như một lối vào `/xem-tuoi/vo-chong` (cùng phép tính, ghi rõ hệ).
+    - `/tu-vi/hop-la-so`: là Gói 3 (Q2/2027), cần quy tắc so hai lá số có sách dẫn. **Em đang để:** chưa dựng.
+    - `/tu-vi/cach-doc-la-so`, `/kien-thuc/vi-sao-hai-trang-ra-hai-la-so-khac-nhau`, `/kien-thuc/vi-sao-cac-noi-xem-tuoi-khac-nhau`: trang bài viết, cần biên tập viên viết và duyệt (route đã có, dùng khung `TrangBaiViet`; bài xuất bản ở `/quan-tri` là trang tự hiện, chưa có bài thì 404).
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026

@@ -1,0 +1,457 @@
+/* CSS riêng cụm Xem ngày (/xem-ngay/xuat-hanh) — tiền tố ck-xh-, < 30 KB, dùng biến trên .ck */
+
+.ck-xh-muc {
+  margin-top: 32px;
+}
+
+.ck-xh-muc:first-child {
+  margin-top: 0;
+}
+
+.ck-xh-tieu {
+  font: 700 26px/1.25 var(--ck-f-tieu);
+  color: var(--ck-son);
+  margin: 0 0 14px;
+}
+
+/* 1. Tóm tắt đầu trang */
+.ck-xh-tom-tat {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-left: 4px solid var(--ck-son);
+  padding: 18px 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 20px;
+}
+
+.ck-xh-tom-tat-cau {
+  margin: 0;
+  font: 500 17.5px/1.55 var(--ck-f-chu);
+  color: var(--ck-muc);
+}
+
+.ck-xh-tom-tat-cau strong {
+  color: var(--ck-son);
+  font-weight: 700;
+}
+
+.ck-xh-tom-tat-nut {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ck-xh-tom-tat-nut .ck-nut {
+  padding: 8px 14px;
+  font-size: 14.5px;
+}
+
+/* 2. Bảng 10 ngày */
+.ck-xh-bang-khung {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  overflow-x: auto;
+}
+
+.ck-xh-bang-khung .ck-xh-bang {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+
+.ck-xh-bang-khung .ck-xh-bang th,
+.ck-xh-bang-khung .ck-xh-bang td {
+  padding: 11px 10px;
+  vertical-align: top;
+}
+
+.ck-xh-bang-khung .ck-xh-bang th {
+  white-space: nowrap;
+  font-size: 13.5px;
+}
+
+.ck-xh-cot-mung {
+  font-weight: 700;
+  color: var(--ck-son);
+  white-space: nowrap;
+}
+
+.ck-xh-duong-nhom {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+.ck-xh-thu {
+  font-size: 13px;
+  color: var(--ck-muc-2);
+}
+
+.ck-xh-duong-nhom a {
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(142, 27, 18, 0.35);
+  align-self: flex-start;
+}
+
+.ck-xh-duong-nhom a:hover {
+  border-bottom-color: var(--ck-son);
+}
+
+.ck-xh-cot-canchi {
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ck-muc);
+}
+
+.ck-xh-cot-huong {
+  white-space: nowrap;
+  font-weight: 500;
+  color: var(--ck-muc);
+}
+
+.ck-xh-gio-ds {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.ck-xh-gio-o {
+  background: var(--ck-nga-1);
+  border: 1px solid var(--ck-ke);
+  border-radius: 2px;
+  padding: 3px 6px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--ck-muc-2);
+  white-space: nowrap;
+}
+
+.ck-xh-gio-o b {
+  color: var(--ck-son);
+  font-weight: 700;
+}
+
+.ck-xh-mung1 td {
+  background: #FFF8E8;
+}
+
+.ck-xh-mung1 td:first-child {
+  box-shadow: inset 4px 0 0 var(--ck-son);
+}
+
+/* 3. Khối "Theo sách nào" */
+.ck-xh-sach-ds {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ck-xh-sach-the {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  padding: 20px 22px;
+}
+
+.ck-xh-sach-dau {
+  margin-bottom: 12px;
+}
+
+.ck-xh-sach-dau h3 {
+  margin: 0 0 4px;
+  font: 700 22px/1.3 var(--ck-f-tieu);
+  color: var(--ck-son);
+}
+
+.ck-xh-vi-tri {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ck-muc-3);
+}
+
+.ck-xh-nguyen-van {
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  background: var(--ck-nga-1);
+  border: 1px solid var(--ck-ke);
+  border-left: 3px solid var(--ck-vang-2);
+  font: 500 17.5px/1.85 "Noto Serif TC", "Songti TC", "PMingLiU", "Noto Serif SC", "Songti SC", Georgia, serif;
+  color: var(--ck-muc);
+  overflow-wrap: anywhere;
+}
+
+.ck-xh-can-bang {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+  font-size: 13.5px;
+}
+
+.ck-xh-can-bang thead th {
+  background: var(--ck-nga-2);
+  color: var(--ck-son);
+  font-weight: 700;
+  padding: 7px 4px;
+  border: 1px solid var(--ck-ke);
+}
+
+.ck-xh-can-bang tbody td {
+  background: #FFFDF8;
+  color: var(--ck-muc);
+  font-weight: 500;
+  padding: 8px 4px;
+  border: 1px solid var(--ck-ke);
+}
+
+/* 4. Nguồn và giới hạn */
+.ck-xh-nguon {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-left: 3px solid var(--ck-vang-2);
+  padding: 18px 22px;
+}
+
+.ck-xh-nguon-ds {
+  margin: 0 0 14px;
+  padding-left: 20px;
+  color: var(--ck-muc);
+  line-height: 1.65;
+}
+
+.ck-xh-nguon-ds li + li {
+  margin-top: 8px;
+}
+
+.ck-xh-ghi-cong {
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px dashed var(--ck-ke-dam);
+  font-size: 14.5px;
+  color: var(--ck-muc-2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+}
+
+.ck-xh-pp-link {
+  margin: 10px 0 0;
+  font-size: 14.5px;
+}
+
+/* 5. Liên kết cuối */
+.ck-xh-lien-quan {
+  margin-top: 32px;
+  padding: 18px 20px;
+  background: var(--ck-nga-2);
+  border: 1px solid var(--ck-ke);
+}
+
+.ck-xh-lien-quan h2 {
+  margin: 0 0 12px;
+  font: 700 22px/1.25 var(--ck-f-tieu);
+  color: var(--ck-son);
+}
+
+.ck-xh-lien-quan-ds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ck-xh-lien-quan-ds a {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 13px;
+  background: var(--ck-the-nen);
+  border: 1px solid var(--ck-ke-dam);
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ck-muc);
+}
+
+.ck-xh-lien-quan-ds a:hover {
+  border-color: var(--ck-son);
+  color: var(--ck-son);
+}
+
+/* Đáp ứng tablet & mobile */
+@media (max-width: 1120px) {
+  .ck-xh-gio-ds {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1000px) {
+  .ck-xh-can-bang,
+  .ck-xh-can-bang tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .ck-xh-can-bang thead {
+    display: none;
+  }
+
+  .ck-xh-can-bang tbody tr {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .ck-xh-can-bang tbody td {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 7px 6px;
+    border-radius: 2px;
+  }
+
+  .ck-xh-can-bang tbody td::before {
+    content: attr(data-can);
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--ck-son);
+  }
+}
+
+@media (max-width: 768px) {
+  .ck-xh-tom-tat {
+    padding: 16px;
+  }
+
+  .ck-xh-bang-khung {
+    background: transparent;
+    border: 0;
+    overflow: visible;
+  }
+
+  .ck-xh-bang-khung .ck-xh-bang,
+  .ck-xh-bang-khung .ck-xh-bang tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .ck-xh-bang-khung .ck-xh-bang thead {
+    display: none;
+  }
+
+  .ck-xh-bang-khung .ck-xh-bang tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ck-xh-bang-khung .ck-xh-bang tr {
+    display: block;
+    background: var(--ck-the-nen);
+    border: 1px solid #C9AE78;
+    border-radius: 2px;
+    padding: 12px 14px;
+  }
+
+  .ck-xh-bang-khung .ck-xh-bang tr.ck-xh-mung1 {
+    border-left: 4px solid var(--ck-son);
+    background: #FFFBF0;
+  }
+
+  .ck-xh-bang-khung .ck-xh-bang tr.ck-xh-mung1 td:first-child {
+    box-shadow: none;
+  }
+
+  .ck-xh-bang-khung .ck-xh-bang td {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--ck-ke);
+    white-space: normal;
+    background: transparent;
+  }
+
+  .ck-xh-bang-khung .ck-xh-bang td:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .ck-xh-bang-khung .ck-xh-bang td::before {
+    content: attr(data-nhan);
+    flex: 0 0 auto;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ck-muc-2);
+  }
+
+  .ck-xh-bang-khung .ck-xh-bang td.ck-xh-cot-mung {
+    padding-top: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--ck-ke);
+    font: 700 20px/1.25 var(--ck-f-tieu);
+    color: var(--ck-son);
+  }
+
+  .ck-xh-bang-khung .ck-xh-bang td.ck-xh-cot-mung::before {
+    display: none;
+  }
+
+  .ck-xh-duong-nhom {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 4px 8px;
+    text-align: right;
+  }
+
+  .ck-xh-bang-khung .ck-xh-bang td.ck-xh-cot-gio {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .ck-xh-gio-ds {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .ck-xh-gio-o {
+    font-size: 12px;
+    padding: 5px 4px;
+    text-align: center;
+  }
+
+  .ck-xh-sach-the,
+  .ck-xh-nguon,
+  .ck-xh-lien-quan {
+    padding: 16px;
+  }
+
+  .ck-xh-nguyen-van {
+    font-size: 16.5px;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  .ck-xh-can-bang tbody tr {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ck-xh-can-bang tbody td {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 7px 10px;
+  }
+}

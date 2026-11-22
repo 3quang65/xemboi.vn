@@ -7,6 +7,7 @@ import {
   duongDanNgayTuIso,
   trongPhamViNam,
 } from '@/components/ck/lichHelpers';
+import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { leAmTrongNam, tetSapToi } from '@/lib/trang/lich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { canChiNam } from '@/lib/tuvi-v2/am-lich';
@@ -25,6 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function TetPage() {
   const tt = await thongTinTrang('/tet', MAC_DINH_TET);
   const tet = tetSapToi();
+  const daDung = trangDaDung();
 
   const namTruocAm = tet.namAm - 1;
   const ccTruoc = canChiNam(namTruocAm).ten;
@@ -65,6 +67,11 @@ export default async function TetPage() {
           {hrefNgayTet ? (
             <Link href={hrefNgayTet} className="ck-nut ck-nut-son">
               Chi tiết ngày Mùng 1 Tết
+            </Link>
+          ) : null}
+          {daDung.has('/xem-ngay/xuat-hanh') ? (
+            <Link href="/xem-ngay/xuat-hanh" className="ck-nut ck-nut-vien">
+              Giờ xuất hành mùng 1–10
             </Link>
           ) : null}
           {hrefThangTet ? (
