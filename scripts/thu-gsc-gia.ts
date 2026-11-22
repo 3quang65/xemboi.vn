@@ -4,7 +4,7 @@
 //       npx tsx --env-file=.env scripts/thu-gsc-gia.ts --xoa  (xóa sạch dữ liệu giả và cảnh báo của nó)
 // Ý đồ: /_thu-gsc/a tụt vị trí (TUT_HANG kiểu vi_tri), /_thu-gsc/b tụt nhấp (TUT_HANG kiểu nhap),
 //       truy vấn "[THỬ] xem tuổi" chia giữa /a và /c (TRUNG_Y_DINH).
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, type Prisma } from '@prisma/client';
 import { tinhCanhBaoGsc, ghiCanhBaoGsc } from '../src/lib/seo/gsc';
 
 const GOC = 'https://xemboi.vn/_thu-gsc/';
@@ -38,7 +38,7 @@ const ngayChuoi = (d: Date) => d.toISOString().slice(0, 10);
       { url: 'b', q: '[THỬ] ngày tốt tháng chạp', h: 200, v: 3, tut: 0, nhapTut: true },
       { url: 'c', q: '[THỬ] tuổi hợp làm ăn', h: 40, v: 9, tut: 0 },
     ];
-    const dongQ: Parameters<typeof db.seoGscNgay.createMany>[0]['data'] & object[] = [];
+    const dongQ: Prisma.SeoGscNgayCreateManyInput[] = [];
     const tongTrang = new Map<string, { ngay: Date; url: string; thietBi: string; hienThi: number; nhap: number; viTriTong: number }>();
     for (let i = SO_NGAY - 1; i >= 0; i--) {
       const ngay = new Date(`${ngayChuoi(new Date(den.getTime() - i * 86_400_000))}T00:00:00Z`);

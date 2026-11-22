@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import { getAgentBySlug, THAY_MINH_TRIET, AiAgentConfig } from './agent-persona';
+import { timCongKhai, CO_RAG_V2 } from '@/lib/rag/tim-cong-khai';
 
 export interface KnowledgeChunkItem {
   id: string;
@@ -90,6 +91,24 @@ export function generateVectorEmbedding(text: string): number[] {
 }
 
 let dbOfflineUntil = 0;
+
+/** Tri thức từ kho RAG mới (chỉ đoạn CONG_KHAI). Không ném lỗi: lỗi thì trả mảng rỗng để người gọi dùng kho cũ. */
+export async function timTriThucV2(query: string, limit = 3): Promise<KnowledgeChunkItem[]> {
+  try {
+    const { doan } = await timCongKhai(prisma, query, { k: limit });
+    return doan.map((d) => ({
+      id: `rag_${d.id}`,
+      docTitle: d.tieuDe,
+      category: d.mang.join(', ') || 'sách cổ',
+      content: d.hanViet ? `${d.noiDung}\n(Âm Hán Việt: ${d.hanViet})` : d.noiDung,
+      metadata: { nguonMa: d.nguonMa, ghiCong: d.ghiCong, kho: 'rag_v2' },
+      score: d.diem,
+    }));
+  } catch (e) {
+    console.error('[rag_v2]', e instanceof Error ? e.message : e);
+    return [];
+  }
+}
 
 /**
  * Searches the Knowledge Base using vector cosine search or semantic fallback
@@ -233,7 +252,10 @@ export async function* streamChatResponse(params: {
   const agent: AiAgentConfig = getAgentBySlug(agentSlug || 'thay-minh-triet');
 
   // 1. Retrieve relevant RAG knowledge chunks prioritized for this agent
-  const knowledge = await searchKnowledge(userMessage, 2, agent.slug);
+  //    RAG_V2=1: kho sách mới qua view công khai (src/lib/rag/tim-cong-khai.ts); rỗng hoặc lỗi thì về kho cũ.
+  const knowledge: KnowledgeChunkItem[] = CO_RAG_V2() ? await timTriThucV2(userMessage, 3) : [];
+  if (!knowledge.length) knowledge.push(...(await searchKnowledge(userMessage, 2, agent.slug)));
+  const laSachCo = knowledge.some((k) => k.metadata?.kho === 'rag_v2');
   const citedSources = knowledge.map((k) => k.docTitle);
 
   // 2. Build Chart Context (if client is viewing a chart)
@@ -244,6 +266,9 @@ export async function* streamChatResponse(params: {
     agent.systemPrompt,
     chartContext ? '\n' + chartContext : '',
     '\n=== [TRI THỨC HUYỀN HỌC BỔ TRỢ (RAG)] ===',
+    laSachCo
+      ? 'Các đoạn dưới đây là nguyên văn sách cổ chữ Hán. Hãy hiểu ý rồi diễn giải bằng tiếng Việt dễ hiểu; khi dẫn thì nêu tên sách; không bịa câu chữ không có trong đoạn; đoạn nào không liên quan thì bỏ qua.'
+      : '',
     ...knowledge.map((k, idx) => `[Tài liệu ${idx + 1}: ${k.docTitle} (${k.category})]\n${k.content}`),
     '=== [HẾT TRI THỨC BỔ TRỢ] ===',
   ].filter(Boolean).join('\n');

@@ -88,16 +88,19 @@ export function tuKhoaViet(conLai: string): string[] {
 
 export type DongKetQua = { id: bigint; diem: number };
 
+/** Bảng đọc: `congKhai` thì chỉ đi qua view rag_doan_cong_khai (vai trò xemboi_web không được đọc bảng gốc). */
+const bangDoan = (congKhai?: boolean) => Prisma.raw(congKhai ? 'rag_doan_cong_khai' : 'rag_doan');
+
 /**
  * Nhánh từ khóa: BM25 với tf = số lần xuất hiện chuỗi con (không cần tách từ), k1 = 1.2, b = 0.75.
  * `phamVi` là điều kiện SQL trên bí danh d (sqlPhamVi(nd, 'd') hoặc Prisma.sql`d."phamVi" = ...`).
  */
-export async function timTuKhoa(db: PrismaClient, o: { tuKhoa: string[]; phamVi: Prisma.Sql; k?: number }): Promise<DongKetQua[]> {
+export async function timTuKhoa(db: PrismaClient, o: { tuKhoa: string[]; phamVi: Prisma.Sql; k?: number; congKhai?: boolean }): Promise<DongKetQua[]> {
   const tk = [...new Set(o.tuKhoa.map((x) => x.toLowerCase()).filter(Boolean))].slice(0, 40);
   if (!tk.length) return [];
   const r = await db.$queryRaw<{ id: bigint; diem: number }[]>(Prisma.sql`
     WITH t(tu) AS (SELECT DISTINCT unnest(${tk}::text[])),
-    d AS MATERIALIZED (SELECT d.id, lower(coalesce(d."vanBanChuan", d."vanBan")) AS vb FROM rag_doan d WHERE ${o.phamVi}),
+    d AS MATERIALIZED (SELECT d.id, lower(coalesce(d."vanBanChuan", d."vanBan")) AS vb FROM ${bangDoan(o.congKhai)} d WHERE ${o.phamVi}),
     tong AS (SELECT count(*)::float8 AS n, greatest(avg(length(vb)), 1)::float8 AS tb FROM d),
     m AS (SELECT d.id, t.tu, length(d.vb)::float8 AS dai,
             ((length(d.vb) - length(replace(d.vb, t.tu, ''))) / length(t.tu))::float8 AS tf
@@ -110,13 +113,13 @@ export async function timTuKhoa(db: PrismaClient, o: { tuKhoa: string[]; phamVi:
 }
 
 /** Nhánh vector: cosine trên pgvector (chỉ mục HNSW). Vector câu hỏi phải cùng mô hình với cột embedding (bge-m3). */
-export async function timVector(db: PrismaClient, o: { vector: number[]; phamVi: Prisma.Sql; k?: number }): Promise<DongKetQua[]> {
+export async function timVector(db: PrismaClient, o: { vector: number[]; phamVi: Prisma.Sql; k?: number; congKhai?: boolean }): Promise<DongKetQua[]> {
   if (o.vector.length !== 1024 || o.vector.some((x) => !Number.isFinite(x))) throw new Error('Vector câu hỏi phải có 1024 số');
   const v = `[${o.vector.join(',')}]`;
   return db.$transaction(async (tx) => {
     await tx.$executeRaw`SET LOCAL hnsw.ef_search = 100`;
     const r = await tx.$queryRaw<{ id: bigint; diem: number }[]>(Prisma.sql`
-      SELECT d.id, (1 - (d.embedding <=> ${v}::vector))::float8 AS diem FROM rag_doan d
+      SELECT d.id, (1 - (d.embedding <=> ${v}::vector))::float8 AS diem FROM ${bangDoan(o.congKhai)} d
       WHERE d.embedding IS NOT NULL AND ${o.phamVi} ORDER BY d.embedding <=> ${v}::vector LIMIT ${o.k ?? 100}`);
     return r.map((x) => ({ id: x.id, diem: Number(x.diem) }));
   });
@@ -152,11 +155,11 @@ export function capHan(s: string): string[] {
  * Tìm lai đầy đủ: mở rộng → từ khóa (+ vector nếu có) → RRF.
  * `vietLai`: kết quả vietLaiCauHoi (src/lib/rag/viet-lai-cau.ts) nếu người gọi đã có; thêm thuật ngữ và cặp chữ của câu mẫu vào nhánh từ khóa.
  */
-export async function timLai(db: PrismaClient, o: { cau: string; bang: MucThuatNgu[]; phamVi: Prisma.Sql; vector?: number[]; vietLai?: { tuKhoa: string[]; doan: string } | null; k?: number }) {
+export async function timLai(db: PrismaClient, o: { cau: string; bang: MucThuatNgu[]; phamVi: Prisma.Sql; vector?: number[]; vietLai?: { tuKhoa: string[]; doan: string } | null; k?: number; congKhai?: boolean }) {
   const mr = moRongThuatNgu(o.cau, o.bang);
   const tuKhoa = [...new Set([...mr.han, ...tuKhoaViet(mr.conLai), ...(o.vietLai?.tuKhoa ?? []), ...capHan(o.vietLai?.doan ?? '')])];
-  const tk = await timTuKhoa(db, { tuKhoa, phamVi: o.phamVi, k: 100 });
-  const vt = o.vector ? await timVector(db, { vector: o.vector, phamVi: o.phamVi, k: 100 }) : [];
+  const tk = await timTuKhoa(db, { tuKhoa, phamVi: o.phamVi, k: 100, congKhai: o.congKhai });
+  const vt = o.vector ? await timVector(db, { vector: o.vector, phamVi: o.phamVi, k: 100, congKhai: o.congKhai }) : [];
   const gop = gopRrf([{ ten: 'tu_khoa', ketQua: tk }, ...(vt.length ? [{ ten: 'vector', ketQua: vt }] : [])]);
   const bm25 = new Map(tk.map((x) => [String(x.id), x.diem]));
   const cos = new Map(vt.map((x) => [String(x.id), x.diem]));

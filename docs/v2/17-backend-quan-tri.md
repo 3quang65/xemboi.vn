@@ -2098,6 +2098,17 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 >
 >   **Quyết định cho VPS:** chạy từ khóa + bảng thuật ngữ + viết lại bằng `gx/qwen3.6-35b-nvfp4` (mặc định `MO_HINH_VIET_LAI`), không cần nhúng trên VPS. Quá giờ hoặc cụm máy nhà tắt thì lùi về bảng thuật ngữ (31 %). Đổi mô hình nhúng sang Qwen3-0.6B không còn chặn việc chạy thật; để làm khi cần nhánh vector.
 > - **Trang `/quan-tri/rag/thu`** (Claude Code sửa 22/11): mặc định **Tìm lai** (bảng thuật ngữ + viết lại bằng `gx/qwen3.6-35b-nvfp4` + BM25), hiện từng bước mở rộng (cụm khớp bảng thuật ngữ, thuật ngữ LLM thêm, câu mẫu, danh sách từ khóa) và điểm BM25; có thể tắt LLM hoặc chọn **Tìm cũ** (toàn văn + trigram) để so. Phạm vi vẫn theo `nguCanhTruyVan`, đoạn được đọc lại với cùng điều kiện phạm vi; vẫn ghi `rag_truy_van_log`. Kiểm bằng HTTP: quản trị 3 chế độ đều 200, chuyên gia bị ép phạm vi công khai, tài khoản xem số liệu bị chặn.
+> - **Trợ lý công khai dùng kho RAG mới (cờ `RAG_V2=1`)**, Claude Code làm 22/11:
+>   - Tệp mới `src/lib/rag/tim-cong-khai.ts`, hàm `timCongKhai`. Hàm dùng cùng cấu hình đang chạy trên VPS: bảng thuật ngữ, viết lại câu hỏi bằng `gx/qwen3.6`, rồi BM25. Thời gian chờ LLM 6 giây, thử 1 lần.
+>   - Chỉ đọc qua view `rag_doan_cong_khai` và `rag_nguon_cong_khai`. `timTuKhoa`, `timVector` và `timLai` có thêm tùy chọn `congKhai` để đọc view thay cho bảng gốc, vì vai trò `xemboi_web` không có quyền đọc `rag_doan`.
+>   - Nguồn chưa cho trích dài thì chỉ đưa cho LLM 400 chữ, nguồn khác 900 chữ. Mỗi lần tìm ghi `rag_truy_van_log`, ngữ cảnh `CONG_KHAI`.
+>   - `streamChatResponse` (`rag-engine.ts`) dùng cho `/api/chat/stream`, `/api/hoi-thay` và `/api/chat/council`:
+>     - khi bật cờ, lấy 3 đoạn và thêm dặn LLM "diễn giải nguyên văn chữ Hán, nêu tên sách, không bịa";
+>     - không có kết quả hoặc lỗi thì quay về kho cũ.
+>   - Phần soạn sẵn của hội đồng (`council-orchestrator`, `dialogue-simulation`) vẫn dùng kho cũ, vì đoạn ở đó được chèn thẳng vào câu tiếng Việt.
+>   - Chạy thật trên 3 câu, mỗi câu 1,2–2,6 giây, đều ra đúng sách. Ví dụ "hào sáu ba quẻ Khôn" ra 3 bản 含章可貞 trong Đông Pha, Chu Dịch chú sớ và Trình truyện.
+>   - Test `tests/dot3/rag-cong-khai.test.mjs`, 2/2 đạt: đoạn `NOI_BO` chứa từ khóa thấy được ở bảng gốc nhưng không lọt qua đường công khai.
+>   - **Chưa làm:** ghi nguồn trích ra giao diện chat. Hiện `citedSources` trả tên sách nhưng giao diện chưa hiện. Việc này giao Antigravity sau.
 > - **Chưa làm:** map nginx cho xemtuvi.vn (cần danh sách URL); trợ lý công khai dùng tìm lai (cờ `RAG_V2`).
 
 ### Đợt 4: OCR, phiên âm, giấy phép, cứng hóa (55–80 giờ)
