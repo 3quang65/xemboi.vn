@@ -177,3 +177,32 @@ export function bangThangNhuan(tu = 1900, den = 2100): DongThangNhuan[] {
   }
   return kq;
 }
+
+// ---------- bảng quy ước tính (trang /phuong-phap) ----------
+// Ghi đúng những gì bộ máy đang làm: tuvi-v2 QuyUoc (đặc tả mục 10), bat-tu.ts, lịch âm. Không phải lời bình.
+export type QuyUocTinh = { ma: string; mang: 'Lịch âm' | 'Tử vi' | 'Bát tự'; chuDe: string; macDinh: string; khac: string[]; xemThem?: string };
+
+export const BANG_QUY_UOC: QuyUocTinh[] = [
+  { ma: 'lich-thuat-toan', mang: 'Lịch âm', chuDe: 'Thuật toán âm lịch', macDinh: 'Thuật toán thiên văn của Hồ Ngọc Đức (điểm Sóc, trung khí).', khac: [] },
+  { ma: 'lich-mui-gio', mang: 'Lịch âm', chuDe: 'Múi giờ trước 01/01/1968', macDinh: 'UTC+8 trước 1968, UTC+7 từ 1968, như lịch Việt Nam thời đó.', khac: ['UTC+7 cho mọi năm (chọn được khi lập lá số).'], xemThem: '/phuong-phap/thang-nhuan' },
+  { ma: 'lich-thang-nhuan', mang: 'Lịch âm', chuDe: 'Tháng nhuận', macDinh: 'Năm có 13 tháng giữa hai tháng 11 (tháng chứa Đông chí): tháng đầu tiên không chứa trung khí là tháng nhuận.', khac: [], xemThem: '/phuong-phap/thang-nhuan' },
+  { ma: 'tv-gio-ty', mang: 'Tử vi', chuDe: 'Sinh từ 23:00 đến 23:59', macDinh: 'Tính sang ngày hôm sau (giờ Tý của ngày mới).', khac: ['Giữ ngày sinh cũ, chỉ đổi sang giờ Tý.', 'Cộng 1 ngày âm, giữ tháng âm (cách của thư viện iztro).'], xemThem: '/phuong-phap/gio-ty' },
+  { ma: 'tv-thang-nhuan', mang: 'Tử vi', chuDe: 'Sinh tháng nhuận', macDinh: 'An sao như tháng chính.', khac: ['Ngày 1–15 tính tháng chính, từ ngày 16 tính tháng sau.', 'Tính sang tháng sau.'], xemThem: '/phuong-phap/thang-nhuan' },
+  { ma: 'tv-mien-nam', mang: 'Tử vi', chuDe: 'Giờ đồng hồ miền Nam 1960–1975', macDinh: 'Đổi từ UTC+8 về giờ chuẩn UTC+7 theo dữ liệu múi giờ IANA.', khac: ['Không đổi.'] },
+  { ma: 'tv-gio-mat-troi', mang: 'Tử vi', chuDe: 'Giờ mặt trời thật', macDinh: 'Không hiệu chỉnh; dùng giờ đồng hồ chuẩn UTC+7.', khac: [] },
+  { ma: 'tv-ranh-gioi-nam', mang: 'Tử vi', chuDe: 'Ranh giới năm', macDinh: 'Mùng 1 Tết âm lịch.', khac: [] },
+  { ma: 'tv-tu-hoa', mang: 'Tử vi', chuDe: 'Tứ hóa can Canh, Nhâm', macDinh: 'Bảng phái Việt.', khac: ['Bảng phái Trung Quốc.'], xemThem: '/phuong-phap/nam-phai-bac-phai' },
+  { ma: 'tv-hoa-linh', mang: 'Tử vi', chuDe: 'Chiều an Hỏa Tinh, Linh Tinh', macDinh: 'Phái Việt: theo âm dương nam nữ; tuổi Tỵ Dậu Sửu theo câu phú (Hỏa Mão, Linh Tuất).', khac: ['Cả hai đi thuận.'] },
+  { ma: 'tv-khoi-viet', mang: 'Tử vi', chuDe: 'Thiên Khôi, Thiên Việt', macDinh: 'Theo Tử Vi Đẩu Số Toàn Thư.', khac: ['Theo câu "Canh Tân phùng Mã Hổ".'] },
+  { ma: 'tv-thien-giai', mang: 'Tử vi', chuDe: 'Thiên Giải', macDinh: 'Từ cung Thân, đi 2 cung cho mỗi tháng (theo cụ Thiên Lương).', khac: ['Theo cặp tháng.', 'Từ cung Thân, mỗi tháng một cung.'] },
+  { ma: 'tv-thien-tru', mang: 'Tử vi', chuDe: 'Thiên Trù can Quý', macDinh: 'Cung Tuất.', khac: ['Cung Hợi.'] },
+  { ma: 'tv-thuong-su', mang: 'Tử vi', chuDe: 'Thiên Thương, Thiên Sứ', macDinh: 'Cố định ở Nô bộc và Tật ách.', khac: ['Đổi chỗ cho Âm nam, Dương nữ (phái Trung Châu).'] },
+  { ma: 'tv-menh-chu', mang: 'Tử vi', chuDe: 'Mệnh chủ', macDinh: 'Tra theo chi năm sinh (phái Việt).', khac: ['Tra theo chi cung Mệnh.'] },
+  { ma: 'tv-tuan-triet', mang: 'Tử vi', chuDe: 'Tuần, Triệt', macDinh: 'Đặt ở vạch giữa hai cung (phái Việt).', khac: ['Chọn một cung.'] },
+  { ma: 'tv-do-sang', mang: 'Tử vi', chuDe: 'Độ sáng (miếu, vượng, đắc, hãm)', macDinh: 'Bảng phái Việt; Tử Vi ở Tý là Bình, ở Ngọ là Miếu.', khac: [], xemThem: '/tu-vi/sao' },
+  { ma: 'bt-nam', mang: 'Bát tự', chuDe: 'Trụ năm', macDinh: 'Đổi tại Lập xuân, không đổi tại Tết âm lịch.', khac: [] },
+  { ma: 'bt-thang', mang: 'Bát tự', chuDe: 'Trụ tháng', macDinh: 'Đổi tại 12 tiết; tháng Dần bắt đầu từ Lập xuân; can tháng theo Ngũ Hổ Độn.', khac: [] },
+  { ma: 'bt-ngay', mang: 'Bát tự', chuDe: 'Sinh từ 23:00', macDinh: 'Tính sang ngày hôm sau (giờ Tý đầu).', khac: ['Đổi ngày lúc 0:00 (chọn được khi lập).'], xemThem: '/phuong-phap/gio-ty' },
+  { ma: 'bt-gio', mang: 'Bát tự', chuDe: 'Giờ dùng để tính', macDinh: 'Giờ đồng hồ Việt Nam (UTC+7), chưa đổi sang giờ mặt trời thật.', khac: [] },
+  { ma: 'bt-dai-van', mang: 'Bát tự', chuDe: 'Đại vận', macDinh: 'Dương nam, âm nữ đi thuận; âm nam, dương nữ đi nghịch. Tuổi khởi vận = số ngày tới tiết (3 ngày = 1 năm); tuổi ghi theo tuổi mụ.', khac: [] },
+];

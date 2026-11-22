@@ -69,3 +69,10 @@ test('danh sách bài chỉ gồm bài đã xuất bản có đường dẫn', a
   const kt = await danhSachBaiViet('/kien-thuc');
   assert.ok(kt.every((b) => b.duongDan.startsWith('/kien-thuc')));
 });
+
+test('bảng quy ước: mã duy nhất, liên kết xem thêm là trang nội bộ', async () => {
+  const { BANG_QUY_UOC } = await import('../../src/lib/trang/nen.ts');
+  assert.equal(new Set(BANG_QUY_UOC.map((q) => q.ma)).size, BANG_QUY_UOC.length);
+  for (const q of BANG_QUY_UOC) if (q.xemThem) assert.match(q.xemThem, /^\/[a-z0-9/-]+$/);
+  assert.ok(BANG_QUY_UOC.some((q) => q.ma === 'tv-gio-ty' && q.khac.length === 2));
+});
