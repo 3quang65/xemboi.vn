@@ -2,7 +2,7 @@
 
 > Em (Claude Code) cứ làm tiếp theo kế hoạch ở máy trạm. Việc nào bắt buộc cần anh thì ghi vào đây; anh rảnh thì xử lý một lượt.
 > Mỗi mục ghi: việc gì, vì sao cần anh, và **em đang tạm làm theo mặc định nào** để không chặn việc khác.
-> Cập nhật lần cuối: 22/11/2026, sau khi anh trả lời lượt 1.
+> Cập nhật lần cuối: 22/11/2026, sau F5 (thêm mục 7–12).
 
 ## Còn chờ anh
 
@@ -17,17 +17,17 @@
 3. **Ngày dự kiến mở tên miền chính** (17 mục 9, câu 9), để đặt nhắc giấy phép. Không có mặc định.
 4. **Tài khoản quản trị cho người thật** (17 mục 9, câu 11): trang `/quan-tri/tai-khoan` đã xong, anh tự tạo khi cần; hồ sơ tác giả tạm dùng bút danh.
 6. **Frontend v2 (docs/v2/19).** Em đang tự làm theo mặc định dưới đây. Anh chỉ cần trả lời nếu muốn khác:
-   1. **Chat "Hội đồng thầy" v1:**
-      - Bỏ khung chat nổi trên mọi trang.
-      - Giao diện chat chuyển về `/tu-vi/luan-giai` (F4); API `/api/chat/*` giữ nguyên.
+   1. **Chat "Hội đồng thầy" v1:** khung chat nổi đã bỏ khỏi mọi trang (component `CouncilChatEmbed` còn giữ trong mã, chưa trang nào dùng); API `/api/chat/*` giữ nguyên. Chỗ đặt giao diện chat xem mục 7.
    2. **Trang v2 dựng xong vẫn để `noindex`.** Trước ngày triển khai, em lập danh sách trang công cụ đủ điều kiện. Anh (hoặc biên tập viên) bấm xuất bản ở `/quan-tri/seo/trang`.
       - Trang từ điển chỉ index khi có diễn giải đã duyệt.
-   3. **Trang v1 bỏ hẳn** khi F5 xong:
-      - `/tu-vi-hom-nay`, `/tu-vi-ngay-mai` → 410;
-      - `/tu-vi-tron-doi` → 301 `/tu-vi/tron-doi`;
-      - `/tu-tru` → 301 `/bat-tu/lap-la-so`;
-      - `/boi-dich` → 301 `/kinh-dich/gieo-que`.
-   4. **Bát tự và Gieo quẻ** cần bộ dữ liệu v2 (engine tứ trụ, 64 quẻ có nguồn). Nếu chưa kịp làm thì hai trang này chuyển sang F6, và `/tu-tru`, `/boi-dich` tạm trả 410 thay vì 301.
+   3. **Đã làm (22/11):** gỡ trang v1. `/tu-vi-hom-nay`, `/tu-vi-ngay-mai` trả 410; `/tu-vi-tron-doi`, `/tu-tru`, `/boi-dich`, `/la-so/*` chuyển 301 sang trang v2. Service worker cũ thay bằng bản tự dọn bộ nhớ đệm.
+   4. **Đã xong:** Bát tự (`/bat-tu/lap-la-so`) và Gieo quẻ (`/kinh-dich/gieo-que`) đã dựng ở F4, nên dùng 301 như mục 3.
+7. **Trang trả phí `/goi` và `/tu-vi/luan-giai`.** Kế hoạch SEO ghi đây là sản phẩm trả phí (79k / 149k / 299k, VietQR); giá hiện chỉ có trong bản thử nhu cầu R1, chưa có luồng thanh toán thật. Cần anh chốt: giá, nội dung từng gói, và `/tu-vi/luan-giai` là báo cáo trả phí hay chat với "Hội đồng thầy". **Em đang để:** cả hai trang chưa dựng, `/goi` ẩn khỏi menu (đợt 6).
+8. **Thông tin liên hệ cho `/lien-he`:** email, Zalo hoặc số điện thoại muốn công khai, tên đơn vị chủ quản. **Em đang để:** trang hiện "Thông tin liên hệ đang cập nhật" và `noindex`.
+9. **Ba trang chính sách** (bảo mật và cookie, sử dụng và khiếu nại, bản quyền): cần người viết và luật sư đọc trước khi đăng. **Em đang để:** chỗ giữ, `noindex`. Bản bảo mật bắt buộc có trước khi mở form thu email/Zalo hoặc thanh toán.
+10. **Người duyệt học thuật** (`/phuong-phap/nguoi-duyet`): bảng hồ sơ tác giả đang trống. Cần tên (hoặc bút danh), lý lịch ngắn của người viết và người duyệt. **Em đang để:** chỗ giữ, `noindex`.
+11. **Xuất bản nội dung nền:** các trang `/phuong-phap/*`, `/nguon`, `/tu-dien`, `/kien-thuc/*` đã có dòng SEO ở trạng thái nháp và chưa có bài. Trang có dữ liệu tính được (bảng quy ước, bảng tháng nhuận, thư mục 164 nguồn, 336 thuật ngữ) vẫn dùng được ngay nhưng để `noindex` tới khi biên tập viên viết phần bài và bấm xuất bản.
+12. **Bốn bài cũ ở `/bai-viet/*`** đã đăng, giữ nguyên đường dẫn. Kế hoạch SEO định chuyển 301 hai bài sang `/tu-vi/cach-doc-la-so` và `/phuong-phap/gio-ty`; em chỉ bật khi trang đích có bài đã duyệt, để không chuyển người đọc sang trang trống.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026
