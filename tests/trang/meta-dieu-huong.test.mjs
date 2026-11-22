@@ -11,6 +11,7 @@ after(() => prisma.$disconnect());
 test('dienMau và chuanHoaDuongDan', () => {
   assert.equal(dienMau('Sinh năm {yyyy} mệnh gì', { yyyy: 1990 }), 'Sinh năm 1990 mệnh gì');
   assert.equal(dienMau('{a}-{b}', { a: 'x' }), 'x-{b}');
+  assert.equal(dienMau('Tuổi {Can Chi}, {Nạp âm}', { 'Can Chi': 'Canh Ngọ', 'Nạp âm': 'Lộ Bàng Thổ' }), 'Tuổi Canh Ngọ, Lộ Bàng Thổ');
   assert.equal(chuanHoaDuongDan('tu-vi/'), '/tu-vi');
   assert.equal(chuanHoaDuongDan('/'), '/');
   assert.equal(chuanHoaDuongDan('/lich-am?x=1'), '/lich-am');
@@ -44,7 +45,7 @@ test('trang lập trình dùng dòng mẫu và điền tham số', async () => {
   const that = mau.duongDan.replace('{yyyy}', '1990').replace(/\{[a-z]+\}/g, '01');
   const t = await thongTinTrang(that, { title: 'x' }, mau.duongDan, { yyyy: 1990, mm: '01', dd: '01' });
   assert.equal(t.nguon, 'mau');
-  assert.ok(!t.title.includes('{yyyy}'));
+  assert.ok(!t.title.includes('{'));
   assert.ok(t.canonical.endsWith(that));
 });
 
@@ -69,4 +70,13 @@ test('trangDaDung theo đợt', async () => {
   assert.ok(f1.has('/') && f1.has('/tu-vi/lap-la-so') && f1.has('/tu-vi-2027'));
   assert.ok(!f1.has('/lich-am') && !f1.has('/goi'));
   assert.ok(trangDaDung(2).has('/lich-am/doi-ngay'));
+});
+
+test('mẫu còn chỗ trống chưa điền thì dùng mặc định', async () => {
+  const t = await thongTinTrang('/sinh-nam/1990', { title: 'Mặc định 1990', h1: 'H1 1990' }, '/sinh-nam/{yyyy}', { yyyy: 1990 });
+  assert.equal(t.nguon, 'mau');
+  assert.equal(t.title, 'Mặc định 1990'); // title mẫu có {Can Chi} chưa truyền
+  assert.equal(t.h1, 'Sinh năm 1990 mệnh gì?');
+  const du = await thongTinTrang('/sinh-nam/1990', { title: 'x' }, '/sinh-nam/{yyyy}', { yyyy: 1990, 'Can Chi': 'Canh Ngọ', 'Nạp âm': 'Lộ Bàng Thổ' });
+  assert.equal(du.title, 'Sinh năm 1990 mệnh gì? Tuổi Canh Ngọ, Lộ Bàng Thổ');
 });

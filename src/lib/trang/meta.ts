@@ -32,10 +32,16 @@ const docDong = cache(async (duongDan: string) => {
   }
 });
 
-/** Điền {yyyy}, {chi}... vào chuỗi mẫu. Tham số thiếu thì giữ nguyên dấu ngoặc để dễ thấy lỗi. */
+/**
+ * Điền chỗ trống vào chuỗi mẫu. Khóa đúng như trong dấu ngoặc của SeoTrang, kể cả dấu cách và dấu tiếng Việt:
+ * `{yyyy}`, `{Can Chi}`, `{Nạp âm}`, `{con vật}`... Tham số thiếu thì giữ nguyên dấu ngoặc để dễ thấy lỗi.
+ */
 export function dienMau(s: string, ts: ThamSoMau = {}): string {
-  return s.replace(/\{([a-z0-9_-]+)\}/gi, (m, k: string) => (k in ts ? String(ts[k]) : m));
+  return s.replace(/\{([^{}]+)\}/g, (m, k: string) => (k in ts ? String(ts[k]) : m));
 }
+
+/** Chuỗi còn chỗ trống chưa điền không? (để trang lập trình báo lỗi ở dev thay vì hiện "{Can Chi}" cho người đọc) */
+export const conChoTrong = (s: string) => /\{[^{}]+\}/.test(s);
 
 export function chuanHoaDuongDan(p: string): string {
   const s = ('/' + p.trim()).replace(/\/{2,}/g, '/').replace(/[?#].*$/, '');
@@ -55,7 +61,14 @@ export async function thongTinTrang(duongDan: string, macDinh: MacDinhTrang, mau
   const d = rieng ?? dongMau;
   const nguon: ThongTinTrang['nguon'] = rieng ? 'rieng' : dongMau ? 'mau' : 'khong';
   if (!d && process.env.NODE_ENV !== 'production') console.warn(`[trang] ${dd} chưa có trong SeoTrang: noindex`);
-  const dien = (s: string | null | undefined) => (s ? dienMau(s, thamSo) : s ?? null);
+  // Chỗ trống chưa điền được thì bỏ chuỗi của SeoTrang, dùng mặc định (không bao giờ hiện "{...}" cho người đọc).
+  const dien = (s: string | null | undefined) => {
+    if (!s) return null;
+    const r = dienMau(s, thamSo);
+    if (!conChoTrong(r)) return r;
+    if (process.env.NODE_ENV !== 'production') console.warn(`[trang] ${dd}: mẫu "${s}" còn chỗ trống chưa điền`);
+    return null;
+  };
   const canonicalRieng = rieng?.canonical ? tuyetDoi(rieng.canonical) : null;
   return {
     duongDan: dd,
