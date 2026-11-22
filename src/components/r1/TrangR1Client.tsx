@@ -1,9 +1,11 @@
 'use client';
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import { R1_COPY } from '@/lib/r1/copy';
 import { BAN_MAU_BIEN_TAP } from '@/lib/r1/ban-mau-bien-tap';
 import { hienNut149k } from '@/lib/r1/metrics';
+import { breadcrumb, trangDaDung } from '@/lib/trang/dieu-huong';
 import type { HoaTen, LaSo, LuuNien, NguHanh } from '@/lib/tuvi-v2';
 import type {
   KetQuaR1,
@@ -192,7 +194,13 @@ function dinhDangGioHeader(dongHo: string): string {
   return `${parts[0]}:${parts[1]}`;
 }
 
-export default function TrangR1Client({ fontClassName = '' }: { fontClassName?: string }) {
+export default function TrangR1Client({
+  fontClassName = '',
+  trongKhungV2 = false,
+}: {
+  fontClassName?: string;
+  trongKhungV2?: boolean;
+}) {
   // Form state (không hỏi họ tên thật, không hỏi SĐT)
   const [lich, setLich] = useState<'duong' | 'am'>('duong');
   const [ngay, setNgay] = useState('15');
@@ -321,10 +329,11 @@ export default function TrangR1Client({ fontClassName = '' }: { fontClassName?: 
   }, []);
 
   useEffect(() => {
+    if (trongKhungV2) return;
     capNhatMenuCuon();
     window.addEventListener('resize', capNhatMenuCuon);
     return () => window.removeEventListener('resize', capNhatMenuCuon);
-  }, [capNhatMenuCuon]);
+  }, [capNhatMenuCuon, trongKhungV2]);
 
   const danhDauBatDauForm = () => {
     if (!daBatDauFormRef.current) {
@@ -412,97 +421,120 @@ export default function TrangR1Client({ fontClassName = '' }: { fontClassName?: 
         ]
       : [];
 
+  const dsBreadcrumb = breadcrumb('/tu-vi-2027');
+  const daDung = trangDaDung();
+  const VungNoiDung: React.ElementType = trongKhungV2 ? React.Fragment : 'main';
+
   return (
     <div className={`r1e${fontClassName ? ` ${fontClassName}` : ''}`}>
-      <SvgSpriteE3 />
+      {!trongKhungV2 && (
+        <>
+          <SvgSpriteE3 />
 
-      {/* Dải cam kết trên cùng */}
-      <div className="r1e-dai-tren">
-        <div className="r1e-w">
-          <span>Lập lá số tử vi, tra cứu huyền học có căn cứ</span>
-          <span className="r1e-dai-tren-phai">
-            Không quảng cáo · Không popup · Không bán lễ giải hạn
-          </span>
-        </div>
-      </div>
-
-      {/* Đầu trang sơn mài: logo triện + tìm kiếm hiển thị + thanh menu */}
-      <header className="r1e-dau r1e-toi">
-        <div className="r1e-w r1e-dau-in">
-          <a className="r1e-logo" href="/tu-vi-2027" aria-label="xemboi.vn, trang Tử Vi 2027">
-            <TrienXemBoi />
-            <span className="r1e-logo-vach" aria-hidden="true" />
-            <span className="r1e-logo-chu">
-              <b className="r1e-chu-vang">{R1_COPY.thuongHieu}</b>
-              <small>
-                <i />
-                Tử vi · Lịch âm · Huyền học
-                <i />
-              </small>
-            </span>
-          </a>
-
-          <form
-            className="r1e-tim"
-            role="search"
-            onSubmit={(e) => e.preventDefault()}
-            aria-label="Tìm kiếm minh họa"
-          >
-            <input
-              type="search"
-              value={timHienThi}
-              onChange={(e) => setTimHienThi(e.target.value)}
-              placeholder="Tìm sao, cung, quẻ, ngày…"
-              aria-label="Tìm trong xemboi.vn"
-            />
-            <button type="submit" aria-label="Tìm">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <circle cx="10.5" cy="10.5" r="6.5" />
-                <path d="M15.5 15.5L21 21" />
-              </svg>
-            </button>
-          </form>
-        </div>
-
-        <div className="r1e-hoi-van" aria-hidden="true" />
-
-        <nav
-          className={`r1e-menu${menuCoCuon ? ' r1e-cuon' : ''}${menuHetCuon ? ' r1e-het' : ''}`}
-          aria-label="Các mảng"
-        >
-          <div className="r1e-w">
-            <ul ref={menuListRef} onScroll={capNhatMenuCuon}>
-              <li>
-                <a className="r1e-on" href="#lap" aria-current="page">
-                  Tử vi
-                </a>
-              </li>
-              {MANG_SAP_CO.map((ten) => (
-                <li key={ten}>
-                  <span className="r1e-menu-soon" aria-disabled="true">
-                    {ten}
-                    <em className="r1e-sap-co">Sắp có</em>
-                  </span>
-                </li>
-              ))}
-            </ul>
+          {/* Dải cam kết trên cùng */}
+          <div className="r1e-dai-tren">
+            <div className="r1e-w">
+              <span>Lập lá số tử vi, tra cứu huyền học có căn cứ</span>
+              <span className="r1e-dai-tren-phai">
+                Không quảng cáo · Không popup · Không bán lễ giải hạn
+              </span>
+            </div>
           </div>
-          <span className="r1e-menu-goi" aria-hidden="true">
-            ›
-          </span>
-        </nav>
-      </header>
 
-      <main>
+          {/* Đầu trang sơn mài: logo triện + tìm kiếm hiển thị + thanh menu */}
+          <header className="r1e-dau r1e-toi">
+            <div className="r1e-w r1e-dau-in">
+              <a className="r1e-logo" href="/tu-vi-2027" aria-label="xemboi.vn, trang Tử Vi 2027">
+                <TrienXemBoi />
+                <span className="r1e-logo-vach" aria-hidden="true" />
+                <span className="r1e-logo-chu">
+                  <b className="r1e-chu-vang">{R1_COPY.thuongHieu}</b>
+                  <small>
+                    <i />
+                    Tử vi · Lịch âm · Huyền học
+                    <i />
+                  </small>
+                </span>
+              </a>
+
+              <form
+                className="r1e-tim"
+                role="search"
+                onSubmit={(e) => e.preventDefault()}
+                aria-label="Tìm kiếm minh họa"
+              >
+                <input
+                  type="search"
+                  value={timHienThi}
+                  onChange={(e) => setTimHienThi(e.target.value)}
+                  placeholder="Tìm sao, cung, quẻ, ngày…"
+                  aria-label="Tìm trong xemboi.vn"
+                />
+                <button type="submit" aria-label="Tìm">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                    <circle cx="10.5" cy="10.5" r="6.5" />
+                    <path d="M15.5 15.5L21 21" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+
+            <div className="r1e-hoi-van" aria-hidden="true" />
+
+            <nav
+              className={`r1e-menu${menuCoCuon ? ' r1e-cuon' : ''}${menuHetCuon ? ' r1e-het' : ''}`}
+              aria-label="Các mảng"
+            >
+              <div className="r1e-w">
+                <ul ref={menuListRef} onScroll={capNhatMenuCuon}>
+                  <li>
+                    <a className="r1e-on" href="#lap" aria-current="page">
+                      Tử vi
+                    </a>
+                  </li>
+                  {MANG_SAP_CO.map((ten) => (
+                    <li key={ten}>
+                      <span className="r1e-menu-soon" aria-disabled="true">
+                        {ten}
+                        <em className="r1e-sap-co">Sắp có</em>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <span className="r1e-menu-goi" aria-hidden="true">
+                ›
+              </span>
+            </nav>
+          </header>
+        </>
+      )}
+
+      <VungNoiDung>
         {/* 1. ĐẦU TRANG: TRANH SƠN MÀI ĐÊM TRĂNG + FORM LẬP LÁ SỐ */}
         <section className="r1e-dau-trang r1e-toi" id="lap" aria-labelledby="r1-hero-heading">
           <TranhDauTrangNen />
           <TranhDauTrangDai />
 
           <div className="r1e-w">
-            <p className="r1e-vet">
-              <span>Tử vi</span> / <b>Lập lá số Tử Vi 2027</b>
-            </p>
+            <nav aria-label="Đường dẫn" className="r1e-vet">
+              <ol>
+                {dsBreadcrumb.map((muc, i) => {
+                  const laCuoi = i === dsBreadcrumb.length - 1;
+                  return (
+                    <li key={`${muc.href}-${i}`}>
+                      {laCuoi ? (
+                        <b aria-current="page">{muc.ten}</b>
+                      ) : daDung.has(muc.href) ? (
+                        <Link href={muc.href}>{muc.ten}</Link>
+                      ) : (
+                        <span>{muc.ten}</span>
+                      )}
+                    </li>
+                  );
+                })}
+              </ol>
+            </nav>
 
             <div className="r1e-lap">
               <div className="r1e-minh-o">
@@ -1214,58 +1246,60 @@ export default function TrangR1Client({ fontClassName = '' }: { fontClassName?: 
             </p>
           </div>
         </section>
-      </main>
+      </VungNoiDung>
 
       {/* 7. CHÂN TRANG SƠN ĐEN SÂU */}
-      <footer className="r1e-chan r1e-toi">
-        <div className="r1e-dai-may" aria-hidden="true" />
-        <div className="r1e-w r1e-chan-in">
-          <div>
-            <span className="r1e-logo">
-              <TrienXemBoi />
-              <span className="r1e-logo-chu">
-                <b className="r1e-chu-vang">{R1_COPY.thuongHieu}</b>
+      {!trongKhungV2 && (
+        <footer className="r1e-chan r1e-toi">
+          <div className="r1e-dai-may" aria-hidden="true" />
+          <div className="r1e-w r1e-chan-in">
+            <div>
+              <span className="r1e-logo">
+                <TrienXemBoi />
+                <span className="r1e-logo-chu">
+                  <b className="r1e-chu-vang">{R1_COPY.thuongHieu}</b>
+                </span>
               </span>
-            </span>
-            <p className="r1e-cam">
-              Lá số tử vi minh bạch, rõ căn cứ từng sao–cung.
-              <br />
-              Không quảng cáo. Không bán lễ giải hạn.
-            </p>
-            <p className="r1e-chu-the">
-              <strong>{R1_COPY.chanTrang.chuTheLabel}</strong>{' '}
-              {R1_COPY.chanTrang.chuThePlaceholder} · Liên hệ:{' '}
-              {R1_COPY.chanTrang.lienHePlaceholder}
-            </p>
-          </div>
+              <p className="r1e-cam">
+                Lá số tử vi minh bạch, rõ căn cứ từng sao–cung.
+                <br />
+                Không quảng cáo. Không bán lễ giải hạn.
+              </p>
+              <p className="r1e-chu-the">
+                <strong>{R1_COPY.chanTrang.chuTheLabel}</strong>{' '}
+                {R1_COPY.chanTrang.chuThePlaceholder} · Liên hệ:{' '}
+                {R1_COPY.chanTrang.lienHePlaceholder}
+              </p>
+            </div>
 
-          <div>
-            <h4 className="r1e-chu-vang">Tử vi 2027</h4>
-            <ul>
-              <li>
-                <a href="#lap">Lập lá số miễn phí</a>
-              </li>
-              <li>
-                <a href="#ban-mau">Bản luận giải mẫu</a>
-              </li>
-              <li>
-                <a href="#gia">Bảng giá dự kiến</a>
-              </li>
-            </ul>
-          </div>
+            <div>
+              <h4 className="r1e-chu-vang">Tử vi 2027</h4>
+              <ul>
+                <li>
+                  <a href="#lap">Lập lá số miễn phí</a>
+                </li>
+                <li>
+                  <a href="#ban-mau">Bản luận giải mẫu</a>
+                </li>
+                <li>
+                  <a href="#gia">Bảng giá dự kiến</a>
+                </li>
+              </ul>
+            </div>
 
-          <div className="r1e-chan-chinhsach">
-            <h4 className="r1e-chu-vang">Dữ liệu &amp; miễn trừ</h4>
-            <p>{R1_COPY.chanTrang.chinhSachDuLieu}</p>
-            <p>{R1_COPY.chanTrang.mienTruTrachNhiem}</p>
+            <div className="r1e-chan-chinhsach">
+              <h4 className="r1e-chu-vang">Dữ liệu &amp; miễn trừ</h4>
+              <p>{R1_COPY.chanTrang.chinhSachDuLieu}</p>
+              <p>{R1_COPY.chanTrang.mienTruTrachNhiem}</p>
+            </div>
           </div>
-        </div>
-        <div className="r1e-hoi-van" aria-hidden="true" />
-        <div className="r1e-w r1e-chan-duoi">
-          <span>© 2026 {R1_COPY.thuongHieu}</span>
-          <span>Tử Vi 2027 · Quy ước Nam Phái</span>
-        </div>
-      </footer>
+          <div className="r1e-hoi-van" aria-hidden="true" />
+          <div className="r1e-w r1e-chan-duoi">
+            <span>© 2026 {R1_COPY.thuongHieu}</span>
+            <span>Tử Vi 2027 · Quy ước Nam Phái</span>
+          </div>
+        </footer>
+      )}
 
       {/* 6. HỘP THOẠI TRUNG THỰC KHI BẤM MUA */}
       <HopThoaiMua

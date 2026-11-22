@@ -1,0 +1,4 @@
+/* Nền tối thiểu cho trang R1 (/tu-vi-2027) trong khung v2 (docs/v2/19 mục 2.1). */
+.r1e *, .r1e *::before, .r1e *::after { box-sizing: border-box; }
+:where(.r1e) button, :where(.r1e) input, :where(.r1e) select, :where(.r1e) textarea { font: inherit; color: inherit; }
+.r1e img { max-width: 100%; }

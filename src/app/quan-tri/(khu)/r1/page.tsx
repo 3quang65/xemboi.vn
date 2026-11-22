@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import QuanTriR1Client from '@/components/r1/QuanTriR1Client';
 import { yeuCauQuyen } from '@/lib/quan-tri/phien';
-import '@/app/tu-vi-2027/r1.css';
+import './r1-quan-tri.css';
 
 export const metadata: Metadata = {
   title: 'Thí nghiệm R1',

@@ -2119,7 +2119,7 @@ a.ck-o-cong-cu:hover {
 
 .ck-chan-in {
   display: grid;
-  grid-template-columns: 1.3fr repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: minmax(240px, 1.3fr) repeat(auto-fit, minmax(170px, 1fr));
   gap: 30px;
   padding: 44px 20px 28px;
 }
