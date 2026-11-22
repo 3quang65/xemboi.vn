@@ -450,7 +450,8 @@ function khoiTao(L) {
     return lines.join('\n');
   }
 
-  return { anLaSo: anLaSo, anLuuNien: anLuuNien, tomTat: tomTat, CUNG: CUNG, DAC_TEN: DAC_TEN, QUY_UOC_MAC_DINH: QUY_UOC_MAC_DINH };
+  // xemboi v2 (19-frontend-v2): xuất thêm danh mục sao và bảng đặc tính để dựng trang từ điển sao.
+  return { anLaSo: anLaSo, anLuuNien: anLuuNien, tomTat: tomTat, CUNG: CUNG, DAC_TEN: DAC_TEN, QUY_UOC_MAC_DINH: QUY_UOC_MAC_DINH, SAO: SAO, DAC_TINH: DAC_TINH };
 }
 
 var TuVi = khoiTao(AmLich);
@@ -461,4 +462,6 @@ export var tomTat = TuVi.tomTat;
 export var CUNG = TuVi.CUNG;
 export var DAC_TEN = TuVi.DAC_TEN;
 export var QUY_UOC_MAC_DINH = TuVi.QUY_UOC_MAC_DINH;
+export var SAO = TuVi.SAO;
+export var DAC_TINH = TuVi.DAC_TINH;
 export default TuVi;
