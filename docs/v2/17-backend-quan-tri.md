@@ -2065,11 +2065,17 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 > - **Quy tắc liên kết** `src/lib/seo/quy-tac-lien-ket.ts` + `scripts/seo-goi-y-lien-ket.ts`: 8 quy tắc 07 mục 2.4 (kế hoạch `lien_ket_ra` của 16-seo-trang.csv, cùng nhóm, form lập lá số, năm kề, `/phuong-phap`, bài "vì sao xem tuổi khác nhau", và 2 quy tắc chỉ hiển thị). Lần đầu sinh 579 gợi ý `DE_XUAT`; chạy lại không trùng; cặp đã bỏ qua không gợi ý lại.
 > - **Phân bố anchor** `src/lib/seo/anchor.ts`: 5 loại, 3 ngưỡng `[GIẢ ĐỊNH]`.
 > - **Lịch mùa vụ:** `scripts/seo-nap-lich-mua.ts` nạp 10 dòng 08 mục 7.2.
-> - Test `tests/dot3/`: thuần 7/7, CSDL 1/1.
+> - Test `tests/dot3/`: thuần 7/7, CSDL 1/1, GSC 4/4.
 > - **Giao diện: xong** (Antigravity, Lệnh 23, báo cáo `23-bao-cao.md`): `/quan-tri/seo/lien-ket` 6 tab (tổng quan, cảnh báo, trang mồ côi/quá sâu, gợi ý chấp nhận/bỏ qua, anchor, quy tắc bật/tắt), khối "Liên kết" trong `seo/trang/[id]`, `/quan-tri/seo/lich-mua`. Mọi thao tác cần `seo.sua`, ghi nhật ký `seo.canh_bao`, `seo.goi_y_lien_ket`, `seo.quy_tac_lien_ket`, `seo.lich_mua`. Claude Code đã soát mã, thêm 2 mục menu SEO, `kiem-dot1-quyen.mjs` kiểm 15 trang: đạt.
 >   - Sửa lõi theo đề nghị của Antigravity: trước đây gợi ý đã được chèn vào HTML bị đổi thành `DANG_CO` song song với dòng `QUET`, nên một cặp có hai dòng `DANG_CO`. Nay chỉ còn dòng `QUET`, mang theo `quyTacId` của gợi ý; dòng gợi ý bị bỏ. Có test.
 >   - Đề nghị còn lại (thêm quan hệ khóa ngoại `SeoLienKet.quyTacId`): để lần đổi schema sau.
-> - **Chưa làm:** đồng bộ Search Console (cần quyền, xem `viec-can-anh.md`); nhúng trang SEO + gợi ý ngữ nghĩa; `RagCauHoiChuan`/`RagDanhGia`, tìm lai RRF, bộ 100 câu; map nginx cho xemtuvi.vn (cần danh sách URL).
+> - **Đồng bộ Search Console: mã xong, đang tắt vì chưa có khóa** (`src/lib/seo/gsc.ts` + `scripts/seo-gsc.ts`):
+>   - tự ký JWT RS256 bằng `node:crypto` cho tài khoản dịch vụ, không thêm thư viện; khóa là tệp JSON ngoài repo (env `GSC_KHOA_TEP`, mặc định `../may-tram/gsc-xemboi.json`), không ghi CSDL, không in ra; chưa có tệp thì script báo và thoát 0;
+>   - kéo từng ngày, 2 truy vấn: ngày×trang×truy vấn×thiết bị → `SeoGscNgay`, ngày×trang×thiết bị → `SeoGscTrangNgay`; tự phân trang 25.000 dòng; kéo lại ngày nào thì thay dữ liệu ngày đó. Mặc định kéo lại 5 ngày gần nhất (Google chốt chậm 2–3 ngày); `--lan-dau` kéo 16 tháng;
+>   - cảnh báo, mốc là ngày mới nhất có dữ liệu, so 7 ngày gần nhất với 28 ngày trước đó `[GIẢ ĐỊNH ngưỡng]`: `TUT_HANG` theo cặp trang–truy vấn (≥ 50 hiển thị trong 7 ngày và vị trí tụt ≥ 3) và theo trang (nhấp trung bình ngày giảm ≥ 40 %, cần ≥ 20 nhấp trong 28 ngày); `TRUNG_Y_DINH` (mục 1.1 bước 7b); cảnh báo hết đúng thì tự đóng. Báo cáo lần cuối ở `CaiDat` `SEO_GSC_LAN_CUOI`;
+>   - test `tests/dot3/gsc.test.mjs` 4/4 (khóa RSA tự sinh, fetch giả, dữ liệu `[THỬ]` năm 2099). Sửa một lỗi tìm ra khi test: so cột `DATE` với tham số `Date` bị lệch một ngày theo múi giờ phiên, nay so bằng chuỗi `::date`.
+>   - Chưa làm: trang `/quan-tri/seo/xep-hang` (giao Antigravity khi có dữ liệu thật).
+> - **Chưa làm:** nhúng trang SEO + gợi ý ngữ nghĩa; `RagCauHoiChuan`/`RagDanhGia`, tìm lai RRF, bộ 100 câu; map nginx cho xemtuvi.vn (cần danh sách URL).
 
 ### Đợt 4: OCR, phiên âm, giấy phép, cứng hóa (55–80 giờ)
 
@@ -2100,6 +2106,8 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 ---
 
 ## 9. Việc cần anh Cường quyết
+
+> **22/11/2026:** anh đã trả lời. Câu 1 xong ở Đợt 0; câu 2–8, 12, 13 theo mặc định em đề xuất; câu 10 (xemtuvi.vn) và câu 9 (ngày mở tên miền) còn chờ. Chi tiết: `16-quyet-dinh-anh.md` mục 11–16 và `viec-can-anh.md`.
 
 1. **Cho làm Đợt 0 ngay không?** Hiện ai cũng đọc được danh sách khách hàng qua `/api/admin/customers` và đổi được cấu hình LLM qua `/api/admin/agents`.
 2. **Xác nhận máy trạm:** có GPU không, loại gì, bao nhiêu VRAM; máy bật khoảng mấy giờ mỗi ngày. Toàn bộ pipeline OCR và embedding dựa trên giả định này.

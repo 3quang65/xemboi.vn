@@ -18,7 +18,7 @@ export const QUYEN = {
   'noi_dung.duyet': ['QUAN_TRI', 'CHUYEN_GIA_DUYET'],
   'noi_dung.xuat_ban': ['QUAN_TRI', 'BIEN_TAP'],
   'rag.xem_cong_khai': ['QUAN_TRI', 'BIEN_TAP', 'CHUYEN_GIA_DUYET'],
-  // Chuyên gia đọc nguồn nội bộ còn chờ anh quyết (17 mục 9, câu 4): tạm chỉ quản trị và biên tập.
+  // Chuyên gia KHÔNG đọc nguồn nội bộ (anh duyệt 22/11/2026, 17 mục 9 câu 4): chỉ quản trị và biên tập.
   'rag.xem_noi_bo': ['QUAN_TRI', 'BIEN_TAP'],
   'rag.sua_doan': ['QUAN_TRI', 'BIEN_TAP', 'CHUYEN_GIA_DUYET'],
   'rag.quan_ly_nguon': ['QUAN_TRI'],

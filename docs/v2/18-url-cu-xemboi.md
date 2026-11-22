@@ -45,6 +45,8 @@ Dữ liệu chi tiết từng URL/mẫu: [18-url-cu-xemboi.csv](file:///d:/VibeC
 
 ## 3. Danh sách `CHO_QUYET` để anh xem
 
+> **Đã quyết ngày 22/11/2026** (anh giao em quyết): giữ nguyên slug cũ cho `/lien-he` và 3 trang `/chinh-sach-*` (thêm vào `16-seo-trang.csv` thành `PL-LIENHE`, `PL-BAOMAT`, `PL-DIEUKHOAN`, `PL-BANQUYEN`); `/chinh-sach-binh-luan-va-gop-y` chuyển 301 về `/lien-he` vì v2 không mở bình luận công khai. Giữ slug cũ thì không mất tuổi URL và liên kết ngoài, không cần chuyển hướng. Hai trang bảo mật và điều khoản cần luật sư đọc trước khi xuất bản. Bảng dưới giữ lại để tra cứu.
+
 Tất cả 5 URL `CHO_QUYET` đều nằm trong `sitemap-static.xml` vì `docs/v2/16-seo-trang.csv` hiện chưa liệt kê bộ trang liên hệ và pháp lý:
 
 | URL cũ | Nhóm | Gợi ý phương án cho anh chọn |

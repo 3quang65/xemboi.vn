@@ -2,44 +2,41 @@
 
 > Em (Claude Code) cứ làm tiếp theo kế hoạch ở máy trạm. Việc nào bắt buộc cần anh thì ghi vào đây; anh rảnh thì xử lý một lượt.
 > Mỗi mục ghi: việc gì, vì sao cần anh, và **em đang tạm làm theo mặc định nào** để không chặn việc khác.
-> Cập nhật lần cuối: 22/11/2026.
+> Cập nhật lần cuối: 22/11/2026, sau khi anh trả lời lượt 1.
 
-## A. Khi đưa lên VPS (một lần, cuối cùng)
+## Còn chờ anh
 
-Anh dặn dựng xong hết ở máy trạm rồi mới đưa lên VPS. Lúc đó cần anh:
+1. **Khóa Search Console của xemboi.vn** (anh đã đồng ý cấp). Các bước:
+   1. Google Cloud Console → tạo project (hoặc dùng project có sẵn) → bật **Google Search Console API**.
+   2. Tạo **tài khoản dịch vụ** (service account), tạo khóa dạng **JSON** và tải về.
+   3. Search Console → property xemboi.vn → Cài đặt → Người dùng và quyền → thêm email của tài khoản dịch vụ (dạng `…@….iam.gserviceaccount.com`), quyền **Restricted** là đủ.
+   4. Đặt tệp JSON vào `D:\VibeCode\Antigravity\may-tram\gsc-xemboi.json` (ngoài repo). Em không in nội dung tệp ra.
 
-1. **Cho phép push và deploy** nhánh `lam-lai-v2` lên v3.xemtuvi.vn. Em chưa push gì.
-2. **Thêm `NINEROUTER_API_KEY` vào env của web trên VPS.** Dùng khóa `xemboi` anh đã tạo (đã có trong `.env` máy trạm). Trên VPS cổng có thể gọi thẳng `http://127.0.0.1:20128/v1` thay cho `https://token.vip.vn/v1` (sửa ở `/quan-tri/ai/mo-hinh`).
-3. **Cho chạy hai script chuyển dữ liệu trên CSDL VPS** (chỉ thêm bản ghi mới, không xóa bảng cũ):
-   - `scripts/chuyen-bai-cu.ts`: bài `Post` và bài CMS → `NoiDung` (để `noindex` cho tới khi duyệt lại);
-   - `scripts/chuyen-tri-thuc-cu.ts`: tài liệu trợ lý cũ → `RagNguon` hạng C, nội bộ.
-   Em sẽ chạy `--thu` trước để anh xem số lượng.
-   Thêm 2 lịch chạy đêm (cron, user web): `scripts/seo-quet.ts https://<tên miền> --nghi=500` rồi `scripts/seo-goi-y-lien-ket.ts`; và nạp một lần `scripts/seo-nap-lich-mua.ts`.
-4. **Sao lưu trên VPS:** đặt lịch chạy `scripts/sao-luu-csdl.mjs` hằng đêm và có mã hóa bản sao lưu hay không. Mặc định em đề xuất: cron 3 giờ sáng, giữ 7 bản ngày + 4 bản tuần, chưa mã hóa (máy chỉ anh vào).
+   Mã đồng bộ đã xong (`scripts/seo-gsc.ts`); chưa có tệp thì script tự bỏ qua. Có tệp rồi em chạy `--lan-dau` kéo 16 tháng, rồi đặt cron hằng ngày lúc deploy. Nếu property không phải dạng tên miền (`sc-domain:xemboi.vn`) mà là dạng URL thì báo em để đặt `GSC_SITE`.
+2. **Ngày dự kiến mở tên miền chính** (17 mục 9, câu 9), để đặt nhắc giấy phép. Không có mặc định.
+3. **Tài khoản quản trị cho người thật** (17 mục 9, câu 11): trang `/quan-tri/tai-khoan` đã xong, anh tự tạo khi cần; hồ sơ tác giả tạm dùng bút danh.
+4. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
-## B. Quyết định nội dung và SEO
+## Anh đã trả lời ngày 22/11/2026
 
-5. **5 URL cũ `CHO_QUYET`** (18-url-cu-xemboi.md mục 3): `/lien-he`, `/chinh-sach-ban-quyen`, `/chinh-sach-su-dung-va-khieu-nai`, `/chinh-sach-bao-mat-va-cookies`, `/chinh-sach-binh-luan-va-gop-y`. Giữ nguyên slug hay chuyển sang slug pháp lý mới? **Mặc định:** giữ nguyên slug (không tạo chuyển hướng), trang bình luận/góp ý trỏ 301 về `/lien-he`.
-6. **`PTUC-XINXAM`:** anh đã chốt "xin xăm làm sau". 17 URL cũ (`/gieo-que-xin-xam` + 16 `/que-xam-*`) đang 301 về `/phong-tuc/xin-xam` chưa có bài. **Mặc định:** để các chuyển hướng này ở trạng thái **tắt**; khi nào có bài thì bật, nếu bỏ hẳn thì đổi sang 410.
-7. **Rủi ro điều khoản Codex:** chat công khai và AI soạn đang đi qua kết nối Codex (gói thuê bao) của 9router. Dùng thuê bao cá nhân cho chatbot công khai có thể trái điều khoản của OpenAI. Anh cân nhắc có chuyển phần chat công khai sang khóa API trả theo token không. **Mặc định:** giữ như hiện tại ở máy trạm và bản thử v3.
+| Việc | Trả lời | Em làm thế nào |
+|---|---|---|
+| Push và deploy `lam-lai-v2` lên v3.xemtuvi.vn | Đồng ý | Làm một lần khi xong Đợt 3 ở máy trạm, theo thứ tự triển khai VPS đã ghi; deploy xong thì báo lại kèm kiểm tra |
+| Thêm `NINEROUTER_API_KEY` vào env web trên VPS | Đồng ý | Làm lúc deploy; cổng trên VPS gọi thẳng `http://127.0.0.1:20128/v1` |
+| Chạy script chuyển dữ liệu và đặt cron trên VPS | Đồng ý | Lúc deploy: chạy `--thu` trước rồi mới chạy thật (`chuyen-bai-cu.ts`, `chuyen-tri-thuc-cu.ts`); cron đêm `seo-quet.ts` rồi `seo-goi-y-lien-ket.ts`, sáng `seo-gsc.ts` (khi có khóa); nạp một lần `seo-nap-lich-mua.ts`; sao lưu `sao-luu-csdl.mjs` 3 giờ sáng, giữ 7 bản ngày + 4 bản tuần, chưa mã hóa |
+| 5 URL cũ `CHO_QUYET` | Anh giao em quyết | **Đã làm:** giữ slug cũ `/lien-he` và 3 trang `/chinh-sach-*` (thêm vào `16-seo-trang.csv`: `PL-LIENHE`, `PL-BAOMAT`, `PL-DIEUKHOAN`, `PL-BANQUYEN`); `/chinh-sach-binh-luan-va-gop-y` 301 về `/lien-he`. Hai trang bảo mật và điều khoản cần luật sư đọc trước khi xuất bản |
+| Rủi ro điều khoản khi chat công khai đi qua Codex thuê bao | Không sao | Giữ 9router + Codex |
+| Đổi `prisma db push` sang `prisma migrate` | Đồng ý | Máy trạm đã dùng migrate (`0000_nen` → `0002`). Trên VPS: sao lưu, thử `migrate resolve --applied 0000_nen` + `migrate deploy` trên bản sao CSDL trước, rồi mới làm trên CSDL thật |
+| Các câu còn mở ở 17 mục 9 | Đồng ý theo mặc định | Xem bảng dưới |
+| `PTUC-XINXAM` (17 URL xin xăm) | (đã chốt trước: xin xăm làm sau) | Chuyển hướng để **tắt**; có bài thì bật, bỏ hẳn thì đổi 410 |
 
-## C. Các câu còn mở ở 17 mục 9
+### 17 mục 9: các mặc định đã được duyệt
 
-Mục 1 (Đợt 0) đã xong. Các mục dưới đây em đang chạy theo mặc định ghi bên cạnh:
-
-8. **Máy trạm có GPU gì, bật mấy giờ mỗi ngày** (mục 2). Mặc định: chạy OCR và nhúng khi máy bật, không hẹn giờ.
-9. **Nhúng câu hỏi lúc chạy thật** (mục 3). Mặc định: (c) chỉ tìm theo từ khóa và thuật ngữ; Đợt 3 sẽ đo thử (b) bge-m3 ONNX trên VPS.
-10. **Chuyên gia ngoài có được đọc đoạn nguồn C** khi ký thỏa thuận bảo mật (mục 4). Mặc định: không.
-11. **Trang công khai có ghi tên sách C dạng "tham khảo"** (mục 5). Mặc định: không.
-12. **Văn bản nguồn C có lưu trên VPS không** (mục 6). Mặc định: chỉ máy trạm.
-13. **Tài liệu RAG cũ thành `NOI_BO`**, chat công khai mất chúng cho tới khi xếp loại lại (mục 7). Mặc định: đồng ý (đã viết script theo hướng này).
-14. **Tách `quantri.xemboi.vn`** (mục 8). Mặc định: giữ một tiến trình tới hết Đợt 3.
-15. **Ngày mở tên miền chính** (mục 9), để đặt nhắc giấy phép.
-16. **Search Console của xemtuvi.vn, hoặc sitemap** (mục 10). Đợt 3 cũng cần **quyền Search Console của xemboi.vn**: anh tạo một tài khoản dịch vụ Google Cloud (bật Search Console API), thêm email của nó vào property xemboi.vn với quyền **Restricted** (chỉ đọc là đủ), rồi đặt tệp khóa JSON ở `may-tram/` (ngoài repo). Chưa có thì em làm phần đồng bộ với dữ liệu giả và để tắt.
-17. **Ai được tạo tài khoản quản trị:** tên, vai trò; hồ sơ tác giả dùng tên thật hay bút danh (mục 11). Trang `/quan-tri/tai-khoan` đã làm xong, anh tự tạo được.
-18. **Đổi `prisma db push` sang `prisma migrate`** (mục 12). Cần trước khi deploy.
-19. **Bật Ahrefs?** (mục 13). Mặc định: không.
-
-## D. xemtuvi.vn (site riêng của anh, em không sửa)
-
-20. `horoscopes.xml` của xemtuvi.vn đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index (16-quyet-dinh-anh.md).
+- Máy trạm: chạy OCR và nhúng khi máy bật, không hẹn giờ (câu 2).
+- Nhúng câu hỏi lúc chạy thật: (c) chỉ tìm theo từ khóa và thuật ngữ; Đợt 3 đo thử (b) bge-m3 ONNX trên VPS (câu 3).
+- Chuyên gia ngoài **không** đọc đoạn nguồn C (câu 4).
+- Trang công khai **không** ghi tên sách C (câu 5).
+- Văn bản nguồn C **chỉ ở máy trạm** (câu 6).
+- Tài liệu RAG cũ thành `NOI_BO` (câu 7).
+- Giữ một tiến trình, chưa tách `quantri.xemboi.vn` tới hết Đợt 3 (câu 8).
+- Không bật Ahrefs (câu 13).

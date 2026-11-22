@@ -14,3 +14,11 @@
 10. **Lá số không bao giờ được index trên xemboi.vn.** `/la-so/*` và mọi trang kết quả lá số đều noindex, nofollow và không vào sitemap. Đã thêm `robots` noindex vào `src/app/la-so/[slug]/page.tsx` (chưa commit).
 
 Còn chờ anh (xemtuvi.vn, site riêng): `horoscopes.xml` của xemtuvi.vn đang công khai lá số người dùng (kèm giới tính, giờ và ngày sinh) và cho index.
+
+## 22/11/2026 (trả lời sổ `viec-can-anh.md`, lượt 1)
+11. **Đồng ý** push và deploy `lam-lai-v2` lên v3.xemtuvi.vn khi xong Đợt 3 ở máy trạm; thêm `NINEROUTER_API_KEY` vào VPS; chạy script chuyển dữ liệu và đặt cron trên VPS.
+12. **Giao em quyết** 5 URL cũ `CHO_QUYET`: giữ slug cũ cho `/lien-he` và 3 trang `/chinh-sach-*`; `/chinh-sach-binh-luan-va-gop-y` 301 về `/lien-he` (18-url-cu-xemboi.md mục 3).
+13. **Không sao** với rủi ro điều khoản khi chat công khai chạy qua Codex thuê bao trên 9router.
+14. **Đồng ý** cấp quyền Search Console xemboi.vn (tài khoản dịch vụ, chờ tệp khóa).
+15. **Đồng ý** đổi `prisma db push` sang `prisma migrate`.
+16. **Đồng ý** các mặc định ở 17 mục 9 (chi tiết trong `viec-can-anh.md`).

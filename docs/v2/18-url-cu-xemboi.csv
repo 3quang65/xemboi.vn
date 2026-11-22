@@ -1,11 +1,11 @@
 url_cu_hoac_mau,nhom_sitemap,so_url,vi_du,quyet_dinh,page_id_v2,url_dich,ly_do
 /,static,1,https://xemboi.vn,GIU,HOME,/,Trang chủ v2 giữ nguyên đường dẫn /
 /tin-tuc,static,1,https://xemboi.vn/tin-tuc,301,KT,/kien-thuc,Hub bài viết/kiến thức v2 là /kien-thuc
-/lien-he,static,1,https://xemboi.vn/lien-he,CHO_QUYET,,,16-seo-trang.csv chưa có trang /lien-he; cần quyết giữ nguyên hay 301 về /phuong-phap
-/chinh-sach-ban-quyen,static,1,https://xemboi.vn/chinh-sach-ban-quyen,CHO_QUYET,,,16-seo-trang.csv chưa có trang chính sách bản quyền; cần quyết giữ nguyên hay chuẩn hóa slug pháp lý v2
-/chinh-sach-su-dung-va-khieu-nai,static,1,https://xemboi.vn/chinh-sach-su-dung-va-khieu-nai,CHO_QUYET,,,16-seo-trang.csv chưa có trang điều khoản sử dụng/khiếu nại; cần quyết giữ nguyên hay chuẩn hóa slug pháp lý v2
-/chinh-sach-bao-mat-va-cookies,static,1,https://xemboi.vn/chinh-sach-bao-mat-va-cookies,CHO_QUYET,,,16-seo-trang.csv chưa có trang chính sách bảo mật/cookies; cần quyết giữ nguyên hay chuẩn hóa slug pháp lý v2
-/chinh-sach-binh-luan-va-gop-y,static,1,https://xemboi.vn/chinh-sach-binh-luan-va-gop-y,CHO_QUYET,,,16-seo-trang.csv chưa có trang chính sách bình luận/góp ý; nếu v2 không mở bình luận có thể 301 về trang liên hệ hoặc 410
+/lien-he,static,1,https://xemboi.vn/lien-he,GIU,PL-LIENHE,/lien-he,Anh giao em quyết 22/11/2026: giữ slug cũ; 16-seo-trang.csv chưa có trang /lien-he; cần quyết giữ nguyên hay 301 về /phuong-phap
+/chinh-sach-ban-quyen,static,1,https://xemboi.vn/chinh-sach-ban-quyen,GIU,PL-BANQUYEN,/chinh-sach-ban-quyen,Quyết 22/11/2026: giữ slug cũ; 16-seo-trang.csv chưa có trang chính sách bản quyền; cần quyết giữ nguyên hay chuẩn hóa slug pháp lý v2
+/chinh-sach-su-dung-va-khieu-nai,static,1,https://xemboi.vn/chinh-sach-su-dung-va-khieu-nai,GIU,PL-DIEUKHOAN,/chinh-sach-su-dung-va-khieu-nai,Quyết 22/11/2026: giữ slug cũ; 16-seo-trang.csv chưa có trang điều khoản sử dụng/khiếu nại; cần quyết giữ nguyên hay chuẩn hóa slug pháp lý v2
+/chinh-sach-bao-mat-va-cookies,static,1,https://xemboi.vn/chinh-sach-bao-mat-va-cookies,GIU,PL-BAOMAT,/chinh-sach-bao-mat-va-cookies,Quyết 22/11/2026: giữ slug cũ; 16-seo-trang.csv chưa có trang chính sách bảo mật/cookies; cần quyết giữ nguyên hay chuẩn hóa slug pháp lý v2
+/chinh-sach-binh-luan-va-gop-y,static,1,https://xemboi.vn/chinh-sach-binh-luan-va-gop-y,301,PL-LIENHE,/lien-he,Quyết 22/11/2026: v2 không mở bình luận công khai nên chuyển về trang liên hệ; 16-seo-trang.csv chưa có trang chính sách bình luận/góp ý; nếu v2 không mở bình luận có thể 301 về trang liên hệ hoặc 410
 /lich-van-su,lich-van-nien,1,https://xemboi.vn/lich-van-su,301,LICH-VANNIEN,/lich-am/lich-van-nien,Từ khóa lịch vạn sự gán vào LICH-VANNIEN (16-seo-trang.csv)
 /lich-van-nien,lich-van-nien,1,https://xemboi.vn/lich-van-nien,301,LICH-VANNIEN,/lich-am/lich-van-nien,Khớp trực tiếp công cụ lịch vạn niên v2 (LICH-VANNIEN)
 /lich-van-nien-nam-2025,lich-van-nien,1,https://xemboi.vn/lich-van-nien-nam-2025,301,LICH-NAM,/lich-am/2025,Khớp trang lập trình lịch âm năm 2025 (LICH-NAM)
