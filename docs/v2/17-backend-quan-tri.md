@@ -2097,7 +2097,8 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 >   - tham khảo (cần GPU): vector Qwen3-0.6B nhúng câu hỏi đã viết lại bằng DeepSeek đạt 87 %.
 >
 >   **Quyết định cho VPS:** chạy từ khóa + bảng thuật ngữ + viết lại bằng `gx/qwen3.6-35b-nvfp4` (mặc định `MO_HINH_VIET_LAI`), không cần nhúng trên VPS. Quá giờ hoặc cụm máy nhà tắt thì lùi về bảng thuật ngữ (31 %). Đổi mô hình nhúng sang Qwen3-0.6B không còn chặn việc chạy thật; để làm khi cần nhánh vector.
-> - **Chưa làm:** map nginx cho xemtuvi.vn (cần danh sách URL); đưa tìm lai + viết lại vào trang `/quan-tri/rag/thu` và trợ lý công khai (cờ `RAG_V2`).
+> - **Trang `/quan-tri/rag/thu`** (Claude Code sửa 22/11): mặc định **Tìm lai** (bảng thuật ngữ + viết lại bằng `gx/qwen3.6-35b-nvfp4` + BM25), hiện từng bước mở rộng (cụm khớp bảng thuật ngữ, thuật ngữ LLM thêm, câu mẫu, danh sách từ khóa) và điểm BM25; có thể tắt LLM hoặc chọn **Tìm cũ** (toàn văn + trigram) để so. Phạm vi vẫn theo `nguCanhTruyVan`, đoạn được đọc lại với cùng điều kiện phạm vi; vẫn ghi `rag_truy_van_log`. Kiểm bằng HTTP: quản trị 3 chế độ đều 200, chuyên gia bị ép phạm vi công khai, tài khoản xem số liệu bị chặn.
+> - **Chưa làm:** map nginx cho xemtuvi.vn (cần danh sách URL); trợ lý công khai dùng tìm lai (cờ `RAG_V2`).
 
 ### Đợt 4: OCR, phiên âm, giấy phép, cứng hóa (55–80 giờ)
 

@@ -154,9 +154,11 @@ export function capHan(s: string): string[] {
  */
 export async function timLai(db: PrismaClient, o: { cau: string; bang: MucThuatNgu[]; phamVi: Prisma.Sql; vector?: number[]; vietLai?: { tuKhoa: string[]; doan: string } | null; k?: number }) {
   const mr = moRongThuatNgu(o.cau, o.bang);
-  const tuKhoa = [...mr.han, ...tuKhoaViet(mr.conLai), ...(o.vietLai?.tuKhoa ?? []), ...capHan(o.vietLai?.doan ?? '')];
+  const tuKhoa = [...new Set([...mr.han, ...tuKhoaViet(mr.conLai), ...(o.vietLai?.tuKhoa ?? []), ...capHan(o.vietLai?.doan ?? '')])];
   const tk = await timTuKhoa(db, { tuKhoa, phamVi: o.phamVi, k: 100 });
   const vt = o.vector ? await timVector(db, { vector: o.vector, phamVi: o.phamVi, k: 100 }) : [];
   const gop = gopRrf([{ ten: 'tu_khoa', ketQua: tk }, ...(vt.length ? [{ ten: 'vector', ketQua: vt }] : [])]);
-  return { moRong: mr, tuKhoa, ketQua: gop.slice(0, o.k ?? 10) };
+  const bm25 = new Map(tk.map((x) => [String(x.id), x.diem]));
+  const cos = new Map(vt.map((x) => [String(x.id), x.diem]));
+  return { moRong: mr, tuKhoa, ketQua: gop.slice(0, o.k ?? 10).map((x) => ({ ...x, diemTuKhoa: bm25.get(String(x.id)) ?? null, cosine: cos.get(String(x.id)) ?? null })) };
 }
