@@ -56,7 +56,11 @@ export type LoaiBieuTuongCongCu =
   | 'bat-tu'
   | 'tron-doi'
   | 'cung'
-  | 'sao';
+  | 'sao'
+  | 'doi-ngay'
+  | 'van-nien'
+  | 'ngay-mai'
+  | 'tet';
 
 /** Biểu tượng nét vàng lá theo mẫu E3 cho các ô công cụ. */
 export function BieuTuongCongCu({ loai }: { loai: LoaiBieuTuongCongCu }) {
@@ -153,6 +157,38 @@ export function BieuTuongCongCu({ loai }: { loai: LoaiBieuTuongCongCu }) {
             fill="url(#ck-vl-i)"
             fillOpacity="0.35"
           />
+        </>
+      )}
+      {loai === 'doi-ngay' && (
+        <>
+          <circle cx="17" cy="20" r="8" fill="url(#ck-vl-i)" fillOpacity="0.22" />
+          <path d="M17 8v3M17 29v3M5 20h3M26 20h3M8.5 11.5l2.2 2.2M23.3 26.3l2.2 2.2M25.5 11.5l-2.2 2.2M10.7 26.3l-2.2 2.2" />
+          <path
+            d="M35 22a8.5 8.5 0 1 0 4.8 12.2 6.5 6.5 0 1 1-4.8-12.2z"
+            fill="url(#ck-vl-i)"
+            fillOpacity="0.45"
+          />
+          <path d="M25 36h15m-3-3l3 3-3 3" />
+        </>
+      )}
+      {loai === 'van-nien' && (
+        <>
+          <rect x="7" y="10" width="34" height="30" rx="1.5" />
+          <path d="M7 18h34M15 6v6M33 6v6M15 24h5M22 24h5M29 24h5M15 30h5M22 30h5M29 30h5" />
+        </>
+      )}
+      {loai === 'ngay-mai' && (
+        <>
+          <path d="M6 34h36" />
+          <path d="M13 34a11 11 0 0 1 22 0" fill="url(#ck-vl-i)" fillOpacity="0.28" />
+          <path d="M24 12v6M13 17l3.5 3.5M35 17l-3.5 3.5M9 27h4M35 27h4" />
+        </>
+      )}
+      {loai === 'tet' && (
+        <>
+          <path d="M24 6v6" />
+          <ellipse cx="24" cy="24" rx="12" ry="13" fill="url(#ck-vl-i)" fillOpacity="0.24" />
+          <path d="M17 14c2 6 2 14 0 20M31 14c-2 6-2 14 0 20M18 11h12M18 37h12M24 37v6" />
         </>
       )}
     </svg>

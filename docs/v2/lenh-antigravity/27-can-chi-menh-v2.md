@@ -22,6 +22,14 @@ Báo cáo ghi vào `docs/v2/lenh-antigravity/27-bao-cao.md`.
     - Cần một component `src/components/ck/NoiDungMd.tsx` để hiện `KhoiMd[]`: tiêu đề, đoạn, danh sách, trích dẫn, chữ đậm, chữ nghiêng, link.
     - Component **không** dùng `dangerouslySetInnerHTML`.
 
+## Quy định CSS (bổ sung 22/11, sau Lệnh 26)
+
+`src/app/(v2)/ck.css` đã chạm trần 60 KB. **Không thêm CSS vào `ck.css`.**
+- CSS riêng của cụm này đặt ở `src/app/(v2)/<cụm>/<cụm>.css`, vẫn dùng tiền tố `ck-`.
+- Import tệp đó trong `src/app/(v2)/<cụm>/layout.tsx`. Layout này chỉ trả `children` và import CSS, không thêm khung.
+- Tệp cụm không vượt 30 KB.
+- Các cụm của lệnh này: `can-chi`, `sinh-nam`, `nap-am`, `ngu-hanh`, `con-giap`. Có thể dùng chung một tệp `src/components/ck/tu-dien.css` cho khung từ điển, import trong từng layout cụm.
+
 ## 1. Việc cần làm
 
 Mọi trang từ điển và trang lập trình có chung khuôn:

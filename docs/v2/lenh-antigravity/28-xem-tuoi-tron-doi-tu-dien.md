@@ -26,6 +26,14 @@ Khung từ điển (dữ liệu tính được, diễn giải đã duyệt hoặ
     - `CHINH_TINH` (14 sao) và `chinhTinhTheoSlug`. Mỗi sao có `hanh` và `dacTinh` theo 12 chi (Miếu, Vượng, Đắc, Bình hòa, Hãm), kèm `mieuVuong[]` và `ham[]`.
   - `src/lib/trang/lich.ts`: dùng `tetSapToi()` để lấy năm Tết mặc định cho trang xông đất.
 
+## Quy định CSS (bổ sung 22/11, sau Lệnh 26)
+
+`src/app/(v2)/ck.css` đã chạm trần 60 KB. **Không thêm CSS vào `ck.css`.**
+- CSS riêng của cụm này đặt ở `src/app/(v2)/<cụm>/<cụm>.css`, vẫn dùng tiền tố `ck-`.
+- Import tệp đó trong `src/app/(v2)/<cụm>/layout.tsx`. Layout này chỉ trả `children` và import CSS, không thêm khung.
+- Tệp cụm không vượt 30 KB.
+- Các cụm của lệnh này: `xem-tuoi`, `tu-vi` (dùng `tu-vi/tu-vi.css`), `bat-tu`, `kinh-dich`. Khung từ điển dùng lại `src/components/ck/tu-dien.css` của Lệnh 27.
+
 ## 1. Việc cần làm
 
 ### 1.1. Hub `/xem-tuoi`

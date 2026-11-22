@@ -70,6 +70,8 @@ test('trangDaDung theo đợt', async () => {
   assert.ok(f1.has('/') && f1.has('/tu-vi/lap-la-so') && f1.has('/tu-vi-2027'));
   assert.ok(!f1.has('/lich-am') && !f1.has('/goi'));
   assert.ok(trangDaDung(2).has('/lich-am/doi-ngay'));
+  assert.ok(trangDaDung(2).has('/tet'));
+  assert.ok(!trangDaDung(1).has('/tet'));
 });
 
 test('mẫu còn chỗ trống chưa điền thì dùng mặc định', async () => {

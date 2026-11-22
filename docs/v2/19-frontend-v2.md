@@ -50,7 +50,10 @@ Anh Cường yêu cầu:
   - Không dựa vào style của `body`.
 - Token màu, nền sơn mài, dải mây, nhũ vàng: lấy từ `src/app/tu-vi-2027/r1.css` (lớp `r1e-*`), đổi tên sang `ck-*`.
   - `r1.css` giữ nguyên cho tới khi `/tu-vi-2027` chuyển vào nhóm `(v2)` ở F5.
-- `ck.css` không vượt 60 KB.
+- `ck.css` (phần dùng chung) không vượt 60 KB. Sau Lệnh 26 nó đã chạm trần (60,6 KB), nên từ Lệnh 27 trở đi:
+  - CSS riêng của từng cụm đặt ở `src/app/(v2)/<cụm>/<cụm>.css`, vẫn dùng tiền tố `ck-`;
+  - tệp này được import trong `layout.tsx` của cụm (Next chỉ nạp CSS của cụm khi vào cụm đó);
+  - mỗi tệp cụm không vượt 30 KB; không sửa `ck.css` trừ khi thêm token dùng chung.
 - Tranh SVG đầu trang dùng lại `src/components/r1/TranhDauTrang.tsx`.
 
 ### 1.2. Hợp đồng giữa hai bên
@@ -158,3 +161,7 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - `bat-tu.ts`: tứ trụ theo tiết khí, tàng can, thập thần, đại vận. Thay `lapTuTru` v1, vốn lấy trụ tháng theo tháng âm.
   - `kinh-dich.ts`: 64 quẻ Văn Vương, gieo đồng xu, Mai Hoa theo thời gian. Thay `gieoQueDich` v1, vốn chỉ có 11 quẻ và tự viết lời khuyên.
   Tổng `tests/trang` là 42 test. Lệnh 28 đã soạn, gồm cả Bát tự và Gieo quẻ. Bát tự và Gieo quẻ không phải chờ dữ liệu nên không dời sang F6: trang hiện phần tính được, phần luận giải để chỗ giữ.
+- 22/11: nghiệm thu Lệnh 26 (Lịch âm, `/tet`).
+  - 14 URL trả mã đúng (200/404). Quét 185 liên kết nội bộ, không có 404. 0 lỗi console.
+  - Ở màn hình 375px không cuộn ngang. Đối chiếu ngày Tết 17/02/2026 khớp.
+  - Đã nâng `DOT_DA_DUNG = 2` và thêm `/tet` vào menu Lịch âm.
