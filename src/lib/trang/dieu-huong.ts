@@ -25,8 +25,9 @@ const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
       { ten: 'Lịch vạn niên', href: '/lich-am/lich-van-nien' },
       { ten: 'Âm lịch ngày mai', href: '/lich-am/ngay-mai' },
       { ten: 'Tết Nguyên Đán', href: '/tet' },
+      { ten: 'Giờ xuất hành Tết', href: '/xem-ngay/xuat-hanh' },
     ],
-    conDot: [2, 2, 2, 2],
+    conDot: [2, 2, 2, 2, 5],
   },
   {
     dot: 3, ten: 'Can chi & mệnh', href: '/can-chi', moTa: 'Sinh năm mệnh gì, nạp âm, con giáp',
