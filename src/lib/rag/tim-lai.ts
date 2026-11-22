@@ -141,10 +141,20 @@ export async function napBangThuatNgu(db: PrismaClient): Promise<MucThuatNgu[]> 
   return db.thuatNgu.findMany({ select: { han: true, hanViet: true, bienThe: true, mang: true } });
 }
 
-/** Tìm lai đầy đủ: mở rộng → từ khóa (+ vector nếu có) → RRF. */
-export async function timLai(db: PrismaClient, o: { cau: string; bang: MucThuatNgu[]; phamVi: Prisma.Sql; vector?: number[]; k?: number }) {
+/** Cặp chữ Hán liền nhau (không vượt dấu câu), dùng cho câu văn ngôn mẫu do LLM viết. */
+export function capHan(s: string): string[] {
+  const ra = new Set<string>();
+  for (const d of s.match(/\p{Script=Han}+/gu) ?? []) for (let i = 0; i + 1 < d.length; i++) ra.add(d.slice(i, i + 2));
+  return [...ra];
+}
+
+/**
+ * Tìm lai đầy đủ: mở rộng → từ khóa (+ vector nếu có) → RRF.
+ * `vietLai`: kết quả vietLaiCauHoi (src/lib/rag/viet-lai-cau.ts) nếu người gọi đã có; thêm thuật ngữ và cặp chữ của câu mẫu vào nhánh từ khóa.
+ */
+export async function timLai(db: PrismaClient, o: { cau: string; bang: MucThuatNgu[]; phamVi: Prisma.Sql; vector?: number[]; vietLai?: { tuKhoa: string[]; doan: string } | null; k?: number }) {
   const mr = moRongThuatNgu(o.cau, o.bang);
-  const tuKhoa = [...mr.han, ...tuKhoaViet(mr.conLai)];
+  const tuKhoa = [...mr.han, ...tuKhoaViet(mr.conLai), ...(o.vietLai?.tuKhoa ?? []), ...capHan(o.vietLai?.doan ?? '')];
   const tk = await timTuKhoa(db, { tuKhoa, phamVi: o.phamVi, k: 100 });
   const vt = o.vector ? await timVector(db, { vector: o.vector, phamVi: o.phamVi, k: 100 }) : [];
   const gop = gopRrf([{ ten: 'tu_khoa', ketQua: tk }, ...(vt.length ? [{ ten: 'vector', ketQua: vt }] : [])]);

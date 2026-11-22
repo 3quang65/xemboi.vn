@@ -1,5 +1,6 @@
 // Bộ đánh giá RAG (docs/v2/17 mục 3.4, 12 mục 5.3).
-//   npx tsx --env-file=.env scripts/rag-danh-gia.ts [--mo-hinh=bge-m3,qwen3-0.6b,aiteamvn] [--thu] [--bao-cao=docs/v2/bao-cao-danh-gia-rag.md]
+//   npx tsx --env-file=.env scripts/rag-danh-gia.ts [--mo-hinh=bge-m3,qwen3-0.6b,aiteamvn] [--viet-lai=gx/...,gx/...] [--thu] [--bao-cao=docs/v2/bao-cao-danh-gia-rag.md]
+// --viet-lai: viết lại câu hỏi bằng LLM (src/lib/rag/viet-lai-cau.ts); kết quả lưu đệm ở may-tram/danh-gia/viet-lai/ để không gọi lại.
 // 1. Nạp docs/v2/rag-cau-hoi-chuan.csv vào rag_cau_hoi_chuan (id = mã câu, chạy lại thì cập nhật).
 // 2. Nhánh từ khóa: đúng hàm chạy thật (src/lib/rag/tim-lai.ts), có và không có mở rộng thuật ngữ.
 // 3. Nhánh vector: tools/rag-may-tram/tim_vector.py (tìm chính xác, không qua HNSW), mỗi mô hình một lần.
@@ -11,11 +12,14 @@ import { spawnSync } from 'node:child_process';
 import { PrismaClient, Prisma } from '@prisma/client';
 import { moRongThuatNgu, tuKhoaViet, timTuKhoa, gopRrf, napBangThuatNgu } from '../src/lib/rag/tim-lai';
 import { chiSoCau, tongHop, docCsv, type ChiSoCau } from '../src/lib/rag/danh-gia';
+import { vietLaiCauHoi, capChuHan } from '../src/lib/rag/viet-lai-cau';
 
 const thamSo = process.argv.slice(2);
 const co = (ten: string) => thamSo.find((a) => a.startsWith(`--${ten}=`))?.split('=').slice(1).join('=');
 const thu = thamSo.includes('--thu');
 const moHinh = (co('mo-hinh') ?? 'bge-m3,qwen3-0.6b,aiteamvn').split(',').filter(Boolean);
+const vietLai = (co('viet-lai') ?? '').split(',').filter(Boolean);
+const DEM_VL = process.env.RAG_DEM_VIET_LAI || 'D:/VibeCode/Antigravity/may-tram/danh-gia/viet-lai';
 const PY = process.env.RAG_PYTHON || 'D:\\VibeCode\\Antigravity\\may-tram\\venv\\Scripts\\python.exe';
 const TAT_CA = Prisma.sql`TRUE`; // bộ đo chạy trên toàn kho máy trạm (mọi nguồn đều đã có vector)
 
@@ -58,12 +62,40 @@ type Cau = { ma: string; mang: string; doKho: string; cauHoi: string; dung: bigi
       tkTho.set(c.ma, (await timTuKhoa(db, { tuKhoa: tuKhoaViet(tho.conLai), phamVi: TAT_CA, k: 100 })).map((x) => x.id));
     }
 
+    // Viết lại câu hỏi bằng LLM (gx/ của 9router), 3 câu song song mỗi mô hình; lỗi thì để trống (giống chạy thật: lùi về bảng thuật ngữ).
+    type VL = { tuKhoa: string[]; doan: string; ms: number } | { loi: string; ms: number };
+    const vl: Record<string, Record<string, VL>> = {};
+    fs.mkdirSync(DEM_VL, { recursive: true });
+    for (const L of vietLai) {
+      const tep = path.join(DEM_VL, `${L.replace(/[^\w.-]+/g, '_')}.json`);
+      const dem: Record<string, VL> = fs.existsSync(tep) ? JSON.parse(fs.readFileSync(tep, 'utf8')) : {};
+      const can = cau.filter((c) => !dem[c.cauHoi] || 'loi' in dem[c.cauHoi]);
+      console.log(`Viết lại: ${L}, cần gọi ${can.length} câu…`);
+      for (let i = 0; i < can.length; i += 3) {
+        await Promise.all(can.slice(i, i + 3).map(async (c) => {
+          const r = await vietLaiCauHoi(c.cauHoi, { moHinh: L, hetGioMs: 90_000 });
+          dem[c.cauHoi] = r.ok ? { tuKhoa: r.tuKhoa, doan: r.doan, ms: r.ms } : { loi: r.loi.slice(0, 200), ms: r.ms };
+        }));
+        fs.writeFileSync(tep, JSON.stringify(dem, null, 1));
+      }
+      vl[L] = Object.fromEntries(cau.map((c) => [c.ma, dem[c.cauHoi]]));
+    }
+    const vlCua = (L: string, c: Cau) => { const x = vl[L][c.ma]; return x && 'tuKhoa' in x ? x : null; };
+    const tkVl = new Map<string, bigint[]>(), tkVlDoan = new Map<string, bigint[]>();
+    for (const L of vietLai) for (const c of cau) {
+      const m = mr.get(c.ma)!, x = vlCua(L, c);
+      const goc = [...m.han, ...tuKhoaViet(m.conLai)];
+      tkVl.set(`${L}|${c.ma}`, (await timTuKhoa(db, { tuKhoa: [...goc, ...(x?.tuKhoa ?? [])], phamVi: TAT_CA, k: 100 })).map((r) => r.id));
+      tkVlDoan.set(`${L}|${c.ma}`, (await timTuKhoa(db, { tuKhoa: [...goc, ...(x?.tuKhoa ?? []), ...capChuHan(x?.doan ?? '')], phamVi: TAT_CA, k: 100 })).map((r) => r.id));
+    }
+
     // Nhánh vector
     const tam = fs.mkdtempSync(path.join(os.tmpdir(), 'rag-danh-gia-'));
     const vao = path.join(tam, 'cau.json');
     fs.writeFileSync(vao, JSON.stringify(cau.flatMap((c) => [
       { khoa: `${c.ma}|tho`, van_ban: c.cauHoi },
       { khoa: `${c.ma}|mr`, van_ban: [c.cauHoi, ...mr.get(c.ma)!.han].join(' ') },
+      ...vietLai.map((L, i) => { const x = vlCua(L, c); return { khoa: `${c.ma}|vl${i}`, van_ban: [c.cauHoi, ...mr.get(c.ma)!.han, ...(x?.tuKhoa ?? []), x?.doan ?? ''].join(' ') }; }),
     ])));
     const vec: Record<string, { phienBan: string; msMoiCau: number; ketQua: Record<string, number[]> }> = {};
     for (const m of moHinh) {
@@ -77,17 +109,23 @@ type Cau = { ma: string; mang: string; doKho: string; cauHoi: string; dung: bigi
 
     // Cấu hình và chỉ số
     type CauHinh = { ten: string; moHinh: string; cauHinh: Record<string, unknown>; xep: (c: Cau) => bigint[] };
-    const v = (m: string, c: Cau, loai: 'tho' | 'mr') => vec[m].ketQua[`${c.ma}|${loai}`].map((x) => BigInt(x));
+    const v = (m: string, c: Cau, loai: string) => vec[m].ketQua[`${c.ma}|${loai}`].map((x) => BigInt(x));
     const rrf = (a: bigint[], b: bigint[]) => gopRrf([{ ten: 'vector', ketQua: a.map((id) => ({ id })) }, { ten: 'tu_khoa', ketQua: b.map((id) => ({ id })) }]).map((x) => x.id);
     const dsCh: CauHinh[] = [
       { ten: 'từ khóa, không mở rộng', moHinh: 'khong', cauHinh: { nhanh: ['tu_khoa'], moRongThuatNgu: false }, xep: (c) => tkTho.get(c.ma)! },
       { ten: 'từ khóa + mở rộng thuật ngữ', moHinh: 'khong', cauHinh: { nhanh: ['tu_khoa'], moRongThuatNgu: true }, xep: (c) => tkMr.get(c.ma)! },
     ];
+    const ngan = (L: string) => L.replace(/^gx\//, '').replace(/^deepseek-ai\//, '');
+    vietLai.forEach((L) => dsCh.push(
+      { ten: `từ khóa + mở rộng + ${ngan(L)}`, moHinh: 'khong', cauHinh: { nhanh: ['tu_khoa'], moRongThuatNgu: true, vietLai: L }, xep: (c) => tkVl.get(`${L}|${c.ma}`)! },
+      { ten: `từ khóa + mở rộng + ${ngan(L)} + câu mẫu`, moHinh: 'khong', cauHinh: { nhanh: ['tu_khoa'], moRongThuatNgu: true, vietLai: L, capChuCauMau: true }, xep: (c) => tkVlDoan.get(`${L}|${c.ma}`)! },
+    ));
     for (const m of moHinh) dsCh.push(
       { ten: 'vector', moHinh: m, cauHinh: { nhanh: ['vector'], moRongThuatNgu: false }, xep: (c) => v(m, c, 'tho') },
       { ten: 'vector + mở rộng', moHinh: m, cauHinh: { nhanh: ['vector'], moRongThuatNgu: true }, xep: (c) => v(m, c, 'mr') },
       { ten: 'lai (vector + từ khóa mở rộng)', moHinh: m, cauHinh: { nhanh: ['vector', 'tu_khoa'], moRongThuatNgu: 'chi_tu_khoa', rrfK: 60 }, xep: (c) => rrf(v(m, c, 'tho'), tkMr.get(c.ma)!) },
       { ten: 'lai + mở rộng cả hai nhánh', moHinh: m, cauHinh: { nhanh: ['vector', 'tu_khoa'], moRongThuatNgu: true, rrfK: 60 }, xep: (c) => rrf(v(m, c, 'mr'), tkMr.get(c.ma)!) },
+      ...vietLai.map((L, i) => ({ ten: `vector + mở rộng + ${ngan(L)} (câu mẫu)`, moHinh: m, cauHinh: { nhanh: ['vector'], moRongThuatNgu: true, vietLai: L }, xep: (c: Cau) => v(m, c, `vl${i}`) })),
     );
 
     const bangKq: { ch: CauHinh; tong: ReturnType<typeof tongHop>; theoMang: Record<string, ReturnType<typeof tongHop>>; theoDoKho: Record<string, ReturnType<typeof tongHop>> }[] = [];
@@ -132,6 +170,8 @@ type Cau = { ma: string; mang: string; doKho: string; cauHoi: string; dung: bigi
 ${bangKq.map(dong).join('\n')}
 
 Tốt nhất theo hit@10: **${tot[0].ch.moHinh} · ${tot[0].ch.ten}**.
+
+${vietLai.map((L) => { const ds = Object.values(vl[L]); const ok = ds.filter((x) => x && 'tuKhoa' in x); return `Viết lại bằng \`${L}\`: ${ok.length}/${ds.length} câu thành công, trung bình ${Math.round(ds.reduce((a, x) => a + (x?.ms ?? 0), 0) / Math.max(ds.length, 1))} ms/câu.`; }).join('\n')}
 
 Thời gian: nhánh từ khóa trung bình ${Math.round(msTk / cau.length)} ms/câu trên CSDL máy trạm; nhúng câu hỏi trên GPU ${Object.entries(vec).map(([m, x]) => `${m} ${x.msMoiCau} ms`).join(', ')} (theo lô).
 

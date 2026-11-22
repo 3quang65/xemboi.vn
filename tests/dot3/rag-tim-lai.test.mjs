@@ -72,3 +72,15 @@ test('timTuKhoa: mọi kết quả chứa từ khóa, điểm giảm dần, theo
   assert.ok(vb.find((x) => x.id === r[0].id).v.includes('天梁'), 'đoạn đầu có thuật ngữ hiếm hơn');
   assert.deepEqual(await timTuKhoa(db, { tuKhoa: [], phamVi: Prisma.sql`TRUE` }), []);
 });
+
+import { docKetQuaVietLai, capChuHan } from '../../src/lib/rag/viet-lai-cau.ts';
+test('docKetQuaVietLai: rút JSON, bỏ chữ Việt và ký tự lạ, giới hạn số mục', () => {
+  assert.deepEqual(docKetQuaVietLai('```json\n{"tu_khoa": ["天梁", "Thiên Lương", "午 宮", "天梁"], "doan": "天梁在午，入廟。"}\n```'),
+    { tuKhoa: ['天梁', '午宮'], doan: '天梁在午，入廟。' });
+  assert.equal(docKetQuaVietLai('{"tu_khoa": ["Thiên Lương"], "doan": "Thiên Lương ở Ngọ"}'), null, 'toàn tiếng Việt thì coi như hỏng');
+  assert.equal(docKetQuaVietLai('không có JSON'), null);
+  assert.equal(docKetQuaVietLai('{"tu_khoa": ' + JSON.stringify(Array.from({ length: 30 }, (_, i) => '天' + String.fromCharCode(0x4e00 + i))) + '}').tuKhoa.length, 15);
+});
+test('capChuHan: cặp chữ liền nhau, không vượt dấu câu', () => {
+  assert.deepEqual(capChuHan('天梁在午，入廟。'), ['天梁', '梁在', '在午', '入廟']);
+});

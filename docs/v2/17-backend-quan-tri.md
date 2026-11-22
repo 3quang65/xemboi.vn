@@ -2090,7 +2090,14 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 >   - so từng câu: mở rộng thuật ngữ cứu 25 câu, làm hỏng 2; Qwen3 hơn bge-m3 17 câu, kém 5 câu (kiểm dấu, p ≈ 0,02); gộp RRF với từ khóa không hơn vector + mở rộng (10 câu kém, 4 câu hơn, chưa có ý nghĩa thống kê). AITeamVN tinh chỉnh cho tiếng Việt nhưng yếu với chữ Hán, đúng như 12 mục 5.3 đoán;
 >   - hệ quả: (1) mở rộng thuật ngữ là bước lợi nhất, đã có trong mã; (2) **chỉ tìm theo từ khóa trên VPS (phương án c đang duyệt) chỉ đạt 31 %**, kém xa 70 %; (3) đề xuất đổi mô hình nhúng sang Qwen3-0.6B (cùng 1024 chiều, không đổi schema; nhúng lại 32.033 đoạn mất khoảng 6 phút). Hai việc này cần anh quyết, xem `viec-can-anh.md`;
 >   - giới hạn: 100 câu nên chênh dưới khoảng 10 điểm chưa đáng tin; nhãn độ khó là phán đoán; một số câu Chu Dịch có thể thiếu vài đoạn chú ở bản khác; nhóm ngũ hành chỉ 3 câu, chưa có câu phong tục (WS24 chỉ có tiêu đề). 30 câu Qwen3 còn trượt (danh sách trong `rag_danh_gia.chiTiet`) là chỗ để cải thiện bảng thuật ngữ và cách cắt đoạn.
-> - **Chưa làm:** map nginx cho xemtuvi.vn (cần danh sách URL).
+> - **Viết lại câu hỏi bằng LLM** (anh chỉ đạo 22/11: dùng DeepSeek V4.1 Flash hoặc Qwen của cụm máy nhà qua 9router, tiền tố `gx/`; 9router không có model embedding nào): `src/lib/rag/viet-lai-cau.ts`. LLM đọc câu tiếng Việt, trả thuật ngữ chữ Hán phồn thể và một câu văn ngôn mẫu; hai ví dụ mẫu trong lời nhắc chọn chủ đề không có trong bộ chuẩn. Thuật ngữ và cặp chữ của câu mẫu được thêm vào nhánh từ khóa (`timLai({ vietLai })`). Đo lại 100 câu:
+>   - từ khóa + bảng thuật ngữ + `gx/qwen3.6-35b-nvfp4` + câu mẫu: **hit@10 80 %**, recall@10 51,2 %, MRR 0,585, đúng nguồn 73 %, 2,9 giây/câu, 100/100 câu viết lại được;
+>   - cùng cách với `gx/deepseek-ai/DeepSeek-V4.1-Flash-1017`: 81 %, nhưng 11,8 giây/câu và hỏng 4/100; `gx/qwen3.8-flash-next`: 72 %, 3,5 giây;
+>   - so từng câu: Qwen3.6 viết lại hơn chỉ bảng thuật ngữ 49 câu, kém 0; câu mẫu giúp thêm 10 câu, làm hỏng 2; Qwen3.6 với DeepSeek ngang nhau (8/9); hơn vector Qwen3-0.6B + mở rộng 20 câu, kém 10;
+>   - tham khảo (cần GPU): vector Qwen3-0.6B nhúng câu hỏi đã viết lại bằng DeepSeek đạt 87 %.
+>
+>   **Quyết định cho VPS:** chạy từ khóa + bảng thuật ngữ + viết lại bằng `gx/qwen3.6-35b-nvfp4` (mặc định `MO_HINH_VIET_LAI`), không cần nhúng trên VPS. Quá giờ hoặc cụm máy nhà tắt thì lùi về bảng thuật ngữ (31 %). Đổi mô hình nhúng sang Qwen3-0.6B không còn chặn việc chạy thật; để làm khi cần nhánh vector.
+> - **Chưa làm:** map nginx cho xemtuvi.vn (cần danh sách URL); đưa tìm lai + viết lại vào trang `/quan-tri/rag/thu` và trợ lý công khai (cờ `RAG_V2`).
 
 ### Đợt 4: OCR, phiên âm, giấy phép, cứng hóa (55–80 giờ)
 
