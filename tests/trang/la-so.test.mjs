@@ -25,3 +25,15 @@ test('namXem sai thì dùng năm mặc định; tên bị cắt 60 ký tự', ()
   assert.equal(kq.ok, true);
   assert.equal(kq.ketQua.namXem, 2026);
 });
+
+test('bảng đại vận: 12 vận liên tiếp, mỗi vận 10 năm, đánh dấu vận đang chạy', () => {
+  const kq = lapLaSoCongKhai({ ngay: 15, thang: 8, nam: 1990, gio: 10, gioiTinh: 'nam', namXem: 2026 });
+  const dv = kq.ketQua.daiVan;
+  assert.equal(dv.length, 12);
+  for (let i = 1; i < dv.length; i++) assert.equal(dv[i].tuTuoi, dv[i - 1].tuTuoi + 10);
+  assert.equal(dv[0].tuNam, 1990 + dv[0].tuTuoi - 1);
+  assert.equal(dv.filter((v) => v.dangChay).length, 1);
+  const tuoi2026 = 2026 - 1990 + 1;
+  const dang = dv.find((v) => v.dangChay);
+  assert.ok(tuoi2026 >= dang.tuTuoi && tuoi2026 <= dang.denTuoi);
+});

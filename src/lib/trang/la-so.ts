@@ -2,7 +2,25 @@
 // Không lưu gì vào CSDL; lá số chỉ sống trên trình duyệt người dùng.
 import { kiemTraThongTin, lapLaSo, luuNien, moTaQuyUoc, namAmHienTai, tomTatLaSo, type LaSo, type LuuNien, type ThongTinSinh } from '@/lib/tuvi-v2';
 
-export type KetQuaLaSo = { laSo: LaSo; luuNien: LuuNien; namXem: number; moTaQuyUoc: string[]; tomTat: string };
+export type DaiVan = { tuTuoi: number; denTuoi: number; tuNam: number; denNam: number; chi: number; tenCung: string; canChi: string; chinhTinh: string[]; dangChay: boolean };
+export type KetQuaLaSo = { laSo: LaSo; luuNien: LuuNien; namXem: number; moTaQuyUoc: string[]; tomTat: string; daiVan: DaiVan[] };
+
+/**
+ * 12 đại vận theo tuổi âm (tuổi mụ): vận bắt đầu ở `daiVanTu`, kéo dài 10 năm. Năm dương tương ứng tính theo năm âm sinh.
+ * `dangChay` đánh dấu vận chứa năm xem.
+ */
+export function bangDaiVan(ls: LaSo, namXem: number): DaiVan[] {
+  const tuoiXem = namXem - ls.am.nam + 1;
+  return ls.cung
+    .filter((c) => Number.isInteger(c.daiVanTu) && c.daiVanTu > 0)
+    .map((c) => ({
+      tuTuoi: c.daiVanTu, denTuoi: c.daiVanTu + 9,
+      tuNam: ls.am.nam + c.daiVanTu - 1, denNam: ls.am.nam + c.daiVanTu + 8,
+      chi: c.chi, tenCung: c.ten, canChi: `${c.can} ${c.tenChi}`, chinhTinh: c.chinhTinh.map((x) => x.ten),
+      dangChay: tuoiXem >= c.daiVanTu && tuoiXem <= c.daiVanTu + 9,
+    }))
+    .sort((a, b) => a.tuTuoi - b.tuTuoi);
+}
 export type PhanHoiLaSo = { ok: true; ketQua: KetQuaLaSo } | { ok: false; loi: string };
 
 const so = (x: unknown) => (x === undefined || x === null || x === '' ? NaN : Number(x));
@@ -24,7 +42,7 @@ export function lapLaSoCongKhai(body: Record<string, unknown>, namMacDinh = namA
   const namXem = Number.isInteger(namXemRaw) && namXemRaw >= 1900 && namXemRaw <= 2100 ? namXemRaw : namMacDinh;
   try {
     const laSo = lapLaSo(input as ThongTinSinh);
-    return { ok: true, ketQua: { laSo, luuNien: luuNien(laSo, namXem, false), namXem, moTaQuyUoc: moTaQuyUoc(laSo), tomTat: tomTatLaSo(laSo) } };
+    return { ok: true, ketQua: { laSo, luuNien: luuNien(laSo, namXem, false), namXem, moTaQuyUoc: moTaQuyUoc(laSo), tomTat: tomTatLaSo(laSo), daiVan: bangDaiVan(laSo, namXem) } };
   } catch (e) {
     return { ok: false, loi: e instanceof Error ? e.message : 'Không lập được lá số. Vui lòng kiểm tra ngày giờ sinh.' };
   }

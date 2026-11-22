@@ -146,7 +146,7 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
 ## 3. Nhật ký
 
 - 22/11: lập kế hoạch. Bắt đầu F1.
-- 22/11: Claude Code xong phần lõi `src/lib/trang/*`, có test ở `tests/trang/` (6 tệp, 36 test):
+- 22/11: Claude Code xong phần lõi `src/lib/trang/*`, có test ở `tests/trang/` (6 tệp, 31 test):
   - `meta`, `dieu-huong`, `la-so` và route `POST /api/v2/la-so`;
   - `lich`: ngày, tháng, năm, lễ, Tết;
   - `can-chi`;
