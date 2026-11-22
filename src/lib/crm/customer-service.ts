@@ -25,50 +25,7 @@ export interface AutoLeadInput {
 // In-memory CRM fallback store
 const memoryCustomers = new Map<string, any>();
 
-// Seed sample customer profiles for rich CRM demonstration if DB is empty
-if (memoryCustomers.size === 0) {
-  memoryCustomers.set('cust_sample_1', {
-    id: 'cust_sample_1',
-    visitorId: 'xb_v_sample_1',
-    fullName: 'Nguyễn Văn An',
-    phone: '0912345678',
-    email: 'vanan.nguyen@gmail.com',
-    gender: 'NAM',
-    solarBirthDate: new Date('1990-06-15'),
-    lunarBirthInfo: {
-      canChiYear: 'Canh Ngọ',
-      banMenh: 'Lộ Bàng Thổ',
-      cucName: 'Hỏa Lục Cục',
-    },
-    leadScore: 35,
-    tags: ['Đã lập lá số', 'Bản mệnh: Lộ Bàng Thổ', 'Quan tâm Tình duyên', 'VIP'],
-    adminNotes: 'Khách quan tâm đại vận 2026 Bính Ngọ và cung Phu Thê.',
-    chartIds: ['la-so-tu-vi-nguyen-van-an-1990-nam-canh-ngo-d15m06y1990g12s1l0n0v2026'],
-    createdAt: new Date(Date.now() - 3 * 86400000),
-    updatedAt: new Date(),
-  });
-
-  memoryCustomers.set('cust_sample_2', {
-    id: 'cust_sample_2',
-    visitorId: 'xb_v_sample_2',
-    fullName: 'Trần Thị Bích',
-    phone: '0988776655',
-    email: 'bich.tran@outlook.com',
-    gender: 'NU',
-    solarBirthDate: new Date('2020-06-01'),
-    lunarBirthInfo: {
-      canChiYear: 'Canh Tý',
-      banMenh: 'Bích Thượng Thổ',
-      cucName: 'Hỏa Lục Cục',
-    },
-    leadScore: 28,
-    tags: ['Tháng Nhuận', 'Bản mệnh: Bích Thượng Thổ', 'Cần xem hạn 2026'],
-    adminNotes: 'Hỏi xem học hành cho con sinh tháng nhuận.',
-    chartIds: ['la-so-tu-vi-tran-thi-bich-2020-nu-canh-ty-d01m06y2020g08s0l1n1v2026'],
-    createdAt: new Date(Date.now() - 86400000),
-    updatedAt: new Date(),
-  });
-}
+// Không gieo khách mẫu: khu quản trị chỉ hiện dữ liệu thật (Lệnh 22, đề nghị 4).
 
 export async function upsertCustomerLead(input: AutoLeadInput) {
   const scoreBonus = input.scoreBonus ?? 5;
@@ -262,26 +219,8 @@ export async function getCustomerDetail(id: string) {
   if (mem) {
     return {
       ...mem,
-      sessions: [
-        {
-          id: 'sess_sample_1',
-          startedAt: mem.createdAt,
-          deviceType: 'Desktop',
-          browser: 'Chrome',
-          events: [{ eventType: 'GENERATE_CHART', path: '/la-so/...' }],
-        },
-      ],
-      conversations: [
-        {
-          id: 'conv_sample_1',
-          status: 'ACTIVE',
-          summary: 'Khách hỏi về cung Phu Thê và tài vận năm 2026',
-          messages: [
-            { role: 'user', content: 'Thầy xem giúp con đường tình duyên năm nay' },
-            { role: 'assistant', content: 'Thầy Minh Triết chào con, cung Phu Thê của con...' },
-          ],
-        },
-      ],
+      sessions: [],
+      conversations: [],
       fallback: true,
     };
   }

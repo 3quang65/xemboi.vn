@@ -55,7 +55,7 @@ export async function getOnlineCount(): Promise<number> {
       memoryHeartbeats.delete(vid);
     }
   }
-  return Math.max(1, memoryHeartbeats.size);
+  return memoryHeartbeats.size;
 }
 
 export async function recordTrackingEvent(input: TrackingEventInput) {
@@ -188,15 +188,17 @@ export async function getAnalyticsSummary() {
 
     return {
       onlineCount,
-      totalSessions: Math.max(12, memorySessions.size),
-      todaySessions: Math.max(5, memorySessions.size),
-      totalPageViews: Math.max(145, memoryEvents.length),
-      todayPageViews: Math.max(32, memTodayEvents.length),
-      chartsGenerated: Math.max(18, chartEvents),
-      chatOpened: Math.max(8, chatEvents),
-      conversionRate: '44.4%',
+      // CSDL lỗi: chỉ đếm những gì tiến trình này còn giữ trong bộ nhớ, không thêm số mẫu.
+      totalSessions: memorySessions.size,
+      todaySessions: memorySessions.size,
+      totalPageViews: memoryEvents.length,
+      todayPageViews: memTodayEvents.length,
+      chartsGenerated: chartEvents,
+      chatOpened: chatEvents,
+      conversionRate: chartEvents > 0 ? ((chatEvents / chartEvents) * 100).toFixed(1) + '%' : '0%',
       recentEvents: memoryEvents.slice(-20).reverse(),
       fallback: true,
+      loi: 'Không đọc được CSDL, số liệu chỉ là phần trong bộ nhớ tiến trình',
     };
   }
 }

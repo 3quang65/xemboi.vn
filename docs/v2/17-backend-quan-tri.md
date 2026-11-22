@@ -2109,6 +2109,15 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 >   - Chạy thật trên 3 câu, mỗi câu 1,2–2,6 giây, đều ra đúng sách. Ví dụ "hào sáu ba quẻ Khôn" ra 3 bản 含章可貞 trong Đông Pha, Chu Dịch chú sớ và Trình truyện.
 >   - Test `tests/dot3/rag-cong-khai.test.mjs`, 2/2 đạt: đoạn `NOI_BO` chứa từ khóa thấy được ở bảng gốc nhưng không lọt qua đường công khai.
 >   - **Chưa làm:** ghi nguồn trích ra giao diện chat. Hiện `citedSources` trả tên sách nhưng giao diện chưa hiện. Việc này giao Antigravity sau.
+> - **Phần lõi còn lại của Lệnh 22**, Claude Code làm 22/11:
+>   - `/api/admin/conversations` và `/simulate`:
+>     - chỉ nhận phiên tài khoản có quyền `hoi_thoai.xem` (`kiemQuyenApi`), bỏ nhánh `ADMIN_KEY`;
+>     - bốn thao tác POST đều ghi `NhatKyThaoTac`: `hoi_thoai.tiep_quan`, `.gui_tin`, `.trieu_tap`, `.hoi_dong`. Nhật ký `.gui_tin` chỉ lưu độ dài tin nhắn, không lưu nội dung;
+>     - đã kiểm bằng HTTP: quản trị nhận 200 và nhật ký có trước/sau đúng; biên tập nhận 403; không có phiên hoặc chỉ có `ADMIN_KEY` thì nhận 401.
+>   - Gỡ dữ liệu giả:
+>     - `customer-service.ts` không còn gieo 2 khách mẫu có số điện thoại và email bịa;
+>     - `tracker-server.ts`: khi CSDL lỗi thì trả số thật trong bộ nhớ kèm `loi`, không còn `Math.max(12/145/…)` hay `44.4%`; số người online không bị ép tối thiểu 1.
+>   - Còn lại: đưa few-shot vào CSDL và seed `AiAgent`. Hai việc này cần migration nên gộp vào đợt triển khai.
 > - **Chưa làm:** map nginx cho xemtuvi.vn (cần danh sách URL); trợ lý công khai dùng tìm lai (cờ `RAG_V2`).
 
 ### Đợt 4: OCR, phiên âm, giấy phép, cứng hóa (55–80 giờ)

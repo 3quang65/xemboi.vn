@@ -1,4 +1,5 @@
-import { yeuCauQuanTri } from '@/lib/quan-tri/cu';
+import { kiemQuyenApi, ghiNhatKy } from '@/lib/quan-tri/phien';
+import { prisma } from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import {
   listConversations,
@@ -11,9 +12,10 @@ import {
 import { getAgentBySlug } from '@/lib/ai/agent-persona';
 import { parseChartForCouncil, generateAdminSummonCommentary } from '@/lib/ai/council-orchestrator';
 
+// Chỉ phiên tài khoản (không nhận ADMIN_KEY): hội thoại chứa dữ liệu khách. Mọi thao tác POST ghi NhatKyThaoTac.
 export async function GET(req: Request) {
-  const chan = await yeuCauQuanTri(req, 'hoi_thoai.xem');
-  if (chan) return chan;
+  const nd = await kiemQuyenApi(req, 'hoi_thoai.xem');
+  if (nd instanceof Response) return nd;
   try {
     const { searchParams } = new URL(req.url);
     const tab = (searchParams.get('tab') as any) || 'all';
@@ -28,8 +30,10 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-  const chan = await yeuCauQuanTri(req, 'hoi_thoai.xem');
-  if (chan) return chan;
+  const nd = await kiemQuyenApi(req, 'hoi_thoai.xem');
+  if (nd instanceof Response) return nd;
+  const ghi = (hanhDong: string, id: string, truoc: unknown, sau: unknown) =>
+    ghiNhatKy(prisma, nd, hanhDong, 'ChatConversation', id, truoc, sau).catch((e) => console.error('[nhat-ky hoi_thoai]', e));
   try {
     const body = await req.json();
     const { action, conversationId, status, content, senderRole = 'admin', senderAgentSlug, senderName } = body;
@@ -45,7 +49,8 @@ export async function POST(req: Request) {
 
     // --- 1. TOGGLE TAKEOVER ---
     if (action === 'TOGGLE_TAKEOVER') {
-      const nextStatus = conv.status === 'HUMAN_TAKEOVER' ? 'ACTIVE' : 'HUMAN_TAKEOVER';
+      const truocStatus = conv.status; // chụp trước: kho hội thoại có thể sửa thẳng vào đối tượng conv
+      const nextStatus = truocStatus === 'HUMAN_TAKEOVER' ? 'ACTIVE' : 'HUMAN_TAKEOVER';
       await updateConversationStatus(conversationId, nextStatus);
 
       // System notification message
@@ -60,6 +65,7 @@ export async function POST(req: Request) {
         createdAt: new Date().toISOString(),
       };
       await addMessageToConversation(conversationId, sysMsg);
+      await ghi('hoi_thoai.tiep_quan', conversationId, { status: truocStatus }, { status: nextStatus });
 
       return NextResponse.json({ ok: true, status: nextStatus });
     }
@@ -95,6 +101,7 @@ export async function POST(req: Request) {
       };
 
       await addMessageToConversation(conversationId, newMsg);
+      await ghi('hoi_thoai.gui_tin', conversationId, null, { id: newMsg.id, vai: senderAgentSlug || 'admin', tenHienThi: msgSenderName, doDai: newMsg.content.length });
       return NextResponse.json({ ok: true, message: newMsg });
     }
 
@@ -105,6 +112,7 @@ export async function POST(req: Request) {
       }
 
       const agent = getAgentBySlug(senderAgentSlug);
+      const truocThay = [...conv.participantSlugs];
 
       // Add to participantSlugs if not present
       if (!conv.participantSlugs.includes(agent.slug)) {
@@ -128,18 +136,21 @@ export async function POST(req: Request) {
 
       await addMessageToConversation(conversationId, summonMsg);
       await upsertConversation(conv);
+      await ghi('hoi_thoai.trieu_tap', conversationId, { participantSlugs: truocThay }, { thay: agent.slug, participantSlugs: conv.participantSlugs });
 
       return NextResponse.json({ ok: true, message: summonMsg, participantSlugs: conv.participantSlugs });
     }
 
     // --- 4. TRIGGER AUTO COUNCIL ---
     if (action === 'TRIGGER_AUTO_COUNCIL') {
-      conv.mode = 'COUNCIL_CONSULTATION';
+      const truoc = { mode: conv.mode, status: conv.status, participantSlugs: [...conv.participantSlugs] };
       if (!conv.participantSlugs.includes('thay-minh-triet')) conv.participantSlugs.push('thay-minh-triet');
       if (!conv.participantSlugs.includes('thay-thai-son')) conv.participantSlugs.push('thay-thai-son');
       if (!conv.participantSlugs.includes('thay-tam-an')) conv.participantSlugs.push('thay-tam-an');
+      conv.mode = 'COUNCIL_CONSULTATION';
       conv.status = 'ACTIVE';
       await upsertConversation(conv);
+      await ghi('hoi_thoai.hoi_dong', conversationId, truoc, { mode: conv.mode, status: conv.status, participantSlugs: conv.participantSlugs });
 
       return NextResponse.json({ ok: true, conversation: conv });
     }
