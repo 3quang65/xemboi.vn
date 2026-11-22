@@ -16,6 +16,18 @@
 2. **(Không gấp) Đổi mô hình nhúng sang Qwen3-0.6B.** Tìm trên VPS đã chốt theo lời anh: từ khóa + viết lại câu hỏi bằng `gx/qwen3.6-35b-nvfp4` của cụm máy nhà, đo 100 câu được 80 % (trước 31 %), không cần nhúng trên VPS. Đổi mô hình nhúng chỉ cần khi bật nhánh vector; nó vẫn hơn bge-m3 (70 % so với 58 %). Em để bge-m3 tới khi anh bảo đổi. Lưu ý: tìm trên VPS sẽ phụ thuộc cụm máy nhà; cụm tắt thì tự lùi về 31 %.
 3. **Ngày dự kiến mở tên miền chính** (17 mục 9, câu 9), để đặt nhắc giấy phép. Không có mặc định.
 4. **Tài khoản quản trị cho người thật** (17 mục 9, câu 11): trang `/quan-tri/tai-khoan` đã xong, anh tự tạo khi cần; hồ sơ tác giả tạm dùng bút danh.
+6. **Frontend v2 (docs/v2/19).** Em đang tự làm theo mặc định dưới đây. Anh chỉ cần trả lời nếu muốn khác:
+   1. **Chat "Hội đồng thầy" v1:**
+      - Bỏ khung chat nổi trên mọi trang.
+      - Giao diện chat chuyển về `/tu-vi/luan-giai` (F4); API `/api/chat/*` giữ nguyên.
+   2. **Trang v2 dựng xong vẫn để `noindex`.** Trước ngày triển khai, em lập danh sách trang công cụ đủ điều kiện. Anh (hoặc biên tập viên) bấm xuất bản ở `/quan-tri/seo/trang`.
+      - Trang từ điển chỉ index khi có diễn giải đã duyệt.
+   3. **Trang v1 bỏ hẳn** khi F5 xong:
+      - `/tu-vi-hom-nay`, `/tu-vi-ngay-mai` → 410;
+      - `/tu-vi-tron-doi` → 301 `/tu-vi/tron-doi`;
+      - `/tu-tru` → 301 `/bat-tu/lap-la-so`;
+      - `/boi-dich` → 301 `/kinh-dich/gieo-que`.
+   4. **Bát tự và Gieo quẻ** cần bộ dữ liệu v2 (engine tứ trụ, 64 quẻ có nguồn). Nếu chưa kịp làm thì hai trang này chuyển sang F6, và `/tu-tru`, `/boi-dich` tạm trả 410 thay vì 301.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026
