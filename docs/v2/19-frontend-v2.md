@@ -94,7 +94,7 @@ Mỗi đợt kết thúc bằng: tsc sạch, test `tests/trang` qua, ảnh chụ
 | **F3** | Can chi và mệnh: hub `/can-chi`, `/sinh-nam` và `/sinh-nam/{yyyy}` ×101, `/can-chi/60-hoa-giap` và `/can-chi/{can}-{chi}` ×60, `/nap-am` ×30, `/ngu-hanh` ×5, `/ngu-hanh/mau-hop-menh`, `/con-giap` ×12. | 27 |
 | **F4** | Hub `/xem-tuoi`, `/xem-tuoi/vo-chong`, `/xem-tuoi/xong-dat`. `/tu-vi/tron-doi`. `/tu-vi/cung` ×12 và `/tu-vi/sao` ×14. `/tu-vi/luan-giai`, `/goi`. Hub `/bat-tu` và `/bat-tu/lap-la-so`. `/kinh-dich/gieo-que`. | 28 |
 | **F5** | Trang nền: `/phuong-phap` +5, `/nguon` +35, `/tu-dien`, `/kien-thuc` +2, `/lien-he`, 3 trang chính sách. Trang bài viết theo `NoiDung`. Chuyển `/tu-vi-2027` vào `(v2)`. Gỡ v1. | 29 |
-| **Nghiệm thu** | Quét toàn site (`scripts/kiem-dot1-seo.mjs`, quét liên kết). Không còn trang mồ côi. Mọi URL `18-url-cu-xemboi.csv` trả đúng 301 hoặc 410. Ảnh chụp đủ trang P1. | — |
+| **Nghiệm thu** | Quét toàn site (`scripts/kiem-dot1-seo.mjs`, quét liên kết). Bật 301/410 URL cũ bằng `scripts/seo-bat-chuyen-huong.ts --ghi` (chỉ bật dòng có đích trả 200). Không còn trang mồ côi. Mọi URL `18-url-cu-xemboi.csv` trả đúng 301 hoặc 410. Ảnh chụp đủ trang P1. | — |
 | **Triển khai** | Theo bộ nhớ "Thứ tự triển khai mã trên VPS", một lần. | — |
 | F6 (sau) | Hub P2: Xem ngày, Phong thủy, Kinh Dịch đủ 64 quẻ, Thần số học, Chiêm tinh, Phong tục. | 30+ |
 
