@@ -203,3 +203,20 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - 1.954 trang trả 200, 0 liên kết hỏng, 0 title còn `{...}`, 0 trang v1.
   - Đang index được 3 trang: `/`, `/tu-vi-2027`, `/kien-thuc`. Còn lại chờ xuất bản (viec-can-anh mục 6.2).
   - Sửa: sitemap bỏ nhóm `hien-tai`, vì nhóm này còn liệt kê 213 URL v1 đã 301/410. Đã xóa `src/lib/seo/sitemap-cu.ts`.
+- 22/11: **triển khai một lần lên v3.xemtuvi.vn** (bản `releases/20261122-2118`, mã commit 7b997bf).
+  - CSDL: sao lưu `sao-luu/truoc-v2-*.dump`; thử trên bản sao `xemboi_v3_thu` trước (đã xóa sau khi xong).
+    - Tạo bằng postgres: role NOLOGIN `xemboi_web`, `xemboi_quantri`, `xemboi_worker`; extension `pg_trgm`.
+    - Chạy `migrate resolve --applied 0000_nen` rồi `migrate deploy` (0001, 0002). Migration chỉ thêm bảng, không sửa bảng cũ.
+  - Dữ liệu từ máy trạm (`--data-only --disable-triggers`): 24 bảng công khai, gồm 164 nguồn, 32.061 đoạn `CONG_KHAI`, 336 thuật ngữ, kho SEO, 4 bài.
+    - Không chuyển: tài khoản, phiên, nhật ký, số GSC giả, việc RAG.
+    - Dữ liệu R1 giữ nguyên: 14 R1Event, 10 PageEvent, 8 phiên. 2 sự kiện thử lúc kiểm đã xóa.
+  - Env: thêm `NINEROUTER_API_KEY`. `CaiDat.LLM.baseUrl` = `http://127.0.0.1:20128/v1`. Đã seed 9 trợ lý AI.
+  - nginx: mở mọi đường dẫn, giữ `X-Robots-Tag: noindex, nofollow`.
+    - Snippet proxy thêm `X-Forwarded-Host` và `proxy_redirect`, vì `/quan-tri` từng chuyển sang `https://localhost:3027`.
+    - Bản nginx cũ lưu ở `/home/claude/nginx-*.bak-*`.
+  - Cron (giờ VN): 1:30 `seo-quet.ts` rồi `seo-goi-y-lien-ket.ts`; 3:00 `sao-luu-csdl.mjs`. `seo-gsc.ts` chờ khóa (viec-can-anh mục 1).
+  - Kiểm từ ngoài:
+    - 31 trang chính trả 200, thời gian 0,2–0,8 giây;
+    - URL v1 trả 410 hoặc 301 đúng bảng; trang lạ trả 404;
+    - 0 lỗi console; log dịch vụ sạch.
+  - Quay lại bản cũ: trỏ `current` về `releases/20261121-0011`, restart, khôi phục dump `truoc-v2`.

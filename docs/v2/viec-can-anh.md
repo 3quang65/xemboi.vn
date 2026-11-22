@@ -39,7 +39,7 @@
 
 | Việc | Trả lời | Em làm thế nào |
 |---|---|---|
-| Push và deploy `lam-lai-v2` lên v3.xemtuvi.vn | Đồng ý | Làm một lần khi xong Đợt 3 ở máy trạm, theo thứ tự triển khai VPS đã ghi; deploy xong thì báo lại kèm kiểm tra |
+| Push và deploy `lam-lai-v2` lên v3.xemtuvi.vn | Đồng ý | **Đã deploy 22/11** (bản `20261122-2118`, xem 19 nhật ký). Chưa push nhánh lên git remote: chờ anh bảo |
 | Thêm `NINEROUTER_API_KEY` vào env web trên VPS | Đồng ý | Làm lúc deploy; cổng trên VPS gọi thẳng `http://127.0.0.1:20128/v1` |
 | Chạy script chuyển dữ liệu và đặt cron trên VPS | Đồng ý | Lúc deploy: chạy `--thu` trước rồi mới chạy thật (`chuyen-bai-cu.ts`, `chuyen-tri-thuc-cu.ts`); cron đêm `seo-quet.ts` rồi `seo-goi-y-lien-ket.ts`, sáng `seo-gsc.ts` (khi có khóa); nạp một lần `seo-nap-lich-mua.ts`; sao lưu `sao-luu-csdl.mjs` 3 giờ sáng, giữ 7 bản ngày + 4 bản tuần, chưa mã hóa |
 | 5 URL cũ `CHO_QUYET` | Anh giao em quyết | **Đã làm:** giữ slug cũ `/lien-he` và 3 trang `/chinh-sach-*` (thêm vào `16-seo-trang.csv`: `PL-LIENHE`, `PL-BAOMAT`, `PL-DIEUKHOAN`, `PL-BANQUYEN`); `/chinh-sach-binh-luan-va-gop-y` 301 về `/lien-he`. Hai trang bảo mật và điều khoản cần luật sư đọc trước khi xuất bản |
