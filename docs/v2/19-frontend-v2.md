@@ -153,3 +153,8 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - `xem-tuoi`;
   - `noi-dung`.
   Lệnh 25 đã giao Antigravity. Lệnh 26 và 27 đã soạn, chờ 25 xong mới giao.
+- 22/11: thêm lõi F4:
+  - `tu-vi-tu-dien.ts`: 12 cung, 14 chính tinh, bảng miếu hãm lấy từ engine.
+  - `bat-tu.ts`: tứ trụ theo tiết khí, tàng can, thập thần, đại vận. Thay `lapTuTru` v1, vốn lấy trụ tháng theo tháng âm.
+  - `kinh-dich.ts`: 64 quẻ Văn Vương, gieo đồng xu, Mai Hoa theo thời gian. Thay `gieoQueDich` v1, vốn chỉ có 11 quẻ và tự viết lời khuyên.
+  Tổng `tests/trang` là 42 test. Lệnh 28 đã soạn, gồm cả Bát tự và Gieo quẻ. Bát tự và Gieo quẻ không phải chờ dữ liệu nên không dời sang F6: trang hiện phần tính được, phần luận giải để chỗ giữ.
