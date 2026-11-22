@@ -212,9 +212,8 @@ export default async function TrangChiTietKhachHang({
           <ul style={{ margin: 0, paddingLeft: 18, display: 'grid', gap: 6 }}>
             {chartIds.map((cid) => (
               <li key={cid}>
-                <Link href={`/la-so/${cid}`} target="_blank">
-                  /la-so/{cid} ↗
-                </Link>
+                {/* Trang /la-so/{id} của v1 đã gỡ; chỉ hiện mã lá số. */}
+                <code>{cid}</code>
               </li>
             ))}
           </ul>

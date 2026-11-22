@@ -1,24 +1,21 @@
 {
   "id": "/",
-  "name": "XemBoi.vn – Xem lá số cùng thầy Ba",
-  "short_name": "XemBoi.vn",
-  "description": "Lập lá số tử vi, nghe thầy Ba luận giải, xem lịch âm dương, giờ hoàng đạo và chọn ngày tốt.",
+  "name": "XemBói.vn – Lá số tử vi, lịch âm, tra mệnh có căn cứ",
+  "short_name": "XemBói.vn",
+  "description": "Lập lá số tử vi, xem lịch âm, tra năm sinh mệnh gì. Mỗi kết quả ghi rõ công thức, sách và trường phái.",
   "lang": "vi",
-  "start_url": "/?nguon=app",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#1d1729",
-  "theme_color": "#1d1729",
-  "categories": ["lifestyle", "entertainment"],
+  "background_color": "#0B0608",
+  "theme_color": "#b3361f",
+  "categories": ["lifestyle", "reference"],
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ],
   "shortcuts": [
-    { "name": "Hỏi thầy", "url": "/?tab=hoi", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
-    { "name": "Lịch âm hôm nay", "url": "/?tab=lich", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
-    { "name": "Xem ngày tốt", "url": "/?tab=ngay", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+    { "name": "Lập lá số tử vi", "url": "/tu-vi/lap-la-so" },
+    { "name": "Lịch âm hôm nay", "url": "/lich-am" },
+    { "name": "Đổi ngày âm dương", "url": "/lich-am/doi-ngay" }
   ]
 }
