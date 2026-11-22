@@ -26,6 +26,13 @@ Khung từ điển (dữ liệu tính được, diễn giải đã duyệt hoặ
     - `CHINH_TINH` (14 sao) và `chinhTinhTheoSlug`. Mỗi sao có `hanh` và `dacTinh` theo 12 chi (Miếu, Vượng, Đắc, Bình hòa, Hãm), kèm `mieuVuong[]` và `ham[]`.
   - `src/lib/trang/lich.ts`: dùng `tetSapToi()` để lấy năm Tết mặc định cho trang xông đất.
 
+## Dùng lại từ Lệnh 27 (commit 0bcb670)
+
+- `KhoiDienGiai` và `NoiDungMd` (`src/components/ck/NoiDungMd.tsx`): hiển thị phần diễn giải, hoặc chỗ giữ khi chưa có bản xuất bản.
+- `src/components/ck/tu-dien.css`: khung từ điển. `HuyHieuHanh` và `DanhSachMau` (`TheCanChi.tsx`).
+- `canChiHelpers.ts`: màu và chữ Hán của 5 hành.
+- Slug con giáp nay lấy thẳng từ `CON_GIAP[i].slug` trong lõi: Tý là `ty`, Tỵ là `ti`.
+
 ## Quy định CSS (bổ sung 22/11, sau Lệnh 26)
 
 `src/app/(v2)/ck.css` đã chạm trần 60 KB. **Không thêm CSS vào `ck.css`.**
