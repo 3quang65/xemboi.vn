@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/prisma';
 import { getAgentBySlug, THAY_MINH_TRIET, AiAgentConfig } from './agent-persona';
 import { timCongKhai, CO_RAG_V2 } from '@/lib/rag/tim-cong-khai';
+import { lamMoiFewShot } from './few-shot';
 
 export interface KnowledgeChunkItem {
   id: string;
@@ -249,6 +250,7 @@ export async function* streamChatResponse(params: {
   const { userMessage, conversationHistory, chartData, agentSlug } = params;
 
   // Resolve active Agent persona
+  await lamMoiFewShot(prisma); // mẫu few-shot sửa trong quản trị (CaiDat) có hiệu lực sau tối đa 5 phút
   const agent: AiAgentConfig = getAgentBySlug(agentSlug || 'thay-minh-triet');
 
   // 1. Retrieve relevant RAG knowledge chunks prioritized for this agent

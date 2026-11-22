@@ -1,13 +1,13 @@
 // Nạp dữ liệu Search Console GIẢ để làm giao diện /quan-tri/seo/xep-hang khi chưa có khóa GSC thật.
-// Mọi dòng có url https://xemboi.vn/_thu-gsc/... và truy vấn bắt đầu "[THỬ]". Sau đó chạy tính cảnh báo như thật.
+// Mọi dòng có url https://xemboi.vn/_gia-gsc/... và truy vấn bắt đầu "[THỬ]". Sau đó chạy tính cảnh báo như thật.
 // Chạy: npx tsx --env-file=.env scripts/thu-gsc-gia.ts        (nạp, ghi đè bản giả cũ)
 //       npx tsx --env-file=.env scripts/thu-gsc-gia.ts --xoa  (xóa sạch dữ liệu giả và cảnh báo của nó)
-// Ý đồ: /_thu-gsc/a tụt vị trí (TUT_HANG kiểu vi_tri), /_thu-gsc/b tụt nhấp (TUT_HANG kiểu nhap),
+// Ý đồ: /_gia-gsc/a tụt vị trí (TUT_HANG kiểu vi_tri), /_gia-gsc/b tụt nhấp (TUT_HANG kiểu nhap),
 //       truy vấn "[THỬ] xem tuổi" chia giữa /a và /c (TRUNG_Y_DINH).
 import { PrismaClient, type Prisma } from '@prisma/client';
 import { tinhCanhBaoGsc, ghiCanhBaoGsc } from '../src/lib/seo/gsc';
 
-const GOC = 'https://xemboi.vn/_thu-gsc/';
+const GOC = 'https://xemboi.vn/_gia-gsc/';
 const ngayChuoi = (d: Date) => d.toISOString().slice(0, 10);
 
 (async () => {
@@ -16,7 +16,7 @@ const ngayChuoi = (d: Date) => d.toISOString().slice(0, 10);
     const xoaCu = async () => {
       const q = await db.seoGscNgay.deleteMany({ where: { url: { startsWith: GOC } } });
       const p = await db.seoGscTrangNgay.deleteMany({ where: { url: { startsWith: GOC } } });
-      const c = await db.$executeRaw`DELETE FROM "SeoCanhBao" WHERE "chiTiet"::text LIKE '%/_thu-gsc/%'`;
+      const c = await db.$executeRaw`DELETE FROM "SeoCanhBao" WHERE "chiTiet"::text LIKE '%/_gia-gsc/%'`;
       return { dongTruyVan: q.count, dongTrang: p.count, canhBao: c };
     };
     if (process.argv.includes('--xoa')) {

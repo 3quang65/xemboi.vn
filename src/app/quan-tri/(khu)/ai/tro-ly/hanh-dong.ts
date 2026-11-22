@@ -3,6 +3,7 @@
 // Không cấu hình mô hình LLM hay khóa kết nối ở đây; với systemPrompt chỉ lưu độ dài và sha256 vào nhật ký.
 import crypto from 'node:crypto';
 import { revalidatePath } from 'next/cache';
+import { boCacheTroLy } from '@/lib/ai/few-shot';
 import { redirect } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 import { ghiNhatKy, yeuCauQuyen } from '@/lib/quan-tri/phien';
@@ -115,6 +116,7 @@ export async function suaTroLy(f: FormData) {
 
   if (loi) veLai(id, loi, true);
 
+  boCacheTroLy(); // chat đọc bản sửa ngay ở lượt sau
   revalidatePath(DUONG);
   veLai(id, 'Đã lưu cấu hình trợ lý và ghi nhật ký.');
 }

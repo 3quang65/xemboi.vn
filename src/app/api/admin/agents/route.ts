@@ -1,194 +1,81 @@
-import { yeuCauQuanTri } from '@/lib/quan-tri/cu';
+// API trợ lý AI kiểu cũ. Khu /quan-tri/ai/* dùng server action riêng; route này giữ cho công cụ ngoài còn gọi.
+// Chỉ nhận phiên tài khoản có quyền ai.tro_ly (không nhận ADMIN_KEY). Mọi thao tác ghi đều ghi NhatKyThaoTac.
+// Mẫu few-shot lưu ở CaiDat AI_FEW_SHOT (src/lib/ai/few-shot.ts), không ghi đè tệp mã nguồn.
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { createHash } from 'node:crypto';
 import { prisma } from '@/lib/prisma';
-import { DEFAULT_AGENTS, MINH_CUSTOMER_AGENT } from '@/lib/ai/agent-persona';
-import { inMemoryChunks } from '@/lib/ai/rag-engine';
-import { getActiveLlmConfig, updateRuntimeLlmConfig } from '@/lib/ai/llm-provider';
+import { kiemQuyenApi, ghiNhatKy } from '@/lib/quan-tri/phien';
+import { DEFAULT_AGENTS } from '@/lib/ai/agent-persona';
+import { getActiveLlmConfig, updateRuntimeLlmConfig, type LlmConfig } from '@/lib/ai/llm-provider';
+import { docFewShot, ghiFewShot } from '@/lib/ai/few-shot';
 
-const FEW_SHOT_PATH = path.join(process.cwd(), 'src/lib/ai/few-shot-dialogues.json');
-
-function loadFewShots(): any[] {
-  try {
-    if (fs.existsSync(FEW_SHOT_PATH)) {
-      const raw = fs.readFileSync(FEW_SHOT_PATH, 'utf8');
-      return JSON.parse(raw);
-    }
-  } catch (err) {
-    console.error('Failed to load few-shot dialogues:', err);
-  }
-  return [];
-}
-
-function saveFewShots(list: any[]): void {
-  try {
-    fs.writeFileSync(FEW_SHOT_PATH, JSON.stringify(list, null, 2), 'utf8');
-  } catch (err) {
-    console.error('Failed to save few-shot dialogues:', err);
-  }
-}
+const NHA_CUNG_CAP: LlmConfig['provider'][] = ['gemini', 'openai', 'deepseek', '9router', 'offline'];
+const thongTinLlm = () => {
+  const c = getActiveLlmConfig();
+  return { provider: c.provider, modelName: c.modelName, temperature: c.temperature, hasApiKey: Boolean(c.apiKey) };
+};
+const tomTatPrompt = (s?: string | null) => (s ? { doDai: s.length, sha256: createHash('sha256').update(s).digest('hex').slice(0, 16) } : null);
+const cat = (x: unknown, n: number) => (typeof x === 'string' ? x.trim().slice(0, n) : '');
 
 export async function GET(req: Request) {
-  const chan = await yeuCauQuanTri(req);
-  if (chan) return chan;
-  const activeLlm = getActiveLlmConfig();
-  const safeLlmInfo = {
-    provider: activeLlm.provider,
-    modelName: activeLlm.modelName,
-    temperature: activeLlm.temperature,
-    hasApiKey: Boolean(activeLlm.apiKey),
-    maskedApiKey: activeLlm.apiKey
-      ? '••••' + activeLlm.apiKey.slice(-4)
-      : '',
-  };
-
-  const fewShots = loadFewShots();
-
-  try {
-    const dbAgents = await prisma.aiAgent.findMany({
-      include: {
-        _count: { select: { knowledgeDocs: true, conversations: true } },
-      },
-      orderBy: { createdAt: 'asc' },
-    });
-
-    if (dbAgents && dbAgents.length > 0) {
-      const hasMinh = dbAgents.some((a) => a.slug === MINH_CUSTOMER_AGENT.slug);
-      const combined = [...dbAgents];
-      if (!hasMinh) {
-        combined.push({
-          ...MINH_CUSTOMER_AGENT,
-          id: MINH_CUSTOMER_AGENT.id || 'agent_khach_hang_minh',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-          _count: { knowledgeDocs: 0, conversations: 8 },
-        } as any);
-      }
-      return NextResponse.json({
-        ok: true,
-        agents: combined,
-        activeLlmConfig: safeLlmInfo,
-        fewShotDialogues: fewShots,
-      });
-    }
-  } catch {
-    // DB offline fallback
-  }
-
-  // Return default personas when DB is offline
-  return NextResponse.json({
-    ok: true,
-    agents: DEFAULT_AGENTS.map((a) => ({
-      ...a,
-      id: a.id || `agent_${a.slug}`,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      _count: {
-        knowledgeDocs: a.role === 'MASTER_ASTROLOGER' ? inMemoryChunks.length : 0,
-        conversations: a.role === 'MASTER_ASTROLOGER' ? 12 : 6,
-      },
-    })),
-    activeLlmConfig: safeLlmInfo,
-    fewShotDialogues: fewShots,
-  });
+  const nd = await kiemQuyenApi(req, 'ai.tro_ly');
+  if (nd instanceof Response) return nd;
+  const [dbAgents, fewShotDialogues] = await Promise.all([
+    prisma.aiAgent.findMany({ include: { _count: { select: { knowledgeDocs: true, conversations: true } } }, orderBy: { createdAt: 'asc' } }),
+    docFewShot(prisma),
+  ]);
+  // CSDL chưa nạp trợ lý (scripts/seed-ai-agent.ts) thì trả cấu hình mặc định, ghi rõ nguồn, không bịa số đếm.
+  const agents = dbAgents.length ? dbAgents : DEFAULT_AGENTS.map((a) => ({ ...a, id: a.id || `agent_${a.slug}`, _count: null }));
+  return NextResponse.json({ ok: true, nguon: dbAgents.length ? 'csdl' : 'mac_dinh', agents, activeLlmConfig: thongTinLlm(), fewShotDialogues });
 }
 
 export async function POST(req: Request) {
-  const chan = await yeuCauQuanTri(req);
-  if (chan) return chan;
-  try {
-    const body = await req.json();
+  const nd = await kiemQuyenApi(req, 'ai.tro_ly');
+  if (nd instanceof Response) return nd;
+  let body: Record<string, unknown>;
+  try { body = await req.json(); } catch { return NextResponse.json({ ok: false, error: 'JSON không hợp lệ' }, { status: 400 }); }
 
-    // 1. Cập nhật cấu hình Runtime LLM Engine (Gemini / OpenAI / DeepSeek / Offline)
-    if (body.action === 'UPDATE_LLM_CONFIG') {
-      updateRuntimeLlmConfig({
-        provider: body.provider,
-        modelName: body.modelName,
-        // Đợt 0: không nhận API key từ giao diện nữa; khóa chỉ đọc từ biến môi trường trên máy chủ.
-        temperature: typeof body.temperature === 'number' ? body.temperature : undefined,
-      });
-      const activeLlm = getActiveLlmConfig();
-      return NextResponse.json({
-        ok: true,
-        message: 'Cập nhật cấu hình LLM Engine thành công',
-        activeLlmConfig: {
-          provider: activeLlm.provider,
-          modelName: activeLlm.modelName,
-          temperature: activeLlm.temperature,
-          hasApiKey: Boolean(activeLlm.apiKey),
-          maskedApiKey: activeLlm.apiKey
-            ? '••••' + activeLlm.apiKey.slice(-4)
-            : '',
-        },
-      });
-    }
-
-    // 2. Thêm mẫu đối thoại Few-shot training mới cho Danh Sư
-    if (body.action === 'ADD_FEW_SHOT') {
-      const { agentSlug, agentName, userQuestion, goldenAnswer } = body;
-      if (!agentSlug || !userQuestion || !goldenAnswer) {
-        return NextResponse.json({ ok: false, error: 'Thiếu thông tin mẫu đối thoại' }, { status: 400 });
-      }
-      const list = loadFewShots();
-      const newEntry = {
-        agentSlug,
-        agentName: agentName || agentSlug,
-        userQuestion,
-        goldenAnswer,
-        createdAt: new Date().toISOString(),
-      };
-      list.push(newEntry);
-      saveFewShots(list);
-      return NextResponse.json({ ok: true, message: 'Đã nạp mẫu đối thoại huấn luyện', fewShotDialogues: list });
-    }
-
-    // 3. Lưu thông tin Agent vào Database hoặc Runtime Memory
-    try {
-      const agent = await prisma.aiAgent.upsert({
-        where: { slug: body.slug },
-        update: {
-          name: body.name,
-          title: body.title,
-          avatarUrl: body.avatarUrl || '/icons/icon.svg',
-          modelProvider: body.modelProvider || 'gemini',
-          modelName: body.modelName || 'gemini-1.5-flash',
-          temperature: Number(body.temperature) || 0.65,
-          systemPrompt: body.systemPrompt,
-          welcomeMessage: body.welcomeMessage,
-          suggestedQuestions: body.suggestedQuestions || [],
-        },
-        create: {
-          slug: body.slug,
-          name: body.name,
-          title: body.title,
-          avatarUrl: body.avatarUrl || '/icons/icon.svg',
-          modelProvider: body.modelProvider || 'gemini',
-          modelName: body.modelName || 'gemini-1.5-flash',
-          temperature: Number(body.temperature) || 0.65,
-          systemPrompt: body.systemPrompt,
-          welcomeMessage: body.welcomeMessage,
-          suggestedQuestions: body.suggestedQuestions || [],
-        },
-      });
-      return NextResponse.json({ ok: true, data: agent });
-    } catch {
-      // Prisma offline fallback: return updated memory object
-      return NextResponse.json({
-        ok: true,
-        data: {
-          slug: body.slug,
-          name: body.name,
-          title: body.title,
-          systemPrompt: body.systemPrompt,
-          welcomeMessage: body.welcomeMessage,
-          temperature: Number(body.temperature) || 0.65,
-          updatedAt: new Date().toISOString(),
-        },
-        warning: 'Lưu tạm thời vào bộ nhớ runtime do cơ sở dữ liệu ngoại tuyến',
-      });
-    }
-  } catch (e: any) {
-    return NextResponse.json({ ok: false, error: e.message }, { status: 400 });
+  if (body.action === 'UPDATE_LLM_CONFIG') {
+    // Khóa API chỉ đọc từ biến môi trường trên máy chủ, không nhận từ yêu cầu. Chỉ ghi những trường hợp lệ được gửi lên.
+    const doi: Partial<LlmConfig> = {};
+    if (NHA_CUNG_CAP.includes(body.provider as LlmConfig['provider'])) doi.provider = body.provider as LlmConfig['provider'];
+    if (cat(body.modelName, 100)) doi.modelName = cat(body.modelName, 100);
+    if (typeof body.temperature === 'number' && body.temperature >= 0 && body.temperature <= 2) doi.temperature = body.temperature;
+    const truoc = thongTinLlm();
+    updateRuntimeLlmConfig(doi);
+    const sau = thongTinLlm();
+    await ghiNhatKy(prisma, nd, 'ai.cau_hinh_llm', 'LlmRuntime', null, truoc, sau);
+    return NextResponse.json({ ok: true, activeLlmConfig: sau });
   }
+
+  if (body.action === 'ADD_FEW_SHOT') {
+    const agentSlug = cat(body.agentSlug, 100), userQuestion = cat(body.userQuestion, 2000), goldenAnswer = cat(body.goldenAnswer, 8000);
+    if (!agentSlug || !userQuestion || !goldenAnswer) return NextResponse.json({ ok: false, error: 'Thiếu thông tin mẫu đối thoại' }, { status: 400 });
+    const moi = { agentSlug, agentName: cat(body.agentName, 200) || agentSlug, userQuestion, goldenAnswer, createdAt: new Date().toISOString() };
+    const ds = await prisma.$transaction(async (tx) => {
+      const cu = await docFewShot(tx);
+      const sau = await ghiFewShot(tx, [...cu, moi]);
+      await ghiNhatKy(tx, nd, 'ai.few_shot', 'CaiDat', 'AI_FEW_SHOT', { soMau: cu.length }, { soMau: sau.length, them: { agentSlug, doDaiHoi: userQuestion.length, doDaiDap: goldenAnswer.length } });
+      return sau;
+    });
+    return NextResponse.json({ ok: true, fewShotDialogues: ds });
+  }
+
+  const slug = cat(body.slug, 100);
+  if (!slug || !cat(body.name, 200) || !cat(body.systemPrompt, 50_000)) return NextResponse.json({ ok: false, error: 'Thiếu slug, name hoặc systemPrompt' }, { status: 400 });
+  const duLieu = {
+    name: cat(body.name, 200), title: cat(body.title, 300), avatarUrl: cat(body.avatarUrl, 500) || '/icons/icon.svg',
+    modelProvider: cat(body.modelProvider, 50) || 'gemini', modelName: cat(body.modelName, 100) || 'gemini-1.5-flash',
+    temperature: Math.min(2, Math.max(0, Number(body.temperature) || 0.65)),
+    systemPrompt: cat(body.systemPrompt, 50_000), welcomeMessage: cat(body.welcomeMessage, 5000),
+    suggestedQuestions: Array.isArray(body.suggestedQuestions) ? body.suggestedQuestions.filter((x): x is string => typeof x === 'string').slice(0, 12).map((x) => x.slice(0, 300)) : [],
+  };
+  const agent = await prisma.$transaction(async (tx) => {
+    const truoc = await tx.aiAgent.findUnique({ where: { slug } });
+    const sau = await tx.aiAgent.upsert({ where: { slug }, update: duLieu, create: { slug, ...duLieu } });
+    const gon = (a: typeof sau | null) => a && { slug: a.slug, name: a.name, title: a.title, modelProvider: a.modelProvider, modelName: a.modelName, temperature: a.temperature, systemPrompt: tomTatPrompt(a.systemPrompt) };
+    await ghiNhatKy(tx, nd, 'ai.sua_tro_ly', 'AiAgent', sau.id, gon(truoc), gon(sau));
+    return sau;
+  });
+  return NextResponse.json({ ok: true, data: agent });
 }

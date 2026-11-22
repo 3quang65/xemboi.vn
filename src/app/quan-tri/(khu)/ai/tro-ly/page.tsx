@@ -1,32 +1,13 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 import { yeuCauQuyen } from '@/lib/quan-tri/phien';
+import { docFewShot } from '@/lib/ai/few-shot';
 import ThongBao, { so } from '../../seo/ThongBao';
 import { suaTroLy } from './hanh-dong';
 
 export const metadata: Metadata = { title: 'Trợ lý AI' };
 export const dynamic = 'force-dynamic';
-
-type MauFewShot = {
-  agentSlug?: string;
-  agentName?: string;
-  userQuestion?: string;
-  goldenAnswer?: string;
-};
-
-function docFewShotChiDoc(): MauFewShot[] {
-  try {
-    const tep = path.join(process.cwd(), 'src/lib/ai/few-shot-dialogues.json');
-    const raw = fs.readFileSync(tep, 'utf8');
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-}
 
 export default async function TrangTroLyAi({
   searchParams,
@@ -44,7 +25,7 @@ export default async function TrangTroLyAi({
   });
 
   const dangChon = agents.find((a) => a.id === sp.chon) ?? agents[0] ?? null;
-  const fewShots = docFewShotChiDoc();
+  const fewShots = await docFewShot(prisma);
 
   return (
     <>
@@ -255,11 +236,11 @@ export default async function TrangTroLyAi({
       <div className="qt-the">
         <h2>Mẫu đối thoại few-shot (chỉ đọc · {so(fewShots.length)} mẫu)</h2>
         <p className="qt-phu">
-          Đọc trực tiếp từ <code>src/lib/ai/few-shot-dialogues.json</code>. Khu mới không cho ghi đè tệp mã nguồn lúc chạy; việc chuyển sang lưu cơ sở dữ liệu đã ghi trong mục đề nghị sửa lõi.
+          Lưu ở <code>CaiDat</code> khóa <code>AI_FEW_SHOT</code>; khi chưa có thì dùng bản mặc định <code>src/lib/ai/few-shot-dialogues.json</code>. Trợ lý đọc lại sau tối đa 5 phút.
         </p>
         {fewShots.length === 0 ? (
           <p className="qt-phu" style={{ marginBottom: 0 }}>
-            Không có mẫu đối thoại nào trong tệp cấu hình.
+            Chưa có mẫu đối thoại nào.
           </p>
         ) : (
           <div>

@@ -28,10 +28,10 @@ export interface AiAgentConfig {
   isDefault?: boolean;
 }
 
-import fewShotDialoguesRaw from './few-shot-dialogues.json';
+import { fewShotTrongBoNho, troLyTuCsdl } from './few-shot'; // CaiDat AI_FEW_SHOT, mặc định few-shot-dialogues.json
 
 export function getFewShotDialogueForAgent(agentSlug: string): string {
-  const matches = (fewShotDialoguesRaw as any[]).filter((d) => d.agentSlug === agentSlug);
+  const matches = fewShotTrongBoNho().filter((d) => d.agentSlug === agentSlug);
   if (!matches || matches.length === 0) return '';
   return '\n=== [ĐỐI THOẠI MẪU CHUẨN NGƯỜI THẬT (FEW-SHOT EXAMPLES)] ===\n' +
     matches.map((m, idx) => `[Ví dụ ${idx + 1}]\nKhách hỏi: "${m.userQuestion}"\n${m.agentName} đối đáp:\n${m.goldenAnswer}`).join('\n\n') +
@@ -345,7 +345,14 @@ export const DEFAULT_AGENTS: AiAgentConfig[] = [
  */
 export function getAgentBySlug(slug: string): AiAgentConfig {
   const found = DEFAULT_AGENTS.find((a) => a.slug === slug);
-  const base = found || THAY_MINH_TRIET;
+  const macDinh = found || THAY_MINH_TRIET;
+  // Bản sửa trong quản trị (bảng AiAgent, nạp bởi lamMoiFewShot) thắng bản mặc định; trợ lý bị tắt thì dùng mặc định.
+  const csdl = troLyTuCsdl(macDinh.slug);
+  const base: AiAgentConfig = csdl && csdl.isActive && csdl.systemPrompt.trim()
+    ? { ...macDinh, name: csdl.name || macDinh.name, title: csdl.title || macDinh.title, avatarUrl: csdl.avatarUrl || macDinh.avatarUrl,
+        temperature: csdl.temperature, systemPrompt: csdl.systemPrompt, welcomeMessage: csdl.welcomeMessage || macDinh.welcomeMessage,
+        suggestedQuestions: csdl.suggestedQuestions.length ? csdl.suggestedQuestions : macDinh.suggestedQuestions }
+    : macDinh;
   const fewShot = getFewShotDialogueForAgent(base.slug);
   if (fewShot && !base.systemPrompt.includes('FEW-SHOT EXAMPLES')) {
     return {

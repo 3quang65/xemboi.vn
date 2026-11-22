@@ -2074,7 +2074,7 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 >   - kéo từng ngày, 2 truy vấn: ngày×trang×truy vấn×thiết bị → `SeoGscNgay`, ngày×trang×thiết bị → `SeoGscTrangNgay`; tự phân trang 25.000 dòng; kéo lại ngày nào thì thay dữ liệu ngày đó. Mặc định kéo lại 5 ngày gần nhất (Google chốt chậm 2–3 ngày); `--lan-dau` kéo 16 tháng;
 >   - cảnh báo, mốc là ngày mới nhất có dữ liệu, so 7 ngày gần nhất với 28 ngày trước đó `[GIẢ ĐỊNH ngưỡng]`: `TUT_HANG` theo cặp trang–truy vấn (≥ 50 hiển thị trong 7 ngày và vị trí tụt ≥ 3) và theo trang (nhấp trung bình ngày giảm ≥ 40 %, cần ≥ 20 nhấp trong 28 ngày); `TRUNG_Y_DINH` (mục 1.1 bước 7b); cảnh báo hết đúng thì tự đóng. Báo cáo lần cuối ở `CaiDat` `SEO_GSC_LAN_CUOI`;
 >   - test `tests/dot3/gsc.test.mjs` 4/4 (khóa RSA tự sinh, fetch giả, dữ liệu `[THỬ]` năm 2099). Sửa một lỗi tìm ra khi test: so cột `DATE` với tham số `Date` bị lệch một ngày theo múi giờ phiên, nay so bằng chuỗi `::date`.
->   - Trang `/quan-tri/seo/xep-hang` (Lệnh 24, Antigravity, 22/11) gồm 4 tab: tổng quan, theo trang, theo truy vấn, cảnh báo. Trang được dựng và kiểm trên dữ liệu giả `[THỬ]` từ `scripts/thu-gsc-gia.ts` (45 ngày, 3 URL `_thu-gsc`, 4 cảnh báo); khi có dữ liệu GSC thật thì chạy `--xoa` để dọn.
+>   - Trang `/quan-tri/seo/xep-hang` (Lệnh 24, Antigravity, 22/11) gồm 4 tab: tổng quan, theo trang, theo truy vấn, cảnh báo. Trang được dựng và kiểm trên dữ liệu giả `[THỬ]` từ `scripts/thu-gsc-gia.ts` (45 ngày, 3 URL `/_gia-gsc/`, 4 cảnh báo; tiền tố khác `/_thu-gsc` của `tests/dot3/gsc.test.mjs` vì test dọn theo tiền tố đó); khi có dữ liệu GSC thật thì chạy `--xoa` để dọn.
 > - **Lệnh 24, Antigravity làm, Claude Code duyệt 22/11:**
 >   - Trang `/quan-tri/rag/danh-gia` có 4 tab: bảng 29 cấu hình, so sánh A/B, từng câu, bộ câu hỏi chuẩn.
 >   - Trang `rag/thu` có thêm nút "Lưu thành câu hỏi chuẩn", mã câu dạng `G000001…`. Câu `Q…` không sửa hay xóa được từ giao diện.
@@ -2122,7 +2122,17 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 >   - Gỡ dữ liệu giả:
 >     - `customer-service.ts` không còn gieo 2 khách mẫu có số điện thoại và email bịa;
 >     - `tracker-server.ts`: khi CSDL lỗi thì trả số thật trong bộ nhớ kèm `loi`, không còn `Math.max(12/145/…)` hay `44.4%`; số người online không bị ép tối thiểu 1.
->   - Còn lại: đưa few-shot vào CSDL và seed `AiAgent`. Hai việc này cần migration nên gộp vào đợt triển khai.
+>   - Đã đưa few-shot vào CSDL và seed `AiAgent`, không cần migration:
+>     - Mẫu few-shot lưu ở `CaiDat` khóa `AI_FEW_SHOT` (`src/lib/ai/few-shot.ts`). `few-shot-dialogues.json` chỉ còn là bản mặc định.
+>     - `scripts/seed-ai-agent.ts` (có `--thu`) chỉ tạo các trợ lý còn thiếu; máy trạm đã nạp 9 trợ lý và 8 mẫu. Chạy lại không tạo thêm.
+>     - `getAgentBySlug` ghép bản sửa trong bảng `AiAgent` lên bản mặc định; trợ lý bị tắt thì dùng mặc định. Chat làm mới mỗi 5 phút, và làm mới ngay sau khi sửa ở `/quan-tri/ai/tro-ly`.
+>     - `/api/admin/agents` được viết lại:
+>       - chỉ nhận phiên có quyền `ai.tro_ly`, không nhận `ADMIN_KEY`;
+>       - không ghi tệp mã nguồn nữa, không bịa số hội thoại;
+>       - mọi thao tác ghi nhật ký `ai.cau_hinh_llm`, `ai.few_shot`, `ai.sua_tro_ly`; prompt chỉ lưu độ dài và mã băm;
+>       - `UPDATE_LLM_CONFIG` chỉ nhận nhà cung cấp hợp lệ và không xóa cấu hình bằng giá trị rỗng.
+>     - Test `tests/dot3/tro-ly-csdl.test.mjs` đạt 2/2. HTTP: không có phiên thì 401, quản trị 200, biên tập 403.
+>     - **Khi triển khai:** chạy `scripts/seed-ai-agent.ts --thu` rồi chạy thật trên VPS.
 > - **Chưa làm:** map nginx cho xemtuvi.vn (cần danh sách URL); trợ lý công khai dùng tìm lai (cờ `RAG_V2`).
 
 ### Đợt 4: OCR, phiên âm, giấy phép, cứng hóa (55–80 giờ)

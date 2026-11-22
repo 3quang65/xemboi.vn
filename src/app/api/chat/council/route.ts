@@ -29,6 +29,8 @@ import { MASTER_THEMES, DEFAULT_MASTER_THEME } from '@/lib/ai/dialogue-simulatio
 import { parseChartSlug } from '@/lib/core/slug';
 import { TuVi } from '@/lib/core/tuvi';
 import { streamChatResponse } from '@/lib/ai/rag-engine';
+import { lamMoiFewShot } from '@/lib/ai/few-shot';
+import { prisma } from '@/lib/prisma';
 import { addInquiry } from '@/lib/ai/customer-inquiry-service';
 
 
@@ -76,6 +78,7 @@ const MASTER_METAS: Record<string, { badge: string; statusPrep: string; statusCo
 };
 
 export async function POST(req: Request) {
+  await lamMoiFewShot(prisma);
   try {
     const body = await req.json();
     const {
