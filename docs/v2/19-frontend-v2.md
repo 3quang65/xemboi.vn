@@ -187,3 +187,19 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Trang chuyển sang `src/app/(v2)/tu-vi-2027/`, bỏ đầu trang, menu "Sắp có" và chân trang riêng của R1; breadcrumb v2; một thẻ `<main>`. Lập lá số, hộp thoại mua và đo lường R1 giữ nguyên; `tests/r1` 15/15.
   - CSS phần quản trị R1 (`.r1-root`) chuyển sang `src/app/quan-tri/(khu)/r1/r1-quan-tri.css`; thư mục `src/app/tu-vi-2027/` đã xóa. Mọi trang công khai nay nằm trong `(v2)`.
   - Sửa `.ck-chan-in` trong `ck.css`: `1.3fr` ghép `repeat(auto-fit, …)` không hợp lệ nên chân trang desktop bị dồn một cột từ F1; nay `minmax(240px, 1.3fr) repeat(auto-fit, minmax(170px, 1fr))`.
+- 22/11: rà 55 trang P1, còn 8 trang 404. Dựng `/xem-ngay/xuat-hanh` (Lệnh 31).
+  - Dữ liệu `src/lib/trang/xuat-hanh.ts`:
+    - Giờ hoàng đạo mùng 1–10 Tết.
+    - Hướng Hỷ thần, Tài thần, Phúc thần theo can ngày, lấy từ ba bài ca của Ngọc hạp ký (WS12, Wikisource CC BY-SA, đoạn `rag_doan` 8069, 8071, 8072).
+    - Test đọc lại nguyên văn chữ Hán để đối chiếu bảng; `tests/trang` nay có 58 test.
+  - Dòng SEO đổi từ "theo các sách" thành "theo Ngọc hạp ký", vì trang mới đối chiếu một sách.
+  - Thêm route chờ bài `/tu-vi/cach-doc-la-so`: 404 tới khi có bài xuất bản.
+  - Bảy trang P1 còn lại cần anh quyết hoặc cần người viết, xem viec-can-anh mục 13.
+- 22/11: bật chuyển hướng URL cũ ở CSDL máy trạm (`seo-bat-chuyen-huong.ts --ghi --ca-410`).
+  - 49 dòng đã bật: 301 khi trang đích trả 200, cùng các dòng 410.
+  - 57 dòng còn chờ trang đích P2 (F6).
+  - Lúc deploy phải chạy lại script này trên VPS, trỏ `--goc` vào máy chủ v3.
+- 22/11: quét toàn site dev. Trang lịch chỉ mở năm 2025–2028.
+  - 1.954 trang trả 200, 0 liên kết hỏng, 0 title còn `{...}`, 0 trang v1.
+  - Đang index được 3 trang: `/`, `/tu-vi-2027`, `/kien-thuc`. Còn lại chờ xuất bản (viec-can-anh mục 6.2).
+  - Sửa: sitemap bỏ nhóm `hien-tai`, vì nhóm này còn liệt kê 213 URL v1 đã 301/410. Đã xóa `src/lib/seo/sitemap-cu.ts`.

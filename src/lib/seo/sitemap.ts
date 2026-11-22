@@ -1,10 +1,8 @@
 // Sitemap chỉ mục theo nhóm (docs/v2/17 mục 1.5): chỉ trang XUAT_BAN, không noindex, không phải trang mẫu,
 // không có canonical trỏ đi nơi khác. lastmod = ngày cập nhật nội dung thật (không dùng "bây giờ").
 import { prisma } from '@/lib/prisma';
-import { urlHienTai } from './sitemap-cu';
 
 export const GOC_SITE = (process.env.NEXT_PUBLIC_SITE_URL || 'https://xemboi.vn').replace(/\/+$/, '');
-const NHOM_CU = 'hien-tai';
 const TOI_DA = 45_000;
 
 type Dong = { duong: string; lastmod: Date | null; doi?: string; uuTien?: number };
@@ -32,18 +30,11 @@ export async function nhomSitemap(): Promise<{ nhom: string; lastmod: Date | nul
     x.so++; if (lm && (!x.lastmod || lm > x.lastmod)) x.lastmod = lm;
     theoNhom.set(t.nhomSitemap, x);
   }
-  const daCo = new Set(ds.map((t) => t.duongDan));
-  const cu = urlHienTai().filter((u) => !daCo.has(u.duong));
-  const kq = [...theoNhom].map(([nhom, x]) => ({ nhom, ...x }));
-  if (cu.length) kq.push({ nhom: NHOM_CU, lastmod: null, so: cu.length });
-  return kq.sort((a, b) => a.nhom.localeCompare(b.nhom));
+  // Nhóm "hien-tai" (URL v1 chưa có SeoTrang) đã bỏ cùng giao diện v1 (docs/v2/19 mục 2.1): các URL đó nay trả 301/410.
+  return [...theoNhom].map(([nhom, x]) => ({ nhom, ...x })).sort((a, b) => a.nhom.localeCompare(b.nhom));
 }
 
 export async function dongCuaNhom(nhom: string): Promise<Dong[] | null> {
-  if (nhom === NHOM_CU) {
-    const daCo = new Set((await trangDb()).map((t) => t.duongDan));
-    return urlHienTai().filter((u) => !daCo.has(u.duong)).map((u) => ({ duong: u.duong, lastmod: null, doi: u.doi, uuTien: u.uuTien }));
-  }
   const ds = await trangDb(nhom);
   if (!ds.length) return null;
   return ds.slice(0, TOI_DA).map((t) => ({ duong: t.duongDan, lastmod: t.ngayCapNhatNoiDung }));
