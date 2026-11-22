@@ -2075,7 +2075,16 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 >   - cảnh báo, mốc là ngày mới nhất có dữ liệu, so 7 ngày gần nhất với 28 ngày trước đó `[GIẢ ĐỊNH ngưỡng]`: `TUT_HANG` theo cặp trang–truy vấn (≥ 50 hiển thị trong 7 ngày và vị trí tụt ≥ 3) và theo trang (nhấp trung bình ngày giảm ≥ 40 %, cần ≥ 20 nhấp trong 28 ngày); `TRUNG_Y_DINH` (mục 1.1 bước 7b); cảnh báo hết đúng thì tự đóng. Báo cáo lần cuối ở `CaiDat` `SEO_GSC_LAN_CUOI`;
 >   - test `tests/dot3/gsc.test.mjs` 4/4 (khóa RSA tự sinh, fetch giả, dữ liệu `[THỬ]` năm 2099). Sửa một lỗi tìm ra khi test: so cột `DATE` với tham số `Date` bị lệch một ngày theo múi giờ phiên, nay so bằng chuỗi `::date`.
 >   - Chưa làm: trang `/quan-tri/seo/xep-hang` (giao Antigravity khi có dữ liệu thật).
-> - **Chưa làm:** nhúng trang SEO + gợi ý ngữ nghĩa; `RagCauHoiChuan`/`RagDanhGia`, tìm lai RRF, bộ 100 câu; map nginx cho xemtuvi.vn (cần danh sách URL).
+> - **Gợi ý liên kết theo ngữ nghĩa** (`tools/rag-may-tram/nhung_trang_seo.py` + `src/lib/seo/goi-y-ngu-nghia.ts` + `scripts/seo-goi-y-ngu-nghia.ts`):
+>   - nhúng bge-m3 `title + H1 + 500 ký tự đầu của <main>` (đọc trang đang chạy, không theo chuyển hướng); trang chưa dựng thì dùng meta description. Lần đầu: 129 trang, 7 trang có nội dung thật, 122 trang dùng meta;
+>   - mỗi trang lấy 10 trang gần nhất, cosine ≥ 0,65 `[GIẢ ĐỊNH]` (0,6 ra 879 gợi ý, 0,65 ra 459, 0,7 ra 125), cộng 0,05 nếu cùng mảng, bỏ trang đích noindex và cặp đã có liên kết từ nguồn khác; cặp đã bỏ qua vẫn giữ chỗ nên không quay lại. Chạy lại không sinh thêm (459 → 0);
+>   - gợi ý là `SeoLienKet` nguon `NGU_NGHIA`, `DE_XUAT`, có `doGan`; hiện ở tab "Gợi ý" của `/quan-tri/seo/lien-ket`. Khi trang v2 có nội dung thật thì chạy lại `nhung_trang_seo.py`.
+> - **Tìm lai RAG** (`src/lib/rag/tim-lai.ts`):
+>   - bảng thuật ngữ `docs/v2/thuat-ngu.csv` (336 dòng: sao, cung, can chi, ngũ hành, bát tự, 64 quẻ và hào, chọn ngày, phong thủy) nạp vào `thuat_ngu` bằng `scripts/rag-nap-thuat-ngu.ts`. Em soạn bảng **trước** khi xem bộ câu hỏi, để kết quả đo không bị lộ đề;
+>   - mở rộng: khớp cụm dài trước, một cụm có thể ra nhiều chữ Hán (thân → 申, 身), "hào 3" → 九三/六三; quẻ một âm tiết (Khiêm, Cách) chỉ mở rộng khi câu có chữ quẻ/hào/dịch/bói;
+>   - nhánh từ khóa: BM25 trên **chuỗi con** của `vanBanChuan` (đã chuyển giản → phồn ở bước làm sạch), vì trên CSDL `ctype C` cả `tsvector` lẫn `pg_trgm` đều không tách được chữ Hán. Khoảng 100–370 ms/câu trên 32.061 đoạn;
+>   - nhánh vector (pgvector HNSW, cần vector câu hỏi bge-m3) và gộp RRF k = 60. Trên VPS hiện chỉ chạy nhánh từ khóa (17 mục 9 câu 3, phương án c).
+> - **Chưa làm:** map nginx cho xemtuvi.vn (cần danh sách URL).
 
 ### Đợt 4: OCR, phiên âm, giấy phép, cứng hóa (55–80 giờ)
 
