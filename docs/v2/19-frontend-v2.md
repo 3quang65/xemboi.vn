@@ -165,3 +165,8 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - 14 URL trả mã đúng (200/404). Quét 185 liên kết nội bộ, không có 404. 0 lỗi console.
   - Ở màn hình 375px không cuộn ngang. Đối chiếu ngày Tết 17/02/2026 khớp.
   - Đã nâng `DOT_DA_DUNG = 2` và thêm `/tet` vào menu Lịch âm.
+- 22/11: nghiệm thu Lệnh 27 (Can chi & mệnh).
+  - 18 URL trả mã đúng. Quét 228 liên kết nội bộ, không có 404. Trang 1990 khớp: Canh Ngọ, Lộ Bàng Thổ, nam Khảm, nữ Cấn, năm âm từ 27/01/1990.
+  - Sửa lỗi ở lõi: Tý và Tỵ trùng slug `ty`. Nay Tỵ dùng `ti`, có test kèm. Tổng `tests/trang` là 43 test.
+  - Đã nâng `DOT_DA_DUNG = 3` và thêm "Màu hợp mệnh" vào menu.
+  - CSS cụm ở `src/components/ck/tu-dien.css` (13 KB).

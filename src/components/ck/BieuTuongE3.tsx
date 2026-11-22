@@ -60,7 +60,12 @@ export type LoaiBieuTuongCongCu =
   | 'doi-ngay'
   | 'van-nien'
   | 'ngay-mai'
-  | 'tet';
+  | 'tet'
+  | 'hoa-giap'
+  | 'nap-am'
+  | 'ngu-hanh'
+  | 'mau-hop'
+  | 'con-giap';
 
 /** Biểu tượng nét vàng lá theo mẫu E3 cho các ô công cụ. */
 export function BieuTuongCongCu({ loai }: { loai: LoaiBieuTuongCongCu }) {
@@ -189,6 +194,48 @@ export function BieuTuongCongCu({ loai }: { loai: LoaiBieuTuongCongCu }) {
           <path d="M24 6v6" />
           <ellipse cx="24" cy="24" rx="12" ry="13" fill="url(#ck-vl-i)" fillOpacity="0.24" />
           <path d="M17 14c2 6 2 14 0 20M31 14c-2 6-2 14 0 20M18 11h12M18 37h12M24 37v6" />
+        </>
+      )}
+      {loai === 'hoa-giap' && (
+        <>
+          <circle cx="24" cy="24" r="17" />
+          <circle cx="24" cy="24" r="10.5" strokeDasharray="3 3" />
+          <path d="M24 7v4M24 37v4M7 24h4M37 24h4" />
+          <circle cx="24" cy="24" r="4" fill="url(#ck-vl-i)" fillOpacity="0.45" />
+        </>
+      )}
+      {loai === 'nap-am' && (
+        <>
+          <rect x="8" y="9" width="32" height="30" rx="1.5" />
+          <path d="M8 18h32M8 28h32M21 9v30" />
+          <circle cx="14.5" cy="13.5" r="1.5" fill="url(#ck-vl-i)" />
+          <circle cx="14.5" cy="23" r="1.5" fill="url(#ck-vl-i)" />
+          <circle cx="14.5" cy="33.5" r="1.5" fill="url(#ck-vl-i)" />
+        </>
+      )}
+      {loai === 'ngu-hanh' && (
+        <>
+          <circle cx="24" cy="24" r="16" strokeDasharray="2 3" />
+          <path
+            d="M24 8l3.7 10.5H39l-9 6.6 3.4 10.7L24 29.3l-9.4 6.5 3.4-10.7-9-6.6h11.3z"
+            fill="url(#ck-vl-i)"
+            fillOpacity="0.22"
+          />
+        </>
+      )}
+      {loai === 'mau-hop' && (
+        <>
+          <circle cx="24" cy="16" r="6" fill="url(#ck-vl-i)" fillOpacity="0.3" />
+          <circle cx="15" cy="29" r="6" fill="url(#ck-vl-i)" fillOpacity="0.22" />
+          <circle cx="33" cy="29" r="6" fill="url(#ck-vl-i)" fillOpacity="0.22" />
+          <circle cx="24" cy="24" r="17" />
+        </>
+      )}
+      {loai === 'con-giap' && (
+        <>
+          <circle cx="24" cy="24" r="16" />
+          <path d="M24 10v6M24 32v6M10 24h6M32 24h6M14 14l4.2 4.2M29.8 29.8L34 34M34 14l-4.2 4.2M18.2 29.8L14 34" />
+          <circle cx="24" cy="24" r="6.5" fill="url(#ck-vl-i)" fillOpacity="0.25" />
         </>
       )}
     </svg>

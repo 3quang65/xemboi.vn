@@ -56,7 +56,8 @@ export type ConGiap = { chi: string; ten: string; slug: string; thuTu: number; h
 const HANH_CHI: Hanh[] = ['Thủy', 'Thổ', 'Mộc', 'Mộc', 'Thổ', 'Hỏa', 'Hỏa', 'Thổ', 'Kim', 'Kim', 'Thổ', 'Thủy'];
 const LUC_HOP = [1, 0, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2]; // Tý–Sửu, Dần–Hợi, Mão–Tuất, Thìn–Dậu, Tỵ–Thân, Ngọ–Mùi
 export const CON_GIAP: ConGiap[] = DIA_CHI.map((chi, i) => ({
-  chi, ten: TEN_CON_GIAP[i], slug: slugViet(chi), thuTu: i + 1, hanhChi: HANH_CHI[i], amDuong: i % 2 === 0 ? 'Dương' : 'Âm',
+  // Tý và Tỵ cùng bỏ dấu thành "ty": Tỵ dùng "ti" (quy ước "tuổi Tỵ" → tuoi-ti).
+  chi, ten: TEN_CON_GIAP[i], slug: chi === 'Tỵ' ? 'ti' : slugViet(chi), thuTu: i + 1, hanhChi: HANH_CHI[i], amDuong: i % 2 === 0 ? 'Dương' : 'Âm',
   hoaGiap: HOA_GIAP.filter((h) => h.chi === chi),
   tamHop: [i, (i + 4) % 12, (i + 8) % 12].sort((a, b) => a - b).map((k) => DIA_CHI[k]),
   lucXung: DIA_CHI[(i + 6) % 12], lucHop: DIA_CHI[LUC_HOP[i]],

@@ -4,7 +4,7 @@
 export type MucMenu = { ten: string; href: string; moTa?: string; con?: MucMenu[] };
 
 /** Đợt đã dựng xong. Tăng dần khi nghiệm thu từng đợt (F1 → F5). */
-export const DOT_DA_DUNG = 2;
+export const DOT_DA_DUNG = 3;
 
 const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
   {
@@ -36,8 +36,9 @@ const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
       { ten: 'Nạp âm', href: '/nap-am' },
       { ten: 'Ngũ hành', href: '/ngu-hanh' },
       { ten: '12 con giáp', href: '/con-giap' },
+      { ten: 'Màu hợp mệnh', href: '/ngu-hanh/mau-hop-menh' },
     ],
-    conDot: [3, 3, 3, 3, 3],
+    conDot: [3, 3, 3, 3, 3, 3],
   },
   {
     dot: 4, ten: 'Xem tuổi', href: '/xem-tuoi', moTa: 'Tuổi vợ chồng, xông đất',

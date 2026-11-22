@@ -61,3 +61,10 @@ test('danh sách năm sinh 1930–2030 và năm của hoa giáp', () => {
 test('Lập xuân của năm sinh', () => {
   assert.equal(namSinh(2026).lapXuan, '2026-02-04');
 });
+
+test('12 con giáp có slug riêng (Tỵ là "ti")', async () => {
+  const { CON_GIAP, conGiapTheoSlug } = await import('../../src/lib/trang/can-chi.ts');
+  assert.equal(new Set(CON_GIAP.map((c) => c.slug)).size, 12);
+  assert.equal(conGiapTheoSlug('ty').chi, 'Tý');
+  assert.equal(conGiapTheoSlug('ti').chi, 'Tỵ');
+});
