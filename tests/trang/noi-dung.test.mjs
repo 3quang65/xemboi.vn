@@ -28,6 +28,22 @@ test('markdown thành khối; bỏ HTML và ảnh', () => {
   assert.deepEqual(tachMarkdown(null), []);
 });
 
+test('thân HTML của bài v1 giữ được tiêu đề, danh sách, đậm, liên kết', () => {
+  const k = tachMarkdown(`<p>Mở <strong>đầu</strong> &amp; ý</p>
+      <h3>1. Nguyên lý</h3>
+      <ul><li>Mệnh</li><li><b>Thân</b></li></ul>
+      <ol><li>a</li><li>b</li></ol>
+      <p>Xem <a href="/tu-vi">lá số</a> <a href="javascript:x">hỏng</a><script>alert(1)</script></p>
+      <blockquote><p>trích</p></blockquote>`);
+  assert.deepEqual(k.map((x) => x.loai), ['doan', 'tieuDe', 'danhSach', 'danhSach', 'doan', 'trich']);
+  assert.deepEqual(k[0].noi, [{ loai: 'chu', chu: 'Mở ' }, { loai: 'dam', chu: 'đầu' }, { loai: 'chu', chu: ' & ý' }]);
+  assert.equal(k[1].cap, 3);
+  assert.equal(k[2].coThuTu, false);
+  assert.equal(k[3].coThuTu, true);
+  assert.ok(k[4].noi.some((d) => d.loai === 'lienKet' && d.href === '/tu-vi'));
+  assert.ok(!JSON.stringify(k).includes('javascript') && !JSON.stringify(k).includes('alert'));
+});
+
 test('chỉ trả nội dung DA_XUAT_BAN có phiên bản xuất bản', async () => {
   assert.equal(await noiDungTheoDuongDan('/khong-co-[thu]'), null);
   const t = await prisma.seoTrang.findFirst({ where: { noiDung: { trangThai: { not: 'DA_XUAT_BAN' } } }, select: { duongDan: true } });

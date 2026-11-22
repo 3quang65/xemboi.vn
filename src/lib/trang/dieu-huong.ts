@@ -81,7 +81,7 @@ export function chanTrang(dot = DOT_DA_DUNG): CotChanTrang[] {
     { dot: 5, ten: 'Nguồn sách', href: '/nguon' },
     { dot: 5, ten: 'Từ điển', href: '/tu-dien' },
     { dot: 5, ten: 'Kiến thức', href: '/kien-thuc' },
-    { dot: 5, ten: 'Bảng giá', href: '/goi' },
+    { dot: 6, ten: 'Bảng giá', href: '/goi' },
     { dot: 5, ten: 'Liên hệ', href: '/lien-he' },
     { dot: 5, ten: 'Chính sách bảo mật', href: '/chinh-sach-bao-mat-va-cookies' },
     { dot: 5, ten: 'Điều khoản sử dụng', href: '/chinh-sach-su-dung-va-khieu-nai' },

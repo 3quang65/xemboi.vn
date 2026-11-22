@@ -41,10 +41,40 @@ export function tachDongChu(s: string): DoanChu[] {
 }
 
 /** Markdown → khối. Hỗ trợ ##/###/####, đoạn, danh sách -, *, 1., trích dẫn >. Bỏ HTML thô và ảnh. */
+const THE_HTML = /<\/?(p|h[1-6]|ul|ol|li|strong|b|em|i|a|br|blockquote|div|span)\b[^>]*>/i;
+
+/**
+ * Bài cũ chuyển từ v1 lưu thân bằng HTML. Đổi các thẻ cấu trúc quen thuộc sang markdown tối giản
+ * (tiêu đề, đoạn, danh sách, đậm/nghiêng, liên kết, trích), bỏ mọi thẻ còn lại rồi giải mã thực thể.
+ * Kết quả vẫn đi qua tachMarkdown nên không có HTML thô nào tới trình duyệt.
+ */
+export function htmlSangMarkdown(html: string): string {
+  const motDong = (x: string) => x.replace(/\s+/g, ' ').trim();
+  let s = html.replace(/\r\n/g, '\n');
+  s = s.replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, '');
+  s = s.replace(/<a\b[^>]*href\s*=\s*["']([^"']*)["'][^>]*>([\s\S]*?)<\/a>/gi, (_, h, t) => `[${motDong(t)}](${h})`);
+  s = s.replace(/<(strong|b)\b[^>]*>([\s\S]*?)<\/\1>/gi, (_, __, t) => `**${motDong(t)}**`);
+  s = s.replace(/<(em|i)\b[^>]*>([\s\S]*?)<\/\1>/gi, (_, __, t) => `*${motDong(t)}*`);
+  s = s.replace(/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>/gi, (_, c, t) => `\n\n${'#'.repeat(Math.min(4, Math.max(2, Number(c))))} ${motDong(t)}\n\n`);
+  s = s.replace(/<(ol|ul)\b[^>]*>([\s\S]*?)<\/\1>/gi, (_, l: string, t: string) => {
+    const muc = [...t.matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)]
+      .map((m, i) => `${l.toLowerCase() === 'ol' ? `${i + 1}.` : '-'} ${motDong(m[1].replace(/<[^>]+>/g, ''))}`);
+    return `\n\n${muc.join('\n')}\n\n`;
+  });
+  s = s.replace(/<blockquote\b[^>]*>([\s\S]*?)<\/blockquote>/gi, (_, t) => `\n\n> ${motDong(t.replace(/<[^>]+>/g, ' '))}\n\n`);
+  s = s.replace(/<(p|div)\b[^>]*>([\s\S]*?)<\/\1>/gi, (_, __, t) => `\n\n${motDong(t)}\n\n`);
+  s = s.replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, '');
+  s = s.split('\n').map((d) => d.trim()).join('\n');
+  return s
+    .replace(/&nbsp;/g, ' ').replace(/&lt;/g, '‹').replace(/&gt;/g, '›').replace(/&quot;/g, '"').replace(/&#0?39;|&apos;/g, "'")
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/&amp;/g, '&');
+}
+
 export function tachMarkdown(md: string | null | undefined): KhoiMd[] {
   if (!md) return [];
   const kq: KhoiMd[] = [];
-  for (const khoi of md.replace(/\r\n/g, '\n').replace(/<[^>]+>/g, '').split(/\n\s*\n/)) {
+  const nguon = THE_HTML.test(md) ? htmlSangMarkdown(md) : md.replace(/\r\n/g, '\n').replace(/<[^>]+>/g, '');
+  for (const khoi of nguon.split(/\n\s*\n/)) {
     const dong = khoi.split('\n').map((d) => d.trimEnd()).filter((d) => d.trim());
     if (!dong.length) continue;
     const td = /^(#{1,4})\s+(.*)$/.exec(dong[0]);

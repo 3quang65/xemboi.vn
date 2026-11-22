@@ -57,6 +57,7 @@ test('menu chỉ hiện trang đã dựng; breadcrumb đi theo cha', () => {
   assert.equal(menuChinh(5).length, 6);
   assert.ok(trangDaDungF4().has('/kinh-dich/gieo-que'));
   assert.ok(!trangDaDungF4().has('/goi'));
+  assert.ok(trangDaDung(5).has('/nguon') && !trangDaDung(5).has('/goi'), 'bảng giá chờ anh, để đợt 6');
   assert.ok(chanTrang(5).at(-1).muc.some((m) => m.href === '/lien-he'));
 
   assert.deepEqual(breadcrumb('/tu-vi/lap-la-so').map((m) => m.href), ['/', '/tu-vi', '/tu-vi/lap-la-so']);
