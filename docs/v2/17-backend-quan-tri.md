@@ -2084,6 +2084,12 @@ Số giờ là giờ dựng của Antigravity cộng thời gian anh kiểm, `[�
 >   - mở rộng: khớp cụm dài trước, một cụm có thể ra nhiều chữ Hán (thân → 申, 身), "hào 3" → 九三/六三; quẻ một âm tiết (Khiêm, Cách) chỉ mở rộng khi câu có chữ quẻ/hào/dịch/bói;
 >   - nhánh từ khóa: BM25 trên **chuỗi con** của `vanBanChuan` (đã chuyển giản → phồn ở bước làm sạch), vì trên CSDL `ctype C` cả `tsvector` lẫn `pg_trgm` đều không tách được chữ Hán. Khoảng 100–370 ms/câu trên 32.061 đoạn;
 >   - nhánh vector (pgvector HNSW, cần vector câu hỏi bge-m3) và gộp RRF k = 60. Trên VPS hiện chỉ chạy nhánh từ khóa (17 mục 9 câu 3, phương án c).
+> - **Đánh giá RAG** (`scripts/rag-danh-gia.ts`, báo cáo `docs/v2/bao-cao-danh-gia-rag.md`, lưu `rag_danh_gia` 14 dòng):
+>   - bộ chuẩn `docs/v2/rag-cau-hoi-chuan.csv`: 100 câu tiếng Việt (tử vi 45, Kinh Dịch 25, bát tự 15, chọn ngày 7, phong thủy 5, ngũ hành 3), 530 đoạn đúng. Đáp án gắn bằng tra chữ rồi đọc văn bản, **không** dùng vector, để không thiên về mô hình nào. Nạp vào `rag_cau_hoi_chuan` (id = mã câu);
+>   - kết quả hit@10 (câu có ít nhất một đoạn đúng trong top 10): từ khóa + mở rộng 31 %; bge-m3 35 % → **58 %** khi mở rộng thuật ngữ; **Qwen3-Embedding-0.6B + mở rộng 70 %** (recall@10 39,7 %, MRR 0,456, đúng nguồn 63 %); AITeamVN 26 % → 55 %;
+>   - so từng câu: mở rộng thuật ngữ cứu 25 câu, làm hỏng 2; Qwen3 hơn bge-m3 17 câu, kém 5 câu (kiểm dấu, p ≈ 0,02); gộp RRF với từ khóa không hơn vector + mở rộng (10 câu kém, 4 câu hơn, chưa có ý nghĩa thống kê). AITeamVN tinh chỉnh cho tiếng Việt nhưng yếu với chữ Hán, đúng như 12 mục 5.3 đoán;
+>   - hệ quả: (1) mở rộng thuật ngữ là bước lợi nhất, đã có trong mã; (2) **chỉ tìm theo từ khóa trên VPS (phương án c đang duyệt) chỉ đạt 31 %**, kém xa 70 %; (3) đề xuất đổi mô hình nhúng sang Qwen3-0.6B (cùng 1024 chiều, không đổi schema; nhúng lại 32.033 đoạn mất khoảng 6 phút). Hai việc này cần anh quyết, xem `viec-can-anh.md`;
+>   - giới hạn: 100 câu nên chênh dưới khoảng 10 điểm chưa đáng tin; nhãn độ khó là phán đoán; một số câu Chu Dịch có thể thiếu vài đoạn chú ở bản khác; nhóm ngũ hành chỉ 3 câu, chưa có câu phong tục (WS24 chỉ có tiêu đề). 30 câu Qwen3 còn trượt (danh sách trong `rag_danh_gia.chiTiet`) là chỗ để cải thiện bảng thuật ngữ và cách cắt đoạn.
 > - **Chưa làm:** map nginx cho xemtuvi.vn (cần danh sách URL).
 
 ### Đợt 4: OCR, phiên âm, giấy phép, cứng hóa (55–80 giờ)

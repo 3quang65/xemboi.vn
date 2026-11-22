@@ -13,9 +13,13 @@
    4. Đặt tệp JSON vào `D:\VibeCode\Antigravity\may-tram\gsc-xemboi.json` (ngoài repo). Em không in nội dung tệp ra.
 
    Mã đồng bộ đã xong (`scripts/seo-gsc.ts`); chưa có tệp thì script tự bỏ qua. Có tệp rồi em chạy `--lan-dau` kéo 16 tháng, rồi đặt cron hằng ngày lúc deploy. Nếu property không phải dạng tên miền (`sc-domain:xemboi.vn`) mà là dạng URL thì báo em để đặt `GSC_SITE`.
-2. **Ngày dự kiến mở tên miền chính** (17 mục 9, câu 9), để đặt nhắc giấy phép. Không có mặc định.
-3. **Tài khoản quản trị cho người thật** (17 mục 9, câu 11): trang `/quan-tri/tai-khoan` đã xong, anh tự tạo khi cần; hồ sơ tác giả tạm dùng bút danh.
-4. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
+2. **Chọn mô hình nhúng cho RAG và cách tìm trên VPS** (kết quả đo 100 câu ở `docs/v2/bao-cao-danh-gia-rag.md`):
+   - Đo: Qwen3-Embedding-0.6B + mở rộng thuật ngữ tìm đúng **70 %** câu trong top 10; bge-m3 (đang dùng) 58 %; AITeamVN 55 %; chỉ tìm theo từ khóa (phương án đang duyệt cho VPS) **31 %**.
+   - Em đề xuất: (a) đổi sang **Qwen3-0.6B** (Apache-2.0, cùng 1024 chiều nên không đổi schema; nhúng lại kho khoảng 6 phút); (b) **không** chỉ dùng từ khóa trên VPS mà thử chạy Qwen3-0.6B bản ONNX lượng tử hóa trên VPS 2 GB, nếu không nổi thì để máy trạm nhúng câu hỏi qua một cổng nội bộ, hoặc nâng VPS (tốn tiền, anh quyết).
+   - Trong lúc chờ: giữ bge-m3, phần chạy thật vẫn là từ khóa + mở rộng.
+3. **Ngày dự kiến mở tên miền chính** (17 mục 9, câu 9), để đặt nhắc giấy phép. Không có mặc định.
+4. **Tài khoản quản trị cho người thật** (17 mục 9, câu 11): trang `/quan-tri/tai-khoan` đã xong, anh tự tạo khi cần; hồ sơ tác giả tạm dùng bút danh.
+5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026
 
