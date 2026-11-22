@@ -5,6 +5,7 @@ import { DefBieuTuongCk } from '@/components/ck/BieuTuongE3';
 import DauTrang from '@/components/ck/DauTrang';
 import ChanTrang from '@/components/ck/ChanTrang';
 import { chanTrang, menuChinh } from '@/lib/trang/dieu-huong';
+import './ck-nen.css';
 import './ck.css';
 
 const alegreya = Alegreya({

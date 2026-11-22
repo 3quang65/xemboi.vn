@@ -1,0 +1,6 @@
+/* Nền tối thiểu cho trang R1 sau khi bỏ globals.css v1 (docs/v2/19 mục 2.1). */
+.r1-root *, .r1-root *::before, .r1-root *::after,
+.r1e *, .r1e *::before, .r1e *::after { box-sizing: border-box; }
+.r1-root button, .r1-root input, .r1-root select, .r1-root textarea,
+.r1e button, .r1e input, .r1e select, .r1e textarea { font: inherit; color: inherit; }
+.r1-root img, .r1e img { max-width: 100%; }

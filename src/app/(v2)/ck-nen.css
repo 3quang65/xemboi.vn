@@ -1,0 +1,14 @@
+/* Nền tối thiểu cho giao diện v2 sau khi bỏ globals.css v1 (docs/v2/19 mục 2.1). Tiền tố ck-, cô lập dưới .ck. */
+.ck button,
+.ck input,
+.ck select,
+.ck textarea {
+  font: inherit;
+  color: inherit;
+}
+
+.ck img,
+.ck canvas,
+.ck video {
+  max-width: 100%;
+}

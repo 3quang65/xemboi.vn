@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Alegreya, Be_Vietnam_Pro } from 'next/font/google';
 import { R1_COPY } from '@/lib/r1/copy';
 import TrangR1Client from '@/components/r1/TrangR1Client';
+import './r1-nen.css';
 import './r1.css';
 
 const alegreya = Alegreya({

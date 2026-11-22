@@ -1,4 +1,29 @@
-/* Khu quản trị /quan-tri (Đợt 1). Dùng biến màu chung trong globals.css. */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,600;0,700;1,400&display=swap');
+/* Khu quản trị /quan-tri (Đợt 1). Biến màu và nền chuyển từ globals.css v1 (đã bỏ khỏi layout gốc, docs/v2/19 mục 2.1). */
+:root{
+  --night:#1d1729; --night2:#2b2240; --earth:#2e231c;
+  --bg:#f4ead5; --card:#fffaf0; --ink:#2a1d14; --muted:#6e5a44; --line:#e0d0b0;
+  --red:#b3361f; --red-ink:#fff7e6; --gold:#f2c76b; --gold-ink:#2a1d14; --paper:#f3e6c8;
+  --good:#2f6b3a; --good-bg:#e3efd9; --bad:#9a2a1a; --bad-bg:#f6dcd3; --mid:#7a5a10; --mid-bg:#f6ebc8;
+  --cat:#2f6b3a; --sat:#9a2a1a; --chinh:#8a1f12;
+  --kim:#5f5f66; --moc:#2e7d32; --thuy:#1f4e9c; --hoa:#c0392b; --tho:#a0600c;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#17121f; --card:#241d31; --ink:#f3e6c8; --muted:#c9b896; --line:#3d3350;
+  --good:#9fd4a6; --good-bg:#1f3524; --bad:#f2a08e; --bad-bg:#3d1f1a; --mid:#f2d48a; --mid-bg:#3a3018;
+  --cat:#9fd4a6; --sat:#f2a08e; --chinh:#ffb49e; --red:#c8402f;
+  --kim:#d0d0d8; --moc:#8fd49a; --thuy:#8fb4f2; --hoa:#ff9a8a; --tho:#e8b86a;
+}}
+:root[data-theme="dark"]{
+  --bg:#17121f; --card:#241d31; --ink:#f3e6c8; --muted:#c9b896; --line:#3d3350;
+  --good:#9fd4a6; --good-bg:#1f3524; --bad:#f2a08e; --bad-bg:#3d1f1a; --mid:#f2d48a; --mid-bg:#3a3018;
+  --cat:#9fd4a6; --sat:#f2a08e; --chinh:#ffb49e; --red:#c8402f;
+  --kim:#d0d0d8; --moc:#8fd49a; --thuy:#8fb4f2; --hoa:#ff9a8a; --tho:#e8b86a;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:'Be Vietnam Pro',system-ui,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
 .qt { display: flex; min-height: 100vh; background: var(--bg); color: var(--ink); font-size: 14px; }
 .qt-ben { width: 232px; flex: none; background: var(--card); border-right: 1px solid var(--line); padding: 18px 12px; display: flex; flex-direction: column; gap: 14px; }
 .qt-logo { font-family: 'Noto Serif', serif; font-weight: 700; color: var(--red); font-size: 17px; padding: 0 8px; }
