@@ -4,7 +4,7 @@
 export type MucMenu = { ten: string; href: string; moTa?: string; con?: MucMenu[] };
 
 /** Đợt đã dựng xong. Tăng dần khi nghiệm thu từng đợt (F1 → F5). */
-export const DOT_DA_DUNG = 4;
+export const DOT_DA_DUNG = 5;
 
 const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
   {
@@ -103,13 +103,23 @@ const TEN_DOAN: Record<string, string> = {
   '/bat-tu': 'Bát tự', '/bat-tu/lap-la-so': 'Lập lá số bát tự', '/kinh-dich': 'Kinh Dịch', '/kinh-dich/gieo-que': 'Gieo quẻ',
   '/tet': 'Tết', '/xem-ngay': 'Xem ngày', '/xem-ngay/xuat-hanh': 'Xuất hành',
   '/phuong-phap': 'Phương pháp', '/nguon': 'Nguồn sách', '/tu-dien': 'Từ điển', '/kien-thuc': 'Kiến thức', '/goi': 'Bảng giá', '/lien-he': 'Liên hệ',
+  '/phuong-phap/nam-phai-bac-phai': 'Nam phái và Bắc phái', '/phuong-phap/gio-ty': 'Giờ Tý', '/phuong-phap/thang-nhuan': 'Tháng nhuận',
+  '/phuong-phap/chuan-bien-tap': 'Chuẩn biên tập', '/phuong-phap/nguoi-duyet': 'Người duyệt',
+  '/chinh-sach-bao-mat-va-cookies': 'Chính sách bảo mật', '/chinh-sach-su-dung-va-khieu-nai': 'Điều khoản sử dụng', '/chinh-sach-ban-quyen': 'Bản quyền',
 };
 
 // Trang có cha không theo đường dẫn (docs/v2/16-seo-trang.csv cột "cha").
 const CHA_RIENG: Record<string, string> = {
   '/tu-vi-2027': '/tu-vi', '/sinh-nam': '/can-chi', '/nap-am': '/can-chi', '/ngu-hanh': '/can-chi', '/con-giap': '/can-chi',
   '/tet': '/lich-am', '/xem-ngay/xuat-hanh': '/tet', '/xem-tuoi/xong-dat': '/tet',
+  '/bai-viet': '/kien-thuc',
 };
+
+// Trang đã dựng nhưng không nằm trong menu hay chân trang (chỉ được liên kết từ trang cha).
+const TRANG_CON: { dot: number; href: string }[] = [
+  { dot: 5, href: '/phuong-phap/nam-phai-bac-phai' }, { dot: 5, href: '/phuong-phap/gio-ty' }, { dot: 5, href: '/phuong-phap/thang-nhuan' },
+  { dot: 5, href: '/phuong-phap/chuan-bien-tap' }, { dot: 5, href: '/phuong-phap/nguoi-duyet' },
+];
 
 export type MatXich = { ten: string; href: string };
 
@@ -151,5 +161,6 @@ export function trangDaDung(dot = DOT_DA_DUNG): Set<string> {
   const s = new Set<string>(['/']);
   for (const m of menuChinh(dot)) { s.add(m.href); m.con?.forEach((c) => s.add(c.href)); }
   for (const c of chanTrang(dot)) c.muc.forEach((m) => s.add(m.href));
+  for (const t of TRANG_CON) if (t.dot <= dot) s.add(t.href);
   return s;
 }

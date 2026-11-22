@@ -1,0 +1,221 @@
+/* CSS riêng cụm Phương pháp (F5) — tiền tố ck-, < 30 KB, dùng biến trên .ck */
+
+.ck-pp-cau-co-dinh {
+  margin: 0 0 18px;
+  padding: 13px 16px;
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-left: 3px solid var(--ck-vang-2);
+  color: var(--ck-muc);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+.ck-pp-nhom {
+  margin-top: 26px;
+}
+
+.ck-pp-nhom:first-of-type {
+  margin-top: 16px;
+}
+
+.ck-pp-nhom-tieu {
+  margin: 0 0 10px;
+  font: 700 22px/1.3 var(--ck-f-tieu);
+  color: var(--ck-son);
+}
+
+.ck-pp-bang th,
+.ck-pp-bang td {
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+
+.ck-pp-cot-chu-de {
+  width: 22%;
+}
+
+.ck-pp-cot-mac-dinh {
+  width: 36%;
+}
+
+.ck-pp-cot-khac {
+  width: 28%;
+}
+
+.ck-pp-cot-xem-them {
+  width: 14%;
+  white-space: nowrap;
+}
+
+.ck-pp-khac-ds {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.55;
+}
+
+.ck-pp-khac-ds li + li {
+  margin-top: 4px;
+}
+
+.ck-pp-trong {
+  color: var(--ck-muc-3);
+}
+
+.ck-pp-the-luoi {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ck-pp-the {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-left: 4px solid var(--ck-son);
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--ck-muc);
+}
+
+.ck-pp-the:hover {
+  background: #FFF9EB;
+  border-color: var(--ck-son);
+}
+
+.ck-pp-the b {
+  font: 700 18.5px/1.3 var(--ck-f-tieu);
+  color: var(--ck-son);
+}
+
+.ck-pp-the span {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ck-vang-3);
+  flex: none;
+}
+
+/* Bảng tháng nhuận & chọn nhanh thế kỷ */
+.ck-pp-nhay-the-ky {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.ck-pp-nhay-the-ky a {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 13px;
+  background: var(--ck-the-nen);
+  border: 1px solid var(--ck-ke-dam);
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ck-muc);
+}
+
+.ck-pp-nhay-the-ky a:hover {
+  border-color: var(--ck-son);
+  color: var(--ck-son);
+  background: #FFF9EB;
+}
+
+.ck-pp-nam-moc {
+  scroll-margin-top: 24px;
+}
+
+.ck-pp-nam-nay td,
+tr.ck-pp-nam-nay {
+  background: #FFF7DF;
+}
+
+.ck-pp-nam-nay td:first-child {
+  box-shadow: inset 4px 0 0 var(--ck-son);
+}
+
+.ck-pp-nhan-nay {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  background: var(--ck-son);
+  color: #FBF1DA;
+  border-radius: 2px;
+  font-size: 11.5px;
+  font-weight: 600;
+  vertical-align: 1px;
+}
+
+.ck-pp-utc7 {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ck-son);
+}
+
+/* Bảng 12 canh giờ trên /phuong-phap/gio-ty */
+.ck-pp-ty-dong td,
+tr.ck-pp-ty-dong {
+  background: #FFF8E8;
+}
+
+.ck-pp-ty-dong td:first-child {
+  box-shadow: inset 4px 0 0 var(--ck-vang-2);
+}
+
+@media (max-width: 1000px) {
+  .ck-pp-the-luoi {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .ck-pp-the-luoi {
+    grid-template-columns: 1fr;
+  }
+
+  .ck-pp-bang td {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3px;
+  }
+
+  .ck-pp-bang td::before {
+    flex: none;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    font-size: 12px;
+    color: var(--ck-muc-3);
+  }
+
+  .ck-pp-bang td > ul {
+    justify-content: flex-start;
+  }
+
+  .ck-pp-thang-o {
+    text-align: right;
+  }
+
+  tr.ck-pp-nam-nay {
+    border-left: 4px solid var(--ck-son);
+  }
+
+  .ck-pp-nam-nay td:first-child {
+    box-shadow: none;
+  }
+
+  tr.ck-pp-ty-dong {
+    border-left: 4px solid var(--ck-vang-2);
+  }
+
+  .ck-pp-ty-dong td:first-child {
+    box-shadow: none;
+  }
+}

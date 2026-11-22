@@ -58,6 +58,9 @@ test('menu chỉ hiện trang đã dựng; breadcrumb đi theo cha', () => {
   assert.ok(trangDaDungF4().has('/kinh-dich/gieo-que'));
   assert.ok(!trangDaDungF4().has('/goi'));
   assert.ok(trangDaDung(5).has('/nguon') && !trangDaDung(5).has('/goi'), 'bảng giá chờ anh, để đợt 6');
+  assert.ok(trangDaDung(5).has('/phuong-phap/gio-ty') && !trangDaDung(4).has('/phuong-phap/gio-ty'));
+  assert.deepEqual(breadcrumb('/bai-viet/x', 'Bài').map((m) => m.href), ['/', '/kien-thuc', '/bai-viet/x']);
+  assert.deepEqual(breadcrumb('/phuong-phap/gio-ty').map((m) => m.ten), ['Trang chủ', 'Phương pháp', 'Giờ Tý']);
   assert.ok(chanTrang(5).at(-1).muc.some((m) => m.href === '/lien-he'));
 
   assert.deepEqual(breadcrumb('/tu-vi/lap-la-so').map((m) => m.href), ['/', '/tu-vi', '/tu-vi/lap-la-so']);

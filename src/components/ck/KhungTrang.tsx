@@ -1,5 +1,5 @@
 import React from 'react';
-import { breadcrumb } from '@/lib/trang/dieu-huong';
+import { breadcrumb, type MatXich } from '@/lib/trang/dieu-huong';
 import Breadcrumb from './Breadcrumb';
 
 export interface KhungTrangProps {
@@ -7,6 +7,7 @@ export interface KhungTrangProps {
   phu?: string | null;
   duongDan: string;
   tenCuoi?: string;
+  breadcrumbRieng?: MatXich[];
   toi?: boolean;
   rong?: boolean;
   children: React.ReactNode;
@@ -17,11 +18,12 @@ export default function KhungTrang({
   phu,
   duongDan,
   tenCuoi,
+  breadcrumbRieng,
   toi = false,
   rong = false,
   children,
 }: KhungTrangProps) {
-  const dsBreadcrumb = breadcrumb(duongDan, tenCuoi);
+  const dsBreadcrumb = breadcrumbRieng ?? breadcrumb(duongDan, tenCuoi);
 
   return (
     <>
