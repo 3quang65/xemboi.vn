@@ -11,7 +11,8 @@ import {
 import { duNien } from '../../src/lib/trang/xem-tuoi.ts';
 
 const KANRIPO = process.env.KANRIPO_DIR ?? join(process.cwd(), '..', 'thu-vien-rag', 'kanripo');
-const tep = (q) => join(KANRIPO, 'KR3g0051', `KR3g0051_${String(q).padStart(3, '0')}.txt`);
+// q là số quyển của sách. Kanripo thiếu 卷14 nên quyển 15 trở đi nằm ở tệp số q - 1.
+const tep = (q) => join(KANRIPO, 'KR3g0051', `KR3g0051_${String(q >= 15 ? q - 1 : q).padStart(3, '0')}.txt`);
 const sach = (q) => readFileSync(tep(q), 'utf8').replace(/<pb:[^>]*>/g, '').replace(/[¶\s]/g, '');
 const boDau = (s) => s.replace(/[，。、：；]/g, '');
 

@@ -1,6 +1,7 @@
 // Phong thủy Bát trạch: cung phi, 8 du niên, 24 sơn và 8 phương.
 // Nguồn: 欽定協紀辨方書 Khâm định Hiệp kỷ biện phương thư (1739), bản Kanripo KR3g0051 (CC BY-SA 4.0).
-//   卷2 二十四方位 (24 sơn thuộc 8 cung), 卷2 大遊年變卦 (cách lập 8 du niên cho xem nhà), 卷34 男女九宫 (cung phi nam nữ).
+//   卷2 二十四方位 (24 sơn thuộc 8 cung), 卷2 大遊年變卦 (cách lập 8 du niên cho xem nhà), 卷35 男女九宫 (cung phi nam nữ).
+// Số quyển ghi theo sách. Kanripo thiếu 卷14 nên tệp KR3g0051_0NN từ 014 trở đi là quyển NN+1 (vd tệp 034 = 卷35).
 // Phần không có trong Hiệp kỷ (số 5 gửi Khôn/Cấn) ghi rõ là quy ước, không gán cho sách.
 import { BAT_QUAI, type Hao } from './kinh-dich';
 import { HOA_GIAP, NAM_SINH_DEN, NAM_SINH_TU, cungPhi, type CungPhi, type Hanh } from './can-chi';
@@ -22,12 +23,12 @@ export const TRICH = {
   cuuCungKienTrach: {
     han: '三元經曰：九宫建宅，男命上元甲子起坎一，中元甲子起巽四，下元甲子起兑七，逆行九宫；女命上元甲子起中五，中元甲子起坤二，下元甲子起艮八，順行九宫。',
     phienAm: 'Tam nguyên kinh viết: Cửu cung kiến trạch, nam mệnh thượng nguyên giáp tý khởi Khảm nhất, trung nguyên giáp tý khởi Tốn tứ, hạ nguyên giáp tý khởi Đoài thất, nghịch hành cửu cung; nữ mệnh thượng nguyên giáp tý khởi trung ngũ, trung nguyên giáp tý khởi Khôn nhị, hạ nguyên giáp tý khởi Cấn bát, thuận hành cửu cung.',
-    quyen: 34, trang: '9b',
+    quyen: 35, trang: '9b',
   },
   caiChinh: {
     han: '世俗誤以上元為中元，遂謂上元起兑七，中元起坎一，下元起巽四。康熙五十六年奉㫖改正。',
     phienAm: 'Thế tục ngộ dĩ thượng nguyên vi trung nguyên, toại vị thượng nguyên khởi Đoài thất, trung nguyên khởi Khảm nhất, hạ nguyên khởi Tốn tứ. Khang Hy ngũ thập lục niên phụng chỉ cải chính.',
-    quyen: 34, trang: '10a',
+    quyen: 35, trang: '10a',
   },
   khangHy23: {
     han: '康熙二十三年甲子，一白入中宫。',

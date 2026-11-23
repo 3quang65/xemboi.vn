@@ -57,7 +57,7 @@
     - **Cần anh:** bấm xuất bản các dòng `KD`, `KD-64`, `KD-QUE`, `KD-QUAI` ở `/quan-tri/seo/trang` khi anh thấy ổn. Trang chưa có bản dịch, lời bình tiếng Việt (chỉ nguyên văn, phiên âm và phần tính được).
 17. **Cụm Phong thủy (F6) đã dựng, chờ xuất bản.** Gồm `/phong-thuy`, công cụ tra cung phi, 8 trang cung, `/phong-thuy/bat-trach`, công cụ hướng nhà.
     - Nguồn: Hiệp kỷ biện phương thư (Kanripo KR3g0051), không phải Bát trạch minh kính như kế hoạch SEO cũ ghi. Kho chỉ có bản quét Bát trạch minh kính, OCR không đọc được.
-      - Cung phi: câu "九宫建宅" quyển 34. Công thức đang dùng khớp bản đã sửa năm Khang Hy 56.
+      - Cung phi: câu "九宫建宅" quyển 35. Công thức đang dùng khớp bản đã sửa năm Khang Hy 56.
       - 8 du niên: phép "大遊年變卦, 相宅家用之" quyển 2. Bảng tính từ hào biến khớp đủ 64 ô với bảng ở trang Xem tuổi.
       - Số 5 gửi Khôn (nam), Cấn (nữ): Hiệp kỷ không chép. Trang ghi rõ đây là quy ước của các sách Bát trạch.
     - Đã sửa chữ SEO nhóm PT cho khớp nội dung: bỏ "Bát trạch minh kính", "hướng bếp, bàn thờ" vì không có nguồn. CSDL máy trạm đã sửa; lần deploy tới phải sửa trên VPS bằng `may-tram/seo-pt-moi.json`.

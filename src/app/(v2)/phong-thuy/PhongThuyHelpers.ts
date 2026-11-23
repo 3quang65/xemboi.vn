@@ -118,7 +118,7 @@ export const CUNG_THEO_CHIEU_KIM: CungBatTrach[] = [
   'Càn',
 ].map((ten) => cungTheoTen(ten)!);
 
-/** Bảng 3 nguyên kèm cung khởi theo nguyên văn 九宫建宅 (quyển 34, tờ 9b). */
+/** Bảng 3 nguyên kèm cung khởi theo nguyên văn 九宫建宅 (quyển 35, tờ 9b). */
 export const NGUYEN_KHOI = [
   { ...NGUYEN[0], namKhoi: '1 Khảm', nuKhoi: '5 trung' },
   { ...NGUYEN[1], namKhoi: '4 Tốn', nuKhoi: '2 Khôn' },

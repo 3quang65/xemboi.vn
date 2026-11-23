@@ -242,7 +242,7 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Quét dev: 1.446 trang, 1.443 trả 200; 3 trang 500 do dev Next đọc JSON dở khi dựng song song, gọi lại đều 200. 0 chỗ trống.
 - 23/11: **F6 Phong thủy.**
   - Nguồn: Hiệp kỷ biện phương thư (Kanripo KR3g0051, CC BY-SA 4.0). Kho chỉ có bản quét Bát trạch minh kính, OCR không dùng được, nên không dẫn sách đó.
-    - Cung phi theo câu "九宫建宅" (quyển 34); mốc thượng nguyên năm 1684 (quyển 8).
+    - Cung phi theo câu "九宫建宅" (quyển 35); mốc thượng nguyên năm 1684 (quyển 8).
     - 8 du niên theo phép đại du niên "相宅家用之" (quyển 2), tính từ hào biến; khớp 64/64 ô bảng tay ở `xem-tuoi.ts`.
     - 24 sơn thuộc 8 cung (quyển 2). Số 5 gửi Khôn/Cấn ghi rõ là quy ước, Hiệp kỷ không chép.
     - Lib `src/lib/trang/phong-thuy.ts`; test so từng câu trích với bản Kanripo.
