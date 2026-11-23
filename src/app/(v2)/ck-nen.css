@@ -12,3 +12,11 @@
 .ck video {
   max-width: 100%;
 }
+
+/* Menu 8 mục (thêm Phong thủy, 23/11): thu khoảng cách để vừa một dòng từ 1001px. ck.css đã chạm trần 60 KB nên đặt ở đây, độ ưu tiên cao hơn quy tắc gốc. */
+.ck-menu-ds .ck-menu-link { padding: 0 12px; }
+.ck-menu-ds .ck-menu-nut-con { width: 26px; }
+@media (max-width: 1240px) {
+  .ck-menu-ds .ck-menu-link { padding: 0 7px; font-size: 13.5px; }
+  .ck-menu-ds .ck-menu-nut-con { width: 22px; }
+}

@@ -21,6 +21,7 @@ import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { ngayHienTaiVN } from '@/lib/trang/lich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
+import { cungTheoTen } from '@/lib/trang/phong-thuy';
 import { canChiNam } from '@/lib/tuvi-v2/am-lich';
 
 export const revalidate = 3600;
@@ -91,6 +92,9 @@ export default async function SinhNamChiTietPage({
     noiDungTheoDuongDan(duongDan),
   ]);
   const daDung = trangDaDung();
+  const coLinkCungPhi = daDung.has('/phong-thuy/cung-phi');
+  const cungNam = coLinkCungPhi ? cungTheoTen(ttNam.cungPhiNam.ten) : undefined;
+  const cungNu = coLinkCungPhi ? cungTheoTen(ttNam.cungPhiNu.ten) : undefined;
   const namHienTai = ngayHienTaiVN().nam;
   const cacNamXemTuoi = [namHienTai, namHienTai + 1, namHienTai + 2];
 
@@ -242,7 +246,14 @@ export default async function SinhNamChiTietPage({
           <div className="ck-the-du-lieu">
             <h3>Nam mạng sinh năm {nam}</h3>
             <strong className="ck-gia-lon">
-              Cung {ttNam.cungPhiNam.ten} (số {ttNam.cungPhiNam.so})
+              {cungNam ? (
+                <Link href={`/phong-thuy/cung-phi/${cungNam.slug}`}>
+                  Cung {ttNam.cungPhiNam.ten}
+                </Link>
+              ) : (
+                `Cung ${ttNam.cungPhiNam.ten}`
+              )}{' '}
+              (số {ttNam.cungPhiNam.so})
             </strong>
             <p>
               Hành: <HuyHieuHanh hanh={ttNam.cungPhiNam.hanh} lienKet /> · Nhóm{' '}
@@ -253,7 +264,14 @@ export default async function SinhNamChiTietPage({
           <div className="ck-the-du-lieu">
             <h3>Nữ mạng sinh năm {nam}</h3>
             <strong className="ck-gia-lon">
-              Cung {ttNam.cungPhiNu.ten} (số {ttNam.cungPhiNu.so})
+              {cungNu ? (
+                <Link href={`/phong-thuy/cung-phi/${cungNu.slug}`}>
+                  Cung {ttNam.cungPhiNu.ten}
+                </Link>
+              ) : (
+                `Cung ${ttNam.cungPhiNu.ten}`
+              )}{' '}
+              (số {ttNam.cungPhiNu.so})
             </strong>
             <p>
               Hành: <HuyHieuHanh hanh={ttNam.cungPhiNu.hanh} lienKet /> · Nhóm{' '}
@@ -261,6 +279,11 @@ export default async function SinhNamChiTietPage({
             </p>
           </div>
         </div>
+        {coLinkCungPhi && daDung.has('/phong-thuy/bat-trach') ? (
+          <p className="ck-nguon-nho">
+            <Link href="/phong-thuy/bat-trach">Bát trạch →</Link>
+          </p>
+        ) : null}
       </section>
 
       <section className="ck-td-muc" aria-labelledby="ck-sn-mau-hop">

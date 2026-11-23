@@ -73,6 +73,14 @@ const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
     ],
     conDot: [4, 5],
   },
+  {
+    dot: 5, ten: 'Phong thủy', href: '/phong-thuy', moTa: 'Cung phi, bát trạch, hướng nhà',
+    con: [
+      { ten: 'Tra cung phi', href: '/phong-thuy/cung-phi' },
+      { ten: 'Bát trạch', href: '/phong-thuy/bat-trach' },
+      { ten: 'Hướng nhà hợp tuổi', href: '/phong-thuy/huong-nha' },
+    ],
+  },
 ];
 
 const locDot = (dot: number) => (m: (typeof TAT_CA)[number]): MucMenu => ({
@@ -118,6 +126,7 @@ const TEN_DOAN: Record<string, string> = {
   '/xem-tuoi': 'Xem tuổi', '/xem-tuoi/vo-chong': 'Vợ chồng', '/xem-tuoi/xong-dat': 'Xông đất',
   '/bat-tu': 'Bát tự', '/bat-tu/lap-la-so': 'Lập lá số bát tự', '/kinh-dich': 'Kinh Dịch', '/kinh-dich/gieo-que': 'Gieo quẻ', '/kinh-dich/64-que': '64 quẻ',
   '/tet': 'Tết', '/xem-ngay': 'Xem ngày', '/xem-ngay/xuat-hanh': 'Xuất hành',
+  '/phong-thuy': 'Phong thủy', '/phong-thuy/cung-phi': 'Cung phi', '/phong-thuy/bat-trach': 'Bát trạch', '/phong-thuy/huong-nha': 'Hướng nhà',
   '/xem-ngay/cuoi-hoi': 'Ngày cưới', '/xem-ngay/khai-truong': 'Khai trương', '/xem-ngay/dong-tho': 'Động thổ',
   '/xem-ngay/nhap-trach': 'Nhập trạch', '/xem-ngay/mua-xe': 'Mua xe', '/xem-ngay/cat-toc': 'Cắt tóc',
   '/phuong-phap': 'Phương pháp', '/nguon': 'Nguồn sách', '/tu-dien': 'Từ điển', '/kien-thuc': 'Kiến thức', '/goi': 'Bảng giá', '/lien-he': 'Liên hệ',

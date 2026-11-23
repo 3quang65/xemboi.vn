@@ -8,6 +8,7 @@ import { namSinhHopLe } from '@/lib/trang/can-chi';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
+import { cungTheoTen } from '@/lib/trang/phong-thuy';
 import {
   NAM_XEM_TUOI_DEN,
   NAM_XEM_TUOI_TU,
@@ -187,7 +188,11 @@ export default async function XemTuoiVoChongPage({
             {[
               { vaiTro: 'Chồng', nguoi: ketQua.chong },
               { vaiTro: 'Vợ', nguoi: ketQua.vo },
-            ].map(({ vaiTro, nguoi }) => (
+            ].map(({ vaiTro, nguoi }) => {
+              const cungObj = daDung.has('/phong-thuy/cung-phi')
+                ? cungTheoTen(nguoi.cungPhi)
+                : undefined;
+              return (
               <article key={vaiTro} className="ck-the-du-lieu">
                 <span className="ck-nhan-nho">{vaiTro}</span>
                 <strong className="ck-gia-lon">
@@ -202,7 +207,14 @@ export default async function XemTuoiVoChongPage({
                   )
                 </p>
                 <p>
-                  Cung phi (Bát trạch): <b>{nguoi.cungPhi}</b>
+                  Cung phi (Bát trạch):{' '}
+                  {cungObj ? (
+                    <Link href={`/phong-thuy/cung-phi/${cungObj.slug}`}>
+                      <b>{nguoi.cungPhi}</b>
+                    </Link>
+                  ) : (
+                    <b>{nguoi.cungPhi}</b>
+                  )}
                 </p>
                 {daDung.has('/sinh-nam') && namSinhHopLe(nguoi.nam) ? (
                   <Link href={`/sinh-nam/${nguoi.nam}`} className="ck-xt-nguoi-link">
@@ -210,7 +222,8 @@ export default async function XemTuoiVoChongPage({
                   </Link>
                 ) : null}
               </article>
-            ))}
+              );
+            })}
           </div>
 
           <div className="ck-bang-khung">

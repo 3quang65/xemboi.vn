@@ -240,4 +240,16 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Trang chỉ có nguyên văn, phiên âm và phần tính được; bản dịch, lời bình chờ `NoiDung` đã duyệt.
   - Menu Kinh Dịch thêm "64 quẻ"; breadcrumb trang quẻ, quái đi qua `/kinh-dich/64-que`.
   - Quét dev: 1.446 trang, 1.443 trả 200; 3 trang 500 do dev Next đọc JSON dở khi dựng song song, gọi lại đều 200. 0 chỗ trống.
+- 23/11: **F6 Phong thủy.**
+  - Nguồn: Hiệp kỷ biện phương thư (Kanripo KR3g0051, CC BY-SA 4.0). Kho chỉ có bản quét Bát trạch minh kính, OCR không dùng được, nên không dẫn sách đó.
+    - Cung phi theo câu "九宫建宅" (quyển 34); mốc thượng nguyên năm 1684 (quyển 8).
+    - 8 du niên theo phép đại du niên "相宅家用之" (quyển 2), tính từ hào biến; khớp 64/64 ô bảng tay ở `xem-tuoi.ts`.
+    - 24 sơn thuộc 8 cung (quyển 2). Số 5 gửi Khôn/Cấn ghi rõ là quy ước, Hiệp kỷ không chép.
+    - Lib `src/lib/trang/phong-thuy.ts`; test so từng câu trích với bản Kanripo.
+  - Antigravity làm giao diện (Lệnh 34): hub, công cụ cung phi, 8 trang cung (dựng tĩnh), bát trạch (bảng 8 × 8), công cụ hướng nhà (vòng 24 sơn SVG); liên kết từ `/sinh-nam/*` và xem tuổi vợ chồng.
+  - Menu thêm mục "Phong thủy" (8 mục). Thu khoảng cách menu trong `ck-nen.css` (ck.css đã chạm trần) để vừa một dòng từ 1001px.
+  - SEO nhóm PT: bỏ "Bát trạch minh kính", "hướng bếp, bàn thờ". Đã sửa CSDL máy trạm; deploy tới sửa trên VPS bằng `may-tram/seo-pt-moi.json`.
+  - Bật 7 chuyển hướng URL cũ sang `/phong-thuy/cung-phi`, `/phong-thuy/huong-nha` ở CSDL máy trạm; còn 32 dòng chờ trang đích.
+  - Chưa làm: thước Lỗ Ban, hỏi đáp phong thủy (viec-can-anh mục 17).
+  - Quét dev: 1.458 trang, 1.453 trả 200; 5 trang 500 lúc dev biên dịch song song, gọi lại đều 200 (bản build dựng tĩnh các trang này không lỗi). 0 chỗ trống, 0 trang v1.
 - Deploy lần tới phải chạy `npm ci` vì có gói mới `lunar-javascript`.

@@ -55,6 +55,15 @@
       - chữ hiếm: 眇, 茹, 彙, 嗃, 掣, 頄, 汔, 鬯, 夤, 蔀…
       - Người duyệt cần đọc lại danh sách này. **Em đang để:** dùng âm đã chọn, chưa hiện dấu "chưa chắc" trên trang.
     - **Cần anh:** bấm xuất bản các dòng `KD`, `KD-64`, `KD-QUE`, `KD-QUAI` ở `/quan-tri/seo/trang` khi anh thấy ổn. Trang chưa có bản dịch, lời bình tiếng Việt (chỉ nguyên văn, phiên âm và phần tính được).
+17. **Cụm Phong thủy (F6) đã dựng, chờ xuất bản.** Gồm `/phong-thuy`, công cụ tra cung phi, 8 trang cung, `/phong-thuy/bat-trach`, công cụ hướng nhà.
+    - Nguồn: Hiệp kỷ biện phương thư (Kanripo KR3g0051), không phải Bát trạch minh kính như kế hoạch SEO cũ ghi. Kho chỉ có bản quét Bát trạch minh kính, OCR không đọc được.
+      - Cung phi: câu "九宫建宅" quyển 34. Công thức đang dùng khớp bản đã sửa năm Khang Hy 56.
+      - 8 du niên: phép "大遊年變卦, 相宅家用之" quyển 2. Bảng tính từ hào biến khớp đủ 64 ô với bảng ở trang Xem tuổi.
+      - Số 5 gửi Khôn (nam), Cấn (nữ): Hiệp kỷ không chép. Trang ghi rõ đây là quy ước của các sách Bát trạch.
+    - Đã sửa chữ SEO nhóm PT cho khớp nội dung: bỏ "Bát trạch minh kính", "hướng bếp, bàn thờ" vì không có nguồn. CSDL máy trạm đã sửa; lần deploy tới phải sửa trên VPS bằng `may-tram/seo-pt-moi.json`.
+    - **Chưa làm:** thước Lỗ Ban (số đo chưa kiểm được nguồn), hỏi đáp phong thủy nhà ở (cần người viết).
+    - **Cần anh quyết (không gấp):** trang Xem tuổi vợ chồng đang dùng bảng đại du niên (bảng xem nhà) để xét hợp hôn. Hiệp kỷ (quyển đầu, tờ 7b) ghi hợp hôn dùng tiểu du niên, tên khác (Phúc đức, Tuyệt thể, Du hồn, Quy hồn), và chê cách ghép này là "牽合非倫" (gán ghép không đúng lẽ). **Em đang để:** giữ nguyên, chưa ghi chú trên trang.
+    - **Cần anh:** bấm xuất bản các dòng `PT`, `PT-CUNGPHI`, `PT-CUNGPHI-LEAF`, `PT-BATTRACH`, `PT-HUONGNHA` ở `/quan-tri/seo/trang` khi anh thấy ổn.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026
