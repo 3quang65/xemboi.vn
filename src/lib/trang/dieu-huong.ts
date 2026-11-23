@@ -1,7 +1,8 @@
 // Menu, chân trang và breadcrumb cho trang công khai v2 (docs/v2/16-seo-kien-truc.md mục 3, docs/v2/19).
 // Chỉ liệt kê trang ĐÃ DỰNG ở v2: thêm mục khi đợt F2–F6 dựng xong trang tương ứng, để không có liên kết chết.
 
-export type MucMenu = { ten: string; href: string; moTa?: string; con?: MucMenu[] };
+/** `them`: hub phụ, ở desktop gom vào nút "Thêm" để menu vừa một hàng; ngăn kéo mobile và chân trang vẫn hiện như mục thường. */
+export type MucMenu = { ten: string; href: string; moTa?: string; con?: MucMenu[]; them?: boolean };
 
 /** Đợt đã dựng xong. Tăng dần khi nghiệm thu từng đợt (F1 → F5). */
 export const DOT_DA_DUNG = 5;
@@ -81,10 +82,18 @@ const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
       { ten: 'Hướng nhà hợp tuổi', href: '/phong-thuy/huong-nha' },
     ],
   },
+  {
+    dot: 5, ten: 'Thần số học', href: '/than-so-hoc', moTa: 'Số chủ đạo, năm cá nhân, biểu đồ ngày sinh', them: true,
+    con: [
+      { ten: 'Tính số chủ đạo', href: '/than-so-hoc/so-chu-dao' },
+      { ten: 'Biểu đồ ngày sinh', href: '/than-so-hoc/bieu-do-ngay-sinh' },
+      { ten: 'Thần số học theo tên', href: '/than-so-hoc/theo-ten' },
+    ],
+  },
 ];
 
 const locDot = (dot: number) => (m: (typeof TAT_CA)[number]): MucMenu => ({
-  ten: m.ten, href: m.href, moTa: m.moTa,
+  ten: m.ten, href: m.href, moTa: m.moTa, ...(m.them ? { them: true } : {}),
   con: m.con?.filter((_, i) => (m.conDot?.[i] ?? m.dot) <= dot),
 });
 
@@ -127,6 +136,8 @@ const TEN_DOAN: Record<string, string> = {
   '/bat-tu': 'Bát tự', '/bat-tu/lap-la-so': 'Lập lá số bát tự', '/kinh-dich': 'Kinh Dịch', '/kinh-dich/gieo-que': 'Gieo quẻ', '/kinh-dich/64-que': '64 quẻ',
   '/tet': 'Tết', '/xem-ngay': 'Xem ngày', '/xem-ngay/xuat-hanh': 'Xuất hành',
   '/phong-thuy': 'Phong thủy', '/phong-thuy/cung-phi': 'Cung phi', '/phong-thuy/bat-trach': 'Bát trạch', '/phong-thuy/huong-nha': 'Hướng nhà',
+  '/than-so-hoc': 'Thần số học', '/than-so-hoc/so-chu-dao': 'Số chủ đạo', '/than-so-hoc/theo-ten': 'Theo tên',
+  '/than-so-hoc/bieu-do-ngay-sinh': 'Biểu đồ ngày sinh', // /than-so-hoc/nam-ca-nhan không có trang gốc: breadcrumb bỏ qua đoạn này
   '/xem-ngay/cuoi-hoi': 'Ngày cưới', '/xem-ngay/khai-truong': 'Khai trương', '/xem-ngay/dong-tho': 'Động thổ',
   '/xem-ngay/nhap-trach': 'Nhập trạch', '/xem-ngay/mua-xe': 'Mua xe', '/xem-ngay/cat-toc': 'Cắt tóc',
   '/phuong-phap': 'Phương pháp', '/nguon': 'Nguồn sách', '/tu-dien': 'Từ điển', '/kien-thuc': 'Kiến thức', '/goi': 'Bảng giá', '/lien-he': 'Liên hệ',

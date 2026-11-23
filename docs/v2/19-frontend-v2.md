@@ -252,4 +252,12 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Bật 7 chuyển hướng URL cũ sang `/phong-thuy/cung-phi`, `/phong-thuy/huong-nha` ở CSDL máy trạm; còn 32 dòng chờ trang đích.
   - Chưa làm: thước Lỗ Ban, hỏi đáp phong thủy (viec-can-anh mục 17).
   - Quét dev: 1.458 trang, 1.453 trả 200; 5 trang 500 lúc dev biên dịch song song, gọi lại đều 200 (bản build dựng tĩnh các trang này không lỗi). 0 chỗ trống, 0 trang v1.
+- 23/11: **F6 Thần số học.**
+  - Không có nguồn loại A (12 mục 3), nên cụm chỉ có cách tính và số liệu đếm được; mỗi chỗ người đọc chờ "ý nghĩa" hiện câu `GHI_CHU_Y_NGHIA` giải thích vì sao chưa đăng (viec-can-anh mục 18).
+  - Lib `src/lib/trang/than-so-hoc.ts`: số chủ đạo hai cách (cộng dồn, rút từng phần; khác nhau ở 4.725/36.890 ngày 1930–2030), năm cá nhân, biểu đồ 3×3 (8 đường, chỉ ghi vị trí, không dùng tên "mũi tên" của sách), 4 đỉnh cao, tên tiếng Việt (bỏ dấu, Đ = D, Y nguyên âm). Đã đối chiếu quy tắc master của Taylor 1926 trên bản quét archive.org.
+  - Antigravity làm giao diện (Lệnh 35): hub, công cụ số chủ đạo, 12 trang số, biểu đồ ngày sinh, theo tên (tính trên trình duyệt, không gửi tên đi), 9 trang năm cá nhân.
+  - Sửa sau duyệt: dòng "tổng từ 3 đến 45" là số đoán, đổi sang khoảng đếm thật 4–48; ví dụ ngày sinh tự chọn năm có ví dụ (số 2 không có ngày nào năm 1990, số 33 không có năm 2000).
+  - Menu: cờ `them` trong `dieu-huong.ts`; desktop gom hub phụ vào nút "Thêm" và bỏ mục "Trang chủ" (logo đã dẫn về). Một hàng ở 1001–1920px.
+  - SEO nhóm TSH sửa chữ cho khớp (bỏ "tính cách, nghề", "ý nghĩa"); deploy tới sửa VPS bằng `may-tram/seo-tsh-moi.json`. Không có URL cũ nào chuyển hướng sang cụm này.
+  - Quét dev: 1.483 trang, 1.473 trả 200; 10 trang 500 lúc dev biên dịch song song, gọi lại đều 200 (build qua). 0 chỗ trống, 0 trang v1. 121/121 test, tsc 0 lỗi.
 - Deploy lần tới phải chạy `npm ci` vì có gói mới `lunar-javascript`.

@@ -64,6 +64,13 @@
     - **Chưa làm:** thước Lỗ Ban (số đo chưa kiểm được nguồn), hỏi đáp phong thủy nhà ở (cần người viết).
     - **Cần anh quyết (không gấp):** trang Xem tuổi vợ chồng đang dùng bảng đại du niên (bảng xem nhà) để xét hợp hôn. Hiệp kỷ (quyển đầu, tờ 7b) ghi hợp hôn dùng tiểu du niên, tên khác (Phúc đức, Tuyệt thể, Du hồn, Quy hồn), và chê cách ghép này là "牽合非倫" (gán ghép không đúng lẽ). **Em đang để:** giữ nguyên, chưa ghi chú trên trang.
     - **Cần anh:** bấm xuất bản các dòng `PT`, `PT-CUNGPHI`, `PT-CUNGPHI-LEAF`, `PT-BATTRACH`, `PT-HUONGNHA` ở `/quan-tri/seo/trang` khi anh thấy ổn.
+18. **Cụm Thần số học (F6) đã dựng, chờ xuất bản.** Gồm `/than-so-hoc`, công cụ số chủ đạo, 12 trang số (1–9, 11, 22, 33), biểu đồ ngày sinh (lưới 3×3, 4 đỉnh cao), theo tên, 9 trang năm cá nhân.
+    - **Chỉ có cách tính và số liệu đếm được, chưa có phần ý nghĩa** (tính cách, nghề hợp…). Lý do: môn này không có nguồn loại A (12 mục 3). Các sách nền (Taylor 1926, Balliett, Householder 1921) đều loại B vì chưa rõ năm mất tác giả, và quy tắc không dịch/không tự giảng vẫn áp dụng. Mỗi trang ghi rõ vì sao chưa có phần này.
+    - Hệ quả SEO: từ khóa kiểu "số chủ đạo 7 hợp nghề gì" sẽ khó lên. **Cần anh quyết (không gấp):** (a) giữ chỉ cách tính; (b) mua quyền hoặc xin phép một sách tiếng Việt để trích; (c) cho người thật viết phần mô tả, ghi rõ tên người viết và "theo quan niệm phổ biến".
+    - Quy ước tính ghi công khai trên trang: số chủ đạo hiện cả hai cách (cộng dồn và rút từng phần), khác nhau ở 4.725/36.890 ngày sinh 1930–2030; giữ 11, 22, 33; tên tiếng Việt bỏ dấu, Đ = D, Y là nguyên âm.
+    - Menu: thêm nút "Thêm" ở desktop gom các hub phụ (cờ `them` trong `dieu-huong.ts`), bỏ mục "Trang chủ" trên desktop vì logo đã dẫn về trang chủ. Chiêm tinh, Phong tục sau này cũng vào nhóm này.
+    - SEO nhóm TSH đã sửa chữ cho khớp (bỏ "tính cách, nghề", "ý nghĩa"); CSDL máy trạm đã sửa, deploy tới sửa VPS bằng `may-tram/seo-tsh-moi.json`.
+    - **Cần anh:** bấm xuất bản các dòng `TSH`, `TSH-TINH`, `TSH-SO`, `TSH-TEN`, `TSH-BIEUDO`, `TSH-NAMCANHAN` khi anh thấy ổn.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026

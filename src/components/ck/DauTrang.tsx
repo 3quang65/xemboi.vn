@@ -24,6 +24,14 @@ export default function DauTrang({ mucMenu }: DauTrangProps) {
   const navRef = useRef<HTMLElement | null>(null);
   const nutMenuRef = useRef<HTMLButtonElement | null>(null);
   const nutDongRef = useRef<HTMLButtonElement | null>(null);
+  const mucThemRef = useRef<HTMLLIElement | null>(null);
+  const nutThemRef = useRef<HTMLButtonElement | null>(null);
+
+  const KHOA_THEM = '__them__';
+  const mucChinhDesktop = mucMenu.filter((m) => !m.them);
+  const mucThemDesktop = mucMenu.filter((m) => m.them);
+  const dangMoThem = moSubHref === KHOA_THEM;
+  const dangChonThem = mucThemDesktop.some((m) => khopMuc(pathname, m));
 
   const coNutLapLaSo = mucMenu.some(
     (m) => m.href === '/tu-vi/lap-la-so' || m.con?.some((c) => c.href === '/tu-vi/lap-la-so'),
@@ -44,7 +52,13 @@ export default function DauTrang({ mucMenu }: DauTrangProps) {
       }
     };
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setMoSubHref(null);
+      if (e.key === 'Escape') {
+        const dangLaThem = moSubHref === KHOA_THEM;
+        setMoSubHref(null);
+        if (dangLaThem && mucThemRef.current?.contains(document.activeElement)) {
+          nutThemRef.current?.focus();
+        }
+      }
     };
     document.addEventListener('mousedown', onPointerDown);
     window.addEventListener('keydown', onKey);
@@ -129,17 +143,7 @@ export default function DauTrang({ mucMenu }: DauTrangProps) {
         <nav ref={navRef} className="ck-menu" aria-label="Điều hướng chính">
           <div className="ck-w">
             <ul className="ck-menu-ds">
-              <li className="ck-menu-muc">
-                <Link
-                  href="/"
-                  className={`ck-menu-link${pathname === '/' ? ' ck-on' : ''}`}
-                  aria-current={pathname === '/' ? 'page' : undefined}
-                >
-                  Trang chủ
-                </Link>
-              </li>
-
-              {mucMenu.map((m) => {
+              {mucChinhDesktop.map((m) => {
                 const coCon = Boolean(m.con && m.con.length > 0);
                 const dangMo = moSubHref === m.href;
                 const dangChon = khopMuc(pathname, m);
@@ -201,6 +205,70 @@ export default function DauTrang({ mucMenu }: DauTrangProps) {
                   </li>
                 );
               })}
+
+              {mucThemDesktop.length > 0 && (
+                <li
+                  ref={mucThemRef}
+                  className={`ck-menu-muc${dangMoThem ? ' ck-menu-mo' : ''}`}
+                  onMouseEnter={() => setMoSubHref(KHOA_THEM)}
+                  onMouseLeave={() => {
+                    if (moSubHref === KHOA_THEM) setMoSubHref(null);
+                  }}
+                >
+                  <button
+                    ref={nutThemRef}
+                    type="button"
+                    className={`ck-menu-link ck-menu-them-nut${dangChonThem ? ' ck-on' : ''}`}
+                    aria-expanded={dangMoThem}
+                    aria-haspopup="menu"
+                    aria-controls="ck-menu-them-con"
+                    onClick={() => setMoSubHref(dangMoThem ? null : KHOA_THEM)}
+                  >
+                    <span>Thêm</span>
+                    <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true">
+                      <path
+                        d="M1 1.5l5 5 5-5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </button>
+                  <ul
+                    id="ck-menu-them-con"
+                    className="ck-menu-con ck-menu-con-phai"
+                    aria-label="Các chuyên mục khác"
+                  >
+                    {mucThemDesktop.map((m) => (
+                      <li key={m.href} className="ck-menu-them-nhom">
+                        <Link
+                          href={m.href}
+                          className={`ck-menu-them-hub${pathname === m.href ? ' ck-on' : ''}`}
+                          aria-current={pathname === m.href ? 'page' : undefined}
+                        >
+                          {m.ten}
+                        </Link>
+                        {m.con && m.con.length > 0 && (
+                          <ul className="ck-menu-them-con-ds">
+                            {m.con.map((c) => (
+                              <li key={c.href}>
+                                <Link
+                                  href={c.href}
+                                  className={`ck-menu-them-con-link${pathname === c.href ? ' ck-on' : ''}`}
+                                  aria-current={pathname === c.href ? 'page' : undefined}
+                                >
+                                  {c.ten}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              )}
             </ul>
           </div>
         </nav>

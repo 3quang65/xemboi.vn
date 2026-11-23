@@ -13,10 +13,52 @@
   max-width: 100%;
 }
 
-/* Menu 8 mục (thêm Phong thủy, 23/11): thu khoảng cách để vừa một dòng từ 1001px. ck.css đã chạm trần 60 KB nên đặt ở đây, độ ưu tiên cao hơn quy tắc gốc. */
+/* Menu: thu khoảng cách để vừa một dòng từ 1001px và định kiểu nút "Thêm". ck.css đã chạm trần 60 KB nên đặt ở đây, dùng bộ chọn .ck-menu-ds để thắng quy tắc gốc. */
 .ck-menu-ds .ck-menu-link { padding: 0 12px; }
 .ck-menu-ds .ck-menu-nut-con { width: 26px; }
+.ck-menu-ds .ck-menu-them-nut {
+  border: 0;
+  background: transparent;
+  color: #F6E6BE;
+  font: 500 15.5px/48px var(--ck-f-chu);
+  cursor: pointer;
+}
+.ck-menu-ds .ck-menu-them-nut:hover,
+.ck-menu-ds .ck-menu-mo > .ck-menu-them-nut {
+  color: #FFF4D8;
+  background: rgba(0, 0, 0, .18);
+}
+.ck-menu-ds .ck-menu-them-nut.ck-on {
+  color: var(--ck-vang-sang);
+  font-weight: 700;
+  background: linear-gradient(#1A0807, #0E0405);
+}
+.ck-menu-ds .ck-menu-con-phai {
+  left: auto;
+  right: 0;
+  min-width: 244px;
+}
+.ck-menu-ds .ck-menu-them-nhom + .ck-menu-them-nhom {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(201, 164, 82, .25);
+}
+.ck-menu-ds .ck-menu-them-hub {
+  font-weight: 700;
+  color: var(--ck-vang);
+}
+.ck-menu-ds .ck-menu-them-con-ds {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ck-menu-ds .ck-menu-them-con-link {
+  padding: 7px 16px 7px 28px;
+  font-size: 14px;
+  color: var(--ck-kem-2);
+}
 @media (max-width: 1240px) {
-  .ck-menu-ds .ck-menu-link { padding: 0 7px; font-size: 13.5px; }
+  .ck-menu-ds .ck-menu-link,
+  .ck-menu-ds .ck-menu-them-nut { padding: 0 7px; font-size: 13.5px; }
   .ck-menu-ds .ck-menu-nut-con { width: 22px; }
 }
