@@ -151,3 +151,25 @@ export function docNhanhCuuTinh(nam: number, luc = new Date()): DocNhanhChung {
   }
   return { cau, the };
 }
+
+/**
+ * Hướng đo sát ranh giới hai sơn (mỗi sơn 15°, ranh ở 7,5° + 15°·k): báo sơn kề bên và quái của nó,
+ * để người xem biết đo lệch một chút thì kết quả đổi. Chỉ là số đo, không thêm lời luận.
+ */
+export function ganRanhSon(doHuong: number, nguong = 2): { gan: boolean; cachDo: number; sonKe: string; doiQuai: boolean; cau: string | null } {
+  const d = ((doHuong % 360) + 360) % 360;
+  const trong = (d + 7.5) % 15; // vị trí trong sơn hiện tại, 0..15
+  const sangPhai = trong >= 7.5;
+  const cachDo = Math.round((sangPhai ? 15 - trong : trong) * 10) / 10;
+  const iNay = Math.floor((d + 7.5) / 15) % 24;
+  const iKe = (iNay + (sangPhai ? 1 : 23)) % 24;
+  const sonNay = HAI_TU_SON[iNay];
+  const sonKe = HAI_TU_SON[iKe];
+  const doiQuai = cungTheoSon(sonNay).ten !== cungTheoSon(sonKe).ten;
+  const gan = cachDo <= nguong;
+  const cau = gan
+    ? `Hướng ${d}° chỉ cách ranh giới sơn ${sonKe} ${String(cachDo).replace('.', ',')}°; đo lệch chừng đó là sang sơn ${sonKe}`
+      + (doiQuai ? ` (quái ${cungTheoSon(sonKe).ten}), kết quả du niên sẽ khác. Nên đo lại vài lần.` : ', cùng quái nên du niên không đổi.')
+    : null;
+  return { gan, cachDo, sonKe, doiQuai, cau };
+}

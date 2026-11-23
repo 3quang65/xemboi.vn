@@ -123,3 +123,42 @@ Khi đã nhập ngày sinh:
 4. **Ảnh 375px:** không cuộn ngang; vùng bấm ≥ 44px; chữ 24 sơn đọc được.
 5. **Ảnh xám:** phân biệt được cát/không cát trên la bàn (có ký hiệu hoặc kiểu viền, không chỉ khác màu).
 6. **Kiểm tra cuối:** tắt JS vẫn đọc đủ; `tsc` sạch; CSS mỗi cụm ≤ 30 KB.
+
+## Học từ thị trường (bắt buộc áp)
+
+Báo cáo đầy đủ: `docs/v2/thiet-ke/doi-thu/than-so-huong-nha-cuu-tinh-thi-truong.md`. Đã khảo sát 13 công cụ.
+
+**Số liệu.**
+- Thần số học: số chủ đạo, năm cá nhân và 4 đỉnh cao khớp engine ở mọi nơi.
+- Bát trạch: cung phi nữ 1990 là Cấn ở mọi nơi. menh.guru đảo phương Đông/Nam; 3 công cụ còn lại khớp engine.
+- Cửu tinh 2027: 5/5 nơi khớp đủ 9 ô.
+- Không công cụ miễn phí nào có: mũi tên trên lưới ngày sinh, số sao lớp tháng, hoạt cảnh sao bay. Đây là chỗ mình hơn được.
+
+**Áp vào 42.1–42.3:**
+1. **Khoảng tuổi đỉnh cao không chồng nhau.**
+   - In đúng `tuTuoi`–`denTuoi` của lib: 0–28, 29–37, 38–46, 47+ cho ca mẫu.
+   - Mèo Béo ghi "28–37" khiến tuổi 28 thuộc hai chặng. Không lặp lỗi này.
+   - Bên cạnh khoảng tuổi ghi năm dương tương ứng (năm sinh + tuổi).
+2. **Mỗi nút đỉnh cao hiện phép cộng** (`phepCong`) ngay dưới số, chữ nhỏ.
+   - Ở ≥ 768px được vẽ dạng kim tự tháp (mẫu numerologist.com) thay cho thanh ngang. Vẫn phải có "Đang ở đây".
+   - Ở 375px giữ 4 thẻ dọc.
+3. **Bố cục lưới 3×3:** dưới lưới ghi chú nhỏ "Hàng trên 3 · 6 · 9, hàng giữa 2 · 5 · 8, hàng dưới 1 · 4 · 7 (theo `LUOI`)". Có trang xếp kiểu bàn phím số (7 · 8 · 9 ở trên) nên người dùng dễ lẫn.
+4. **La bàn:**
+   - nút link `?xoay=huong` để xoay tĩnh la bàn sao cho hướng nhà nằm trên cùng (mẫu menh.guru, 1518);
+   - mặc định vẫn Bắc ở trên; khi xoay ghi rõ "Đang xoay: hướng nhà ở trên";
+   - không có hoạt cảnh xoay.
+5. **Cảnh báo sát ranh sơn:**
+   - gọi `ganRanhSon(do)` (hàm mới trong `phan-truc-quan.ts`, đã có test);
+   - khi `gan` là true, in `cau` trong hộp nền hổ phách nhạt ngay dưới thẻ hướng;
+   - trên la bàn tô vạch ranh giới gần nhất.
+6. **Thẻ Hướng và Tọa đặt cạnh nhau** (2 cột cả ở 375px), mỗi thẻ có độ, sơn, quái.
+   - URL kết quả đã có tham số `nam`, `gt`, `do`; thêm nút "Sao chép liên kết" (client nhỏ, có `aria-live`).
+7. **Cửu tinh:**
+   - bấm từng ô mở `<details>` tên sao, hành, Hán tự (dữ liệu sẵn có);
+   - in "Năm đổi ở Lập xuân" kèm ngày (đã có trong `cau`);
+   - lớp tháng phải hiện số sao thật của tháng. Thị trường chỉ ghi Cát/Bình, mình hơn ở chỗ này.
+8. **Không chép:**
+   - màu đỏ cho phương xấu (hầu hết đối thủ dùng đỏ);
+   - popup hay mục "hóa giải", "vật phẩm";
+   - điểm số tự chế (20/100, 74/100);
+   - nhãn Thái Tuế, Tam Sát: chưa có nguồn trong sổ giấy phép nên không thêm.

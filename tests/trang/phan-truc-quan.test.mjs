@@ -75,3 +75,24 @@ test('cửu tinh 2027: Cửu tử trung cung, Ngũ hoàng ở Bắc (khớp tran
   // Không ở năm 2027 thì không có thẻ tháng.
   assert.equal(docNhanhCuuTinh(2027, new Date(Date.UTC(2030, 5, 15))).the.length, 2);
 });
+
+test('ganRanhSon: ranh sơn ở 7,5° + 15°·k, báo đổi quái đúng', async () => {
+  const { ganRanhSon } = await import('../../src/lib/trang/phan-truc-quan.ts');
+  const { xetHuong } = await import('../../src/lib/trang/phong-thuy.ts');
+  assert.equal(ganRanhSon(135).gan, false);
+  assert.equal(ganRanhSon(135).cachDo, 7.5);
+  // 113° gần ranh 112,5° giữa Thìn (105°) và Tốn (120°): cùng quái Tốn.
+  const a = ganRanhSon(113);
+  assert.equal(a.gan, true);
+  assert.equal(a.sonKe, xetHuong(112).sonHuong);
+  // 157° gần ranh 157,5° giữa Tỵ (150°, quái Tốn) và Bính (165°, quái Ly): đổi quái.
+  const b = ganRanhSon(157);
+  assert.equal(b.sonKe, xetHuong(158).sonHuong);
+  assert.equal(b.doiQuai, true);
+  assert.ok(b.cau.includes('du niên sẽ khác'));
+  for (let d = 0; d < 360; d += 0.5) {
+    const r = ganRanhSon(d, 15);
+    assert.notEqual(r.sonKe, xetHuong(d).sonHuong, `${d}`);
+    assert.ok(r.cachDo >= 0 && r.cachDo <= 7.5);
+  }
+});
