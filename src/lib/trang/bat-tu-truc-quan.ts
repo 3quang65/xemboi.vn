@@ -28,43 +28,59 @@ export type TrichDoan = {
   /** Số đoạn trong bảng rag_doan. */
   doanId: number;
   viTri: string;
-  /** Nguyên văn; các khúc không liền nhau nối bằng "…". */
+  /** Nguyên văn; các khúc không liền nhau nối bằng "…". Chỉ lưu để đối chiếu, KHÔNG hiển thị (frontend chỉ tiếng Việt). */
   nguyenVan: string;
+  /** Quyển, mục bằng tiếng Việt (để hiển thị). */
+  viTriViet: string;
+  /** Dịch nghĩa tiếng Việt do xemboi dịch sát chữ theo nguyên văn (để hiển thị). */
+  dich: string;
 };
 
 export const TRICH_BAT_TU = {
-  nhatChu: { nguon: 'tamMenh', doanId: 5374, viTri: '卷十 · 看命口訣', nguyenVan: '凡㸔命專以日干為主取提綱所用之物為命' },
-  deCuong: { nguon: 'tamMenh', doanId: 4948, viTri: '卷七', nguyenVan: '其年為鈎時為權月為提綱日為銖兩八字以日為主' },
+  nhatChu: { nguon: 'tamMenh', doanId: 5374, viTri: '卷十 · 看命口訣', nguyenVan: '凡㸔命專以日干為主取提綱所用之物為命', viTriViet: 'Quyển 10 · Khán mệnh khẩu quyết', dich: 'Phàm xem mệnh, chuyên lấy can ngày làm chủ; lấy cái được dùng ở đề cương (lệnh tháng) làm mệnh.' },
+  deCuong: { nguon: 'tamMenh', doanId: 4948, viTri: '卷七', nguyenVan: '其年為鈎時為權月為提綱日為銖兩八字以日為主', viTriViet: 'Quyển 7', dich: 'Năm là cái móc, giờ là quả cân, tháng là đề cương, ngày là vật được cân; tám chữ lấy ngày làm chủ.' },
   canHop: {
     nguon: 'hiepKy', doanId: 6012, viTri: '卷一 · 四序',
     nguyenVan: '甲與己合乙與庚合丙與辛合丁與壬合戊與癸合甲己化土乙庚化金丙辛化水丁壬化木戊癸化火',
+    viTriViet: 'Quyển 1 · Tứ tự',
+    dich: 'Giáp hợp với Kỷ, Ất hợp với Canh, Bính hợp với Tân, Đinh hợp với Nhâm, Mậu hợp với Quý. Giáp Kỷ hóa Thổ, Ất Canh hóa Kim, Bính Tân hóa Thủy, Đinh Nhâm hóa Mộc, Mậu Quý hóa Hỏa.',
   },
   lucHop: {
     nguon: 'tamMenh', doanId: 4338, viTri: '卷二 · 論支元六合',
     nguyenVan: '夫合者和也乃隂陽相和其氣自合…是以一隂一陽和而謂之合子合丑寅合亥',
+    viTriViet: 'Quyển 2 · Luận chi nguyên lục hợp',
+    dich: 'Hợp là hòa, tức âm dương hòa với nhau thì khí tự hợp… Vì thế một âm một dương hòa nhau thì gọi là hợp: Tý hợp Sửu, Dần hợp Hợi.',
   },
   lucHop2: {
     nguon: 'tamMenh', doanId: 4339, viTri: '卷二 · 論支元六合',
     nguyenVan: '故卯與戍合…故辰與酉合…此巳與申合之數…此午與未合之數',
+    viTriViet: 'Quyển 2 · Luận chi nguyên lục hợp',
+    dich: 'Cho nên Mão hợp với Tuất… cho nên Thìn hợp với Dậu… đó là lẽ Tỵ hợp với Thân… đó là lẽ Ngọ hợp với Mùi.',
   },
   tamHop: {
     nguon: 'tamMenh', doanId: 4341, viTri: '卷二 · 論支元三合',
     nguyenVan: '如申子辰申乃子之母辰乃子之子…若三字缺其一則化不成局不可以三合化局論…巳酉丑寅午戍亥卯未皆然',
+    viTriViet: 'Quyển 2 · Luận chi nguyên tam hợp',
+    dich: 'Như Thân Tý Thìn: Thân là mẹ của Tý, Thìn là con của Tý… Nếu ba chữ thiếu một thì hóa không thành cục, không được luận là tam hợp hóa cục… Tỵ Dậu Sửu, Dần Ngọ Tuất, Hợi Mão Mùi đều như vậy.',
   },
   tamHoi: {
     nguon: 'hiepKy', doanId: 6007, viTri: '卷一 · 四序',
     nguyenVan: '寅卯辰屬木配東方也己午未屬火配南方也申酉戌屬金配西方也亥子丑屬水配北方也',
+    viTriViet: 'Quyển 1 · Tứ tự',
+    dich: 'Dần Mão Thìn thuộc Mộc, ứng phương Đông; Tỵ Ngọ Mùi thuộc Hỏa, ứng phương Nam; Thân Dậu Tuất thuộc Kim, ứng phương Tây; Hợi Tý Sửu thuộc Thủy, ứng phương Bắc.',
   },
-  xung: { nguon: 'tamMenh', doanId: 4360, viTri: '卷二 · 論衝擊', nguyenVan: '地支取七位為衝猶天干取七位為煞之義如子午對衝' },
-  xungKhongVoiDoan: { nguon: 'tamMenh', doanId: 4362, viTri: '卷二 · 論衝擊', nguyenVan: '觀諸詩見衝破有吉有凶不可槩論' },
-  hinh: { nguon: 'tamMenh', doanId: 4350, viTri: '卷二 · 論三刑', nguyenVan: '子卯一刑也寅巳申二刑也丑未戍三刑也' },
-  hinhVoAn: { nguon: 'tamMenh', doanId: 4351, viTri: '卷二 · 論三刑', nguyenVan: '然寅巳申何以謂之無恩' },
-  hinhTriThe: { nguon: 'tamMenh', doanId: 4352, viTri: '卷二 · 論三刑', nguyenVan: '丑戌未何以謂之恃勢…子卯何以謂之無禮' },
-  tuHinh: { nguon: 'tamMenh', doanId: 4353, viTri: '卷二 · 論三刑', nguyenVan: '辰午酉亥何以謂之自刑' },
-  hinhKhongVoiDoan: { nguon: 'tamMenh', doanId: 4354, viTri: '卷二 · 論三刑', nguyenVan: '凡見刑不可便以凶論' },
+  xung: { nguon: 'tamMenh', doanId: 4360, viTri: '卷二 · 論衝擊', nguyenVan: '地支取七位為衝猶天干取七位為煞之義如子午對衝', viTriViet: 'Quyển 2 · Luận xung kích', dich: 'Địa chi lấy ngôi thứ bảy làm xung, cũng như thiên can lấy ngôi thứ bảy làm sát; như Tý với Ngọ là đối xung.' },
+  xungKhongVoiDoan: { nguon: 'tamMenh', doanId: 4362, viTri: '卷二 · 論衝擊', nguyenVan: '觀諸詩見衝破有吉有凶不可槩論', viTriViet: 'Quyển 2 · Luận xung kích', dich: 'Xem các bài thơ thì thấy xung phá có cát có hung, không thể luận gộp làm một.' },
+  hinh: { nguon: 'tamMenh', doanId: 4350, viTri: '卷二 · 論三刑', nguyenVan: '子卯一刑也寅巳申二刑也丑未戍三刑也', viTriViet: 'Quyển 2 · Luận tam hình', dich: 'Tý Mão là hình thứ nhất; Dần Tỵ Thân là hình thứ hai; Sửu Mùi Tuất là hình thứ ba.' },
+  hinhVoAn: { nguon: 'tamMenh', doanId: 4351, viTri: '卷二 · 論三刑', nguyenVan: '然寅巳申何以謂之無恩', viTriViet: 'Quyển 2 · Luận tam hình', dich: 'Vậy vì sao Dần Tỵ Thân gọi là hình vô ân (hình không ơn)?' },
+  hinhTriThe: { nguon: 'tamMenh', doanId: 4352, viTri: '卷二 · 論三刑', nguyenVan: '丑戌未何以謂之恃勢…子卯何以謂之無禮', viTriViet: 'Quyển 2 · Luận tam hình', dich: 'Sửu Tuất Mùi vì sao gọi là hình trì thế (cậy thế)?… Tý Mão vì sao gọi là hình vô lễ?' },
+  tuHinh: { nguon: 'tamMenh', doanId: 4353, viTri: '卷二 · 論三刑', nguyenVan: '辰午酉亥何以謂之自刑', viTriViet: 'Quyển 2 · Luận tam hình', dich: 'Thìn, Ngọ, Dậu, Hợi vì sao gọi là tự hình?' },
+  hinhKhongVoiDoan: { nguon: 'tamMenh', doanId: 4354, viTri: '卷二 · 論三刑', nguyenVan: '凡見刑不可便以凶論', viTriViet: 'Quyển 2 · Luận tam hình', dich: 'Phàm gặp hình, không thể vội luận là hung.' },
   hai: {
     nguon: 'tamMenh', doanId: 4348, viTri: '卷二 · 論六害',
     nguyenVan: '六害者十二支凌戰之辰也子未相害者…丑午相害者…寅巳相害者…卯辰相害者…申亥相害者…酉戍相害者',
+    viTriViet: 'Quyển 2 · Luận lục hại',
+    dich: 'Lục hại là chỗ mười hai chi lấn đánh nhau: Tý Mùi hại nhau… Sửu Ngọ hại nhau… Dần Tỵ hại nhau… Mão Thìn hại nhau… Thân Hợi hại nhau… Dậu Tuất hại nhau.',
   },
 } as const satisfies Record<string, TrichDoan>;
 export type MaTrichBatTu = keyof typeof TRICH_BAT_TU;

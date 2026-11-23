@@ -5,6 +5,7 @@ import { prisma, nemLoiKhiBuild } from '@/lib/prisma';
 import { thangNhuan, amSangDuong } from '@/lib/tuvi-v2/am-lich';
 import { CON_GIAP, HOA_GIAP, NAP_AM, slugViet } from './can-chi';
 import { CHINH_TINH, CUNG_TU_VI } from './tu-vi-tu-dien';
+import { boChuHan, boChuHanHoacNull, coChuHan } from './chu-viet';
 
 // ---------- nguồn sách ----------
 export const TEN_LOAI_NGUON: Record<string, string> = {
@@ -50,7 +51,12 @@ export const danhSachNguonCongKhai = cache(async (): Promise<NguonCongKhai[]> =>
       daDung.add(slug);
       const url = n.url && /^https?:\/\//.test(n.url) ? n.url : null;
       return {
-        ...n, slug, url, tenHienThi: n.tenHanViet || n.tenGoc, tacGia: lamSachGhiChu(n.tacGia), nienDai: lamSachGhiChu(n.nienDai),
+        // Trường hiển thị đã bỏ chữ Hán (quy tắc 24/11/2026); `tenGoc` giữ nguyên để tìm kiếm, trang không in ra.
+        ...n, slug, url,
+        tenHienThi: boChuHan(n.tenHanViet || n.tenGoc) || n.ma,
+        tenHanViet: boChuHanHoacNull(n.tenHanViet),
+        tacGia: boChuHanHoacNull(lamSachGhiChu(n.tacGia)), nienDai: boChuHanHoacNull(lamSachGhiChu(n.nienDai)),
+        banIn: boChuHanHoacNull(n.banIn), ghiCong: boChuHanHoacNull(n.ghiCong),
         mang: chuanHoaMang(n.mang), tenLoai: TEN_LOAI_NGUON[n.loaiNguon] ?? n.loaiNguon,
       };
     });
@@ -111,7 +117,8 @@ export const danhSachThuatNgu = cache(async (): Promise<{ mang: string; ten: str
     const ds = await prisma.thuatNgu.findMany({ orderBy: [{ mang: 'asc' }, { hanViet: 'asc' }] });
     const nhom = new Map<string, ThuatNguHienThi[]>();
     for (const t of ds) {
-      const muc = { han: t.han, hanViet: t.hanViet, bienThe: t.bienThe, mang: t.mang, lienKet: lienKetThuatNgu(t.hanViet) };
+      // `han` chỉ để đối chiếu, trang không in; biến thể chỉ giữ cách viết tiếng Việt.
+      const muc = { han: t.han, hanViet: t.hanViet, bienThe: t.bienThe.filter((b) => !coChuHan(b)), mang: t.mang, lienKet: lienKetThuatNgu(t.hanViet) };
       nhom.set(t.mang, [...(nhom.get(t.mang) ?? []), muc]);
     }
     const thuTu = (m: string) => (THU_TU_MANG.indexOf(m) + 1 || 99);

@@ -37,7 +37,7 @@ export const NGUON_XEM_NGAY = {
   },
   ngocHap: {
     ma: 'WS12', tenGoc: '玉匣記', tenHanViet: 'Ngọc hạp ký',
-    nienDai: 'thác danh Hứa chân nhân', ghiCong: 'Văn bản: Wikisource, CC BY-SA 4.0', url: 'https://zh.wikisource.org/wiki/玉匣記',
+    nienDai: 'thác danh Hứa chân nhân', ghiCong: 'Văn bản: Wikisource, CC BY-SA 4.0', url: 'https://zh.wikisource.org/wiki/%E7%8E%89%E5%8C%A3%E8%A8%98',
   },
   lunarJs: {
     ma: 'lunar-javascript', ten: 'lunar-javascript 1.7.8', tacGia: '6tail', giayPhep: 'MIT',
@@ -50,18 +50,21 @@ export const NGUON_XEM_NGAY = {
 export const TRICH_DOAN = {
   /** Ngọc hạp ký: trực nào hoàng, trực nào hắc, và việc hợp từng trực. */
   ngocHapTruc: {
-    nguon: 'ngocHap' as const, doanId: 8068, viTri: '黃黑道日當用之事',
+    nguon: 'ngocHap' as const, doanId: 8068, viTri: '黃黑道日當用之事', viTriViet: 'Hoàng hắc đạo nhật đương dụng chi sự (việc nên làm theo ngày hoàng đạo, hắc đạo)',
     nguyenVan: '建滿平收黑，除危定執黃，成開皆可用，閉破不相當。又，黃黑道日當用之事：建宜出行收嫁娶，定直冠帶滿修倉，破除療病執宜捕，危本安床開葬良，成開作所成交吉，平乃作事總平常。',
+    dich: 'Kiến, Mãn, Bình, Thu là hắc; Trừ, Nguy, Định, Chấp là hoàng; Thành, Khai đều dùng được; Bế, Phá không hợp. Lại có việc nên làm theo ngày hoàng đạo, hắc đạo: Kiến nên xuất hành, Thu nên cưới gả; Định hợp làm lễ đội mũ, Mãn nên sửa kho; Phá, Trừ nên chữa bệnh, Chấp nên bắt bớ; Nguy vốn hợp kê giường, Khai tốt cho chôn cất; Thành, Khai dựng nơi ở và giao dịch đều tốt; Bình thì làm việc gì cũng bình thường.',
   },
   /** Hiệp kỷ: quy tắc khởi 12 thần. */
   hiepKyThan: {
-    nguon: 'hiepKy' as const, doanId: 6239, viTri: '卷七 · 黃道黑道',
+    nguon: 'hiepKy' as const, doanId: 6239, viTri: '卷七 · 黃道黑道', viTriViet: 'Quyển 7 · Hoàng đạo hắc đạo',
     nguyenVan: '黄黒二道者，黄道六黑道六，共十有二，以配十有二辰。一青龍，二明堂，三天刑，四朱雀，五金匱，六天德，七白虎，八玉堂，九天牢，十元武，十一司命，十二勾陳。其法則寅申青龍起子，卯酉起寅，辰戌起辰，巳亥起午，子午起申，丑未起戌，順行十二辰。',
+    dich: 'Hoàng đạo và hắc đạo: hoàng đạo sáu, hắc đạo sáu, cộng mười hai, phối với mười hai chi. Một Thanh long, hai Minh đường, ba Thiên hình, bốn Chu tước, năm Kim quỹ, sáu Thiên đức, bảy Bạch hổ, tám Ngọc đường, chín Thiên lao, mười Nguyên vũ, mười một Tư mệnh, mười hai Câu trần. Cách tính: tháng Dần, Thân thì Thanh long khởi ở Tý; tháng Mão, Dậu khởi ở Dần; tháng Thìn, Tuất khởi ở Thìn; tháng Tỵ, Hợi khởi ở Ngọ; tháng Tý, Ngọ khởi ở Thân; tháng Sửu, Mùi khởi ở Tuất; đi thuận mười hai chi.',
   },
   /** Hiệp kỷ tự nhận xét: không có lý do thiên văn để chỉ sáu thần kia là hoàng đạo. */
   hiepKyNhanXet: {
-    nguon: 'hiepKy' as const, doanId: 6241, viTri: '卷七 · 黃道黑道',
+    nguon: 'hiepKy' as const, doanId: 6241, viTri: '卷七 · 黃道黑道', viTriViet: 'Quyển 7 · Hoàng đạo hắc đạo',
     nguyenVan: '今按黄道為日行躔度，無只以子午卯酉寅未為黄道之理。',
+    dich: 'Nay xét: hoàng đạo là đường mặt trời đi qua các độ; không có lẽ nào chỉ lấy Tý, Ngọ, Mão, Dậu, Dần, Mùi làm hoàng đạo.',
   },
 } as const;
 

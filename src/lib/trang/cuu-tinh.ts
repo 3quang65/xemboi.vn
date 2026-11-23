@@ -35,26 +35,31 @@ export const TRICH_CUU_TINH = {
   lacThu: {
     han: '一白居坎，二黑居坤，三碧居震，四緑居巽，五黄居中，六白居乾，七赤居兌，八白居艮，九紫居離。',
     phienAm: 'Nhất bạch cư Khảm, nhị hắc cư Khôn, tam bích cư Chấn, tứ lục cư Tốn, ngũ hoàng cư trung, lục bạch cư Càn, thất xích cư Đoài, bát bạch cư Cấn, cửu tử cư Ly.',
+    dich: 'Nhất bạch ở Khảm, Nhị hắc ở Khôn, Tam bích ở Chấn, Tứ lục ở Tốn, Ngũ hoàng ở trung cung, Lục bạch ở Càn, Thất xích ở Đoài, Bát bạch ở Cấn, Cửu tử ở Ly.',
     quyen: 8, trang: '25a',
   },
   saoNam: {
     han: '攷原曰：上元甲子中宫起一白，中元甲子起四緑，下元甲子起七赤，三元一百八十年而一週，葢一百八十者，以宫數九與花甲六十俱可以度盡也。逐年逆轉。',
     phienAm: 'Khảo nguyên viết: Thượng nguyên giáp tý trung cung khởi nhất bạch, trung nguyên giáp tý khởi tứ lục, hạ nguyên giáp tý khởi thất xích, tam nguyên nhất bách bát thập niên nhi nhất chu, cái nhất bách bát thập giả, dĩ cung số cửu dữ hoa giáp lục thập câu khả dĩ độ tận dã. Trục niên nghịch chuyển.',
+    dich: 'Sách Khảo nguyên nói: Giáp Tý thượng nguyên, trung cung khởi Nhất bạch; Giáp Tý trung nguyên khởi Tứ lục; Giáp Tý hạ nguyên khởi Thất xích. Ba nguyên một trăm tám mươi năm thì đủ một vòng, vì số một trăm tám mươi chia hết cho cả chín cung lẫn sáu mươi hoa giáp. Mỗi năm lùi một sao.',
     quyen: 8, trang: '26a',
   },
   thuanBo: {
     han: '以其年所值星入中宫順布九宫，如康熙二十三年甲子一白入中宫，二黑在乾，三碧在兌，四緑在艮，五黄在離，六白在坎，七赤在坤，八白在震，九紫在巽。',
     phienAm: 'Dĩ kỳ niên sở trị tinh nhập trung cung thuận bố cửu cung, như Khang Hy nhị thập tam niên giáp tý nhất bạch nhập trung cung, nhị hắc tại Càn, tam bích tại Đoài, tứ lục tại Cấn, ngũ hoàng tại Ly, lục bạch tại Khảm, thất xích tại Khôn, bát bạch tại Chấn, cửu tử tại Tốn.',
+    dich: 'Lấy sao trực năm đó vào trung cung rồi xếp thuận chín cung; như năm Giáp Tý, Khang Hy thứ 23, Nhất bạch vào trung cung, Nhị hắc ở Càn, Tam bích ở Đoài, Tứ lục ở Cấn, Ngũ hoàng ở Ly, Lục bạch ở Khảm, Thất xích ở Khôn, Bát bạch ở Chấn, Cửu tử ở Tốn.',
     quyen: 8, trang: '26b',
   },
   saoThang: {
     han: '以子午卯酉年為上元，正月起八白；辰戌丑未年為中元，正月起五黄；寅申巳亥年為下元，正月起二黑；逐月逆轉，亦以其月所值星入中宫順布九宫，與年九星同。',
     phienAm: 'Dĩ Tý Ngọ Mão Dậu niên vi thượng nguyên, chính nguyệt khởi bát bạch; Thìn Tuất Sửu Mùi niên vi trung nguyên, chính nguyệt khởi ngũ hoàng; Dần Thân Tỵ Hợi niên vi hạ nguyên, chính nguyệt khởi nhị hắc; trục nguyệt nghịch chuyển, diệc dĩ kỳ nguyệt sở trị tinh nhập trung cung thuận bố cửu cung, dữ niên cửu tinh đồng.',
+    dich: 'Lấy năm Tý, Ngọ, Mão, Dậu làm thượng nguyên, tháng giêng khởi Bát bạch; năm Thìn, Tuất, Sửu, Mùi làm trung nguyên, tháng giêng khởi Ngũ hoàng; năm Dần, Thân, Tỵ, Hợi làm hạ nguyên, tháng giêng khởi Nhị hắc. Mỗi tháng lùi một sao; cũng lấy sao trực tháng đó vào trung cung rồi xếp thuận chín cung, giống như cửu tinh năm.',
     quyen: 8, trang: '27b–28a',
   },
   tenVaHanh: {
     han: '以九宫而論，則貪狼為一白屬水，巨門為二黑屬土，禄存為三碧，文曲為四緑屬木，廉貞為五黄屬土，武曲為六白，破軍為七赤屬金，左輔為八白屬土，右弼為九紫屬火。',
     phienAm: 'Dĩ cửu cung nhi luận, tắc Tham lang vi nhất bạch thuộc Thủy, Cự môn vi nhị hắc thuộc Thổ, Lộc tồn vi tam bích, Văn khúc vi tứ lục thuộc Mộc, Liêm trinh vi ngũ hoàng thuộc Thổ, Vũ khúc vi lục bạch, Phá quân vi thất xích thuộc Kim, Tả phụ vi bát bạch thuộc Thổ, Hữu bật vi cửu tử thuộc Hỏa.',
+    dich: 'Xét theo chín cung thì Tham lang là Nhất bạch thuộc Thủy, Cự môn là Nhị hắc thuộc Thổ, Lộc tồn là Tam bích, Văn khúc là Tứ lục thuộc Mộc, Liêm trinh là Ngũ hoàng thuộc Thổ, Vũ khúc là Lục bạch, Phá quân là Thất xích thuộc Kim, Tả phụ là Bát bạch thuộc Thổ, Hữu bật là Cửu tử thuộc Hỏa.',
     quyen: 2, trang: '28b',
   },
 } satisfies Record<string, TrichDan>;

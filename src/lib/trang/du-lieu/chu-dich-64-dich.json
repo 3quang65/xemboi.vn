@@ -1,0 +1,912 @@
+{
+ "nguon": {
+  "ngo-tat-to": {
+   "ten": "Kinh Dịch, bản dịch Ngô Tất Tố",
+   "ghiCong": "Bản dịch của Ngô Tất Tố (1893–1954), đã thuộc phạm vi công cộng; chép nguyên văn từ Wikisource tiếng Việt (Chu Dịch thượng kinh, hạ kinh)",
+   "url": null
+  },
+  "xemboi": {
+   "ten": "Dịch nghĩa: xemboi",
+   "ghiCong": "xemboi.vn dịch sát chữ từ nguyên văn Chu Dịch (Kanripo KR1a0001), theo cách hiểu phổ thông của chú giải Trình Di và Chu Hy; không thêm lời bàn",
+   "url": null
+  }
+ },
+ "que": [
+  {
+   "so": 1,
+   "nguon": "ngo-tat-to",
+   "queTu": "Kiền: Đầu cả, hanh thông, lợi tốt, chính bền.",
+   "hao": [
+    "Rồng lặn chớ dùng.",
+    "Rồng hiện ở ruộng, lợi về sự thấy người lớn.",
+    "Đấng quân tử trọn ngày săng sắc tối dương rùng rợn. Nguy! Không lỗi.",
+    "Hoặc nhảy ở vực, không lỗi.",
+    "Rồng bay ở trời, lợi về sự thấy người lớn.",
+    "Rồng quá cực có ăn năn."
+   ],
+   "dung": "Thấy đàn rồng không đầu, tốt!"
+  },
+  {
+   "so": 2,
+   "nguon": "ngo-tat-to",
+   "queTu": "Quẻ Khôn: Đầu cả, hanh thông, lợi về nết trinh của ngựa cái. Quân tử có sự đi. Trước mê, sau được. Chủ về lợi. Phía Tây Nam được bạn, phía Đông Bắc mất bạn. Yên phận giữ nết trinh thì tốt.",
+   "hao": [
+    "Xéo sương, váng rắn tới.",
+    "Thẳng, vuông, lớn, không phải tập, không gì không lợi.",
+    "Ngậm văn vẻ, có thể chính; hoặc theo đuổi việc nhà vua, không cậy công? Thì được tốt lành về sau.",
+    "Thắt túi, không lỗi, không khen.",
+    "Quần vàng, cả tốt.",
+    "Rồng đánh nhau ở đồng, máu nó xanh vàng."
+   ],
+   "dung": "Lợi về vĩnh viễn chính đính."
+  },
+  {
+   "so": 3,
+   "nguon": "ngo-tat-to",
+   "queTu": "Truân đầu cả, hanh thông, lợi tốt, chính bền, chớ dùng có thửa đi, lợi về dựng tước hầu.",
+   "hao": [
+    "Quanh co, lợi về ở chính bền, lợi về dựng tước hầu.",
+    "Dường quanh co vậy, dường cưỡi ngựa rẽ ra vậy. Chẳng phải giặc: dâu gia. Con gái trinh tiết không đặt tên chữ, mười năm mới đặt tên chữ.",
+    "Theo hươu không có ngu nhân, chỉ vào trong rừng. Đấng quân tử biết cơ, không bằng bỏ đi thì hối tiếc.",
+    "Cưỡi ngựa dường rẽ ra vậy, tìm dâu gia, đi thì tốt, không gì không lợi.",
+    "Gian truân thửa ơn huệ, nhỏ mà trinh thì lành, lớn mà trinh thì dữ.",
+    "Cưỡi ngựa dường rẽ ra vậy; khóc ra máu đầm đìa vậy."
+   ],
+   "dung": null
+  },
+  {
+   "so": 4,
+   "nguon": "ngo-tat-to",
+   "queTu": "Quẻ Mông hanh, chẳng phải ta tìm trẻ thơ, trẻ thơ tìm ta. Mới bói bảo: hai, ba lần nhàm, không bảo. Lợi về sự chính.",
+   "hao": [
+    "Mở mang trẻ thơ, lợi dùng về sự hình phạt người ta để thoát gông cùm, đi thì hối tiếc.",
+    "Bao dung trẻ thơ, tốt! Nộp vợ, tốt! Con trị nhà!",
+    "Chớ dùng lấy gái, thấy chồng vàng không có mình, không thửa lợi.",
+    "Khốn về tăm tối, hối tiếc.",
+    "Trẻ thơ, tốt!",
+    "Đánh kẻ tối tăm, không lợi cho sự làm giặc, lợi cho sự chống giặc."
+   ],
+   "dung": null
+  },
+  {
+   "so": 5,
+   "nguon": "ngo-tat-to",
+   "queTu": "Quẻ Nhu, có đức tin, sáng láng, hanh thông, chính bền, tốt! Lợi sang sông lớn.",
+   "hao": [
+    "Đợi ở đồng, lợi về dùng lẽ hằng. Không có lỗi.",
+    "Đợi ở bãi cát, hơi có điều tiếng, sau chót tốt.",
+    "Đợi ở bùn, dắt giặc đến.",
+    "Đợi chưng máu, ra tự hang.",
+    "Đợi chưng rượu cơm, chính tốt!",
+    "Vào chưng hang, có ba người khách không mời mà đến, kính trọng họ, sau chót tốt."
+   ],
+   "dung": null
+  },
+  {
+   "so": 6,
+   "nguon": "ngo-tat-to",
+   "queTu": "Kiện, có thật, bị lấp, phải sợ, vừa phải, tốt; theo đuổi đến chót, xấu; lợi về sự thấy người lớn, không lợi về sự sang sông lớn.",
+   "hao": [
+    "Chẳng lâu dài về việc của mình, hơi có điều tiếng, sau tốt.",
+    "Không được kiện, về mà trốn, người làng mình ba trăm hộ, không có tội lỗi.",
+    "Ăn về đức cũ, chính bền, lo sợ, sau tốt; hoặc theo việc vua, không thành.",
+    "Không thể kiện, lại theo mệnh đổi ra yên bề chính bền, tốt!",
+    "Kiện cả tốt.",
+    "Hoặc cho chiếc dải lưng da, trọn buổi sáng, ba lần lột lại."
+   ],
+   "dung": null
+  },
+  {
+   "so": 7,
+   "nguon": "ngo-tat-to",
+   "queTu": "Quân chính, bậc trượng nhân tốt, không lỗi.",
+   "hao": [
+    "Quân ra bằng luật, không khéo thì hung.",
+    "Ở trong quân, vừa phải thì tốt, không lỗi, nhà vua ba lần cho mệnh.",
+    "Quân hoặc khiêng thây, hung.",
+    "Quân lùi đóng, không lỗi.",
+    "Ruộng có chim, lợi cho sự có lời để nói. Con cả đem quân, con em khiêng thây, chinh cũng hung.",
+    "Đấng đại quân có mệnh, mở nước vâng nhà, kẻ tiểu nhân chớ dùng."
+   ],
+   "dung": null
+  },
+  {
+   "so": 8,
+   "nguon": "xemboi",
+   "queTu": "Liền nhau thì tốt. Xét lại cho kỹ như bói thêm lần nữa: có đức lớn, lâu dài, chính bền thì không lỗi. Kẻ chưa yên mới kéo đến; kẻ đến sau thì xấu.",
+   "hao": [
+    "Có lòng tin mà liền với người, không lỗi. Lòng tin đầy như vò sành đầy, rốt cuộc sẽ có điều khác đến, tốt.",
+    "Liền với người từ bên trong, chính bền thì tốt.",
+    "Liền với kẻ chẳng phải người đáng liền.",
+    "Liền với người ở bên ngoài, chính bền thì tốt.",
+    "Liền nhau một cách sáng tỏ. Nhà vua đi săn vây ba mặt, để sổng con thú chạy phía trước; người trong ấp không phải răn bảo, tốt.",
+    "Liền nhau mà chẳng có khởi đầu, xấu."
+   ],
+   "dung": null
+  },
+  {
+   "so": 9,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông. Mây dày mà không mưa, từ ngoài thành phía tây của ta.",
+   "hao": [
+    "Trở lại theo đường của mình, có lỗi gì đâu? Tốt.",
+    "Dắt nhau trở lại, tốt.",
+    "Xe long căm bánh, vợ chồng trừng mắt với nhau.",
+    "Có lòng tin thì sự đổ máu qua đi, nỗi lo sợ thoát khỏi, không lỗi.",
+    "Có lòng tin gắn bó, giàu thì cùng chung với láng giềng.",
+    "Đã mưa rồi, đã yên rồi, đức được chuộng mà chứa đầy. Đàn bà dù chính bền cũng nguy. Trăng gần rằm, người quân tử đi thì xấu."
+   ],
+   "dung": null
+  },
+  {
+   "so": 10,
+   "nguon": "xemboi",
+   "queTu": "Giẫm lên đuôi cọp, cọp không cắn người, hanh thông.",
+   "hao": [
+    "Bước đi giản dị như vốn có, cứ đi thì không lỗi.",
+    "Bước trên đường bằng phẳng, người ở ẩn chính bền thì tốt.",
+    "Chột mà cho là nhìn được, què mà cho là đi được; giẫm lên đuôi cọp, cọp cắn người, xấu. Kẻ võ biền mà làm việc của bậc vua lớn.",
+    "Giẫm lên đuôi cọp, nơm nớp lo sợ, rốt cuộc tốt.",
+    "Bước đi quả quyết, dù chính bền cũng nguy.",
+    "Xem lại bước đường mình đã đi, xét điềm lành dữ; nếu trước sau trọn vẹn thì rất tốt."
+   ],
+   "dung": null
+  },
+  {
+   "so": 11,
+   "nguon": "xemboi",
+   "queTu": "Cái nhỏ đi, cái lớn lại, tốt, hanh thông.",
+   "hao": [
+    "Nhổ cỏ tranh, rễ kéo theo nhau cùng loại, đi thì tốt.",
+    "Bao dung kẻ hoang dại, dám lội qua sông, không bỏ sót kẻ ở xa, dứt bỏ bè đảng riêng, thì hợp với đạo trung.",
+    "Không có chỗ bằng nào mà không nghiêng, không có cái đi nào mà không trở lại. Gặp gian nan mà giữ chính bền thì không lỗi. Chớ lo, giữ lòng tin thì có phúc về lộc ăn.",
+    "Phấp phới cùng bay xuống, không giàu mà được láng giềng theo, không phải răn bảo mà vẫn tin nhau.",
+    "Đế Ất gả em gái, nhờ đó có phúc, rất tốt.",
+    "Thành đổ lại xuống hào, chớ dùng quân; từ trong ấp ban lệnh, dù chính bền cũng hối tiếc."
+   ],
+   "dung": null
+  },
+  {
+   "so": 12,
+   "nguon": "xemboi",
+   "queTu": "Bế tắc, chẳng phải đạo người, không lợi về sự chính bền của người quân tử; cái lớn đi, cái nhỏ lại.",
+   "hao": [
+    "Nhổ cỏ tranh, rễ kéo theo nhau cùng loại, chính bền thì tốt, hanh thông.",
+    "Bao dung và vâng thuận, kẻ tiểu nhân thì tốt; bậc đại nhân chịu bế tắc thì hanh thông.",
+    "Ôm giữ điều nhục nhã.",
+    "Có mệnh trời thì không lỗi, bạn cùng loại đều được nương nhờ phúc.",
+    "Chấm dứt bế tắc, bậc đại nhân thì tốt. Luôn nghĩ: sắp mất rồi, sắp mất rồi, thì vững như buộc vào bụi dâu rậm.",
+    "Lật đổ bế tắc, trước còn bế tắc, sau thì vui mừng."
+   ],
+   "dung": null
+  },
+  {
+   "so": 13,
+   "nguon": "xemboi",
+   "queTu": "Cùng với người ở nơi đồng nội, hanh thông, lợi sang sông lớn, lợi về sự chính bền của người quân tử.",
+   "hao": [
+    "Cùng với người ở ngoài cửa, không lỗi.",
+    "Cùng với người trong họ hàng, hối tiếc.",
+    "Phục binh nơi bụi rậm, trèo lên gò cao, ba năm không dấy lên được.",
+    "Đã leo lên tường thành mà không thể đánh, tốt.",
+    "Cùng với người, trước kêu khóc, sau thì cười; đại quân đánh thắng mới gặp được nhau.",
+    "Cùng với người ở nơi ngoài thành, không ăn năn."
+   ],
+   "dung": null
+  },
+  {
+   "so": 14,
+   "nguon": "xemboi",
+   "queTu": "Rất hanh thông.",
+   "hao": [
+    "Không dính dáng tới điều hại thì chẳng phải lỗi; biết lo gian nan thì không lỗi.",
+    "Xe lớn để chở, có chỗ đi, không lỗi.",
+    "Bậc tước công dâng lễ lên thiên tử, kẻ tiểu nhân không làm nổi.",
+    "Không để mình thịnh quá, không lỗi.",
+    "Lòng tin của mình giao cảm với người, lại có uy nghiêm, tốt.",
+    "Từ trời giúp cho, tốt, không gì không lợi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 15,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông, người quân tử được trọn vẹn đến cuối.",
+   "hao": [
+    "Khiêm tốn rồi lại khiêm tốn, người quân tử dùng đức ấy mà sang sông lớn, tốt.",
+    "Khiêm tốn vang tiếng ra ngoài, chính bền thì tốt.",
+    "Có công lao mà khiêm tốn, người quân tử được trọn vẹn đến cuối, tốt.",
+    "Không gì không lợi, hãy phát huy đức khiêm tốn.",
+    "Không giàu mà được láng giềng theo, lợi dùng việc đánh dẹp, không gì không lợi.",
+    "Khiêm tốn vang tiếng ra ngoài, lợi dùng việc ra quân, đánh dẹp ấp nước của mình."
+   ],
+   "dung": null
+  },
+  {
+   "so": 16,
+   "nguon": "xemboi",
+   "queTu": "Lợi dựng tước hầu, ra quân.",
+   "hao": [
+    "Vui sướng mà khoe ra ngoài, xấu.",
+    "Vững như đá, chẳng đợi hết ngày, chính bền thì tốt.",
+    "Ngước trông người trên mà vui, sẽ ăn năn; chậm trễ cũng có ăn năn.",
+    "Là chỗ từ đó mà có niềm vui, được rất lớn; chớ ngờ, bạn bè sẽ tụ lại như tóc gom vào trâm.",
+    "Giữ chính mà mắc bệnh, kéo dài mãi nhưng không chết.",
+    "Mê muội trong vui chơi, đã thành rồi, nếu biết thay đổi thì không lỗi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 17,
+   "nguon": "xemboi",
+   "queTu": "Rất hanh thông, lợi về chính bền, không lỗi.",
+   "hao": [
+    "Điều mình chủ giữ có thay đổi, chính bền thì tốt; ra khỏi cửa mà giao với người thì có công.",
+    "Bám theo kẻ nhỏ, mất người trượng phu.",
+    "Bám theo người trượng phu, mất kẻ nhỏ; theo người, có cầu thì được, lợi ở yên giữ chính bền.",
+    "Theo người mà có thu hoạch, dù chính bền cũng xấu. Có lòng tin, ở trong đạo, lấy sự sáng suốt mà xử, thì có lỗi gì?",
+    "Tin vào điều tốt đẹp, tốt.",
+    "Bắt giữ buộc chặt, rồi lại theo mà ràng níu; nhà vua dùng đó để dâng lễ ở núi phía tây."
+   ],
+   "dung": null
+  },
+  {
+   "so": 18,
+   "nguon": "xemboi",
+   "queTu": "Rất hanh thông, lợi sang sông lớn. Trước ngày giáp ba ngày, sau ngày giáp ba ngày.",
+   "hao": [
+    "Sửa sang việc hư hỏng của cha, có con như thế thì cha không lỗi; nguy nhưng rốt cuộc tốt.",
+    "Sửa việc hư hỏng của mẹ, không thể cố chấp giữ chính.",
+    "Sửa việc hư hỏng của cha, có chút ăn năn, nhưng không có lỗi lớn.",
+    "Dễ dãi với việc hư hỏng của cha, cứ thế mà đi thì gặp hối tiếc.",
+    "Sửa việc hư hỏng của cha, được tiếng khen.",
+    "Không phụng sự bậc vương hầu, giữ cao thượng việc của mình."
+   ],
+   "dung": null
+  },
+  {
+   "so": 19,
+   "nguon": "xemboi",
+   "queTu": "Rất hanh thông, lợi về chính bền. Đến tháng tám sẽ có điều xấu.",
+   "hao": [
+    "Lấy cảm ứng mà đến với người, chính bền thì tốt.",
+    "Lấy cảm ứng mà đến với người, tốt, không gì không lợi.",
+    "Lấy ngọt ngào mà đến với người, không có gì lợi; đã biết lo về điều đó thì không lỗi.",
+    "Đến với người hết mực gần gũi, không lỗi.",
+    "Lấy sự sáng suốt mà đến với người, đó là điều thích đáng của bậc vua lớn, tốt.",
+    "Lấy lòng đôn hậu mà đến với người, tốt, không lỗi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 20,
+   "nguon": "xemboi",
+   "queTu": "Rửa tay mà chưa dâng cúng, có lòng thành tín, kính cẩn nghiêm trang.",
+   "hao": [
+    "Xem như trẻ con, kẻ tiểu nhân thì không lỗi, người quân tử thì hối tiếc.",
+    "Nhòm qua khe mà xem, lợi về sự chính bền của đàn bà.",
+    "Xem việc làm của ta mà định tiến lui.",
+    "Xem sự rực rỡ của nước, lợi về làm khách của nhà vua.",
+    "Xem việc làm của ta, là người quân tử thì không lỗi.",
+    "Xem việc làm của bản thân, là người quân tử thì không lỗi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 21,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông, lợi về dùng việc hình ngục.",
+   "hao": [
+    "Chân mang cùm, lấp mất ngón chân, không lỗi.",
+    "Cắn thịt mềm, ngập mất mũi, không lỗi.",
+    "Cắn thịt khô, gặp chất độc, hơi hối tiếc, không lỗi.",
+    "Cắn thịt khô còn xương, được mũi tên đồng; lợi về khó nhọc giữ chính bền, tốt.",
+    "Cắn thịt khô, được vàng; giữ chính bền, lo nguy thì không lỗi.",
+    "Vác gông lấp mất tai, xấu."
+   ],
+   "dung": null
+  },
+  {
+   "so": 22,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông, lợi chút ít về có chỗ đi.",
+   "hao": [
+    "Trang sức ngón chân, bỏ xe mà đi bộ.",
+    "Trang sức bộ râu.",
+    "Trang sức đẹp đẽ, thấm nhuần mượt mà; giữ chính bền lâu dài thì tốt.",
+    "Trang sức mà lại trắng trơn, ngựa trắng như bay; chẳng phải giặc cướp, ấy là cầu hôn.",
+    "Trang sức nơi gò vườn, bó lụa ít ỏi; hối tiếc, nhưng cuối cùng tốt.",
+    "Lấy trắng trơn làm trang sức, không lỗi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 23,
+   "nguon": "xemboi",
+   "queTu": "Không lợi có chỗ đi.",
+   "hao": [
+    "Bóc mòn giường từ chân, làm mất lẽ chính, xấu.",
+    "Bóc mòn giường đến khung giường, làm mất lẽ chính, xấu.",
+    "Ở trong lúc bóc mòn, không lỗi.",
+    "Bóc mòn giường lấn đến da thịt, xấu.",
+    "Như xâu cá thành chuỗi, đem các cung nhân đến được yêu chiều, không gì không lợi.",
+    "Quả lớn còn lại không bị ăn; người quân tử được xe, kẻ tiểu nhân thì bóc dỡ mất nhà."
+   ],
+   "dung": null
+  },
+  {
+   "so": 24,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông. Ra vào không bị hại, bạn đến không lỗi. Qua lại trên con đường của nó, bảy ngày thì trở lại. Lợi có chỗ đi.",
+   "hao": [
+    "Đi chưa xa đã trở lại, không đến nỗi ăn năn, rất tốt.",
+    "Trở lại một cách tốt đẹp, tốt.",
+    "Nhiều lần trở lại, nguy, nhưng không lỗi.",
+    "Đi ở giữa đám đông, một mình trở lại.",
+    "Trở lại một cách đôn hậu, không ăn năn.",
+    "Lạc lối không biết trở lại, xấu, có tai vạ. Dùng để ra quân thì cuối cùng thua lớn, vạ lây đến vua nước mình, xấu; đến mười năm cũng không thể đi đánh được."
+   ],
+   "dung": null
+  },
+  {
+   "so": 25,
+   "nguon": "xemboi",
+   "queTu": "Rất hanh thông, lợi về chính bền. Nếu không chính thì có tai vạ, không lợi có chỗ đi.",
+   "hao": [
+    "Không xằng bậy, đi thì tốt.",
+    "Cày không mong gặt, vỡ hoang không mong thành ruộng thuộc, thì lợi có chỗ đi.",
+    "Tai vạ không do mình gây ra: có người buộc con bò, kẻ qua đường dắt được, người trong ấp chịu vạ.",
+    "Có thể giữ chính bền, không lỗi.",
+    "Bệnh không do mình gây ra, chớ dùng thuốc, sẽ có mừng.",
+    "Dù không xằng bậy, cứ đi thì có tai vạ, không lợi gì."
+   ],
+   "dung": null
+  },
+  {
+   "so": 26,
+   "nguon": "xemboi",
+   "queTu": "Lợi về chính bền; không ăn ở nhà thì tốt; lợi sang sông lớn.",
+   "hao": [
+    "Có nguy, lợi về dừng lại.",
+    "Xe tháo mất gối trục.",
+    "Ngựa tốt cùng rong ruổi, lợi về khó nhọc giữ chính bền; hằng ngày luyện tập xe và phòng vệ, lợi có chỗ đi.",
+    "Buộc thanh gỗ ngang sừng con bò non, rất tốt.",
+    "Răng nanh của con lợn đã thiến, tốt.",
+    "Đường trời rộng mở biết bao, hanh thông."
+   ],
+   "dung": null
+  },
+  {
+   "so": 27,
+   "nguon": "xemboi",
+   "queTu": "Chính bền thì tốt. Xem đạo nuôi dưỡng, xem cách tự tìm cái nuôi miệng.",
+   "hao": [
+    "Bỏ con rùa thiêng của ngươi, nhìn ta mà trễ hàm thèm thuồng, xấu.",
+    "Quay ngược cầu kẻ dưới nuôi, trái lẽ thường; cầu nuôi ở gò cao, đi thì xấu.",
+    "Trái đạo nuôi dưỡng, dù chính bền cũng xấu; mười năm chớ dùng, không lợi gì.",
+    "Quay ngược cầu kẻ dưới nuôi, tốt. Hổ nhìn chằm chằm, lòng muốn theo đuổi không dứt, không lỗi.",
+    "Trái lẽ thường, ở yên giữ chính bền thì tốt, không thể sang sông lớn.",
+    "Mọi người nhờ mình mà được nuôi; biết lo nguy thì tốt, lợi sang sông lớn."
+   ],
+   "dung": null
+  },
+  {
+   "so": 28,
+   "nguon": "xemboi",
+   "queTu": "Cột nóc cong oằn; lợi có chỗ đi, hanh thông.",
+   "hao": [
+    "Lót bằng cỏ tranh trắng, không lỗi.",
+    "Cây dương khô nảy mầm non, ông già lấy được vợ trẻ, không gì không lợi.",
+    "Cột nóc cong oằn, xấu.",
+    "Cột nóc vồng cao, tốt; nếu có lòng khác thì hối tiếc.",
+    "Cây dương khô nở hoa, bà già lấy được chồng trai trẻ, không lỗi, cũng không được khen.",
+    "Lội qua chỗ quá sâu, ngập mất đỉnh đầu; xấu, nhưng không lỗi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 29,
+   "nguon": "xemboi",
+   "queTu": "Hiểm chồng lên hiểm. Có lòng thành tín, giữ vững trong lòng thì hanh thông, đi ắt có công.",
+   "hao": [
+    "Ở trong hiểm chồng lên hiểm, lại sa vào hố sâu trong hiểm, xấu.",
+    "Trong hố hiểm còn có nguy, cầu thì được chút ít.",
+    "Tới lui đều là hiểm; gặp hiểm lại tựa vào hiểm, sa vào hố sâu, chớ làm gì.",
+    "Một vò rượu, kèm một bát cơm, đựng bằng đồ sành; đưa lời giao ước vào qua cửa sổ; cuối cùng không lỗi.",
+    "Hố hiểm chưa đầy, đến khi đã bằng phẳng thì không lỗi.",
+    "Trói bằng dây thừng, bỏ vào bụi gai rậm, ba năm không thoát được, xấu."
+   ],
+   "dung": null
+  },
+  {
+   "so": 30,
+   "nguon": "xemboi",
+   "queTu": "Lợi về chính bền, hanh thông. Nuôi bò cái thì tốt.",
+   "hao": [
+    "Bước chân rối ren, biết kính cẩn thì không lỗi.",
+    "Sắc vàng nương dựa, rất tốt.",
+    "Mặt trời xế bóng còn nương dựa; không gõ vò mà hát thì than thở vì già yếu, xấu.",
+    "Đột ngột mà đến, như bị thiêu cháy, như chết, như bị vứt bỏ.",
+    "Nước mắt tuôn ròng, lo buồn than thở, tốt.",
+    "Nhà vua dùng để ra quân chinh phạt, có công đáng khen; chém kẻ đầu sỏ, không bắt đến bè đảng của nó, không lỗi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 31,
+   "nguon": "ngo-tat-to",
+   "queTu": "Quẻ Hàm hanh, lợi chính, lấy con gái, tốt.",
+   "hao": [
+    "Cảm thửa ngón chân cái.",
+    "Cảm thửa bụng chân, hung! Ở yên, tốt!",
+    "Cảm thửa đùi, giữ thửa sự theo, đi thì đáng tiếc.",
+    "Chính bền thì tốt, sự ăn năn sẽ mất; săng sắc đi lại, bạn theo sự nghĩ của mày.",
+    "Cảm thửa thăn thịt, không ăn năn.",
+    "Cảm thửa xương má, mép, lưỡi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 32,
+   "nguon": "ngo-tat-to",
+   "queTu": "Quẻ Hằng hanh, lợi về sự chính, lợi có thửa đi.",
+   "hao": [
+    "Đào sâu sự thường, trinh cũng hung, không thửa lợi.",
+    "Sự ăn năn mất.",
+    "Chẳng thường thửa đức, hoặc vâng đấy thẹn, trinh cũng đáng tiếc.",
+    "Săn không loài cầm.",
+    "Thường thửa đức, chính, đàn bà tốt, đàn ông hung.",
+    "Xốc thường, hung."
+   ],
+   "dung": null
+  },
+  {
+   "so": 33,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông, lợi chút ít về chính bền.",
+   "hao": [
+    "Lánh lui ở sau đuôi, nguy; chớ đi đâu.",
+    "Buộc chặt bằng da bò vàng, không ai gỡ ra được.",
+    "Lánh lui mà bị ràng buộc, có bệnh, nguy; nuôi bầy tôi tớ, nàng hầu thì tốt.",
+    "Có chỗ yêu thích mà vẫn lánh lui, người quân tử thì tốt, kẻ tiểu nhân thì không.",
+    "Lánh lui tốt đẹp, chính bền thì tốt.",
+    "Lánh lui thong dong, không gì không lợi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 34,
+   "nguon": "xemboi",
+   "queTu": "Lợi về chính bền.",
+   "hao": [
+    "Mạnh ở ngón chân, đi thì xấu, điều ấy chắc chắn.",
+    "Chính bền thì tốt.",
+    "Kẻ tiểu nhân dùng sức mạnh, người quân tử thì không dùng; dù chính bền cũng nguy. Dê đực húc rào, mắc kẹt sừng.",
+    "Chính bền thì tốt, hết ăn năn. Rào vỡ, sừng không mắc kẹt; mạnh ở gối trục của cỗ xe lớn.",
+    "Để mất dê một cách dễ dàng, không ăn năn.",
+    "Dê đực húc rào, không lui được, không tiến được, không lợi gì; biết khó nhọc thì tốt."
+   ],
+   "dung": null
+  },
+  {
+   "so": 35,
+   "nguon": "xemboi",
+   "queTu": "Khang hầu được ban nhiều ngựa, trong một ngày được tiếp kiến ba lần.",
+   "hao": [
+    "Tiến lên mà bị đẩy lùi, chính bền thì tốt; chưa ai tin, cứ khoan thai thì không lỗi.",
+    "Tiến lên mà âu sầu, chính bền thì tốt; nhận phúc lớn ấy từ bà vương mẫu.",
+    "Mọi người đều tin theo, hết ăn năn.",
+    "Tiến lên như con chuột đồng, dù chính bền cũng nguy.",
+    "Hết ăn năn; được hay mất chớ lo, đi thì tốt, không gì không lợi.",
+    "Tiến đến cái sừng, chỉ nên dùng để đánh dẹp ấp riêng của mình; nguy mà tốt, không lỗi; dù chính bền cũng hối tiếc."
+   ],
+   "dung": null
+  },
+  {
+   "so": 36,
+   "nguon": "xemboi",
+   "queTu": "Lợi về sự chính bền trong gian nan.",
+   "hao": [
+    "Ánh sáng bị tổn thương lúc đang bay, rủ cánh xuống; người quân tử ra đi, ba ngày không ăn; có chỗ đi tới thì chủ nhân có lời chê trách.",
+    "Ánh sáng bị tổn thương, bị thương ở đùi trái; dùng ngựa khỏe để cứu thì tốt.",
+    "Ánh sáng bị tổn thương, đi săn ở phương nam, bắt được kẻ đầu sỏ lớn; không được nóng vội, phải chính bền.",
+    "Vào bên bụng trái, biết được lòng kẻ làm tổn thương ánh sáng, bèn ra khỏi cửa sân.",
+    "Ánh sáng bị tổn thương như Cơ Tử; lợi về sự chính bền.",
+    "Không sáng mà tối; trước lên tới trời, sau vào trong đất."
+   ],
+   "dung": null
+  },
+  {
+   "so": 37,
+   "nguon": "xemboi",
+   "queTu": "Lợi về người đàn bà giữ chính bền.",
+   "hao": [
+    "Phòng giữ phép tắc ngay từ khi có nhà, thì hết ăn năn.",
+    "Không tự chuyên việc gì, ở trong lo việc bếp núc; chính bền thì tốt.",
+    "Trị nhà gay gắt nghiêm khắc, có ăn năn, nguy nhưng tốt; vợ con cười đùa hi hí, rốt cuộc hối tiếc.",
+    "Làm giàu cho nhà, tốt lớn.",
+    "Vua đến với nhà mình, chớ lo, tốt.",
+    "Có lòng thành tín, có uy nghiêm, rốt cuộc tốt."
+   ],
+   "dung": null
+  },
+  {
+   "so": 38,
+   "nguon": "xemboi",
+   "queTu": "Việc nhỏ thì tốt.",
+   "hao": [
+    "Hết ăn năn; mất ngựa chớ đuổi theo, tự nó sẽ trở về; gặp kẻ xấu ác thì không lỗi.",
+    "Gặp chủ ở trong ngõ hẹp, không lỗi.",
+    "Thấy xe bị kéo lùi, trâu bị níu lại, người thì bị thích trán và cắt mũi; ban đầu không hay mà sau có kết cục.",
+    "Cách lìa mà cô độc, gặp bậc trượng phu hiền, cùng tin nhau; nguy mà không lỗi.",
+    "Hết ăn năn; người cùng phe cắn vào da mềm, đi tới thì có lỗi gì.",
+    "Cách lìa mà cô độc, thấy con lợn đội bùn, một xe chở đầy ma; trước giương cung, sau buông cung; không phải giặc cướp mà là kết thông gia; đi mà gặp mưa thì tốt."
+   ],
+   "dung": null
+  },
+  {
+   "so": 39,
+   "nguon": "xemboi",
+   "queTu": "Lợi về phía tây nam, không lợi về phía đông bắc; lợi gặp bậc đại nhân, chính bền thì tốt.",
+   "hao": [
+    "Đi tới thì gian nan, trở lại thì được khen.",
+    "Bề tôi của vua gian nan chồng chất, không phải vì cớ bản thân mình.",
+    "Đi tới thì gian nan, trở lại thì quay về chỗ của mình.",
+    "Đi tới thì gian nan, trở lại thì liên kết được với người.",
+    "Gian nan lớn, bạn bè kéo đến.",
+    "Đi tới thì gian nan, trở lại thì làm nên việc lớn, tốt; lợi gặp bậc đại nhân."
+   ],
+   "dung": null
+  },
+  {
+   "so": 40,
+   "nguon": "xemboi",
+   "queTu": "Lợi về phía tây nam; không có chỗ đi thì quay về chỗ cũ là tốt; có chỗ đi thì làm sớm là tốt.",
+   "hao": [
+    "Không lỗi.",
+    "Đi săn bắt được ba con cáo, được mũi tên vàng; chính bền thì tốt.",
+    "Vừa mang vác vừa ngồi xe, khiến giặc cướp kéo đến; dù chính bền cũng hối tiếc.",
+    "Gỡ bỏ ngón chân cái của ngươi, bạn bè sẽ đến và tin nhau.",
+    "Người quân tử chỉ cốt cởi gỡ được thì tốt; lấy việc kẻ tiểu nhân phải lui làm chứng nghiệm.",
+    "Bậc công bắn con chim cắt đậu trên tường thành cao, bắn được, không gì không lợi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 41,
+   "nguon": "xemboi",
+   "queTu": "Có lòng thành tín thì rất tốt, không lỗi, có thể giữ chính bền, lợi có chỗ đi. Dùng vào việc gì? Hai bát xôi cũng có thể dùng để dâng cúng.",
+   "hao": [
+    "Gác việc của mình mà mau đi thì không lỗi; nên cân nhắc mức bớt.",
+    "Lợi về sự chính bền, tiến đi thì xấu; không bớt mình mà vẫn làm ích được cho người.",
+    "Ba người cùng đi thì bớt một người; một người đi thì được bạn.",
+    "Bớt tật xấu của mình, làm cho mau chóng thì có mừng, không lỗi.",
+    "Có người làm ích cho, như con rùa quý đáng giá mười bằng tiền, không thể chối từ; rất tốt.",
+    "Không bớt mà làm ích thêm, không lỗi; chính bền thì tốt, lợi có chỗ đi; được bề tôi theo về, không còn phân nhà riêng."
+   ],
+   "dung": null
+  },
+  {
+   "so": 42,
+   "nguon": "xemboi",
+   "queTu": "Lợi có chỗ đi, lợi sang sông lớn.",
+   "hao": [
+    "Lợi dùng để làm việc lớn; rất tốt thì không lỗi.",
+    "Có người làm ích cho, như con rùa quý đáng giá mười bằng tiền, không thể chối từ; giữ chính bền lâu dài thì tốt; vua dùng để dâng cúng Thượng đế, tốt.",
+    "Được thêm ích nhờ việc hoạn nạn, không lỗi; có lòng thành tín, đi đúng đạo giữa, cầm ngọc khuê tâu với bậc công.",
+    "Đi đúng đạo giữa, tâu với bậc công thì được nghe theo; lợi dùng làm chỗ nương tựa để dời đô.",
+    "Có lòng thành tín, có lòng làm ơn, chẳng cần hỏi cũng rất tốt; người cũng thành tín mà mang ơn đức của ta.",
+    "Không ai làm ích cho, lại có kẻ đánh; lập lòng không bền, xấu."
+   ],
+   "dung": null
+  },
+  {
+   "so": 43,
+   "nguon": "xemboi",
+   "queTu": "Phơi bày ở sân vua, lấy lòng thành mà hô hào, có sự nguy; báo cho người trong ấp mình, không lợi về việc dùng binh, lợi có chỗ đi.",
+   "hao": [
+    "Mạnh ở ngón chân trước, đi mà không thắng thì thành lỗi.",
+    "Lo sợ mà hô hoán, đêm tối có giặc cũng chớ lo.",
+    "Mạnh ở gò má thì có điều xấu; người quân tử quả quyết dứt bỏ, một mình đi gặp mưa, như bị ướt, bị người giận, không lỗi.",
+    "Mông không có da, đi đứng chập chững; dắt dê thì hết ăn năn, nhưng nghe lời mà không tin.",
+    "Quả quyết dứt bỏ như nhổ rau sam, đi đúng đạo giữa thì không lỗi.",
+    "Không còn kêu gọi được ai, rốt cuộc có điều xấu."
+   ],
+   "dung": null
+  },
+  {
+   "so": 44,
+   "nguon": "xemboi",
+   "queTu": "Người con gái mạnh mẽ, chớ lấy người con gái ấy.",
+   "hao": [
+    "Buộc vào cái hãm xe bằng kim loại, chính bền thì tốt; có chỗ đi thì gặp điều xấu; con lợn gầy ắt sẽ nhảy nhót không yên.",
+    "Trong bọc có cá, không lỗi; không lợi cho khách.",
+    "Mông không có da, đi đứng chập chững; nguy, nhưng không có lỗi lớn.",
+    "Trong bọc không có cá, dấy lên thì xấu.",
+    "Lấy lá cây kỷ bọc quả dưa; ngậm chứa vẻ đẹp, có điều từ trời rơi xuống.",
+    "Gặp nhau ở cái sừng, hối tiếc, không lỗi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 45,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông; vua đến nhà tông miếu; lợi gặp bậc đại nhân, hanh thông, lợi về sự chính bền; dùng con vật tế lớn thì tốt, lợi có chỗ đi.",
+   "hao": [
+    "Có lòng thành tín mà không trọn, thì rối loạn, thì nhóm họp bừa; nếu kêu gọi thì chốc lát lại tươi cười; chớ lo, đi thì không lỗi.",
+    "Được dắt dẫn thì tốt, không lỗi; có lòng thành tín thì lợi dùng lễ tế đơn sơ.",
+    "Muốn nhóm họp mà than thở, không có gì lợi; đi thì không lỗi, hơi hối tiếc.",
+    "Tốt lớn thì không lỗi.",
+    "Nhóm họp mà có ngôi vị, không lỗi; nếu người chưa tin thì giữ điều lành lớn, lâu dài và chính bền, sẽ hết ăn năn.",
+    "Than thở sụt sùi, nước mắt nước mũi chảy ròng, không lỗi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 46,
+   "nguon": "xemboi",
+   "queTu": "Rất hanh thông; dùng để gặp bậc đại nhân, chớ lo; tiến về phương nam thì tốt.",
+   "hao": [
+    "Được tin mà đi lên, tốt lớn.",
+    "Có lòng thành tín thì lợi dùng lễ tế đơn sơ, không lỗi.",
+    "Đi lên ấp không người.",
+    "Vua dùng để tế ở núi Kỳ, tốt, không lỗi.",
+    "Chính bền thì tốt, lên từng bậc thềm.",
+    "Mờ tối mà vẫn đi lên, lợi về sự chính bền không ngừng nghỉ."
+   ],
+   "dung": null
+  },
+  {
+   "so": 47,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông; chính bền, bậc đại nhân thì tốt, không lỗi; có nói ra cũng không ai tin.",
+   "hao": [
+    "Mông khốn ở gốc cây trụi, vào trong hang tối, ba năm không thấy mặt.",
+    "Khốn về rượu và đồ ăn; dải áo đỏ sắp tới; lợi dùng việc cúng tế; tiến đi thì xấu, không lỗi.",
+    "Khốn ở hòn đá, dựa vào bụi gai tật lê; vào nhà mình không thấy vợ, xấu.",
+    "Đến chậm chạp, khốn ở xe vàng; hối tiếc, nhưng có kết cục.",
+    "Bị cắt mũi chặt chân, khốn về dải áo đỏ; rồi dần dần có vui; lợi dùng việc tế lễ.",
+    "Khốn ở dây sắn dây leo, ở chỗ chênh vênh; tự bảo rằng động thì ăn năn; biết ăn năn thì tiến đi sẽ tốt."
+   ],
+   "dung": null
+  },
+  {
+   "so": 48,
+   "nguon": "xemboi",
+   "queTu": "Đổi ấp mà không đổi giếng, không mất cũng không được; người qua kẻ lại đều múc giếng; gần tới nơi mà chưa kéo dây lên khỏi giếng, làm vỡ cái bình thì xấu.",
+   "hao": [
+    "Giếng bùn không ăn được; giếng cũ chim chóc cũng không tới.",
+    "Nước giếng như khe suối chỉ rót xuống cho cá giếc; vò sứt rò nước.",
+    "Giếng đã vét sạch mà không ai dùng, khiến lòng ta xót xa; có thể múc được; vua sáng suốt thì mọi người cùng được hưởng phúc.",
+    "Giếng được xây gạch, không lỗi.",
+    "Giếng trong, mạch nước lạnh, được người dùng.",
+    "Giếng múc được nước lên, đừng đậy lại; có lòng thành tín, rất tốt."
+   ],
+   "dung": null
+  },
+  {
+   "so": 49,
+   "nguon": "xemboi",
+   "queTu": "Đã đến ngày mới được tin; rất hanh thông, lợi về sự chính bền, hết ăn năn.",
+   "hao": [
+    "Bó chặt bằng da con bò vàng.",
+    "Đã đến ngày mới thay đổi; tiến đi thì tốt, không lỗi.",
+    "Tiến đi thì xấu, dù chính bền cũng nguy; lời bàn thay đổi ba lần đã thành, có lòng thành tín.",
+    "Hết ăn năn; có lòng thành tín mà đổi mệnh, tốt.",
+    "Bậc đại nhân biến đổi như cọp, chưa cần xem bói đã có lòng tin.",
+    "Người quân tử biến đổi như beo, kẻ tiểu nhân đổi mặt; tiến đi thì xấu, ở yên giữ chính bền thì tốt."
+   ],
+   "dung": null
+  },
+  {
+   "so": 50,
+   "nguon": "xemboi",
+   "queTu": "Rất tốt, hanh thông.",
+   "hao": [
+    "Vạc chổng chân lên, lợi về việc trút bỏ cái dơ xấu; lấy được vợ lẽ mà nhờ đó có con, không lỗi.",
+    "Vạc có đồ đầy bên trong; kẻ thù của ta có tật, không đến gần ta được, tốt.",
+    "Tai vạc đổi khác, việc đi bị tắc, mỡ chim trĩ không được ăn; sắp có mưa thì vơi ăn năn, sau cùng tốt.",
+    "Vạc gãy chân, đổ cháo của nhà công, mặt mũi đẫm mồ hôi vì hổ thẹn, xấu.",
+    "Vạc có tai màu vàng, đòn khiêng bằng vàng, lợi về chính bền.",
+    "Vạc có đòn khiêng bằng ngọc, rất tốt, không gì không lợi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 51,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông. Sấm đến thì nớp nớp sợ hãi, rồi cười nói hả hê; sấm động làm kinh hãi cả trăm dặm mà không đánh rơi cái thìa múc và chén rượu tế.",
+   "hao": [
+    "Sấm đến thì nớp nớp sợ hãi, sau thì cười nói hả hê, tốt.",
+    "Sấm đến, nguy; liệu chừng mất của, trèo lên chín tầng gò; đừng đuổi theo, bảy ngày sẽ được lại.",
+    "Sấm động khiến ngẩn ngơ bần thần; nhân sấm động mà đi thì không có tai họa.",
+    "Sấm động mà sa vào bùn.",
+    "Sấm đi rồi lại đến, đều nguy; liệu chừng không mất gì mà vẫn giữ được việc của mình.",
+    "Sấm động làm rụng rời tan tác, mắt nhìn hoảng hốt, đi thì xấu. Sấm chưa đến thân mình mà mới đến láng giềng thì không lỗi; việc cưới hỏi có lời ra tiếng vào."
+   ],
+   "dung": null
+  },
+  {
+   "so": 52,
+   "nguon": "xemboi",
+   "queTu": "Dừng ở nơi lưng, không thấy thân mình; đi trong sân nhà mà không thấy người ở đó, không lỗi.",
+   "hao": [
+    "Dừng ở ngón chân, không lỗi, lợi về giữ chính bền lâu dài.",
+    "Dừng ở bắp chân, không cứu được kẻ mình phải theo, lòng không vui.",
+    "Dừng ở ngang lưng, xé rời thịt dọc sống lưng, nguy, lòng như bị hun đốt.",
+    "Dừng ở thân mình, không lỗi.",
+    "Dừng ở hàm má, lời nói có thứ tự, hết ăn năn.",
+    "Dừng một cách đôn hậu, tốt."
+   ],
+   "dung": null
+  },
+  {
+   "so": 53,
+   "nguon": "xemboi",
+   "queTu": "Con gái về nhà chồng, tốt; lợi về chính bền.",
+   "hao": [
+    "Chim hồng dần đến bờ nước; đứa trẻ gặp nguy, có lời chê trách, không lỗi.",
+    "Chim hồng dần đến tảng đá lớn, ăn uống vui vẻ thỏa thích, tốt.",
+    "Chim hồng dần lên đất bằng; chồng đi không trở về, vợ có mang mà không sinh nở, xấu; lợi về chống giặc.",
+    "Chim hồng dần lên cây, may được cành ngang phẳng như cái rui để đậu, không lỗi.",
+    "Chim hồng dần lên gò cao; vợ ba năm không có mang, sau cùng không gì thắng được, tốt.",
+    "Chim hồng dần lên đường mây, lông của nó có thể dùng làm đồ nghi lễ, tốt."
+   ],
+   "dung": null
+  },
+  {
+   "so": 54,
+   "nguon": "xemboi",
+   "queTu": "Đi thì xấu, không có gì lợi.",
+   "hao": [
+    "Em gái về nhà chồng làm vợ lẽ theo chị; thọt mà đi được, đi thì tốt.",
+    "Chột mà nhìn được, lợi về sự chính bền của người ở ẩn.",
+    "Em gái về nhà chồng còn phải chờ đợi, quay về lại làm vợ lẽ.",
+    "Em gái về nhà chồng lỡ hẹn, về muộn là vì còn chờ thời.",
+    "Vua Đế Ất gả em gái; tay áo của nàng chính thất không đẹp bằng tay áo của người em theo làm vợ lẽ; trăng gần rằm, tốt.",
+    "Con gái bưng giỏ mà trong giỏ không có gì, con trai cắt cổ dê mà không có máu, không có gì lợi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 55,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông, bậc vua đạt tới chỗ ấy; đừng lo, nên như mặt trời giữa trưa.",
+   "hao": [
+    "Gặp được người chủ xứng đôi với mình, tuy ngang nhau cũng không lỗi, đi thì được khen chuộng.",
+    "Tấm che dày đặc, giữa trưa mà thấy sao Đẩu; đi thì bị ngờ ghét; có lòng tin thật để phát động người thì tốt.",
+    "Màn che dày đặc, giữa trưa mà thấy cả sao nhỏ; gãy cánh tay phải, không lỗi.",
+    "Tấm che dày đặc, giữa trưa mà thấy sao Đẩu; gặp được người chủ ngang hàng với mình, tốt.",
+    "Mời đến người tài đẹp, có phúc lành và tiếng khen, tốt.",
+    "Làm nhà to lớn, che kín nhà mình, dòm vào cửa thì vắng lặng không có người, ba năm không thấy ai, xấu."
+   ],
+   "dung": null
+  },
+  {
+   "so": 56,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông nhỏ; người đi đất khách giữ chính bền thì tốt.",
+   "hao": [
+    "Người đi đất khách mà nhỏ nhen vụn vặt, đó là tự chuốc lấy tai vạ.",
+    "Người đi đất khách đến được quán trọ, mang theo tiền của, được đứa đầy tớ trung chính.",
+    "Người đi đất khách bị cháy quán trọ, mất đứa đầy tớ, dẫu chính bền cũng nguy.",
+    "Người đi đất khách có được chỗ ở, được tiền của và cái rìu, mà lòng ta không vui.",
+    "Bắn chim trĩ, mất một mũi tên, sau cùng được tiếng khen và chức mệnh.",
+    "Chim bị cháy tổ, người đi đất khách trước cười sau kêu khóc; mất bò vì khinh suất, xấu."
+   ],
+   "dung": null
+  },
+  {
+   "so": 57,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông nhỏ, lợi có chỗ đi, lợi về việc gặp bậc đại nhân.",
+   "hao": [
+    "Tiến lui ngập ngừng, lợi về sự chính bền của người võ.",
+    "Nhún mình ở dưới giường, dùng quan sử và thầy cúng đông đảo, tốt, không lỗi.",
+    "Nhún mình nhiều lần, hối tiếc.",
+    "Hết ăn năn, đi săn được ba loại thú.",
+    "Giữ chính bền thì tốt, hết ăn năn, không gì không lợi; không có đầu mà có cuối; trước ngày Canh ba ngày, sau ngày Canh ba ngày, tốt.",
+    "Nhún mình ở dưới giường, mất tiền của và cái rìu, cố giữ bền thì xấu."
+   ],
+   "dung": null
+  },
+  {
+   "so": 58,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông, lợi về chính bền.",
+   "hao": [
+    "Vui trong hòa thuận, tốt.",
+    "Vui bằng lòng thành tín, tốt, hết ăn năn.",
+    "Tìm đến cầu vui, xấu.",
+    "Bàn tính chọn lựa niềm vui mà chưa yên; giữ vững để xa cái tật hại thì có điều mừng.",
+    "Tin vào kẻ làm hao mòn mình, có nguy.",
+    "Lôi kéo người để cùng vui."
+   ],
+   "dung": null
+  },
+  {
+   "so": 59,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông, bậc vua đến nơi nhà miếu, lợi sang sông lớn, lợi về chính bền.",
+   "hao": [
+    "Dùng ngựa khỏe để cứu, tốt.",
+    "Lúc ly tán, chạy đến chỗ dựa của mình, hết ăn năn.",
+    "Làm tan cái riêng của thân mình, không ăn năn.",
+    "Làm tan bè đảng, rất tốt; làm tan mà lại tụ thành gò lớn, đó là điều người thường không nghĩ tới.",
+    "Ban hiệu lệnh lớn như mồ hôi toát ra; lúc ly tán mà vua ở đúng ngôi, không lỗi.",
+    "Làm tan cái thương hại, đi ra xa, không lỗi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 60,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông; tiết chế đến khổ sở thì không thể giữ bền.",
+   "hao": [
+    "Không ra khỏi sân trong nhà, không lỗi.",
+    "Không ra khỏi sân ngoài cổng, xấu.",
+    "Không biết tiết chế thì phải than thở, không trách lỗi ai được.",
+    "Yên với sự tiết chế, hanh thông.",
+    "Tiết chế một cách ngọt ngào, tốt; đi thì được khen chuộng.",
+    "Tiết chế đến khổ sở, cố giữ bền thì xấu; biết ăn năn thì cái xấu mất đi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 61,
+   "nguon": "xemboi",
+   "queTu": "Lòng tin cảm đến cả lợn và cá thì tốt; lợi sang sông lớn, lợi về chính bền.",
+   "hao": [
+    "Liệu xét chỗ mình tin thì tốt; có ý khác thì không yên.",
+    "Chim hạc kêu trong bóng râm, con nó họa theo; ta có tước tốt, ta cùng ngươi chung hưởng.",
+    "Gặp kẻ địch, khi đánh trống, khi thôi, khi khóc, khi hát.",
+    "Trăng gần rằm, ngựa mất bạn đôi, không lỗi.",
+    "Có lòng tin thật, gắn bó ràng buộc, không lỗi.",
+    "Tiếng gà vút lên tới trời, cố giữ bền thì xấu."
+   ],
+   "dung": null
+  },
+  {
+   "so": 62,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông, lợi về chính bền; có thể làm việc nhỏ, không thể làm việc lớn. Chim bay để lại tiếng kêu; không nên lên, nên xuống, rất tốt.",
+   "hao": [
+    "Chim bay lên vì thế mà xấu.",
+    "Vượt qua ông, gặp bà; không đến được vua, gặp bề tôi, không lỗi.",
+    "Không chịu đề phòng kỹ, lại buông theo thì có kẻ giết hại, xấu.",
+    "Không lỗi; không vượt quá mà vừa gặp được; đi thì nguy, phải răn giữ; đừng cố giữ bền mãi.",
+    "Mây dày mà không mưa, từ cõi phía tây của ta; ông công bắn tên có dây, bắt lấy con vật ở trong hang.",
+    "Không gặp mà vượt quá, như chim bay vút đi xa, xấu, đó gọi là tai họa lầm lỗi."
+   ],
+   "dung": null
+  },
+  {
+   "so": 63,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông nhỏ, lợi về chính bền; lúc đầu tốt, sau cùng rối loạn.",
+   "hao": [
+    "Kéo bánh xe lại, ướt cái đuôi, không lỗi.",
+    "Người đàn bà mất tấm rèm che xe, đừng đuổi tìm, bảy ngày sẽ được lại.",
+    "Vua Cao Tông đánh nước Quỷ Phương, ba năm mới thắng; đừng dùng kẻ tiểu nhân.",
+    "Thuyền rò đã sẵn giẻ rách để nút, suốt ngày răn giữ.",
+    "Láng giềng phía đông giết bò để tế, không bằng lễ tế đạm bạc của láng giềng phía tây mà thực được hưởng phúc.",
+    "Ướt cái đầu, nguy."
+   ],
+   "dung": null
+  },
+  {
+   "so": 64,
+   "nguon": "xemboi",
+   "queTu": "Hanh thông; con cáo nhỏ gần qua được sông thì ướt cái đuôi, không có gì lợi.",
+   "hao": [
+    "Ướt cái đuôi, hối tiếc.",
+    "Kéo bánh xe lại, giữ chính bền thì tốt.",
+    "Chưa qua được, đi thì xấu; lợi sang sông lớn.",
+    "Giữ chính bền thì tốt, hết ăn năn; hăng hái ra đánh nước Quỷ Phương, ba năm được nước lớn ban thưởng.",
+    "Giữ chính bền thì tốt, không ăn năn; vẻ sáng của người quân tử, có lòng tin thật, tốt.",
+    "Có lòng tin mà uống rượu, không lỗi; uống đến ướt cả đầu thì dẫu có lòng tin cũng mất lẽ phải."
+   ],
+   "dung": null
+  }
+ ]
+}

@@ -5,26 +5,38 @@
 //  - Tượng, tính, vật, thân thể, gia đình, phương của 8 quái: trích 《說卦》 cùng bản KR1a0001 (tệp KR1a0001_067).
 //    Thuyết quái chỉ ghi phương cho 6 quái; Khôn không ghi phương, Đoài ghi theo mùa ("正秋"). Trang không tự điền.
 //  - Ngũ hành của quái (BAT_QUAI.hanh) là cách quy thông dụng đời sau, không có trong Thuyết quái; trang phải ghi vậy.
-// Chưa có bản dịch tiếng Việt và lời bình: các phần này chờ NoiDung đã duyệt.
+//  - Dịch nghĩa tiếng Việt: du-lieu/chu-dich-64-dich.json (9 quẻ bản Ngô Tất Tố, 55 quẻ xemboi dịch sát chữ). Trang chỉ hiện
+//    bản dịch, không hiện chữ Hán (quy tắc 24/11/2026). Chưa có lời bình: phần này chờ NoiDung đã duyệt.
 import CHU_DICH from './du-lieu/chu-dich-64.json';
 import PHIEN_AM from './du-lieu/chu-dich-64-phien-am.json';
+import DICH from './du-lieu/chu-dich-64-dich.json';
 import { trangDaDung } from './dieu-huong';
 import { BAT_QUAI, QUE_64, queHo, queTheoHao, type Hao, type Quai, type Que } from './kinh-dich';
 
 type VanHan = { viTri: string; van: string };
 type DongJson = { so: number; kyHieu: string; ten: string; queTu: string; hao: VanHan[]; dung: VanHan | null };
 type PhienAmJson = { so: number; queTu: string; hao: VanHan[]; dung: VanHan | null };
+type DichJson = { so: number; nguon: 'ngo-tat-to' | 'xemboi'; queTu: string; hao: string[]; dung: string | null };
+
+/** Nguồn bản dịch: hiện dưới mỗi quẻ ("Bản dịch: Ngô Tất Tố" hoặc "Dịch nghĩa: xemboi"). */
+export const NGUON_DICH = {
+  'ngo-tat-to': { nhan: 'Bản dịch: Ngô Tất Tố', ghiCong: DICH.nguon['ngo-tat-to'].ghiCong },
+  xemboi: { nhan: 'Dịch nghĩa: xemboi', ghiCong: DICH.nguon.xemboi.ghiCong },
+} as const;
 
 export const NGUON_CHU_DICH = {
   ma: 'KR1a0001', tenGoc: '周易', tenHanViet: 'Chu Dịch',
   ghiCong: 'Văn bản: Kanripo, CC BY-SA 4.0', url: 'https://github.com/kanripo/KR1a0001',
-  doiChieu: 'Đã đối chiếu từng chữ với bản 周易註 Vương Bật chú (Kanripo KR1a0006); chỗ khác chỉ là dị thể, trừ hai chỗ khác bản đã ghi chú ngay dưới câu liên quan (quẻ Mông và quẻ Chấn).',
+  doiChieu: 'Đã đối chiếu từng chữ với bản Chu Dịch chú của Vương Bật (Kanripo KR1a0006); chỗ khác chỉ là dị thể, trừ hai chỗ khác bản đã ghi chú ngay dưới câu liên quan (quẻ Mông và quẻ Chấn).',
 } as const;
 
 /** Chỗ bản gốc khác các bản khác (trang nên ghi chú cạnh câu đó). */
-export const KHAC_BAN: { so: number; viTri: string; banGoc: string; banKhac: string; ghiChu: string }[] = [
-  { so: 4, viTri: 'quẻ từ', banGoc: '童蒙來求我', banKhac: '童蒙求我', ghiChu: 'năm bản khác (Vương Bật chú, Chu Dịch chú sớ, Tập giải, Bản nghĩa, Chiết trung) không có chữ 來.' },
-  { so: 51, viTri: 'lục ngũ', banGoc: '意无喪有事', banKhac: '億无喪有事', ghiChu: 'năm bản khác ghi 億.' },
+/** `banGoc`, `banKhac`, `ghiChu` có chữ Hán, chỉ để đối chiếu; trang hiển thị `ghiChuViet`. */
+export const KHAC_BAN: { so: number; viTri: string; banGoc: string; banKhac: string; ghiChu: string; ghiChuViet: string }[] = [
+  { so: 4, viTri: 'quẻ từ', banGoc: '童蒙來求我', banKhac: '童蒙求我', ghiChu: 'năm bản khác (Vương Bật chú, Chu Dịch chú sớ, Tập giải, Bản nghĩa, Chiết trung) không có chữ 來.',
+    ghiChuViet: 'Bản gốc ghi "trẻ thơ đến tìm ta"; năm bản khác (Vương Bật chú, Chu Dịch chú sớ, Tập giải, Bản nghĩa, Chiết trung) không có chữ "đến" (lai).' },
+  { so: 51, viTri: 'lục ngũ', banGoc: '意无喪有事', banKhac: '億无喪有事', ghiChu: 'năm bản khác ghi 億.',
+    ghiChuViet: 'Bản gốc ghi chữ "ý"; năm bản khác ghi chữ "ức" (ước lượng), bản dịch theo chữ "ức".' },
 ];
 
 // ---------- 8 quái ----------
@@ -74,12 +86,18 @@ export function queCoQuai(ten: string): { tren: Que[]; duoi: Que[] } {
 
 const DS_HAN = (CHU_DICH as { que: DongJson[] }).que;
 const DS_PHIEN_AM = (PHIEN_AM as unknown as { que: PhienAmJson[] }).que;
+const DS_DICH = (DICH as unknown as { que: DichJson[] }).que;
 
 export type QueChiTiet = {
   que: Que;
   kyHieu: string;
   han: { ten: string; queTu: string; hao: VanHan[]; dung: VanHan | null };
   phienAm: { queTu: string; hao: VanHan[]; dung: VanHan | null } | null;
+  /**
+   * Bản dịch tiếng Việt — phần duy nhất trang được hiện. `hao[i]` ứng với hào i+1 (từ dưới lên);
+   * nhãn hào dùng `tenViTriHao(han.hao[i].viTri)` ("Sơ Cửu"…) hoặc "Hào 1"…; `nguon` để in dòng ghi công.
+   */
+  dich: { queTu: string; hao: string[]; dung: string | null; nguon: DichJson['nguon'] };
   /** Quẻ hỗ (2-3-4 / 3-4-5). */
   ho: Que;
   /** Quẻ đảo (綜, lật ngược 6 hào); trùng chính nó với 8 quẻ đối xứng. */
@@ -99,11 +117,13 @@ export function queChiTiet(slug: string): QueChiTiet | null {
   if (!que) return null;
   const h = DS_HAN[que.so - 1];
   const p = DS_PHIEN_AM[que.so - 1] ?? null;
+  const d = DS_DICH[que.so - 1];
   return {
     que,
     kyHieu: h.kyHieu,
     han: { ten: h.ten, queTu: h.queTu, hao: h.hao, dung: h.dung },
     phienAm: p ? { queTu: p.queTu, hao: p.hao, dung: p.dung } : null,
+    dich: { queTu: d.queTu, hao: d.hao, dung: d.dung, nguon: d.nguon },
     ho: queHo(que.hao),
     dao: queDao(que.hao),
     doi: queDoi(que.hao),
@@ -113,7 +133,7 @@ export function queChiTiet(slug: string): QueChiTiet | null {
   };
 }
 
-/** Bảng 64 quẻ cho trang /kinh-dich/64-que: số, ký hiệu, tên, quái trên dưới, chữ Hán. */
+/** Bảng 64 quẻ cho trang /kinh-dich/64-que: số, ký hiệu, tên, quái trên dưới. `han` chỉ để đối chiếu, không hiện. */
 export function bang64(): { que: Que; kyHieu: string; han: string }[] {
   return QUE_64.map((q) => ({ que: q, kyHieu: DS_HAN[q.so - 1].kyHieu, han: DS_HAN[q.so - 1].ten }));
 }
@@ -160,6 +180,29 @@ export const PHIEN_AM_THUYET_QUAI: Record<string, string> = {
   乾西北之卦也: 'Càn tây bắc chi quái dã', 兌正秋也: 'Đoài chính thu dã', 南方之卦也: 'Nam phương chi quái dã',
   震東方也: 'Chấn đông phương dã', 巽東南也: 'Tốn đông nam dã', 正北方之卦也: 'Chính bắc phương chi quái dã',
   艮東北之卦也: 'Cấn đông bắc chi quái dã',
+};
+
+/** Dịch nghĩa các câu Thuyết quái (dịch nghĩa: xemboi), khóa là đúng chuỗi Hán trong BAT_QUAI_CHI_TIET. Trang chỉ hiện bản này. */
+export const DICH_THUYET_QUAI: Record<string, string> = {
+  乾為天: 'Càn là trời', 兌為澤: 'Đoài là đầm', 離為火: 'Ly là lửa', 震為雷: 'Chấn là sấm',
+  巽為木為風: 'Tốn là cây, là gió', 坎為水: 'Khảm là nước', 艮為山: 'Cấn là núi', 坤為地: 'Khôn là đất',
+  乾健也: 'Càn là mạnh mẽ', 兌說也: 'Đoài là vui đẹp', 離麗也: 'Ly là bám dựa', 震動也: 'Chấn là động',
+  巽入也: 'Tốn là thấm vào', 坎陷也: 'Khảm là hãm sâu', 艮止也: 'Cấn là dừng', 坤順也: 'Khôn là thuận',
+  乾為馬: 'Càn là ngựa', 兌為羊: 'Đoài là dê', 離為雉: 'Ly là chim trĩ', 震為龍: 'Chấn là rồng',
+  巽為雞: 'Tốn là gà', 坎為豕: 'Khảm là lợn', 艮為狗: 'Cấn là chó', 坤為牛: 'Khôn là trâu bò',
+  乾為首: 'Càn là đầu', 兌為口: 'Đoài là miệng', 離為目: 'Ly là mắt', 震為足: 'Chấn là chân',
+  巽為股: 'Tốn là đùi', 坎為耳: 'Khảm là tai', 艮為手: 'Cấn là tay', 坤為腹: 'Khôn là bụng',
+  乾天也故稱乎父: 'Càn là trời, nên gọi là cha',
+  坤地也故稱乎母: 'Khôn là đất, nên gọi là mẹ',
+  震一索而得男故謂之長男: 'Chấn: cầu lần thứ nhất được con trai, nên gọi là trưởng nam',
+  巽一索而得女故謂之長女: 'Tốn: cầu lần thứ nhất được con gái, nên gọi là trưởng nữ',
+  坎再索而得男故謂之中男: 'Khảm: cầu lần thứ hai được con trai, nên gọi là trung nam',
+  離再索而得女故謂之中女: 'Ly: cầu lần thứ hai được con gái, nên gọi là trung nữ',
+  艮三索而得男故謂之少男: 'Cấn: cầu lần thứ ba được con trai, nên gọi là thiếu nam',
+  兌三索而得女故謂之少女: 'Đoài: cầu lần thứ ba được con gái, nên gọi là thiếu nữ',
+  乾西北之卦也: 'Càn là quẻ phương tây bắc', 兌正秋也: 'Đoài là chính giữa mùa thu', 南方之卦也: 'Là quẻ phương nam',
+  震東方也: 'Chấn là phương đông', 巽東南也: 'Tốn là phương đông nam', 正北方之卦也: 'Là quẻ chính phương bắc',
+  艮東北之卦也: 'Cấn là quẻ phương đông bắc',
 };
 
 /** Tên vị trí hào: 初九 → "Sơ Cửu", 六二 → "Lục Nhị", 用九 → "Dụng Cửu". */

@@ -264,23 +264,23 @@ export function vietViTri(p: ViTriCung): string {
 
 /** Tetrabiblos quyển I ch. IV: câu mở đầu về tính chất từng thiên thể cổ. */
 export const TRICH_THIEN_THE: Record<HanhTinh, TrichAnh> = {
-  'Mặt Trời': { en: 'The Sun is found to produce heat and moderate dryness.', chuong: 'IV', trang: 13 },
-  'Mặt Trăng': { en: 'The Moon principally generates moisture; her proximity to the earth renders her highly capable of exciting damp vapours, and of thus operating sensibly upon animal bodies by relaxation and putrefaction.', chuong: 'IV', trang: 13 },
-  'Sao Thổ': { en: 'Saturn produces cold and dryness, for he is most remote both from the Sun’s heat and from the earth’s vapours.', chuong: 'IV', trang: 13 },
-  'Sao Hỏa': { en: 'Mars chiefly causes dryness, and is also strongly heating, by means of his own fiery nature, which is indicated by his colour, and in consequence of his vicinity to the Sun; the sphere of which is immediately below him.', chuong: 'IV', trang: 13 },
-  'Sao Mộc': { en: 'Jupiter revolves in an intermediate sphere between the extreme cold of Saturn and the burning heat of Mars, and has consequently a temperate influence: he therefore at once promotes both warmth and moisture.', chuong: 'IV', trang: 13 },
-  'Sao Kim': { en: 'To Venus also the same temperate quality belongs, although it exists conversely; since the heat she produces by her vicinity to the Sun is not so great as the moisture which she generates by the magnitude of her light, and by appropriating to herself the moist vapours of the earth, in the same manner that the Moon does.', chuong: 'IV', trang: 13 },
-  'Sao Thủy': { en: 'Mercury sometimes produces dryness, and at other times moisture, and each with equal vigour.', chuong: 'IV', trang: 13 },
+  'Mặt Trời': { en: 'The Sun is found to produce heat and moderate dryness.', vi: 'Mặt Trời được thấy là sinh ra nóng và khô vừa phải.', chuong: 'IV', trang: 13 },
+  'Mặt Trăng': { en: 'The Moon principally generates moisture; her proximity to the earth renders her highly capable of exciting damp vapours, and of thus operating sensibly upon animal bodies by relaxation and putrefaction.', vi: 'Mặt Trăng chủ yếu sinh ra ẩm; vì ở gần trái đất nên rất dễ bốc lên hơi ẩm, và do đó tác động rõ lên cơ thể sinh vật, làm mềm nhão và làm thối rữa.', chuong: 'IV', trang: 13 },
+  'Sao Thổ': { en: 'Saturn produces cold and dryness, for he is most remote both from the Sun’s heat and from the earth’s vapours.', vi: 'Sao Thổ sinh ra lạnh và khô, vì ở xa nhất cả sức nóng của Mặt Trời lẫn hơi ẩm của trái đất.', chuong: 'IV', trang: 13 },
+  'Sao Hỏa': { en: 'Mars chiefly causes dryness, and is also strongly heating, by means of his own fiery nature, which is indicated by his colour, and in consequence of his vicinity to the Sun; the sphere of which is immediately below him.', vi: 'Sao Hỏa chủ yếu gây khô, và cũng rất nóng, do tính lửa của chính nó, điều mà màu sắc của nó cho thấy, và do ở gần Mặt Trời, tầng của Mặt Trời nằm ngay dưới nó.', chuong: 'IV', trang: 13 },
+  'Sao Mộc': { en: 'Jupiter revolves in an intermediate sphere between the extreme cold of Saturn and the burning heat of Mars, and has consequently a temperate influence: he therefore at once promotes both warmth and moisture.', vi: 'Sao Mộc đi trên tầng ở giữa cái lạnh cực độ của Sao Thổ và cái nóng cháy của Sao Hỏa, nên có ảnh hưởng ôn hòa: vì vậy cùng lúc làm ấm và làm ẩm.', chuong: 'IV', trang: 13 },
+  'Sao Kim': { en: 'To Venus also the same temperate quality belongs, although it exists conversely; since the heat she produces by her vicinity to the Sun is not so great as the moisture which she generates by the magnitude of her light, and by appropriating to herself the moist vapours of the earth, in the same manner that the Moon does.', vi: 'Sao Kim cũng có tính ôn hòa như vậy, nhưng theo chiều ngược lại; vì sức nóng nó sinh ra do gần Mặt Trời không lớn bằng độ ẩm nó sinh ra nhờ ánh sáng lớn và nhờ thu lấy hơi ẩm của trái đất, giống như Mặt Trăng.', chuong: 'IV', trang: 13 },
+  'Sao Thủy': { en: 'Mercury sometimes produces dryness, and at other times moisture, and each with equal vigour.', vi: 'Sao Thủy khi thì sinh ra khô, khi thì sinh ra ẩm, mỗi bên đều mạnh như nhau.', chuong: 'IV', trang: 13 },
 };
 
-/** Tetrabiblos quyển I ch. XIII: góc mọc và thiên đỉnh (nguyên văn, kể cả chữ "meridan" của bản in). */
+/** Tetrabiblos quyển I ch. XIII: góc mọc và thiên đỉnh (nguyên văn, kể cả chữ "meridan" của bản in; trang hiện `vi`). */
 export const TRICH_GOC: { asc: TrichAnh; mc: TrichAnh } = {
-  asc: { en: 'the eastern point, or angle of the ascendant, is chiefly dry in its nature; because, on the Sun’s arrival therein, the damps occasioned by the night begin to be dried up', chuong: 'XIII', trang: 21 },
-  mc: { en: 'The southern point, or angle of the mid-heaven, is the most hot; because the Sun’s meridan position, which produces greater warmth and heat, declines (in this part of the earth) towards the south.', chuong: 'XIII', trang: 21 },
+  asc: { en: 'the eastern point, or angle of the ascendant, is chiefly dry in its nature; because, on the Sun’s arrival therein, the damps occasioned by the night begin to be dried up', vi: 'điểm phía đông, tức góc mọc, chủ yếu có tính khô; vì khi Mặt Trời tới đó, hơi ẩm do ban đêm gây ra bắt đầu khô đi', chuong: 'XIII', trang: 21 },
+  mc: { en: 'The southern point, or angle of the mid-heaven, is the most hot; because the Sun’s meridan position, which produces greater warmth and heat, declines (in this part of the earth) towards the south.', vi: 'Điểm phía nam, tức góc thiên đỉnh, là nóng nhất; vì vị trí giữa trưa của Mặt Trời, nơi sinh ra ấm và nóng nhiều hơn, nghiêng (ở phần này của trái đất) về phía nam.', chuong: 'XIII', trang: 21 },
 };
 
 export const GHI_CHU_NHA =
-  'Nhà ở đây chia theo cách trọn cung (whole sign): nhà 1 là cả cung chứa điểm mọc, nhà 2 là cung kế tiếp, cứ thế đủ 12. Đây là cách chia xưa nhất; các phần mềm phương Tây hiện nay hay dùng cách Placidus nên số nhà có thể khác. Tetrabiblos không đặt tên hay nghĩa cho 12 nhà, nên trang chỉ ghi số nhà.';
+  'Nhà ở đây chia theo cách trọn cung: nhà 1 là cả cung chứa điểm mọc, nhà 2 là cung kế tiếp, cứ thế đủ 12. Đây là cách chia xưa nhất; các phần mềm phương Tây hiện nay hay dùng cách Placidus nên số nhà có thể khác. Tetrabiblos không đặt tên hay nghĩa cho 12 nhà, nên trang chỉ ghi số nhà.';
 
 export const GHI_CHU_KHONG_GIO =
   'Không có giờ sinh thì không tính được cung mọc, thiên đỉnh và nhà. Vị trí các hành tinh lấy lúc 12:00; Mặt Trăng đi khoảng 13° mỗi ngày nên trang ghi khoảng từ đầu tới cuối ngày.';

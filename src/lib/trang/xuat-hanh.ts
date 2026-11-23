@@ -16,9 +16,15 @@ export type BaiCaHuong = {
   /** Tên bài ca trong sách, chữ Hán. */
   tenBai: string;
   /** Nguyên văn bài ca, chép đúng đoạn nguồn. */
+  /** Nguyên văn chỉ lưu để đối chiếu, KHÔNG hiển thị. */
   nguyenVan: string;
+  /** Dịch nghĩa tiếng Việt (xemboi dịch sát chữ) để hiển thị. */
+  dich: string;
   /** Vị trí trong sách. */
   viTri: string;
+  /** Tên bài và vị trí bằng tiếng Việt (để hiển thị). */
+  tenBaiViet: string;
+  viTriViet: string;
   doanId: number;
   /** Hướng theo chỉ số thiên can 0 = Giáp … 9 = Quý. */
   theoCan: Huong[];
@@ -37,21 +43,24 @@ export const NGUON_XUAT_HANH = {
   tenHanViet: 'Ngọc hạp ký',
   giayPhep: 'CC BY-SA 4.0',
   ghiCong: 'Văn bản: Wikisource, CC BY-SA 4.0',
-  url: 'https://zh.wikisource.org/wiki/玉匣記',
+  url: 'https://zh.wikisource.org/wiki/%E7%8E%89%E5%8C%A3%E8%A8%98',
 } as const;
 
 export const BAI_CA_HUONG: BaiCaHuong[] = [
   {
-    ma: 'hyThan', ten: 'Hỷ thần', tenBai: '喜神方位歌', viTri: '民俗吉凶日篇 · 喜神方位歌', doanId: 8069, theoCan: HY,
+    ma: 'hyThan', ten: 'Hỷ thần', tenBai: '喜神方位歌', viTri: '民俗吉凶日篇 · 喜神方位歌', tenBaiViet: 'Bài ca phương Hỷ thần', viTriViet: 'Thiên Dân tục cát hung nhật · Bài ca phương Hỷ thần', doanId: 8069, theoCan: HY,
     nguyenVan: '凡嫁娶、冠帶，新人向之大吉，出行、移徙、修造，背向之大吉。甲己在艮乙庚乾，丙辛坤位喜神安，丁壬只在離宮坐，戊癸遊來在巽間。',
+    dich: 'Phàm cưới gả, làm lễ đội mũ, người mới hướng mặt về phương ấy thì rất tốt; xuất hành, dời chỗ ở, sửa dựng nhà mà quay lưng về phương ấy thì rất tốt. Ngày Giáp, Kỷ Hỷ thần ở Cấn; ngày Ất, Canh ở Càn; ngày Bính, Tân Hỷ thần yên ở Khôn; ngày Đinh, Nhâm chỉ ngồi ở cung Ly; ngày Mậu, Quý dạo đến ở Tốn.',
   },
   {
-    ma: 'taiThan', ten: 'Tài thần', tenBai: '財神方位歌', viTri: '民俗吉凶日篇 · 財神方位歌', doanId: 8072, theoCan: TAI,
+    ma: 'taiThan', ten: 'Tài thần', tenBai: '財神方位歌', viTri: '民俗吉凶日篇 · 財神方位歌', tenBaiViet: 'Bài ca phương Tài thần', viTriViet: 'Thiên Dân tục cát hung nhật · Bài ca phương Tài thần', doanId: 8072, theoCan: TAI,
     nguyenVan: '甲乙東北是財神，丙丁向在西南尋，戊己正北坐方位，庚辛正東去安身，壬癸原來正南坐，便是財神方位真。',
+    dich: 'Ngày Giáp, Ất Tài thần ở Đông Bắc; ngày Bính, Đinh tìm về Tây Nam; ngày Mậu, Kỷ ngồi ở chính Bắc; ngày Canh, Tân về ở chính Đông; ngày Nhâm, Quý vốn ngồi ở chính Nam; ấy là phương Tài thần đúng thật.',
   },
   {
-    ma: 'phucThan', ten: 'Phúc thần', tenBai: '福神方位歌', viTri: '民俗吉凶日篇 · 福神方位歌', doanId: 8071, theoCan: PHUC,
+    ma: 'phucThan', ten: 'Phúc thần', tenBai: '福神方位歌', viTri: '民俗吉凶日篇 · 福神方位歌', tenBaiViet: 'Bài ca phương Phúc thần', viTriViet: 'Thiên Dân tục cát hung nhật · Bài ca phương Phúc thần', doanId: 8071, theoCan: PHUC,
     nguyenVan: '甲乙東南是福神，丙丁正東是堪宜，戊北己南庚辛坤，壬在乾方癸在西。',
+    dich: 'Ngày Giáp, Ất Phúc thần ở Đông Nam; ngày Bính, Đinh ở chính Đông là hợp; ngày Mậu ở Bắc, ngày Kỷ ở Nam, ngày Canh, Tân ở Khôn (Tây Nam); ngày Nhâm ở phương Càn, ngày Quý ở phương Tây.',
   },
 ];
 

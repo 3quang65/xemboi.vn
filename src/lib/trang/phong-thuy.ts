@@ -7,7 +7,7 @@ import { BAT_QUAI, type Hao } from './kinh-dich';
 import { HOA_GIAP, NAM_SINH_DEN, NAM_SINH_TU, cungPhi, type CungPhi, type Hanh } from './can-chi';
 
 export const NGUON_HIEP_KY = {
-  ten: 'Khâm định Hiệp kỷ biện phương thư (欽定協紀辨方書)',
+  ten: 'Khâm định Hiệp kỷ biện phương thư',
   nam: 'soạn theo lệnh vua Càn Long, xong năm 1739',
   ban: 'Kanripo KR3g0051, bản Văn Uyên Các tứ khố toàn thư',
   url: 'https://github.com/kanripo/KR3g0051',
@@ -17,52 +17,53 @@ export const NGUON_HIEP_KY = {
 } as const;
 
 /** Một câu trích nguyên văn: `han` có dấu câu do xemboi thêm; bỏ dấu câu thì phải khớp đúng bản Kanripo. */
-export type TrichDan = { han: string; phienAm: string; quyen: number; trang: string };
+/** han, phienAm chỉ lưu để đối chiếu, KHÔNG hiển thị; frontend dùng `dich` (xemboi dịch nghĩa sát chữ). */
+export type TrichDan = { han: string; phienAm: string; dich: string; quyen: number; trang: string };
 
 export const TRICH = {
   cuuCungKienTrach: {
     han: '三元經曰：九宫建宅，男命上元甲子起坎一，中元甲子起巽四，下元甲子起兑七，逆行九宫；女命上元甲子起中五，中元甲子起坤二，下元甲子起艮八，順行九宫。',
-    phienAm: 'Tam nguyên kinh viết: Cửu cung kiến trạch, nam mệnh thượng nguyên giáp tý khởi Khảm nhất, trung nguyên giáp tý khởi Tốn tứ, hạ nguyên giáp tý khởi Đoài thất, nghịch hành cửu cung; nữ mệnh thượng nguyên giáp tý khởi trung ngũ, trung nguyên giáp tý khởi Khôn nhị, hạ nguyên giáp tý khởi Cấn bát, thuận hành cửu cung.',
+    phienAm: 'Tam nguyên kinh viết: Cửu cung kiến trạch, nam mệnh thượng nguyên giáp tý khởi Khảm nhất, trung nguyên giáp tý khởi Tốn tứ, hạ nguyên giáp tý khởi Đoài thất, nghịch hành cửu cung; nữ mệnh thượng nguyên giáp tý khởi trung ngũ, trung nguyên giáp tý khởi Khôn nhị, hạ nguyên giáp tý khởi Cấn bát, thuận hành cửu cung.', dich: 'Tam nguyên kinh nói: lấy chín cung dựng nhà; mệnh nam, Giáp Tý thượng nguyên khởi ở Khảm số 1, Giáp Tý trung nguyên khởi ở Tốn số 4, Giáp Tý hạ nguyên khởi ở Đoài số 7, đi nghịch chín cung; mệnh nữ, Giáp Tý thượng nguyên khởi ở trung cung số 5, Giáp Tý trung nguyên khởi ở Khôn số 2, Giáp Tý hạ nguyên khởi ở Cấn số 8, đi thuận chín cung.',
     quyen: 35, trang: '9b',
   },
   caiChinh: {
     han: '世俗誤以上元為中元，遂謂上元起兑七，中元起坎一，下元起巽四。康熙五十六年奉㫖改正。',
-    phienAm: 'Thế tục ngộ dĩ thượng nguyên vi trung nguyên, toại vị thượng nguyên khởi Đoài thất, trung nguyên khởi Khảm nhất, hạ nguyên khởi Tốn tứ. Khang Hy ngũ thập lục niên phụng chỉ cải chính.',
+    phienAm: 'Thế tục ngộ dĩ thượng nguyên vi trung nguyên, toại vị thượng nguyên khởi Đoài thất, trung nguyên khởi Khảm nhất, hạ nguyên khởi Tốn tứ. Khang Hy ngũ thập lục niên phụng chỉ cải chính.', dich: 'Người đời lầm lấy thượng nguyên làm trung nguyên, nên bảo thượng nguyên khởi Đoài 7, trung nguyên khởi Khảm 1, hạ nguyên khởi Tốn 4. Năm Khang Hy thứ 56 vâng chỉ sửa lại cho đúng.',
     quyen: 35, trang: '10a',
   },
   khangHy23: {
     han: '康熙二十三年甲子，一白入中宫。',
-    phienAm: 'Khang Hy nhị thập tam niên giáp tý, nhất bạch nhập trung cung.',
+    phienAm: 'Khang Hy nhị thập tam niên giáp tý, nhất bạch nhập trung cung.', dich: 'Năm Giáp Tý, Khang Hy thứ 23, sao Nhất bạch vào trung cung.',
     quyen: 8, trang: '26b',
   },
   daiDuNien: {
     han: '大遊年變卦，相宅家用之。',
-    phienAm: 'Đại du niên biến quái, tướng trạch gia dụng chi.',
+    phienAm: 'Đại du niên biến quái, tướng trạch gia dụng chi.', dich: 'Phép đại du niên biến quẻ, các nhà xem nhà đất đều dùng.',
     quyen: 2, trang: '43a',
   },
   dongTayTuTrach: {
     han: '陽宅之法，以乾兌為老陽，艮坤為老隂，離震為少隂，巽坎為少陽。二老相配為西四宅，二少相配為東四宅，東西各自相配為吉，交錯相配為凶。',
-    phienAm: 'Dương trạch chi pháp, dĩ Càn Đoài vi lão dương, Cấn Khôn vi lão âm, Ly Chấn vi thiếu âm, Tốn Khảm vi thiếu dương. Nhị lão tương phối vi Tây tứ trạch, nhị thiếu tương phối vi Đông tứ trạch, Đông Tây các tự tương phối vi cát, giao thác tương phối vi hung.',
+    phienAm: 'Dương trạch chi pháp, dĩ Càn Đoài vi lão dương, Cấn Khôn vi lão âm, Ly Chấn vi thiếu âm, Tốn Khảm vi thiếu dương. Nhị lão tương phối vi Tây tứ trạch, nhị thiếu tương phối vi Đông tứ trạch, Đông Tây các tự tương phối vi cát, giao thác tương phối vi hung.', dich: 'Phép dương trạch lấy Càn, Đoài làm lão dương; Cấn, Khôn làm lão âm; Ly, Chấn làm thiếu âm; Tốn, Khảm làm thiếu dương. Hai lão phối nhau là Tây tứ trạch, hai thiếu phối nhau là Đông tứ trạch; Đông phối với Đông, Tây phối với Tây là cát, phối chéo nhau là hung.',
     quyen: 2, trang: '44a',
   },
   phienQuai: {
     han: '翻卦之法，皆以上一爻變為生氣貪狼，下二爻變為天醫巨門，三爻俱變為延年武曲，三爻俱不變為伏位輔弼。',
-    phienAm: 'Phiên quái chi pháp, giai dĩ thượng nhất hào biến vi Sinh khí Tham lang, hạ nhị hào biến vi Thiên y Cự môn, tam hào câu biến vi Diên niên Vũ khúc, tam hào câu bất biến vi Phục vị Phụ bật.',
+    phienAm: 'Phiên quái chi pháp, giai dĩ thượng nhất hào biến vi Sinh khí Tham lang, hạ nhị hào biến vi Thiên y Cự môn, tam hào câu biến vi Diên niên Vũ khúc, tam hào câu bất biến vi Phục vị Phụ bật.', dich: 'Phép lật quẻ: đều lấy việc biến hào trên cùng là Sinh khí (sao Tham lang), biến hai hào dưới là Thiên y (Cự môn), biến cả ba hào là Diên niên (Vũ khúc), ba hào đều không biến là Phục vị (Phụ bật).',
     quyen: 2, trang: '44a',
   },
   thuTuSao: {
     han: '以貪狼、廉貞、武曲、文曲、禄存、巨門、破軍、輔弼為序。如乾為本宫，乾上爻變為兌為貪狼，兌中爻變為震為五鬼，震下爻變為坤為武曲，坤中爻變為坎為文曲，坎上爻變為巽為禄存，巽中爻變為艮為巨門，艮下爻變為離為破軍，離中爻變復為乾為輔弼。',
-    phienAm: 'Dĩ Tham lang, Liêm trinh, Vũ khúc, Văn khúc, Lộc tồn, Cự môn, Phá quân, Phụ bật vi tự. Như Càn vi bản cung, Càn thượng hào biến vi Đoài vi Tham lang, Đoài trung hào biến vi Chấn vi Ngũ quỷ, Chấn hạ hào biến vi Khôn vi Vũ khúc, Khôn trung hào biến vi Khảm vi Văn khúc, Khảm thượng hào biến vi Tốn vi Lộc tồn, Tốn trung hào biến vi Cấn vi Cự môn, Cấn hạ hào biến vi Ly vi Phá quân, Ly trung hào biến phục vi Càn vi Phụ bật.',
+    phienAm: 'Dĩ Tham lang, Liêm trinh, Vũ khúc, Văn khúc, Lộc tồn, Cự môn, Phá quân, Phụ bật vi tự. Như Càn vi bản cung, Càn thượng hào biến vi Đoài vi Tham lang, Đoài trung hào biến vi Chấn vi Ngũ quỷ, Chấn hạ hào biến vi Khôn vi Vũ khúc, Khôn trung hào biến vi Khảm vi Văn khúc, Khảm thượng hào biến vi Tốn vi Lộc tồn, Tốn trung hào biến vi Cấn vi Cự môn, Cấn hạ hào biến vi Ly vi Phá quân, Ly trung hào biến phục vi Càn vi Phụ bật.', dich: 'Theo thứ tự Tham lang, Liêm trinh, Vũ khúc, Văn khúc, Lộc tồn, Cự môn, Phá quân, Phụ bật. Như lấy Càn làm bản cung: Càn biến hào trên thành Đoài là Tham lang; Đoài biến hào giữa thành Chấn là Ngũ quỷ; Chấn biến hào dưới thành Khôn là Vũ khúc; Khôn biến hào giữa thành Khảm là Văn khúc; Khảm biến hào trên thành Tốn là Lộc tồn; Tốn biến hào giữa thành Cấn là Cự môn; Cấn biến hào dưới thành Ly là Phá quân; Ly biến hào giữa trở lại thành Càn là Phụ bật.',
     quyen: 2, trang: '43b',
   },
   sonHuong: {
     han: '子山則必午向。',
-    phienAm: 'Tý sơn tắc tất Ngọ hướng.',
+    phienAm: 'Tý sơn tắc tất Ngọ hướng.', dich: 'Tọa sơn Tý thì ắt hướng Ngọ.',
     quyen: 2, trang: '2b',
   },
   batCung: {
     han: '戌乾亥屬乾，壬子癸屬坎，丑艮寅屬艮，甲卯乙屬震，辰巽巳屬巽，丙午丁屬離，未坤申屬坤，庚酉辛屬兌，謂之八宫。',
-    phienAm: 'Tuất Càn Hợi thuộc Càn, Nhâm Tý Quý thuộc Khảm, Sửu Cấn Dần thuộc Cấn, Giáp Mão Ất thuộc Chấn, Thìn Tốn Tỵ thuộc Tốn, Bính Ngọ Đinh thuộc Ly, Mùi Khôn Thân thuộc Khôn, Canh Dậu Tân thuộc Đoài, vị chi bát cung.',
+    phienAm: 'Tuất Càn Hợi thuộc Càn, Nhâm Tý Quý thuộc Khảm, Sửu Cấn Dần thuộc Cấn, Giáp Mão Ất thuộc Chấn, Thìn Tốn Tỵ thuộc Tốn, Bính Ngọ Đinh thuộc Ly, Mùi Khôn Thân thuộc Khôn, Canh Dậu Tân thuộc Đoài, vị chi bát cung.', dich: 'Tuất, Càn, Hợi thuộc Càn; Nhâm, Tý, Quý thuộc Khảm; Sửu, Cấn, Dần thuộc Cấn; Giáp, Mão, Ất thuộc Chấn; Thìn, Tốn, Tỵ thuộc Tốn; Bính, Ngọ, Đinh thuộc Ly; Mùi, Khôn, Thân thuộc Khôn; Canh, Dậu, Tân thuộc Đoài; gọi là tám cung.',
     quyen: 2, trang: '3a',
   },
 } satisfies Record<string, TrichDan>;
@@ -122,21 +123,21 @@ export type DuNien = {
 
 export const DU_NIEN_8: DuNien[] = [
   { ten: 'Sinh khí', han: '生氣', sao: 'Tham lang', saoHan: '貪狼', cat: true, bien: [0, 0, 1], moTaBien: 'biến hào trên cùng',
-    trich: { han: '是為最吉之象，故小遊年、大遊年皆以為生氣也。', phienAm: 'Thị vi tối cát chi tượng, cố tiểu du niên, đại du niên giai dĩ vi Sinh khí dã.', quyen: 2, trang: '45b–46a' } },
+    trich: { han: '是為最吉之象，故小遊年、大遊年皆以為生氣也。', phienAm: 'Thị vi tối cát chi tượng, cố tiểu du niên, đại du niên giai dĩ vi Sinh khí dã.', dich: 'Đây là tượng tốt nhất, nên cả tiểu du niên lẫn đại du niên đều gọi là Sinh khí.', quyen: 2, trang: '45b–46a' } },
   { ten: 'Thiên y', han: '天醫', sao: 'Cự môn', saoHan: '巨門', cat: true, bien: [1, 1, 0], moTaBien: 'biến hai hào dưới',
-    trich: { han: '大遊年以三爻全變之卦老長中少正配為吉，不曰福徳而曰延年，則以此為天醫，皆吉卦也。', phienAm: 'Đại du niên dĩ tam hào toàn biến chi quái lão trưởng trung thiếu chính phối vi cát, bất viết Phúc đức nhi viết Diên niên, tắc dĩ thử vi Thiên y, giai cát quái dã.', quyen: 2, trang: '49b' } },
+    trich: { han: '大遊年以三爻全變之卦老長中少正配為吉，不曰福徳而曰延年，則以此為天醫，皆吉卦也。', phienAm: 'Đại du niên dĩ tam hào toàn biến chi quái lão trưởng trung thiếu chính phối vi cát, bất viết Phúc đức nhi viết Diên niên, tắc dĩ thử vi Thiên y, giai cát quái dã.', dich: 'Đại du niên lấy quẻ biến cả ba hào, già trẻ và trưởng trung thiếu phối nhau ngay ngắn, làm cát; quẻ ấy không gọi là Phúc đức mà gọi là Diên niên, thì lấy quẻ này làm Thiên y; đều là quẻ tốt.', quyen: 2, trang: '49b' } },
   { ten: 'Diên niên', han: '延年', sao: 'Vũ khúc', saoHan: '武曲', cat: true, bien: [1, 1, 1], moTaBien: 'biến cả ba hào',
-    trich: { han: '相宅家以隂陽正配為吉，故大遊年取皆應之義為延年。', phienAm: 'Tướng trạch gia dĩ âm dương chính phối vi cát, cố đại du niên thủ giai ứng chi nghĩa vi Diên niên.', quyen: 2, trang: '52b' } },
+    trich: { han: '相宅家以隂陽正配為吉，故大遊年取皆應之義為延年。', phienAm: 'Tướng trạch gia dĩ âm dương chính phối vi cát, cố đại du niên thủ giai ứng chi nghĩa vi Diên niên.', dich: 'Nhà xem nhà đất lấy âm dương phối nhau ngay ngắn làm cát, nên đại du niên lấy nghĩa các hào đều ứng nhau làm Diên niên.', quyen: 2, trang: '52b' } },
   { ten: 'Phục vị', han: '伏位', sao: 'Phụ bật', saoHan: '輔弼', cat: true, bien: [0, 0, 0], moTaBien: 'không biến hào nào (chính cung đó)',
-    trich: { han: '三爻俱不變者，則自得本宫。', phienAm: 'Tam hào câu bất biến giả, tắc tự đắc bản cung.', quyen: 2, trang: '44b' } },
+    trich: { han: '三爻俱不變者，則自得本宫。', phienAm: 'Tam hào câu bất biến giả, tắc tự đắc bản cung.', dich: 'Ba hào đều không biến thì tự được chính bản cung.', quyen: 2, trang: '44b' } },
   { ten: 'Họa hại', han: '禍害', sao: 'Lộc tồn', saoHan: '禄存', cat: false, bien: [1, 0, 0], moTaBien: 'biến hào dưới cùng',
-    trich: { han: '大遊年既取相尅者為鬼，則以此為禍害，皆不吉也。', phienAm: 'Đại du niên ký thủ tương khắc giả vi quỷ, tắc dĩ thử vi Họa hại, giai bất cát dã.', quyen: 2, trang: '48b' } },
+    trich: { han: '大遊年既取相尅者為鬼，則以此為禍害，皆不吉也。', phienAm: 'Đại du niên ký thủ tương khắc giả vi quỷ, tắc dĩ thử vi Họa hại, giai bất cát dã.', dich: 'Đại du niên đã lấy quẻ khắc nhau làm Quỷ, thì lấy quẻ này làm Họa hại; đều không tốt.', quyen: 2, trang: '48b' } },
   { ten: 'Lục sát', han: '六煞', sao: 'Văn khúc', saoHan: '文曲', cat: false, bien: [1, 0, 1], moTaBien: 'biến hào trên và hào dưới',
-    trich: { han: '大遊年則以其為本宫卦第六變，故為六煞，皆不吉也。', phienAm: 'Đại du niên tắc dĩ kỳ vi bản cung quái đệ lục biến, cố vi Lục sát, giai bất cát dã.', quyen: 2, trang: '50b' } },
+    trich: { han: '大遊年則以其為本宫卦第六變，故為六煞，皆不吉也。', phienAm: 'Đại du niên tắc dĩ kỳ vi bản cung quái đệ lục biến, cố vi Lục sát, giai bất cát dã.', dich: 'Đại du niên lấy đây là lần biến thứ sáu của quẻ bản cung, nên gọi là Lục sát; đều không tốt.', quyen: 2, trang: '50b' } },
   { ten: 'Ngũ quỷ', han: '五鬼', sao: 'Liêm trinh', saoHan: '廉貞', cat: false, bien: [0, 1, 1], moTaBien: 'biến hai hào trên',
-    trich: { han: '大遊年則以其老少不相配為凶，又以相尅為鬼，故為五鬼。', phienAm: 'Đại du niên tắc dĩ kỳ lão thiếu bất tương phối vi hung, hựu dĩ tương khắc vi quỷ, cố vi Ngũ quỷ.', quyen: 2, trang: '47b' } },
+    trich: { han: '大遊年則以其老少不相配為凶，又以相尅為鬼，故為五鬼。', phienAm: 'Đại du niên tắc dĩ kỳ lão thiếu bất tương phối vi hung, hựu dĩ tương khắc vi quỷ, cố vi Ngũ quỷ.', dich: 'Đại du niên lấy việc già trẻ không phối nhau làm hung, lại lấy khắc nhau làm quỷ, nên gọi là Ngũ quỷ.', quyen: 2, trang: '47b' } },
   { ten: 'Tuyệt mệnh', han: '絶命', sao: 'Phá quân', saoHan: '破軍', cat: false, bien: [0, 1, 0], moTaBien: 'biến hào giữa',
-    trich: { han: '是為最凶之象，故小遊年、大遊年皆以為絶命也。', phienAm: 'Thị vi tối hung chi tượng, cố tiểu du niên, đại du niên giai dĩ vi Tuyệt mệnh dã.', quyen: 2, trang: '51b' } },
+    trich: { han: '是為最凶之象，故小遊年、大遊年皆以為絶命也。', phienAm: 'Thị vi tối hung chi tượng, cố tiểu du niên, đại du niên giai dĩ vi Tuyệt mệnh dã.', dich: 'Đây là tượng xấu nhất, nên cả tiểu du niên lẫn đại du niên đều gọi là Tuyệt mệnh.', quyen: 2, trang: '51b' } },
 ];
 export const duNienTheoTen = (ten: string) => DU_NIEN_8.find((d) => d.ten === ten);
 
