@@ -112,7 +112,7 @@ export function docNhanhHuongNha(nam: number, gioiTinh: 'nam' | 'nu', doHuong?: 
     the.push(
       { ma: 'huong', nhan: 'Hướng nhà', giaTri: `${xh.doHuong}° · ${xh.sonHuong}`, chiTiet: `Quái ${xh.cungHuong.ten} (${xh.cungHuong.phuong}). Tọa ${xh.sonToa} ${xh.doToa}°.` },
       { ma: 'trach', nhan: 'Nhóm trạch (theo tọa)', giaTri: `${xh.trach} tứ trạch`, muc: hop ? 'tot' : 'diu', chiTiet: `Mệnh ${cp.cung.nhom} tứ mệnh: ${hop ? 'cùng nhóm' : 'khác nhóm'}.` },
-      { ma: 'du-nien-huong', nhan: 'Du niên của hướng', giaTri: dnHuong.ten, muc: dnHuong.cat ? 'tot' : 'diu', chiTiet: `${dnHuong.han}, sao ${dnHuong.sao}; Hiệp kỷ xếp vào nhóm ${dnHuong.cat ? 'cát' : 'không cát'}.` },
+      { ma: 'du-nien-huong', nhan: 'Du niên của hướng', giaTri: dnHuong.ten, muc: dnHuong.cat ? 'tot' : 'diu', chiTiet: `Sao ${dnHuong.sao}; Hiệp kỷ xếp vào nhóm ${dnHuong.cat ? 'cát' : 'không cát'}.` },
     );
   }
   return { cau, the };
@@ -142,7 +142,7 @@ export function docNhanhCuuTinh(nam: number, luc = new Date()): DocNhanhChung {
   const cau = `Năm ${n.canChi} ${nam} (từ ${vn(n.batDau)} tới ${vn(n.ketThuc)}), ${n.nguyen}: ${trung.ten} vào trung cung${trung.so === 5 ? '' : `; Ngũ hoàng ở ${nguHoang.phuong} (${nguHoang.ten})`}`
     + (thangNay ? `; tháng này (tháng ${thangNay.chi}, từ ${thangNay.tiet}) ${saoSo(thangNay.ban.trung).ten} vào trung cung.` : '.');
   const the: TheTrucQuan[] = [
-    { ma: 'trung-nam', nhan: `Trung cung năm ${nam}`, giaTri: `${trung.so} ${trung.ten}`, hanh: trung.hanh, chiTiet: `${trung.han}, sao ${trung.tenBacDau}. Năm đổi ở Lập xuân.` },
+    { ma: 'trung-nam', nhan: `Trung cung năm ${nam}`, giaTri: `${trung.so} ${trung.ten}`, hanh: trung.hanh, chiTiet: `Sao ${trung.tenBacDau}. Năm đổi ở Lập xuân.` },
     { ma: 'ngu-hoang', nhan: 'Ngũ hoàng năm nay', giaTri: nguHoang.ten === 'Trung cung' ? 'Trung cung' : nguHoang.phuong, chiTiet: `Ô ${nguHoang.ten}.` },
   ];
   if (thangNay) {

@@ -1,0 +1,641 @@
+{
+ "ghiChu": "Dịch nghĩa: xemboi, từ nguyên văn tiếng Anh (đã sửa lỗi OCR theo SUA_OCR) trong than-so-hoc-nhat-nguyet.json. Sách in 1905–1926.",
+ "trich": {
+  "s170b87c9a133f7bf": {
+   "vi": "Đường đời số 1. Sáng tạo. Khẩu hiệu: THỐNG NHẤT",
+   "chuongVi": "Chương VII. Ngày sinh cho biết gì · Đường đời · 1"
+  },
+  "s5d315eb7790e788c": {
+   "vi": "Nhà phát minh, nhà thiết kế, người khởi xướng, phi công, người giám sát, giáo viên, nhà văn hoặc diễn giả về các lĩnh vực siêu hình và huyền học; công việc sáng tạo trong những hướng mà các chữ số khác của đường đời hoặc của tên chỉ ra.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số đường đời · 1"
+  },
+  "s656ac55d1844076a": {
+   "vi": "Nhà phát minh, nhà thiết kế, người khởi xướng, phi công, giám đốc, giáo viên, nhà văn hoặc diễn giả về các lĩnh vực siêu hình và huyền học — công việc sáng tạo trong những ngả đường mà các chữ số khác của Đường đời hoặc của tên chỉ ra.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 1"
+  },
+  "se2733603b5f2428b": {
+   "vi": "Đường đời số 2. Kiến tạo. Khẩu hiệu: PHỤNG SỰ",
+   "chuongVi": "Chương VII. Ngày sinh cho biết gì · Đường đời · 2"
+  },
+  "s23609d4b6fd6c8a0": {
+   "vi": "Nhà thống kê, thư ký, nhà sưu tầm, trọng tài, nhà ngoại giao, diễn viên.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 2"
+  },
+  "sf63ef29c42f41d8b": {
+   "vi": "Nhà thống kê, thư ký, nhà sưu tầm, trọng tài, nhà ngoại giao, diễn viên.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 2"
+  },
+  "s6ecd2a1c8eb052b6": {
+   "vi": "Đường đời số 3. Biểu đạt. Khẩu hiệu: HÒA BÌNH",
+   "chuongVi": "Chương VII. Ngày sinh cho biết gì · Đường đời · 3"
+  },
+  "s41eeb225dc5435e4": {
+   "vi": "Nghệ sĩ, nhạc sĩ, luật sư, y tá, chuyên gia dinh dưỡng, bác sĩ, chuyên gia chữa bệnh bằng phương pháp tự nhiên, nhà văn, người làm nghề giải trí, người quản lý khách sạn, nhà hàng hay thẩm mỹ viện, người bán quảng cáo, thuốc men, hàng mỹ nghệ, nhạc cụ, mỹ phẩm, hàng tạp phẩm, thợ thủ công trong bất kỳ ngành nào. Hạnh phúc trong những ngả đường đem lại sức khỏe, cái đẹp hay sự dễ chịu. Nên tránh những vị trí đòi hỏi bị gò bó quá chặt, làm việc nhiều giờ hoặc phải chú ý lâu vào tiểu tiết. Sự tự biểu hiện cá nhân là điều tuyệt đối cần thiết để thành công.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 3"
+  },
+  "s858c09f69ef6dfac": {
+   "vi": "Nghệ sĩ, nhạc sĩ, luật sư, y tá, chuyên gia dinh dưỡng, thầy thuốc, chuyên gia chữa bệnh bằng liệu pháp tự nhiên, nhà văn, người làm nghề giải trí, người quản lý khách sạn, nhà hàng hoặc thẩm mỹ viện, người bán quảng cáo, dược phẩm, hàng mỹ nghệ, nhạc cụ, mỹ phẩm, hàng tạp phẩm, thợ thủ công trong bất kỳ ngành nào. Hạnh phúc trên những con đường đem lại sức khỏe, cái đẹp hoặc sự dễ chịu. Nên tránh những vị trí đòi hỏi phải bị gò bó quá chặt, làm việc nhiều giờ hoặc chú tâm lâu vào chi tiết. Được tự do thể hiện bản thân là điều tuyệt đối cần thiết để thành công.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 3"
+  },
+  "s363d0b1fb7caa978": {
+   "vi": "Đường đời số 4. Vật chất. Khẩu hiệu: PHỤNG SỰ",
+   "chuongVi": "Chương VII. Ngày sinh cho biết gì · Đường đời · 4"
+  },
+  "s6fda317bfd8a3883": {
+   "vi": "Người xây dựng, trên bình diện vật chất hoặc tinh thần; thợ máy, người vẽ kỹ thuật, kiến trúc sư, thợ điện, nhà sản xuất, chuyên gia hiệu suất, người điều hành văn phòng, tốc ký viên, thư ký, người giữ sổ sách, kế toán, người buôn than, gạch và vật liệu xây dựng. Bất kỳ công việc kinh doanh nề nếp nào đòi hỏi sự kết hợp giữa trí tuệ, tay nghề, lòng kiên trì, sức bền và nghị lực.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số đường đời · 4"
+  },
+  "s58b93d6441be24b8": {
+   "vi": "Người xây dựng, trên bình diện vật chất hoặc tinh thần; thợ máy, người vẽ kỹ thuật, kiến trúc sư, thợ điện, nhà sản xuất, chuyên gia hiệu suất, người điều hành văn phòng, tốc ký viên, thư ký, người giữ sổ sách, kế toán, người buôn than, gạch và vật liệu xây dựng. Bất kỳ công việc kinh doanh nề nếp nào đòi hỏi sự kết hợp giữa trí tuệ, tay nghề, lòng kiên trì, sức bền và nghị lực.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số đường đời · 4"
+  },
+  "sce8daef3acaafd2b": {
+   "vi": "Đường đời số 5. Trải nghiệm. Khẩu hiệu: THỐNG NHẤT qua KHÔNG KHÁNG CỰ",
+   "chuongVi": "Chương VII. Ngày sinh cho biết gì · Đường đời · 5"
+  },
+  "s009553edf6630732": {
+   "vi": "Điều tra viên, thám tử, nhà phân tích tính cách, giám đốc giới thiệu việc làm, người viết về các đề tài khoa học, huyền bí hoặc siêu hình, người đem lại sức sống mới trên mọi bình diện — người bán hàng lưu động, diễn viên tạp kỹ hay diễn giả tâm lý học nổi tiếng. Phải có tốc độ và hành động; không vui với công việc đều đều lặp lại mà phải có cơ hội tự sắp xếp lịch làm việc và vận dụng năng lực trực giác của chính mình khi xử lý mọi tình huống.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 5"
+  },
+  "s9e3c3054df1a9a0e": {
+   "vi": "Nhà điều tra, thám tử, người phân tích tính cách, người phụ trách hướng nghiệp và tuyển dụng, người viết về các đề tài khoa học, huyền học hay siêu hình, người làm trẻ hóa trên mọi bình diện — người chào hàng lưu động, diễn viên tạp kỹ hoặc diễn giả tâm lý học nổi tiếng. Phải có tốc độ và hành động; không hạnh phúc với công việc lặp đi lặp lại mà phải có cơ hội tự lập lịch làm việc cho mình và vận dụng năng lực trực giác của chính mình khi xử lý mọi tình huống.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 5"
+  },
+  "saaaea52ab9674a83": {
+   "vi": "Đường đời số 6. Gắn bó. Khẩu hiệu: YÊU THƯƠNG và PHỤNG SỰ",
+   "chuongVi": "Chương VII. Ngày sinh cho biết gì · Đường đời · 6"
+  },
+  "se50f067d92b7bcb4": {
+   "vi": "Người lo toan gia đình, doanh nhân, giáo viên, nhà giáo dục, nhà văn hoặc diễn giả trước công chúng, quản lý khách sạn, người đứng đầu bệnh viện hay cơ quan công cộng khác, y tá, bác sĩ, nhà trang trí nội thất, người bán hoa. Phải vui vẻ và hạnh phúc khi phục vụ người khác thì mới thành công.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số đường đời · 6"
+  },
+  "s2f5668d5f0329c86": {
+   "vi": "Người vun vén gia đình, doanh nhân, giáo viên, nhà giáo dục, nhà văn hoặc diễn giả trước công chúng, người quản lý khách sạn, người đứng đầu bệnh viện hoặc cơ sở công cộng khác, y tá, bác sĩ, nhà trang trí nội thất, người bán hoa. Phải vui vẻ và hạnh phúc khi phục vụ người khác thì mới thành công.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 6"
+  },
+  "s1525000fa212c22d": {
+   "vi": "Đường đời số 7. Phát triển nội tâm. Khẩu hiệu: BÌNH AN",
+   "chuongVi": "Chương VII. Ngày sinh cho biết gì · Đường đời · 7"
+  },
+  "s85730e455a07a422": {
+   "vi": "Người hành nghề chuyên môn, đứng đầu trong lĩnh vực của mình, người tự điều hành công việc kinh doanh riêng và có trung tâm hoạt động vững vàng của riêng mình, thành công trong ngành luật, nha khoa, bất động sản, nghề làm vườn, nông nghiệp, khai mỏ, hoặc làm nhà thuyết giáo, giáo viên và nhà văn. Không thích lao động chân tay, làm tốt nhất trong bầu không khí thanh nhã và có văn hóa. Điều được đòi hỏi là sự hoàn hảo, độ tinh xảo và chất lượng hơn là quy mô hay số lượng.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 7"
+  },
+  "sc5694f96a3c84913": {
+   "vi": "Người làm nghề chuyên môn, đứng đầu trong lĩnh vực của riêng mình, người tự điều hành công việc kinh doanh và có trung tâm hoạt động vững vàng của riêng mình; thành công trong ngành luật, nha khoa, bất động sản, nghề làm vườn, nông nghiệp, khai mỏ, hoặc làm nhà thuyết giáo, giáo viên và nhà văn. Không thích lao động chân tay, làm việc tốt nhất trong bầu không khí tao nhã và có văn hóa. Điều được đòi hỏi là sự hoàn hảo, độ tinh xảo và chất lượng, chứ không phải quy mô hay số lượng.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số đường đời · 7"
+  },
+  "sa1209fa4eabab441": {
+   "vi": "Đường đời số 8. Hoàn thiện vật chất. Khẩu hiệu: PHỤNG SỰ",
+   "chuongVi": "Chương VII. Ngày sinh cho biết gì · Đường đời · 8"
+  },
+  "s3a1ab94c914a8810": {
+   "vi": "Kỹ sư, chủ ngân hàng, người môi giới, luật sư doanh nghiệp, nhà điều hành, nhà tổ chức, người đứng đầu doanh nghiệp hay tập đoàn — những người xây dựng trên mọi bình diện, nơi cần đến óc phân định sắc bén, khả năng phán đoán tốt, tính kiên trì, sự khéo léo và sức thúc đẩy mạnh mẽ. Họ cũng là những diễn viên giỏi.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 8"
+  },
+  "sbd3b5c095120c088": {
+   "vi": "Kỹ sư, chủ ngân hàng, người môi giới, luật sư doanh nghiệp, nhà điều hành, nhà tổ chức, người đứng đầu doanh nghiệp hay công ty — những người xây dựng trên mọi bình diện, nơi cần đến óc phân định sắc sảo, phán đoán đúng đắn, sự kiên trì, khéo léo và sức thúc đẩy. Cũng là những diễn viên giỏi.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 8"
+  },
+  "se15861b208a41de2": {
+   "vi": "Đường đời số 9. Biểu hiện trọn vẹn. Khẩu hiệu: TÌNH YÊU PHỔ QUÁT",
+   "chuongVi": "Chương VII. Ngày sinh cho biết gì · Đường đời · 9"
+  },
+  "s993f4de5ae086589": {
+   "vi": "Nghệ sĩ, nhạc sĩ, diễn viên, thầy thuốc, người chữa lành, luật sư, chuyên gia làm đẹp, nhà văn, diễn giả, người làm công tác nhân đạo, người du hành khắp thế giới; cũng thành công trong nghề làm vườn, trồng hoa và thiết kế cảnh quan. Phải được tự do biểu đạt nghệ thuật trên một phạm vi rộng lớn.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số đường đời · 9"
+  },
+  "s8ad6a1269ec3509e": {
+   "vi": "Nghệ sĩ, nhạc sĩ, diễn viên, thầy thuốc, người chữa lành, luật sư, chuyên gia làm đẹp, nhà văn, diễn giả, người làm công tác nhân đạo, người du hành khắp thế giới; cũng thành công trong nghề làm vườn, trồng hoa và kiến trúc cảnh quan. Phải được tự do thể hiện nghệ thuật trên quy mô lớn.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 9"
+  },
+  "se6d25c189ae1edd9": {
+   "vi": "Diễn giả hoặc nhà văn truyền cảm hứng, người thuyết trình, nhà thuyết giáo, người khởi xướng, giám đốc bán hàng, người dẫn đầu trong các việc công và trong những ngành mà các chữ số khác của Đường đời hoặc của tên chỉ ra.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 11"
+  },
+  "s8ea734ffa352d8ad": {
+   "vi": "Nếu 11 là chữ số của tên hoặc Số ngày sinh của bạn thì quãng tám Đô đang gọi bạn. Trong chính những nốt của bạn có nền tảng của mọi âm nhạc, và bạn là một trong những người dẫn dắt trong dàn đồng ca vĩ đại của thế gian. Tuy vậy, có thể linh hồn này của bạn bị giam trong một thân xác bao bọc nó như một tấm áo giáp. Nếu thế, có thể bạn chửi rủa như quỷ dữ trước những vật vã và rên xiết của cái phần thiên thần trong bạn đang gắng sức thoát ra. Chẳng lạ gì các thiên thần khóc khi thấy những con người từng là kẻ giúp việc của Thượng Đế ở phía lặng im của cuộc sống lại sa sút khỏi địa vị cao quý của mình đến thế trong thế giới hữu hình.\n\nNhưng một người số 11, 22, 9 hoặc 8 có thể dễ dàng quay lại và đưa phần khách quan và phần chủ quan của mình vào hòa hợp.\n\nMọi bài tập và mọi hơi thở trong toàn bộ thang rung động đều là của bạn. Bạn đã giành được một chiến thắng lớn. Đừng làm vấy bẩn đời sống linh hồn tươi đẹp của bạn bằng một nốt sai nào. Bạn là sứ giả của Thượng Đế để giúp nhân loại bằng mọi cách và ở mọi nơi, và những bài ca mà mọi người đang hát cũng là bài ca của bạn.",
+   "chuongVi": "Chương VI–VIII. Bài tập phát triển rung động hay chữ số ngày sinh của riêng bạn · Số 11"
+  },
+  "s33f03a10c5131c23": {
+   "vi": "Người có chủ âm là 11 không bao giờ có thể bị gắn cho một cái nhãn thật đúng. Người ấy độc lập trong hành động và suy nghĩ, và tuy có bản tính hòa đồng, hòa mình vào thế gian, người ấy vẫn luôn như một người đứng riêng.\n\nTuy có đặc ân được phụng sự trong những việc thiêng liêng, ta vẫn thấy nhiều người số 11 trông như những đứa trẻ non nớt về tâm linh. Nhưng ở những người này luôn có một sức mạnh tính cách nhất định, như ở các số khác thuộc Bộ Ba Thiêng.\n\nHọ là những nhà phát minh và người khởi xướng, và những nền móng họ đặt ra hiếm khi sụp đổ.",
+   "chuongVi": "Chương II. Chi tiết về các con số · Số 11"
+  },
+  "s0cfe29bed0f74687": {
+   "vi": "Sau khi đã vượt qua những thử thách về sự cô độc, nghịch cảnh và khó khăn tài chính vốn thường bủa vây rung động 10, và đã đứng vững ở vị trí trên cùng, con người được phép làm một khởi đầu mới trong một lĩnh vực hoạt động rộng lớn hơn. Ở đây, tiềm thức của người ấy, vốn chứa đầy hiểu biết của toàn bộ quá khứ, giúp người ấy nói và hành động theo cảm hứng. Người ấy lập tức biết một việc nên được làm như thế nào, dù có thể không giải thích được vì sao. Đó là lý do một cậu bé hay cô bé có rung động 11 trong tên thường gặp rắc rối với thầy cô. Em nghĩ rằng mình biết rõ nhất. Linh hồn em đã trưởng thành đến mức làm chủ và em sẽ không chấp nhận mệnh lệnh của người khác. Chỉ có thể tác động đến em bằng sự thuyết phục và bằng cách khơi gọi cái tôi cao cả của chính em. Quả thật điều quan trọng là em phải được trang bị vững chắc về học vấn và về những quy luật cao hơn của cuộc sống, … Người số 11 là một cá nhân năng động, có nhiệt huyết, cảm hứng và ý tưởng, những thứ mà người ấy phải trao ra cho người khác nếu muốn chính mình nhận lại điều tốt đẹp.",
+   "chuongVi": "Chương IV. Câu chuyện của các con số · 11"
+  },
+  "sc6ec8b319fc184eb": {
+   "vi": "Tích cực — Cảm hứng. Người cổ vũ nhiệt thành, năng động cho những chân lý cao hơn. Số 11 trong tên cho thấy người ấy là một linh hồn già, người đến để soi đường cho những người kém phát triển hơn. Kho minh triết tích trữ trong tiềm thức khiến người ấy có năng lực ngoại cảm, nhạy cảm với bầu không khí, môi trường và tính cách người khác, đầy những ý tưởng độc đáo cần phải được trao ra nếu không muốn chính sức mạnh lớn của mình dội ngược lại gây tai họa cho bản thân. Người số 11 nên làm việc với công chúng trên quy mô lớn, như diễn giả, nhà văn, giáo viên, nhà thuyết giảng hoặc người vận động.\n\nNghịch — Trụy lạc, keo kiệt, đồi bại. Kẻ chủ mưu những mưu đồ quỷ quyệt và những hành vi bất chính.\n\nTiêu cực — Thiếu lòng tự trọng, không tin vào điều gì, không nhận biết năng lực của chính mình, hoặc thiên về tâm linh và thiếu thực tế đến mức buộc phải trông cậy vào người khác để được nuôi sống về tài chính.",
+   "chuongVi": "Chương V. Ba tầng nghĩa của các chữ số · 11 (Tích cực, Nghịch, Tiêu cực)"
+  },
+  "s51eb8707b7730d76": {
+   "vi": "Diễn giả hoặc nhà văn truyền cảm hứng, người thuyết trình, nhà thuyết giáo, người khởi xướng, quản lý bán hàng, người dẫn đầu trong các việc công và trong những lĩnh vực mà các chữ số khác của đường đời hoặc của tên chỉ ra.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số đường đời · 11"
+  },
+  "sd534689ab209e289": {
+   "vi": "Nhà điều hành, nhà ngoại giao, trọng tài, diễn viên, thủ thư, giám đốc kinh doanh, chính khách, luật sư doanh nghiệp, cố vấn nhân đạo bậc cao nhất, tích cực trong các dự án từ thiện thiết thực. Thường gặp trong vai trò người giữ sổ sách, thư ký hoặc kế toán, nhưng nên nhận ra rằng những nghề như thế chỉ là phương diện hạn hẹp của rung động 22. Người ấy nên chuẩn bị cho mình để phục vụ công chúng, học nghệ thuật sân khấu, thuật diễn thuyết, phân tích tính cách và hướng nghiệp, và sẵn sàng đảm nhận một vai trò cố vấn nào đó trong một môi trường không giới hạn.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số Đường đời · 22"
+  },
+  "s699ef52992be05fa": {
+   "vi": "Nếu 22 là chữ số của tên hoặc rung động ngày sinh của bạn, bạn đã đạt tới sự hợp nhất của bài ca nhân loại. Bạn là người đã nguyện gánh vác gánh nặng cho những linh hồn cần đến sự giúp đỡ của bạn. Linh hồn bạn không chờ họ phá vỡ sự hòa âm, nhưng khi họ chùn bước trong bài ca cuộc đời mình, bạn vô thức hòa giọng cùng họ, cho đến khi nhờ rung động mạnh mẽ của bạn họ trở nên can đảm và vui vẻ tiếp tục hành trình cuộc sống.\n\nBạn phải hát cùng người khác, nếu không bài ca của chính bạn sẽ yếu đi và kẻ thù thay vì bạn bè sẽ đối mặt với bạn.\n\nNhững nốt riêng của bạn nằm trong quãng tám Rê được gõ cùng lúc: nốt cao nhất và nốt thấp nhất. Đừng bao giờ trông chờ người khác giúp mình. Đức Cha dẫn dắt bạn, và con đường của bạn không phải là con đường nghèo khó. Bạn đã tích trữ của cải trong quá khứ. Bạn đã từng có của cải và đã là người quản lý tốt, nếu không bạn đã chẳng phải là số 22. Đừng tự làm mình phiền muộn về con đường đời của mình: đó là đời sống của Thượng Đế và con đường của Thượng Đế. Chỉ cần tin tưởng và làm hết sức mình, bạn sẽ không thể bị quật ngã hay phải chịu nỗi đau của cảnh nghèo. Bạn là đứa con được Thần Linh chấp nhận. Mọi bài tập và mọi hơi thở trong toàn bộ thang rung động đều là của bạn.",
+   "chuongVi": "Chương VI–VIII. Bài tập phát triển rung động hay chữ số ngày sinh của riêng bạn · Số 22"
+  },
+  "s31329d9c1b83f357": {
+   "vi": "Số 22 giống như số 11, ngoại trừ việc nó thích nghi với thế gian tốt hơn và biết rõ hơn cách khoác cho cùng những chân lý ấy một ngôn ngữ dễ được chấp nhận. Họ thể hiện sự kết hợp giữa vật chất và tinh thần rõ nét hơn số 11. Họ là những nhà từ thiện vĩ đại nhất trong mọi con số.\n\nSứ mệnh của số 22 là nâng cao thân xác (phần lớn người số 22 có cơ thể yếu) và làm cho nó ý thức được sự hợp nhất của mình với phần cao hơn.\n\nSố 7 luôn tự hào về dòng dõi của mình, trong khi các số mạnh lại không bận tâm đến dòng dõi của chúng.",
+   "chuongVi": "Chương II. Chi tiết về các con số · Số 22"
+  },
+  "sbaa938c5fd0b5fdb": {
+   "vi": "Hai mươi hai tượng trưng cho trí tuệ được soi sáng, nơi con người, nhờ sử dụng những năng lực đã hoàn thiện của mình, trở thành người làm chủ tuyệt đối môi trường của chính mình. 22 bằng 2 cộng 2, tức là 4. Số 4 có hiểu biết của 1, 2 và 3 cộng thêm sự khôn ngoan riêng của nó. Vì vậy 4 bằng 1 cộng 2 cộng 3 cộng 4, tức là 10, hay nền móng của một vòng xoắn hiển lộ không bao giờ dứt. Đã trở nên khôn ngoan qua đau khổ, con người học được cách hiểu và tuân theo những quy luật cao hơn, nhờ đó biến giấc mơ thành hiện thực và để những ý tưởng đầy cảm hứng phát triển thành thực tế cụ thể. Con người đã học được cách hợp tác một cách sáng suốt. Trong khi ở số 21 phương diện nữ tính dẫn đầu, thì ở số 22 ta có sự cân bằng hoàn hảo giữa nam và nữ cùng những sáng tạo chung của họ, mỗi bên dành cho bên kia trọn vẹn tự do trong suy nghĩ và hành động.\n\nChừng nào con người chưa làm chủ được bản thân và môi trường của mình thì chưa thể thực sự là người cố vấn khôn ngoan cho người khác. Những ai đến với trần gian mang một Số bậc thầy (11 hoặc 22) trong tên đã trải qua cả chín cấp lớp đầu tiên. Giờ đây họ có mặt để soi rọi ánh sáng của mình cho những linh hồn kém phát triển hơn. Một người 22 thực thụ thường được thấy trong giới ngoại giao hoặc làm cố vấn nhân đạo bậc cao nhất, nơi cảm hứng và phẩm chất tâm linh của họ, kết hợp với sự thấu hiểu, khéo léo và năng lực điều hành, khiến họ trở thành một nhà lãnh đạo đáng nể trong mọi tình huống.",
+   "chuongVi": "Chương IV. Câu chuyện của các con số · 22"
+  },
+  "s88ef811aff2514bb": {
+   "vi": "Tích cực — Bậc thầy trên mọi bình diện — biến những điều đầy cảm hứng thành thực tế. Người nhờ vận dụng các quy luật cao hơn mà trở thành chủ nhân tuyệt đối của môi trường quanh mình, và nhờ đó đủ tư cách đưa ra lời khuyên sáng suốt cho người khác. Những nhà điều hành lớn, nhà ngoại giao, người đứng đầu tập đoàn, chính khách và người khởi xướng các dự án nhân đạo quy mô lớn là ví dụ về người số 22 cầu tiến, còn những người giữ sổ sách, thư ký và quản lý văn phòng — rất đông trong rung động này — là những người không nhận biết năng lực tiềm tàng rất lớn của mình.\n\nNghịch — Kẻ khởi xướng những mánh làm giàu nhanh, nói nhiều làm ít, gian dối, hão huyền, kiêu ngạo, tội phạm đầu sỏ.\n\nTiêu cực — Lười biếng và ích kỷ, để sức mạnh lớn của mình thoái lui về số 4, khiến họ bị đặt vào một môi trường hạn hẹp, buộc phải nhận lệnh người khác trong khi lẽ ra chính họ phải cầm cương.",
+   "chuongVi": "Chương V. Ba tầng nghĩa của các chữ số · 22 (Tích cực, Nghịch, Tiêu cực)"
+  },
+  "s08662b4956e0ef0f": {
+   "vi": "Nhà điều hành, nhà ngoại giao, trọng tài, diễn viên, thủ thư, quản lý kinh doanh, chính khách, luật sư công ty, cố vấn nhân đạo bậc cao nhất, tích cực trong các dự án từ thiện thiết thực. Thường gặp trong vai trò người giữ sổ sách, thư ký hoặc kế toán, nhưng nên hiểu rằng những nghề như vậy chỉ là mặt giới hạn của rung động 22. Người này nên tự trang bị cho mình để phục vụ công chúng, học nghệ thuật sân khấu, thuật diễn thuyết, phân tích tính cách và hướng nghiệp, và chuẩn bị để đảm nhận một vai trò cố vấn nào đó trong một môi trường không giới hạn.",
+   "chuongVi": "Chương XII. Nghề nghiệp, kinh doanh · Nghề nghiệp theo chữ số đường đời · 22"
+  },
+  "s443b39247f7b74d1": {
+   "vi": "Nếu chữ số của tên hoặc rung động ngày sinh của bạn là 6, hãy biết rằng điều đáng mong muốn bạn cần đạt được là sự tĩnh tại trong chuyển động: tĩnh tại trọn vẹn và chuyển động trọn vẹn. Đây là Luật Đối Lập của Pythagoras. Khi có bất cứ việc lao động nào đến tay bạn, hãy làm nó một cách năng nổ với một cảm giác thư thái bên trong. Quy luật của sự vui tươi nằm ẩn trong sự hợp nhất ba phần này: số 2 vừa lẻ vừa chẵn và số 4 đầy năng lượng, với mối quan tâm sống động đến mọi sinh vật, từ con côn trùng trong tổ cho tới con người. Đây là con số làm việc cao nhất. Nó nên cố gắng thể hiện sự hợp nhất của Tinh Thần với các dòng chảy bên trong, giữ cái bên trong gắn với cái bên ngoài cho đến khi chúng đạt tới đỉnh điểm trong rung động được giải phóng của số 8.\n\nBạn nên là chốn nghỉ ngơi cho những người trong môi trường của bạn, và chính những người ấy cũng có thể bị bạn đẩy vào hỗn loạn. Chỉ nhờ tác động của Tinh Thần mới tìm thấy được tiếng nói nhỏ nhẹ, lặng lẽ.\n\nBài tập của bạn chỉ rõ ràng với chính bạn, và từ đó bạn có thể có được ý niệm hoàn hảo nhất về vị trí của mình trong vũ trụ khi được nâng lên tầm cao tâm linh xứng đáng, nơi mà ngay trong hoạt động của bạn có sự tĩnh tại làm điểm tựa trung tâm.",
+   "chuongVi": "Chương VI–VIII. Bài tập phát triển rung động hay chữ số ngày sinh của riêng bạn · Số 6"
+  },
+  "s4a0261c3929c4967": {
+   "vi": "“Ngươi hãy làm mọi công việc mình trong sáu ngày.” Người số 6 cảm thấy mình đã làm tròn luật này. Người ấy phải làm việc vui vẻ thì mới làm tốt. Người ấy như một người đã gần xong công việc và giờ đang bận rộn hoàn tất. Họ không phải những người làm lụng vất vả như số 4, mà là những người hoàn thiện. Sự vui vẻ luôn cần thiết để làm tốt công việc. Nhiều món quà đến với số 6.\n\nDường như họ đang sắp đặt ngôi đền cho người khác sử dụng. Họ không tích lũy, họ chỉ tận dụng tốt nhất những gì sẵn có trong tầm tay.\n\nHọ rung động với màu cam, màu tím hoa vòi voi và màu đỏ tươi, và vì màu tím hoa vòi voi thuộc dải màu vượt ngoài thị lực bình thường, nên những người này nhìn xa trông rộng và có tính tiên tri trong công việc.",
+   "chuongVi": "Chương II. Chi tiết về các con số · Số 6"
+  },
+  "sf05d4262ab443aed": {
+   "vi": "Điều chỉnh vũ trụ. — Gia đình; tình bạn; sự đáng kính; trách nhiệm; chăm sóc từng người; sự đáng tin cậy; tính chăm lo việc nhà; hành động; sự tận tâm; sự gắn bó; đạo đức; lòng hiếu khách. Đây là rung động bị cuốn hút về hôn nhân như một thể chế, và khi không có trách nhiệm cá nhân qua việc chăm sóc người khác thì nó sẽ gắn mình vào việc chăm sóc vật nuôi; đây là rung động của tình mẫu tử vũ trụ.",
+   "chuongVi": "Chương II. Các con số · Đặc tính chung · 6"
+  },
+  "s5ee2bdbcba83e392": {
+   "vi": "Thiếu hiếu khách. — Không muốn phục vụ; từ chối trách nhiệm chăm sóc người khác và các hoàn cảnh. Không mấy háo hức giao du, mà thiên về sống một mình, hoàn toàn tách biệt khỏi người khác. Khá chán nản, mệt mỏi vì phục vụ, để mặc người khác và hoàn cảnh tự lo liệu lấy.",
+   "chuongVi": "Chương VI. Tác động tiêu cực · 6"
+  },
+  "s2dc555097bcb6ebb": {
+   "vi": "Con số của sự hợp tác. Hôn nhân, sự đan kết, một mối liên kết, sự kết nối. Tác động qua lại, thế cân bằng đối trọng. Sự tương tác giữa tinh thần và vật chất, giữa trí tuệ và thể xác trong con người, tâm hồn, tâm lý học, bói toán, sự giao cảm, đồng cảm. Năng lực tâm linh, thần giao cách cảm, thuật cảm nhận qua đồ vật. Thuật giả kim. Sự chuyển hóa. Hòa hợp, hài hòa, hòa bình, mãn nguyện. Cái thiện, cái đẹp và chân lý, được kiểm nghiệm bằng sự hài hòa. Thành tựu, sự hoàn trả. Giao tiếp, sự có đi có lại. Đời sống vợ chồng, quan hệ giữa hai giới. Biểu tượng của sao Kim.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Chín chữ số · 6"
+  },
+  "s34e29b632f55a597": {
+   "vi": "Hợp tác, hôn nhân, sự có qua có lại, cảm thông, vui chơi, nghệ thuật, âm nhạc, khiêu vũ.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Giọng thứ · 6"
+  },
+  "sdd01ee14b923d129": {
+   "vi": "Giống như đứa con hoang đàng, sau khi đã phiêu bạt nơi xứ xa và uống cho thỏa thích, người số 5 quyết định trở về nhà và ổn định cuộc sống. Người ấy đi đến kết luận rằng rốt cuộc cuộc đời là do ta tạo nên và mỗi trách nhiệm đều có phần thưởng tương xứng. Cuộc sống gia đình “trông thật hấp dẫn” đối với người ấy; vì vậy người ấy lập gia đình và nuôi dạy con cái, điều đó rèn cho người ấy bản lĩnh vững vàng. Người ấy trở thành nhân tố hàng đầu trong việc thúc đẩy giáo dục, sức khỏe và sự tiến bộ của con người trong cộng đồng mình, và có được niềm vui sâu sắc từ những lời khuyên miễn phí dành cho người khác. Những phẩm chất quý báu đạt được ở đây có thể thấy ở những người mẹ, giáo viên, bác sĩ, nhân viên phúc lợi xã hội và tất cả những ai đứng ra làm người bảo vệ gia đình, trường học và xã hội; trong tên của họ, rung động 6 thường mạnh.",
+   "chuongVi": "Chương IV. Câu chuyện của các con số · 6"
+  },
+  "s23df0e753d3351a3": {
+   "vi": "Tích cực: Người bảo vệ gia đình, trường học và xã hội, nhận trách nhiệm một cách hòa nhã. Người số 6 là một người mẹ bẩm sinh, một giáo viên xuất sắc hoặc một doanh nhân giỏi, luôn quan tâm đến phúc lợi của người khác, dù vẫn gắn bó chặt chẽ với vòng gia đình mình. Người này đầy nghị lực, hoàn toàn đáng tin cậy, giỏi kiếm tiền, là người nói chuyện tuyệt vời, nếu không nói quá nhiều. Nhiều người làm văn chương và làm nghề chuyên môn, nhất là trong ngành chữa bệnh, mang rung động này.\n\nNghịch: Một trong những người sẽ tranh cãi “mãi không thôi” mà không thể hiểu được quan điểm của người kia; lo âu, phiền muộn, chỉ nghĩ đến mình, quá mải mê với “cái của mình” đến mức chẳng buồn bận tâm tới người khác. Sự bướng bỉnh khiến người khác để mặc người này, và vì là kiểu người nhất định phải nói chuyện với ai đó, người này trở nên buồn bã, chán nản. Người này cảm thấy người khác không trân trọng nỗ lực chia sẻ trách nhiệm với họ của mình. Khi học được cách ở yên trong sân nhà mình, người này sẽ hạnh phúc hơn nhiều.\n\nTiêu cực: Quá nặng gánh vì quá nhiều lo toan; là “kẻ gánh tội thay” cho cả gia đình, cho đồng nghiệp ở văn phòng hoặc cho những người bạn vô ơn; thiếu lòng tự trọng, thờ ơ với vẻ ngoài của bản thân.",
+   "chuongVi": "Chương V. Ba tầng nghĩa của các chữ số · 6 (Tích cực, Nghịch, Tiêu cực)"
+  },
+  "s7448b7dae0b78e2b": {
+   "vi": "Số Sáu giống số Hai ở nhiều điểm, chủ yếu ở chỗ nó cũng là một con số yêu hòa bình, lạc quan, đem lại niềm vui, tử tế và chu đáo. Nó khác ở chỗ phạm vi của nó mang tính Phổ quát hơn; thực ra nó vận hành trên một quỹ đạo rộng hơn phần lớn các con số khác.\n\nẢnh hưởng của nó đa dạng, bao gồm nghệ thuật, lòng bác ái, trực giác và cảm hứng. Nó tác động đến giác quan thứ sáu. Nó ban cho sự tự tin, lòng tin cậy và chỗ dựa: câu “đoàn kết thì đứng vững, chia rẽ thì sụp đổ” ứng rất sát với số Sáu, vì nó yếu khi đứng một mình nhưng mạnh mẽ khi kết hợp.\n\nẢnh hưởng của nó mang tính phổ quát hơn là cá nhân. Ảnh hưởng của nó trong chuyện tài chính thì không chắc chắn, nhưng trong sức khỏe và tôn giáo thì mạnh. Đây là một con số của hôn nhân; một con số của sự thấu hiểu, tính bảo thủ và sự an tĩnh, niềm an ủi và sự thoải mái.",
+   "chuongVi": "Chương II-IV. Tính chất và ảnh hưởng của các con số · 6"
+  },
+  "s676c71fff784decd": {
+   "vi": "Nicomachus gọi nó là “hình thức của hình thức, con số duy nhất thích hợp với Linh hồn, sự kết hợp rõ rệt các phần của vũ trụ, đấng tạo tác Linh hồn, và cũng là Hòa điệu”, và nó đích thực là chính “Venus”. Nó cũng là Zygeia và Nuptialia, và là Androgynae, những người mà Pliny cho biết là một bộ tộc châu Phi có “vú phải của đàn ông, vú trái của đàn bà” (dextra mamma virilis, laeva muliebris). Trong các nữ thần Số mệnh, nó là Lachesis. Trong các nàng thơ Muse, nó là Thalia.\n\nSáu cũng là Lòng nhân từ, Hòa bình và Sức khỏe, là Acmon, một trong các Cyclops (akmon nghĩa là cái đe), và là Chân lý.\n\nCác môn đồ Pythagoras gọi nó là “sự Hoàn hảo của các phần”. Về “Hôn nhân”, đây là một số bằng tổng các phần của nó, và hôn nhân là nghi lễ thừa nhận việc sinh ra con cái giống với cha mẹ.\n\nNó được tạo thành bằng phép nhân số lẻ đầu tiên (ngoài đơn vị) với số chẵn đầu tiên, nó giống như sự kết hợp của Nam và Nữ, như trong Hôn nhân hay trong tính Lưỡng tính. Sức khỏe và Vẻ đẹp, vì sự cân đối của nó.",
+   "chuongVi": "Phần IV. Từng con số · Bộ Sáu (6)"
+  },
+  "s0ff8d96d597b2064": {
+   "vi": "Trong hệ biểu tượng này, số 1 tượng trưng cho Mặt Trời. Nó là khởi đầu — cái mà nhờ đó tất cả các số còn lại trong chín số được tạo ra. Nền tảng của mọi con số là một — nền tảng của mọi sự sống là một. Con số này đại diện cho tất cả những gì sáng tạo, mang tính cá nhân và tích cực. Không cần đi sâu thêm vào chi tiết, người sinh dưới Số ngày sinh 1, hoặc bất kỳ số nào trong dãy của nó, đều mang những nguyên tắc nền tảng là: trong công việc, họ sáng tạo, giàu óc phát minh, cá tính mạnh, dứt khoát trong quan điểm, và do đó ít nhiều bướng bỉnh, quyết liệt trong mọi việc mà họ, với tư cách cá nhân, đảm nhận. Điều này áp dụng cho mọi người nam và nữ sinh dưới số 1, như sinh vào ngày 1, 10, 19 hoặc 28 của bất kỳ tháng nào (cộng các chữ số của những số này đều ra 1), nhưng càng đặc biệt hơn nếu họ tình cờ sinh trong khoảng từ ngày 21 tháng 7 đến ngày 28 tháng 8, tức thời kỳ của Hoàng đạo được gọi là “Nhà của Mặt Trời”, hoặc từ ngày 21 tháng 3 đến ngày 28 tháng 4, khi Mặt Trời đi vào điểm Xuân phân và được xem là ở vị thế thăng hoa, toàn năng trong thời kỳ này. Chính vì lý do này — mà bạn sẽ thấy là có cơ sở hợp lý — những người sinh dưới số 1 trong các thời kỳ đặc biệt ấy hẳn phải có những phẩm chất mà tôi đã nêu cho mọi người số 1 ở mức độ rõ nét hơn hẳn.\n\nNgười số 1 có nhiều tham vọng; họ không ưa bị kìm hãm, họ luôn vươn lên trong bất kỳ nghề nghiệp hay công việc nào của mình. Họ mong muốn trở thành người đứng đầu trong bất kỳ lĩnh vực kinh doanh nào của họ, và khi làm trưởng bộ phận, họ giữ vững uy quyền và khiến cấp dưới phải kính trọng, “ngước nhìn”.",
+   "chuongVi": "Chương III. Số 1"
+  },
+  "seb5ff0e8d120ba70": {
+   "vi": "TIẾP theo những minh họa tôi đã đưa ra trong các chương trước về ích lợi của việc tập trung vào chính con số của mình để tăng sức mạnh của nó (trừ trường hợp những người sinh dưới số 4 và số 8), giờ đây chúng ta sẽ lấy ví dụ một người số 1 gặp một người khác cùng số với mình. Độc giả đã biết qua những bài trước rằng những người sinh cùng một dãy số tự nhiên có thiện cảm với nhau, và hiểu biết ấy trước hết tạo ra cảm giác rằng người số 1 kia mà mình đang trò chuyện, có thể nói, là “người cùng phe”. Chính tình cảm ấy tỏa ra bên ngoài sẽ xua tan sự bồn chồn và để cho các dòng từ tính con người rung động hòa hợp từ người này sang người kia.",
+   "chuongVi": "Chương XXV. Kết hợp giữa những người thuộc dãy 1–4"
+  },
+  "s44c645447460e461": {
+   "vi": "Bây giờ, giả sử người số 1 đã hẹn gặp một người sinh thuộc dãy số 2. Trong trường hợp này, người ấy có thể chọn bất kỳ ngày nào thuộc dãy số 1 hoặc số 2, chẳng hạn ngày 1, 2, 10, 11, 19, 20, 28 hoặc 29. Người số 1 đã đọc được rằng người số 2 mang những phẩm chất nữ tính của số 1, và rằng, dù trái ngược về tính cách, rung động của cả người số 1 lẫn người số 2 đều hài hòa, và họ tạo thành những sự kết hợp tốt. Có được hiểu biết này, người số 1 sẽ cố gắng hòa hợp với ý tưởng của người số 2, và nhờ vậy sẽ đạt được kết quả tốt đẹp và vui vẻ.",
+   "chuongVi": "Chương XXV. Sự kết hợp giữa những người số 1 đến số 4"
+  },
+  "sbaa2f92ee5605005": {
+   "vi": "Một người số 1 và một người số 4 cũng sẽ gặp nhau trên một rung động đồng cảm và hòa hợp, vì trong Thần số học số 1 luôn gắn với số 4, và hai số này được viết là 1 gạch nối 4 và 4 gạch nối 1. Nhưng vì mọi người số 4 đều có cá tính rất rõ rệt, họ không được để người số 1 khuất phục, mà phải được giữ nguyên tính cách riêng biệt của mình và nhìn sự việc theo quan điểm của chính họ. Nếu người số 1 luôn ghi nhớ khí chất đặc biệt của người số 4 thì mọi sự kết hợp với một người số 4 đều sẽ rất thành công.",
+   "chuongVi": "Chương XXV. Kết hợp giữa những người thuộc dãy 1–4"
+  },
+  "s66ea740525e957f3": {
+   "vi": "Những người số 1 này nên cố gắng thực hiện những kế hoạch và ý tưởng quan trọng nhất của mình vào tất cả những ngày rung động theo số của chính họ, như ngày 1, 10, 19 hoặc 28 của bất kỳ tháng nào, nhưng đặc biệt là trong những thời kỳ tôi đã mô tả trước đây, tức là từ 21 tháng 7 đến 28 tháng 8, và từ 21 tháng 3 đến 28 tháng 4. Ngoài các số của chính mình, người số 1 hợp với những người sinh dưới số 2, 4 và 7, như những người sinh vào ngày 2, 4, 7, 11, 13, 16, 20, 22, 25, 29 và 31, nhất là những người sinh trong các thời kỳ mạnh đã nêu.",
+   "chuongVi": "Chương III. Số 1"
+  },
+  "s918cd27c1265df85": {
+   "vi": "Người số 1 có nhiều tham vọng; họ không ưa bị kìm hãm, họ luôn vươn lên trong bất kỳ nghề nghiệp hay công việc nào của mình. Họ mong muốn trở thành người đứng đầu trong bất kỳ lĩnh vực kinh doanh nào của họ, và khi làm trưởng bộ phận, họ giữ vững uy quyền và khiến cấp dưới phải kính trọng, “ngước nhìn”.",
+   "chuongVi": "Chương III. Số 1"
+  },
+  "s94de8ab01ee71888": {
+   "vi": "Trong biểu tượng học, số 2 đại diện cho Mặt Trăng. Nó mang những thuộc tính nữ tính của Mặt Trời, và chỉ riêng vì lý do này, dù người số 1 và người số 2 có tính cách đối nghịch rõ rệt, rung động của họ vẫn hòa hợp và họ tạo thành những cặp kết hợp tốt.\n\nNgười số 2 bản tính hiền hòa, giàu trí tưởng tượng, có khiếu nghệ thuật và lãng mạn. Giống người số 1, họ cũng giỏi sáng chế, nhưng không mạnh mẽ bằng khi thực hiện ý tưởng của mình. Phẩm chất của họ thiên về bình diện tinh thần hơn là thể chất, và họ hiếm khi khỏe mạnh về thể chất bằng những người sinh dưới số 1.\n\nNgười số 2 là tất cả những ai sinh vào ngày 2, 11, 20 hoặc 29 của bất kỳ tháng nào, nhưng đặc điểm của họ càng rõ nét hơn nếu họ sinh trong khoảng từ ngày 20 tháng 6 đến ngày 27 tháng 7, giai đoạn được gọi là “Nhà của Mặt Trăng”. Tôi đã cộng thêm bảy ngày của “Điểm giao cung” vào ngày 20 tháng 7.",
+   "chuongVi": "Chương IV. Số 2"
+  },
+  "s62ef6ce347c4627c": {
+   "vi": "Bây giờ, giả sử người số 1 đã hẹn gặp một người sinh thuộc dãy số 2. Trong trường hợp này, người ấy có thể chọn bất kỳ ngày nào thuộc dãy số 1 hoặc số 2, chẳng hạn ngày 1, 2, 10, 11, 19, 20, 28 hoặc 29. Người số 1 đã đọc được rằng người số 2 mang những phẩm chất nữ tính của số 1, và rằng, dù trái ngược về tính cách, rung động của cả người số 1 lẫn người số 2 đều hài hòa, và họ tạo thành những sự kết hợp tốt. Có được hiểu biết này, người số 1 sẽ cố gắng hòa hợp với ý tưởng của người số 2, và nhờ vậy sẽ đạt được kết quả tốt đẹp và vui vẻ.",
+   "chuongVi": "Chương XXV. Sự kết hợp giữa những người số 1 đến số 4"
+  },
+  "s756e52beacf6531b": {
+   "vi": "Trong hệ biểu tượng, số 2 tượng trưng cho Mặt Trăng. Nó mang những thuộc tính nữ tính của Mặt Trời, và chỉ riêng vì lý do này, dù người số 1 và người số 2 có tính cách hoàn toàn trái ngược nhau, rung động của họ vẫn hài hòa và họ tạo thành những cặp kết hợp tốt.\n\nNgười số 2 và người số 1 rung động cùng nhau, và ở mức độ thấp hơn là với người số 7, như những người sinh vào ngày 7, 16 hoặc 25 của bất kỳ tháng nào.",
+   "chuongVi": "Chương IV. Số 2"
+  },
+  "s30c7753479dfbc14": {
+   "vi": "Trong hệ biểu tượng, số 3 tượng trưng cho sao Mộc, một Hành tinh giữ vai trò hết sức quan trọng cả trong Chiêm tinh học lẫn trong mọi hệ thống Thần số học. Nó là khởi đầu của cái có thể gọi là một trong những đường lực chính chạy suốt qua mọi con số từ 3 đến 9.\n\nNó có mối liên hệ đặc biệt với mọi số thứ ba trong dãy, như 3, 6, 9, và mọi phép cộng của chúng. Những số này cộng lại theo bất kỳ hướng nào đều cho ra 9 làm chữ số cuối cùng, và những người số 3, 6, 9 đều đồng cảm với nhau.\n\nNgười có Số ngày sinh là 3 gồm tất cả những ai sinh vào ngày 3, 12, 21 hoặc 30 của bất kỳ tháng nào, nhưng số 3 còn mang ý nghĩa lớn hơn nữa nếu họ sinh trong cái gọi là “thời kỳ của số 3”, từ ngày 19 tháng 2 đến ngày 20–27 tháng 3, hoặc từ ngày 21 tháng 11 đến ngày 20–27 tháng 12.",
+   "chuongVi": "Chương V. Số 3"
+  },
+  "sbc7232337ed56bcb": {
+   "vi": "Nó có mối liên hệ đặc biệt với mọi số thứ ba trong dãy, như 3, 6, 9, và tất cả các tổng cộng của chúng. Những số này cộng với nhau theo bất kỳ cách nào cũng cho ra 9 là chữ số cuối cùng, và những người số 3, 6, 9 đều có thiện cảm với nhau.\n\nNgười số 3 hòa hợp hơn với những người sinh dưới chính số của mình hoặc dưới số 6 và số 9, chẳng hạn tất cả những ai sinh vào ngày 3, 12, 21, 30.",
+   "chuongVi": "Chương V. Số 3"
+  },
+  "s89f48f743dbfd421": {
+   "vi": "Người số 3, cũng như người số 1, rất có tham vọng; họ không bao giờ hài lòng khi ở vị trí cấp dưới; mục tiêu của họ là vươn lên trong đời, nắm quyền kiểm soát và uy quyền đối với người khác. Họ rất giỏi thi hành mệnh lệnh; họ yêu trật tự và kỷ luật trong mọi việc; bản thân họ sẵn sàng tuân lệnh, nhưng họ cũng đòi hỏi mệnh lệnh của mình phải được tuân theo.\n\nNgười số 3 thường vươn tới những vị trí cao nhất trong bất kỳ ngành kinh doanh, nghề nghiệp hay lĩnh vực nào họ tham gia. Họ thường xuất sắc ở những vị trí có quyền hành trong lục quân và hải quân, trong chính quyền và trong đời sống nói chung; và đặc biệt ở mọi chức vụ đòi hỏi sự tín nhiệm và trách nhiệm, vì họ cực kỳ tận tâm trong việc hoàn thành bổn phận.",
+   "chuongVi": "Chương V. Số 3"
+  },
+  "se3cde0d92ee8acf8": {
+   "vi": "Trong biểu tượng học, số 4 đại diện cho Sao Thiên Vương. Nó được xem là có liên hệ với Mặt Trời, tức số 1, và trong huyền học được viết là 4–1.\n\nNgười số 4 có một tính cách riêng biệt. Họ dường như nhìn mọi thứ từ một góc độ ngược với tất cả mọi người. Trong tranh luận, họ luôn đứng về phía đối lập, và dù không có ý gây gổ, họ vẫn gây ra sự chống đối và tạo ra rất nhiều kẻ thù ngấm ngầm luôn tìm cách chống lại họ.\n\nHọ dường như rất tự nhiên có cái nhìn khác về bất cứ điều gì được đặt ra trước tâm trí họ. Theo bản năng, họ chống lại luật lệ và quy định, và nếu được làm theo ý mình, họ sẽ đảo ngược trật tự mọi việc, kể cả trong các cộng đồng và chính quyền. Họ thường chống lại quyền lực hợp hiến và đặt ra những luật lệ, quy định mới, trong đời sống gia đình cũng như đời sống công cộng. Họ có xu hướng bị cuốn hút bởi các vấn đề xã hội và mọi loại cải cách, và rất quả quyết, không theo lề thói trong quan điểm và ý kiến của mình.",
+   "chuongVi": "Chương VI. Số 4"
+  },
+  "s6f82866d1426a7b4": {
+   "vi": "Một người số 1 và một người số 4 cũng sẽ gặp nhau trên một rung động đồng cảm và hài hòa, vì trong Thần số học, số 1 luôn gắn với số 4, và những số này được viết là 1 gạch nối 4, và 4 gạch nối 1; nhưng vì mọi người số 4 đều có cá tính rất rõ rệt, họ không được bị người số 1 khuất phục, mà phải được phép giữ tính cách riêng biệt của mình và nhìn sự việc theo quan điểm của chính họ. Nếu người số 1 luôn ghi nhớ tính khí đặc biệt của người số 4, mọi sự kết hợp với người số 4 hẳn sẽ rất thành công.",
+   "chuongVi": "Chương XXV. Kết hợp giữa người số 1 và người số 4"
+  },
+  "s7f6b1376050b2c86": {
+   "vi": "Ví dụ. — Một người đàn ông sinh vào ngày 4, 13, 22 hoặc 31 kết hôn với một người phụ nữ sinh vào ngày 8, 17 hoặc 26. Chắc chắn ông ta sẽ thấy rằng các số 4 và số 8 ảnh hưởng đến đời mình nhiều hơn bất kỳ số nào khác, thường kéo theo nỗi buồn, vận rủi hoặc những đòn giáng khủng khiếp của số phận. Với người đàn ông hay đàn bà số 4 này, tôi dứt khoát khuyên: hãy tránh dùng mọi số 4 và số 8, thay vào đó hãy dùng dãy số 1, và kế đó tốt nhất là dùng dãy 2–7.\n\nVì một lý do nào đó, có lẽ do một quy luật rung động từ tính nào đó, người số 4 và người số 8 thường hút lẫn nhau, nhưng xét thuần túy theo quan điểm thế tục thì sự kết hợp này không thể coi là “may mắn”. Họ thường tỏ ra hết mực tận tụy với nhau khi ốm đau và hoạn nạn, và một số tấm gương hy sinh lớn lao nhất được thấy khi người số 4 và người số 8 kết hôn hoặc kết hợp với nhau.",
+   "chuongVi": "Chương XXVI. Thêm về những người sinh dưới số 4 và số 8"
+  },
+  "sa585e046ffcc63f4": {
+   "vi": "Người số 4 không dễ kết bạn. Họ dường như bị thu hút nhiều hơn bởi những người sinh dưới các số 1, 2, 7 và 8.\n\nKhuyết điểm chính của họ là rất dễ căng thẳng và nhạy cảm, tình cảm rất dễ bị tổn thương, có khuynh hướng cảm thấy cô đơn, lẻ loi, và dễ trở nên chán nản, u sầu nếu chưa đạt được thành công. Thông thường họ có ít bạn thật sự, nhưng với số ít bạn bè ấy, họ hết mực tận tụy và trung thành, song luôn có khuynh hướng đứng về phía “kẻ yếu thế” trong bất kỳ cuộc tranh luận hay sự nghiệp nào mà họ theo đuổi.",
+   "chuongVi": "Chương VI. Số 4"
+  },
+  "sf133a03221e5af46": {
+   "vi": "Họ hiếm khi thành công trong các việc thế tục hay vật chất bằng những người sinh dưới các số khác, và theo lẽ thường, ít nhiều họ thờ ơ với việc tích lũy của cải. Nếu họ kiếm được tiền hoặc được người khác cho tiền, họ thường làm mọi người ngạc nhiên bởi cách họ dùng tiền hay mục đích họ dùng tiền vào.",
+   "chuongVi": "Chương VI. Số 4"
+  },
+  "s00b2df8453f33f18": {
+   "vi": "Về mặt biểu tượng, số 5 tượng trưng cho Sao Thủy, và linh hoạt, biến hóa nhanh nhạy trong mọi đặc điểm của nó.\n\nNgười số 5 là tất cả những ai sinh vào ngày 5, 14 và 23 của bất kỳ tháng nào, nhưng đặc điểm của họ còn rõ rệt hơn nữa nếu họ sinh trong cái gọi là “thời kỳ của số 5”, tức là từ 21 tháng 5 đến 20–27 tháng 6, và từ 21 tháng 8 đến 20–27 tháng 9.\n\nNgười số 5 dễ kết bạn và hợp với người sinh dưới hầu hết mọi số khác, nhưng bạn tốt nhất của họ là những người sinh dưới chính số của họ, như ngày 5, 14 và 23 của bất kỳ tháng nào.",
+   "chuongVi": "Chương VII. Số 5"
+  },
+  "s02e0df75c21aa529": {
+   "vi": "Người số 5 dễ kết bạn và hợp với những người sinh dưới hầu như bất kỳ số nào khác, nhưng bạn thân nhất của họ là những người sinh dưới chính số của mình, như ngày 5, 14 và 23 của bất kỳ tháng nào.",
+   "chuongVi": "Chương VII. Số 5"
+  },
+  "s2c282f1693e66ba6": {
+   "vi": "Họ nhanh nhạy trong suy nghĩ và quyết định, bốc đồng trong hành động. Họ ghét mọi kiểu công việc cặm cụi, chậm chạp và dường như tự nhiên trôi dạt vào đủ mọi cách kiếm tiền nhanh. Họ rất nhạy bén trong việc kiếm tiền nhờ phát minh và ý tưởng mới. Họ là những nhà đầu cơ bẩm sinh, hay dấn vào các giao dịch trên Sở giao dịch chứng khoán, và nói chung sẵn lòng, sẵn sàng chấp nhận rủi ro trong mọi việc họ làm.",
+   "chuongVi": "Chương VII. Số 5"
+  },
+  "s661e73041069f7bd": {
+   "vi": "Trong biểu tượng học, số 6 đại diện cho Sao Kim. Những người có Số ngày sinh là 6 là tất cả những ai sinh vào ngày 6, 15 hoặc 24 của bất kỳ tháng nào, nhưng họ chịu ảnh hưởng của số này đặc biệt hơn nếu sinh vào khoảng được gọi là “Cung của số 6”, tức là từ ngày 20 tháng 4 đến ngày 20–27 tháng 5, và từ ngày 21 tháng 9 đến ngày 20–27 tháng 10.\n\nTheo lẽ thường, mọi người số 6 đều có sức hút cực kỳ mạnh; họ thu hút người khác về phía mình, và được những người dưới quyền yêu mến, thậm chí thường tôn sùng.\n\nHọ rất quyết tâm khi thực hiện kế hoạch của mình, và thực ra có thể bị coi là bướng bỉnh, không chịu nhượng bộ, trừ khi chính họ trở nên gắn bó sâu sắc: trong trường hợp ấy, họ trở thành nô lệ tận tụy của những người mình yêu.",
+   "chuongVi": "Chương VIII. Số 6"
+  },
+  "s5f16593610b046d1": {
+   "vi": "Họ rất quyết tâm trong việc thực hiện kế hoạch của mình, và thực ra có thể bị coi là bướng bỉnh, cứng nhắc, trừ khi chính họ gắn bó sâu sắc: trong trường hợp ấy, họ trở thành nô lệ tận tụy của người mình yêu.\n\nDù người số 6 được xem là chịu ảnh hưởng của sao Kim, nhưng thông thường tình yêu của họ thiên về “tình mẫu tử” hơn là nhục cảm. Họ nghiêng về lãng mạn và lý tưởng trong mọi chuyện tình cảm. Ở một số mặt, họ mang đậm những phẩm chất được cho là của sao Kim, ở chỗ họ yêu cái đẹp, tạo nên những ngôi nhà rất nghệ thuật, thích màu sắc đậm đà, cũng như tranh vẽ, tượng và âm nhạc.\n\nNgười số 6 có khả năng kết bạn nhiều hơn bất kỳ nhóm nào khác, trừ số 5, nhưng đặc biệt là với mọi người sinh dưới rung động của số 3, số 6, số 9, hoặc mọi số trong dãy của chúng.",
+   "chuongVi": "Chương VIII. Số 6"
+  },
+  "sbb6f3aa0369d5c15": {
+   "vi": "Về mặt biểu tượng, số 7 tượng trưng cho Sao Hải Vương, và đại diện cho tất cả những người sinh dưới số 7, tức là những người sinh vào ngày 7, 16 hoặc 25 của bất kỳ tháng nào, nhưng ảnh hưởng đặc biệt hơn đến những người sinh từ 21 tháng 6 đến 20–27 tháng 7, thời kỳ của Hoàng đạo được gọi là “Nhà của Mặt Trăng”. Sao Hải Vương từ lâu vẫn được xem là gắn với Mặt Trăng, và vì phần Hoàng đạo mà tôi vừa nói đến còn được gọi là Nhà Nước thứ nhất, nên mối liên hệ với Sao Hải Vương, cái tên vốn luôn gắn với Nước, là hợp lý và dễ hiểu.\n\nVậy thì, vì số của Mặt Trăng luôn được cho là 2, điều này giải thích vì sao người số 7 có số phụ là 2, và hợp cũng như dễ kết bạn với tất cả những người sinh dưới các số của Mặt Trăng, tức là ngày 2, 11, 20 và 29 của bất kỳ tháng nào, nhất là khi họ cũng sinh trong “Nhà của Mặt Trăng”, từ 21 tháng 6 đến cuối tháng 7.\n\nNhững người sinh dưới số 7, tức là vào ngày 7, 16 hoặc 25 của bất kỳ tháng nào, rất độc lập, độc đáo và có cá tính rất rõ nét.",
+   "chuongVi": "Chương IX. Số 7"
+  },
+  "sc2c86b18cb52a538": {
+   "vi": "Vì con số của Mặt Trăng luôn được cho là số 2, điều này giải thích vì sao người số 7 có số phụ là số 2, hợp và dễ kết bạn với tất cả những người sinh dưới các số Mặt Trăng, tức là ngày 2, 11, 20 và 29 của bất kỳ tháng nào, nhất là nếu họ cũng sinh trong “Nhà của Mặt Trăng”, từ ngày 21 tháng 6 đến cuối tháng 7.",
+   "chuongVi": "Chương IX. Số 7"
+  },
+  "sdf4d7bcfd62801b4": {
+   "vi": "Họ thường là những nhà văn, họa sĩ hoặc nhà thơ cực kỳ giỏi, nhưng trong mọi việc họ làm, sớm hay muộn họ đều bộc lộ một cái nhìn triết lý đặc biệt về cuộc đời, nhuốm vào toàn bộ tác phẩm của họ.\n\nNgười số 7 có những ý tưởng tốt về kinh doanh, hay đúng hơn, kế hoạch của họ tốt nếu họ chịu thực hiện. Họ thường rất khao khát du lịch và đọc nhiều về những xứ sở xa xôi. Nếu có thể, họ sẽ quan tâm đến những việc liên quan đến biển, và trong thương mại hay kinh doanh, họ thường trở thành thương nhân, nhà xuất khẩu và nhập khẩu giao dịch với nước ngoài, và làm chủ tàu hay thuyền trưởng nếu có cơ hội.",
+   "chuongVi": "Chương IX. Số 7"
+  },
+  "s6d486dd631102ecc": {
+   "vi": "Nói chung, họ ít bận tâm đến những thứ vật chất của cuộc sống; họ thường trở nên giàu có nhờ những ý tưởng hay phương pháp kinh doanh độc đáo của mình, nhưng nếu giàu lên, họ cũng rất có thể đem một phần lớn của cải quyên góp cho các tổ chức từ thiện hay các cơ sở công ích. Phụ nữ mang số này thường kết hôn tốt, vì họ luôn lo lắng về tương lai và cảm thấy mình cần một tảng đá để tựa vào, kẻo dòng nước của Số Phận cuốn họ đi.",
+   "chuongVi": "Chương IX. Số 7"
+  },
+  "se6fb4059afd41b04": {
+   "vi": "NẾU tên hoặc Số ngày sinh của bạn là 8, linh hồn bạn biết đến tự do và đã chịu nhiều lằn roi để cố khiến bộ óc bạn nhận ra điều đó. Bạn nên luôn sẵn sàng giúp mọi linh hồn khác hát bài ca cuộc đời của riêng mình. Cái tôi cao hơn của bạn khao khát nhặt lên những nốt nhạc bị người đồng loại bỏ rơi, dù người đó là hoàng tử hay nông dân, vì linh hồn không biết đến sự khác biệt, và giúp người ấy tìm ra vẻ đẹp trong bài ca cuộc đời của chính mình.\n\nBạn đã tới tiền cảnh của sự biểu hiện, và mọi nốt nhạc đều có sẵn trong linh hồn bạn, chỉ chờ bạn biểu hiện chúng ra trong thế giới mà chúng mong đưa vào hòa điệu.\n\nSức mạnh lớn nhất của bạn nằm ở âm Đô (C). Hãy đánh nó thật rõ ở mọi quãng và ngân nga nó, gửi rung động của nó tới mọi phần của cơ thể và bộ óc bạn. Hãy hát cả tổ hợp ngày sinh của bạn, tức các nốt ứng với chữ số của tháng, ngày và năm, kết thúc bằng chữ số của tổng, đánh nó thật chuẩn xác. Cũng hãy dùng các bài tập của số 1, 2, 4, 6, với những âm sống của riêng bạn.",
+   "chuongVi": "Chương VI–VIII. Bài tập phát triển rung động hay chữ số ngày sinh của riêng bạn · Số 8"
+  },
+  "s30f5deabbbf22b9f": {
+   "vi": "Số 7 là sự hoàn tất của nền móng; 8, 9 và 11 tạo thành cái gọi là Bộ Ba của các Con Số, và được gọi là những con số mạnh.\n\nMột trong những con số này có ở người đã đạt tới sự tự ý thức, người có thể nhìn ra thế giới từ sức mạnh bên trong chính mình. Mọi người đã đạt tới Bộ Ba các Con Số này đều có khả năng đi đến chỗ thực sự cảm nhận được ý nghĩa của Thể Xác, Linh Hồn và Tinh Thần.\n\nTrong người ấy có khả năng thấu hiểu, và khi gặp tình huống khẩn cấp bất ngờ, người ấy luôn có thể đứng lên đáp ứng được.\n\nSố 8 đại diện cho thể xác, số 9 cho Linh Hồn và số 11 cho tinh thần.\n\nNgười mang bất kỳ một trong các số này, theo một quy luật tự nhiên, sẽ thu hút về phía mình những người có Chủ âm là một trong hai số còn lại. Và dù có vẻ như thiếu sự hòa hợp, sẽ rất khó để tách họ ra.\n\nNgười có Chủ âm 8 hiểu trái đất và bình diện trí tuệ hơn bất kỳ ai khác. Họ luôn tự làm cho mình có thế lực trong cộng đồng.",
+   "chuongVi": "Chương II. Chi tiết về các con số · Số 8"
+  },
+  "s05e62328c2e62aac": {
+   "vi": "Hoàn thiện vật chất. — Rung động này là hợp thành của 2 và 4, điều đem lại cho nó quyền tối thượng trên các bình diện vật chất. Nó đem lại năng lực trong mọi vấn đề thương mại hay vật chất; óc phán đoán; công lý; sự tìm tòi về những điều tâm linh; sự bất mãn với những điều kiện vật chất hạn hẹp; sự chỉ đạo; sự kiểm soát; sự tổ chức.",
+   "chuongVi": "Chương II. Các con số · Đặc điểm chung · 8"
+  },
+  "s19d2a7a8738fb858": {
+   "vi": "Biểu hiện xây dựng — CÔNG BẰNG. Bạn thành công trong kinh doanh và tổ chức, quan tâm riêng trong chừng mực có thể đến tất cả những người quanh mình là nhân viên hay người giúp việc, và trong khi sử dụng những người này một cách chính đáng để đạt thành công cho bản thân, bạn đồng thời cố gắng cho họ cơ hội tốt nhất để hoàn thiện khả năng biểu hiện của chính họ. Bạn rất điềm tĩnh, cân bằng tốt giữa trực giác và lý trí, dù thiên về để lý trí dẫn dắt hơn. Bạn có tự do vật chất, khả năng chỉ đạo và kiểm soát; và sự trợ giúp tài chính sẽ luôn đến để đáp ứng nhu cầu của bạn.\n\nBiểu hiện phá hoại — BẤT CÔNG. Bạn thành công trong việc chỉ đạo và kiểm soát nhưng dùng quyền lực theo lối phá hoại, bóc lột những người dưới quyền và sẵn sàng đóng vai kẻ áp bức, kẻ bắt nạt nếu điều đó phục vụ mục đích riêng. Bạn tìm cách khiến mọi người có liên hệ với mình phải lệ thuộc vào cá tính của bạn và không bao giờ hợp tác, chỉ ra lệnh. Bạn bất chấp thủ đoạn trong nỗ lực giành và giữ tự do vật chất cho riêng mình. Lý tưởng chính trong đời bạn là nắm trong tay nhiều tiền bạc hơn bất kỳ ai, vì quyền kiểm soát mà điều đó có thể đem lại cho bạn.",
+   "chuongVi": "Chương V. Các con số trong hành động · 8 (Biểu hiện xây dựng và phá hoại)"
+  },
+  "s8c5421e90c2a15aa": {
+   "vi": "Thất bại. — Không thành công trong đầu cơ. Khó giành được uy tín trong giới kinh doanh mà họ cảm thấy mình đủ năng lực để có. Là nạn nhân của quy luật hủy hoại từ quá khứ của chính họ, họ thường sinh ra trong một gia đình và sống trong một môi trường thiếu thốn về vật chất thay vì được tự do, nơi tiền bạc khan hiếm và họ phải làm những việc phục vụ thấp kém hơn.\n\n9. Cảm xúc. — Đầy những rung động mâu thuẫn; quá dễ xúc động trước những gì chạm đến bản tính tình cảm. Tự làm suy yếu sự biểu hiện của mình bằng cách quá rộng lượng và ôm lấy những rắc rối của người khác, khóc cùng người khóc, cho bất kỳ ai xin, thậm chí tự làm mình khánh kiệt. Đã mất khả năng sử dụng người khác dù cho mục đích tốt hay xấu, và bị người khác lợi dụng thoải mái. Không giành được nhiều cho bản thân vì bị chính những rung động của mình giằng xé bên này bên kia.",
+   "chuongVi": "Chương VI. Tác động tiêu cực · 8"
+  },
+  "s48b4c3b9e48315d7": {
+   "vi": "Con số của sự tan rã. Nó biểu thị quy luật tiến hóa theo chu kỳ, sự quay trở về của cái tự nhiên với cái tâm linh. Phản ứng, cách mạng, gãy vỡ, đổ vỡ, tan rã, tách biệt, phân hủy, vô chính phủ. Tổn thương, chia lìa, ly hôn. Cảm hứng nối tiếp hơi thở, linh cảm thiêng liêng, thiên tài, phát minh. Lệch hướng, lập dị, ương ngạnh, lầm lạc, điên loạn. Biểu tượng của Sao Thiên Vương.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Chín chữ số · 8"
+  },
+  "s14dc3b440bfb7ac2": {
+   "vi": "Sau khi đã thu góp được một kho kiến thức huyền bí để làm tăng vận may của mình, người số 7 bị nhiều người nghe ông thuyết giảng hùng hồn hỏi: “Ông đã tự mình kiểm chứng những nguyên lý này chưa? Ông có biết qua kinh nghiệm chúng đáng giá đến đâu không?” Số 8, vốn là một tâm hồn trung thực, có tinh thần chiến đấu tốt và ý thức công bằng sắc bén, quyết định cho những người bạn thiên về vật chất của mình thấy bằng chứng cụ thể cho những gì mình rao giảng; vì thế ông lại bước vào thế giới thương mại và đem lý thuyết của mình ra thực hành. Chúng đứng vững trước thử thách, và ông nhận ra rằng rốt cuộc sự nghỉ ngơi không phải là điều mình muốn. Ông bắt tay vào việc với nhiệt huyết tăng thêm để biến những lời tuyên bố của mình thành hiện thực, và thấy rằng một sự cân bằng hoàn hảo giữa trí tuệ và lao động, tình yêu và công lý, ý tưởng và vật chất, cộng thêm một động lực thông minh, đem lại tiền bạc, thành công và danh tiếng bằng một con đường ngắn hơn nhiều so với những nỗ lực suy luận thuần túy vất vả trước kia. Như vậy số 8 trở thành người làm “kinh doanh lớn”, nhà điều hành tầm cỡ, biết dung hòa lý trí với trực giác, công lý với tình yêu, và sức mạnh với sự khéo léo ngoại giao.",
+   "chuongVi": "Chương IV. Câu chuyện của các con số · 8"
+  },
+  "s7f161b003c792a07": {
+   "vi": "Tích cực — Người cân bằng giữa điều tinh thần và vật chất: doanh nhân lớn, người đổ những ý tưởng đầy cảm hứng thành bê tông, hay thành bất kỳ vật liệu xây dựng nào khác mà người ấy đang dùng. Người số 8 là nhà điều hành lớn, biết dùng sự khéo léo, tài ngoại giao, tinh thần hợp tác, óc phân định sắc bén và một động lực thông minh để đưa công việc kinh doanh, nghệ thuật hay thương mại của mình đến kết cục thành công. Người ấy là kỹ sư của những dự án lớn, người đầu tư vốn cho người khác, người dẫn đầu trong giới tài chính, người nắm giữ quyền lực và ảnh hưởng.\n\nNghịch — Kẻ dùng địa vị xã hội, quyền lực hay tiền bạc vào mục đích ích kỷ, kẻ thúc ép tàn nhẫn, mê tiền đến điên cuồng, bới móc quá mức, không biết trân trọng, khó chiều, vô cảm, …\n\nTiêu cực — Kém may mắn, có vẻ là nạn nhân của hoàn cảnh, thất bại trong kinh doanh, đầu tư hay các việc giao tế xã hội, chủ yếu do bản tính ích kỷ của chính mình. Người số 8 đã đạt đến bình diện của con người siêu việt, nơi người ấy phải nghĩ cho người khác cũng như cho bản thân. Chừng nào chưa hành động một cách xây dựng vì lợi ích của mọi người, người ấy sẽ còn tiếp tục gặp nghịch cảnh.",
+   "chuongVi": "Chương V. Ba tầng nghĩa của các chữ số · 8 (Tích cực, Nghịch, Tiêu cực)"
+  },
+  "sfc8c448e0d5f2582": {
+   "vi": "Số tám là con số trí tuệ khoa học.\n\nĐó là con số của kinh doanh, của thành tựu vật chất, của sự quả quyết khẳng định bản thân và thành công trong kinh doanh.\n\nCó thể xếp nó vào loại rung động của sự hoàn thành, đạt được và thu nhận.",
+   "chuongVi": "Chương II–IV. Tính cách và ảnh hưởng của các con số · 8"
+  },
+  "s8230e67847127a4f": {
+   "vi": "Là lập phương đầu tiên của năng lượng, và là số chẵn lần chẵn duy nhất trong nhóm mười số đầu. Người Hy Lạp cho rằng đây là một con số toàn năng; họ có câu tục ngữ “vạn vật đều là tám”.\n\nCamerarius, trong ấn bản Số học của Nicomachus do ông biên soạn, gọi nó là Hòa điệu Phổ quát, vì các tỉ lệ âm nhạc được phân định bởi con số này.\n\nTỉ lệ 9 trên 8 là tỉ lệ một và một phần tám; tỉ lệ này tạo thành một cung và được gán cho Mặt Trăng.\n\n12 trên 9 là tỉ lệ một và một phần ba; 12 trên 8 là tỉ lệ một và một nửa.",
+   "chuongVi": "Phần IV. Từng con số · Bộ Tám (8)"
+  },
+  "s6efa6758f640e90b": {
+   "vi": "Ví dụ: Một người đàn ông sinh vào ngày 4, 13, 22 hoặc 31 kết hôn với một người phụ nữ sinh vào ngày 8, 17 hoặc 26. Chắc chắn ông sẽ thấy rằng các số 4 và số 8 ảnh hưởng đến cuộc đời mình nhiều hơn mọi con số khác, thường kéo theo nỗi buồn, vận rủi hoặc những đòn giáng khủng khiếp của số phận. Với người đàn ông hay đàn bà số 4 này, tôi dứt khoát khuyên: hãy tránh dùng mọi số 4 và số 8, thay vào đó hãy dùng dãy số 1, và kế đó tốt nhất là dãy 2 gạch nối 7.\n\nVì một lý do nào đó, có lẽ do một quy luật của rung động từ tính, người số 4 và người số 8 thường thu hút nhau, nhưng xét thuần túy theo quan điểm thế tục thì sự kết hợp này không thể coi là “may mắn”. Họ thường tỏ ra tận tụy với nhau ở mức cao nhất khi đau ốm và hoạn nạn, và một số tấm gương hy sinh quên mình lớn nhất được thấy khi người số 4 và người số 8 kết hôn hoặc kết hợp với nhau.",
+   "chuongVi": "Chương XXVI. Thêm về những người sinh dưới số 4 và số 8"
+  },
+  "s227f3466345c10e9": {
+   "vi": "Những người số 8 này hoặc là thành công lớn hoặc là thất bại lớn; dường như không có mức trung dung nào trong trường hợp của họ.\n\nNếu có tham vọng, họ thường nhắm tới đời sống công chúng hoặc một trách nhiệm nào đó trong chính quyền, và thường giữ những vị trí rất cao đòi hỏi họ phải hy sinh lớn.",
+   "chuongVi": "Chương X. Số 8"
+  },
+  "sbdfea613b2ba93a6": {
+   "vi": "Họ có thể cao thượng về tính cách, tận tụy và hy sinh chẳng kém những người tốt nhất trong đồng loại, nhưng hiếm khi nhận được phần thưởng mà họ xứng đáng. Nếu họ vươn lên một vị trí cao nào đó trong đời, thì đó thường là vị trí mang trách nhiệm nặng nề, lo âu và phiền muộn. Những người như vậy có thể trở nên giàu có, nhưng của cải hiếm khi mang lại hạnh phúc cho họ, và vì tình yêu họ thường phải trả một cái giá quá đắt.",
+   "chuongVi": "Chương XXVI. Thêm về những người sinh dưới số 4 và số 8"
+  },
+  "s70146329616b19d5": {
+   "vi": "Trong hệ biểu tượng, số 9 tượng trưng cho sao Hỏa. Con số này ảnh hưởng đến mọi người sinh vào ngày 9, 18 và 27 của bất kỳ tháng nào, nhưng còn mạnh hơn nữa nếu ngày sinh của họ rơi vào khoảng từ ngày 21 tháng 3 đến ngày 19–26 tháng 4 (gọi là Nhà Dương của sao Hỏa) hoặc khoảng từ ngày 21 tháng 10 đến ngày 20–27 tháng 11 (gọi là Nhà Âm của sao Hỏa).\n\nNgười số 9 là những chiến binh trong mọi việc họ thử sức trong đời. Họ thường trải qua những thời kỳ khó khăn trong những năm đầu đời, nhưng nói chung, cuối cùng họ thành công nhờ gan góc, ý chí mạnh mẽ và quyết tâm.\n\nVề tính cách, họ nóng nảy, bốc đồng, độc lập và muốn được làm chủ chính mình.",
+   "chuongVi": "Chương XI. Số 9"
+  },
+  "sf06f8e00c431d21c": {
+   "vi": "Họ thường trải qua nhiều cãi vã và xung đột trong đời sống gia đình, hoặc với chính họ hàng của mình, hoặc với gia đình bên vợ hay bên chồng.\n\nVì tình thương và sự cảm thông, họ sẵn sàng làm gần như bất cứ điều gì, và đàn ông thuộc số này có thể bị biến thành kẻ khờ dại nhất nếu có người phụ nữ khôn khéo nào đó biết giật dây trái tim họ.\n\nThông thường họ hợp với những người có ngày sinh thuộc dãy 3, 6 hoặc 9, như những người sinh vào ngày 3, 6, 9, 12, 15, 18, 21, 24, 27 hoặc 30 của bất kỳ tháng nào. Tất cả những số này đều rung động hài hòa với người số 9.",
+   "chuongVi": "Chương XI. Số 9"
+  },
+  "sbe23922384733143": {
+   "vi": "Họ rất can đảm và là những người lính hoặc người lãnh đạo xuất sắc trong bất kỳ sự nghiệp nào họ theo đuổi.\n\nHọ tháo vát và rất giỏi tổ chức, nhưng phải được toàn quyền kiểm soát; nếu không, họ nản lòng, đứng sang một bên và để mặc mọi việc đổ vỡ.",
+   "chuongVi": "Chương XI. Số 9"
+  },
+  "sc90668f3af94ca37": {
+   "vi": "NẾU Số tên hay chữ số ngày sinh của bạn tính chung là 1, hãy đặt một bàn chân thẳng phía trước bàn chân kia, cách nhau 12 inch — giơ tay phải thật thẳng lên phía trước tai, ngón trỏ chỉ lên trên, tay trái duỗi thẳng bên hông với ngón tay chỉ xuống dưới. Hãy nghĩ về bản thân như một đường thẳng của sức mạnh và chân lý do Đấng Sáng Tạo vạch ra khi thế giới được hình thành. Đường thẳng này ngày nay vẫn đứng đó như nguyên lý của sự sống và biểu hiện sự Thống nhất của vạn vật. Bạn hẳn có thể giúp những ai muốn hiểu sự thống nhất này. Nếu bạn không hiểu nguyên lý này mà phá vỡ hay làm gián đoạn nó trong tâm trí mình thì điểm yếu của bạn nằm chính ở đây. Sức mạnh của bạn bị đứt gãy. Để hiểu nó, hãy đứng như đường thẳng này chỉ ra, một tay chỉ lên nơi cao nhất, tay kia hướng vào các rung động của đất. Hít vào chậm rãi như thể đang kéo sức mạnh lên từ lòng đất sâu, đưa nó qua bàn chân, đôi chân, rồi lên khắp cơ thể theo đường thẳng qua ruột, dạ dày và cơ quan phát âm, qua khuôn mặt lên đến đỉnh đầu. Thở ra chậm rãi, đưa dòng năng lượng xuống phía sau đầu, qua gáy, dừng lại ở gáy và ở đám rối thái dương, rồi đi xuống dọc các đốt sống, dùng mỗi đốt như một bậc thang cho đến khi chạm tới đáy. Giờ hãy dừng lại và nhận biết rằng chính tại điểm này, cũng như ở đám rối thái dương nằm sau dạ dày và ở đáy não, là nơi có những bể chứa tích trữ từ lực. Đưa dòng năng lượng xuống đất giống như khi hít vào. Lặp lại năm lần. Tập hằng ngày, đổi vị trí bàn chân và bàn tay từ phải sang trái. Thở sao cho dòng năng lượng không bị đứt quãng ở bất kỳ chỗ nào trong cơ thể. Điều bạn muốn biểu hiện là sự thống nhất, và nếu rung động bị đứt, hãy dừng lại và thử lại cho đến khi thành công. Rồi dừng lần tập đó. Nếu dòng năng lượng được đưa từ đầu đến chân không gián đoạn, nó đem lại sinh lực. Nhưng nếu luật này bị phá vỡ, kết quả là sự bất hòa trên mọi bình diện. Ngân nốt Đô.",
+   "chuongVi": "Chương VI-VIII. Bài tập phát triển rung động hay chữ số ngày sinh của bạn · Số 1"
+  },
+  "s24ff50492871c4b5": {
+   "vi": "Số 1 cho thấy một bản tính mạnh mẽ, mang trong mình sức mạnh sáng tạo, phát triển và cai quản mọi điều thuộc về cuộc đời này; nhưng khác với các số khác, nó đòi hỏi phải hoàn toàn vượt qua bản ngã thì mới đạt tới thành công cao nhất. Nó làm cho mọi rung động khác trở nên năng động hơn là tự hoạt động như một nguyên lý riêng lẻ.\n\nNét thẳng đứng của số 1 biểu thị Chân Lý và Sự Tách Biệt. Người số 1 sẽ hòa vào thế gian nhưng không bao giờ thực sự là một phần của nó. Những người rung động theo số 1 phải học qua chính kinh nghiệm của mình rằng mọi thứ đạt được, chừng nào bản ngã chưa được vượt qua, đều đến qua khổ nạn. Bạn bè sẽ rời bỏ họ hoặc lạm dụng lòng tin của họ đến mức họ có lý do để chia tay; nhưng họ sẽ không làm thế khi nhận ra rằng yêu thương nhiều hơn là đặc ân của mình, và có thể yêu thương mà không nghĩ đến đền đáp chính là điều nâng người số 1 lên và đem lại cho họ niềm hạnh phúc mà một bản tính yếu đuối hơn không thể hiểu được. Họ độc đáo và bao quát trong suy nghĩ, và luôn mong ý kiến của mình được tôn trọng.\n\nHọ tượng trưng cho các điểm trong Hình học, nhìn thấu sâu xuống dưới bề mặt.",
+   "chuongVi": "Chương II. Chi tiết về các con số · Số 1"
+  },
+  "s0a32dc4c43596d66": {
+   "vi": "Sáng tạo. — Mọi sự sống hay rung động đều khởi đầu từ số 1, và vì thế, nơi nào có con số này thì nó tượng trưng cho sự sáng tạo cá nhân và việc xây dựng cá tính. Nó có nghĩa là sự cá thể hóa, sự quả quyết khẳng định bản thân, sự tự lực, khả năng suy luận và những năng lực của người tiên phong.\n\nNó không thể được biểu hiện qua sự gắn bó quá chặt với con người và hoàn cảnh, vì đó là quy luật của sự buông bỏ, và có nghĩa là luôn hợp nhất với những hoàn cảnh điều chỉnh, rút lấy chất liệu để xây dựng cao hơn.",
+   "chuongVi": "Chương II. Các con số · Đặc tính chung · 1"
+  },
+  "s2816aee67c1b5144": {
+   "vi": "Biểu hiện xây dựng — CÁ THỂ HÓA. Bạn ý thức được tầm quan trọng của chính mình nhưng không mù quáng trước quyền của người khác và cũng không coi nhẹ ý kiến của họ. Bạn hỏi ý kiến người khác nhưng chỉ dùng lời khuyên đó như sự trợ giúp cho ý kiến của chính mình, vốn đang và luôn nên được dẫn dắt bởi cảm giác tự tin vào những biểu hiện của bản thân. Bạn tự do chọn từ những thứ quanh mình những gì cần cho sự biểu hiện hoàn hảo hơn của cá tính bạn, không bám víu quá lâu vào bất kỳ biểu hiện nào của một người hay một hoàn cảnh, mà sẵn lòng buông bỏ những gì mình đã vượt qua để có thể tiến tới những khả năng cao hơn và phát triển hơn. Bạn yêu thương và cho đi mà không nghĩ đến sự đền đáp, và sẵn lòng hợp nhất với mọi hoàn cảnh mà không kháng cự hay tự thương thân vì những biểu hiện mà bạn được yêu cầu phải từ bỏ.\n\nBiểu hiện phá hoại — ÁP ĐẶT. Bạn tự cao tự đại, coi nhẹ biểu hiện của người khác vì quá sát với cá tính trong biểu hiện của chính mình. Bạn hay sống hộ đời người khác bằng cách khuyên họ những phương pháp mà bạn thấy là hoàn hảo, thay vì lo việc của mình. Bạn lo lắng và tính toán quá nhiều về những hoàn cảnh quanh cuộc đời mình thay vì thể hiện tinh thần tin tưởng và đức tin phổ quát hơn và để tâm trí bay bổng tự do khỏi hoàn cảnh. Bạn tìm cách giữ chặt con người và hoàn cảnh trong đời sống riêng của mình và chỉ buông bỏ chúng sau rất nhiều kháng cự, tự thương thân và hối tiếc. Bạn khuyên bảo khi không ai hỏi và hay xem xét địa vị cũng như triển vọng của người khác hơn là cảm xúc của họ. Suốt cả cuộc đời, bạn chỉ có “tôi”, “tôi”, “tôi”.",
+   "chuongVi": "Chương V. Các con số khi vận hành · 1 (Biểu hiện xây dựng và phá hoại)"
+  },
+  "s100b2b4a50e49c02": {
+   "vi": "Giới hạn. Những người ít có chí khí trong cuộc sống, sẵn sàng làm những việc hèn mọn nhất. Thường thấy ở những người mà ta tin chắc có thể làm công việc cao hơn việc họ đang làm, giá như họ được nâng lên đến chỗ ý thức về bản thân. Là nạn nhân của chính quy luật hủy hoại của họ trong quá khứ, những người này rất thường bị mù, điếc hoặc tật nguyền theo cách nào đó, khi trong kiếp này họ chưa bao giờ có cơ hội khẳng định cá tính hay tự lực, mà luôn phải phụ thuộc vào người khác.",
+   "chuongVi": "Chương VI. Tác động tiêu cực · 1"
+  },
+  "sc85cbb87d145c2b7": {
+   "vi": "Số 1 tượng trưng cho sự biểu hiện, sự khẳng định, nguyên lý dương và chủ động. Nó đại diện cho Logos, sự biểu hiện của cái Vô Hạn và cái Chưa Biểu Hiện. Nó đại diện cho bản ngã, sự tự khẳng định, tính quả quyết, tính vị kỷ, sự tách biệt, cái tôi, sự cô lập, sự khác biệt, tính tự lực, phẩm giá và quyền cai trị. Theo nghĩa tôn giáo, nó tượng trưng cho Đấng Chúa Tể. Theo nghĩa triết học và khoa học, nó là sự tổng hợp và sự thống nhất căn bản của vạn vật. Theo nghĩa vật chất, nó là đơn vị của sự sống, là cá nhân. Nó là số 0 được biểu hiện ra. Nó là biểu tượng của Mặt Trời.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Chín chữ số · 1"
+  },
+  "se908983dc9f89865": {
+   "vi": "Biểu thị cá tính và khả năng tự cao tự đại, sự tự lực, sự khẳng định, sự nổi bật.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Giọng thứ · 1"
+  },
+  "sd3a00877b3ab8dbb": {
+   "vi": "Biểu hiện đầu tiên của chuyển động trong Vũ trụ, hay tinh thần đi xuống vật chất, được tượng trưng bằng đường thẳng. Nó đại diện cho nguyên nhân khởi thủy và tượng trưng cho nguyên lý thống nhất trong vạn vật. “Số 1 không thể chia; nhân với chính nó, nó vẫn giữ nguyên tính đơn nhất, thế nhưng nó tạo ra mọi số khác.” Như vậy, khả năng sáng tạo, sự táo bạo và tinh thần tiên phong được tượng trưng bằng chữ số 1.",
+   "chuongVi": "Chương IV. Câu chuyện các con số · 1"
+  },
+  "s554224c11bc8456e": {
+   "vi": "Tích cực: Năng lực sáng tạo, tính độc đáo, cá tính, trực giác, sự tập trung, khát vọng, tính độc lập, tính xông xáo, óc chủ động, trí tuệ mạnh mẽ và tinh thần tiên phong táo bạo, với sự thống nhất giữa suy nghĩ và hành động là nét đặc trưng của mọi hoạt động. Các nhà phát minh, người tiên phong, người khởi xướng đều mang rung động 1.\n\nSố 1 là một phần của mọi con số và vì thế có ảnh hưởng mạnh đến mọi rung động khác. Nếu một cái tên được tạo bởi các chữ số 3–1, như Mary (3) Pickford (1), thì nó cho thấy năng lực sáng tạo trong lĩnh vực nghệ thuật và tự biểu đạt (3); nếu được tạo bởi các chữ số 4–1, nó cho thấy sự độc đáo trong thiết kế cơ khí, hoặc một người xây dựng các hệ thống hiệu suất.\n\nNghịch: Người số 1 nghịch thì kiêu ngạo, độc đoán, tự cao tự đại, thiếu chu đáo, ích kỷ, chỉ nghĩ đến mình, khăng khăng thỏa mãn bản thân bất kể người khác.\n\nTiêu cực: Người số 1 tiêu cực thì phụ thuộc, yếu đuối, lười biếng, phục tùng, trí óc ngủ mê, hạn hẹp trong suy nghĩ, hành động và biểu đạt.",
+   "chuongVi": "Chương V. Ba tầng nghĩa của các chữ số · 1 (Tích cực, Nghịch, Tiêu cực)"
+  },
+  "s8bfb3051ada650d7": {
+   "vi": "Đây là một con số mạnh mẽ, đầy uy lực, năng động, sáng tạo và nam tính.\n\nNó đại diện cho cá tính, sức mạnh và sự táo bạo.\n\nNó là một con số hay hờn dỗi, chỉ biết đến mình, và hiếm khi nhận ra điều gì vượt ngoài tầm nhìn của chính nó, vốn thường rất hạn hẹp.",
+   "chuongVi": "Chương II-IV. Tính chất và ảnh hưởng của các con số · 1"
+  },
+  "sba2fb0022686d958": {
+   "vi": "Nếu bạn là Số 2, bạn sẽ thấy mình được lợi ích từ bài tập này: — Đứng dang hai tay thẳng ra phía trước, ngang tầm tai, sao cho vai, bàn tay và ngón tay thành một đường thẳng.\n\nĐứng trên phần đệm trước của hai bàn chân, đặt song song. Từ từ hít một hơi thở từ sâu trong lòng đất làm phương tiện chuyên chở năng lượng. Đưa nó chậm rãi đi qua cơ thể lên tới đầu, rồi để nó thoát ra qua hai cánh tay và các ngón tay theo những đường thẳng, đồng thời gửi một rung động ra từ đỉnh đầu; thu các đường ấy về, cho chúng quay lại cùng hơi thở vào từ đầu ngón tay và đỉnh đầu, rồi đưa nó chậm rãi xuống qua cơ thể vào lòng đất. Làm như vậy, bạn sẽ thấy những đường ấy đến và đi bên ngoài cơ thể mình. Chúng là rung động của chính bạn, được điều khiển bằng sự tập trung, và mang trong mình lực từ tính mở ra những cánh cửa mà bạn hằng mong mở trong thế giới Tâm linh và vật chất. Số 2 trong Hình học là những đường thẳng. Bạn đại diện cho điều đó, một đường là Tinh thần, đường kia là Vật chất. Khi Tinh thần làm chủ thì nó cai quản vật chất; khi để vật chất làm chủ, con người suy yếu về sức mạnh tinh thần.\n\nKhi thở ra, hãy ngân nga nốt Si (B) — để nó tuôn chảy qua hai cánh tay và thoát ra ở đỉnh đầu — gửi nó ra theo những đường thẳng, rồi cho nó quay về và đi xuống lòng đất. Hãy để sức mạnh xuất phát từ cơ hoành, đẩy âm Si (B) qua đám rối thần kinh mặt trời, ra ngoài theo hai đường thẳng xa hết mức có thể, đẩy nó ra không giới hạn khoảng cách.",
+   "chuongVi": "Chương VI–VIII. Bài tập phát triển rung động hay chữ số ngày sinh của riêng bạn · Số 2"
+  },
+  "s784d1a83addb394c": {
+   "vi": "Số 2 mang bản tính người mẹ và giàu trực giác. Những người rung động với số 2 có khí chất tinh tế đến mức không thích hợp để đứng một mình nơi gian khó như số 1. Loại quặng chiếm ưu thế trong thành phần của họ là vàng — cũng là màu của họ, và họ thường thu hút được những gì thuộc về mình nếu biết đón nhận và đi theo sự dẫn dắt của những trí tuệ khác, rồi từ đó chọn ra lý tưởng cho mình.\n\nHọ tưới nước và chăm bón cho hạt giống người khác gieo, và chính họ thường là người gặt hái.\n\nHọ gắn bó chặt chẽ với số 1 và biết rõ hơn cách xử lý sự việc theo lối vật chất. Khi những người này trao một chân lý cho thế gian, họ biết cách khoác cho nó một ngôn ngữ đẹp đẽ.",
+   "chuongVi": "Chương II. Chi tiết về các con số · Số 2"
+  },
+  "s33dd3c3e010787d1": {
+   "vi": "Thu góp. Rung động của người hòa trộn; thu góp kinh nghiệm, thiên về phản chiếu hơn là sáng tạo; người hòa giải; nền móng để xây dựng nên những biểu hiện vật chất rộng lớn hơn; chịu trách nhiệm về những chi tiết nhỏ nhất, tinh tế nhất, những “viên gạch” của mọi công trình.",
+   "chuongVi": "Chương II. Các con số · Đặc tính chung · 2"
+  },
+  "sa6e0a6ff1ecedd2b": {
+   "vi": "Biểu hiện xây dựng — NGOẠI GIAO. Bạn khéo léo, mong làm vừa lòng người khác, không bao giờ hung hăng, mà thường chờ ý kiến người khác trước khi bày tỏ ý kiến của mình. Bạn tỏ ra sẵn lòng học hỏi và thu thập mọi kiến thức về mọi chủ đề mình nghe đến, và giao du thoải mái, trên cơ sở bề ngoài là bình đẳng, với đồng loại thuộc mọi hạng người, mọi hoàn cảnh. Bạn có thể dễ dàng đặt mình dưới luật cho và nhận bằng cách làm cả những việc giúp đỡ nhỏ nhất khi được nhờ. Bạn sẽ nỗ lực hết mức vì hòa bình và luôn đóng vai người hòa giải, tìm cách xoa dịu cơn giận của người khác và giữ được bình tĩnh trong một số hoàn cảnh khó khăn.\n\nBạn có cá tính riêng, nhưng cá tính ấy — có được qua sự khai tâm trong rung động số 1 — luôn được giữ ở hậu trường và chỉ được biểu hiện một cách bền bỉ, không bao giờ áp đảo.\n\nBiểu hiện phá hoại — THỜ Ơ. Bạn khá bất mãn, dễ nổi giận; có thể trở nên cố tình phá hoại, xé bỏ và hủy hoại chỉ vì niềm vui mà sự phá hoại đem lại. Bạn không thích giao du và cá tính không phát triển mấy. Bạn cẩu thả với môi trường xung quanh, với những người mình giao thiệp và với vẻ ngoài của mình, và chỉ tuân theo những tiêu chuẩn do chính mình đặt ra theo từng lúc. Bạn hứa đủ điều nhưng hiếm khi thực hiện lời hứa nào.",
+   "chuongVi": "Chương V. Các con số trong hành động · 2 (Biểu hiện xây dựng và phá hoại)"
+  },
+  "s6b6521c2abe550fc": {
+   "vi": "Phụ thuộc. Thiếu sức mạnh để đạt được nhiều điều cho bản thân. Có rất ít ý kiến riêng và dễ dàng phản chiếu ý tưởng, lời lẽ của những người xung quanh. Quá dễ bị thuyết phục làm những việc thấp kém cho người khác; hiếm khi hài lòng mà cảm thấy gánh nặng của cuộc đời và của việc mưu sinh khá nặng nề. Tuy không bất mãn, nhưng không cảm thấy thôi thúc hòa nhập với người khác.",
+   "chuongVi": "Chương VI. Tác động tiêu cực · 2"
+  },
+  "s1a5d40b9c1347ab8": {
+   "vi": "Con số của sự đối lập; cũng là con số của sự làm chứng và xác nhận. Cặp đôi, như cộng và trừ, chủ động và bị động, nam và nữ, dương và âm, lời và lỗ, v.v. Nó đại diện cho tính nhị nguyên của sự sống được biểu hiện: Thượng Đế và Tự Nhiên, Tinh Thần và Vật Chất, cùng các mối quan hệ giữa chúng. Nó biểu thị sự đồng thuận, cũng như sự chia tách, quy luật luân phiên, chủ thể và khách thể, sự phản chiếu. Vì kết hợp trong mình những vế hay nguyên lý đối lập, nó biểu thị sự sáng tạo, sản sinh, kết trái, kết hợp. Trước hết là hai trạng thái: cái được biểu hiện và cái chưa biểu hiện, cái hiển lộ và cái tiềm ẩn. Biểu tượng của Mặt Trăng.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Chín chữ số · 2"
+  },
+  "s66ae4e5a5f62f9b0": {
+   "vi": "Mối quan hệ, sự hấp dẫn tâm linh, cảm xúc, thiện cảm hay ác cảm, hoài nghi, dao động.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Giọng thứ · 2"
+  },
+  "s556c11ddf7a4d8ec": {
+   "vi": "Rung động đầu tiên, sinh ra từ sự tiếp xúc giữa tinh thần và vật chất, được tiêu biểu ở phương diện tích cực bởi Adam, người đàn ông đầu tiên, rồi đến Eve, bản đối ứng nữ tính hay tiêu cực của ông, người đạt được ý mình bằng sự ngoại giao khéo léo. Như vậy ta có hai đơn vị năng lượng đại diện cho sự biểu hiện trọn vẹn của rung động đầu tiên, đem lại cho chữ số 2 những phẩm chất của tính lưỡng phân, tài ngoại giao và một bản chất tiếp nhận, nữ tính.",
+   "chuongVi": "Chương IV. Câu chuyện của các con số · 2"
+  },
+  "sfabb1f35206aefae": {
+   "vi": "Tích cực — Tính lưỡng phân. Ngay cả ở phương diện tích cực, số 2 vẫn tượng trưng cho tính lưỡng phân. Nó có thể vận dụng những phẩm chất mạnh mẽ của số 1 để nhanh nhạy và xông xáo, hoặc hoạt động qua mặt hòa đồng, khéo ngoại giao và nữ tính hơn trong bản chất của mình. Nó biết hợp tác, tử tế, là người thu thập và xây dựng — một người biên soạn xuất sắc các số liệu thống kê, dữ kiện và thông tin để người khác xử lý.\n\nNghịch — Hay phê phán, cằn nhằn, bới lỗi, luôn lo lắng người khác có thể nghĩ gì, làm bộ để gây ấn tượng, dễ bị xu nịnh, ích kỷ, không đáng tin cậy, kiêu hãnh đến mức tự hại mình.\n\nTiêu cực — Thờ ơ, cẩu thả, không quan tâm đến vẻ ngoài của bản thân, không hòa đồng, không thể quyết định điều gì rồi giữ vững quyết định đó, tiêu cực và dễ bị tác động đến mức trở thành công cụ của những đầu óc mạnh hơn quanh mình.",
+   "chuongVi": "Chương V. Ba tầng nghĩa của các chữ số · 2 (Tích cực, Nghịch, Tiêu cực)"
+  },
+  "s6eef2ea835c9fc4b": {
+   "vi": "Nếu Số Một là một ảnh hưởng nam tính thì Số Hai là cực đối lập của nó, một con số rõ ràng nữ tính và dễ tiếp nhận.\n\nĐó là một con số tử tế, khéo léo ngoại giao và yêu hòa bình: tuy số hai còn lâu mới là một sức mạnh thực sự về ảnh hưởng, nó khác Số Một ở chỗ sức mạnh của nó mang tính chủ quan hơn là khách quan: ảnh hưởng của nó tinh tế, dịu dàng và hữu ích. Số Hai được cho là con số lý tưởng cho các bà Mẹ, cho Bác sĩ, Nha sĩ, Y tá, Nhà ngoại giao, v.v.\n\nĐó là một con số hay rung động của khí chất và cá tính, và là con số của trái tim nhiều hơn là của trí óc.",
+   "chuongVi": "Chương II–IV. Tính chất và ảnh hưởng của các con số · 2"
+  },
+  "sd79f58c3a5e65a5d": {
+   "vi": "Nếu chữ số tên hay rung động ngày sinh của bạn là 3, để có một tính cách hoàn hảo, bạn phải biểu hiện hai rung động đứng trước, 1 và 2.\n\nTính cách số 2 là sự kết hợp giữa số 1 và chính nó. Bạn phải biểu hiện cả hai.\n\nHãy luôn nhớ rằng bạn giàu cảm xúc và dễ bị tác động, và trừ khi luôn giữ những lý tưởng cao đẹp của mình trước mắt, bạn dễ bị môi trường xung quanh lôi cuốn và biểu hiện bất cứ điều gì được đưa đến cho bạn biểu hiện. Bạn phải đâm rễ và đứng vững trong chân lý đến mức không điều gì thấp hơn lý tưởng của bạn có thể tìm được lối biểu hiện qua bạn.",
+   "chuongVi": "Chương VI-VIII. Bài tập phát triển rung động hay chữ số ngày sinh của bạn · Số 3"
+  },
+  "s090b30f057a595ca": {
+   "vi": "Số 3, là sự biểu hiện ra bên ngoài của nguyên lý Đức Kitô trong Ba Ngôi.\n\nSứ mệnh của họ là noi gương Đức Kitô: chữa lành người bệnh và ban phước cho thế gian.\n\nNgười khác nên xây nhà cho họ, còn người số 3 nên ban phước cho những ngôi nhà ấy.",
+   "chuongVi": "Chương II. Chi tiết về các con số · Số 3"
+  },
+  "sd8941762e483f45f": {
+   "vi": "Biểu hiện cá nhân. — Tự biểu hiện; trang điểm; nghệ thuật; phê bình; quan sát. Là hợp thể của 1 và 2, nó vì thế đã cộng thêm vào số 1 của sự sáng tạo cá nhân những trải nghiệm của số 2. Tham vọng; giải trí; biểu hiện xã hội; thời trang; cảm hứng; công việc cá nhân.\n\nRung động này luôn cần thiết cho các rung động 1 và 2, đem lại cho chúng sự biểu hiện trọn vẹn, và tự thân nó ít nhiều không hoàn chỉnh nếu thiếu một hoặc cả hai rung động này để dựa vào như một chiếc neo hay một nền tảng.",
+   "chuongVi": "Chương II. Các con số · Đặc tính chung · 3"
+  },
+  "s068089c5f3213191": {
+   "vi": "Biểu hiện xây dựng — HOÀI BÃO. Bạn nắm lấy mọi cơ hội được đưa đến để mở rộng sự thể hiện bản thân, dù luôn ghi nhớ nguyên tắc tập trung và trật tự trong cách thể hiện và trong việc tìm tòi. Bạn hòa đồng, sẵn lòng tiếp đãi mà không biến mình thành trò phô trương qua sự thể hiện bản thân. Bạn cố gắng đạt đến độ tinh tế nhất trong việc thể hiện cá tính bằng cách ăn mặc đẹp và có óc nghệ thuật trong lựa chọn trang phục và không gian sống. Bạn giàu cảm hứng, không tìm việc làm bằng tay chân mà thiên về các lĩnh vực nghệ thuật hay biểu đạt. Bạn thích làm người bạn đồng hành thú vị với người khác và luôn khoan dung với lỗi lầm của người khác ngay cả khi bạn nhận ra chúng rất nhanh. Bạn có thể kiên nhẫn chờ đợi những sáng tạo của mình thành hình và kiên nhẫn khi đối xử với người khác.\n\nBiểu hiện phá hoại — BẤT KHOAN DUNG. Bạn khá ích kỷ, nguyên tắc không cao lắm và không ngại dùng mọi cách để có được thứ mình muốn hoặc đạt được tham vọng thể hiện bản thân một cách hoàn hảo. Bạn không đủ nghiêm túc để rèn mình đến nơi đến chốn trong bất kỳ tài năng nào, mà chạy theo sức hút mới nhất nên khá thiếu tập trung, không thực sự biết mình muốn gì hay làm sao để có được nó. Bạn khắt khe và hay chỉ trích, mải mê so sánh không ngừng cách thể hiện của mình với người khác và luôn tự hạ thấp bản thân. Bạn thiếu kiên nhẫn, nông nổi, và lúc nào cũng biết mọi việc nên làm và nói thế nào, nên người khác rất khó nói cho bạn điều gì.",
+   "chuongVi": "Chương V. Các con số trong hành động · 3 (Biểu hiện xây dựng và phá hoại)"
+  },
+  "s44b64b07679d119c": {
+   "vi": "Bộ ba; tam vị của sự sống, bản thể và trí tuệ, của lực, vật chất và ý thức. Sáng tạo, bảo tồn và hóa giải. Gia đình: cha, mẹ và con. Ba chiều không gian. Ba tiền đề: người suy nghĩ, ý nghĩ và sự vật. Tính nhị nguyên phản chiếu trong ý thức, như trong thời gian và không gian, tạo thành ba trạng thái như quá khứ, hiện tại và tương lai; vì thế là sự mở rộng của cái tôi; năng lực tự mở rộng; ý chí; sự tiến hành; sự thâm nhập. Biểu tượng của Sao Hỏa.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Chín chữ số · 3"
+  },
+  "s2b2c46dc32b45e18": {
+   "vi": "Mở rộng, gia tăng, năng lực trí tuệ, giàu có và thành công.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Giọng thứ · 3"
+  },
+  "sd26fd0fbf1409f43": {
+   "vi": "Đại lực sáng tạo, hoạt động qua hai phương diện của rung động đầu tiên, đã sinh ra một đơn vị biểu hiện thứ ba. Như vậy, số 3 đánh dấu sự hoàn tất của bộ ba trần thế đầu tiên, cha – mẹ – con, và tượng trưng cho sự biểu hiện trọn vẹn và vui tươi trên bình diện tự nhiên.",
+   "chuongVi": "Chương IV. Câu chuyện của các con số · 3"
+  },
+  "s1595e03d076883cf": {
+   "vi": "Tích cực: Biểu đạt trọn vẹn và vui tươi trong nghệ thuật hoặc các lĩnh vực nhân đạo; một đứa con của thiên nhiên. Số 3 là bậc thầy trên bình diện vật chất, kết hợp năng lực sáng tạo của số 1 với sức xây dựng và thu góp của số 2 thành một sự biểu đạt vui vẻ những điều đem lại tiện nghi, sức khỏe và niềm vui. Người này biết cách thúc đẩy tham vọng cá nhân nhờ óc chủ động của số 1 và sự khéo léo của số 2, xuất sắc trong âm nhạc, nghệ thuật, văn chương, luật, nghề điều dưỡng và nghề chữa bệnh, hoặc trong bất kỳ hướng nào đòi hỏi sự tự biểu đạt để phục vụ người khác. Ta thấy nhiều người số 3 gắn với các phòng trà, thẩm mỹ viện, cửa hàng mũ và cửa hàng quà tặng. Óc hài hước và sự nhanh nhạy trong đối đáp khiến họ được ưa chuộng làm người chủ trì nâng ly và diễn giả sau bữa tiệc.\n\nNghịch: Ích kỷ, nhục dục, sa đọa, phân tán sức lực, sống cô độc, nóng vội, tự cho mình quan trọng, tự cao tự đại.\n\nTiêu cực: Dồn nén, khó gần, không đáng tin cậy, ăn mặc cẩu thả, thờ ơ với âm nhạc hay nghệ thuật, phụ thuộc, lười biếng và hờ hững.",
+   "chuongVi": "Chương V. Ba tầng nghĩa của các chữ số · 3 (Tích cực, Nghịch, Tiêu cực)"
+  },
+  "s29c9a352f3c9f05c": {
+   "vi": "Đây là con số của sự biểu đạt, ngâm đọc và phát âm.\n\nNó ảnh hưởng đến tài hùng biện, diễn xuất, ca hát, viết lách, khiêu vũ và hội họa.\n\nĐặc điểm chủ yếu của nó là sự vui vẻ, hân hoan, vui nhộn, khoái lạc và tưng bừng; ngoài ra niềm vui, sự hoan hỉ, khoái lạc, ngây ngất và cảm hứng là những biểu hiện nổi trội. Nếu Số Hai là con số yêu hòa bình, thì có thể nói Số Ba là con số đem lại niềm vui.",
+   "chuongVi": "Chương II–IV. Tính cách và ảnh hưởng của các con số · 3"
+  },
+  "sc0983d8c02442a91": {
+   "vi": "Photius nhận xét rằng Bộ Ba là số lẻ đầu tiên về mặt năng lượng, là số hoàn hảo đầu tiên, và là trung điểm và tỉ lệ tương đồng.\n\nCác môn đồ Pythagoras gắn nó với Sinh lý học; nó là nguyên nhân của mọi thứ có ba chiều.\n\nNó cũng là nguyên nhân của sự khuyên bảo đúng đắn, trí tuệ và hiểu biết, là Bà chủ của Âm nhạc, cũng là bà chủ của Hình học, nắm quyền trong mọi điều thuộc về Thiên văn học cùng bản chất và hiểu biết về các thiên thể, nối kết và dẫn dắt chúng thành các hiệu quả.\n\nMọi đức hạnh cũng treo từ nó và phát xuất từ nó.",
+   "chuongVi": "Phần IV. Từng con số · Bộ Ba (3)"
+  },
+  "s03183d8417dcfa0a": {
+   "vi": "NẾU chữ số tên của bạn là 4 hoặc rung động ngày sinh của bạn là con số năng động này, hãy đứng trên phần mũi của cả hai bàn chân — đặt hai tay lên hông, khuỷu tay chĩa thẳng ra, vai mở rộng về sau — hút hơi thở lên qua đôi chân và đẩy ra qua khuỷu tay. Đẩy nó ra cho đến khi bạn cảm thấy sức mạnh rời khỏi mình như những luồng ánh sáng xanh lam. Giữ ngực nâng cao và bụng hóp sâu vào. Làm như vậy năm lần, rồi duỗi thẳng hai tay từ vai xuống dọc hai bên, nắm chặt bàn tay và theo hơi thở đẩy sức mạnh ra qua cánh tay và đầu; bước bốn bước với đôi chân căng tràn năng lượng, giữ hơi thở đầy năng lượng, rồi thả lỏng. Làm như vậy bốn lần và ngân nốt Fa trong khi tập các bài này.",
+   "chuongVi": "Chương VI-VIII. Bài tập phát triển rung động hay chữ số ngày sinh của bạn · Số 4"
+  },
+  "s9957137c2b110452": {
+   "vi": "Số 4 là đối lập của số 3. Những người này làm việc hoàn toàn trên bình diện trí tuệ.\n\nHọ là những người bảo vệ gia đình và đất nước.\n\nHọ đại diện cho đông đảo quần chúng của thế gian.",
+   "chuongVi": "Chương II. Chi tiết về các con số · Số 4"
+  },
+  "sec52eb96a92aacb8": {
+   "vi": "Tính vật chất. — Thiếu cảm hứng; gia đình; lòng yêu nước; sự thật; sức chịu đựng; sự chuyên cần; sự tập trung; tính quả quyết; tính thực tế; người làm công ăn lương thành công. Rung động này khiến việc thấu hiểu các đề tài tâm linh và cảm hứng trở nên khó khăn và khiến người ta không ưa những chuyện vặt vãnh xã giao.",
+   "chuongVi": "Chương II. Các con số · Đặc tính chung · 4"
+  },
+  "s5bf4f2fecbdfe60c": {
+   "vi": "Biểu hiện xây dựng: KIÊN ĐỊNH. Bạn được trí tuệ và lý trí dẫn dắt. Bạn chú ý kỹ đến những công việc chi tiết trong cuộc sống và đến cách vận hành của những chủ thể và đối tượng bạn gặp. Bạn tìm cách nâng mình lên nhờ sự hoàn thiện cao hơn về kỹ thuật; bạn khao khát kiến thức thực tế, hữu ích và mong vươn tới một vị trí có quyền lực. Bạn sẵn lòng làm việc, học tập chăm chỉ để đạt được mục tiêu và có thể rất cần mẫn, tỉ mỉ. Bạn không quan tâm đến các chủ đề tâm linh hay trực giác trừ khi chúng có thể chứng minh được trong thực tế, và sẽ không chống lại sự kiểm soát chính đáng mà người khác đặt lên bạn, cũng không chống lại việc thể hiện sự phụng sự trong chính cuộc đời mình. Bạn rất trung thực, đáng tin cậy và chính xác, thực tế và biết tuân lệnh.\n\nBiểu hiện phá hoại: BẤT MÃN. Bạn không hài lòng với việc phục vụ, luôn cho rằng mình đang bị người khác bóc lột, là kẻ chỉ chăm chăm nhìn đồng hồ, và làm người phục vụ chỉ vì phải tiêu thời gian vào việc gì đó. Bạn khao khát những vị trí kiểm soát cao hơn nhưng không chịu làm việc để chuẩn bị cho mình. Theo đánh giá của chính bạn, bạn chẳng kém ai, và luôn dễ gây bất mãn cho bản thân lẫn người khác. Bạn gạt phăng mọi thứ mà bạn không thấy ngay lý lẽ của nó từ cái nhìn đầu tiên, và ngăn cản người khác tìm hiểu sâu thêm theo những hướng bạn đã gạt bỏ.",
+   "chuongVi": "Chương V. Các con số trong hành động · 4 (Biểu hiện xây dựng và phá hoại)"
+  },
+  "s0d053147941c6024": {
+   "vi": "Thiếu tham vọng. — Chỉ là những người làm việc như máy, làm vì phải sống chứ không vì sự thăng tiến cá nhân theo bất kỳ cách nào. Trí tuệ phát triển không cao lắm, chỉ mong có cơ hội làm việc và sống qua ngày.",
+   "chuongVi": "Chương VI. Tác động tiêu cực · 4"
+  },
+  "s643b3ff75d9132c4": {
+   "vi": "Con số của thực tại và sự cụ thể hóa. Vũ trụ vật chất. Hình lập phương hay hình vuông. Các quy luật vật lý; logic; lý trí. Vẻ bề ngoài, tướng mạo, khoa học. Nhận thức qua tri giác, kinh nghiệm, hiểu biết. Chữ thập, sự phân đoạn, phân chia, trật tự, phân loại. Chữ vạn, bánh xe của luật, sự nối tiếp, sự liệt kê. Trí năng; ý thức, với tư cách là khả năng phân biệt giữa tinh thần và vật chất, giữa thế giới bản thể và thế giới hiện tượng, được biểu thị bằng bộ ba cao và bộ ba thấp. Do đó là sự phân định, thận trọng, tính tương đối. Biểu tượng của Sao Thủy.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Chín chữ số · 4"
+  },
+  "s518a7b7a30ba74cc": {
+   "vi": "Sự hiện thực hóa, tài sản, sở hữu, uy tín và địa vị, tính vật chất.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Giọng thứ · 4"
+  },
+  "sda6b71e6f15f7070": {
+   "vi": "Đã đạt đến sự hoàn thiện về thể chất, con người nhận ra rằng rốt cuộc mình vẫn chưa thật sự mãn nguyện. Con người nhìn quanh và bắt đầu tự hỏi vì sao. Con người bắt đầu tự mình suy xét mọi việc và nhờ đó phát triển trí tuệ. Con người nhận ra rằng điều tốt lành bền lâu chỉ đến khi chính mình sống “ngay thẳng”. Việc chứng minh được một nguyên lý khơi lên trong con người niềm khao khát cháy bỏng muốn biết thêm nữa, đến mức ta thấy con người miệt mài từ sáng sớm đến tối muộn để kiếm thêm tiền, nhằm tiếp tục theo đuổi con đường thành tựu trí tuệ. Một người số 4 đích thực luôn bận rộn, đầy nghị lực và ngay thẳng, không ngừng tìm kiếm thêm bằng chứng và tri thức lớn hơn.",
+   "chuongVi": "Chương IV. Câu chuyện các con số · 4"
+  },
+  "sb95965fd59bbbc29": {
+   "vi": "Tích cực — Người xây dựng trên bình diện vật chất và trí tuệ, tận tâm, “ngay thẳng”, luôn bận rộn cả về trí óc lẫn thể chất. Người số 4 là một người giữ sổ sách hay thợ máy tuyệt vời; người ấy giỏi toán, có phương pháp, giỏi phân tích, suy luận, trung thực, là bậc thầy về chi tiết và công việc thường nhật. Người ấy là người xây dựng hệ thống xuất sắc để tiết kiệm hơn, hiệu quả hơn hoặc năng suất hơn. Tham vọng của người ấy mang tính cá nhân, nhằm phát triển bản thân, nhưng trong mọi người làm công, người ấy là người tận tâm và trung thành nhất.\n\nNghịch — Hay phê phán, tự giới hạn mình, là kẻ làm lụng cực nhọc, cắm mặt vào công việc không ngơi nghỉ, tiết kiệm đến mức bủn xỉn từng đồng, phân tích đến mức không chịu nghe linh cảm mà tự lý lẽ để gạt bỏ cả những ý định tốt của mình.\n\nTiêu cực — Chán nản, bị chôn vùi dưới nghịch cảnh, giới hạn tài chính và công việc nặng nhọc, một người cần mẫn lầm lũi không chút mong muốn phát triển trí tuệ.",
+   "chuongVi": "Chương V. Ba tầng nghĩa của các chữ số · 4 (Tích cực, Nghịch, Tiêu cực)"
+  },
+  "s84b9af99178896b5": {
+   "vi": "Con số này ban cho người mang nó một ảnh hưởng sáng tạo và bền bỉ.\n\nĐây là một con số nặng nề, thiên về thể chất, thô mộc và hạn hẹp, một con số thiên về phân tích và tranh luận.\n\nVề nhiều mặt, đây là một rung động tốt để bắt đầu một việc mạo hiểm, vì nó mạnh mẽ, vững nặng và khó bị lái chệch khỏi hướng đi của mình.",
+   "chuongVi": "Chương II-IV. Tính chất và ảnh hưởng của các con số · 4"
+  },
+  "s989271fc966dce8c": {
+   "vi": "Nếu 5 là chữ số của tên hoặc rung động ngày sinh của bạn, hãy đứng thẳng và hít một hơi dài, đưa sức mạnh từ mặt đất đi lên qua bàn chân và đôi chân, giơ hai tay ngang vai về mọi hướng: phía trước, hai bên, một tay phía trước và một tay phía sau; giữ yên hoàn toàn và đẩy hơi thở ra mọi hướng từ các đầu ngón tay của hai bàn tay đang mở. Ngân nga hoặc hát nốt Son; rồi đẩy hơi thở ra thật mạnh, đầy năng lượng, qua đôi mắt cho đến khi chúng như những luồng sức mạnh rực cháy. Đừng mở mắt quá to, mà hãy biến chúng thành kênh dẫn cho rung động; để sức mạnh đến từ đám rối thần kinh mặt trời và cảm nhận đồng thời rung động chảy vào và chảy ra. Hãy tập trung suy nghĩ vào bài tập này và gạt mọi thứ khác ra khỏi tâm trí. Khi bạn làm được điều này, nó sẽ cho thấy kiểu phát triển mà một người số 5 cần đạt được.",
+   "chuongVi": "Chương VI–VIII. Bài tập phát triển rung động hay chữ số ngày sinh của riêng bạn · Số 5"
+  },
+  "s917b31956a81f431": {
+   "vi": "Số 5 mở đầu chu kỳ mới của tâm trí. Pythagoras, theo luật đối lập của ông, xem nó vừa mang tính nam vừa mang tính nữ.\n\nSố 5 giống như một người thấy mình đang ở một vùng đất cao chưa được khám phá, với những lối đi dẫn ra mọi hướng. Trong rung động này, tâm trí bắt đầu vươn tới những điều vô hình.\n\nHọ thường tự chủ, điềm đạm và cuốn hút. Vì chưa phát triển và chưa đạt đến nhận thức về tình huynh đệ giữa con người, họ thường chiếm lấy quyền của người khác, và vì lòng ham muốn lợi lộc vật chất nổi trội, họ hay trở thành nhà thôi miên và pháp sư hắc thuật. Vì lẽ đó, nó từng bị gọi là một con số bất hạnh. Nhưng nó cũng có nhiều con đường tốt như các số khác.",
+   "chuongVi": "Chương II. Chi tiết về các con số · Số 5"
+  },
+  "s65bf32a1dee57555": {
+   "vi": "Trải nghiệm cuộc sống. — Đây là một rung động mà chính Pythagoras cũng không thực sự hiểu và các nhà diễn giải hiện đại cũng ít có điều gì để nói về nó.\n\nNó là sự mở rộng sang một chu kỳ biểu hiện mới, và tượng trưng cho sự không ưa bị kiểm soát; mối quan tâm háo hức đến cuộc sống và việc sống; sự điều tra; nghiên cứu các đề tài siêu hình; cảm hứng; lạc quan; sự đa dạng; khoa học; tính linh hoạt; tình bầu bạn; tính độc đáo; sự thoải mái; sức quyến rũ. Rung động này bị cuốn hút bởi mọi thứ nhưng không bị thứ gì giữ chân, và không bị ràng buộc trong việc lựa chọn nhiều phương diện biểu hiện của cuộc sống.",
+   "chuongVi": "Chương II. Các con số · Đặc tính chung · 5"
+  },
+  "sebfeaffa21fe0c19": {
+   "vi": "Biểu hiện xây dựng — SỰ SỐNG MỚI. Bạn giàu cảm hứng, óc phát minh và trực giác; tự do về mặt cá nhân, một người hay đi xa, một người bạn đồng hành được chào đón, dang rộng vòng tay đón nhận cuộc đời, sẵn sàng hòa làm một với mọi trải nghiệm gặp phải như một phương tiện để bản thân khai mở và mở rộng cao hơn. Bạn cố gắng duy trì một cách biểu hiện như Đức Kitô qua thái độ phổ quát trước mọi hoàn cảnh và qua tính đa năng của mình; thế nhưng bạn biết mình muốn gì mà không cần lập kế hoạch và chuẩn bị cho mục tiêu.",
+   "chuongVi": "Chương V. Các con số trong hành động · 5 (Biểu hiện xây dựng và phá hoại)"
+  },
+  "s1ff1331ffd1b0d60": {
+   "vi": "Con số này đại diện cho sự mở rộng. Tính bao hàm, sự lĩnh hội, sự thấu hiểu, óc phán xét. Sự gia tăng, sự sinh sôi, sự nhân giống. Công lý, gặt hái, thu hoạch. Sự tái tạo bản thân trong thế giới vật chất, vai trò làm cha, thưởng và phạt. Quả nhiều hạt hay quả lựu, sự nhân lên. Biểu tượng của Sao Mộc.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Chín chữ số · 5"
+  },
+  "s5168ac8cb3f1a227": {
+   "vi": "Lý trí, logic, đạo đức học, du hành, thương mại, sự hữu dụng.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Giọng thứ · 5"
+  },
+  "s20d811098aa41be7": {
+   "vi": "Khi đã đạt đến giai đoạn làm chủ về trí tuệ, cá nhân khao khát thử sức mình. Trong quá trình đó, người ấy gặp nhiều trải nghiệm đa dạng và vài bài học cay đắng, cho tới khi có được khám phá lớn giúp lấy lại thăng bằng. Người ấy nhận ra rằng chỉ riêng hiểu biết thôi thì không đủ để đem lại điều trái tim mình khao khát, và chỉ khi làm chủ tuyệt đối bản thân cùng mọi đam mê thể xác thì mới có thể chi phối người khác bằng sức hút từ tính của chính mình. Được hiểu cuộc sống từ mọi góc độ với sự tự do suy nghĩ và hành động không giới hạn là khát vọng thường trực của số 5.",
+   "chuongVi": "Chương IV. Câu chuyện của các con số · 5"
+  },
+  "s23328ea1f90636b6": {
+   "vi": "Tích cực: Những người “xông xáo” tìm kiếm trải nghiệm, khám phá cuộc sống từ mọi góc độ. Số 5 yêu tự do, thay đổi, sự đa dạng, cảnh mới và những mối giao tiếp mới; đa tài, có sức hút, duyên dáng, giỏi hòa nhập, là người đánh giá bản chất con người tuyệt vời, quan tâm đến việc nghiên cứu triết học và siêu hình, là người phân tích tính cách giỏi. Số 5 có bản năng tính dục mạnh, nhưng làm chủ được bản thân và có thể nhanh chóng thích nghi với mọi môi trường. Người này là người làm tươi trẻ và khơi dậy nhiệt huyết trên mọi bình diện: người chào hàng lưu động, nghệ sĩ tạp kỹ, “diễn giả nổi tiếng về tâm lý học”.\n\nNghịch: Bị tính dục chi phối, hôm nay ở đây mai đã đi, luôn tìm kiếm những đồng cỏ xanh hơn, hoàn toàn không đáng tin cậy, kẻ phá hoại gia đình, sự bình yên và niềm vui vì sự thỏa mãn ích kỷ, quan tâm đến hắc thuật.\n\nTiêu cực: Những người thất bại về thể chất, tinh thần và tài chính, sống một cuộc đời đơn điệu và gian khổ, là hậu quả của sự buông thả và bất ổn của chính họ.",
+   "chuongVi": "Chương V. Ba tầng nghĩa của các chữ số · 5 (Tích cực, Nghịch, Tiêu cực)"
+  },
+  "s89243677b12a7ca8": {
+   "vi": "Ảnh hưởng của con số này thiên về sự kích động, bồn chồn và giông bão.\n\nSố Năm đặc trưng cho một rung động có phần khác thường — ở chỗ nó có hai mặt. Những người thuộc rung động này có thể được ví như một người ngồi trên hàng rào, lúc nghiêng bên này lúc nghiêng bên kia, không bao giờ chắc lợi ích tốt nhất của mình nằm ở phía nào.\n\nVề nhiều mặt, nó có thể được so sánh với cung Song Tử trong chiêm tinh học, tức là có bản chất hai mặt — vừa xây dựng vừa phá hoại, vừa lạc quan vừa bi quan, vừa vui vẻ vừa u sầu.",
+   "chuongVi": "Chương II-IV. Tính chất và ảnh hưởng của các con số · 5"
+  },
+  "s1e0de07dedd69a07": {
+   "vi": "Từ các Trích đoạn của Nicomachus, chúng ta có được hiểu biết về học thuyết của phái Pythagoras về con số năm. Nó là một số mang tính cầu và tròn ở mức cao, vì trong mọi phép nhân nó tự tái hiện và được thấy ở vị trí kết thúc của số; nó là sự thay đổi về Phẩm chất, vì nó biến thứ có ba chiều thành sự đồng nhất của một hình cầu bằng cách chuyển động vòng tròn và tạo ra ánh sáng: và vì thế “Ánh sáng” được gán cho số 5.\n\nNó cũng là “Sự vắng bóng Xung đột”, vì nó kết hợp trong tình thân hai dạng số chẵn và lẻ, tức là 2 và 3. Nó cũng là Công lý, vì đưa mọi sự ra ánh sáng.\n\nNó cũng là “Bất khả chiến bại”, vì một lý do hình học có thể tìm thấy ở Alexander Aphrodisiensis, trong phần Chú giải Quyển 1 bộ Siêu hình học của Aristotle.\n\nNó cũng là “Giới hạn nhỏ nhất của Sức sống”, vì có ba năng lực của Sự sống: thực vật, tâm hồn và lý trí; và vì năng lực Lý trí được sắp xếp theo bộ bảy, năng lực Tâm hồn theo bộ sáu, nên năng lực Thực vật thuộc quyền chi phối của Bộ Năm.",
+   "chuongVi": "Phần IV. Từng con số · Bộ Năm (5)"
+  },
+  "s633006dc9ce2d9e2": {
+   "vi": "Nếu chữ số tên hay rung động ngày sinh của bạn là 7, hãy đứng hoặc ngồi với cơ thể thả lỏng thụ động; nếu ngồi thì để hai tay đặt trong lòng, và giữ ý nghĩ về cội nguồn của mọi sự sống đang chảy vào những nơi sâu kín nhất trong con người bạn, nơi lưu giữ tri thức về Tinh thần và Vật chất. Trong bể chứa này tích trữ sức mạnh luôn sẵn sàng chờ để trợ giúp cả bạn lẫn mọi linh hồn đang nhập thể khác. Bạn không thể tiến bước một mình. Những tài năng bạn có được nhờ ích kỷ sẽ rơi rụng khỏi bạn, vì chúng chưa bao giờ được tắm trong dòng nước tinh khiết của sự sống.\n\nMỗi ngày, dù ngồi, đứng hay nằm, hãy bám giữ sức mạnh ở trung tâm — gọi là cơ hoành hay đám rối thái dương cũng được, không quan trọng — và hít một hơi thật sâu như thể hơi thở đi qua mọi phần trên cơ thể về trung tâm duy nhất này. Rồi giữ chắc điểm duy nhất ấy, tỏa ra những luồng yêu thương cho đến khi không còn một nguyên tử nào trong cơ thể bạn không rung động theo ý nghĩ tốt lành này. Gửi nó đi xa đến mọi người đang cần. Nó tiềm tàng chứa đúng điều mà những linh hồn đau khổ cần, và bạn làm trong lành bầu khí quyển của họ, giúp họ có thể nhận được những gì cần cho điều tốt đẹp cao nhất của mình. Hãy gửi rung động này đến cả những người bạn không yêu cũng như những người bạn yêu. Bạn sẽ sớm thấy mình thoát khỏi xiềng xích của sự oán giận.\n\nKhi đẩy rung động này ra, thỉnh thoảng hãy hát nốt ứng với ngày sinh của bạn, tức nốt Si — hay fa — hát vang rõ ràng và ngân nó cho đến khi bạn cảm thấy nó rung khắp cơ thể và xóa sạch khỏi não bạn những hình ảnh tinh thần của các ấn tượng quá khứ. Trong các bài tập này, hãy giữ chắc nhất chữ số ngày sinh, nhưng kết hợp thêm chữ số của từng cái tên bạn mang và ngân rõ từng nốt, cùng chữ số của toàn bộ tên.",
+   "chuongVi": "Chương VI-VIII. Bài tập phát triển rung động hay chữ số ngày sinh của bạn · Số 7"
+  },
+  "s085df353d5668e15": {
+   "vi": "Số 7 là một con số khép kín. Hình dạng của nó giống một người mang một bọc hành lý trên lưng. Bọc hành lý ấy là quá khứ của người đó. Sáu ngày làm việc đã qua nhưng người ấy vẫn mang ký ức về chúng trong tâm trí, và dường như rất khó gạt bỏ nỗi sợ rằng ai đó sẽ tìm cách khám phá những bí mật trong bọc hành lý mình mang.\n\nNgười số 7 giống như một hồ chứa đầy nước mà không có lối thoát; vậy mà trong khi khao khát một lối thoát, nếu có ai đem đến cho họ, họ sẽ từ chối như thể đó là sự xâm phạm quyền của mình.\n\nHọ luôn có thể làm bạn ngạc nhiên bằng những hiểu biết mà bạn không ngờ họ có.",
+   "chuongVi": "Chương II. Chi tiết về các con số · Số 7"
+  },
+  "s403781a15d33aa3c": {
+   "vi": "Sắp xếp lại bên trong. Rung động của người thợ đã hoàn tất công việc; nghỉ ngơi; bình yên; sự cô tịch; suy ngẫm; thờ phụng; kín đáo; rung động này bị thu hút bởi ánh sáng mờ, màu sắc dịu, mọi biểu hiện của thiên nhiên, và có phần giữ gìn kỹ đời sống riêng tư của mình.",
+   "chuongVi": "Chương II. Các con số · Đặc tính chung · 7"
+  },
+  "sc8ada517f1221042": {
+   "vi": "Biểu hiện xây dựng — ĐIỀM TĨNH. Bạn bình thản, thanh nhã và ham học hỏi. Bạn không tìm kiếm sự biểu hiện liên tục qua những thứ khách quan bên ngoài, mà chỉ mong có cơ hội trao cho thế gian một điều gì đó như một tu sĩ trao tặng. Bạn không tìm cách nắm giữ kinh doanh hay tài chính, những thứ không khiến bạn quan tâm, mà tìm cách phát triển trong đời mình một điều gì đó có thể thu hút nguồn cung đến với bạn nhờ giá trị của nó. Bạn làm công việc đưa bạn tránh xa sự náo nhiệt và ồn ào của thương trường, nơi bạn có nhiều cơ hội hơn để biểu hiện theo cách riêng của mình, và có thể nói là từ “hậu trường”, những chân lý mà bạn cảm nhận trong nội tâm. Phải dành nhiều thời gian một mình nhưng bạn không cô đơn, vì nhờ chuyên tâm vào sự thờ phụng và tự quán chiếu, bạn dễ dàng tìm thấy nhiều mối quan tâm. Bạn không lên án những biểu hiện mà bạn không hiểu, mà tiếp xúc với mọi sự sống bằng một tâm trí cởi mở. Bạn là người thờ phụng, là người lắng nghe hơn là người nói, để mọi trải nghiệm trong cuộc sống và mọi con người làm phát triển bản tính nội tâm của bạn và đem lại thức ăn mới cho suy tư và lý thuyết.\n\nBiểu hiện phá hoại — HỖN LOẠN. Bạn khá khó sống cùng vì bạn rất cá biệt và cố gắng bắt người khác tuân theo những cách biểu hiện khá kỳ quặc của mình. Bạn lên án những gì không phù hợp với lý thuyết của mình và tưởng rằng bạn có nhiều năng lực trong thế giới kinh doanh khách quan hơn thực tế, rồi tìm cách kiểm soát, chỉ đạo và áp đặt chính sách vật chất. Bạn khá vô lý, không thể nghỉ ngơi hay sống xa đời sống thành thị lâu một lúc, nhưng lại luôn khó chịu vì những bất tiện của nó mỗi khi phải hòa vào nó.",
+   "chuongVi": "Chương V. Các con số khi vận hành · 7 (Biểu hiện xây dựng và phá hoại)"
+  },
+  "sc785070efdaea5fc": {
+   "vi": "Hiểu lầm. Luôn cảm thấy không thể bày tỏ bất cứ điều gì họ cảm nhận trong bản chất bên trong, cho rằng không ai cần đến hay hiểu được họ, và rằng họ chưa bao giờ có cơ hội. Là nạn nhân của quy luật hủy hoại của chính họ trong quá khứ, họ thường bị vây quanh bởi nhiều trách nhiệm và mối ràng buộc khó lòng thoát ra, khiến họ không có được cơ hội ở một mình vốn rất cần thiết cho sự khai mở của họ.",
+   "chuongVi": "Chương VI. Tác động tiêu cực · 7"
+  },
+  "sdf68e69b94405c20": {
+   "vi": "Thăng bằng, khế ước, thỏa thuận, hiệp ước, giao kèo, hòa hợp hoặc bất hòa.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Giọng thứ · 7"
+  },
+  "s0db0c1f88d70fcc3": {
+   "vi": "Sau khi đã làm việc vất vả để nuôi nấng gia đình, giáo dục con cái và giúp chúng có chỗ đứng trong xã hội, người số 7 cảm thấy mình có quyền được nghỉ ngơi khỏi lao động chân tay. Ông tìm đến một nơi yên tĩnh giữa thiên nhiên và ngồi xuống suy ngẫm mọi chuyện. Rốt cuộc, phải chăng còn điều gì cao hơn để đạt tới? Ông biết con đường mình đã đi qua; ông không bỏ sót chi tiết nào để đạt đến mức hoàn thiện hiện nay. Về điểm này ông tin chắc vào bản thân và khó chịu với bất kỳ lời góp ý nào của người khác. Thế nhưng trực giác mách bảo ông rằng hẳn phải có những quy luật cao hơn những quy luật của thế giới thuần vật chất, những quy luật mà nếu được áp dụng vào việc hằng ngày sẽ đem lại kết quả nhanh hơn nhiều. Ông làm theo linh cảm của mình và bắt đầu nghiên cứu các quy luật huyền học và siêu hình mà trước đây ông vốn nhìn bằng con mắt không thiện cảm. Ông lập tức thấy rằng quy luật cao hơn bao giờ cũng bao hàm quy luật thấp hơn, và bắt đầu tính toán xem làm thế nào để mọi việc có thể thực hiện mà không tốn nhiều công sức trí óc và thể chất đến thế. Những ý tưởng kỳ diệu hiện ra trước tâm trí đang tìm kiếm nội tâm của ông. Đây chính là sự minh triết mà ông vẫn tìm kiếm, điều mà giờ đây ông phải nói cho toàn thể nhân loại. Vì thế, ta thấy rất nhiều nhà thuyết giáo, giáo viên, nhà văn về tôn giáo và siêu hình chiếm ưu thế trong rung động 7.",
+   "chuongVi": "Chương IV. Câu chuyện của các con số · 7"
+  },
+  "sa99fb0b4caca6dd8": {
+   "vi": "Tích cực — Những “bể chứa minh triết” mà ta phải “bơm” thì mới thực sự khám phá được chiều sâu của họ. Số 7 tượng trưng cho sự hoàn hảo, sự hoàn tất, văn hóa, phong thái điềm tĩnh, sự tự tin, sự chú ý đến chi tiết và một ý chí vững vàng, tích cực. Người số 7 nhạy cảm và kiêu hãnh, có khuynh hướng giữ mình hơi xa cách với đám đông bình thường, giấu những tổn thương tình cảm dưới chiếc áo choàng lạnh lùng thờ ơ bên ngoài. Người ấy có thể rộng lượng, nhã nhặn và dễ gần; vào những lúc khác lại muốn được để yên hoàn toàn, để suy tưởng không bị quấy rầy. Người ấy yêu thiên nhiên, giàu trực giác, có năng lực ngoại cảm, quan tâm đến những điều thần bí và huyền học. Người ấy giữ kín suy nghĩ của mình và giữ kín bí mật của người khác, thế nhưng vì tính kín đáo nên thường cô đơn và bị hiểu lầm. Người ấy phải học cách nói ra điều mình nghĩ và “trút bỏ nỗi lòng” nếu muốn sống trong một môi trường hạnh phúc. Người số 7 nên làm việc với tư cách cá nhân, ở vị trí mình có thẩm quyền tuyệt đối trong lĩnh vực riêng. Người ấy có thể thành công trong các nghề chuyên môn, trong bất động sản, nông nghiệp hoặc trong giới tôn giáo và siêu hình.\n\nNghịch — Độc đoán, chuyên quyền, bồn chồn, lang bạt, bỏ dở công việc, không giữ hẹn, bướng bỉnh, cố chấp, vô thần, hay châm biếm, không biết trân trọng những điều tinh tế của cuộc sống, không chút khoan dung hay cảm thông với quan điểm của người khác.\n\nTiêu cực — Thiếu tự tin, không thể diễn đạt điều mình cảm nhận, là một bí ẩn đối với chính mình, bị người khác hiểu lầm, quá hướng nội, ngại thể hiện mặt tốt nhất của mình, một kẻ mơ mộng thay vì người hành động.",
+   "chuongVi": "Chương V. Ba tầng nghĩa của các chữ số · 7 (Tích cực, Nghịch, Tiêu cực)"
+  },
+  "sd35dbc050bb2f6fc": {
+   "vi": "Số Bảy là một con số bí ẩn, u tối, mờ mịt, khó giải thích: có lẽ nó được gọi như vậy vì ảnh hưởng của nó chưa được hiểu thấu đáo. Đó là con số thiếu sự biểu đạt, rất bảo thủ và ẩn dật. Đó không phải là con số hay ảnh hưởng thuận lợi nhất để khởi đầu một công việc kinh doanh cấp tiến hay một dự định vật chất được ấp ủ.\n\nĐó là con số của sự tự mãn, của vẻ điềm tĩnh và an nhàn bên ngoài.\n\nCội rễ hay nguồn gốc của các rung động số Bảy có lẽ khởi phát từ thời các tu viện xa xưa.",
+   "chuongVi": "Chương II–IV. Tính cách và ảnh hưởng của các con số · 7"
+  },
+  "s22882dc25f0d2cb7": {
+   "vi": "Nếu 9 là chữ số của tên hoặc rung động ngày sinh của bạn, gần như toàn bộ thang âm thanh là của bạn. Nếu bạn chưa đem lên từ sâu thẳm bản chất mình kho báu phong phú nằm ở đó, bạn đã đánh mất niềm vui sống cao nhất và bị trừng phạt bằng nhiều thử thách.\n\nĐến lúc này bạn nên nhận ra rằng mọi linh hồn đều như một linh hồn, và linh hồn bạn với Đại Linh Hồn không hề có sự khác biệt. Chúng luôn giao cảm với nhau, và chỉ tấm áo choàng xác thịt giữ chúng cách xa nhau. Đứng tách riêng, tự cô lập mình bằng những rung động bất hòa, là một vị trí sai lầm đối với bạn, một người số 9. Bạn không còn là biểu hiện của một linh hồn riêng lẻ, mà đại diện cho thân thể tự do vĩ đại của Tình Huynh Đệ phổ quát; vậy mà có thể bạn lại đang biểu hiện điều hoàn toàn ngược lại và hành xử như một giọng lạc điệu trong dàn hợp xướng của Âm Nhạc các Thiên Cầu.\n\nBạn nên giúp mọi người anh em đang cố gắng đạt được rung động mà bạn đang nắm giữ. Người ấy có thể vượt qua bạn trong cuộc đua đến cuộc sống hoàn hảo mà chúng ta vẫn còn đang hướng tới, cuộc sống thể hiện trong các rung động 8, 9, 11, 22 khi chúng được đạt tới một cách trọn vẹn. Bậc thầy đang cố gắng dùng bạn để cải thiện nhân loại. Nốt cho sự phát triển cá nhân của bạn là Rê. Hãy hát nó như người trợ giúp chính của bạn nếu đó là rung động ngày sinh của bạn, và dùng bất kỳ hay tất cả các bài tập của số 1, 3, 5 và 7. Dùng rung động hay nốt Tinh Thần của các số ấy có thể gợi lại ký ức của chúng, và nếu bạn giữ vững được mức cao nhất của chúng, bạn sẽ tìm thấy ở chúng sự trợ giúp tiềm ẩn. Hãy nhớ rằng bạn là người canh giữ anh em mình, và không phô trương bên ngoài hay ham muốn lợi lộc thế tục, hãy nhặt lấy những nốt của họ khi họ chùn bước, và bài ca của chính bạn sẽ thêm phong phú khi bạn giúp đỡ người khác.",
+   "chuongVi": "Chương VI–VIII. Bài tập phát triển rung động hay chữ số ngày sinh của riêng bạn · Số 9"
+  },
+  "s1ab093faccdb7250": {
+   "vi": "9 là 3 lần 3, và những năng khiếu của số 3 được nhân lên gấp ba. Số 9 khác số 8 ở chỗ: số 8 phấn đấu giành vinh dự và đạt được, còn số 9 thì được dâng vinh dự đến tận chân. Họ hòa nhã, nhân hậu, giàu cảm thông và có tài chiếm được tình cảm. Nhiều vị thẩm phán được yêu mến nhất của chúng ta thuộc Số 9. Họ thường là những thẩm phán công minh, đặc biệt xuất sắc trong các vụ án hình sự.\n\nQuy luật Đối nghịch là Thiện và Ác.\n\nDù những người này có thể làm điều mà thế gian gọi là ác, họ sẽ không nhìn nhận nó theo cách đó, và trong mọi người, họ là những người khó cải hóa hay thay đổi nhất.",
+   "chuongVi": "Chương II. Chi tiết từng con số · Số 9"
+  },
+  "s295062c4923f8f2d": {
+   "vi": "Biểu hiện trọn vẹn. — Trực giác; sự thấu hiểu con người sâu sắc hơn; cảm xúc; lòng cảm thông; người cực đoan; tự do trong hành động và tư tưởng; không chính thống; lòng bác ái; chủ nghĩa xã hội; coi nhẹ của cải; kịch nghệ; bi kịch; âm nhạc; nghệ thuật.\n\nTrong sự kết hợp của 3, 6 và 9, ta có bộ ba trọn vẹn của rung động nghệ thuật. Số 3 là sự trang trí chi tiết tinh tế và nghệ thuật thể hiện, tô điểm bản thân; số 6 là sự sắp đặt và trang trí nhà cửa; và số 9 là sự biểu hiện linh hồn của nghệ thuật trên mọi phương diện.",
+   "chuongVi": "Chương II. Các con số · Đặc điểm chung · 9"
+  },
+  "s0e6dbd4846d8c0ce": {
+   "vi": "Con số của sự tái sinh. Một lần sinh mới. Tâm linh, sự mở rộng giác quan, linh cảm, ra đi, du hành xa. Cảm nhận từ xa, mộng mị, thấu thị, thấu thính. Cải cách, sự mơ hồ, nhịp đập, nhịp điệu; vươn ra, mở rộng, xuất bản; thuật bắn cung, tiên đoán, mặc khải; một làn sóng tư tưởng, sự hiện hình, bóng ma, sương mù, mây, sự tối tăm, lưu đày, bí ẩn. Biểu tượng của Sao Hải Vương.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Chín chữ số · 9"
+  },
+  "s178e0cdf041a0091": {
+   "vi": "Sự xuyên thấu, xung đột, năng lượng, tinh thần dám làm, sự chia cắt, cơn giận, sự sắc bén.",
+   "chuongVi": "Chương I. Sức mạnh của các con số · Giọng thứ · 9"
+  },
+  "s87273415e2fec6aa": {
+   "vi": "Khi thành công vật chất ngày càng tăng nhờ vận dụng các quy luật cao hơn trong thế giới vật chất, cá nhân ấy nhận ra rằng ngay cả khi có tiền bạc và danh tiếng, mình vẫn chưa hoàn toàn hạnh phúc. Người ấy để ý đến những rắc rối và thiếu thốn — hoàn toàn không cần thiết — trong đời sống của những người xung quanh, và nảy sinh mối quan tâm đầy cảm thông đến hạnh phúc của họ. Những nỗ lực tích cực giúp người khác hiểu cuộc sống ở tầm cao hơn thu hút về một dòng phản hồi của lòng biết ơn và thiện ý, kéo theo nhiều của cải hơn và niềm vui sống lớn hơn so với khi người ấy làm việc trong rung động số 8. Nguồn cảm hứng đến với người số 9 biết thật lòng Yêu thương đồng loại giúp người ấy thể hiện tài năng nghệ thuật tuyệt vời của mình một cách phổ quát hơn. Cơ hội du hành xa đến với người ấy, kèm theo sự trưởng thành và danh tiếng. Các ca sĩ, nghệ sĩ nổi tiếng và những người du hành khắp thế giới thường mạnh về số 9.",
+   "chuongVi": "Chương IV. Câu chuyện các con số · 9"
+  },
+  "s962483c3f00b0ca8": {
+   "vi": "Tích cực — Người yêu thương toàn nhân loại, thể hiện một cách rộng lớn tài năng nghệ thuật xuất sắc của mình. Cả tiền bạc lẫn tình yêu đều đến với người số 9 biết khởi động một dòng chảy tích cực của thiện chí, cảm thông và lòng sẵn sàng giúp đỡ đối với mọi người mình gặp. Người ấy có bản tính giàu cảm xúc, lòng cảm thông rộng lớn và sự thấu hiểu sáng suốt về nhu cầu và mong muốn của người khác. Người ấy không nên hài lòng với thành công tầm thường; cả thế giới là cánh đồng để người ấy biểu hiện. Nhiều nhà văn truyền cảm hứng, nghệ sĩ, người chữa lành, người làm công tác nhân đạo và người du hành khắp thế giới thuộc rung động 9.\n\nNghịch — Ích kỷ, keo kiệt, mỉa mai, hay phê phán, khơi dậy những đam mê hủy hoại ở người khác, “tìm cách có được thứ gì đó mà không bỏ ra gì, bằng cách lợi dụng lòng cảm thông, nỗi sợ hãi hay tâm thế không chút nghi ngờ của người khác.”\n\nTiêu cực — Người cho đi tất cả, để trái tim lấn át lý trí, cảm thông quá mức đến tự hại mình, bị người khác lợi dụng để đạt mục đích của họ.",
+   "chuongVi": "Chương V. Ba tầng nghĩa của các chữ số · 9 (Tích cực, Nghịch, Tiêu cực)"
+  },
+  "s35b63de410befaef": {
+   "vi": "Đây là một ảnh hưởng cao cả, rộng mở và phổ quát: từ xưa nó luôn được biết đến là con số của tình yêu, đại diện cho tinh túy cao nhất của tình yêu phổ quát và tình yêu cá nhân.\n\nVì MỘT là khởi đầu và CHÍN là kết thúc của các con số, nên ảnh hưởng của chúng cũng cách xa nhau như vậy; MỘT đại diện cho cá tính, còn ảnh hưởng của CHÍN đại diện cho tính Phổ quát và sự thân ái, tượng trưng cho sự ngay thẳng, chính trực và đức hạnh: đó là một con số bền vững, lâu dài và kiên định.\n\nNó có ảnh hưởng thiên về sự biểu đạt, nhất là trong nghệ thuật, và là ảnh hưởng hữu ích cho diễn viên, ca sĩ, diễn giả, v.v.: thực ra là trong bất kỳ lĩnh vực biểu đạt nào, về mặt này nó giống với số Ba.",
+   "chuongVi": "Chương II–IV. Tính chất và ảnh hưởng của các con số · 9"
+  },
+  "s7e6260b385b03b2b": {
+   "vi": "Bộ Chín là bình phương đầu tiên của một số lẻ; người ta nói nó giống như Đại Dương chảy vòng quanh các số khác bên trong Bộ Mười; không thể có thêm số cơ bản nào nữa, vì thế nó giống như Đường chân trời, bởi mọi con số đều bị nó bao bọc. Ta thấy nó được gọi là Prometheus, là “Thoát khỏi Xung đột”, và là “Vulcan”, vì sự đi lên của các con số chỉ đến 9, cũng như sự đi lên của những vật bị lửa phân hủy chỉ đến tầng của Lửa (đỉnh của không khí); và là Juno, vì tầng không khí được sắp xếp theo hệ chín, và là “chị và vợ của Jupiter” do sự kết hợp của nó với Đơn Nguyên. Và là “Telesphoros”, tức “Đưa đến kết thúc”, vì đứa con của con người được người mẹ mang trong bụng 9 tháng lịch. Và là teleios, tức hoàn hảo, cũng vì lý do ấy, và còn được gọi là “Hoàn hảo” vì nó được sinh ra từ Bộ Ba, vốn được gọi là “Hoàn hảo”.\n\nNgười ta lưu ý rằng nó là biểu tượng của Vật chất, thứ luôn biến đổi nhưng không bao giờ bị hủy diệt; cũng vậy, số 9 khi nhân với bất kỳ số nào luôn tự tái hiện, như sau: — 9 nhân 2 là 18, và 8 cộng 1 là chín; và cứ thế như dưới đây:\n\n9 × 3 = 27; 2 + 7 = 9\n9 × 4 = 36; 3 + 6 = 9\n9 × 5 = 45; 4 + 5 = 9\n9 × 6 = 54; 5 + 4 = 9\n9 × 7 = 63; 6 + 3 = 9\n9 × 8 = 72; 7 + 2 = 9\n9 × 9 = 81; 8 + 1 = 9\n9 × 10 = 90; 9 + 0 = 9\n9 × 11 = 99; …",
+   "chuongVi": "Phần IV. Từng con số riêng · Bộ Chín (9)"
+  }
+ }
+}

@@ -548,26 +548,26 @@ function duongDanTrangSo(chiSo: ChiSoTSH, so: number): string | null {
 }
 
 function TrichSachItem({ trich }: { trich: TrichSach }) {
-  const dai = trich.en.length > 600;
-  if (dai) {
+  const nguon = (
+    <figcaption className="ck-tsh-yn-trich-nguon">
+      <em>{trich.sachVi}</em>, {trich.tacGia}, {trich.chuongVi}. Dịch nghĩa: xemboi.
+    </figcaption>
+  );
+  if (trich.vi.length > 600) {
     return (
       <figure className="ck-tsh-yn-trich ck-tsh-yn-trich-dai">
-        <figcaption className="ck-tsh-yn-trich-nguon">
-          <em>{trich.sach}</em>, {trich.tacGia}, {trich.chuong}.
-        </figcaption>
+        {nguon}
         <details className="ck-tsh-yn-chi-tiet">
-          <summary>Đọc đoạn trích (tiếng Anh)</summary>
-          <blockquote lang="en">{trich.en}</blockquote>
+          <summary>Đọc đoạn trích</summary>
+          <blockquote>{trich.vi}</blockquote>
         </details>
       </figure>
     );
   }
   return (
     <figure className="ck-tsh-yn-trich">
-      <blockquote lang="en">{trich.en}</blockquote>
-      <figcaption className="ck-tsh-yn-trich-nguon">
-        <em>{trich.sach}</em>, {trich.tacGia}, {trich.chuong}.
-      </figcaption>
+      <blockquote>{trich.vi}</blockquote>
+      {nguon}
     </figure>
   );
 }
@@ -682,7 +682,7 @@ export function KhoiYNghia({
             {sach.map((s, i) => (
               <React.Fragment key={s.sach}>
                 {i > 0 ? '; ' : null}
-                <em>{s.sach}</em> ({s.tacGia})
+                <em>{s.sachVi}</em> ({s.tacGia})
               </React.Fragment>
             ))}
             .

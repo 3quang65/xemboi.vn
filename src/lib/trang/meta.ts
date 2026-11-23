@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { cache } from 'react';
 import { prisma, nemLoiKhiBuild } from '@/lib/prisma';
 import { GOC_SITE } from '@/lib/seo/sitemap';
+import { boChuHan, coChuHan } from './chu-viet';
 
 export type MacDinhTrang = { title: string; description?: string; h1?: string };
 export type ThamSoMau = Record<string, string | number>;
@@ -65,8 +66,10 @@ export async function thongTinTrang(duongDan: string, macDinh: MacDinhTrang, mau
   // Chỗ trống chưa điền được thì bỏ chuỗi của SeoTrang, dùng mặc định (không bao giờ hiện "{...}" cho người đọc).
   const dien = (s: string | null | undefined) => {
     if (!s) return null;
-    const r = dienMau(s, thamSo);
-    if (!conChoTrong(r)) return r;
+    let r = dienMau(s, thamSo);
+    // Quy tắc 24/11/2026: không in chữ Hán (kể cả từ tham số điền vào mẫu).
+    if (coChuHan(r)) r = boChuHan(r);
+    if (!conChoTrong(r)) return r || null;
     if (process.env.NODE_ENV !== 'production') console.warn(`[trang] ${dd}: mẫu "${s}" còn chỗ trống chưa điền`);
     return null;
   };

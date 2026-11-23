@@ -88,3 +88,22 @@ test('Chiêm tinh: mọi đoạn Tetrabiblos có bản dịch tiếng Việt', a
   assert.ok(!/\(whole sign\)/.test(GHI_CHU_NHA));
   assert.ok(NGUON_TETRABIBLOS.ghiChuTrich.includes('dịch nghĩa'));
 });
+
+test('Thần số học: 159 đoạn trích sách đều có bản dịch tiếng Việt và vị trí tiếng Việt', async () => {
+  const { yNghia, soCoYNghia } = await import('../../src/lib/trang/than-so-hoc-y-nghia.ts');
+  const VI = (await import('../../src/lib/trang/du-lieu/than-so-hoc-trich-vi.json', { with: { type: 'json' } })).default;
+  const KHO = (await import('../../src/lib/trang/du-lieu/than-so-hoc-nhat-nguyet.json', { with: { type: 'json' } })).default;
+  assert.deepEqual(Object.keys(VI.trich).sort(), Object.keys(KHO.trich).sort());
+  let dem = 0;
+  for (const chiSo of ['so-chu-dao', 'ngay-sinh', 'thai-do', 'dinh-cao', 'thach-thuc', 'nam-ca-nhan', 'no-nghiep']) {
+    for (const so of soCoYNghia(chiSo)) {
+      const y = yNghia(chiSo, so);
+      for (const t of [...(y?.trichRieng ?? []), ...(y?.trichChung ?? [])]) {
+        dem++;
+        viet(t.vi, `${chiSo} ${so} ${t.id}`); viet(t.chuongVi, `${t.id} chương`); viet(t.sachVi, `${t.id} sách`);
+        assert.ok(!/(?<![\p{L}])(the|and|of|is|you|your|with)(?![\p{L}])/u.test(t.vi), `${t.id}: còn chữ Anh`);
+      }
+    }
+  }
+  assert.ok(dem > 0);
+});

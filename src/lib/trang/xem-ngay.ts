@@ -50,7 +50,7 @@ export const NGUON_XEM_NGAY = {
 export const TRICH_DOAN = {
   /** Ngọc hạp ký: trực nào hoàng, trực nào hắc, và việc hợp từng trực. */
   ngocHapTruc: {
-    nguon: 'ngocHap' as const, doanId: 8068, viTri: '黃黑道日當用之事', viTriViet: 'Hoàng hắc đạo nhật đương dụng chi sự (việc nên làm theo ngày hoàng đạo, hắc đạo)',
+    nguon: 'ngocHap' as const, doanId: 8068, viTri: '黃黑道日當用之事', viTriViet: 'Mục: việc nên làm theo ngày hoàng đạo, hắc đạo',
     nguyenVan: '建滿平收黑，除危定執黃，成開皆可用，閉破不相當。又，黃黑道日當用之事：建宜出行收嫁娶，定直冠帶滿修倉，破除療病執宜捕，危本安床開葬良，成開作所成交吉，平乃作事總平常。',
     dich: 'Kiến, Mãn, Bình, Thu là hắc; Trừ, Nguy, Định, Chấp là hoàng; Thành, Khai đều dùng được; Bế, Phá không hợp. Lại có việc nên làm theo ngày hoàng đạo, hắc đạo: Kiến nên xuất hành, Thu nên cưới gả; Định hợp làm lễ đội mũ, Mãn nên sửa kho; Phá, Trừ nên chữa bệnh, Chấp nên bắt bớ; Nguy vốn hợp kê giường, Khai tốt cho chôn cất; Thành, Khai dựng nơi ở và giao dịch đều tốt; Bình thì làm việc gì cũng bình thường.',
   },
@@ -219,7 +219,7 @@ export const VIEC: Record<MaViec, Viec> = {
   'nhap-trach': { ma: 'nhap-trach', ten: 'Nhập trạch', chinh: ['入宅'], phu: ['移徙', '安床', '安香'], trucCauCa: [], ghiChu: null },
   'mua-xe': {
     ma: 'mua-xe', ten: 'Mua xe', chinh: ['交易'], phu: ['纳财', '立券'], trucCauCa: [8, 10],
-    ghiChu: 'Bảng nghi kỵ theo ngày không có mục mua xe. Trang dùng mục Giao dịch (交易), kèm Nạp tài và Lập khoán.',
+    ghiChu: 'Bảng nghi kỵ theo ngày không có mục mua xe. Trang dùng mục Giao dịch, kèm Nạp tài và Lập khoán.',
   },
   'cat-toc': { ma: 'cat-toc', ten: 'Cắt tóc', chinh: ['理发'], phu: ['整手足甲', '沐浴'], trucCauCa: [], ghiChu: null },
   'xuat-hanh': { ma: 'xuat-hanh', ten: 'Xuất hành', chinh: ['出行'], phu: ['移徙'], trucCauCa: [0], ghiChu: null },

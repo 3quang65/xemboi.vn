@@ -1,9 +1,11 @@
 // Ý nghĩa các con số thần số học: lời của Nhật Nguyệt (nhatnguyet.org) và đoạn nguyên văn sách thần số học 1905–1926.
 // Dữ liệu: du-lieu/than-so-hoc-nhat-nguyet.json, sinh từ du-lieu/knowledge/numerology của repo Nhat-Nguyet (commit 708b5c3).
 // Giấy phép: lời của site CC BY-NC 4.0, anh Cường cho dùng trước, xin phép sau (sổ docs/v2/14-so-giay-phep.md).
-// Đoạn sách cổ: phạm vi công cộng; hiển thị nguyên văn tiếng Anh, không dịch.
+// Đoạn sách cổ: phạm vi công cộng. Từ 24/11/2026 trang chỉ hiện bản dịch tiếng Việt (`vi`, `chuongVi`, `sachVi`;
+// dịch nghĩa: xemboi, du-lieu/than-so-hoc-trich-vi.json); `en`, `sach`, `chuong` giữ để đối chiếu, không hiển thị.
 // Chỉ dùng ở server component (tệp JSON khoảng 160 KB).
 import NN from './du-lieu/than-so-hoc-nhat-nguyet.json';
+import TRICH_VI from './du-lieu/than-so-hoc-trich-vi.json';
 
 export type ChiSoTSH = 'so-chu-dao' | 'ngay-sinh' | 'thai-do' | 'dinh-cao' | 'thach-thuc' | 'nam-ca-nhan' | 'no-nghiep';
 
@@ -21,7 +23,7 @@ export const NHAN_LOI: readonly { k: LoaiLoi; ten: string }[] = [
   { k: 'loiNhac', ten: 'Lời nhắc' },
 ];
 
-export type TrichSach = { id: string; sach: string; sachVi: string; tacGia: string; chuong: string; en: string };
+export type TrichSach = { id: string; sach: string; sachVi: string; tacGia: string; chuong: string; en: string; vi: string; chuongVi: string };
 
 export type YNghiaSo = {
   chiSo: ChiSoTSH;
@@ -75,7 +77,8 @@ const suaOcr = (s: string): string => SUA_OCR.reduce((t, [sai, dung]) => t.split
 
 const layTrich = (ids: string[]): TrichSach[] => ids.map((id) => {
   const t = KHO.trich[id];
-  return { id, ...t, en: suaOcr(t.en) };
+  const d = (TRICH_VI.trich as Record<string, { vi: string; chuongVi: string }>)[id];
+  return { id, ...t, en: suaOcr(t.en), vi: d.vi, chuongVi: d.chuongVi };
 });
 
 /** Ý nghĩa của số `so` ở chỉ số `chiSo`. undefined nếu kho không có (vd năm cá nhân 11). */
@@ -96,8 +99,9 @@ export const soCoYNghia = (chiSo: ChiSoTSH): number[] =>
   Object.keys(KHO.don).filter((k) => k.startsWith(`${chiSo}:`)).map((k) => Number(k.split(':')[1])).sort((a, b) => a - b);
 
 /** Danh sách sách (không trùng) có đoạn được trích, để in mục nguồn. */
-export function sachDuocTrich(ds: TrichSach[]): { sach: string; tacGia: string }[] {
-  const m = new Map<string, string>();
-  for (const t of ds) if (!m.has(t.sach)) m.set(t.sach, t.tacGia);
-  return [...m].map(([sach, tacGia]) => ({ sach, tacGia }));
+/** `sachVi` để hiển thị; `sach` (tên gốc tiếng Anh) chỉ để đối chiếu. */
+export function sachDuocTrich(ds: TrichSach[]): { sach: string; sachVi: string; tacGia: string }[] {
+  const m = new Map<string, { sachVi: string; tacGia: string }>();
+  for (const t of ds) if (!m.has(t.sach)) m.set(t.sach, { sachVi: t.sachVi, tacGia: t.tacGia });
+  return [...m].map(([sach, v]) => ({ sach, ...v }));
 }

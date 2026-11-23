@@ -98,9 +98,9 @@ const hai = (n: number) => String(n).padStart(2, '0');
 function lyDoNgay(viec: Viec, x: NgayXem, phuNghi: Muc[]): string[] {
   const chinh = x.nghi.filter((m) => viec.chinh.includes(m.han));
   const ds = [
-    `Bảng nghi kỵ ghi nên: ${chinh.map((m) => `${m.han} ${m.ten}`).join(", ")}.`,
-    `Thần ngày: ${x.than.ten} (${x.than.han}), ${x.than.hoangDao ? 'hoàng đạo' : 'hắc đạo'}.`,
-    `Trực ${x.truc.ten} (${x.truc.han}): ${TEN_NHOM_TRUC[x.truc.nhom].toLowerCase()}.`,
+    `Bảng nghi kỵ ghi nên: ${chinh.map((m) => m.ten).join(', ')}.`,
+    `Thần ngày: ${x.than.ten}, ${x.than.hoangDao ? 'hoàng đạo' : 'hắc đạo'}.`,
+    `Trực ${x.truc.ten}: ${TEN_NHOM_TRUC[x.truc.nhom].toLowerCase()}.`,
   ];
   if (phuNghi.length) ds.push(`Cũng ghi nên: ${phuNghi.map((m) => m.ten).join(', ')}.`);
   return ds;
@@ -199,11 +199,11 @@ export function docNhanhNgay(x: NgayXem, luc = new Date()): DocNhanhNgay {
     the: [
       {
         ma: 'than', nhan: 'Thần ngày (12 thần)', giaTri: x.than.ten, muc: x.than.hoangDao ? 'tot' : 'diu',
-        chiTiet: `${x.than.han}, ${x.than.hoangDao ? 'thuộc 6 thần hoàng đạo' : 'thuộc 6 thần hắc đạo'}. Hiệp kỷ ghi cách chia này không có căn cứ thiên văn.`,
+        chiTiet: `${x.than.hoangDao ? 'Thuộc 6 thần hoàng đạo' : 'Thuộc 6 thần hắc đạo'}. Hiệp kỷ ghi cách chia này không có căn cứ thiên văn.`,
       },
       {
         ma: 'truc', nhan: 'Trực (12 trực)', giaTri: x.truc.ten, muc: x.truc.nhom === 'hoang' || x.truc.nhom === 'kha-dung' ? 'tot' : x.truc.nhom === 'hac' ? 'binh' : 'diu',
-        chiTiet: `${x.truc.han}, ${TEN_NHOM_TRUC[x.truc.nhom].toLowerCase()}${x.truc.viec ? `. Câu ca: ${x.truc.viec}` : ''}.`,
+        chiTiet: `${TEN_NHOM_TRUC[x.truc.nhom]}${x.truc.viec ? `. Câu ca: ${x.truc.viec}` : ''}.`,
       },
       {
         ma: 'nghi-ky', nhan: 'Nghi / kỵ', giaTri: `${x.nghi.length} nên · ${x.ky.length} kỵ`,
