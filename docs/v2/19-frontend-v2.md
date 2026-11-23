@@ -313,3 +313,6 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Bỏ chữ Hán cạnh can chi, sao, quái, du niên, nạp âm; bỏ tên tiếng Anh, Latin ở chiêm tinh (ASC, MC thành "Mọc", "Đỉnh").
   - Chốt chặn: `node scripts/kiem-chu-han.mjs` bò 118 trang, trước 35 trang có chữ Hán, sau 0; test `khong-chu-han.test.mjs`.
   - **Khi triển khai lên VPS:** chạy thêm `npx tsx --env-file=<env VPS> scripts/seo-chi-tieng-viet.ts` để sửa title, meta, h1 trong `SeoTrang` của CSDL VPS (chạy lại không đổi gì thêm).
+- 24/11: **Lịch P2 xong (Lệnh 47):** `/lich-am/gio-hoang-dao`, `/tiet-khi` + 24 trang tiết, `/lich-am/ngay-le` + 10 trang lễ. Giờ hoàng đạo theo Hiệp kỷ quyển 5 (khớp bảng cũ mọi ngày 2026), 72 hậu dịch tiếng Việt. Menu đợt 6 đã bật (`DOT_DA_DUNG = 6`). Phong tục các lễ chờ người viết.
+- 24/11: dữ liệu và lệnh đã soạn, chờ Antigravity: Lệnh 48 (ma trận con giáp + 78 trang cặp, Tứ Hóa), Lệnh 49 (10 thập thần, 10 thiên can), Lệnh 50 (10 hành tinh). Menu Lệnh 48 ở đợt 7.
+  - Deploy VPS: sau `seo-chi-tieng-viet.ts`, chạy `npx tsx --env-file=<env VPS> scripts/seo-nap-dong.ts LICH-GHD LICH-TIETKHI-IDX LICH-TIETKHI LICH-NGAYLE-IDX LICH-NGAYLE LE-RAMGIENG LE-VIATHANTAI LE-RAM7 LE-TRUNGTHU XT-CAP-IDX XT-CAP TUVI-TUHOA CC-THIENCAN BT-THAPTHAN CT-HANHTINH` (để NHAP, anh xuất bản).

@@ -38,6 +38,8 @@ export interface DaiGioProps {
   hienChuGiai?: boolean;
   hienGhiChu?: boolean;
   gon?: boolean;
+  tenThan?: readonly string[];
+  className?: string;
 }
 
 function tachKhungGio(khung: string): [string, string | null] {
@@ -52,9 +54,13 @@ export function DaiGio({
   hienChuGiai = true,
   hienGhiChu = true,
   gon = false,
+  tenThan,
+  className,
 }: DaiGioProps) {
   const coTieuDe = tieuDe.trim().length > 0;
-  const wrapCls = gon ? 'ck-tq-gio ck-tq-gio-gon' : 'ck-tq-gio';
+  const wrapCls = [gon ? 'ck-tq-gio ck-tq-gio-gon' : 'ck-tq-gio', className]
+    .filter(Boolean)
+    .join(' ');
 
   const noiDung = (
     <>
@@ -73,8 +79,10 @@ export function DaiGio({
       <ol className="ck-tq-gio-luoi">
         {dai.gio.map((g) => {
           const [tu, den] = tachKhungGio(g.khung);
+          const than = tenThan?.[g.chiSo];
           const nhanAria = [
             `Giờ ${g.chi} ${g.khung}`,
+            than ? `thần ${than}` : null,
             g.hoangDao ? 'hoàng đạo' : 'hắc đạo',
             g.hienTai ? 'bây giờ' : g.daQua ? 'đã qua' : null,
           ]
@@ -98,6 +106,7 @@ export function DaiGio({
               data-hoang-dao={g.hoangDao ? 'true' : 'false'}
               data-hien-tai={g.hienTai ? 'true' : undefined}
               data-da-qua={g.daQua ? 'true' : undefined}
+              data-than={than}
             >
               {g.hienTai ? (
                 <span className="ck-tq-gio-tag">Bây giờ</span>
@@ -114,6 +123,7 @@ export function DaiGio({
                 )}
               </span>
               <span className="ck-tq-gio-cc">{g.canChi}</span>
+              {than ? <span className="ck-tq-gio-than">{than}</span> : null}
             </li>
           );
         })}
