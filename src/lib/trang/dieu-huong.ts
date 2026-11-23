@@ -27,8 +27,11 @@ const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
       { ten: 'Âm lịch ngày mai', href: '/lich-am/ngay-mai' },
       { ten: 'Tết Nguyên Đán', href: '/tet' },
       { ten: 'Giờ xuất hành Tết', href: '/xem-ngay/xuat-hanh' },
+      { ten: 'Giờ hoàng đạo', href: '/lich-am/gio-hoang-dao' },
+      { ten: '24 tiết khí', href: '/tiet-khi' },
+      { ten: 'Ngày lễ âm lịch', href: '/lich-am/ngay-le' },
     ],
-    conDot: [2, 2, 2, 2, 5],
+    conDot: [2, 2, 2, 2, 5, 6, 6, 6],
   },
   {
     dot: 5, ten: 'Xem ngày', href: '/xem-ngay', moTa: 'Ngày tốt theo việc, hoàng đạo, 12 trực',
@@ -119,7 +122,7 @@ export function chanTrang(dot = DOT_DA_DUNG): CotChanTrang[] {
     { dot: 5, ten: 'Nguồn sách', href: '/nguon' },
     { dot: 5, ten: 'Từ điển', href: '/tu-dien' },
     { dot: 5, ten: 'Kiến thức', href: '/kien-thuc' },
-    { dot: 6, ten: 'Bảng giá', href: '/goi' },
+    { dot: 99, ten: 'Bảng giá', href: '/goi' }, // chưa dựng: chờ anh chốt gói (viec-can-anh mục 7)
     { dot: 5, ten: 'Liên hệ', href: '/lien-he' },
     { dot: 5, ten: 'Chính sách bảo mật', href: '/chinh-sach-bao-mat-va-cookies' },
     { dot: 5, ten: 'Điều khoản sử dụng', href: '/chinh-sach-su-dung-va-khieu-nai' },
@@ -135,6 +138,7 @@ const TEN_DOAN: Record<string, string> = {
   '/tu-vi': 'Tử vi', '/tu-vi/lap-la-so': 'Lập lá số', '/tu-vi/tron-doi': 'Trọn đời', '/tu-vi/cung': '12 cung', '/tu-vi/sao': 'Chính tinh',
   '/tu-vi/luan-giai': 'Luận giải', '/tu-vi-2027': 'Tử vi 2027',
   '/lich-am': 'Lịch âm', '/lich-am/doi-ngay': 'Đổi ngày', '/lich-am/lich-van-nien': 'Lịch vạn niên', '/lich-am/ngay-mai': 'Ngày mai',
+  '/lich-am/gio-hoang-dao': 'Giờ hoàng đạo', '/tiet-khi': '24 tiết khí', '/lich-am/ngay-le': 'Ngày lễ âm lịch',
   '/can-chi': 'Can chi & mệnh', '/can-chi/60-hoa-giap': '60 hoa giáp', '/sinh-nam': 'Sinh năm', '/nap-am': 'Nạp âm',
   '/ngu-hanh': 'Ngũ hành', '/ngu-hanh/mau-hop-menh': 'Màu hợp mệnh', '/con-giap': 'Con giáp',
   '/xem-tuoi': 'Xem tuổi', '/xem-tuoi/vo-chong': 'Vợ chồng', '/xem-tuoi/xong-dat': 'Xông đất',
@@ -155,7 +159,7 @@ const TEN_DOAN: Record<string, string> = {
 // Trang có cha không theo đường dẫn (docs/v2/16-seo-trang.csv cột "cha").
 const CHA_RIENG: Record<string, string> = {
   '/tu-vi-2027': '/tu-vi', '/sinh-nam': '/can-chi', '/nap-am': '/can-chi', '/ngu-hanh': '/can-chi', '/con-giap': '/can-chi',
-  '/tet': '/lich-am', '/xem-ngay/xuat-hanh': '/tet', '/xem-tuoi/xong-dat': '/tet',
+  '/tet': '/lich-am', '/tiet-khi': '/lich-am', '/xem-ngay/xuat-hanh': '/tet', '/xem-tuoi/xong-dat': '/tet',
   '/bai-viet': '/kien-thuc',
 };
 
