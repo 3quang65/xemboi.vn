@@ -5,9 +5,12 @@ import ChonNamSinh from '@/components/ck/ChonNamSinh';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
 import { NguonNapAm } from '@/components/ck/TheCanChi';
+import { HANH_SLUG } from '@/components/ck/canChiHelpers';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
+import { THIEN_CAN_CHI_TIET } from '@/lib/trang/thien-can';
+import './thien-can.css';
 
 const MAC_DINH_CAN_CHI = {
   title: 'Can chi, mệnh, ngũ hành: tra theo năm sinh có nguồn',
@@ -99,6 +102,27 @@ export default async function CanChiHubPage() {
           ))}
         </div>
         <NguonNapAm />
+      </section>
+
+      <section className="ck-td-muc" aria-labelledby="ck-cc-10-can">
+        <h2 id="ck-cc-10-can" className="ck-td-tieu">
+          10 thiên can
+        </h2>
+        <nav className="ck-tc-10-hang" aria-label="Tra chi tiết 10 thiên can">
+          {THIEN_CAN_CHI_TIET.map((c) => {
+            const hanhSlug = HANH_SLUG[c.hanh];
+            return (
+              <Link
+                key={c.slug}
+                href={c.duongDan}
+                className={`ck-tc-10-o ck-tq-nen-${hanhSlug}`}
+              >
+                <strong className={`ck-tq-hanh-${hanhSlug}`}>{c.ten}</strong>
+                <span>{c.hanh}</span>
+              </Link>
+            );
+          })}
+        </nav>
       </section>
 
       <KhoiDienGiai noiDung={nd} tieuDe="Giới thiệu hệ can chi và ngũ hành" />

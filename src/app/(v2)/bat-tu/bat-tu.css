@@ -1662,3 +1662,28 @@
     font-size: 11px;
   }
 }
+
+.ck-bt-tt-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--ck-son);
+  text-decoration: none;
+}
+
+.ck-bt-tang-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ck-son);
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+
+.ck-bt-bang-tt-link {
+  color: var(--ck-son);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

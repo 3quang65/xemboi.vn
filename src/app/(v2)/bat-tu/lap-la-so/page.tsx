@@ -37,6 +37,7 @@ import type { Hanh } from '@/lib/trang/can-chi';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
+import { THAP_THAN_CHI_TIET } from '@/lib/trang/thap-than';
 import { DIA_CHI, chiCanhGio } from '@/lib/tuvi-v2/am-lich';
 import { DaiVanCuonClient } from './DaiVanCuonClient';
 import { KhongRoGioClient } from './KhongRoGioClient';
@@ -55,6 +56,9 @@ const MAC_DINH_BAT_TU_LS = {
 };
 
 const THU_TU_HANH: readonly Hanh[] = ['Mộc', 'Hỏa', 'Thổ', 'Kim', 'Thủy'];
+const DUONG_DAN_THAP_THAN = new Map<string, string>(
+  THAP_THAN_CHI_TIET.map((t) => [t.ten, t.duongDan]),
+);
 
 type SearchParamsInput = Promise<Record<string, string | string[] | undefined>>;
 
@@ -150,11 +154,21 @@ function TheTruChiTiet({ tru, colIdx }: { tru: TruBatTu; colIdx: number }) {
         {!laNgay ? (
           <div className="ck-bt-tt-hang">
             <span className="ck-bt-tt-pill">
-              <ThuatNgu
-                ten={tru.thapThanCan}
-                nghia={nghiaThapThan(tru.thapThanCan)}
-                id={`tn-can-tt-${colIdx}`}
-              />
+              {DUONG_DAN_THAP_THAN.has(tru.thapThanCan) ? (
+                <Link
+                  href={DUONG_DAN_THAP_THAN.get(tru.thapThanCan)!}
+                  className="ck-bt-tt-link"
+                  title={nghiaThapThan(tru.thapThanCan)}
+                >
+                  {tru.thapThanCan}
+                </Link>
+              ) : (
+                <ThuatNgu
+                  ten={tru.thapThanCan}
+                  nghia={nghiaThapThan(tru.thapThanCan)}
+                  id={`tn-can-tt-${colIdx}`}
+                />
+              )}
             </span>
           </div>
         ) : null}
@@ -184,11 +198,21 @@ function TheTruChiTiet({ tru, colIdx }: { tru: TruBatTu; colIdx: number }) {
             >
               <b className={`ck-tq-hanh-${HANH_SLUG[tc.hanh]}`}>{tc.can}</b>
               <span className="ck-bt-tang-tt">
-                <ThuatNgu
-                  ten={tc.thapThan}
-                  nghia={nghiaThapThan(tc.thapThan)}
-                  id={`tn-tang-tt-${colIdx}-${tcIdx}`}
-                />
+                {DUONG_DAN_THAP_THAN.has(tc.thapThan) ? (
+                  <Link
+                    href={DUONG_DAN_THAP_THAN.get(tc.thapThan)!}
+                    className="ck-bt-tang-link"
+                    title={nghiaThapThan(tc.thapThan)}
+                  >
+                    {tc.thapThan}
+                  </Link>
+                ) : (
+                  <ThuatNgu
+                    ten={tc.thapThan}
+                    nghia={nghiaThapThan(tc.thapThan)}
+                    id={`tn-tang-tt-${colIdx}-${tcIdx}`}
+                  />
+                )}
               </span>
             </li>
           ))}
@@ -866,11 +890,21 @@ export default async function BatTuLapLaSoPage({
 
                           <div className="ck-bt-tt-hang">
                             <span className="ck-bt-tt-pill">
-                              <ThuatNgu
-                                ten={luuNien.thapThanCan}
-                                nghia={nghiaThapThan(luuNien.thapThanCan)}
-                                id="tn-ln-can-tt"
-                              />
+                              {DUONG_DAN_THAP_THAN.has(luuNien.thapThanCan) ? (
+                                <Link
+                                  href={DUONG_DAN_THAP_THAN.get(luuNien.thapThanCan)!}
+                                  className="ck-bt-tt-link"
+                                  title={nghiaThapThan(luuNien.thapThanCan)}
+                                >
+                                  {luuNien.thapThanCan}
+                                </Link>
+                              ) : (
+                                <ThuatNgu
+                                  ten={luuNien.thapThanCan}
+                                  nghia={nghiaThapThan(luuNien.thapThanCan)}
+                                  id="tn-ln-can-tt"
+                                />
+                              )}
                             </span>
                           </div>
                         </div>
@@ -1032,7 +1066,16 @@ export default async function BatTuLapLaSoPage({
                             key={`${tru.ten}-tt`}
                             className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
                           >
-                            <b>{tru.thapThanCan}</b>
+                            {DUONG_DAN_THAP_THAN.has(tru.thapThanCan) ? (
+                              <Link
+                                href={DUONG_DAN_THAP_THAN.get(tru.thapThanCan)!}
+                                className="ck-bt-bang-tt-link"
+                              >
+                                <b>{tru.thapThanCan}</b>
+                              </Link>
+                            ) : (
+                              <b>{tru.thapThanCan}</b>
+                            )}
                           </td>
                         ) : (
                           <td key="bang-gio-tt">Chưa rõ giờ</td>
@@ -1100,7 +1143,16 @@ export default async function BatTuLapLaSoPage({
                               {tru.tangCan.map((tc) => (
                                 <li key={`${tru.ten}-${tc.can}`}>
                                   <b className={`ck-bt-chu-${HANH_SLUG[tc.hanh]}`}>{tc.can}</b>
-                                  <span>({tc.thapThan})</span>
+                                  {DUONG_DAN_THAP_THAN.has(tc.thapThan) ? (
+                                    <Link
+                                      href={DUONG_DAN_THAP_THAN.get(tc.thapThan)!}
+                                      className="ck-bt-bang-tt-link"
+                                    >
+                                      ({tc.thapThan})
+                                    </Link>
+                                  ) : (
+                                    <span>({tc.thapThan})</span>
+                                  )}
                                 </li>
                               ))}
                             </ul>
