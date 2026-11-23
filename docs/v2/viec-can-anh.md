@@ -33,6 +33,22 @@
     - `/boi-tinh-yeu`: CSV ghi "cần anh duyệt". Từ khóa lớn nhưng dễ thành nội dung bói vui không có sách. **Em đang để:** chưa dựng. Nếu anh duyệt, em đề xuất dựng như một lối vào `/xem-tuoi/vo-chong` (cùng phép tính, ghi rõ hệ).
     - `/tu-vi/hop-la-so`: là Gói 3 (Q2/2027), cần quy tắc so hai lá số có sách dẫn. **Em đang để:** chưa dựng.
     - `/tu-vi/cach-doc-la-so`, `/kien-thuc/vi-sao-hai-trang-ra-hai-la-so-khac-nhau`, `/kien-thuc/vi-sao-cac-noi-xem-tuoi-khac-nhau`: trang bài viết, cần biên tập viên viết và duyệt (route đã có, dùng khung `TrangBaiViet`; bài xuất bản ở `/quan-tri` là trang tự hiện, chưa có bài thì 404).
+14. **Cụm Xem ngày (F6) đã dựng, chờ xuất bản.** Gồm `/xem-ngay`, 6 trang việc (cưới hỏi, khai trương, động thổ, nhập trạch, mua xe, cắt tóc), trang tháng `/xem-ngay/thang-mm-yyyy` và `/xem-ngay/{việc}/thang-mm-yyyy`.
+    - Ba lớp hiện cạnh nhau, không gộp điểm:
+      - 12 trực: đã đối chiếu 716/716 ô bảng tháng của Hiệp kỷ.
+      - 12 thần hoàng/hắc đạo: theo Hiệp kỷ.
+      - Bảng nghi kỵ: của thư viện mở lunar-javascript. Trang ghi rõ thư viện không ghi sách gốc.
+    - Trang mua xe: bảng không có mục "mua xe", nên trang dùng mục Giao dịch và ghi rõ điều đó.
+    - **Cần anh:** bấm xuất bản các dòng `XN*` ở `/quan-tri/seo/trang` khi anh thấy ổn. Hiện đang `noindex`.
+    - **Chưa làm:**
+      - lọc theo tuổi (trang `/xem-ngay/chon-ngay`, chờ mục 7);
+      - 28 sao;
+      - các ngày kỵ dân gian Việt (Tam nương, Nguyệt kỵ…): kho sách công khai chưa có nguồn.
+15. **Kim lâu, Tam tai, Hoang ốc (Xem tuổi P2):** kho sách công khai không có đoạn nào ghi các quy tắc này. Đây là tục Việt, mỗi nơi tính một kiểu. **Em đang để:** chưa dựng. Muốn làm thì cần một hai sách Việt dùng được công khai (hoặc anh cho phép ghi "theo tục truyền, không có sách gốc" và trình bày các cách tính song song).
+16. **Chu Dịch 64 quẻ:** đã có nguyên văn quẻ từ và hào từ (Kanripo KR1a0001), đối chiếu từng chữ với bản Vương Bật. Bản gốc có hai chỗ khác mọi bản khác:
+    - quẻ Mông "童蒙來求我" (các bản khác không có chữ 來);
+    - Chấn lục ngũ "意" (các bản khác ghi "億").
+    - Người duyệt cần quyết: giữ nguyên bản hay sửa theo đa số. **Em đang để:** giữ nguyên bản, chưa lên trang.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026

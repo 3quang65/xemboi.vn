@@ -2324,6 +2324,10 @@ a.ck-lt-o:hover{background:#FAF0DC}
 }
 
 /* ---------- ĐÁP ỨNG MOBILE & TABLET ---------- */
+@media (max-width: 1240px) {
+.ck-menu-link{padding:0 9px;font-size:14.5px}
+}
+
 @media (max-width: 1000px) {
 .ck-menu,.ck-dau-cta,.ck .r1e-tranh-nen,.ck-minh-o::before{display:none}
 .ck-nut-menu{display:inline-flex}

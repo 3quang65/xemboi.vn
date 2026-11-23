@@ -220,3 +220,16 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
     - URL v1 trả 410 hoặc 301 đúng bảng; trang lạ trả 404;
     - 0 lỗi console; log dịch vụ sạch.
   - Quay lại bản cũ: trỏ `current` về `releases/20261121-0011`, restart, khôi phục dump `truoc-v2`.
+- 23/11: đã push nhánh `lam-lai-v2` lên GitHub.
+- 23/11: **F6 Xem ngày.**
+  - Lib `src/lib/trang/xem-ngay.ts`:
+    - tháng tiết tính theo giờ VN;
+    - trực đối chiếu Hiệp kỷ 716/716;
+    - 12 thần khớp `getDayTianShen` của lunar-javascript cho mọi ngày 2025–2027;
+    - nghi kỵ và thần sát lấy từ lunar-javascript 1.7.8 (MIT, ghi trong sổ 14), có tên tiếng Việt cho đủ 142 + 152 mục.
+  - Antigravity làm giao diện (Lệnh 32): hub, 6 trang việc, trang tháng.
+  - Menu thêm mục "Xem ngày". `ck.css` thêm quy tắc thu khoảng cách menu ở 1001–1240px để menu không xuống dòng.
+  - SEO nhóm XN: bỏ các cụm "28 sao", "theo tuổi" vì trang chưa có; bỏ ghi chú biên tập lọt vào phần mô tả. Đã sửa CSDL máy trạm; lần deploy tới phải sửa trên VPS bằng `may-tram/seo-xn-moi.json`.
+  - Quét dev: 1.372 trang trả 200, 0 liên kết hỏng, 0 chỗ trống.
+- 23/11: dữ liệu Chu Dịch 64 quẻ (`src/lib/trang/du-lieu/chu-dich-64.json`), chuẩn bị cho trang `/kinh-dich/que/*`.
+- Deploy lần tới phải chạy `npm ci` vì có gói mới `lunar-javascript`.

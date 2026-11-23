@@ -54,7 +54,9 @@ test('menu chỉ hiện trang đã dựng; breadcrumb đi theo cha', () => {
   const f1 = menuChinh(1);
   assert.deepEqual(f1.map((m) => m.href), ['/tu-vi']);
   assert.deepEqual(f1[0].con.map((m) => m.href), ['/tu-vi/lap-la-so', '/tu-vi-2027']);
-  assert.equal(menuChinh(5).length, 6);
+  assert.equal(menuChinh(5).length, 7);
+  assert.deepEqual(breadcrumb('/xem-ngay/cuoi-hoi/thang-02-2027', 'Tháng 2/2027').map((m) => m.ten), ['Trang chủ', 'Xem ngày', 'Ngày cưới', 'Tháng 2/2027']);
+  assert.deepEqual(breadcrumb('/xem-ngay/xuat-hanh').map((m) => m.href), ['/', '/lich-am', '/tet', '/xem-ngay/xuat-hanh']);
   assert.ok(trangDaDungF4().has('/kinh-dich/gieo-que'));
   assert.ok(!trangDaDungF4().has('/goi'));
   assert.ok(trangDaDung(5).has('/nguon') && !trangDaDung(5).has('/goi'), 'bảng giá chờ anh, để đợt 6');

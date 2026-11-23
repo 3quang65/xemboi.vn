@@ -30,6 +30,17 @@ const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
     conDot: [2, 2, 2, 2, 5],
   },
   {
+    dot: 5, ten: 'Xem ngày', href: '/xem-ngay', moTa: 'Ngày tốt theo việc, hoàng đạo, 12 trực',
+    con: [
+      { ten: 'Xem ngày cưới', href: '/xem-ngay/cuoi-hoi' },
+      { ten: 'Ngày khai trương', href: '/xem-ngay/khai-truong' },
+      { ten: 'Ngày động thổ', href: '/xem-ngay/dong-tho' },
+      { ten: 'Ngày về nhà mới', href: '/xem-ngay/nhap-trach' },
+      { ten: 'Ngày mua xe', href: '/xem-ngay/mua-xe' },
+      { ten: 'Ngày cắt tóc', href: '/xem-ngay/cat-toc' },
+    ],
+  },
+  {
     dot: 3, ten: 'Can chi & mệnh', href: '/can-chi', moTa: 'Sinh năm mệnh gì, nạp âm, con giáp',
     con: [
       { ten: 'Sinh năm bao nhiêu mệnh gì', href: '/sinh-nam' },
@@ -103,6 +114,8 @@ const TEN_DOAN: Record<string, string> = {
   '/xem-tuoi': 'Xem tuổi', '/xem-tuoi/vo-chong': 'Vợ chồng', '/xem-tuoi/xong-dat': 'Xông đất',
   '/bat-tu': 'Bát tự', '/bat-tu/lap-la-so': 'Lập lá số bát tự', '/kinh-dich': 'Kinh Dịch', '/kinh-dich/gieo-que': 'Gieo quẻ',
   '/tet': 'Tết', '/xem-ngay': 'Xem ngày', '/xem-ngay/xuat-hanh': 'Xuất hành',
+  '/xem-ngay/cuoi-hoi': 'Ngày cưới', '/xem-ngay/khai-truong': 'Khai trương', '/xem-ngay/dong-tho': 'Động thổ',
+  '/xem-ngay/nhap-trach': 'Nhập trạch', '/xem-ngay/mua-xe': 'Mua xe', '/xem-ngay/cat-toc': 'Cắt tóc',
   '/phuong-phap': 'Phương pháp', '/nguon': 'Nguồn sách', '/tu-dien': 'Từ điển', '/kien-thuc': 'Kiến thức', '/goi': 'Bảng giá', '/lien-he': 'Liên hệ',
   '/phuong-phap/nam-phai-bac-phai': 'Nam phái và Bắc phái', '/phuong-phap/gio-ty': 'Giờ Tý', '/phuong-phap/thang-nhuan': 'Tháng nhuận',
   '/phuong-phap/chuan-bien-tap': 'Chuẩn biên tập', '/phuong-phap/nguoi-duyet': 'Người duyệt',
