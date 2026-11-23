@@ -46,7 +46,7 @@ Trang nào dùng lại được thì phải dùng các thành phần này, khôn
 | Lệnh | Công cụ | Việc dữ liệu (Claude Code) | Trạng thái |
 |---|---|---|---|
 | 40 | Thành phần dùng chung + Bát tự | `bat-tu-truc-quan.ts`: quanHeTru, docNhanh, GIAI_NGHIA_BAT_TU (xong 24/11, có test) | Đang làm |
-| 41 | Xem ngày, lịch âm | Dải 12 giờ, 3 ngày hợp nhất kèm lý do | Chờ |
-| 42 | Thần số học, hướng nhà / bát trạch, cửu tinh | Đọc nhanh từng trang | Chờ |
-| 43 | Tử vi, kinh dịch, bản đồ sao, xem tuổi, cung hoàng đạo | Tam phương tứ chính, điểm chính của quẻ | Chờ |
+| 41 | Xem ngày, lịch âm | `xem-ngay-truc-quan.ts`: daiGio, chonNgayHopNhat, lich.ics (xong, có test) | Lệnh đã viết, chờ giao |
+| 42 | Thần số học, hướng nhà / bát trạch, cửu tinh | `phan-truc-quan.ts`: đọc nhanh, la bàn 24 sơn, đường sao bay (xong, có test) | Lệnh đã viết, chờ giao |
+| 43 | Tử vi, kinh dịch, bản đồ sao, xem tuổi, cung hoàng đạo | `truc-quan-43.ts`: tam phương tứ chính, đọc nhanh quẻ, xem tuổi, giãn nhãn (xong, có test) | Lệnh đã viết, chờ giao |
 | sau | Mọi công cụ mới | Theo mục 1 và 2 ngay từ lệnh đầu | |
