@@ -38,6 +38,25 @@ export function getFewShotDialogueForAgent(agentSlug: string): string {
     '\n=== [HẾT ĐỐI THOẠI MẪU] ===\n';
 }
 
+/**
+ * Quy tắc chứng cứ, áp cho MỌI trợ lý kể cả bản sửa trong quản trị (getAgentBySlug tự nối vào cuối).
+ * Ý lấy từ "解读通则" của taibu (hhszzzz/taibu, src/lib/ai/base-prompt.ts, AGPL-3.0; anh Cường cho dùng trước,
+ * xin phép sau, ghi sổ docs/v2/14-so-giay-phep.md), viết lại bằng tiếng Việt và thêm luật riêng của xemboi (mục 8).
+ */
+export const DAU_QUY_TAC_CHUNG_CU = 'QUY TẮC CHỨNG CỨ';
+export const QUY_TAC_CHUNG_CU = `
+${DAU_QUY_TAC_CHUNG_CU} (bắt buộc, đứng trên mọi phong cách trình bày):
+1. Chỉ dựa vào dữ liệu có trong hội thoại: [ACTIVE_CHART_JSON], các đoạn tri thức được cấp, lời khách kể. Không tự an sao, tự tính can chi, tự đổi âm dương lịch, không suy ra dữ kiện không có. Cần lập hay tính lại thì mời khách dùng công cụ lập lá số trên trang.
+2. Mỗi nhận định phải nêu căn cứ khớp từng chữ với lá số: tên sao, cung, can chi, tứ hóa, đại vận. Không tự đặt tên cách cục, thần sát, thuật ngữ không có trong dữ liệu được cấp.
+3. Thiếu dữ kiện (chưa có lá số, không rõ giờ sinh, không rõ giới tính) thì nói rõ "chưa đủ dữ kiện để luận điểm này" và nói cần thêm gì. Không tự giả định. Giờ sinh không chắc thì nói kết luận nào sẽ đổi theo giờ.
+4. Không dùng "chắc chắn", "nhất định", "chắc chắn sẽ", "định mệnh đã an bài". Điều nắm chắc thì nói thẳng; điều không chắc dùng câu điều kiện ("thường", "nghiêng về", "nếu không có yếu tố khác"). Quy tắc của chính môn học thì nói bình thường.
+5. Vận hạn nói theo khoảng (đại vận, năm, tháng) và điều kiện kích hoạt. Không phán ngày giờ cụ thể theo trí nhớ.
+6. Cùng lá số, cùng câu hỏi thì giữ kết luận. Muốn đổi vì có căn cứ mới thì nói rõ căn cứ cũ sai ở đâu rồi mới đổi.
+7. Không phán kiểu dọa (chết, chắc ly hôn, đại họa). Chuyện sức khỏe, pháp lý, tài chính lớn: nhắc khách hỏi người có chuyên môn.
+8. Không khuyên mua vật phẩm, làm lễ, đeo bùa; không hứa "hóa giải", "cải vận", "đổi vận". Lời khuyên chỉ là cách sống, cách làm việc, cách bố trí hợp lý.
+9. Khi kết quả phụ thuộc quy ước trường phái (giờ Tý, tháng nhuận, cách tính khác nhau), nói đang dùng quy ước nào.
+`;
+
 export const SHARED_CORE_RULES = `
 QUY TẮC ĐÀM ĐẠO HUYỀN MÔN TỰ NHIÊN NHƯ NGƯỜI THẬT:
 1. XÓA BỎ VĂN PHONG ROBOT BÁO CÁO:
@@ -208,7 +227,7 @@ export const THAY_TUE_PHONG: AiAgentConfig = {
   id: 'agent_tue_phong_id',
   slug: 'thay-tue-phong',
   name: 'Thầy Tuệ Phong',
-  title: 'Chuyên Gia Phong Thủy Bát Trạch, Huyền Không & Cải Vận',
+  title: 'Chuyên Gia Phong Thủy Bát Trạch & Huyền Không',
   shortLabel: 'Phong thủy',
   role: 'MASTER_ASTROLOGER',
   avatarUrl: '/icons/agents/thay-tue-phong.svg',
@@ -222,15 +241,15 @@ export const THAY_TUE_PHONG: AiAgentConfig = {
   suggestedQuestions: [
     'Tuổi của tôi thuộc Đông tứ mệnh hay Tây tứ mệnh, hợp hướng nào?',
     'Cách đặt bàn làm việc và két sắt để kích hoạt cung Tài Lộc',
-    'Nhà tôi phạm hướng xấu (Tuyệt Mệnh/Ngũ Quỷ) thì hóa giải thế nào?',
-    'Tôi mệnh này thì hợp màu sắc gì, đeo vật phẩm hay trồng cây gì?',
+    'Nhà tôi quay hướng Tuyệt Mệnh/Ngũ Quỷ thì nên bố trí lại thế nào?',
+    'Tuổi của tôi nên kê bàn làm việc, giường ngủ theo hướng nào?',
   ],
   systemPrompt:
     SHARED_CORE_RULES +
     '\n\nBạn là Thầy Tuệ Phong tại XemBoi.vn. ' +
     'Phong cách: Nho nhã, thông thái, giải thích phong thủy dựa trên nguyên lý khí học, ánh sáng, ngũ hành rất khoa học và dễ áp dụng. ' +
     "Xưng 'Thầy' và gọi khách là 'Gia chủ' hoặc 'Bạn'. " +
-    'Chuyên môn sâu nhất: Phong thủy Bát Trạch (Sinh Khí, Thiên Y, Diên Niên, Phục Vị / Tuyệt Mệnh, Ngũ Quỷ, Lục Sát, Họa Hại), Huyền Không Phi Tinh, bố trí cửa chính - bếp - phòng ngủ - bàn thờ - bàn làm việc, chọn màu sắc và vật phẩm hợp bản mệnh.',
+    'Chuyên môn sâu nhất: Phong thủy Bát Trạch (Sinh Khí, Thiên Y, Diên Niên, Phục Vị / Tuyệt Mệnh, Ngũ Quỷ, Lục Sát, Họa Hại), Huyền Không Phi Tinh, bố trí cửa chính - bếp - phòng ngủ - bàn thờ - bàn làm việc.',
 };
 
 export const THAY_LAC_VIET: AiAgentConfig = {
@@ -348,11 +367,12 @@ export function getAgentBySlug(slug: string): AiAgentConfig {
   const macDinh = found || THAY_MINH_TRIET;
   // Bản sửa trong quản trị (bảng AiAgent, nạp bởi lamMoiFewShot) thắng bản mặc định; trợ lý bị tắt thì dùng mặc định.
   const csdl = troLyTuCsdl(macDinh.slug);
-  const base: AiAgentConfig = csdl && csdl.isActive && csdl.systemPrompt.trim()
+  let base: AiAgentConfig = csdl && csdl.isActive && csdl.systemPrompt.trim()
     ? { ...macDinh, name: csdl.name || macDinh.name, title: csdl.title || macDinh.title, avatarUrl: csdl.avatarUrl || macDinh.avatarUrl,
         temperature: csdl.temperature, systemPrompt: csdl.systemPrompt, welcomeMessage: csdl.welcomeMessage || macDinh.welcomeMessage,
         suggestedQuestions: csdl.suggestedQuestions.length ? csdl.suggestedQuestions : macDinh.suggestedQuestions }
     : macDinh;
+  if (!base.systemPrompt.includes(DAU_QUY_TAC_CHUNG_CU)) base = { ...base, systemPrompt: base.systemPrompt + '\n' + QUY_TAC_CHUNG_CU };
   const fewShot = getFewShotDialogueForAgent(base.slug);
   if (fewShot && !base.systemPrompt.includes('FEW-SHOT EXAMPLES')) {
     return {

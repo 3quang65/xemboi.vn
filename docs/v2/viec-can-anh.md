@@ -77,6 +77,10 @@
     - **Không có** tính cách 12 cung, hợp cung, nguyên tố: Tetrabiblos không viết những thứ này. Trang ghi rõ vì sao.
     - Chưa làm: bản đồ sao (sẽ làm bằng `astronomy-engine`, MIT, theo 20-hoc-tu-4-repo), trang hành tinh, trang nhà.
     - **Cần anh:** bấm xuất bản các dòng `CT`, `CT-CHD`, `CT-CUNG` khi anh thấy ổn. Deploy tới sửa VPS bằng `may-tram/seo-ct-moi.json`.
+20. **Xin phép tác giả sau khi xong sản phẩm** (anh cho dùng trước ngày 23/11/2026). Danh sách đầy đủ ở `14-so-giay-phep.md` mục 1, cột "CẦN XIN PHÉP". Hiện có:
+    - **Nhật Nguyệt** (nhatnguyet.org, lienhe@nhatnguyet.org): lời ý nghĩa thần số học, CC BY-NC 4.0. Dùng ở mọi trang `/than-so-hoc/*`. Kho của họ còn lời luận tử vi (2.016 dòng sao tại cung) và bát tự, chưa dùng.
+    - **taibu** (hhszzzz): ý 8 điều luận giải cho chat, viết lại bằng tiếng Việt (AGPL).
+    - Còn tồn ở chat cũ: `conversation-store.ts`, `dialogue-simulation.ts`, `council-orchestrator.ts` vẫn có đoạn mẫu nói "vật phẩm", "cải vận". Em đã sửa phần định nghĩa trợ lý và thêm luật cấm; các đoạn mẫu cũ em dọn khi quay lại phần chat trả phí.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026
