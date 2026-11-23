@@ -138,14 +138,12 @@ const viTriTrongTru = (laSo: LaSoBatTu) => ({
   chi: laSo.tru.map((t) => (DIA_CHI as readonly string[]).indexOf(t.chi)),
 });
 
-const tenCap = (i: number, j: number, a: string, b: string) => `${a} (trụ ${TEN_TRU[i]}) và ${b} (trụ ${TEN_TRU[j]})`;
-
-/** Tổ hợp chập k của [0..3]. */
-function toHop(k: number): ViTriTru[][] {
-  const kq: ViTriTru[][] = [];
-  const di = (bd: number, ds: ViTriTru[]) => {
+/** Tổ hợp chập k của [0..n-1]. */
+function toHop(k: number, n: number): number[][] {
+  const kq: number[][] = [];
+  const di = (bd: number, ds: number[]) => {
     if (ds.length === k) { kq.push(ds); return; }
-    for (let i = bd; i < 4; i++) di(i + 1, [...ds, i as ViTriTru]);
+    for (let i = bd; i < n; i++) di(i + 1, [...ds, i]);
   };
   di(0, []);
   return kq;
@@ -154,8 +152,19 @@ function toHop(k: number): ViTriTru[][] {
 /** Các quan hệ hợp / xung / hình / hại giữa 4 trụ của một lá số. */
 export function quanHeTru(laSo: LaSoBatTu): QuanHeTru[] {
   const { can, chi } = viTriTrongTru(laSo);
-  const kq: QuanHeTru[] = [];
-  const them = (q: Omit<QuanHeTru, 'nhom' | 'ten'>) => kq.push({ ...q, nhom: NHOM_CUA_LOAI[q.loai], ten: TEN_LOAI_QUAN_HE[q.loai] });
+  return quanHeMang(can, chi, TEN_TRU.map((t) => `trụ ${t}`)) as QuanHeTru[];
+}
+
+/**
+ * Lõi dò quan hệ trên n vị trí bất kỳ (can[k], chi[k]; -1 = vị trí trống, bỏ qua).
+ * `tenViTri[k]` dùng trong câu mô tả, vd "trụ năm", "lưu niên". `tru` trả về là chỉ số vị trí.
+ */
+export function quanHeMang(can: number[], chi: number[], tenViTri: string[]): (Omit<QuanHeTru, 'tru'> & { tru: number[] })[] {
+  const n = can.length;
+  type Q = Omit<QuanHeTru, 'tru'> & { tru: number[] };
+  const kq: Q[] = [];
+  const tenCap = (i: number, j: number, a: string, b: string) => `${a} (${tenViTri[i]}) và ${b} (${tenViTri[j]})`;
+  const them = (q: Omit<Q, 'nhom' | 'ten'>) => kq.push({ ...q, nhom: NHOM_CUA_LOAI[q.loai], ten: TEN_LOAI_QUAN_HE[q.loai] });
 
   // Tam hợp, tam hội trước (đủ ba chữ khác nhau).
   const daDuCuc = new Set<string>();
@@ -163,7 +172,7 @@ export function quanHeTru(laSo: LaSoBatTu): QuanHeTru[] {
     for (const [ba, hanh] of bo) {
       const tru = ba.map((c) => chi.findIndex((x) => x === c));
       if (tru.every((t) => t >= 0)) {
-        const sx = [...tru].sort() as ViTriTru[];
+        const sx = [...tru].sort((x, y) => x - y);
         daDuCuc.add(ba.join(','));
         them({
           loai, hang: 'chi', tru: sx, chu: sx.map((t) => DIA_CHI[chi[t]]), hanh,
@@ -179,7 +188,7 @@ export function quanHeTru(laSo: LaSoBatTu): QuanHeTru[] {
     const co = ba.filter((c) => chi.includes(c));
     if (co.length !== 2) continue;
     const thieu = ba.find((c) => !chi.includes(c))!;
-    const tru = co.map((c) => chi.indexOf(c) as ViTriTru).sort();
+    const tru = co.map((c) => chi.indexOf(c)).sort((x, y) => x - y);
     them({
       loai: 'thieu-tam-hop', hang: 'chi', tru, chu: tru.map((t) => DIA_CHI[chi[t]]), hanh, thieu: DIA_CHI[thieu],
       moTa: `Có ${co.map((c) => DIA_CHI[c]).join(' và ')} của tam hợp ${hanh} cục, thiếu ${DIA_CHI[thieu]}. Sách ghi thiếu một chữ thì không thành cục.`,
@@ -187,7 +196,8 @@ export function quanHeTru(laSo: LaSoBatTu): QuanHeTru[] {
     });
   }
 
-  for (const [i, j] of toHop(2)) {
+  for (const [i, j] of toHop(2, n)) {
+    if (chi[i] < 0 || chi[j] < 0) continue;
     const ten = (k: number) => THIEN_CAN[can[k]];
     const tc = (k: number) => DIA_CHI[chi[k]];
     const ch = laCap(CAN_HOP, can[i], can[j]);
@@ -211,7 +221,7 @@ export function quanHeTru(laSo: LaSoBatTu): QuanHeTru[] {
       them({ loai: 'hinh', hang: 'chi', tru: [i, j], chu: [tc(i), tc(j)], moTa: `${tenCap(i, j, tc(i), tc(j))} thuộc ${TEN_HINH[h[2] as keyof typeof TEN_HINH]}.`, trich: ['hinh', h[2] === 'vo-an' ? 'hinhVoAn' : 'hinhTriThe', 'hinhKhongVoiDoan'] });
     }
     if (a === b && TU_HINH.includes(a)) {
-      them({ loai: 'tu-hinh', hang: 'chi', tru: [i, j], chu: [tc(i), tc(j)], moTa: `${tc(i)} gặp ${tc(j)} (trụ ${TEN_TRU[i]} và trụ ${TEN_TRU[j]}): ${tc(i)} thuộc bốn chi tự hình.`, trich: ['tuHinh', 'hinhKhongVoiDoan'] });
+      them({ loai: 'tu-hinh', hang: 'chi', tru: [i, j], chu: [tc(i), tc(j)], moTa: `${tc(i)} gặp ${tc(j)} (${tenViTri[i]} và ${tenViTri[j]}): ${tc(i)} thuộc bốn chi tự hình.`, trich: ['tuHinh', 'hinhKhongVoiDoan'] });
     }
     if (laCap(LUC_HAI, a, b)) {
       them({ loai: 'hai', hang: 'chi', tru: [i, j], chu: [tc(i), tc(j)], moTa: `${tenCap(i, j, tc(i), tc(j))} là một cặp lục hại.`, trich: ['hai'] });
