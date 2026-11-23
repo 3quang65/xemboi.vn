@@ -231,5 +231,13 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Menu thêm mục "Xem ngày". `ck.css` thêm quy tắc thu khoảng cách menu ở 1001–1240px để menu không xuống dòng.
   - SEO nhóm XN: bỏ các cụm "28 sao", "theo tuổi" vì trang chưa có; bỏ ghi chú biên tập lọt vào phần mô tả. Đã sửa CSDL máy trạm; lần deploy tới phải sửa trên VPS bằng `may-tram/seo-xn-moi.json`.
   - Quét dev: 1.372 trang trả 200, 0 liên kết hỏng, 0 chỗ trống.
-- 23/11: dữ liệu Chu Dịch 64 quẻ (`src/lib/trang/du-lieu/chu-dich-64.json`), chuẩn bị cho trang `/kinh-dich/que/*`.
+- 23/11: **F6 Kinh Dịch.**
+  - Dữ liệu:
+    - nguyên văn 64 quẻ `src/lib/trang/du-lieu/chu-dich-64.json` (Kanripo KR1a0001, CC BY-SA 4.0, đối chiếu KR1a0006);
+    - phiên âm `chu-dich-64-phien-am.json` (ghép từ DS05, Apache-2.0; 232 quyết định chữ đa âm, 39 chỗ chưa chắc chờ người duyệt, xem `viec-can-anh.md` mục 16);
+    - lib `src/lib/trang/chu-dich.ts`: quẻ hỗ/đảo/đối, 8 quái với câu Thuyết quái (kèm phiên âm), `daDungKinhDich()`.
+  - Antigravity làm giao diện (Lệnh 33): hub `/kinh-dich`, `/kinh-dich/64-que` (danh sách + bảng 8×8), 64 trang quẻ, 8 trang quái (dựng tĩnh), lời quẻ và lời hào động trên trang gieo quẻ.
+  - Trang chỉ có nguyên văn, phiên âm và phần tính được; bản dịch, lời bình chờ `NoiDung` đã duyệt.
+  - Menu Kinh Dịch thêm "64 quẻ"; breadcrumb trang quẻ, quái đi qua `/kinh-dich/64-que`.
+  - Quét dev: 1.446 trang, 1.443 trả 200; 3 trang 500 do dev Next đọc JSON dở khi dựng song song, gọi lại đều 200. 0 chỗ trống.
 - Deploy lần tới phải chạy `npm ci` vì có gói mới `lunar-javascript`.

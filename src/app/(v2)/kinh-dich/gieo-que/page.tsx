@@ -3,7 +3,12 @@ import Link from 'next/link';
 import GieoQueClient from '@/components/ck/GieoQueClient';
 import HinhQue from '@/components/ck/HinhQue';
 import KhungTrang from '@/components/ck/KhungTrang';
-import { trangDaDung } from '@/lib/trang/dieu-huong';
+import {
+  daDungKinhDich,
+  duongDanQue,
+  queChiTiet,
+  tenViTriHao,
+} from '@/lib/trang/chu-dich';
 import {
   gieoDongXu,
   queMaiHoaHienTai,
@@ -11,6 +16,8 @@ import {
 } from '@/lib/trang/kinh-dich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
+import { khacBanTheoViTri } from '../KinhDichHelpers';
+import { DongVanHan, GhiCongChuDich, LienKetKiem } from '../KinhDichUi';
 
 export const dynamic = 'force-dynamic';
 
@@ -77,7 +84,7 @@ export default async function GieoQuePage({
     thongTinTrang('/kinh-dich/gieo-que', MAC_DINH_GIEO_QUE),
     searchParams,
   ]);
-  const daDung = trangDaDung();
+  const daDung = daDungKinhDich();
 
   const xuRaw = layMot(sp.xu)?.trim();
   const cachRaw = layMot(sp.cach)?.trim();
@@ -100,6 +107,11 @@ export default async function GieoQuePage({
     ketQua = kq;
     thoiDiemMaiHoa = kq.thoiDiem;
   }
+
+  const chiTietChu = ketQua ? queChiTiet(ketQua.queChu.slug) : null;
+  const haoDongSapXep = ketQua
+    ? [...ketQua.haoDong].sort((a, b) => a - b)
+    : [];
 
   return (
     <KhungTrang tieuDe={tt.h1} phu={tt.description} duongDan="/kinh-dich/gieo-que" toi>
@@ -177,25 +189,104 @@ export default async function GieoQuePage({
               </ul>
             </div>
           </section>
-        </>
-      ) : null}
+          {chiTietChu ? (
+            <section className="ck-td-muc" aria-labelledby="ck-kd-loi-que-tieu">
+              <h2 id="ck-kd-loi-que-tieu" className="ck-td-tieu">
+                Nguyên văn quẻ chủ: {ketQua.queChu.ten}{' '}
+                <span lang="zh-Hant" className="ck-kd-han-inline">
+                  {chiTietChu.han.ten}
+                </span>
+              </h2>
 
-      <section className="ck-td-muc" aria-labelledby="ck-kd-loi-que-tieu">
-        <div className="ck-cho-noi-dung">
-          <h2 id="ck-kd-loi-que-tieu">Lời quẻ Kinh Dịch</h2>
-          <p>Lời quẻ đang biên tập</p>
-        </div>
-      </section>
+              <article className="ck-kd-muc-van ck-kd-que-tu">
+                <h3>
+                  Lời quẻ chủ (<span lang="zh-Hant">卦辭</span>)
+                </h3>
+                <DongVanHan
+                  han={chiTietChu.han.queTu}
+                  phienAm={chiTietChu.phienAm?.queTu ?? null}
+                  ghiChuKhacBan={khacBanTheoViTri(chiTietChu.khacBan, 'quẻ từ')}
+                />
+              </article>
+
+              {haoDongSapXep.length > 0 ? (
+                <div className="ck-kd-hao-dong-van">
+                  <h3 className="ck-kd-muc-phu-tieu">Lời hào động</h3>
+                  <ol className="ck-kd-ds-hao">
+                    {haoDongSapXep.map((soHao) => {
+                      const h = chiTietChu.han.hao[soHao - 1];
+                      if (!h) return null;
+                      const phienAmHao = chiTietChu.phienAm?.hao[soHao - 1]?.van ?? null;
+                      return (
+                        <li key={soHao} className="ck-kd-muc-van">
+                          <h4>
+                            Hào {soHao} · {tenViTriHao(h.viTri)}{' '}
+                            <span lang="zh-Hant">{h.viTri}</span>
+                          </h4>
+                          <DongVanHan
+                            han={h.van}
+                            phienAm={phienAmHao}
+                            ghiChuKhacBan={khacBanTheoViTri(chiTietChu.khacBan, h.viTri)}
+                          />
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </div>
+              ) : null}
+
+              <div className="ck-kd-doc-du">
+                <LienKetKiem
+                  href={duongDanQue(ketQua.queChu)}
+                  daDung={daDung}
+                  className="ck-nut ck-nut-son"
+                >
+                  Đọc đủ quẻ {ketQua.queChu.ten}
+                </LienKetKiem>
+                {ketQua.queBien ? (
+                  <LienKetKiem
+                    href={duongDanQue(ketQua.queBien)}
+                    daDung={daDung}
+                    className="ck-nut ck-nut-vien"
+                  >
+                    Đọc đủ quẻ biến: {ketQua.queBien.ten}
+                  </LienKetKiem>
+                ) : null}
+              </div>
+
+              <GhiCongChuDich hienPhienAm daDung={daDung} />
+            </section>
+          ) : null}
+        </>
+      ) : (
+        <p className="ck-kd-xem-bang">
+          <LienKetKiem
+            href="/kinh-dich/64-que"
+            daDung={daDung}
+            className="ck-nut ck-nut-vien"
+          >
+            Xem bảng 64 quẻ
+          </LienKetKiem>
+        </p>
+      )}
 
       <nav className="ck-lien-quan" aria-label="Liên kết liên quan">
         <h2>Tra cứu liên quan</h2>
         <div className="ck-lien-quan-ds">
+          {daDung.has('/kinh-dich/64-que') ? (
+            <Link href="/kinh-dich/64-que">Bảng 64 quẻ Kinh Dịch</Link>
+          ) : null}
+          {daDung.has('/kinh-dich') ? (
+            <Link href="/kinh-dich">Tổng quan Kinh Dịch</Link>
+          ) : null}
           {daDung.has('/tu-vi/lap-la-so') ? (
             <Link href="/tu-vi/lap-la-so">Lập lá số tử vi</Link>
           ) : null}
           {daDung.has('/can-chi') ? <Link href="/can-chi">Can chi &amp; mệnh</Link> : null}
           {daDung.has('/lich-am') ? <Link href="/lich-am">Lịch âm hôm nay</Link> : null}
-          <Link href="/bat-tu/lap-la-so">Lập lá số bát tự</Link>
+          {daDung.has('/bat-tu/lap-la-so') ? (
+            <Link href="/bat-tu/lap-la-so">Lập lá số bát tự</Link>
+          ) : null}
         </div>
       </nav>
     </KhungTrang>

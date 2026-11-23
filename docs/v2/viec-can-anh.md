@@ -48,7 +48,13 @@
 16. **Chu Dịch 64 quẻ:** đã có nguyên văn quẻ từ và hào từ (Kanripo KR1a0001), đối chiếu từng chữ với bản Vương Bật. Bản gốc có hai chỗ khác mọi bản khác:
     - quẻ Mông "童蒙來求我" (các bản khác không có chữ 來);
     - Chấn lục ngũ "意" (các bản khác ghi "億").
-    - Người duyệt cần quyết: giữ nguyên bản hay sửa theo đa số. **Em đang để:** giữ nguyên bản, chưa lên trang.
+    - Người duyệt cần quyết: giữ nguyên bản hay sửa theo đa số. **Em đang để:** giữ nguyên bản, trang ghi chú ngay dưới câu đó.
+    - **Phiên âm Hán Việt** (`src/lib/trang/du-lieu/chu-dich-64-phien-am.json`): ghép từng chữ từ kho song ngữ DS05, chữ đa âm chọn tay (232 quyết định trong `quyetDinh`). **39 chỗ chưa chắc** (`chacChan: false`), ví dụ:
+      - 亨 đọc "hưởng" ở ba câu "用亨于" (quẻ 14, 17, 46), có bản đọc "hanh";
+      - 舍 "xá" (nghĩa là bỏ, có thể đọc "xả"), 次且 "tư thư" (nhiều bản "thứ thư"), 易 "dị" ở quẻ 34, 56;
+      - chữ hiếm: 眇, 茹, 彙, 嗃, 掣, 頄, 汔, 鬯, 夤, 蔀…
+      - Người duyệt cần đọc lại danh sách này. **Em đang để:** dùng âm đã chọn, chưa hiện dấu "chưa chắc" trên trang.
+    - **Cần anh:** bấm xuất bản các dòng `KD`, `KD-64`, `KD-QUE`, `KD-QUAI` ở `/quan-tri/seo/trang` khi anh thấy ổn. Trang chưa có bản dịch, lời bình tiếng Việt (chỉ nguyên văn, phiên âm và phần tính được).
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026

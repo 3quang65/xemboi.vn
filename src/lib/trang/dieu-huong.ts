@@ -66,8 +66,12 @@ const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
     conDot: [4],
   },
   {
-    // Hub /kinh-dich và 64 trang quẻ làm ở F6; tạm trỏ thẳng công cụ gieo quẻ.
-    dot: 4, ten: 'Kinh Dịch', href: '/kinh-dich/gieo-que', moTa: 'Gieo quẻ đồng xu, Mai Hoa theo giờ',
+    dot: 4, ten: 'Kinh Dịch', href: '/kinh-dich', moTa: '64 quẻ nguyên văn, gieo quẻ đồng xu',
+    con: [
+      { ten: 'Gieo quẻ', href: '/kinh-dich/gieo-que' },
+      { ten: '64 quẻ', href: '/kinh-dich/64-que' },
+    ],
+    conDot: [4, 5],
   },
 ];
 
@@ -112,7 +116,7 @@ const TEN_DOAN: Record<string, string> = {
   '/can-chi': 'Can chi & mệnh', '/can-chi/60-hoa-giap': '60 hoa giáp', '/sinh-nam': 'Sinh năm', '/nap-am': 'Nạp âm',
   '/ngu-hanh': 'Ngũ hành', '/ngu-hanh/mau-hop-menh': 'Màu hợp mệnh', '/con-giap': 'Con giáp',
   '/xem-tuoi': 'Xem tuổi', '/xem-tuoi/vo-chong': 'Vợ chồng', '/xem-tuoi/xong-dat': 'Xông đất',
-  '/bat-tu': 'Bát tự', '/bat-tu/lap-la-so': 'Lập lá số bát tự', '/kinh-dich': 'Kinh Dịch', '/kinh-dich/gieo-que': 'Gieo quẻ',
+  '/bat-tu': 'Bát tự', '/bat-tu/lap-la-so': 'Lập lá số bát tự', '/kinh-dich': 'Kinh Dịch', '/kinh-dich/gieo-que': 'Gieo quẻ', '/kinh-dich/64-que': '64 quẻ',
   '/tet': 'Tết', '/xem-ngay': 'Xem ngày', '/xem-ngay/xuat-hanh': 'Xuất hành',
   '/xem-ngay/cuoi-hoi': 'Ngày cưới', '/xem-ngay/khai-truong': 'Khai trương', '/xem-ngay/dong-tho': 'Động thổ',
   '/xem-ngay/nhap-trach': 'Nhập trạch', '/xem-ngay/mua-xe': 'Mua xe', '/xem-ngay/cat-toc': 'Cắt tóc',
@@ -128,6 +132,11 @@ const CHA_RIENG: Record<string, string> = {
   '/tet': '/lich-am', '/xem-ngay/xuat-hanh': '/tet', '/xem-tuoi/xong-dat': '/tet',
   '/bai-viet': '/kien-thuc',
 };
+
+// Trang lập trình có cha là một trang chỉ mục (vd /kinh-dich/que/01-thuan-can → /kinh-dich/64-que).
+const CHA_THEO_TIEN_TO: [string, string][] = [
+  ['/kinh-dich/que/', '/kinh-dich/64-que'], ['/kinh-dich/bat-quai/', '/kinh-dich/64-que'],
+];
 
 // Trang đã dựng nhưng không nằm trong menu hay chân trang (chỉ được liên kết từ trang cha).
 const TRANG_CON: { dot: number; href: string }[] = [
@@ -148,7 +157,7 @@ export function breadcrumb(duongDan: string, tenCuoi?: string): MatXich[] {
   while (p && p !== '/' && !daQua.has(p)) {
     daQua.add(p);
     chuoi.unshift(p);
-    p = CHA_RIENG[p] ?? (p.slice(0, p.lastIndexOf('/')) || '/');
+    p = CHA_RIENG[p] ?? CHA_THEO_TIEN_TO.find(([t]) => p.startsWith(t))?.[1] ?? (p.slice(0, p.lastIndexOf('/')) || '/');
   }
   const kq: MatXich[] = [{ ten: 'Trang chủ', href: '/' }];
   chuoi.forEach((h, i) => {

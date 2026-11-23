@@ -1,0 +1,3859 @@
+{
+  "nguon": {
+    "ma": "DS05",
+    "ten": "KasaiDanto/vietnamese_nom_scripts",
+    "giayPhep": "Apache-2.0",
+    "url": "https://huggingface.co/datasets/KasaiDanto/vietnamese_nom_scripts",
+    "ghiChu": "Âm Hán Việt cho kinh văn chu-dich-64.json. Bảng chữ → âm lập từ các câu DS05 toàn chữ Hán có số chữ bằng số âm tiết (32.540 câu, gióng 1:1, chuẩn hoá NFC); mỗi chữ lấy âm gặp nhiều nhất. Chính tả: i → y sau h/k/l/m/t (kỳ, lý, tỷ) và dấu kiểu mới cho oa/oe/uy (hòa, tùy) cho khớp tên quẻ trong QUE_64. Trong quyetDinh: loai sua-bang = âm đầu bảng là âm Nôm hoặc sai nên sửa tay; bo-sung = chữ không có trong DS05, nhập tay theo từ điển Hán Việt; ngu-canh = chữ đa âm quyết theo ngữ cảnh từng câu; da-am = chữ đa âm đã xét và giữ một âm trong toàn văn. chacChan:false là chỗ còn cách đọc khác. Nhãn hào đọc theo chữ: 初九 sơ cửu, 六二 lục nhị, 上六 thượng lục, 用九 dụng cửu. DS06 (Duyu/Nom-Vietnamese) chỉ để tham khảo khi DS05 thiếu, không lấy âm tự động vì lẫn âm Nôm."
+  },
+  "que": [
+    {
+      "so": 1,
+      "queTu": "nguyên hanh lợi trinh",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "tiềm long vật dụng"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "hiện long tại điền lợi kiến đại nhân"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "quân tử chung nhật kiền kiền tịch dịch nhược lệ vô cữu"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "hoặc dược tại uyên vô cữu"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "phi long tại thiên lợi kiến đại nhân"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "kháng long hữu hối"
+        }
+      ],
+      "dung": {
+        "viTri": "dụng cửu",
+        "van": "hiện quần long vô thủ cát"
+      }
+    },
+    {
+      "so": 2,
+      "queTu": "nguyên hanh lợi tẫn mã chi trinh quân tử hữu du vãng tiên mê hậu đắc chủ lợi tây nam đắc bằng đông bắc táng bằng an trinh cát",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "lý sương kiên băng chí"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "trực phương đại bất tập vô bất lợi"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "hàm chương khả trinh hoặc tòng vương sự vô thành hữu chung"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "quát nang vô cữu vô dự"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "hoàng thường nguyên cát"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "long chiến vu dã kỳ huyết huyền hoàng"
+        }
+      ],
+      "dung": {
+        "viTri": "dụng lục",
+        "van": "lợi vĩnh trinh"
+      }
+    },
+    {
+      "so": 3,
+      "queTu": "nguyên hanh lợi trinh vật dụng hữu du vãng lợi kiến hầu",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "bàn hoàn lợi cư trinh lợi kiến hầu"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "truân như chiên như thừa mã ban như phỉ khấu hôn cấu nữ tử trinh bất tự thập niên nãi tự"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "tức lộc vô ngu duy nhập vu lâm trung quân tử cơ bất như xá vãng lận"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "thừa mã ban như cầu hôn cấu vãng cát vô bất lợi"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "truân kỳ cao tiểu trinh cát đại trinh hung"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "thừa mã ban như khấp huyết liên như"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 4,
+      "queTu": "hanh phỉ ngã cầu đồng mông đồng mông lai cầu ngã sơ phệ cáo tái tam độc độc tắc bất cáo lợi trinh",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "phát mông lợi dụng hình nhân dụng thoát chất cốc dĩ vãng lận"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "bao mông cát nạp phụ cát tử khắc gia"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "vật dụng thủ nữ kiến kim phu bất hữu cung vô du lợi"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "khốn mông lận"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "đồng mông cát"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "kích mông bất lợi vi khấu lợi ngự khấu"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 5,
+      "queTu": "hữu phu quang hanh trinh cát lợi thiệp đại xuyên",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "nhu vu giao lợi dụng hằng vô cữu"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "nhu vu sa tiểu hữu ngôn chung cát"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "nhu vu nê trí khấu chí"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "nhu vu huyết xuất tự huyệt"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "nhu vu tửu thực trinh cát"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "nhập vu huyệt hữu bất tốc chi khách tam nhân lai kính chi chung cát"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 6,
+      "queTu": "hữu phu trất dịch trung cát chung hung lợi kiến đại nhân bất lợi thiệp đại xuyên",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "bất vĩnh sở sự tiểu hữu ngôn chung cát"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "bất khắc tụng quy nhi bô kỳ ấp nhân tam bách hộ vô sảnh"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "thực cựu đức trinh lệ chung cát hoặc tòng vương sự vô thành"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "bất khắc tụng phục tức mệnh du an trinh cát"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "tụng nguyên cát"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "hoặc tích chi bàn đái chung triêu tam sỉ chi"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 7,
+      "queTu": "trinh trượng nhân cát vô cữu",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "sư xuất dĩ luật phủ tang hung"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "tại sư trung cát vô cữu vương tam tích mệnh"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "sư hoặc dư thi hung"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "sư tả thứ vô cữu"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "điền hữu cầm lợi chấp ngôn vô cữu trưởng tử suất sư đệ tử dư thi trinh hung"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "đại quân hữu mệnh khai quốc thừa gia tiểu nhân vật dụng"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 8,
+      "queTu": "cát nguyên phệ nguyên vĩnh trinh vô cữu bất ninh phương lai hậu phu hung",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "hữu phu tỷ chi vô cữu hữu phu doanh phẫu chung lai hữu tha cát"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "tỷ chi tự nội trinh cát"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "tỷ chi phỉ nhân"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "ngoại tỷ chi trinh cát"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "hiển tỷ vương dụng tam khu thất tiền cầm ấp nhân bất giới cát"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "tỷ chi vô thủ hung"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 9,
+      "queTu": "hanh mật vân bất vũ tự ngã tây giao",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "phục tự đạo hà kỳ cữu cát"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "khiên phục cát"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "dư thoát phúc phu thê phản mục"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "hữu phu huyết khứ dịch xuất vô cữu"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "hữu phu luyến như phú dĩ kỳ lân"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "ký vũ ký xử thượng đức tải phụ trinh lệ nguyệt cơ vọng quân tử chinh hung"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 10,
+      "queTu": "lý hổ vĩ bất điệt nhân hanh",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "tố lý vãng vô cữu"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "lý đạo thản thản u nhân trinh cát"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "miễu năng thị bả năng lý lý hổ vĩ điệt nhân hung vũ nhân vi vu đại quân"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "lý hổ vĩ sách sách chung cát"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "quải lý trinh lệ"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "thị lý khảo tường kỳ toàn nguyên cát"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 11,
+      "queTu": "tiểu vãng đại lai cát hanh",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "bạt mao như dĩ kỳ vựng chinh cát"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "bao hoang dụng bằng hà bất hà di bằng vong đắc thượng vu trung hành"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "vô bình bất bi vô vãng bất phục gian trinh vô cữu vật tuất kỳ phu vu thực hữu phúc"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "phiên phiên bất phú dĩ kỳ lân bất giới dĩ phu"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "đế ất quy muội dĩ chỉ nguyên cát"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "thành phục vu hoàng vật dụng sư tự ấp cáo mệnh trinh lận"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 12,
+      "queTu": "bĩ chi phỉ nhân bất lợi quân tử trinh đại vãng tiểu lai",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "bạt mao như dĩ kỳ vựng trinh cát hanh"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "bao thừa tiểu nhân cát đại nhân bĩ hanh"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "bao tu"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "hữu mệnh vô cữu trù ly chỉ"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "hưu bĩ đại nhân cát kỳ vong kỳ vong hệ vu bao tang"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "khuynh bĩ tiên bĩ hậu hỷ"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 13,
+      "queTu": "đồng nhân vu dã hanh lợi thiệp đại xuyên lợi quân tử trinh",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "đồng nhân vu môn vô cữu"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "đồng nhân vu tông lận"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "phục nhung vu mãng thăng kỳ cao lăng tam tuế bất hưng"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "thừa kỳ dung phất khắc công cát"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "đồng nhân tiên hào đào nhi hậu tiếu đại sư khắc tương ngộ"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "đồng nhân vu giao vô hối"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 14,
+      "queTu": "nguyên hanh",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "vô giao hại phỉ cữu gian tắc vô cữu"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "đại xa dĩ tải hữu du vãng vô cữu"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "công dụng hưởng vu thiên tử tiểu nhân phất khắc"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "phỉ kỳ bành vô cữu"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "quyết phu giao như uy như cát"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "tự thiên hựu chi cát vô bất lợi"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 15,
+      "queTu": "hanh quân tử hữu chung",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "khiêm khiêm quân tử dụng thiệp đại xuyên cát"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "minh khiêm trinh cát"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "lao khiêm quân tử hữu chung cát"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "vô bất lợi huy khiêm"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "bất phú dĩ kỳ lân lợi dụng xâm phạt vô bất lợi"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "minh khiêm lợi dụng hành sư chinh ấp quốc"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 16,
+      "queTu": "lợi kiến hầu hành sư",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "minh dự hung"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "giới vu thạch bất chung nhật trinh cát"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "hu dự hối trì hữu hối"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "do dự đại hữu đắc vật nghi bằng hạp trâm"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "trinh tật hằng bất tử"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "minh dự thành hữu du vô cữu"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 17,
+      "queTu": "nguyên hanh lợi trinh vô cữu",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "quan hữu du trinh cát xuất môn giao hữu công"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "hệ tiểu tử thất trượng phu"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "hệ trượng phu thất tiểu tử tùy hữu cầu đắc lợi cư trinh"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "tùy hữu hoạch trinh hung hữu phu tại đạo dĩ minh hà cữu"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "phu vu gia cát"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "câu hệ chi nãi tòng duy chi vương dụng hưởng vu tây sơn"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 18,
+      "queTu": "nguyên hanh lợi thiệp đại xuyên tiên giáp tam nhật hậu giáp tam nhật",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "cán phụ chi cổ hữu tử khảo vô cữu lệ chung cát"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "cán mẫu chi cổ bất khả trinh"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "cán phụ chi cổ tiểu hữu hối vô đại cữu"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "dụ phụ chi cổ vãng kiến lận"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "cán phụ chi cổ dụng dự"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "bất sự vương hầu cao thượng kỳ sự"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 19,
+      "queTu": "nguyên hanh lợi trinh chí vu bát nguyệt hữu hung",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "hàm lâm trinh cát"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "hàm lâm cát vô bất lợi"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "cam lâm vô du lợi ký ưu chi vô cữu"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "chí lâm vô cữu"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "tri lâm đại quân chi nghi cát"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "đôn lâm cát vô cữu"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 20,
+      "queTu": "quán nhi bất tiến hữu phu ngung nhược",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "đồng quan tiểu nhân vô cữu quân tử lận"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "khuy quan lợi nữ trinh"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "quan ngã sinh tiến thoái"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "quan quốc chi quang lợi dụng tân vu vương"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "quan ngã sinh quân tử vô cữu"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "quan kỳ sinh quân tử vô cữu"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 21,
+      "queTu": "hanh lợi dụng ngục",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "lũ hiệu diệt chỉ vô cữu"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "phệ phu diệt tỵ vô cữu"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "phệ tích nhục ngộ độc tiểu lận vô cữu"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "phệ can tỷ đắc kim thỉ lợi gian trinh cát"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "phệ can nhục đắc hoàng kim trinh lệ vô cữu"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "hà hiệu diệt nhĩ hung"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 22,
+      "queTu": "hanh tiểu lợi hữu du vãng",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "bí kỳ chỉ xá xa nhi đồ"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "bí kỳ tu"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "bí như nhu như vĩnh trinh cát"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "bí như bà như bạch mã hàn như phỉ khấu hôn cấu"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "bí vu khâu viên thúc bạch tiên tiên lận chung cát"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "bạch bí vô cữu"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 23,
+      "queTu": "bất lợi hữu du vãng",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "bác sàng dĩ túc miệt trinh hung"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "bác sàng dĩ biện miệt trinh hung"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "bác chi vô cữu"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "bác sàng dĩ phu hung"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "quán ngư dĩ cung nhân sủng vô bất lợi"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "thạc quả bất thực quân tử đắc dư tiểu nhân bác lư"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 24,
+      "queTu": "hanh xuất nhập vô tật bằng lai vô cữu phản phục kỳ đạo thất nhật lai phục lợi hữu du vãng",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "bất viễn phục vô chi hối nguyên cát"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "hưu phục cát"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "tần phục lệ vô cữu"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "trung hành độc phục"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "đôn phục vô hối"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "mê phục hung hữu tai sảnh dụng hành sư chung hữu đại bại dĩ kỳ quốc quân hung chí vu thập niên bất khắc chinh"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 25,
+      "queTu": "nguyên hanh lợi trinh kỳ phỉ chính hữu sảnh bất lợi hữu du vãng",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "vô vọng vãng cát"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "bất canh hoạch bất tri dư tắc lợi hữu du vãng"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "vô vọng chi tai hoặc hệ chi ngưu hành nhân chi đắc ấp nhân chi tai"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "khả trinh vô cữu"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "vô vọng chi tật vật dược hữu hỷ"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "vô vọng hành hữu sảnh vô du lợi"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 26,
+      "queTu": "lợi trinh bất gia thực cát lợi thiệp đại xuyên",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "hữu lệ lợi dĩ"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "dư thoát phúc"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "lương mã trục lợi gian trinh viết nhàn dư vệ lợi hữu du vãng"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "đồng ngưu chi cốc nguyên cát"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "phần thỉ chi nha cát"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "hà thiên chi cù hanh"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 27,
+      "queTu": "trinh cát quan di tự cầu khẩu thực",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "xá nhĩ linh quy quan ngã đóa di hung"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "điên di phất kinh vu khâu di chinh hung"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "phất di trinh hung thập niên vật dụng vô du lợi"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "điên di cát hổ thị đam đam kỳ dục trục trục vô cữu"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "phất kinh cư trinh cát bất khả thiệp đại xuyên"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "do di lệ cát lợi thiệp đại xuyên"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 28,
+      "queTu": "đống nạo lợi hữu du vãng hanh",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "tạ dụng bạch mao vô cữu"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "khô dương sinh đề lão phu đắc kỳ nữ thê vô bất lợi"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "đống nạo hung"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "đống long cát hữu tha lận"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "khô dương sinh hoa lão phụ đắc kỳ sĩ phu vô cữu vô dự"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "quá thiệp diệt đỉnh hung vô cữu"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 29,
+      "queTu": "tập khảm hữu phu duy tâm hanh hành hữu thượng",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "tập khảm nhập vu khảm đạm hung"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "khảm hữu hiểm cầu tiểu đắc"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "lai chi khảm khảm hiểm thả chẩm nhập vu khảm đạm vật dụng"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "tôn tửu quỹ nhị dụng phẫu nạp ước tự dũ chung vô cữu"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "khảm bất doanh chỉ ký bình vô cữu"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "hệ dụng huy mặc trí vu tùng cức tam tuế bất đắc hung"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 30,
+      "queTu": "lợi trinh hanh súc tẫn ngưu cát",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "lý thác nhiên kính chi vô cữu"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "hoàng ly nguyên cát"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "nhật trắc chi ly bất cổ phẫu nhi ca tắc đại điệt chi ta hung"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "đột như kỳ lai như phần như tử như khí như"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "xuất thế đà nhược thích ta nhược cát"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "vương dụng xuất chinh hữu gia chiết thủ hoạch phỉ kỳ xú vô cữu"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 31,
+      "queTu": "hanh lợi trinh thủ nữ cát",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "hàm kỳ mẫu"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "hàm kỳ phì hung cư cát"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "hàm kỳ cổ chấp kỳ tùy vãng lận"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "trinh cát hối vong sung sung vãng lai bằng tòng nhĩ tư"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "hàm kỳ mai vô hối"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "hàm kỳ phụ giáp thiệt"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 32,
+      "queTu": "hanh vô cữu lợi trinh lợi hữu du vãng",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "tuấn hằng trinh hung vô du lợi"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "hối vong"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "bất hằng kỳ đức hoặc thừa chi tu trinh lận"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "điền vô cầm"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "hằng kỳ đức trinh phụ nhân cát phu tử hung"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "chấn hằng hung"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 33,
+      "queTu": "hanh tiểu lợi trinh",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "độn vĩ lệ vật dụng hữu du vãng"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "chấp chi dụng hoàng ngưu chi cách mạc chi thắng thoát"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "hệ độn hữu tật lệ súc thần thiếp cát"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "hiếu độn quân tử cát tiểu nhân phủ"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "gia độn trinh cát"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "phì độn vô bất lợi"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 34,
+      "queTu": "lợi trinh",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "tráng vu chỉ chinh hung hữu phu"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "trinh cát"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "tiểu nhân dụng tráng quân tử dụng võng trinh lệ đê dương xúc phiên luy kỳ giác"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "trinh cát hối vong phiên quyết bất luy tráng vu đại dư chi phúc"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "táng dương vu dị vô hối"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "đê dương xúc phiên bất năng thoái bất năng toại vô du lợi gian tắc cát"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 35,
+      "queTu": "khang hầu dụng tích mã phồn thứ trú nhật tam tiếp",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "tấn như tồi như trinh cát võng phu dụ vô cữu"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "tấn như sầu như trinh cát thụ tư giới phúc vu kỳ vương mẫu"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "chúng doãn hối vong"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "tấn như thạch thử trinh lệ"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "hối vong thất đắc vật tuất vãng cát vô bất lợi"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "tấn kỳ giác duy dụng phạt ấp lệ cát vô cữu trinh lận"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 36,
+      "queTu": "lợi gian trinh",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "minh di vu phi thùy kỳ dực quân tử vu hành tam nhật bất thực hữu du vãng chủ nhân hữu ngôn"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "minh di di vu tả cổ dụng chửng mã tráng cát"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "minh di vu nam thú đắc kỳ đại thủ bất khả tật trinh"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "nhập vu tả phúc hoạch minh di chi tâm vu xuất môn đình"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "cơ tử chi minh di lợi trinh"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "bất minh hối sơ đăng vu thiên hậu nhập vu địa"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 37,
+      "queTu": "lợi nữ trinh",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "nhàn hữu gia hối vong"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "vô du toại tại trung quỹ trinh cát"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "gia nhân hác hác hối lệ cát phụ tử hy hy chung lận"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "phú gia đại cát"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "vương cách hữu gia vật tuất cát"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "hữu phu uy như chung cát"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 38,
+      "queTu": "tiểu sự cát",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "hối vong táng mã vật trục tự phục kiến ác nhân vô cữu"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "ngộ chủ vu hạng vô cữu"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "kiến dư duệ kỳ ngưu xế kỳ nhân thiên thả tỵ vô sơ hữu chung"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "khuê cô ngộ nguyên phu giao phu lệ vô cữu"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "hối vong quyết tông phệ phu vãng hà cữu"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "khuê cô kiến thỉ phụ đồ tải quỷ nhất xa tiên trương chi hồ hậu thoát chi hồ phỉ khấu hôn cấu vãng ngộ vũ tắc cát"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 39,
+      "queTu": "lợi tây nam bất lợi đông bắc lợi kiến đại nhân trinh cát",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "vãng kiển lai dự"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "vương thần kiển kiển phỉ cung chi cố"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "vãng kiển lai phản"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "vãng kiển lai liên"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "đại kiển bằng lai"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "vãng kiển lai thạc cát lợi kiến đại nhân"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 40,
+      "queTu": "lợi tây nam vô sở vãng kỳ lai phục cát hữu du vãng túc cát",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "vô cữu"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "điền hoạch tam hồ đắc hoàng thỉ trinh cát"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "phụ thả thừa trí khấu chí trinh lận"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "giải nhi mẫu bằng chí tư phu"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "quân tử duy hữu giải cát hữu phu vu tiểu nhân"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "công dụng xạ chuẩn vu cao dung chi thượng hoạch chi vô bất lợi"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 41,
+      "queTu": "hữu phu nguyên cát vô cữu khả trinh lợi hữu du vãng hạt chi dụng nhị quỹ khả dụng hưởng",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "dĩ sự thuyên vãng vô cữu chước tổn chi"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "lợi trinh chinh hung phất tổn ích chi"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "tam nhân hành tắc tổn nhất nhân nhất nhân hành tắc đắc kỳ hữu"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "tổn kỳ tật sử thuyên hữu hỷ vô cữu"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "hoặc ích chi thập bằng chi quy phất khắc vi nguyên cát"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "phất tổn ích chi vô cữu trinh cát lợi hữu du vãng đắc thần vô gia"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 42,
+      "queTu": "lợi hữu du vãng lợi thiệp đại xuyên",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "lợi dụng vi đại tác nguyên cát vô cữu"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "hoặc ích chi thập bằng chi quy phất khắc vi vĩnh trinh cát vương dụng hưởng vu đế cát"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "ích chi dụng hung sự vô cữu hữu phu trung hành cáo công dụng khuê"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "trung hành cáo công tòng lợi dụng vi y thiên quốc"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "hữu phu huệ tâm vật vấn nguyên cát hữu phu huệ ngã đức"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "mạc ích chi hoặc kích chi lập tâm vật hằng hung"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 43,
+      "queTu": "dương vu vương đình phu hào hữu lệ cáo tự ấp bất lợi tức nhung lợi hữu du vãng",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "tráng vu tiền chỉ vãng bất thắng vi cữu"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "dịch hào mộ dạ hữu nhung vật tuất"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "tráng vu quỳ hữu hung quân tử quải quải độc hành ngộ vũ nhược nhu hữu uấn vô cữu"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "đồn vô phu kỳ hành tư thư khiên dương hối vong văn ngôn bất tín"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "hiện lục quải quải trung hành vô cữu"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "vô hào chung hữu hung"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 44,
+      "queTu": "nữ tráng vật dụng thủ nữ",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "hệ vu kim nỉ trinh cát hữu du vãng kiến hung luy thỉ phu trịch trục"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "bao hữu ngư vô cữu bất lợi tân"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "đồn vô phu kỳ hành tư thư lệ vô đại cữu"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "bao vô ngư khởi hung"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "dĩ kỷ bao qua hàm chương hữu vẫn tự thiên"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "cấu kỳ giác lận vô cữu"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 45,
+      "queTu": "hanh vương cách hữu miếu lợi kiến đại nhân hanh lợi trinh dụng đại sinh cát lợi hữu du vãng",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "hữu phu bất chung nãi loạn nãi tụy nhược hào nhất ác vi tiếu vật tuất vãng vô cữu"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "dẫn cát vô cữu phu nãi lợi dụng thược"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "tụy như ta như vô du lợi vãng vô cữu tiểu lận"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "đại cát vô cữu"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "tụy hữu vị vô cữu phỉ phu nguyên vĩnh trinh hối vong"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "tê tư thế di vô cữu"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 46,
+      "queTu": "nguyên hanh dụng kiến đại nhân vật tuất nam chinh cát",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "doãn thăng đại cát"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "phu nãi lợi dụng thược vô cữu"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "thăng hư ấp"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "vương dụng hưởng vu kỳ sơn cát vô cữu"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "trinh cát thăng giai"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "minh thăng lợi vu bất tức chi trinh"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 47,
+      "queTu": "hanh trinh đại nhân cát vô cữu hữu ngôn bất tín",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "đồn khốn vu chu mộc nhập vu u cốc tam tuế bất địch"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "khốn vu tửu thực chu phất phương lai lợi dụng hưởng tự chinh hung vô cữu"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "khốn vu thạch cứ vu tật lê nhập vu kỳ cung bất kiến kỳ thê hung"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "lai từ từ khốn vu kim xa lận hữu chung"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "tỵ ngoạt khốn vu xích phất nãi từ hữu duyệt lợi dụng tế tự"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "khốn vu cát lũy vu niết ngột viết động hối hữu hối chinh cát"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 48,
+      "queTu": "cải ấp bất cải tỉnh vô táng vô đắc vãng lai tỉnh tỉnh ngật chí diệc vị duật tỉnh luy kỳ bình hung",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "tỉnh nê bất thực cựu tỉnh vô cầm"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "tỉnh cốc xạ phụ úng tệ lậu"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "tỉnh tiết bất thực vi ngã tâm trắc khả dụng cấp vương minh tịnh thụ kỳ phúc"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "tỉnh trứu vô cữu"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "tỉnh liệt hàn tuyền thực"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "tỉnh thu vật mạc hữu phu nguyên cát"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 49,
+      "queTu": "dĩ nhật nãi phu nguyên hanh lợi trinh hối vong",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "củng dụng hoàng ngưu chi cách"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "dĩ nhật nãi cách chi chinh cát vô cữu"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "chinh hung trinh lệ cách ngôn tam tựu hữu phu"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "hối vong hữu phu cải mệnh cát"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "đại nhân hổ biến vị chiêm hữu phu"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "quân tử báo biến tiểu nhân cách diện chinh hung cư trinh cát"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 50,
+      "queTu": "nguyên cát hanh",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "đỉnh điên chỉ lợi xuất bĩ đắc thiếp dĩ kỳ tử vô cữu"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "đỉnh hữu thực ngã cừu hữu tật bất ngã năng tức cát"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "đỉnh nhĩ cách kỳ hành tắc trĩ cao bất thực phương vũ khuy hối chung cát"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "đỉnh chiết túc phúc công tốc kỳ hình ốc hung"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "đỉnh hoàng nhĩ kim huyễn lợi trinh"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "đỉnh ngọc huyễn đại cát vô bất lợi"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 51,
+      "queTu": "hanh chấn lai hích hích tiếu ngôn ách ách chấn kinh bách lý bất táng chủy sưởng",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "chấn lai hích hích hậu tiếu ngôn ách ách cát"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "chấn lai lệ ức táng bối tê vu cửu lăng vật trục thất nhật đắc"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "chấn tô tô chấn hành vô sảnh"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "chấn toại nê"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "chấn vãng lai lệ ý vô táng hữu sự"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "chấn sách sách thị quắc quắc chinh hung chấn bất vu kỳ cung vu kỳ lân vô cữu hôn cấu hữu ngôn"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 52,
+      "queTu": "cấn kỳ bối bất hoạch kỳ thân hành kỳ đình bất kiến kỳ nhân vô cữu",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "cấn kỳ chỉ vô cữu lợi vĩnh trinh"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "cấn kỳ phì bất chửng kỳ tùy kỳ tâm bất khoái"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "cấn kỳ hạn liệt kỳ di lệ huân tâm"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "cấn kỳ thân vô cữu"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "cấn kỳ phụ ngôn hữu tự hối vong"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "đôn cấn cát"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 53,
+      "queTu": "nữ quy cát lợi trinh",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "hồng tiệm vu can tiểu tử lệ hữu ngôn vô cữu"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "hồng tiệm vu bàn ẩm thực khản khản cát"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "hồng tiệm vu lục phu chinh bất phục phụ dựng bất dục hung lợi ngự khấu"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "hồng tiệm vu mộc hoặc đắc kỳ giác vô cữu"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "hồng tiệm vu lăng phụ tam tuế bất dựng chung mạc chi thắng cát"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "hồng tiệm vu lục kỳ vũ khả dụng vi nghi cát"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 54,
+      "queTu": "chinh hung vô du lợi",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "quy muội dĩ đệ bả năng lý chinh cát"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "miễu năng thị lợi u nhân chi trinh"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "quy muội dĩ tu phản quy dĩ đệ"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "quy muội khiên kỳ trì quy hữu thời"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "đế ất quy muội kỳ quân chi mệ bất như kỳ đệ chi mệ lương nguyệt cơ vọng cát"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "nữ thừa khuông vô thực sĩ khuê dương vô huyết vô du lợi"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 55,
+      "queTu": "hanh vương cách chi vật ưu nghi nhật trung",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "ngộ kỳ phối chủ tuy tuần vô cữu vãng hữu thượng"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "phong kỳ bộ nhật trung kiến đẩu vãng đắc nghi tật hữu phu phát nhược cát"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "phong kỳ bái nhật trung kiến muội chiết kỳ hữu quăng vô cữu"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "phong kỳ bộ nhật trung kiến đẩu ngộ kỳ di chủ cát"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "lai chương hữu khánh dự cát"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "phong kỳ ốc bộ kỳ gia khuy kỳ hộ quých kỳ vô nhân tam tuế bất địch hung"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 56,
+      "queTu": "tiểu hanh lữ trinh cát",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "lữ tỏa tỏa tư kỳ sở thủ tai"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "lữ tức thứ hoài kỳ tư đắc đồng bộc trinh"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "lữ phần kỳ thứ táng kỳ đồng bộc trinh lệ"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "lữ vu xứ đắc kỳ tư phủ ngã tâm bất khoái"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "xạ trĩ nhất thỉ vong chung dĩ dự mệnh"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "điểu phần kỳ sào lữ nhân tiên tiếu hậu hào đào táng ngưu vu dị hung"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 57,
+      "queTu": "tiểu hanh lợi hữu du vãng lợi kiến đại nhân",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "tiến thoái lợi vũ nhân chi trinh"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "tốn tại sàng hạ dụng sử vu phân nhược cát vô cữu"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "tần tốn lận"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "hối vong điền hoạch tam phẩm"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "trinh cát hối vong vô bất lợi vô sơ hữu chung tiên canh tam nhật hậu canh tam nhật cát"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "tốn tại sàng hạ táng kỳ tư phủ trinh hung"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 58,
+      "queTu": "hanh lợi trinh",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "hòa đoài cát"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "phu đoài cát hối vong"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "lai đoài hung"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "thương đoài vị ninh giới tật hữu hỷ"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "phu vu bác hữu lệ"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "dẫn đoài"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 59,
+      "queTu": "hanh vương cách hữu miếu lợi thiệp đại xuyên lợi trinh",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "dụng chửng mã tráng cát"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "hoán bôn kỳ cơ hối vong"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "hoán kỳ cung vô hối"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "hoán kỳ quần nguyên cát hoán hữu khâu phỉ di sở tư"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "hoán hãn kỳ đại hiệu hoán vương cư vô cữu"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "hoán kỳ huyết khứ dịch xuất vô cữu"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 60,
+      "queTu": "hanh khổ tiết bất khả trinh",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "bất xuất hộ đình vô cữu"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "bất xuất môn đình hung"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "bất tiết nhược tắc ta nhược vô cữu"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "an tiết hanh"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "cam tiết cát vãng hữu thượng"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "khổ tiết trinh hung hối vong"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 61,
+      "queTu": "đồn ngư cát lợi thiệp đại xuyên lợi trinh",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "ngu cát hữu tha bất yến"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "minh hạc tại âm kỳ tử họa chi ngã hữu hảo tước ngô dữ nhĩ mỹ chi"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "đắc địch hoặc cổ hoặc bãi hoặc khấp hoặc ca"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "nguyệt cơ vọng mã thất vong vô cữu"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "hữu phu luyến như vô cữu"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "hàn âm đăng vu thiên trinh hung"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 62,
+      "queTu": "hanh lợi trinh khả tiểu sự bất khả đại sự phi điểu di chi âm bất nghi thượng nghi hạ đại cát",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "phi điểu dĩ hung"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "quá kỳ tổ ngộ kỳ tỷ bất cập kỳ quân ngộ kỳ thần vô cữu"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "phất quá phòng chi tòng hoặc tường chi hung"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "vô cữu phất quá ngộ chi vãng lệ tất giới vật dụng vĩnh trinh"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "mật vân bất vũ tự ngã tây giao công dặc thủ bỉ tại huyệt"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "phất ngộ quá chi phi điểu ly chi hung thị vị tai sảnh"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 63,
+      "queTu": "hanh tiểu lợi trinh sơ cát chung loạn",
+      "hao": [
+        {
+          "viTri": "sơ cửu",
+          "van": "duệ kỳ luân nhu kỳ vĩ vô cữu"
+        },
+        {
+          "viTri": "lục nhị",
+          "van": "phụ táng kỳ phất vật trục thất nhật đắc"
+        },
+        {
+          "viTri": "cửu tam",
+          "van": "cao tông phạt quỷ phương tam niên khắc chi tiểu nhân vật dụng"
+        },
+        {
+          "viTri": "lục tứ",
+          "van": "nhu hữu y như chung nhật giới"
+        },
+        {
+          "viTri": "cửu ngũ",
+          "van": "đông lân sát ngưu bất như tây lân chi thược tế thực thụ kỳ phúc"
+        },
+        {
+          "viTri": "thượng lục",
+          "van": "nhu kỳ thủ lệ"
+        }
+      ],
+      "dung": null
+    },
+    {
+      "so": 64,
+      "queTu": "hanh tiểu hồ ngật tế nhu kỳ vĩ vô du lợi",
+      "hao": [
+        {
+          "viTri": "sơ lục",
+          "van": "nhu kỳ vĩ lận"
+        },
+        {
+          "viTri": "cửu nhị",
+          "van": "duệ kỳ luân trinh cát"
+        },
+        {
+          "viTri": "lục tam",
+          "van": "vị tế chinh hung lợi thiệp đại xuyên"
+        },
+        {
+          "viTri": "cửu tứ",
+          "van": "trinh cát hối vong chấn dụng phạt quỷ phương tam niên hữu thưởng vu đại quốc"
+        },
+        {
+          "viTri": "lục ngũ",
+          "van": "trinh cát vô hối quân tử chi quang hữu phu cát"
+        },
+        {
+          "viTri": "thượng cửu",
+          "van": "hữu phu vu ẩm tửu vô cữu nhu kỳ thủ hữu phu thất thị"
+        }
+      ],
+      "dung": null
+    }
+  ],
+  "quyetDinh": [
+    {
+      "chu": "惕",
+      "am": "dịch",
+      "viTri": "tất cả (4 lần)",
+      "lyDo": "惕 = sợ, Hán Việt dịch (夕惕若 tịch dịch nhược); DS05 chỉ một mẫu \"thích\". DS05: thích 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "亢",
+      "am": "kháng",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "亢龍有悔 kháng long hữu hối theo lệ quen. DS05: cang 1, kháng 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "群",
+      "am": "quần",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "DS05 xếp âm Nôm \"còn\" lên đầu; âm Hán Việt là quần (見群龍). DS05: còn 380, quần 150, ra 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "喪",
+      "am": "táng",
+      "viTri": "tất cả (11 lần)",
+      "lyDo": "mọi chỗ trong Chu Dịch đều nghĩa mất (喪朋, 喪馬, 喪貝…) nên đọc táng, không đọc tang. DS05: tang 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "屯",
+      "am": "truân",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "tên quẻ Truân; 屯如, 屯其膏 đều nghĩa gian truân. DS05: đồn 106, truân 7, đốn 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "虞",
+      "am": "ngu",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "即鹿无虞 tức lộc vô ngu = người coi rừng; 虞吉 ngu cát. DS05: vô 1, ngu 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "吝",
+      "am": "lận",
+      "viTri": "tất cả (20 lần)",
+      "lyDo": "âm Hán Việt chuẩn trong Dịch: lận (hối lận); \"lần\" là âm Nôm. DS05: lần 100, lận 18, lẫn 5",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "泣",
+      "am": "khấp",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "khấp = khóc (泣血漣如); \"khắp\" là âm Nôm. DS05: khắp 27, khấp 25, rắp 5",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "漣",
+      "am": "liên",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 泣血漣如 khấp huyết liên như",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "蒙",
+      "am": "mông",
+      "viTri": "tất cả (7 lần)",
+      "lyDo": "tên quẻ Mông; \"mong\" là âm Nôm. DS05: mong 22, mông 12, mỏng 6",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "筮",
+      "am": "phệ",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "phệ = bói cỏ thi (初筮告); \"thệ\" sai âm. DS05: thệ 3, phệ 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "桎",
+      "am": "chất",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "桎梏 chất cốc = cùm xích; DS05 chỉ có \"chuối\" (Nôm). DS05: chuối 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "梏",
+      "am": "cốc",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "桎梏 chất cốc; \"cất\" sai. DS05: cất 2, gốc 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "苞",
+      "am": "bao",
+      "viTri": "tất cả (5 lần)",
+      "lyDo": "苞桑 bao tang, 苞承 bao thừa (= 包). DS05: bào 1, bao 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "恆",
+      "am": "hằng",
+      "viTri": "tất cả (7 lần)",
+      "lyDo": "không có trong DS05, nhập tay: tên quẻ Hằng",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "窒",
+      "am": "trất",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "有孚窒惕 hữu phu trất dịch; \"rất\" là âm Nôm. DS05: rất 7, thất 1, trất 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "眚",
+      "am": "sảnh",
+      "viTri": "tất cả (6 lần)",
+      "lyDo": "không có trong DS05, nhập tay: tai sảnh = tai họa",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "鞶",
+      "am": "bàn",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 鞶帶 bàn đái = đai lớn",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "朝",
+      "am": "triêu",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "終朝 chung triêu = suốt buổi sáng (nghĩa buổi sáng đọc triêu). DS05: triều 669, chiều 60, chầu 12",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "褫",
+      "am": "sỉ",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 三褫之 tam sỉ chi = tước bỏ",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "臧",
+      "am": "tang",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "臧 = tốt lành, Hán Việt tang (否臧); tàng là âm của 藏. DS05: tàng 9, tang 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "帥",
+      "am": "suất",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "長子帥師 trưởng tử suất sư: động từ cầm quân đọc suất. DS05: soái 83, súy 12",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "比",
+      "am": "tỷ",
+      "viTri": "tất cả (6 lần)",
+      "lyDo": "tên quẻ Tỷ theo QUE_64 (DS05 ghi tỉ/bí). DS05: tỷ 43, bí 4, bỉ 3",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "它",
+      "am": "tha",
+      "viTri": "tất cả (3 lần)",
+      "lyDo": "有它 hữu tha = có việc khác (它 = 他). DS05: đà 56, đã 1, ai 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "誡",
+      "am": "giới",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: răn",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "攣",
+      "am": "luyến",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 攣如 luyến như = ràng buộc",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "咥",
+      "am": "điệt",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "咥人 điệt nhân = cắn người. DS05: chối 3",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "坦",
+      "am": "thản",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "履道坦坦 lý đạo thản thản; \"đất\" là âm Nôm. DS05: đất 87, đứt 7, thản 5",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "眇",
+      "am": "miễu",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 眇能視 = chột mắt; có nơi đọc diểu",
+      "chacChan": false,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "愬",
+      "am": "sách",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "愬愬 sách sách = sợ hãi; tố là nghĩa kể, tố cáo. DS05: tố 3",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "夬",
+      "am": "quải",
+      "viTri": "tất cả (5 lần)",
+      "lyDo": "không có trong DS05, nhập tay: tên quẻ Quải; 夬夬 quải quải",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "茹",
+      "am": "như",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "拔茅茹 bạt mao như = rễ cỏ tranh liền nhau; có bản đọc nhự. DS05: nhà 205, nhự 2, gia 1",
+      "chacChan": false,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "彙",
+      "am": "vựng",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "以其彙 dĩ kỳ vựng = theo loài; có bản đọc vị. DS05: vựng 3, vừng 1, vầng 1",
+      "chacChan": false,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "馮",
+      "am": "bằng",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "馮河 bằng hà = lội qua sông (không phải họ Phùng). DS05: phùng 37",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "翩",
+      "am": "phiên",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 翩翩 phiên phiên",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "咷",
+      "am": "đào",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 號咷 hào đào = gào khóc",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "撝",
+      "am": "huy",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "撝謙 huy khiêm = phô bày sự khiêm. DS05: vời 6, vay 6, vơ 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "盱",
+      "am": "hu",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 盱豫 hu dự = trợn mắt",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "闚",
+      "am": "khuy",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 闚觀 khuy quan = nhìn trộm",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "屨",
+      "am": "lũ",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 屨校 = mang gông ở chân",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "校",
+      "am": "hiệu",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "屨校, 何校 = cái gông; có bản đọc giảo. DS05: hiệu 156",
+      "chacChan": false,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "腊",
+      "am": "tích",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "噬腊肉 phệ tích nhục = thịt khô; \"chạp\" là Nôm (臘). DS05: chạp 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "胏",
+      "am": "tỷ",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 乾胏 can tỷ = thịt khô có xương",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "皤",
+      "am": "bà",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 皤如 bà như = trắng",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "戔",
+      "am": "tiên",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 戔戔 tiên tiên = ít ỏi",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "剝",
+      "am": "bác",
+      "viTri": "tất cả (6 lần)",
+      "lyDo": "không có trong DS05, nhập tay: tên quẻ Bác",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "蔑",
+      "am": "miệt",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "蔑貞 miệt trinh; \"một\" là Nôm. DS05: một 19, miệt 11",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "菑",
+      "am": "tri",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 不菑畬 bất tri dư = ruộng mới khai (tri); tai là nghĩa tai họa",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "輹",
+      "am": "phúc",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 輿說輹 dư thoát phúc",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "牿",
+      "am": "cốc",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 童牛之牿 = gióng gỗ buộc sừng",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "豶",
+      "am": "phần",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 豶豕 phần thỉ = lợn thiến",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "朵",
+      "am": "đóa",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 朵頤 đóa di = trễ hàm",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "顛",
+      "am": "điên",
+      "viTri": "tất cả (3 lần)",
+      "lyDo": "顛 = đỉnh, lật (顛頤, 鼎顛趾); \"đen\" sai. DS05: đen 24, điên 14",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "橈",
+      "am": "nạo",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 棟橈 đống nạo = cột cong",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "藉",
+      "am": "tạ",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "藉用白茅 tạ dụng bạch mao = lót; tịch là nghĩa giẫm đạp. DS05: tịch 6, tạ 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "稊",
+      "am": "đề",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 生稊 sinh đề = nảy mầm",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "窞",
+      "am": "đạm",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 坎窞 khảm đạm = hố sâu",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "枕",
+      "am": "chẩm",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "險且枕 hiểm thả chẩm; \"chấm\" sai. DS05: chấm 5, chẩm 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "簋",
+      "am": "quỹ",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 二簋 nhị quỹ = hai bát tre",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "衹",
+      "am": "chỉ",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "坎不盈衹既平: bản khác chép 祗 (chi). DS05: chỉ 4",
+      "chacChan": false,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "纆",
+      "am": "mặc",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 徽纆 huy mặc = dây thừng",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "昃",
+      "am": "trắc",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 日昃 nhật trắc = mặt trời xế",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "折",
+      "am": "chiết",
+      "viTri": "tất cả (3 lần)",
+      "lyDo": "折首, 折其右肱, 鼎折足: chiết = bẻ gãy. DS05: triết 28, chiết 11, giết 5",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "醜",
+      "am": "xú",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "獲匪其醜 hoạch phỉ kỳ xú, 離群醜 ly quần xú = đồng loại; \"xấu\" là Nôm. DS05: xấu 11, xú 3, sửu 3",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "拇",
+      "am": "mẫu",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: ngón chân cái",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "腓",
+      "am": "phì",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 咸其腓 = bắp chân",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "憧",
+      "am": "sung",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 憧憧 sung sung = lòng không yên",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "脢",
+      "am": "mai",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "咸其脢 hàm kỳ mai = thịt lưng; \"mũi\" sai. DS05: mũi 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "頰",
+      "am": "giáp",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: má",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "羝",
+      "am": "đê",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "羝羊 đê dương = dê đực; \"dê\" là Nôm. DS05: dê 8",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "蕃",
+      "am": "phồn",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "馬蕃庶 mã phồn thứ = ngựa đông nhiều; phiên là nghĩa rào. DS05: phiên 6, phen 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "摧",
+      "am": "tồi",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "晉如摧如 tấn như tồi như. DS05: thôi 9, tồi 3",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "鼫",
+      "am": "thạch",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 鼫鼠 thạch thử",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "拯",
+      "am": "chửng",
+      "viTri": "tất cả (3 lần)",
+      "lyDo": "用拯馬壯 dụng chửng mã tráng = cứu vớt; \"chẳng\" là Nôm. DS05: chẳng 81, chửng 7, chăng 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "箕",
+      "am": "cơ",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "箕子 Cơ Tử; \"kia\" là Nôm. DS05: kia 109, kìa 19, cơ 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "嗃",
+      "am": "hác",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "家人嗃嗃 gia nhân hác hác = nghiêm khắc; Thiều Chửu cũng ghi hao. DS05: xao 16, kêu 6, khao 2",
+      "chacChan": false,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "嘻",
+      "am": "hy",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 嘻嘻 hy hy = cười đùa",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "假",
+      "am": "cách",
+      "viTri": "tất cả (4 lần)",
+      "lyDo": "王假有廟/有家/之: 假 = 格 (đến), đọc cách theo lệ Kinh Dịch. DS05: giả 76, hạ 1, đây 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "掣",
+      "am": "xế",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "其牛掣 kỳ ngưu xế = bị kéo giữ; có nơi đọc xiết. DS05: xiết 32, xế 1",
+      "chacChan": false,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "睽",
+      "am": "khuê",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: tên quẻ Khuê",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "隼",
+      "am": "chuẩn",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: chim cắt",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "遄",
+      "am": "thuyên",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 遄往 thuyên vãng = đi mau",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "圭",
+      "am": "khuê",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "用圭 dụng khuê = ngọc khuê; \"quê\" là Nôm. DS05: quê 59, khuê 18",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "頄",
+      "am": "quỳ",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 壯于頄 = gò má; có nơi đọc cầu",
+      "chacChan": false,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "慍",
+      "am": "uấn",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 有慍 hữu uấn = giận; có nơi viết uẩn",
+      "chacChan": false,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "臀",
+      "am": "đồn",
+      "viTri": "tất cả (3 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 臀 = mông",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "莧",
+      "am": "hiện",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 莧陸 hiện lục = rau sam; có nơi đọc hoàn",
+      "chacChan": false,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "柅",
+      "am": "nỉ",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 金柅 kim nỉ = cái hãm xe; có nơi đọc nê",
+      "chacChan": false,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "蹢",
+      "am": "trịch",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 蹢躅 trịch trục = giẫm chân",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "姤",
+      "am": "cấu",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: tên quẻ Cấu",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "握",
+      "am": "ác",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "一握為笑 nhất ác vi tiếu; Hán Việt của 握 là ác. DS05: ốc 6",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "禴",
+      "am": "thược",
+      "viTri": "tất cả (3 lần)",
+      "lyDo": "không có trong DS05, nhập tay: lễ tế mùa xuân",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "洟",
+      "am": "di",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "涕洟 thế di = nước mắt nước mũi. DS05: dí 1, gây 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "覿",
+      "am": "địch",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 不覿 bất địch = không thấy",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "朱",
+      "am": "chu",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "朱紱 chu phất = dải đỏ; \"cho\" là Nôm. DS05: cho 689, chu 80, châu 26",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "紱",
+      "am": "phất",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: dải buộc ấn",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "蒺",
+      "am": "tật",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 蒺蔾 tật lê = cỏ gai",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "蔾",
+      "am": "lê",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 蒺蔾 tật lê",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "臲",
+      "am": "niết",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 臲卼 niết ngột = chênh vênh",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "卼",
+      "am": "ngột",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 臲卼 niết ngột",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "汔",
+      "am": "ngật",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "汔至 ngật chí = gần tới; Thiều Chửu ghi hất. DS05: ngật 1, khắt 1",
+      "chacChan": false,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "繘",
+      "am": "duật",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: dây gàu",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "渫",
+      "am": "tiết",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 井渫 tỉnh tiết = giếng đã khơi",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "甃",
+      "am": "trứu",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 井甃 tỉnh trứu = xây thành giếng",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "洌",
+      "am": "liệt",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "井洌 tỉnh liệt = nước trong mát; \"lướt\" sai. DS05: lướt 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "虧",
+      "am": "khuy",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "方雨虧悔 phương vũ khuy hối. DS05: khuây 4, khuy 1, khuya 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "餗",
+      "am": "tốc",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 公餗 công tốc = cháo trong vạc",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "渥",
+      "am": "ốc",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 其形渥 kỳ hình ốc",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "鉉",
+      "am": "huyễn",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 金鉉 kim huyễn = quai vạc",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "虩",
+      "am": "hích",
+      "viTri": "tất cả (4 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 虩虩 hích hích = sợ hãi",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "啞",
+      "am": "ách",
+      "viTri": "tất cả (4 lần)",
+      "lyDo": "笑言啞啞 tiếu ngôn ách ách = tiếng cười; á là câm. DS05: á 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "匕",
+      "am": "chủy",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "匕鬯 chủy sưởng = thìa và rượu tế. DS05: thôi 5, ròng 5, ai 4",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "鬯",
+      "am": "sưởng",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 匕鬯 chủy sưởng = rượu tế; có nơi viết sướng",
+      "chacChan": false,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "貝",
+      "am": "bối",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "億喪貝 ức táng bối = mất của; \"với\" sai. DS05: với 119, mấy 6, bối 5",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "索",
+      "am": "sách",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "震索索 chấn sách sách = run sợ; nghĩa dây đọc tác. DS05: sách 34, tác 1, xác 1",
+      "chacChan": false,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "矍",
+      "am": "quắc",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 矍矍 quắc quắc = nhìn sợ hãi",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "艮",
+      "am": "cấn",
+      "viTri": "tất cả (7 lần)",
+      "lyDo": "tên quẻ Cấn; \"ngần\" là Nôm. DS05: ngần 1, cấn 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "夤",
+      "am": "di",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 列其夤 liệt kỳ di = thịt dọc sống lưng; có nơi đọc dần",
+      "chacChan": false,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "漸",
+      "am": "tiệm",
+      "viTri": "tất cả (6 lần)",
+      "lyDo": "tên quẻ Tiệm (鴻漸 hồng tiệm). DS05: tiềm 18, tiệm 16, tiêm 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "干",
+      "am": "can",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "鴻漸于干 = bờ nước, đọc can; \"cơn\" là Nôm. DS05: cơn 55, can 54, càn 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "衎",
+      "am": "khản",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 衎衎 khản khản = vui vẻ",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "桷",
+      "am": "giác",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "或得其桷 hoặc đắc kỳ giác = cành ngang. DS05: giốc 6, giác 2",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "袂",
+      "am": "mệ",
+      "viTri": "tất cả (2 lần)",
+      "lyDo": "không có trong DS05, nhập tay: tay áo",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "刲",
+      "am": "khuê",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 刲羊 khuê dương = đâm dê",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "蔀",
+      "am": "bộ",
+      "viTri": "tất cả (3 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 豐其蔀 = màn che; có nơi đọc bậu",
+      "chacChan": false,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "沛",
+      "am": "bái",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "豐其沛 phong kỳ bái = màn che; có bản đọc phái. DS05: phải 254, bái 6, phai 4",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "沬",
+      "am": "muội",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 見沬 kiến muội = sao nhỏ",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "肱",
+      "am": "quăng",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 右肱 hữu quăng = cánh tay",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "闃",
+      "am": "quých",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 闃其无人 = vắng lặng",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "兌",
+      "am": "đoài",
+      "viTri": "tất cả (5 lần)",
+      "lyDo": "không có trong DS05, nhập tay: tên quẻ Đoài",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "机",
+      "am": "cơ",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "渙奔其机: 机 = 几 (ghế dựa, kỷ); giữ âm theo tự dạng cơ. DS05: cơ 47",
+      "chacChan": false,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "逖",
+      "am": "dịch",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 逖出 dịch xuất = đi xa",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "豚",
+      "am": "đồn",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "豚魚 đồn ngư = lợn con; độn là âm của 遯. DS05: độn 1",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "燕",
+      "am": "yến",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "有它不燕 hữu tha bất yến = không yên vui (yến); yên là nước Yên. DS05: yên 39, yến 22, én 14",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "靡",
+      "am": "mỹ",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "吾與爾靡之 = cùng chia; có bản đọc mi. DS05: mỹ 7, my 7, mỵ 4",
+      "chacChan": false,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "匹",
+      "am": "thất",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "馬匹亡 mã thất vong = mất ngựa cặp. DS05: sất 25, thất 9",
+      "chacChan": true,
+      "loai": "sua-bang"
+    },
+    {
+      "chu": "繻",
+      "am": "nhu",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 繻有衣袽 nhu hữu y như",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "袽",
+      "am": "như",
+      "viTri": "tất cả (1 lần)",
+      "lyDo": "không có trong DS05, nhập tay: 衣袽 y như = giẻ rách",
+      "chacChan": true,
+      "loai": "bo-sung"
+    },
+    {
+      "chu": "亨",
+      "am": "hanh",
+      "viTri": "toàn văn (47 lần)",
+      "lyDo": "các chỗ còn lại: hanh thông. DS05: hanh 47",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "利",
+      "am": "lợi",
+      "viTri": "toàn văn (119 lần)",
+      "lyDo": "lợi; \"lời\" là Nôm. DS05: lợi 102, lời 4, lỵ 1",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "貞",
+      "am": "trinh",
+      "viTri": "toàn văn (111 lần)",
+      "lyDo": "trinh = chính bền; \"riêng\" là Nôm. DS05: trinh 90, riêng 36, trênh 2",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "无",
+      "am": "vô",
+      "viTri": "toàn văn (158 lần)",
+      "lyDo": "= 無. DS05: vô 1",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "咎",
+      "am": "cữu",
+      "viTri": "toàn văn (100 lần)",
+      "lyDo": "vô cữu = không lỗi. DS05: cữu 5",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "厲",
+      "am": "lệ",
+      "viTri": "toàn văn (27 lần)",
+      "lyDo": "nguy. DS05: lệ 38",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "見",
+      "am": "kiến",
+      "viTri": "toàn văn (21 lần)",
+      "lyDo": "các chỗ còn lại: thấy, gặp. DS05: kiến 472, hiện 58",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "為",
+      "am": "vi",
+      "viTri": "toàn văn (8 lần)",
+      "lyDo": "các chỗ còn lại: làm, là. DS05: vi 1783, vị 48, vì 20",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "行",
+      "am": "hành",
+      "viTri": "toàn văn (20 lần)",
+      "lyDo": "đi, làm (中行 trung hành). DS05: hành 1004, hàng 63, hạnh 42",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "畜",
+      "am": "súc",
+      "viTri": "toàn văn (2 lần)",
+      "lyDo": "畜牝牛 súc tẫn ngưu = nuôi. DS05: súc 35",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "復",
+      "am": "phục",
+      "viTri": "toàn văn (16 lần)",
+      "lyDo": "trở lại (tên quẻ Phục). DS05: phục 485, phức 1, phúc 1",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "王",
+      "am": "vương",
+      "viTri": "toàn văn (19 lần)",
+      "lyDo": "danh từ vua. DS05: vương 1581, vướng 3, vuong 2",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "女",
+      "am": "nữ",
+      "viTri": "toàn văn (10 lần)",
+      "lyDo": "con gái, không phải 汝. DS05: nữ 311, nữa 66, nỡ 29",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "從",
+      "am": "tòng",
+      "viTri": "toàn văn (6 lần)",
+      "lyDo": "theo. DS05: tòng 459, tụng 35, thong 35",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "中",
+      "am": "trung",
+      "viTri": "toàn văn (13 lần)",
+      "lyDo": "giữa (中行, 日中). DS05: trung 951, trúng 126, trong 11",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "夫",
+      "am": "phu",
+      "viTri": "toàn văn (10 lần)",
+      "lyDo": "đàn ông, chồng. DS05: phu 314, phù 42, chồng 1",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "觀",
+      "am": "quan",
+      "viTri": "toàn văn (8 lần)",
+      "lyDo": "động từ xem (童觀, 觀我生); tên quẻ đọc Quán nhưng trong hào từ là quan. DS05: quan 213, quán 12",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "幾",
+      "am": "cơ",
+      "viTri": "toàn văn (4 lần)",
+      "lyDo": "gần (月幾望 nguyệt cơ vọng; 幾不如舍). DS05: cơ 45, kỷ 15",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "相",
+      "am": "tương",
+      "viTri": "toàn văn (1 lần)",
+      "lyDo": "相遇 tương ngộ. DS05: tương 333, tướng 150",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "莫",
+      "am": "mạc",
+      "viTri": "toàn văn (4 lần)",
+      "lyDo": "các chỗ còn lại: chẳng ai. DS05: mạc 611, mắc 7",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "次",
+      "am": "thứ",
+      "viTri": "toàn văn (5 lần)",
+      "lyDo": "các chỗ còn lại: chỗ trọ, đóng quân (左次, 即次). DS05: thứ 213, thư 1",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "且",
+      "am": "thả",
+      "viTri": "toàn văn (5 lần)",
+      "lyDo": "các chỗ còn lại: lại, vả. DS05: thả 151, đến 11, vã 2",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "乘",
+      "am": "thừa",
+      "viTri": "toàn văn (5 lần)",
+      "lyDo": "cưỡi. DS05: thừa 155, thặng 11",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "過",
+      "am": "quá",
+      "viTri": "toàn văn (5 lần)",
+      "lyDo": "vượt quá. DS05: quá 254, qua 2",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "遺",
+      "am": "di",
+      "viTri": "toàn văn (2 lần)",
+      "lyDo": "bỏ lại, để lại. DS05: di 94, dị 1",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "射",
+      "am": "xạ",
+      "viTri": "toàn văn (3 lần)",
+      "lyDo": "bắn. DS05: xạ 77",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "自",
+      "am": "tự",
+      "viTri": "toàn văn (12 lần)",
+      "lyDo": "từ chính mình. DS05: tự 935, từ 112",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "命",
+      "am": "mệnh",
+      "viTri": "toàn văn (7 lần)",
+      "lyDo": "mệnh lệnh. DS05: mệnh 851, mình 113, mạng 6",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "朋",
+      "am": "bằng",
+      "viTri": "toàn văn (10 lần)",
+      "lyDo": "bạn. DS05: bằng 35",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "夷",
+      "am": "di",
+      "viTri": "toàn văn (8 lần)",
+      "lyDo": "明夷 minh di, 夷主 di chủ. DS05: di 78, gì 24, dì 5",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "孚",
+      "am": "phu",
+      "viTri": "toàn văn (41 lần)",
+      "lyDo": "tin. DS05: phu 30, phù 9",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "正",
+      "am": "chính",
+      "viTri": "toàn văn (1 lần)",
+      "lyDo": "匪正 phỉ chính. DS05: chính 698, chánh 53",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "使",
+      "am": "sử",
+      "viTri": "toàn văn (1 lần)",
+      "lyDo": "使遄 sử thuyên = khiến (đổi từ âm đầu bảng sứ). DS05: sứ 840, sử 587, xứ 1",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "時",
+      "am": "thời",
+      "viTri": "toàn văn (1 lần)",
+      "lyDo": "有時 hữu thời. DS05: thời 1007, thì 345, thờị 4",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "期",
+      "am": "kỳ",
+      "viTri": "toàn văn (1 lần)",
+      "lyDo": "hẹn. DS05: kỳ 133, cờ 8, cà 2",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "勝",
+      "am": "thắng",
+      "viTri": "toàn văn (3 lần)",
+      "lyDo": "thắng. DS05: thắng 184, thăng 21, thang 1",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "信",
+      "am": "tín",
+      "viTri": "toàn văn (2 lần)",
+      "lyDo": "不信 bất tín. DS05: tín 176, tin 108",
+      "chacChan": true,
+      "loai": "da-am"
+    },
+    {
+      "chu": "見",
+      "am": "hiện",
+      "viTri": "1 cửu nhị",
+      "lyDo": "見龍在田: rồng hiện ra (= 現)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "見",
+      "am": "kiến",
+      "viTri": "1 cửu nhị",
+      "lyDo": "利見大人: gặp bậc đại nhân",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "見",
+      "am": "kiến",
+      "viTri": "1 cửu ngũ",
+      "lyDo": "利見大人: gặp",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "見",
+      "am": "hiện",
+      "viTri": "1 dụng cửu",
+      "lyDo": "見群龍无首: hiện ra bầy rồng",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "乾",
+      "am": "kiền",
+      "viTri": "1 cửu tam",
+      "lyDo": "君子終日乾乾: kiền kiền = hăng hái không nghỉ",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "乾",
+      "am": "can",
+      "viTri": "21 cửu tứ",
+      "lyDo": "噬乾胏: can = khô",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "乾",
+      "am": "can",
+      "viTri": "21 lục ngũ",
+      "lyDo": "噬乾肉: can = khô",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "說",
+      "am": "thoát",
+      "viTri": "4 sơ lục",
+      "lyDo": "用說桎梏: 說 = 脫 (tháo bỏ)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "說",
+      "am": "thoát",
+      "viTri": "9 cửu tam",
+      "lyDo": "輿說輻: xe tuột nan hoa (= 脫)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "說",
+      "am": "thoát",
+      "viTri": "26 cửu nhị",
+      "lyDo": "輿說輹: xe tuột trục (= 脫)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "說",
+      "am": "thoát",
+      "viTri": "33 lục nhị",
+      "lyDo": "莫之勝說: không ai cởi được (= 脫)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "說",
+      "am": "thoát",
+      "viTri": "38 thượng cửu",
+      "lyDo": "後說之弧: sau lại buông cung (= 脫)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "說",
+      "am": "duyệt",
+      "viTri": "47 cửu ngũ",
+      "lyDo": "乃徐有說: dần dần có niềm vui (Chu Hy hiểu 悅); có thuyết hiểu là thoát",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "否",
+      "am": "phủ",
+      "viTri": "7 sơ lục",
+      "lyDo": "否臧凶: 否 = chẳng (phủ định)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "否",
+      "am": "bĩ",
+      "viTri": "12 quẻ từ",
+      "lyDo": "tên quẻ Bĩ (否之匪人)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "否",
+      "am": "bĩ",
+      "viTri": "12 lục nhị",
+      "lyDo": "大人否亨: đại nhân ở thời bĩ mà hanh",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "否",
+      "am": "bĩ",
+      "viTri": "12 cửu ngũ",
+      "lyDo": "休否: dừng thời bĩ",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "否",
+      "am": "bĩ",
+      "viTri": "12 thượng cửu",
+      "lyDo": "傾否, 先否後喜: lật đổ thời bĩ",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "否",
+      "am": "phủ",
+      "viTri": "33 cửu tứ",
+      "lyDo": "小人否: tiểu nhân thì không (được cát), 否 phủ định; có bản đọc bĩ",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "否",
+      "am": "bĩ",
+      "viTri": "50 sơ lục",
+      "lyDo": "利出否: đổ bỏ cặn xấu trong vạc (bĩ = xấu)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "亨",
+      "am": "hưởng",
+      "viTri": "14 cửu tam",
+      "lyDo": "公用亨于天子: 亨 = 享 (dâng lễ), như 王用享于帝 ở quẻ 42; có bản vẫn đọc hanh",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "亨",
+      "am": "hưởng",
+      "viTri": "17 thượng lục",
+      "lyDo": "王用亨于西山: 亨 = 享 (tế hưởng); có bản vẫn đọc hanh",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "亨",
+      "am": "hưởng",
+      "viTri": "46 lục tứ",
+      "lyDo": "王用亨于岐山: 亨 = 享 (tế hưởng); có bản vẫn đọc hanh",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "舍",
+      "am": "xá",
+      "viTri": "3 lục tam",
+      "lyDo": "不如舍: = 捨 bỏ đi; theo lệ quen đọc xá, đọc theo nghĩa là xả",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "舍",
+      "am": "xá",
+      "viTri": "22 sơ cửu",
+      "lyDo": "舍車而徒: = 捨 bỏ xe; theo lệ quen đọc xá, đọc theo nghĩa là xả",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "舍",
+      "am": "xá",
+      "viTri": "27 sơ cửu",
+      "lyDo": "舍爾靈龜: = 捨 bỏ; theo lệ quen đọc xá, đọc theo nghĩa là xả",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "易",
+      "am": "dị",
+      "viTri": "34 lục ngũ",
+      "lyDo": "喪羊于易: Chu Hy hiểu là dễ dàng (dị); có thuyết là địa danh Hữu Dịch",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "易",
+      "am": "dị",
+      "viTri": "56 thượng cửu",
+      "lyDo": "喪牛于易: như 34 lục ngũ",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "惡",
+      "am": "ác",
+      "viTri": "38 sơ cửu",
+      "lyDo": "見惡人: kẻ ác (tính từ), không phải ghét (ố)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "長",
+      "am": "trưởng",
+      "viTri": "7 lục ngũ",
+      "lyDo": "長子 trưởng tử = con trưởng",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "號",
+      "am": "hào",
+      "viTri": "13 cửu ngũ",
+      "lyDo": "號咷 hào đào = gào khóc",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "號",
+      "am": "hào",
+      "viTri": "43 quẻ từ",
+      "lyDo": "孚號 phu hào = kêu gọi",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "號",
+      "am": "hào",
+      "viTri": "43 cửu nhị",
+      "lyDo": "惕號 dịch hào = kêu la cảnh giác",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "號",
+      "am": "hào",
+      "viTri": "43 thượng lục",
+      "lyDo": "无號 vô hào = không kêu được",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "號",
+      "am": "hào",
+      "viTri": "45 sơ lục",
+      "lyDo": "若號 nhược hào = kêu gào",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "號",
+      "am": "hào",
+      "viTri": "56 thượng cửu",
+      "lyDo": "號咷 hào đào",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "號",
+      "am": "hiệu",
+      "viTri": "59 cửu ngũ",
+      "lyDo": "大號 đại hiệu = hiệu lệnh lớn",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "好",
+      "am": "hiếu",
+      "viTri": "33 cửu tứ",
+      "lyDo": "好遯 hiếu độn = ưa lui ẩn (động từ)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "好",
+      "am": "hảo",
+      "viTri": "61 cửu nhị",
+      "lyDo": "好爵 hảo tước = chén rượu ngon (tính từ)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "載",
+      "am": "tải",
+      "viTri": "9 thượng cửu",
+      "lyDo": "尚德載: đức chất đầy (tải = chở, đầy); có bản đọc tái",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "載",
+      "am": "tải",
+      "viTri": "14 cửu nhị",
+      "lyDo": "大車以載: chở",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "載",
+      "am": "tải",
+      "viTri": "38 thượng cửu",
+      "lyDo": "載鬼一車: chở",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "和",
+      "am": "hòa",
+      "viTri": "58 sơ cửu",
+      "lyDo": "和兌 hòa đoài = vui hòa",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "和",
+      "am": "họa",
+      "viTri": "61 cửu nhị",
+      "lyDo": "其子和之: con đáp tiếng (xướng họa); có bản đọc hòa",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "為",
+      "am": "vi",
+      "viTri": "48 cửu tam",
+      "lyDo": "為我心惻: khiến lòng ta xót (vi); có bản đọc vị = vì",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "處",
+      "am": "xử",
+      "viTri": "9 thượng cửu",
+      "lyDo": "既雨既處: mưa rồi thì dừng (xử = ở yên)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "處",
+      "am": "xứ",
+      "viTri": "56 cửu tứ",
+      "lyDo": "旅于處: chỗ ở (danh từ)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "莫",
+      "am": "mộ",
+      "viTri": "43 cửu nhị",
+      "lyDo": "莫夜 mộ dạ = chiều tối (莫 = 暮)",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "次",
+      "am": "tư",
+      "viTri": "43 cửu tứ",
+      "lyDo": "其行次且 = 趑趄, đọc tư thư (đi chập chững); nhiều bản đọc thứ thư",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "且",
+      "am": "thư",
+      "viTri": "43 cửu tứ",
+      "lyDo": "次且 tư thư = 趑趄",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "次",
+      "am": "tư",
+      "viTri": "44 cửu tam",
+      "lyDo": "其行次且 = 趑趄, đọc tư thư; nhiều bản đọc thứ thư",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "且",
+      "am": "thư",
+      "viTri": "44 cửu tam",
+      "lyDo": "次且 tư thư = 趑趄",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "巳",
+      "am": "dĩ",
+      "viTri": "49 quẻ từ",
+      "lyDo": "巳日乃孚: bản này chép 巳, Chu Hy đọc 已日 (dĩ nhật); có thuyết 己日 (kỷ nhật)",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "巳",
+      "am": "dĩ",
+      "viTri": "49 lục nhị",
+      "lyDo": "巳日乃革之: như quẻ từ",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "己",
+      "am": "dĩ",
+      "viTri": "26 sơ cửu",
+      "lyDo": "有厲利己: 己 là dạng chép của 已 (thôi, dừng); bản SBCK chép 已",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "意",
+      "am": "ý",
+      "viTri": "51 lục ngũ",
+      "lyDo": "意无喪有事: bản SBCK chép 億 (ức = liệu chừng); đọc theo tự dạng bản này",
+      "chacChan": false,
+      "loai": "ngu-canh"
+    },
+    {
+      "chu": "與",
+      "am": "dữ",
+      "viTri": "61 cửu nhị",
+      "lyDo": "吾與爾 = cùng với",
+      "chacChan": true,
+      "loai": "ngu-canh"
+    }
+  ]
+}
