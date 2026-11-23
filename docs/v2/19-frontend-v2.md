@@ -292,3 +292,14 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Chuyển hướng: bật thêm 25 dòng 301 mà đích đã trả 200; còn 32 dòng chờ trang `/xem-tuoi/*`. Bảng chỉ khớp miền `xemboi.vn`, nên trên `v3.xemtuvi.vn` các URL cũ vẫn 404 cho tới khi chuyển tên miền.
   - Kiểm: 8 trang ngoài trả 200 (0,2–0,6 giây); API chat cũ trả 410; log dịch vụ sạch.
   - Quay lại: trỏ `current` về `releases/20261122-2118`, restart.
+- 24/11: **chuẩn trực quan** (docs/v2/21, 22) áp cho mọi công cụ cũ và mới; mỗi công cụ soi ≥ 4 công cụ thị trường trước khi làm.
+  - Bát tự (Lệnh 40, Antigravity làm giao diện):
+    - Đọc nhanh, 4 thẻ trụ chữ lớn, hình cung quan hệ (5 kiểu nét, phân biệt được cả ở ảnh xám), ngũ hành có % và tag Khuyết, dải đại vận có "Đang chạy" và mốc giao vận;
+    - thành phần dùng chung đặt ở `components/ck/truc-quan/`.
+  - Dữ liệu (Claude Code, đều có test):
+    - `bat-tu-truc-quan.ts`: quan hệ can chi trích Tam mệnh thông hội, mốc giao vận;
+    - `xem-ngay-truc-quan.ts` cùng tệp `lich.ics`;
+    - `phan-truc-quan.ts`;
+    - `truc-quan-43.ts`.
+  - Lệnh 41–43 đã viết, giao lần lượt.
+  - Soi thị trường bát tự với 6 công cụ: 4 trụ và mốc khởi vận khớp; các trang lệch nhau ở dụng thần và cách đếm ngũ hành, nên mình không hiện dụng thần.

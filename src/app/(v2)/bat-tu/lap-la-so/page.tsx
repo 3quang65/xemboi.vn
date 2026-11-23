@@ -1,19 +1,48 @@
+import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { HoaVanGoc4, HoaVanMay } from '@/components/r1/HoaVanE3';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { HuyHieuHanh } from '@/components/ck/TheCanChi';
-import { CHI_HAN, HANH_SLUG } from '@/components/ck/canChiHelpers';
+import { CAN_HAN, CHI_HAN, HANH_SLUG } from '@/components/ck/canChiHelpers';
+import {
+  ChuGiaiHanh,
+  DocNhanh,
+  ThuatNgu,
+  TrichNguyenVan,
+  type TheDocNhanhItem,
+  type TrichSachDaGiai,
+} from '@/components/ck/truc-quan';
 import { kiemTraDauVao, lapLaSoBatTu, type LaSoBatTu } from '@/lib/trang/bat-tu';
-import { NGU_HANH } from '@/lib/trang/can-chi';
+import {
+  GIAI_NGHIA_BAT_TU,
+  NGUON_BAT_TU,
+  TEN_NHOM_QUAN_HE,
+  TRICH_BAT_TU,
+  docNhanh,
+  giaoVan,
+  nghiaThapThan,
+  quanHeTru,
+  type MaTrichBatTu,
+} from '@/lib/trang/bat-tu-truc-quan';
+import type { Hanh } from '@/lib/trang/can-chi';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
+import { DaiVanCuonClient } from './DaiVanCuonClient';
+import {
+  ChuGiaiQuanHe,
+  KIEU_NET_QUAN_HE,
+  MauNetQuanHeSvg,
+  SoDoQuanHeSvg,
+} from './SoDoQuanHeSvg';
 
 const MAC_DINH_BAT_TU_LS = {
   title: 'Lập lá số bát tự online – tứ trụ theo tiết khí chuẩn',
   h1: 'Lập lá số bát tự online',
 };
+
+const THU_TU_HANH: readonly Hanh[] = ['Mộc', 'Hỏa', 'Thổ', 'Kim', 'Thủy'];
 
 type SearchParamsInput = Promise<Record<string, string | string[] | undefined>>;
 
@@ -27,6 +56,17 @@ function kiemCoThamSo(sp: Record<string, string | string[] | undefined>): boolea
       ? v.some((item) => item.trim() !== '')
       : typeof v === 'string' && v.trim() !== '',
   );
+}
+
+function giaiTrichBatTu(ma: string): TrichSachDaGiai | null {
+  if (!(ma in TRICH_BAT_TU)) return null;
+  const trich = TRICH_BAT_TU[ma as MaTrichBatTu];
+  return { trich, nguon: NGUON_BAT_TU[trich.nguon] };
+}
+
+function dinhDangPhanTram(n: number): string {
+  const pct = (n / 8) * 100;
+  return Number.isInteger(pct) ? `${pct}%` : `${String(pct).replace('.', ',')}%`;
 }
 
 export async function generateMetadata({
@@ -59,6 +99,7 @@ export default async function BatTuLapLaSoPage({
     searchParams,
   ]);
   const daDung = trangDaDung();
+  const namXem = new Date(Date.now() + 7 * 3600000).getUTCFullYear();
 
   const ngayRaw = layMot(sp.ngay)?.trim();
   const thangRaw = layMot(sp.thang)?.trim();
@@ -118,6 +159,7 @@ export default async function BatTuLapLaSoPage({
         phut: phutVal,
         gioiTinh: gtVal!,
         doiNgayLuc23,
+        namXem,
       });
     }
   }
@@ -126,6 +168,54 @@ export default async function BatTuLapLaSoPage({
   const bonTru = ketQua
     ? [ketQua.tru[3], ketQua.tru[2], ketQua.tru[1], ketQua.tru[0]]
     : [];
+  const quanHe = ketQua ? quanHeTru(ketQua) : [];
+  const dn = ketQua ? docNhanh(ketQua, quanHe) : null;
+  const gv = ketQua ? giaoVan(ketQua) : null;
+  const quanHeCan = quanHe.filter((q) => q.hang === 'can');
+  const quanHeChi = quanHe.filter((q) => q.hang === 'chi');
+  const coXung = quanHe.some((q) => q.nhom === 'xung');
+  const coHinh = quanHe.some((q) => q.nhom === 'hinh');
+
+  const hienNhanDocNhanh = (muc: TheDocNhanhItem) => {
+    if (muc.ma === 'nhat-chu') {
+      return (
+        <>
+          <ThuatNgu
+            ten="Nhật chủ"
+            nghia={GIAI_NGHIA_BAT_TU['Nhật chủ']}
+            id="tn-dn-nhat-chu"
+          />{' '}
+          (can ngày)
+        </>
+      );
+    }
+    if (muc.ma === 'thang-sinh') {
+      return (
+        <>
+          Tháng sinh (
+          <ThuatNgu
+            ten="lệnh tháng"
+            nghia={GIAI_NGHIA_BAT_TU['Lệnh tháng']}
+            id="tn-dn-lenh-thang"
+          />
+          )
+        </>
+      );
+    }
+    if (muc.ma === 'dai-van') {
+      return (
+        <>
+          <ThuatNgu
+            ten="Đại vận"
+            nghia={GIAI_NGHIA_BAT_TU['Đại vận']}
+            id="tn-dn-dai-van"
+          />{' '}
+          đang chạy
+        </>
+      );
+    }
+    return muc.nhan;
+  };
 
   return (
     <KhungTrang tieuDe={tt.h1} phu={tt.description} duongDan="/bat-tu/lap-la-so" toi>
@@ -242,7 +332,11 @@ export default async function BatTuLapLaSoPage({
                 type="number"
                 min={0}
                 max={59}
-                defaultValue={Number.isInteger(phutVal) && phutVal >= 0 && phutVal <= 59 ? String(phutVal) : '0'}
+                defaultValue={
+                  Number.isInteger(phutVal) && phutVal >= 0 && phutVal <= 59
+                    ? String(phutVal)
+                    : '0'
+                }
                 inputMode="numeric"
               />
             </label>
@@ -264,261 +358,586 @@ export default async function BatTuLapLaSoPage({
           </button>
 
           <p className="ck-ghi-nho">
-            Tính theo múi giờ Việt Nam (UTC+7); trụ năm và trụ tháng xác định theo kinh độ Mặt Trời
-            (tiết khí thiên văn).
+            Tính theo múi giờ Việt Nam (UTC+7); trụ năm và trụ tháng xác định theo kinh độ Mặt
+            Trời (tiết khí thiên văn).
           </p>
         </form>
       </div>
 
-      {ketQua ? (
+      {ketQua && dn && gv ? (
         <>
-          <section className="ck-bt-tom-tat" aria-label="Thông tin Bát tự">
-            <div className="ck-bt-tom-tat-luoi">
-              <div className="ck-the-du-lieu">
-                <span className="ck-nhan-nho">Ngày giờ sinh (dương lịch)</span>
-                <strong className="ck-gia-lon">
-                  {String(ketQua.dauVao.ngay).padStart(2, '0')}/
-                  {String(ketQua.dauVao.thang).padStart(2, '0')}/{ketQua.dauVao.nam}
-                </strong>
-                <p>
-                  {String(ketQua.dauVao.gio).padStart(2, '0')}:
-                  {String(ketQua.dauVao.phut).padStart(2, '0')} ·{' '}
-                  {ketQua.dauVao.gioiTinh === 'nam' ? 'Nam' : 'Nữ'}
-                </p>
+          <DocNhanh
+            cau={dn.cau}
+            the={dn.the}
+            dongPhu={
+              <span>
+                Sinh {String(ketQua.dauVao.ngay).padStart(2, '0')}/
+                {String(ketQua.dauVao.thang).padStart(2, '0')}/{ketQua.dauVao.nam} ·{' '}
+                {String(ketQua.dauVao.gio).padStart(2, '0')}:
+                {String(ketQua.dauVao.phut).padStart(2, '0')} ·{' '}
+                {ketQua.dauVao.gioiTinh === 'nam' ? 'Nam' : 'Nữ'} (dương lịch, giờ Việt Nam
+                UTC+7)
+              </span>
+            }
+            trenCau={
+              <div
+                className="ck-bt-tam-chu"
+                aria-label="Tám chữ Bát tự từ Giờ đến Năm (đọc từ phải sang trái)"
+              >
+                {bonTru.map((tru) => (
+                  <div
+                    key={`tam-${tru.ten}`}
+                    className={
+                      tru.ten === 'Ngày'
+                        ? 'ck-bt-tam-cap ck-bt-tam-cap-ngay'
+                        : 'ck-bt-tam-cap'
+                    }
+                  >
+                    <span className="ck-bt-tam-tru">
+                      {tru.ten === 'Ngày' ? 'Ngày · Bạn' : `Trụ ${tru.ten}`}
+                    </span>
+                    <div className="ck-bt-tam-hai">
+                      <span className="ck-bt-tam-chu-don">
+                        <b
+                          className={`ck-bt-tam-han ck-tq-hanh-${HANH_SLUG[tru.hanhCan]}`}
+                          lang="zh-Hant"
+                        >
+                          {CAN_HAN[tru.can] ?? ''}
+                        </b>
+                        <span className="ck-bt-tam-viet">{tru.can}</span>
+                      </span>
+                      <span className="ck-bt-tam-chu-don">
+                        <b
+                          className={`ck-bt-tam-han ck-tq-hanh-${HANH_SLUG[tru.hanhChi]}`}
+                          lang="zh-Hant"
+                        >
+                          {CHI_HAN[tru.chi] ?? ''}
+                        </b>
+                        <span className="ck-bt-tam-viet">{tru.chi}</span>
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
-
-              <div className="ck-the-du-lieu">
-                <span className="ck-nhan-nho">Nhật chủ (Can ngày)</span>
-                <strong className="ck-gia-lon">
-                  {ketQua.nhatChu.can} ({ketQua.nhatChu.amDuong})
-                </strong>
-                <p>
-                  Hành: <HuyHieuHanh hanh={ketQua.nhatChu.hanh} lienKet={daDung.has('/ngu-hanh')} />
-                </p>
-              </div>
-
-              <div className="ck-the-du-lieu">
-                <span className="ck-nhan-nho">Tiết khí bao quanh</span>
-                <p style={{ marginTop: 4 }}>
-                  Trước: <b>{ketQua.tiet.truoc.ten}</b> ({ketQua.tiet.truoc.luc})
-                </p>
-                <p>
-                  Sau: <b>{ketQua.tiet.sau.ten}</b> ({ketQua.tiet.sau.luc})
-                </p>
-              </div>
-            </div>
-          </section>
+            }
+            giaiTrich={giaiTrichBatTu}
+            hienNhan={hienNhanDocNhanh}
+          />
 
           <section className="ck-td-muc" aria-labelledby="ck-bt-tu-tru-tieu">
             <h2 id="ck-bt-tu-tru-tieu" className="ck-td-tieu">
-              Bảng Tứ trụ (Giờ · Ngày · Tháng · Năm)
+              Tứ trụ (Giờ · Ngày · Tháng · Năm)
             </h2>
 
-            <div className="ck-bt-bang-khung">
-              <table className="ck-bt-bang">
-                <caption>
-                  Sắp theo thứ tự truyền thống từ phải sang trái: Năm ← Tháng ← Ngày ← Giờ
-                </caption>
-                <thead>
-                  <tr>
-                    <th scope="col" className="ck-bt-nhan-hang">
-                      Hạng mục
-                    </th>
-                    {bonTru.map((tru) => (
-                      <th
-                        key={tru.ten}
-                        scope="col"
-                        className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
-                      >
-                        Trụ {tru.ten}
-                        <small>{tru.ten === 'Ngày' ? 'Nhật chủ' : tru.amDuong}</small>
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row" className="ck-bt-nhan-hang">
-                      Thập thần
-                    </th>
-                    {bonTru.map((tru) => (
-                      <td
-                        key={`${tru.ten}-tt`}
-                        className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
-                      >
-                        <b>{tru.thapThanCan}</b>
-                      </td>
-                    ))}
-                  </tr>
+            <div className="ck-bt-tru-ghi">
+              <p className="ck-bt-tru-thu-tu">
+                Đọc từ phải sang trái: Năm ← Tháng ← Ngày ← Giờ.
+              </p>
+              <div className="ck-bt-tru-thuat-ngu" aria-label="Thuật ngữ Tứ trụ">
+                <ThuatNgu
+                  ten="Nhật chủ"
+                  nghia={GIAI_NGHIA_BAT_TU['Nhật chủ']}
+                  id="tn-tru-nhat-chu"
+                />
+                <ThuatNgu
+                  ten="Lệnh tháng"
+                  nghia={GIAI_NGHIA_BAT_TU['Lệnh tháng']}
+                  id="tn-tru-lenh-thang"
+                />
+                <ThuatNgu
+                  ten="Thập thần"
+                  nghia={GIAI_NGHIA_BAT_TU['Thập thần']}
+                  id="tn-tru-thap-than"
+                />
+                <ThuatNgu
+                  ten="Tàng can"
+                  nghia={GIAI_NGHIA_BAT_TU['Tàng can']}
+                  id="tn-tru-tang-can"
+                />
+                <ThuatNgu
+                  ten="Nạp âm"
+                  nghia={GIAI_NGHIA_BAT_TU['Nạp âm']}
+                  id="tn-tru-nap-am"
+                />
+              </div>
+            </div>
 
-                  <tr>
-                    <th scope="row" className="ck-bt-nhan-hang">
-                      Thiên can
-                    </th>
-                    {bonTru.map((tru) => (
-                      <td
-                        key={`${tru.ten}-can`}
-                        className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
-                      >
+            <div className="ck-bt-tu-tru-khung">
+              <SoDoQuanHeSvg quanHe={quanHeCan} viTri="tren" />
+
+              <div className="ck-bt-tru-luoi">
+                {bonTru.map((tru, colIdx) => {
+                  const laNgay = tru.ten === 'Ngày';
+                  const theCls = laNgay
+                    ? 'ck-bt-tru-the ck-bt-tru-ngay'
+                    : `ck-bt-tru-the ck-tq-nen-${HANH_SLUG[tru.hanhChi]}`;
+
+                  return (
+                    <article key={tru.ten} className={theCls}>
+                      <div className="ck-bt-tru-phan-dau">
+                        <header className="ck-bt-tru-dau">
+                          <strong className="ck-bt-tru-ten">Trụ {tru.ten}</strong>
+                          {laNgay ? (
+                            <div className="ck-bt-tru-nhan-nhom">
+                              <span className="ck-bt-tru-nhan-nc">Nhật chủ</span>
+                              <span className="ck-bt-tru-nhan-ban">Bạn</span>
+                            </div>
+                          ) : (
+                            <span className="ck-bt-tru-nhan-phu">
+                              {tru.ten === 'Tháng' ? 'Lệnh tháng' : tru.amDuong}
+                            </span>
+                          )}
+                        </header>
+
+                        {!laNgay ? (
+                          <div className="ck-bt-tt-hang">
+                            <span className="ck-bt-tt-pill">
+                              <ThuatNgu
+                                ten={tru.thapThanCan}
+                                nghia={nghiaThapThan(tru.thapThanCan)}
+                                id={`tn-can-tt-${colIdx}`}
+                              />
+                            </span>
+                          </div>
+                        ) : null}
+                      </div>
+
+                      <div className="ck-bt-tru-chu-khoi">
                         <strong
-                          className={`ck-bt-chu-lon ck-bt-chu-${HANH_SLUG[tru.hanhCan]}`}
+                          className={`ck-bt-chu-can-chi ck-tq-hanh-${HANH_SLUG[tru.hanhCan]}`}
                         >
                           {tru.can}
                         </strong>
-                        <span className="ck-bt-hanh-phu">{tru.hanhCan}</span>
-                      </td>
-                    ))}
-                  </tr>
+                        <span className="ck-bt-chu-phu">
+                          <span
+                            className={`ck-bt-han-nho ck-tq-hanh-${HANH_SLUG[tru.hanhCan]}`}
+                            lang="zh-Hant"
+                          >
+                            {CAN_HAN[tru.can] ?? ''}
+                          </span>{' '}
+                          · {tru.hanhCan}
+                        </span>
+                      </div>
 
-                  <tr>
-                    <th scope="row" className="ck-bt-nhan-hang">
-                      Địa chi
-                    </th>
-                    {bonTru.map((tru) => (
-                      <td
-                        key={`${tru.ten}-chi`}
-                        className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
-                      >
+                      <div className="ck-bt-tru-chu-khoi">
                         <strong
-                          className={`ck-bt-chu-lon ck-bt-chu-${HANH_SLUG[tru.hanhChi]}`}
+                          className={`ck-bt-chu-can-chi ck-tq-hanh-${HANH_SLUG[tru.hanhChi]}`}
                         >
                           {tru.chi}
                         </strong>
-                        <span className="ck-bt-hanh-phu">
-                          {CHI_HAN[tru.chi] ?? ''} · {tru.hanhChi}
+                        <span className="ck-bt-chu-phu">
+                          <span
+                            className={`ck-bt-han-nho ck-tq-hanh-${HANH_SLUG[tru.hanhChi]}`}
+                            lang="zh-Hant"
+                          >
+                            {CHI_HAN[tru.chi] ?? ''}
+                          </span>{' '}
+                          · {tru.hanhChi}
                         </span>
-                      </td>
-                    ))}
-                  </tr>
+                      </div>
 
-                  <tr>
-                    <th scope="row" className="ck-bt-nhan-hang">
-                      Tàng can
-                    </th>
-                    {bonTru.map((tru) => (
-                      <td
-                        key={`${tru.ten}-tang`}
-                        className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
-                      >
-                        <ul className="ck-bt-tang-ds">
-                          {tru.tangCan.map((tc) => (
-                            <li key={`${tru.ten}-${tc.can}`}>
-                              <b className={`ck-bt-chu-${HANH_SLUG[tc.hanh]}`}>{tc.can}</b>
-                              <span>({tc.thapThan})</span>
+                      <div className="ck-bt-tru-tang">
+                        <span className="ck-bt-tru-muc-nhan">Tàng can</span>
+                        <ul className="ck-bt-tang-vien-ds">
+                          {tru.tangCan.map((tc, tcIdx) => (
+                            <li
+                              key={`${tru.ten}-${tc.can}`}
+                              className={`ck-bt-tang-vien ck-tq-nen-${HANH_SLUG[tc.hanh]}`}
+                            >
+                              <b className={`ck-tq-hanh-${HANH_SLUG[tc.hanh]}`}>{tc.can}</b>
+                              <span className="ck-bt-tang-tt">
+                                <ThuatNgu
+                                  ten={tc.thapThan}
+                                  nghia={nghiaThapThan(tc.thapThan)}
+                                  id={`tn-tang-tt-${colIdx}-${tcIdx}`}
+                                />
+                              </span>
                             </li>
                           ))}
                         </ul>
-                      </td>
-                    ))}
-                  </tr>
+                      </div>
 
-                  <tr>
-                    <th scope="row" className="ck-bt-nhan-hang">
-                      Nạp âm
-                    </th>
-                    {bonTru.map((tru) => (
-                      <td
-                        key={`${tru.ten}-na`}
-                        className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
-                      >
-                        {tru.napAm}
-                      </td>
-                    ))}
-                  </tr>
-                </tbody>
-              </table>
+                      <footer className="ck-bt-tru-nap-am">
+                        <span className="ck-bt-tru-muc-nhan">Nạp âm</span>
+                        <span className="ck-bt-nap-am-ten">{tru.napAm}</span>
+                      </footer>
+                    </article>
+                  );
+                })}
+              </div>
+
+              <SoDoQuanHeSvg quanHe={quanHeChi} viTri="duoi" />
+
+              <div className="ck-bt-chu-giai-khung">
+                <ChuGiaiQuanHe />
+                <ChuGiaiHanh />
+              </div>
             </div>
+
+            <details className="ck-bt-bang-gap">
+              <summary className="ck-bt-bang-gap-nut">Xem dạng bảng</summary>
+              <div className="ck-bt-bang-khung">
+                <table className="ck-bt-bang">
+                  <caption>
+                    Sắp theo thứ tự truyền thống từ phải sang trái: Năm ← Tháng ← Ngày ← Giờ
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" className="ck-bt-nhan-hang">
+                        Hạng mục
+                      </th>
+                      {bonTru.map((tru) => (
+                        <th
+                          key={tru.ten}
+                          scope="col"
+                          className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
+                        >
+                          Trụ {tru.ten}
+                          <small>{tru.ten === 'Ngày' ? 'Nhật chủ' : tru.amDuong}</small>
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" className="ck-bt-nhan-hang">
+                        Thập thần
+                      </th>
+                      {bonTru.map((tru) => (
+                        <td
+                          key={`${tru.ten}-tt`}
+                          className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
+                        >
+                          <b>{tru.thapThanCan}</b>
+                        </td>
+                      ))}
+                    </tr>
+
+                    <tr>
+                      <th scope="row" className="ck-bt-nhan-hang">
+                        Thiên can
+                      </th>
+                      {bonTru.map((tru) => (
+                        <td
+                          key={`${tru.ten}-can`}
+                          className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
+                        >
+                          <strong
+                            className={`ck-bt-chu-lon ck-bt-chu-${HANH_SLUG[tru.hanhCan]}`}
+                          >
+                            {tru.can}
+                          </strong>
+                          <span className="ck-bt-hanh-phu">{tru.hanhCan}</span>
+                        </td>
+                      ))}
+                    </tr>
+
+                    <tr>
+                      <th scope="row" className="ck-bt-nhan-hang">
+                        Địa chi
+                      </th>
+                      {bonTru.map((tru) => (
+                        <td
+                          key={`${tru.ten}-chi`}
+                          className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
+                        >
+                          <strong
+                            className={`ck-bt-chu-lon ck-bt-chu-${HANH_SLUG[tru.hanhChi]}`}
+                          >
+                            {tru.chi}
+                          </strong>
+                          <span className="ck-bt-hanh-phu">
+                            {CHI_HAN[tru.chi] ?? ''} · {tru.hanhChi}
+                          </span>
+                        </td>
+                      ))}
+                    </tr>
+
+                    <tr>
+                      <th scope="row" className="ck-bt-nhan-hang">
+                        Tàng can
+                      </th>
+                      {bonTru.map((tru) => (
+                        <td
+                          key={`${tru.ten}-tang`}
+                          className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
+                        >
+                          <ul className="ck-bt-tang-ds">
+                            {tru.tangCan.map((tc) => (
+                              <li key={`${tru.ten}-${tc.can}`}>
+                                <b className={`ck-bt-chu-${HANH_SLUG[tc.hanh]}`}>{tc.can}</b>
+                                <span>({tc.thapThan})</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </td>
+                      ))}
+                    </tr>
+
+                    <tr>
+                      <th scope="row" className="ck-bt-nhan-hang">
+                        Nạp âm
+                      </th>
+                      {bonTru.map((tru) => (
+                        <td
+                          key={`${tru.ten}-na`}
+                          className={tru.ten === 'Ngày' ? 'ck-bt-cot-ngay' : undefined}
+                        >
+                          {tru.napAm}
+                        </td>
+                      ))}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </section>
+
+          <section className="ck-td-muc" aria-labelledby="ck-bt-quan-he-tieu">
+            <h2 id="ck-bt-quan-he-tieu" className="ck-td-tieu">
+              Quan hệ giữa các trụ
+            </h2>
+
+            {quanHe.length > 0 ? (
+              <ul className="ck-bt-qh-ds">
+                {quanHe.map((q, idx) => {
+                  const cfg = KIEU_NET_QUAN_HE[q.nhom];
+                  const nghiaQH =
+                    GIAI_NGHIA_BAT_TU[q.ten] ??
+                    (q.loai === 'thieu-tam-hop' ? GIAI_NGHIA_BAT_TU['Tam hợp'] : undefined);
+
+                  return (
+                    <li
+                      key={`${q.loai}-${q.tru.join('')}-${idx}`}
+                      className="ck-bt-qh-muc"
+                    >
+                      <div className="ck-bt-qh-dau">
+                        <span
+                          className="ck-bt-qh-nhom-huy"
+                          style={{
+                            color: cfg.mauChu,
+                            background: cfg.mauNen,
+                            borderColor: cfg.color,
+                            borderStyle: cfg.kieuVien,
+                          }}
+                        >
+                          <MauNetQuanHeSvg nhom={q.nhom} width={22} />
+                          <span>{TEN_NHOM_QUAN_HE[q.nhom]}</span>
+                        </span>
+                        <span className="ck-bt-qh-ten">
+                          {nghiaQH ? (
+                            <ThuatNgu ten={q.ten} nghia={nghiaQH} id={`tn-qh-${idx}`} />
+                          ) : (
+                            q.ten
+                          )}
+                        </span>
+                      </div>
+
+                      <p className="ck-bt-qh-mota">{q.moTa}</p>
+
+                      {q.trich.length > 0 ? (
+                        <details className="ck-tq-sach">
+                          <summary className="ck-tq-sach-nut">Sách ghi</summary>
+                          <div className="ck-bt-qh-trich-ds">
+                            {q.trich.map((ma) => {
+                              const tr = TRICH_BAT_TU[ma];
+                              return (
+                                <TrichNguyenVan
+                                  key={ma}
+                                  trich={tr}
+                                  nguon={NGUON_BAT_TU[tr.nguon]}
+                                />
+                              );
+                            })}
+                          </div>
+                        </details>
+                      ) : null}
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p className="ck-bt-qh-trong">
+                {dn.the.find((t) => t.ma === 'quan-he')?.chiTiet ??
+                  'Bốn trụ không có cặp hợp, xung, hình, hại nào theo các bảng đang dùng.'}
+              </p>
+            )}
+
+            {coXung || coHinh ? (
+              <div className="ck-bt-qh-luu-y">
+                <p className="ck-bt-qh-luu-y-tieu">
+                  Sách ghi về xung, hình (không vội luận là dữ):
+                </p>
+                {coXung ? (
+                  <TrichNguyenVan
+                    trich={TRICH_BAT_TU.xungKhongVoiDoan}
+                    nguon={NGUON_BAT_TU[TRICH_BAT_TU.xungKhongVoiDoan.nguon]}
+                  />
+                ) : null}
+                {coHinh ? (
+                  <TrichNguyenVan
+                    trich={TRICH_BAT_TU.hinhKhongVoiDoan}
+                    nguon={NGUON_BAT_TU[TRICH_BAT_TU.hinhKhongVoiDoan.nguon]}
+                  />
+                ) : null}
+              </div>
+            ) : null}
           </section>
 
           <section className="ck-td-muc" aria-labelledby="ck-bt-ngu-hanh-tieu">
             <h2 id="ck-bt-ngu-hanh-tieu" className="ck-td-tieu">
-              Đếm ngũ hành 8 chữ (4 can + 4 chi)
+              Ngũ hành
             </h2>
+            <p className="ck-bt-nh-phu">
+              Đếm 8 chữ lộ (4 can, 4 chi), chưa tính tàng can.
+            </p>
 
-            <div className="ck-bt-hanh-ds">
-              {NGU_HANH.map((h) => {
-                const soLuong = ketQua.demNguHanh[h] ?? 0;
-                const phanTram = Math.round((soLuong / 8) * 100);
-                const slug = HANH_SLUG[h];
-                return (
-                  <div key={h} className="ck-bt-hanh-o">
-                    <div className="ck-bt-hanh-dau">
-                      <HuyHieuHanh hanh={h} lienKet={daDung.has('/ngu-hanh')} />
-                      <span>{soLuong}/8</span>
+            <div className="ck-bt-nh-khung">
+              <div className="ck-bt-nh-luoi">
+                {THU_TU_HANH.map((h) => {
+                  const soLuong = ketQua.demNguHanh[h] ?? 0;
+                  const pct = (soLuong / 8) * 100;
+                  const pctChu = dinhDangPhanTram(soLuong);
+                  const slug = HANH_SLUG[h];
+                  const laNhatChu = h === ketQua.nhatChu.hanh;
+                  const laKhuyet = soLuong === 0;
+
+                  return (
+                    <div
+                      key={h}
+                      className={`ck-bt-nh-cot${laKhuyet ? ' ck-bt-nh-khuyet' : ''}`}
+                    >
+                      <div className="ck-bt-nh-dau">
+                        <strong className={`ck-bt-nh-so ck-tq-hanh-${slug}`}>{soLuong}</strong>
+                        <span className="ck-bt-nh-pct">{pctChu}</span>
+                      </div>
+
+                      <div className="ck-bt-nh-thanh-khung" aria-hidden="true">
+                        {laKhuyet ? (
+                          <div className="ck-bt-nh-o-khuyet">
+                            <span>0, chưa có</span>
+                          </div>
+                        ) : (
+                          <div className={`ck-bt-nh-nen ck-tq-nen-${slug}`}>
+                            <div
+                              className={`ck-bt-nh-day ck-bt-muc-${slug}`}
+                              style={{ '--ck-bt-ty-le': `${pct}%` } as CSSProperties}
+                            />
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="ck-bt-nh-chan">
+                        <HuyHieuHanh hanh={h} lienKet={daDung.has('/ngu-hanh')} />
+                        {laNhatChu ? (
+                          <span className="ck-bt-nh-tag ck-bt-nh-tag-nc">Nhật chủ</span>
+                        ) : null}
+                        {laKhuyet ? (
+                          <span className="ck-bt-nh-tag ck-bt-nh-tag-khuyet">Khuyết</span>
+                        ) : null}
+                      </div>
                     </div>
-                    <div className="ck-bt-hanh-thanh" aria-hidden="true">
-                      <div
-                        className={`ck-bt-hanh-muc ck-bt-muc-${slug}`}
-                        style={{ width: `${phanTram}%` }}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
+
+              <div className="ck-bt-nh-duoi">
+                <ChuGiaiHanh />
+              </div>
             </div>
-
-            {ketQua.thieuHanh.length > 0 ? (
-              <p className="ck-bt-thieu-hanh">Thiếu hành: {ketQua.thieuHanh.join(', ')}.</p>
-            ) : (
-              <p className="ck-bt-thieu-hanh">Cả 5 hành đều có mặt trong 8 chữ.</p>
-            )}
           </section>
 
           <section className="ck-td-muc" aria-labelledby="ck-bt-dai-van-tieu">
             <h2 id="ck-bt-dai-van-tieu" className="ck-td-tieu">
-              Đại vận 8 bước (10 năm mỗi bước)
+              <ThuatNgu
+                ten="Đại vận"
+                nghia={GIAI_NGHIA_BAT_TU['Đại vận']}
+                id="tn-muc-dai-van"
+              />{' '}
+              8 bước (10 năm mỗi bước)
             </h2>
 
-            <p className="ck-bt-khoi-van">
-              Khởi vận lúc {ketQua.daiVan.khoiVan.nam} tuổi {ketQua.daiVan.khoiVan.thang} tháng,
-              đi {ketQua.daiVan.chieu}.
-            </p>
+            <p className="ck-bt-khoi-van">{gv.cau}</p>
 
-            <div className="ck-bang-khung">
-              <table className="ck-bang ck-bang-the ck-bt-dv-bang">
-                <thead>
-                  <tr>
-                    <th>Bước</th>
-                    <th>Tuổi (tuổi mụ)</th>
-                    <th>Từ năm</th>
-                    <th>Can chi đại vận</th>
-                    <th>Hành Can / Chi</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ketQua.daiVan.ds.map((dv) => (
-                    <tr key={dv.thuTu} className={dv.dangChay ? 'ck-bt-dv-chay' : undefined}>
-                      <td data-nhan="Bước">
-                        <div>
-                          <b>Vận {dv.thuTu}</b>
-                          {dv.dangChay ? (
-                            <span className="ck-bt-nhan-chay">Đang chạy</span>
-                          ) : null}
-                        </div>
-                      </td>
-                      <td data-nhan="Tuổi (mụ)">
-                        {dv.tuTuoi}–{dv.tuTuoi + 9} tuổi
-                      </td>
-                      <td data-nhan="Năm dương">
+            <DaiVanCuonClient
+              className="ck-bt-dv-dai"
+              ariaLabel="Dải đại vận 8 bước (cuộn ngang)"
+            >
+              {ketQua.daiVan.ds.map((dv) => {
+                const [dvCan, dvChi] = dv.canChi.split(' ');
+                const daQua = !dv.dangChay && dv.tuNam + 9 < namXem;
+                const cls = [
+                  'ck-bt-dv-the',
+                  dv.dangChay ? 'ck-bt-dv-chay' : '',
+                  daQua ? 'ck-bt-dv-qua' : '',
+                ]
+                  .filter(Boolean)
+                  .join(' ');
+
+                return (
+                  <article
+                    key={dv.thuTu}
+                    className={cls}
+                    data-dang-chay={dv.dangChay ? 'true' : undefined}
+                    aria-current={dv.dangChay ? 'step' : undefined}
+                  >
+                    <div className="ck-bt-dv-dau">
+                      <span className="ck-bt-dv-buoc">Vận {dv.thuTu}</span>
+                      {dv.dangChay ? (
+                        <span className="ck-bt-nhan-chay">Đang chạy</span>
+                      ) : null}
+                    </div>
+
+                    <strong className="ck-bt-dv-cc">
+                      <span className={`ck-tq-hanh-${HANH_SLUG[dv.hanhCan]}`}>{dvCan}</span>{' '}
+                      <span className={`ck-tq-hanh-${HANH_SLUG[dv.hanhChi]}`}>{dvChi}</span>
+                    </strong>
+
+                    <div className="ck-bt-dv-han" lang="zh-Hant">
+                      <span className={`ck-tq-hanh-${HANH_SLUG[dv.hanhCan]}`}>
+                        {CAN_HAN[dvCan] ?? ''}
+                      </span>
+                      <span className={`ck-tq-hanh-${HANH_SLUG[dv.hanhChi]}`}>
+                        {CHI_HAN[dvChi] ?? ''}
+                      </span>
+                    </div>
+
+                    <div className="ck-bt-dv-moc">
+                      <b className="ck-bt-dv-nam">
                         {dv.tuNam}–{dv.tuNam + 9}
-                      </td>
-                      <td data-nhan="Can chi">
-                        <b>{dv.canChi}</b>
-                      </td>
-                      <td data-nhan="Hành Can / Chi">
-                        <div>
-                          <HuyHieuHanh hanh={dv.hanhCan} />{' '}
-                          <HuyHieuHanh hanh={dv.hanhChi} />
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                      </b>
+                      <span className="ck-bt-dv-tuoi">
+                        {dv.tuTuoi}–{dv.tuTuoi + 9} tuổi mụ
+                      </span>
+                    </div>
+                  </article>
+                );
+              })}
+            </DaiVanCuonClient>
 
             <details className="ck-bt-quy-uoc">
-              <summary>Cách tính</summary>
+              <summary className="ck-bt-quy-uoc-nut">Cách tính</summary>
+              <dl className="ck-bt-thong-so">
+                <div>
+                  <dt>Lệnh tháng (chi tháng)</dt>
+                  <dd>
+                    Tháng {ketQua.tru[1].chi} ({ketQua.tru[1].canChi}, hành{' '}
+                    {ketQua.tru[1].hanhChi})
+                  </dd>
+                </div>
+                <div>
+                  <dt>Tiết trước</dt>
+                  <dd>
+                    {ketQua.tiet.truoc.ten} ({ketQua.tiet.truoc.luc})
+                  </dd>
+                </div>
+                <div>
+                  <dt>Tiết sau</dt>
+                  <dd>
+                    {ketQua.tiet.sau.ten} ({ketQua.tiet.sau.luc})
+                  </dd>
+                </div>
+              </dl>
               <ul>
                 {ketQua.quyUoc.map((dong, idx) => (
                   <li key={idx}>{dong}</li>

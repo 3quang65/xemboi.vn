@@ -67,6 +67,19 @@ export const CHI_HAN: Record<string, string> = {
   Hợi: '亥',
 };
 
+export const CAN_HAN: Record<string, string> = {
+  Giáp: '甲',
+  Ất: '乙',
+  Bính: '丙',
+  Đinh: '丁',
+  Mậu: '戊',
+  Kỷ: '己',
+  Canh: '庚',
+  Tân: '辛',
+  Nhâm: '壬',
+  Quý: '癸',
+};
+
 export const NAP_AM_HAN: Record<string, string> = {
   'hai-trung-kim': '海中金',
   'lu-trung-hoa': '爐中火',
