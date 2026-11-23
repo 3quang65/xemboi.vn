@@ -270,4 +270,10 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - `than-so-hoc.ts` thêm thái độ, 4 thách thức, nợ nghiệp ngày sinh; khớp 600/600 ca Nhật Nguyệt.
   - Antigravity làm giao diện (Lệnh 37): `KhoiYNghia` (lời, đoạn sách riêng và chung tách rõ, ghi công cuối khối), trang số chủ đạo, năm cá nhân, biểu đồ ngày sinh, dòng ngắn trên hub. Tách `KetQuaTenUi.tsx` để JSON không vào bundle client (build: 0 chỗ "Cheasley" trong `.next/static`).
   - Đã duyệt: lời in đúng nguyên chữ, tiếng Anh không dịch, mọi khối có ghi công. 138/138 test, tsc 0 lỗi, build 617 trang.
+- 23/11: **Phong thủy: Cửu tinh năm, tháng.**
+  - Lib `src/lib/trang/cuu-tinh.ts`: sao năm (mốc 1684 thượng nguyên, nghịch), sao tháng theo chi năm, bàn thuận bố, mốc đổi năm/tháng theo tiết (VSOP87D). 5 câu trích Hiệp kỷ (quyển 2, 8) có phiên âm.
+  - Test đối chiếu Kanripo: 600 ô bảng năm, 36 ô bảng tháng, câu trích khớp nguyên văn; công thức rút gọn của fengshui.skill khớp 1684–2223.
+  - Antigravity làm giao diện (Lệnh 38): bàn 3×3 Nam ở trên, màu theo tên sao, 12 bàn tháng, trang chính có chọn năm (có tham số thì noindex), 16 trang năm, thẻ thứ tư ở hub Phong thủy.
+  - Sửa kèm: câu cung phi "九宫建宅" ở quyển 35, không phải 34 (Kanripo thiếu quyển 14 nên số tệp lệch).
+  - 138/138 test, tsc 0 lỗi, build qua.
 - Deploy lần tới phải chạy `npm ci` vì có gói mới `lunar-javascript`.

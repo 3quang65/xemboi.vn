@@ -81,6 +81,12 @@
     - **Nhật Nguyệt** (nhatnguyet.org, lienhe@nhatnguyet.org): lời ý nghĩa thần số học, CC BY-NC 4.0. Dùng ở mọi trang `/than-so-hoc/*`. Kho của họ còn lời luận tử vi (2.016 dòng sao tại cung) và bát tự, chưa dùng.
     - **taibu** (hhszzzz): ý 8 điều luận giải cho chat, viết lại bằng tiếng Việt (AGPL).
     - Còn tồn ở chat cũ: `conversation-store.ts`, `dialogue-simulation.ts`, `council-orchestrator.ts` vẫn có đoạn mẫu nói "vật phẩm", "cải vận". Em đã sửa phần định nghĩa trợ lý và thêm luật cấm; các đoạn mẫu cũ em dọn khi quay lại phần chat trả phí.
+21. **Cửu tinh năm, tháng (cụm Phong thủy) đã dựng, chờ xuất bản.** Gồm `/phong-thuy/cuu-tinh` (chọn năm 1901–2099) và 16 trang năm 2020–2035.
+    - Tính theo Hiệp kỷ biện phương thư quyển 8 (sao năm, sao tháng, thuận bố cửu cung), khớp 600 ô bảng từng năm (quyển 15–19; bản Kanripo thiếu quyển 14) và 36 ô bảng tháng.
+    - Năm đổi ở Lập xuân, tháng theo tiết; trang ghi rõ Hiệp kỷ chỉ chép "chính nguyệt", cách tính theo tiết là cách các sách lịch dùng.
+    - Chỉ cho biết sao ở phương nào và sách nói gì. Không có "hóa giải", vật phẩm, "sát khí".
+    - **Cần anh:** bấm xuất bản `PT-CUUTINH`, `PT-CUUTINH-NAM` khi thấy ổn. Hai dòng này đã nạp ở CSDL máy trạm dạng NHAP.
+    - **Lưu ý deploy:** đừng chạy lại cả `scripts/seo-nap-ban-dau.ts` trên VPS. Script tự chuyển XUAT_BAN mọi dòng có trang đang chạy, tức sẽ tự xuất bản luôn TSH, CT, PT-CUUTINH khi anh chưa duyệt. Em sẽ nạp riêng 2 dòng Cửu tinh bằng `napTrangCsv` với tập trang rỗng như đã làm ở máy trạm.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026

@@ -75,11 +75,12 @@ const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
     conDot: [4, 5],
   },
   {
-    dot: 5, ten: 'Phong thủy', href: '/phong-thuy', moTa: 'Cung phi, bát trạch, hướng nhà',
+    dot: 5, ten: 'Phong thủy', href: '/phong-thuy', moTa: 'Cung phi, bát trạch, hướng nhà, cửu tinh năm',
     con: [
       { ten: 'Tra cung phi', href: '/phong-thuy/cung-phi' },
       { ten: 'Bát trạch', href: '/phong-thuy/bat-trach' },
       { ten: 'Hướng nhà hợp tuổi', href: '/phong-thuy/huong-nha' },
+      { ten: 'Cửu tinh năm, tháng', href: '/phong-thuy/cuu-tinh' },
     ],
   },
   {
@@ -139,7 +140,7 @@ const TEN_DOAN: Record<string, string> = {
   '/xem-tuoi': 'Xem tuổi', '/xem-tuoi/vo-chong': 'Vợ chồng', '/xem-tuoi/xong-dat': 'Xông đất',
   '/bat-tu': 'Bát tự', '/bat-tu/lap-la-so': 'Lập lá số bát tự', '/kinh-dich': 'Kinh Dịch', '/kinh-dich/gieo-que': 'Gieo quẻ', '/kinh-dich/64-que': '64 quẻ',
   '/tet': 'Tết', '/xem-ngay': 'Xem ngày', '/xem-ngay/xuat-hanh': 'Xuất hành',
-  '/phong-thuy': 'Phong thủy', '/phong-thuy/cung-phi': 'Cung phi', '/phong-thuy/bat-trach': 'Bát trạch', '/phong-thuy/huong-nha': 'Hướng nhà',
+  '/phong-thuy': 'Phong thủy', '/phong-thuy/cung-phi': 'Cung phi', '/phong-thuy/bat-trach': 'Bát trạch', '/phong-thuy/huong-nha': 'Hướng nhà', '/phong-thuy/cuu-tinh': 'Cửu tinh',
   '/than-so-hoc': 'Thần số học', '/than-so-hoc/so-chu-dao': 'Số chủ đạo', '/than-so-hoc/theo-ten': 'Theo tên',
   '/than-so-hoc/bieu-do-ngay-sinh': 'Biểu đồ ngày sinh',
   '/chiem-tinh': 'Chiêm tinh', '/chiem-tinh/cung-hoang-dao': '12 cung hoàng đạo', // /than-so-hoc/nam-ca-nhan không có trang gốc: breadcrumb bỏ qua đoạn này

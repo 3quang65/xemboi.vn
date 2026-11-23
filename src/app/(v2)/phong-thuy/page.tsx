@@ -27,7 +27,7 @@ import {
 export const revalidate = 3600;
 
 const CAU_DAN_HUB =
-  'Cung phi theo năm sinh âm lịch, bảng 8 du niên Bát trạch và 24 sơn hướng nhà theo nguyên văn Hiệp kỷ biện phương thư.';
+  'Cung phi theo năm sinh âm lịch, bảng 8 du niên Bát trạch, 24 sơn hướng nhà và Cửu tinh năm, tháng theo nguyên văn Hiệp kỷ biện phương thư.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaTrang('/phong-thuy', MAC_DINH_HUB);
@@ -122,6 +122,21 @@ export default async function PhongThuyHubPage() {
               Đổi độ la bàn sang 24 sơn, quái hướng, quái tọa, Đông/Tây tứ trạch và đối chiếu với cung phi.
             </p>
             <span className="ck-nut ck-nut-vien">Xem hướng nhà</span>
+          </Link>
+
+          <Link href="/phong-thuy/cuu-tinh" className="ck-pt-hub-the">
+            <span
+              className="ck-pt-hub-ky ck-pt-han-inline"
+              lang="zh-Hant"
+              aria-hidden="true"
+            >
+              九星
+            </span>
+            <h2>Cửu tinh năm, tháng</h2>
+            <p>
+              Sao nào vào trung cung, bay tới phương nào, theo Hiệp kỷ.
+            </p>
+            <span className="ck-nut ck-nut-vien">Xem cửu tinh</span>
           </Link>
         </div>
       </section>
