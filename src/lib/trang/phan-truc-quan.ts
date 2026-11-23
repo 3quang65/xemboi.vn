@@ -139,7 +139,7 @@ export function docNhanhCuuTinh(nam: number, luc = new Date()): DocNhanhChung {
   const hien = thangTietTai(luc);
   const thangNay = hien.nam === nam ? n.thang[hien.thang - 1] : undefined;
   const vn = (d: Date) => new Date(d.getTime() + 7 * 3600000).toISOString().slice(0, 10).split('-').reverse().join('/');
-  const cau = `Năm ${n.canChi} ${nam} (từ ${vn(n.batDau)} tới ${vn(n.ketThuc)}), ${n.nguyen}: ${trung.ten} vào trung cung; Ngũ hoàng ở ${nguHoang.ten === 'Trung cung' ? 'trung cung' : `${nguHoang.phuong} (${nguHoang.ten})`}`
+  const cau = `Năm ${n.canChi} ${nam} (từ ${vn(n.batDau)} tới ${vn(n.ketThuc)}), ${n.nguyen}: ${trung.ten} vào trung cung${trung.so === 5 ? '' : `; Ngũ hoàng ở ${nguHoang.phuong} (${nguHoang.ten})`}`
     + (thangNay ? `; tháng này (tháng ${thangNay.chi}, từ ${thangNay.tiet}) ${saoSo(thangNay.ban.trung).ten} vào trung cung.` : '.');
   const the: TheTrucQuan[] = [
     { ma: 'trung-nam', nhan: `Trung cung năm ${nam}`, giaTri: `${trung.so} ${trung.ten}`, hanh: trung.hanh, chiTiet: `${trung.han}, sao ${trung.tenBacDau}. Năm đổi ở Lập xuân.` },

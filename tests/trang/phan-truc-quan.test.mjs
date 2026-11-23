@@ -74,6 +74,10 @@ test('cửu tinh 2027: Cửu tử trung cung, Ngũ hoàng ở Bắc (khớp tran
   assert.deepEqual(luoi, [[4, 9, 2], [3, 5, 7], [8, 1, 6]]);
   // Không ở năm 2027 thì không có thẻ tháng.
   assert.equal(docNhanhCuuTinh(2027, new Date(Date.UTC(2030, 5, 15))).the.length, 2);
+  // Năm 2031 Ngũ hoàng vào trung cung: câu không nhắc lại vị trí Ngũ hoàng lần hai.
+  const c31 = docNhanhCuuTinh(2031, new Date(Date.UTC(2030, 5, 15))).cau;
+  assert.ok(c31.includes('Ngũ hoàng vào trung cung.'), c31);
+  assert.equal(c31.split('Ngũ hoàng').length - 1, 1, c31);
 });
 
 test('ganRanhSon: ranh sơn ở 7,5° + 15°·k, báo đổi quái đúng', async () => {
