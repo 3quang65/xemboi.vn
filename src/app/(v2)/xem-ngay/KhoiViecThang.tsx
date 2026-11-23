@@ -8,6 +8,7 @@ import {
   type Viec,
 } from '@/lib/trang/xem-ngay';
 import { TEN_NGHI_KY } from '@/lib/trang/xem-ngay-thuat-ngu';
+import { LuoiLichXemNgay } from './LuoiLichXemNgay';
 import { NGUON_LUNAR_BAT_BUOC, thangXemNgayHopLe } from './XemNgayHelpers';
 
 export function TomTatViec({ viec }: { viec: Viec }) {
@@ -184,62 +185,80 @@ export default function KhoiViecThang({
         {hienLinkXemCaThang && coTrangThang ? (
           <Link
             href={`/xem-ngay/${duLieu.viec.ma}/${doanThang(duLieu.nam, duLieu.thang)}`}
-            className="ck-nut ck-nut-vien"
+            className="ck-nut ck-nut-vien ck-xn-nut-44"
           >
             Xem cả tháng {duLieu.thang}/{duLieu.nam}
           </Link>
         ) : null}
       </div>
 
-      {duLieu.hop.length === 0 ? (
-        <p className="ck-xn-trong">
-          Tháng này bảng nghi kỵ không có ngày nào ghi nghi {tenThuong}.
-        </p>
-      ) : (
-        <BangNgayViec
-          danhSach={duLieu.hop}
-          homNayIso={homNayIso}
-          coLinkLichAm={coLinkLichAm}
-          trucCauCa={duLieu.viec.trucCauCa}
-          hienPhuNghi
-        />
-      )}
+      <LuoiLichXemNgay
+        cheDo="viec"
+        nam={duLieu.nam}
+        thang={duLieu.thang}
+        ngayViec={duLieu.ngay}
+        homNayIso={homNayIso}
+        coLinkLichAm={coLinkLichAm}
+      />
 
       <details className="ck-xn-chi-tiet">
         <summary>
-          Bảng ghi kỵ {tenThuong} ({duLieu.ky.length} ngày)
+          Xem dạng bảng ({duLieu.hop.length} ngày nên · {duLieu.ky.length} ngày kỵ)
         </summary>
-        {duLieu.ky.length === 0 ? (
-          <p className="ck-xn-trong">Không có ngày nào ghi kỵ trong tháng này.</p>
-        ) : (
-          <BangNgayViec
-            danhSach={duLieu.ky}
-            homNayIso={homNayIso}
-            coLinkLichAm={coLinkLichAm}
-            trucCauCa={duLieu.viec.trucCauCa}
-            hienPhuNghi={false}
-          />
-        )}
-      </details>
 
-      {hienNgayKhac ? (
-        <details className="ck-xn-chi-tiet">
-          <summary>
-            Các ngày khác không ghi nghi hoặc kỵ ({khac.length} ngày)
-          </summary>
-          {khac.length === 0 ? (
-            <p className="ck-xn-trong">Không có ngày nào thuộc nhóm này.</p>
+        <div className="ck-xn-bang-nhom">
+          <h4 className="ck-xn-bang-nhom-tieu">
+            Bảng ghi nên {tenThuong} ({duLieu.hop.length} ngày)
+          </h4>
+          {duLieu.hop.length === 0 ? (
+            <p className="ck-xn-trong">
+              Tháng này bảng nghi kỵ không có ngày nào ghi nghi {tenThuong}.
+            </p>
           ) : (
             <BangNgayViec
-              danhSach={khac}
+              danhSach={duLieu.hop}
               homNayIso={homNayIso}
               coLinkLichAm={coLinkLichAm}
               trucCauCa={duLieu.viec.trucCauCa}
               hienPhuNghi
             />
           )}
-        </details>
-      ) : null}
+
+          <h4 className="ck-xn-bang-nhom-tieu">
+            Bảng ghi kỵ {tenThuong} ({duLieu.ky.length} ngày)
+          </h4>
+          {duLieu.ky.length === 0 ? (
+            <p className="ck-xn-trong">Không có ngày nào ghi kỵ trong tháng này.</p>
+          ) : (
+            <BangNgayViec
+              danhSach={duLieu.ky}
+              homNayIso={homNayIso}
+              coLinkLichAm={coLinkLichAm}
+              trucCauCa={duLieu.viec.trucCauCa}
+              hienPhuNghi={false}
+            />
+          )}
+
+          {hienNgayKhac ? (
+            <>
+              <h4 className="ck-xn-bang-nhom-tieu">
+                Các ngày khác không ghi nghi hoặc kỵ ({khac.length} ngày)
+              </h4>
+              {khac.length === 0 ? (
+                <p className="ck-xn-trong">Không có ngày nào thuộc nhóm này.</p>
+              ) : (
+                <BangNgayViec
+                  danhSach={khac}
+                  homNayIso={homNayIso}
+                  coLinkLichAm={coLinkLichAm}
+                  trucCauCa={duLieu.viec.trucCauCa}
+                  hienPhuNghi
+                />
+              )}
+            </>
+          ) : null}
+        </div>
+      </details>
 
       <p className="ck-xn-nguon-dong">{NGUON_LUNAR_BAT_BUOC}</p>
     </article>

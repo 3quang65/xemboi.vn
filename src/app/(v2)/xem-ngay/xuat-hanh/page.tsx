@@ -2,8 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { duongDanNgayTuIso, trongPhamViNam } from '@/components/ck/lichHelpers';
+import { ChuGiaiDaiGio, DaiGio, TrichNguyenVan } from '@/components/ck/truc-quan';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
+import { ngayLich } from '@/lib/trang/lich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
+import { GHI_CHU_GIO_TY, daiGio } from '@/lib/trang/xem-ngay-truc-quan';
 import {
   BAI_CA_HUONG,
   NGUON_XUAT_HANH,
@@ -91,72 +94,74 @@ export default async function XuatHanhTetPage() {
         </div>
       </section>
 
-      {/* 2. Bảng 10 ngày */}
+      {/* 2. Dải 12 giờ và hướng xuất hành 10 ngày Tết */}
       <section className="ck-xh-muc" aria-labelledby="ck-xh-bang-tieu">
-        <h2 id="ck-xh-bang-tieu" className="ck-xh-tieu">
-          Giờ hoàng đạo và hướng xuất hành mùng 1–10 Tết {x.canChiNam} {x.namAm}
-        </h2>
-        <div className="ck-xh-bang-khung">
-          <table className="ck-bang ck-xh-bang">
-            <thead>
-              <tr>
-                <th scope="col">Mùng</th>
-                <th scope="col">Dương lịch</th>
-                <th scope="col">Can chi ngày</th>
-                <th scope="col">6 giờ hoàng đạo</th>
-                <th scope="col">Hỷ thần</th>
-                <th scope="col">Tài thần</th>
-                <th scope="col">Phúc thần</th>
-              </tr>
-            </thead>
-            <tbody>
-              {x.ngay.map((ngay) => {
-                const hrefNgay = duongDanNgayTuIso(ngay.iso);
-                return (
-                  <tr
-                    key={ngay.iso}
-                    className={ngay.mung === 1 ? 'ck-xh-mung1' : undefined}
-                  >
-                    <td data-nhan="Ngày âm" className="ck-xh-cot-mung">
-                      Mùng {ngay.mung}
-                    </td>
-                    <td data-nhan="Dương lịch" className="ck-xh-cot-duong">
-                      <div className="ck-xh-duong-nhom">
-                        <span className="ck-xh-thu">{ngay.thu}</span>
-                        {hrefNgay && daDung.has('/lich-am') ? (
-                          <Link href={hrefNgay}>{ngay.duong}</Link>
-                        ) : (
-                          <span>{ngay.duong}</span>
-                        )}
-                      </div>
-                    </td>
-                    <td data-nhan="Can chi ngày" className="ck-xh-cot-canchi">
-                      {ngay.canChiNgay}
-                    </td>
-                    <td data-nhan="6 giờ hoàng đạo" className="ck-xh-cot-gio">
-                      <ul className="ck-xh-gio-ds">
-                        {ngay.gioHoangDao.map((g) => (
-                          <li key={g.chi} className="ck-xh-gio-o">
-                            <b>{g.chi}</b> ({g.khung})
-                          </li>
-                        ))}
-                      </ul>
-                    </td>
-                    <td data-nhan="Hỷ thần" className="ck-xh-cot-huong">
-                      {ngay.huong.hyThan}
-                    </td>
-                    <td data-nhan="Tài thần" className="ck-xh-cot-huong">
-                      {ngay.huong.taiThan}
-                    </td>
-                    <td data-nhan="Phúc thần" className="ck-xh-cot-huong">
-                      {ngay.huong.phucThan}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+        <div className="ck-xh-bang-dau">
+          <h2 id="ck-xh-bang-tieu" className="ck-xh-tieu">
+            Giờ hoàng đạo và hướng xuất hành mùng 1–10 Tết {x.canChiNam} {x.namAm}
+          </h2>
+          <ChuGiaiDaiGio soHoangDao={6} laHomNay={false} />
         </div>
+
+        <div className="ck-xh-ngay-ds">
+          {x.ngay.map((ngay) => {
+            const hrefNgay = duongDanNgayTuIso(ngay.iso);
+            const [y, m, d] = ngay.iso.split('-').map(Number);
+            const dai = daiGio(ngayLich(d, m, y));
+            return (
+              <article
+                key={ngay.iso}
+                className={
+                  ngay.mung === 1
+                    ? 'ck-xh-ngay-the ck-xh-mung1'
+                    : 'ck-xh-ngay-the'
+                }
+              >
+                <div className="ck-xh-ngay-dau">
+                  <div className="ck-xh-ngay-ten">
+                    <strong className="ck-xh-cot-mung">Mùng {ngay.mung}</strong>
+                    <span className="ck-xh-thu">{ngay.thu}</span>
+                    {hrefNgay && daDung.has('/lich-am') ? (
+                      <Link href={hrefNgay} className="ck-xh-ngay-link">
+                        {ngay.duong}
+                      </Link>
+                    ) : (
+                      <span>{ngay.duong}</span>
+                    )}
+                    <span className="ck-xh-cot-canchi">
+                      Ngày {ngay.canChiNgay}
+                    </span>
+                  </div>
+
+                  <dl className="ck-xh-huong-ds">
+                    <div>
+                      <dt>Hỷ thần</dt>
+                      <dd>{ngay.huong.hyThan}</dd>
+                    </div>
+                    <div>
+                      <dt>Tài thần</dt>
+                      <dd>{ngay.huong.taiThan}</dd>
+                    </div>
+                    <div>
+                      <dt>Phúc thần</dt>
+                      <dd>{ngay.huong.phucThan}</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <DaiGio
+                  dai={dai}
+                  tieuDe=""
+                  hienChuGiai={false}
+                  hienGhiChu={false}
+                  gon
+                />
+              </article>
+            );
+          })}
+        </div>
+
+        <p className="ck-tq-gio-ghi-chu">{GHI_CHU_GIO_TY}</p>
       </section>
 
       {/* 3. Theo sách nào */}
@@ -171,16 +176,16 @@ export default async function XuatHanhTetPage() {
                 <h3>
                   {bai.ten} — <span lang="zh-Hant">{bai.tenBai}</span>
                 </h3>
-                <p className="ck-xh-vi-tri">
-                  {NGUON_XUAT_HANH.tenHanViet} (
-                  <span lang="zh-Hant">{NGUON_XUAT_HANH.tenGoc}</span>) ·{' '}
-                  <span lang="zh-Hant">{bai.viTri}</span>
-                </p>
               </div>
 
-              <blockquote lang="zh-Hant" className="ck-xh-nguyen-van">
-                {bai.nguyenVan}
-              </blockquote>
+              <TrichNguyenVan
+                trich={{
+                  doanId: bai.doanId,
+                  viTri: bai.viTri,
+                  nguyenVan: bai.nguyenVan,
+                }}
+                nguon={NGUON_XUAT_HANH}
+              />
 
               <table className="ck-xh-can-bang">
                 <caption className="ck-sr">

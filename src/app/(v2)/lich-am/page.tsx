@@ -5,9 +5,11 @@ import ChiTietNgay from '@/components/ck/ChiTietNgay';
 import LichThang from '@/components/ck/LichThang';
 import { BieuTuongCongCu, type LoaiBieuTuongCongCu } from '@/components/ck/BieuTuongE3';
 import { hai } from '@/components/ck/lichHelpers';
+import { DaiGio } from '@/components/ck/truc-quan';
 import { breadcrumb } from '@/lib/trang/dieu-huong';
 import { homNay, thangLich, type ChiTietNgay as ChiTietNgayData } from '@/lib/trang/lich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
+import { daiGio } from '@/lib/trang/xem-ngay-truc-quan';
 
 export const revalidate = 3600;
 
@@ -81,14 +83,17 @@ export default async function LichAmHubPage() {
           <h1>{tt.h1}</h1>
           {tt.description ? <p className="ck-dau-con-phu">{tt.description}</p> : null}
           <div className="ck-lich-dau-khung">
-            <ChiTietNgay ngay={lich} toi />
+            <ChiTietNgay ngay={lich} toi anBangGio />
           </div>
         </div>
       </section>
 
-      <section className="ck-sec" aria-label="Lịch tháng hiện tại">
+      <section className="ck-sec" aria-label="Dải 12 giờ và lịch tháng hiện tại">
         <div className="ck-w">
-          <LichThang luoi={luoi} hienDieuHuong />
+          <DaiGio dai={daiGio(lich)} tieuDe="Dải 12 giờ hôm nay" />
+          <div className="ck-tq-gio-cach">
+            <LichThang luoi={luoi} hienDieuHuong />
+          </div>
         </div>
       </section>
 

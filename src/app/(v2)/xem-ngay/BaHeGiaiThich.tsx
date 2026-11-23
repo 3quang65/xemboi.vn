@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { TrichNguyenVan } from '@/components/ck/truc-quan';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import {
   NGUON_XEM_NGAY,
@@ -32,24 +33,12 @@ export default function BaHeGiaiThich({ daDung }: BaHeGiaiThichProps) {
         <article className="ck-xn-the ck-xn-he-the">
           <div className="ck-xn-he-dau">
             <h3>1. Hệ 12 trực (Thập nhị trực)</h3>
-            <p className="ck-xn-vi-tri">
-              {NGUON_XEM_NGAY.ngocHap.tenHanViet} (
-              <span lang="zh-Hant">{NGUON_XEM_NGAY.ngocHap.tenGoc}</span>) ·{' '}
-              <span lang="zh-Hant">{TRICH_DOAN.ngocHapTruc.viTri}</span> ·{' '}
-              <span>{NGUON_XEM_NGAY.ngocHap.ghiCong}</span> ·{' '}
-              <a
-                href={NGUON_XEM_NGAY.ngocHap.url}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-              >
-                Wikisource
-              </a>
-            </p>
           </div>
 
-          <blockquote lang="zh-Hant" className="ck-xn-nguyen-van">
-            {TRICH_DOAN.ngocHapTruc.nguyenVan}
-          </blockquote>
+          <TrichNguyenVan
+            trich={TRICH_DOAN.ngocHapTruc}
+            nguon={NGUON_XEM_NGAY.ngocHap}
+          />
 
           <div className="ck-xn-bang-cuon">
             <table className="ck-bang ck-xn-bang-gon">
@@ -85,24 +74,12 @@ export default function BaHeGiaiThich({ daDung }: BaHeGiaiThichProps) {
         <article className="ck-xn-the ck-xn-he-the">
           <div className="ck-xn-he-dau">
             <h3>2. Hệ 12 thần hoàng đạo / hắc đạo</h3>
-            <p className="ck-xn-vi-tri">
-              {NGUON_XEM_NGAY.hiepKy.tenHanViet} (
-              <span lang="zh-Hant">{NGUON_XEM_NGAY.hiepKy.tenGoc}</span>) ·{' '}
-              <span lang="zh-Hant">{TRICH_DOAN.hiepKyThan.viTri}</span> ·{' '}
-              <span>{NGUON_XEM_NGAY.hiepKy.ghiCong}</span> ·{' '}
-              <a
-                href={NGUON_XEM_NGAY.hiepKy.url}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-              >
-                Kanripo
-              </a>
-            </p>
           </div>
 
-          <blockquote lang="zh-Hant" className="ck-xn-nguyen-van">
-            {TRICH_DOAN.hiepKyThan.nguyenVan}
-          </blockquote>
+          <TrichNguyenVan
+            trich={TRICH_DOAN.hiepKyThan}
+            nguon={NGUON_XEM_NGAY.hiepKy}
+          />
 
           <div className="ck-xn-bang-cuon">
             <table className="ck-bang ck-xn-bang-gon">
@@ -137,11 +114,13 @@ export default function BaHeGiaiThich({ daDung }: BaHeGiaiThichProps) {
 
           <div className="ck-xn-nhan-xet">
             <p className="ck-xn-vi-tri">
-              Nhận xét trong <span lang="zh-Hant">{TRICH_DOAN.hiepKyNhanXet.viTri}</span>:
+              Nhận xét trong{' '}
+              <span lang="zh-Hant">{TRICH_DOAN.hiepKyNhanXet.viTri}</span>:
             </p>
-            <blockquote lang="zh-Hant" className="ck-xn-nguyen-van">
-              {TRICH_DOAN.hiepKyNhanXet.nguyenVan}
-            </blockquote>
+            <TrichNguyenVan
+              trich={TRICH_DOAN.hiepKyNhanXet}
+              nguon={NGUON_XEM_NGAY.hiepKy}
+            />
             <p className="ck-xn-nhan-xet-cau">
               Chính Hiệp kỷ ghi rằng không có lý do thiên văn để chỉ sáu thần này là hoàng đạo.
             </p>

@@ -10,8 +10,10 @@ import {
   ngayKeTiep,
   trongPhamViNam,
 } from '@/components/ck/lichHelpers';
+import { DaiGio } from '@/components/ck/truc-quan';
 import { ngayHopLe, ngayLich, type ChiTietNgay as ChiTietNgayData } from '@/lib/trang/lich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
+import { daiGio } from '@/lib/trang/xem-ngay-truc-quan';
 
 function phanTichNgay(
   yyyy: string,
@@ -92,7 +94,14 @@ export default async function LichNgayPage({
       tenCuoi={`${dd}/${mm}/${parsed.nam}`}
       toi
     >
-      <ChiTietNgay ngay={ct} />
+      <ChiTietNgay ngay={ct} anBangGio />
+
+      <div className="ck-tq-gio-cach">
+        <DaiGio
+          dai={daiGio(ct)}
+          tieuDe={`Dải 12 giờ ngày ${dd}/${mm}/${parsed.nam}`}
+        />
+      </div>
 
       <nav className="ck-dieu-huong" aria-label="Điều hướng ngày và tháng">
         {truoc ? (

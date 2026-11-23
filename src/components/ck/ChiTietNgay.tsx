@@ -4,9 +4,14 @@ import { dinhDangNgayThangVN, hai, nhanNgayAmChu } from './lichHelpers';
 export interface ChiTietNgayProps {
   ngay: ChiTietNgayData;
   toi?: boolean;
+  anBangGio?: boolean;
 }
 
-export default function ChiTietNgay({ ngay, toi = false }: ChiTietNgayProps) {
+export default function ChiTietNgay({
+  ngay,
+  toi = false,
+  anBangGio = false,
+}: ChiTietNgayProps) {
   const {
     duong,
     am,
@@ -119,24 +124,26 @@ export default function ChiTietNgay({ ngay, toi = false }: ChiTietNgayProps) {
           </div>
         </dl>
 
-        <div className="ck-gio-khung">
-          <div className="ck-gio-dau">
-            <strong>12 giờ trong ngày</strong>
-            <span>6 giờ Hoàng đạo được tô nổi bật</span>
+        {!anBangGio ? (
+          <div className="ck-gio-khung">
+            <div className="ck-gio-dau">
+              <strong>12 giờ trong ngày</strong>
+              <span>6 giờ Hoàng đạo được tô nổi bật</span>
+            </div>
+            <ul className="ck-gio-12">
+              {gio.map((g) => (
+                <li key={g.chi} className={`ck-gio-o${g.hoangDao ? ' ck-gio-hd' : ''}`}>
+                  <div className="ck-gio-ten">
+                    <b>Giờ {g.chi}</b>
+                    <span className="ck-gio-nhan">{g.hoangDao ? 'Hoàng đạo' : 'Hắc đạo'}</span>
+                  </div>
+                  <div className="ck-gio-khung-gio">{g.khung}</div>
+                  <div className="ck-gio-cc">{g.canChi}</div>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul className="ck-gio-12">
-            {gio.map((g) => (
-              <li key={g.chi} className={`ck-gio-o${g.hoangDao ? ' ck-gio-hd' : ''}`}>
-                <div className="ck-gio-ten">
-                  <b>Giờ {g.chi}</b>
-                  <span className="ck-gio-nhan">{g.hoangDao ? 'Hoàng đạo' : 'Hắc đạo'}</span>
-                </div>
-                <div className="ck-gio-khung-gio">{g.khung}</div>
-                <div className="ck-gio-cc">{g.canChi}</div>
-              </li>
-            ))}
-          </ul>
-        </div>
+        ) : null}
       </div>
     </div>
   );

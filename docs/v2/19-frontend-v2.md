@@ -301,5 +301,6 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
     - `xem-ngay-truc-quan.ts` cùng tệp `lich.ics`;
     - `phan-truc-quan.ts`;
     - `truc-quan-43.ts`.
-  - Lệnh 41–43 đã viết, giao lần lượt.
+  - Xem ngày, lịch âm (Lệnh 41, Antigravity): dải 12 giờ có "Bây giờ", 3 ngày hợp nhất theo việc kèm tệp .ics, lưới tháng tô theo việc, xuất hành 10 ngày Tết dạng thẻ; đáp án khớp số tính sẵn.
+  - Lệnh 42–45 đã viết, giao lần lượt.
   - Soi thị trường bát tự với 6 công cụ: 4 trụ và mốc khởi vận khớp; các trang lệch nhau ở dụng thần và cách đếm ngũ hành, nên mình không hiện dụng thần.
