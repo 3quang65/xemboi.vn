@@ -2,7 +2,7 @@
 
 > Em (Claude Code) cứ làm tiếp theo kế hoạch ở máy trạm. Việc nào bắt buộc cần anh thì ghi vào đây; anh rảnh thì xử lý một lượt.
 > Mỗi mục ghi: việc gì, vì sao cần anh, và **em đang tạm làm theo mặc định nào** để không chặn việc khác.
-> Cập nhật lần cuối: 22/11/2026, sau khi rà trang P1 (thêm mục 13).
+> Cập nhật lần cuối: 24/11/2026 (sửa mục 16, 18, 19 theo quy tắc chỉ tiếng Việt; thêm mục 23–26).
 
 ## Còn chờ anh
 
@@ -54,7 +54,8 @@
       - 舍 "xá" (nghĩa là bỏ, có thể đọc "xả"), 次且 "tư thư" (nhiều bản "thứ thư"), 易 "dị" ở quẻ 34, 56;
       - chữ hiếm: 眇, 茹, 彙, 嗃, 掣, 頄, 汔, 鬯, 夤, 蔀…
       - Người duyệt cần đọc lại danh sách này. **Em đang để:** dùng âm đã chọn, chưa hiện dấu "chưa chắc" trên trang.
-    - **Cần anh:** bấm xuất bản các dòng `KD`, `KD-64`, `KD-QUE`, `KD-QUAI` ở `/quan-tri/seo/trang` khi anh thấy ổn. Trang chưa có bản dịch, lời bình tiếng Việt (chỉ nguyên văn, phiên âm và phần tính được).
+    - **Từ 24/11 (Lệnh 46):** trang không in chữ Hán nữa, chỉ in phần tiếng Việt. Nguyên văn và phiên âm giữ trong dữ liệu để đối chiếu; hai mục trên vẫn cần người duyệt vì bản dịch dựa vào nguyên văn.
+    - **Cần anh:** bấm xuất bản các dòng `KD`, `KD-64`, `KD-QUE`, `KD-QUAI` ở `/quan-tri/seo/trang` khi anh thấy ổn.
 17. **Cụm Phong thủy (F6) đã dựng, chờ xuất bản.** Gồm `/phong-thuy`, công cụ tra cung phi, 8 trang cung, `/phong-thuy/bat-trach`, công cụ hướng nhà.
     - Nguồn: Hiệp kỷ biện phương thư (Kanripo KR3g0051), không phải Bát trạch minh kính như kế hoạch SEO cũ ghi. Kho chỉ có bản quét Bát trạch minh kính, OCR không đọc được.
       - Cung phi: câu "九宫建宅" quyển 35. Công thức đang dùng khớp bản đã sửa năm Khang Hy 56.
@@ -65,14 +66,14 @@
     - **Cần anh quyết (không gấp):** trang Xem tuổi vợ chồng đang dùng bảng đại du niên (bảng xem nhà) để xét hợp hôn. Hiệp kỷ (quyển đầu, tờ 7b) ghi hợp hôn dùng tiểu du niên, tên khác (Phúc đức, Tuyệt thể, Du hồn, Quy hồn), và chê cách ghép này là "牽合非倫" (gán ghép không đúng lẽ). **Em đang để:** giữ nguyên, chưa ghi chú trên trang.
     - **Cần anh:** bấm xuất bản các dòng `PT`, `PT-CUNGPHI`, `PT-CUNGPHI-LEAF`, `PT-BATTRACH`, `PT-HUONGNHA` ở `/quan-tri/seo/trang` khi anh thấy ổn.
 18. **Cụm Thần số học (F6) đã dựng, chờ xuất bản.** Gồm `/than-so-hoc`, công cụ số chủ đạo, 12 trang số (1–9, 11, 22, 33), biểu đồ ngày sinh (lưới 3×3, 4 đỉnh cao), theo tên, 9 trang năm cá nhân.
-    - **Đã có phần ý nghĩa (23/11, Lệnh 37):** lời Việt của Nhật Nguyệt (điểm mạnh, yếu, công việc, tình cảm, tiền bạc, sức khỏe, lời nhắc) và 159 đoạn nguyên văn tiếng Anh từ 8 sách 1905–1926, không dịch. Em đã đối chiếu 195/195 đoạn với bản quét archive.org, sửa 14 lỗi OCR hiển nhiên. Mỗi khối ghi "Dữ liệu: Nhật Nguyệt (nhatnguyet.org)". Anh cho dùng trước, xin phép sau (mục 20).
+    - **Đã có phần ý nghĩa (23/11, Lệnh 37):** lời Việt của Nhật Nguyệt (điểm mạnh, yếu, công việc, tình cảm, tiền bạc, sức khỏe, lời nhắc) và 159 đoạn trích từ 8 sách 1905–1926. Từ 24/11 trang in bản dịch tiếng Việt của xemboi (ghi "Dịch nghĩa: xemboi"), không in nguyên văn tiếng Anh; người duyệt nên đọc lại 159 đoạn dịch ở `src/lib/trang/du-lieu/than-so-hoc-trich-vi.json`. Em đã đối chiếu 195/195 đoạn với bản quét archive.org, sửa 14 lỗi OCR hiển nhiên. Mỗi khối ghi "Dữ liệu: Nhật Nguyệt (nhatnguyet.org)". Anh cho dùng trước, xin phép sau (mục 20).
     - Trang biểu đồ ngày sinh có thêm 4 số thách thức, số thái độ, số ngày sinh, nợ nghiệp (13, 14, 16, 19); phép tính khớp 600/600 ca của Nhật Nguyệt. Ba phương án (a), (b), (c) hỏi anh trước đây không còn cần.
     - Quy ước tính ghi công khai trên trang: số chủ đạo hiện cả hai cách (cộng dồn và rút từng phần), khác nhau ở 4.725/36.890 ngày sinh 1930–2030; giữ 11, 22, 33; tên tiếng Việt bỏ dấu, Đ = D, Y là nguyên âm.
     - Menu: thêm nút "Thêm" ở desktop gom các hub phụ (cờ `them` trong `dieu-huong.ts`), bỏ mục "Trang chủ" trên desktop vì logo đã dẫn về trang chủ. Chiêm tinh, Phong tục sau này cũng vào nhóm này.
     - SEO nhóm TSH: title, meta của `TSH`, `TSH-SO`, `TSH-BIEUDO`, `TSH-NAMCANHAN` thêm lại chữ "ý nghĩa" vì nay trang có thật. CSDL máy trạm đã sửa; deploy tới sửa VPS bằng `may-tram/seo-tsh-moi.json`.
     - **Cần anh:** bấm xuất bản các dòng `TSH`, `TSH-TINH`, `TSH-SO`, `TSH-TEN`, `TSH-BIEUDO`, `TSH-NAMCANHAN` khi anh thấy ổn.
 19. **Cụm Chiêm tinh (F6) đã dựng, chờ xuất bản.** Gồm `/chiem-tinh`, `/chiem-tinh/cung-hoang-dao` (tra cung theo ngày giờ sinh, bảng 12 cung) và 12 trang cung.
-    - Nguồn duy nhất là *Tetrabiblos* của Ptolemy, bản dịch Anh Ashmand 1822 (Gutenberg, phạm vi công cộng). Trang trích nguyên văn tiếng Anh, không dịch: loại cung, dương/âm, nhà của hành tinh, tam hợp, vượng/hãm.
+    - Nguồn duy nhất là *Tetrabiblos* của Ptolemy, bản dịch Anh Ashmand 1822 (Gutenberg, phạm vi công cộng). Trang trích sách (từ 24/11 in bản dịch tiếng Việt, không in nguyên văn tiếng Anh): loại cung, dương/âm, nhà của hành tinh, tam hợp, vượng/hãm.
     - Giờ Mặt Trời vào cung tính bằng VSOP87D, khớp tiết khí chẵn 30° tới dưới 2 giây (2000–2030).
     - **Không có** tính cách 12 cung, hợp cung, nguyên tố: Tetrabiblos không viết những thứ này. Trang ghi rõ vì sao.
     - Chưa làm: bản đồ sao (sẽ làm bằng `astronomy-engine`, MIT, theo 20-hoc-tu-4-repo), trang hành tinh, trang nhà.
@@ -92,6 +93,25 @@
     - Múi giờ tự chọn theo năm và nơi sinh (vd 1960–6/1975 miền Nam UTC+8, miền Bắc UTC+7); 1947–1955 ghi rõ "chưa chắc" và cho chọn lại.
     - Chỉ ghi vị trí, phẩm vị và câu Tetrabiblos; không luận tính cách. Tọa độ tỉnh từ GeoNames (CC BY 4.0, trang có ghi công).
     - Dòng SEO `CT-BANDOSAO` để NHAP, anh duyệt xuất bản.
+23. **Cụm Lịch P2 (Lệnh 47) đang dựng, chờ xuất bản.** `/lich-am/gio-hoang-dao`, `/tiet-khi` và 24 trang tiết, `/lich-am/ngay-le` và 10 trang lễ.
+    - Giờ hoàng đạo theo Hiệp kỷ quyển 5, khớp bảng đang dùng ở trang lịch mọi ngày năm 2026. Các trang lịch lớn khác cho kết quả khác nhau cùng một ngày; trang mình ghi quy tắc và sách.
+    - 72 hậu (Cấp trủng Chu thư, dẫn trong Hiệp kỷ quyển 1) do em dịch; người duyệt nên đọc lại (`TIET_KHI_24` trong `src/lib/trang/lich-mua.ts`).
+    - **Cần người viết:** phần phong tục, mâm cúng của 10 ngày lễ. Trang hiện "Phần phong tục đang biên tập, chưa đăng."
+    - **Cần anh:** bấm xuất bản `LICH-GHD`, `LICH-TIETKHI-IDX`, `LICH-TIETKHI`, `LICH-NGAYLE-IDX`, `LICH-NGAYLE`, `LE-RAMGIENG`, `LE-VIATHANTAI`, `LE-RAM7`, `LE-TRUNGTHU` khi thấy ổn.
+24. **Con giáp từng cặp và Tứ Hóa (Lệnh 48) đang dựng.** `/xem-tuoi/con-giap` (ma trận 12 × 12), 78 trang `/xem-tuoi/{a}-va-{b}`, `/tu-vi/tu-hoa`.
+    - Cặp con giáp chỉ nêu quan hệ địa chi có sách dẫn (Tam mệnh thông hội), không chấm hợp/không hợp, không tả tính cách.
+    - Tứ Hóa: câu phú Tử Vi Đẩu Số toàn thư quyển 2 ghi can Canh "Nhật Vũ Âm Đồng" (Khoa Thái Âm, Kỵ Thiên Đồng), khác bảng sách Việt mình đang dùng ("Nhật Vũ Đồng Âm"). Can Nhâm thì Toàn thư khớp sách Việt (Khoa Thiên Phủ). Trang hiện cả ba cách ghi. **Em đang để:** lá số vẫn dùng bảng Việt. Người duyệt nên xem lại.
+    - **Cần anh:** bấm xuất bản `XT-CAP-IDX`, `XT-CAP`, `TUVI-TUHOA` khi thấy ổn.
+25. **Trang trong kế hoạch SEO còn chưa dựng vì cần người viết hoặc cần anh quyết** (rà 24/11):
+    - Văn khấn: 21 trang `/van-khan/*` và hub. Cần nguồn văn khấn dùng được công khai hoặc người soạn; em không tự viết lời khấn.
+    - Phong tục: `/phong-tuc`, `/phong-tuc/cung-duong`, `/phong-tuc/xin-xam`; phần phong tục của trang ngày lễ (mục 23).
+    - Xem tuổi: `/xem-tuoi/kim-lau`, `tam-tai`, `hoang-oc`, `lam-nha`, `nam-tuoi`, `lam-an` (mục 15).
+    - Bài viết: `/bat-tu/ngu-hanh-khuyet`, `/tu-vi/cach-doc-la-so`, các bài `/kien-thuc/*`, `/tu-vi-theo-tuoi` và trang tử vi năm theo tuổi (cần lời luận đã duyệt).
+    - Cần anh quyết: `/boi-tinh-yeu` (mục 13), `/goi` và `/tu-vi/luan-giai` (mục 7), `/tu-vi/hop-la-so` (Gói 3).
+    - Các trang P3 em chưa làm.
+26. **Bước deploy lên VPS cho các đợt 24/11** (em làm khi đưa lên VPS một lần, ghi đây để anh biết):
+    - chạy `scripts/seo-chi-tieng-viet.ts` (sửa chữ SEO theo quy tắc chỉ tiếng Việt);
+    - nạp riêng các dòng SEO mới bằng `scripts/seo-nap-dong.ts` (để NHAP, không tự xuất bản): các dòng ở mục 23, 24.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026
