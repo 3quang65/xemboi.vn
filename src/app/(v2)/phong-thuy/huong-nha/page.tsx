@@ -220,7 +220,7 @@ export default async function HuongNhaPage({
                 ) : null}
               </div>
 
-              <ul className="ck-pt-doi-chieu-ds">
+              <ul className="ck-pt-so-sanh-ds">
                 <li>
                   <span>
                     Phương hướng nhà ({ketQuaHuong.cungHuong.phuong}) với cung{' '}

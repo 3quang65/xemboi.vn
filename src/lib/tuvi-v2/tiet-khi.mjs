@@ -8,7 +8,8 @@
  *  - Kinh độ nhật tâm Trái Đất: VSOP87D (bản rút gọn, sai số lý thuyết < 0,2");
  *    kinh độ địa tâm Mặt Trời = L + 180°.
  *  - Hiệu chỉnh FK5 -0,09033"; đốt sai Δψ (Meeus 22.2); quang sai -20,4898"/R.
- *  - Đổi TT ↔ UTC bằng bảng ΔT (IERS Bulletin A, nội suy tuyến tính).
+ *  - Đổi TT ↔ UTC: ΔT theo bảng IERS Bulletin A trong 2015–2026 (nội suy tuyến tính); ngoài khoảng đó
+ *    dùng Espenak–Meeus (./delta-t.mjs), sau 2026 nối liền từ giá trị bảng. Đối chiếu IMCCE: tests/tuvi-v2.
  *  - Tìm nghiệm bằng quét 6 giờ + chia đôi.
  *
  * Nguồn đối chiếu: JPL DE421 qua Skyfield 1.55 (kinh độ hoàng đạo biểu kiến,
@@ -17,6 +18,8 @@
  * Hệ số VSOP87D: Bretagnon & Francou (1988); trích từ gói astronomia
  * (MIT, © 2013 Sonia Keys, 2016 commenthol), rút gọn ngưỡng 1e-7 rad.
  */
+
+import { uocLuongDeltaT } from './delta-t.mjs';
 
 const PI = Math.PI;
 const ARCSEC = PI / (180 * 3600);
@@ -82,7 +85,9 @@ const DELTA_T = [
 
 export function deltaT(ngay) {
   const y = ngay.getUTCFullYear() + (ngay.getUTCMonth() + 0.5) / 12;
-  if (y <= DELTA_T[0][0]) return DELTA_T[0][1];
+  const dau = DELTA_T[0], cuoi = DELTA_T[DELTA_T.length - 1];
+  if (y < dau[0]) return uocLuongDeltaT(y);
+  if (y > cuoi[0]) return cuoi[1] + uocLuongDeltaT(y) - uocLuongDeltaT(cuoi[0]);
   for (let i = 1; i < DELTA_T.length; i++) {
     if (y <= DELTA_T[i][0]) {
       const [y0, v0] = DELTA_T[i - 1], [y1, v1] = DELTA_T[i];

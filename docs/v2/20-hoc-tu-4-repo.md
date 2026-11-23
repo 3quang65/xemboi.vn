@@ -35,7 +35,7 @@ Ngày 23/11/2026. Mỗi repo có một agent đọc. Cả bốn được clone v
 
 Đã thêm test hồi quy `tests/trang/than-so-hoc.test.mjs` (ca "Đối chiếu 600 ca Nhật Nguyệt"), dùng tệp `tests/trang/doi-chieu/nhat-nguyet-than-so-hoc.json` (CC BY 4.0, đã ghi sổ 14).
 
-Lệch tiết khí chỉ ảnh hưởng người sinh trong khoảng một phút quanh mốc giao tiết (trụ tháng bát tự, ngày vào cung chiêm tinh). Em ghi thành việc sau: thay mô hình ΔT bằng Espenak–Meeus, rồi lấy tệp IMCCE làm test.
+Lệch tiết khí chỉ ảnh hưởng người sinh trong khoảng một phút quanh mốc giao tiết (trụ tháng bát tự, ngày vào cung chiêm tinh). **Đã sửa cùng ngày:** nguyên nhân là bảng ΔT của `tiet-khi.mjs` chỉ có 2015–2026; nay ngoài khoảng đó dùng Espenak–Meeus (tách ra `delta-t.mjs`, dùng chung với `am-lich.ts`). Lệch tối đa còn 15 giây trên cả 1900–2100. Test `tests/tuvi-v2/tiet-khi-imcce.test.mjs` giữ mức này.
 
 ## 4. Nên học, xếp theo giá trị
 

@@ -2,7 +2,7 @@
 //
 // Ba lớp, mỗi lớp ghi rõ nguồn để trang hiện cho người xem. Các lớp có thể nói khác nhau; trang hiện cả ba, không gộp thành điểm.
 //  1. Thập nhị trực (建除): trực = (chi ngày − chi tháng) mod 12, tháng tính theo tiết (tháng 1 = Dần, từ Lập xuân).
-//     Đã đối chiếu 716/716 ô của 月表 trong 協紀辨方書 Hiệp kỷ biện phương thư (tests/trang/doi-chieu/hiep-ky-nguyet-bieu.json).
+//     Đã đối chiếu 716/716 ô của 月表 trong 協紀辨方書 Hiệp kỷ biện phương thư (tệp hiep-ky-nguyet-bieu.json, dùng trong tests/trang/xem-ngay.test.mjs).
 //     Câu ca trực và việc lấy từ 玉匣記 Ngọc hạp ký (WS12, rag_doan 8068).
 //  2. Mười hai thần hoàng đạo / hắc đạo (青龍…勾陳): quy tắc trong Hiệp kỷ 卷七 黃道黑道 (KR3g0051, rag_doan 6239):
 //     tháng Dần, Thân khởi Thanh long ở ngày Tý; Mão, Dậu ở Dần; Thìn, Tuất ở Thìn; Tỵ, Hợi ở Ngọ; Tý, Ngọ ở Thân; Sửu, Mùi ở Tuất; đi thuận.

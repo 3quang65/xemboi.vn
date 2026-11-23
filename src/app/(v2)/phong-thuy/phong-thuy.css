@@ -800,7 +800,7 @@ a.ck-pt-thanh-cung-muc:hover {
   color: var(--ck-muc);
 }
 
-.ck-pt-doi-chieu-ds {
+.ck-pt-so-sanh-ds {
   list-style: none;
   margin: 12px 0 0;
   padding: 0;
@@ -809,7 +809,7 @@ a.ck-pt-thanh-cung-muc:hover {
   gap: 8px;
 }
 
-.ck-pt-doi-chieu-ds li {
+.ck-pt-so-sanh-ds li {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
