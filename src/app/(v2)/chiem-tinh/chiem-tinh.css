@@ -30,7 +30,7 @@
 .ck-ct-ky,
 .ck-ct-ky-trien,
 .ck-ct-vong-ky {
-  font-family: var(--ck-f-tieu);
+  font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Sans Symbols 2", var(--ck-f-tieu);
   font-variant-emoji: text;
 }
 
@@ -651,5 +651,506 @@ a.ck-ct-thanh-muc:hover {
   }
   .ck-ct-vong-moc-gio {
     font-size: 11px;
+  }
+}
+
+/* ---------- Bản đồ sao (/chiem-tinh/ban-do-sao) ---------- */
+.ck-ct-bds-hub-the {
+  margin-top: 16px;
+}
+
+.ck-ct-bds-hub-the .ck-ct-hub-dau {
+  margin-bottom: 0;
+}
+
+.ck-ct-bds-moi {
+  margin: 16px 0 0;
+  padding: 12px 16px;
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-left: 4px solid var(--ck-vang-2);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ck-muc);
+}
+
+.ck-ct-bds-moi a {
+  font-weight: 700;
+}
+
+.ck-ct-bds-hang-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+
+.ck-ct-bds-goi-y {
+  margin: 5px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ck-muc-3);
+}
+
+.ck-ct-bds-canh-bao {
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--ck-vang-2);
+  background: #FFF8E6;
+  color: var(--ck-muc);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ck-ct-bds-canh-bao p {
+  margin: 0;
+}
+
+.ck-ct-bds-canh-bao p + p {
+  margin-top: 4px;
+}
+
+.ck-ct-bds-mui-gio {
+  margin-bottom: 18px;
+  padding: 13px 16px;
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-left: 4px solid var(--ck-vang-2);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ck-muc);
+}
+
+.ck-ct-bds-mui-gio p {
+  margin: 0;
+}
+
+.ck-ct-bds-mui-gio p + p {
+  margin-top: 6px;
+}
+
+.ck-ct-bds-mui-gio-luu-y {
+  background: #FFF6DD;
+  border-color: var(--ck-son);
+  border-left-width: 5px;
+}
+
+.ck-ct-bds-vong-khung {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  padding: 20px;
+}
+
+.ck-ct-bds-vong-svg {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.ck-ct-bds-svg-nen-trong {
+  fill: #FFFDF8;
+}
+
+.ck-ct-bds-svg-o-duong {
+  fill: var(--ck-the-nen);
+  stroke: var(--ck-vang-2);
+  stroke-width: 1.1;
+}
+
+.ck-ct-bds-svg-o-am {
+  fill: var(--ck-kem);
+  stroke: var(--ck-vang-2);
+  stroke-width: 1.1;
+}
+
+.ck-ct-bds-svg-ky-cung {
+  font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Sans Symbols 2", var(--ck-f-tieu);
+  font-weight: 700;
+  font-variant-emoji: text;
+  fill: var(--ck-son);
+}
+
+.ck-ct-bds-svg-vien-ngoai {
+  stroke: var(--ck-ke-dam);
+  stroke-width: 1.1;
+}
+
+.ck-ct-bds-svg-o-nha {
+  fill: var(--ck-giay);
+  stroke: var(--ck-ke);
+  stroke-width: 0.9;
+}
+
+.ck-ct-bds-svg-vach-nha {
+  stroke: var(--ck-ke);
+  stroke-width: 0.9;
+}
+
+.ck-ct-bds-svg-vien-nha {
+  stroke: var(--ck-ke-dam);
+  stroke-width: 1;
+}
+
+.ck-ct-bds-svg-nha {
+  font-family: var(--ck-f-chu);
+  font-weight: 600;
+  fill: var(--ck-muc-2);
+}
+
+.ck-ct-bds-svg-vach-asc {
+  stroke: var(--ck-son);
+  stroke-width: 2.3;
+}
+
+.ck-ct-bds-svg-cham-asc {
+  fill: var(--ck-son);
+  stroke: #FFFDF8;
+  stroke-width: 1.3;
+}
+
+.ck-ct-bds-svg-nhan-asc {
+  font-family: var(--ck-f-chu);
+  font-weight: 700;
+  fill: var(--ck-son);
+}
+
+.ck-ct-bds-svg-vach-mc {
+  stroke: var(--ck-thuy);
+  stroke-width: 2.3;
+}
+
+.ck-ct-bds-svg-cham-mc {
+  fill: var(--ck-thuy);
+  stroke: #FFFDF8;
+  stroke-width: 1.3;
+}
+
+.ck-ct-bds-svg-nhan-mc {
+  font-family: var(--ck-f-chu);
+  font-weight: 700;
+  fill: var(--ck-thuy);
+}
+
+.ck-ct-bds-svg-noi-tt {
+  stroke: var(--ck-muc-3);
+  stroke-width: 1;
+  opacity: 0.55;
+}
+
+.ck-ct-bds-svg-noi-ngoai {
+  stroke: var(--ck-muc-3);
+  stroke-width: 0.9;
+  stroke-dasharray: 3 3;
+  opacity: 0.45;
+}
+
+.ck-ct-bds-svg-nen-tt {
+  fill: #FFFDF8;
+}
+
+.ck-ct-bds-svg-tt {
+  font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Sans Symbols 2", var(--ck-f-tieu);
+  font-weight: 700;
+  font-variant-emoji: text;
+  fill: var(--ck-muc);
+}
+
+.ck-ct-bds-svg-tt-ngoai {
+  font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Sans Symbols 2", var(--ck-f-tieu);
+  font-weight: 600;
+  font-variant-emoji: text;
+  fill: var(--ck-muc-3);
+  opacity: 0.72;
+}
+
+.ck-ct-bds-svg-r {
+  font-family: var(--ck-f-chu);
+  font-weight: 600;
+  fill: var(--ck-son);
+}
+
+.ck-ct-bds-svg-tam {
+  fill: var(--ck-giay);
+  stroke: var(--ck-ke-dam);
+  stroke-width: 1.1;
+}
+
+.ck-ct-bds-svg-tam-chu {
+  font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Sans Symbols 2", var(--ck-f-tieu);
+  font-weight: 700;
+  font-variant-emoji: text;
+  fill: var(--ck-muc-2);
+}
+
+.ck-ct-bds-vong-chu-thich {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+  margin-top: 14px;
+  font-size: 13.5px;
+  color: var(--ck-muc-2);
+}
+
+.ck-ct-bds-vong-chu-thich span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ck-ct-bds-cham {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.ck-ct-bds-cham-asc {
+  background: var(--ck-son);
+}
+
+.ck-ct-bds-cham-mc {
+  background: var(--ck-thuy);
+}
+
+.ck-ct-bds-ghi-chu {
+  margin: 18px 0 14px;
+  padding: 13px 16px;
+  background: var(--ck-nga-2);
+  border: 1px solid var(--ck-ke);
+  border-left: 4px solid var(--ck-vang-2);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ck-muc);
+}
+
+.ck-ct-bds-ghi-chu p {
+  margin: 0;
+}
+
+.ck-ct-bds-bang-boc {
+  margin-top: 18px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+.ck-ct-bds-bang {
+  min-width: 540px;
+}
+
+.ck-ct-bds-bang th[scope="row"] {
+  font-weight: 600;
+  color: var(--ck-muc);
+  white-space: nowrap;
+}
+
+.ck-ct-bds-bang td:nth-child(2) {
+  white-space: nowrap;
+}
+
+.ck-ct-bds-bang thead th:nth-child(3),
+.ck-ct-bds-bang td:nth-child(3) {
+  white-space: nowrap;
+  text-align: center;
+}
+
+.ck-ct-bds-tt-dong {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 700;
+  color: var(--ck-muc);
+}
+
+.ck-ct-bds-goc-ten {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--ck-son);
+}
+
+.ck-ct-bds-en {
+  display: block;
+  margin-top: 2px;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--ck-muc-3);
+}
+
+.ck-ct-bds-hang-ngoai th,
+.ck-ct-bds-hang-ngoai td {
+  color: var(--ck-muc-2);
+}
+
+.ck-ct-bds-sao-ngoai {
+  margin-left: 2px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ck-ct-bds-chu-thich {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ck-muc-2);
+}
+
+.ck-ct-bds-trich-ds {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ck-ct-bds-chi-tiet {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-radius: 2px;
+}
+
+.ck-ct-bds-chi-tiet summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  min-height: 46px;
+  cursor: pointer;
+  font: 700 17px/1.35 var(--ck-f-tieu);
+  color: var(--ck-son);
+  list-style: none;
+}
+
+.ck-ct-bds-chi-tiet summary::-webkit-details-marker {
+  display: none;
+}
+
+.ck-ct-bds-chi-tiet summary::after {
+  content: "▾";
+  margin-left: auto;
+  font-size: 14px;
+  color: var(--ck-muc-3);
+  transition: transform 0.15s ease;
+}
+
+.ck-ct-bds-chi-tiet[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.ck-ct-bds-chi-tiet[open] summary {
+  border-bottom: 1px solid var(--ck-ke);
+}
+
+.ck-ct-bds-chi-tiet-nd {
+  padding: 4px 16px 14px;
+}
+
+.ck-ct-bds-cach-tinh {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ck-muc);
+}
+
+.ck-ct-bds-cach-tinh .ck-ct-ghi-chu-hd {
+  margin-top: 8px;
+}
+
+.ck-ct-bds-ghi-cong {
+  margin-top: 22px;
+  padding: 12px 16px;
+  background: var(--ck-nga-2);
+  border: 1px solid var(--ck-ke);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ck-muc-2);
+}
+
+.ck-ct-bds-ghi-cong p {
+  margin: 0;
+}
+
+.ck-ct-bds-ghi-cong p + p {
+  margin-top: 4px;
+}
+
+/* Tương phản khi đặt trong khối nền tối (.ck-toi) */
+.ck-toi .ck-ct-bds-vong-khung {
+  background: var(--ck-den-2);
+  border-color: var(--ck-vang-3);
+}
+
+.ck-toi .ck-ct-bds-svg-nen-trong,
+.ck-toi .ck-ct-bds-svg-nen-tt {
+  fill: var(--ck-den-2);
+}
+
+.ck-toi .ck-ct-bds-svg-o-duong {
+  fill: #241618;
+  stroke: var(--ck-vang-2);
+}
+
+.ck-toi .ck-ct-bds-svg-o-am {
+  fill: #1A1012;
+  stroke: var(--ck-vang-2);
+}
+
+.ck-toi .ck-ct-bds-svg-o-nha,
+.ck-toi .ck-ct-bds-svg-tam {
+  fill: #1E1315;
+  stroke: var(--ck-vang-3);
+}
+
+.ck-toi .ck-ct-bds-svg-ky-cung,
+.ck-toi .ck-ct-bds-svg-nhan-asc,
+.ck-toi .ck-ct-bds-svg-r {
+  fill: var(--ck-vang-sang);
+}
+
+.ck-toi .ck-ct-bds-svg-vach-asc,
+.ck-toi .ck-ct-bds-svg-cham-asc {
+  stroke: var(--ck-vang-sang);
+}
+
+.ck-toi .ck-ct-bds-svg-cham-asc {
+  fill: var(--ck-vang-sang);
+}
+
+.ck-toi .ck-ct-bds-svg-vach-mc {
+  stroke: #8AB4F8;
+}
+
+.ck-toi .ck-ct-bds-svg-cham-mc,
+.ck-toi .ck-ct-bds-svg-nhan-mc {
+  fill: #8AB4F8;
+}
+
+.ck-toi .ck-ct-bds-svg-tt,
+.ck-toi .ck-ct-bds-svg-nha,
+.ck-toi .ck-ct-bds-svg-tam-chu {
+  fill: var(--ck-kem);
+}
+
+.ck-toi .ck-ct-bds-svg-tt-ngoai {
+  fill: var(--ck-kem-2);
+}
+
+.ck-toi .ck-ct-bds-vong-chu-thich {
+  color: var(--ck-kem-2);
+}
+
+@media (max-width: 700px) {
+  .ck-ct-bds-hang-2 {
+    grid-template-columns: 1fr;
+  }
+  .ck-ct-bds-vong-khung {
+    padding: 12px 6px;
+  }
+  .ck-ct-bds-bang th,
+  .ck-ct-bds-bang td {
+    padding: 9px 10px;
+    font-size: 14px;
   }
 }

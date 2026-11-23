@@ -113,6 +113,14 @@ export default async function CungHoangDaoPage({
   const canonicalSach = `${GOC_SITE}/chiem-tinh/cung-hoang-dao`;
   const schemaApp = taoSchemaWebApplication(tt, canonicalSach);
   const schemaSet = taoSchemaDefinedTermSet12Cung();
+  const hrefBanDoSao = ngaySinh
+    ? `/chiem-tinh/ban-do-sao?${new URLSearchParams({
+        ngay: isoNgay(ngaySinh),
+        ...(gioSinh
+          ? { gio: `${pad2(gioSinh.gio)}:${pad2(gioSinh.phut)}` }
+          : {}),
+      }).toString()}`
+    : '/chiem-tinh/ban-do-sao';
 
   return (
     <KhungTrang
@@ -263,6 +271,13 @@ export default async function CungHoangDaoPage({
             </div>
           ) : null}
 
+          {daDung.has('/chiem-tinh/ban-do-sao') ? (
+            <p className="ck-ct-bds-moi">
+              Muốn xem cả Mặt Trăng, các hành tinh và cung mọc:{' '}
+              <Link href={hrefBanDoSao}>Lập bản đồ sao</Link>.
+            </p>
+          ) : null}
+
           <KhoiGhiChuTinhCach />
         </section>
       ) : null}
@@ -338,6 +353,9 @@ export default async function CungHoangDaoPage({
         <h2>Trang liên quan</h2>
         <div className="ck-lien-quan-ds">
           <Link href="/chiem-tinh">Tổng quan Chiêm tinh</Link>
+          {daDung.has('/chiem-tinh/ban-do-sao') ? (
+            <Link href="/chiem-tinh/ban-do-sao">Bản đồ sao</Link>
+          ) : null}
           {daDung.has('/lich-am/doi-ngay') ? (
             <Link href="/lich-am/doi-ngay">Đổi ngày âm dương</Link>
           ) : null}

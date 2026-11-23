@@ -120,6 +120,26 @@ export default async function ChiemTinhHubPage() {
             </p>
           </form>
         </div>
+
+        {daDung.has('/chiem-tinh/ban-do-sao') ? (
+          <div className="ck-ct-hub-the ck-ct-bds-hub-the">
+            <div className="ck-ct-hub-dau">
+              <div>
+                <h2>Bản đồ sao</h2>
+                <p>
+                  Vị trí Mặt Trời, Mặt Trăng, các hành tinh và cung mọc lúc bạn
+                  sinh.
+                </p>
+              </div>
+              <Link
+                href="/chiem-tinh/ban-do-sao"
+                className="ck-nut ck-nut-son ck-ct-nut-chinh"
+              >
+                Lập bản đồ sao →
+              </Link>
+            </div>
+          </div>
+        ) : null}
       </section>
 
       {/* 2. Vòng 12 cung (SVG) */}

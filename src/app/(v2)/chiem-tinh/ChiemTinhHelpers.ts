@@ -46,6 +46,18 @@ export const MAC_DINH_CUNG_HOANG_DAO: MacDinhTrang = {
     'Tra cung hoàng đạo theo ngày giờ sinh dương lịch, giờ chuyển cung tính theo kinh độ Mặt Trời. Bảng 12 cung: tên tiếng Anh, ngày bắt đầu, hành tinh chủ nhà.',
 };
 
+export const MAC_DINH_BAN_DO_SAO: MacDinhTrang = {
+  title: 'Bản đồ sao cá nhân miễn phí: natal chart tiếng Việt',
+  h1: 'Bản đồ sao',
+  description:
+    'Lập bản đồ sao (natal chart) theo ngày, giờ, nơi sinh: vị trí hành tinh, cung mọc, 12 nhà. Nguồn lịch thiên văn ghi rõ.',
+};
+
+/** Thêm U+FE0E để ký hiệu thiên thể/cung luôn vẽ dạng chữ, không thành emoji. */
+export function kyHieuChu(s: string): string {
+  return s.endsWith('\uFE0E') ? s : `${s}\uFE0E`;
+}
+
 export function macDinhCung(c: CungHoangDao, khoang: string): MacDinhTrang {
   return {
     title: `Cung ${c.ten} (${c.en}): ngày sinh, hành tinh chủ nhà theo sách`,

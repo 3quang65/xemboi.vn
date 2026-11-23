@@ -92,8 +92,8 @@ const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
     ],
   },
   {
-    dot: 5, ten: 'Chiêm tinh', href: '/chiem-tinh', moTa: '12 cung hoàng đạo theo Tetrabiblos', them: true,
-    con: [{ ten: '12 cung hoàng đạo', href: '/chiem-tinh/cung-hoang-dao' }],
+    dot: 5, ten: 'Chiêm tinh', href: '/chiem-tinh', moTa: '12 cung hoàng đạo, bản đồ sao theo Tetrabiblos', them: true,
+    con: [{ ten: '12 cung hoàng đạo', href: '/chiem-tinh/cung-hoang-dao' }, { ten: 'Bản đồ sao', href: '/chiem-tinh/ban-do-sao' }],
   },
 ];
 
@@ -143,7 +143,7 @@ const TEN_DOAN: Record<string, string> = {
   '/phong-thuy': 'Phong thủy', '/phong-thuy/cung-phi': 'Cung phi', '/phong-thuy/bat-trach': 'Bát trạch', '/phong-thuy/huong-nha': 'Hướng nhà', '/phong-thuy/cuu-tinh': 'Cửu tinh',
   '/than-so-hoc': 'Thần số học', '/than-so-hoc/so-chu-dao': 'Số chủ đạo', '/than-so-hoc/theo-ten': 'Theo tên',
   '/than-so-hoc/bieu-do-ngay-sinh': 'Biểu đồ ngày sinh',
-  '/chiem-tinh': 'Chiêm tinh', '/chiem-tinh/cung-hoang-dao': '12 cung hoàng đạo', // /than-so-hoc/nam-ca-nhan không có trang gốc: breadcrumb bỏ qua đoạn này
+  '/chiem-tinh': 'Chiêm tinh', '/chiem-tinh/cung-hoang-dao': '12 cung hoàng đạo', '/chiem-tinh/ban-do-sao': 'Bản đồ sao', // /than-so-hoc/nam-ca-nhan không có trang gốc: breadcrumb bỏ qua đoạn này
   '/xem-ngay/cuoi-hoi': 'Ngày cưới', '/xem-ngay/khai-truong': 'Khai trương', '/xem-ngay/dong-tho': 'Động thổ',
   '/xem-ngay/nhap-trach': 'Nhập trạch', '/xem-ngay/mua-xe': 'Mua xe', '/xem-ngay/cat-toc': 'Cắt tóc',
   '/phuong-phap': 'Phương pháp', '/nguon': 'Nguồn sách', '/tu-dien': 'Từ điển', '/kien-thuc': 'Kiến thức', '/goi': 'Bảng giá', '/lien-he': 'Liên hệ',

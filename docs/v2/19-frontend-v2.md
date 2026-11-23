@@ -277,3 +277,10 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Sửa kèm: câu cung phi "九宫建宅" ở quyển 35, không phải 34 (Kanripo thiếu quyển 14 nên số tệp lệch).
   - 138/138 test, tsc 0 lỗi, build qua.
 - Deploy lần tới phải chạy `npm ci` vì có gói mới `lunar-javascript`.
+- 23/11: **Bản đồ sao** `/chiem-tinh/ban-do-sao` (cụm Chiêm tinh).
+  - Lib `ban-do-sao.ts`: astronomy-engine 2.1.19 (MIT) cho 10 thiên thể, khớp JPL Horizons DE441 dưới 1′ ở 6 mốc 1901–2026; cung mọc, thiên đỉnh kiểm bằng phép quay sang hệ chân trời; nhà trọn cung; phẩm vị ch. XX, XXII; lời Tetrabiblos ch. IV, XIII.
+  - Múi giờ Việt Nam theo IANA, tách hai miền 1960–6/1975 theo vĩ tuyến 17; 1947–1955 ghi "chưa chắc", cho chọn lại. 63 tỉnh lỵ từ GeoNames (CC BY 4.0).
+  - Antigravity làm giao diện (Lệnh 39): form GET, mặc định "bầu trời lúc này tại Hà Nội", vòng SVG (ASC bên trái), bảng vị trí, 9 khối trích, ghi công. Thư viện thiên văn chỉ chạy ở server (0 chuỗi của nó trong `.next/static`).
+  - Kèm theo: tắt ba API chat cũ thời v1 (`BAT_CHAT_CU=1` để bật lại).
+  - 147/147 test, tsc 0 lỗi, build qua.
+- Deploy lần tới phải chạy `npm ci` vì có gói mới `astronomy-engine`.
