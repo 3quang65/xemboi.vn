@@ -335,3 +335,32 @@ export const nghiaThapThan = (t: ThapThan | 'Nhật chủ') => GIAI_NGHIA_BAT_TU
 
 /** Hành của chi tháng, dùng cho tiêu đề thẻ. */
 export const hanhChiThang = (laSo: LaSoBatTu): Hanh => HANH_CHI[(DIA_CHI as readonly string[]).indexOf(laSo.tru[1].chi)];
+
+// ================= Mốc giao vận =================
+
+export type GiaoVan = {
+  /** Năm, tháng (tuổi thực) từ lúc sinh tới lúc khởi vận. */
+  sauSinh: { nam: number; thang: number };
+  /** Tháng, năm dương lịch ước tính lúc giao vận (chỉ chính xác tới tháng vì phép tính làm tròn theo tháng). */
+  thangDuong: number;
+  namDuong: number;
+  cau: string;
+};
+
+/**
+ * Mốc giao vận đầu tiên theo dương lịch. Lá số ghi tuổi đại vận theo tuổi mụ, còn khởi vận
+ * tính theo thời gian thực từ lúc sinh; câu này nói rõ cả hai để người xem không lẫn
+ * (khảo sát thị trường thấy có trang trộn hai loại tuổi).
+ */
+export function giaoVan(laSo: LaSoBatTu): GiaoVan {
+  const { thang, nam } = laSo.dauVao;
+  const kv = laSo.daiVan.khoiVan;
+  const tong = (thang - 1) + kv.thang;
+  const thangDuong = (tong % 12) + 1;
+  const namDuong = nam + kv.nam + Math.floor(tong / 12);
+  const dv0 = laSo.daiVan.ds[0];
+  const cau = `Đại vận đi ${laSo.daiVan.chieu}. Khởi vận sau khi sinh ${kv.nam} năm ${kv.thang} tháng`
+    + ` (3 ngày tính 1 năm), tức khoảng tháng ${thangDuong}/${namDuong}.`
+    + ` Vận đầu ${dv0.canChi} tính từ năm ${dv0.tuNam}, ghi theo tuổi mụ là ${dv0.tuTuoi} tuổi.`;
+  return { sauSinh: { ...kv }, thangDuong, namDuong, cau };
+}

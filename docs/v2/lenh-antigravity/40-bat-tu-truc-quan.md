@@ -168,4 +168,47 @@ Bọc bằng `ThuatNgu`, nghĩa lấy từ `GIAI_NGHIA_BAT_TU`, ít nhất ở c
 
 ## Học từ thị trường
 
-Em sẽ bổ sung khi có báo cáo `docs/v2/thiet-ke/doi-thu/bat-tu-thi-truong.md`. Nếu tệp đã có lúc làm lệnh thì đọc và áp các điểm hợp lý vào 40.2, nhưng không được trái các ràng buộc ở trên.
+Đã khảo sát 6 công cụ với cùng ca mẫu 1: tuvi.vn, bazi-calculator.com/vi, china95.net, mingli.ru, miniwebtool.com/vi, masterseanchan.com/vi. Báo cáo đầy đủ ở `docs/v2/thiet-ke/doi-thu/bat-tu-thi-truong.md`.
+
+**Số liệu.**
+- Cả 6 ra cùng 4 trụ với engine của mình.
+- Khởi vận: china95 05/03/1999, tuvi.vn 03/03/1999, miniwebtool 8 năm 9 tháng. Mình ra 8 năm 9 tháng, khoảng 3/1999. Khớp.
+- Các trang lệch nhau ở cách đếm ngũ hành và ở dụng thần: hai trang ra hai kết luận trái ngược. Mình **không** hiện dụng thần; giữ như vậy.
+
+**Áp vào 40.2. Bắt buộc, phần nào đã làm thì giữ.**
+1. **Đầu khối A, mẫu miniwebtool:** một dòng 8 chữ Hán to (Canh Ngọ, Tân Tỵ, Đinh Dậu, Giáp Thìn) và tên Việt dưới mỗi chữ, đặt trên câu `cau`.
+2. **Thẻ trụ (B):**
+   - thẻ Ngày có nhãn nhỏ **"Bạn"** cạnh "Nhật chủ";
+   - thập thần của can là pill nhỏ;
+   - tàng can ghi kèm thập thần (dữ liệu `tangCan[].thapThan` có sẵn);
+   - nạp âm ghi đúng chuỗi `napAm` của lib, không tự sửa.
+3. **Hình quan hệ ở 375px:**
+   - nếu các cung đè nhau quá 2 tầng, được phép đổi sang **hàng chip** dưới 4 thẻ;
+   - mỗi chip ghi "Lục hợp · Ngày–Giờ · Dậu Thìn", viền theo kiểu nét của nhóm;
+   - ở ≥ 768px vẫn vẽ cung.
+4. **Ngũ hành (D):**
+   - mỗi thanh ghi số và % (trên 8 chữ);
+   - tag "Nhật chủ" trên hành của nhật chủ, tag "Khuyết" cho hành 0;
+   - một dòng chữ nhỏ: "Đếm 8 chữ lộ (4 can, 4 chi), chưa tính tàng can."
+   - Không thêm trọng số tàng can: chưa có nguồn cho trọng số.
+5. **Đại vận (E):**
+   - ngay trên dải thẻ in câu `giaoVan(laSo).cau`. Hàm mới trong `bat-tu-truc-quan.ts`, đã có test.
+   - Mỗi thẻ ghi **năm** to ("1999–2008"), tuổi mụ nhỏ bên dưới ("10–19 tuổi mụ").
+   - Không ghi "tuổi" trơn: tuvi.vn bị lẫn đúng chỗ này.
+6. **Khối "Cách tính" (`<details>` cuối trang):**
+   - in nguyên `laSo.quyUoc`;
+   - thêm tiết trước/sau (`laSo.tiet`) và tháng lệnh (chi tháng).
+   - Mẫu: mingli và tuvi.vn. Thông tin này giúp người dùng tự so với trang khác.
+7. **Màu:**
+   - dùng token `--ck-<hanh>` sẵn có. Đã đo tương phản trên nền giấy: Kim 5,35, Mộc 5,41, Thủy 12,8, Hỏa 5,42, Thổ 5,35, đều ≥ 4,5.
+   - Không dùng #999 hay vàng nhạt cho chữ (lỗi của tuvi.vn).
+8. **Sạch sẽ:**
+   - không popup, không quảng cáo xen lá số;
+   - 100% tiếng Việt, không sót nhãn tiếng Anh (lỗi của miniwebtool bản Việt).
+
+**Để sau (không làm trong lệnh này):**
+- bấm lưu niên để phủ lên lá số (masterseanchan);
+- lập tam trụ khi không rõ giờ;
+- hiệu chỉnh giờ mặt trời.
+
+Em sẽ chuẩn bị dữ liệu rồi giao thành lệnh riêng.

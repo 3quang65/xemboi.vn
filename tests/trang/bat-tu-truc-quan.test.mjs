@@ -152,3 +152,22 @@ test('ca 19/04/1975 02:00 nam (ca thứ hai của Lệnh 40): đủ 5 nhóm quan
     'can-hop:01:Ất-Canh', 'can-hop:12:Canh-Ất', 'thieu-tam-hop:02:Mão-Mùi', 'xung:23:Mùi-Sửu', 'hinh:23:Mùi-Sửu', 'hai:01:Mão-Thìn',
   ]);
 });
+
+test('giaoVan: 01/06/1990 08:30 nữ khởi vận 8 năm 9 tháng, khoảng 3/1999 (khớp china95 05/03/1999, tuvi.vn 03/03/1999)', async () => {
+  const { lapLaSoBatTu } = await import('../../src/lib/trang/bat-tu.ts');
+  const { giaoVan } = await import('../../src/lib/trang/bat-tu-truc-quan.ts');
+  const ls = lapLaSoBatTu({ ngay: 1, thang: 6, nam: 1990, gio: 8, phut: 30, gioiTinh: 'nu', namXem: 2026 });
+  const g = giaoVan(ls);
+  assert.deepEqual(g.sauSinh, { nam: 8, thang: 9 });
+  assert.equal(g.thangDuong, 3);
+  assert.equal(g.namDuong, 1999);
+  assert.equal(ls.daiVan.ds[0].tuNam, g.namDuong);
+  assert.ok(g.cau.includes('nghịch') && g.cau.includes('tuổi mụ là 10'));
+  // Quét: năm giao vận luôn trùng năm vận đầu.
+  for (let y = 1900; y <= 2090; y += 7) for (const t of [1, 4, 8, 12]) for (const gt of ['nam', 'nu']) {
+    const l = lapLaSoBatTu({ ngay: 15, thang: t, nam: y, gio: 12, gioiTinh: gt, namXem: 2026 });
+    const v = giaoVan(l);
+    assert.equal(v.namDuong, l.daiVan.ds[0].tuNam, `${y}/${t} ${gt}`);
+    assert.ok(v.thangDuong >= 1 && v.thangDuong <= 12);
+  }
+});
