@@ -39,17 +39,25 @@ function kiemCoThamSo(sp: Record<string, string | string[] | undefined>): boolea
   );
 }
 
-const NHAN_MUC: Record<MucDanhGia, string> = {
-  tot: 'Tốt',
-  binh: 'Bình',
-  xau: 'Xấu',
+const TRANG_THAI_MUC: Record<
+  MucDanhGia,
+  { nhan: string; nhanNgan: string; kyHieu: string; lop: 'tot' | 'binh' | 'diu' }
+> = {
+  tot: { nhan: 'Hợp', nhanNgan: 'Hợp', kyHieu: '✓', lop: 'tot' },
+  binh: { nhan: 'Bình thường', nhanNgan: 'Bình', kyHieu: '–', lop: 'binh' },
+  xau: { nhan: 'Chưa hợp', nhanNgan: 'Chưa hợp', kyHieu: '!', lop: 'diu' },
 };
 
-const LOP_MUC: Record<MucDanhGia, string> = {
-  tot: 'ck-muc-badge ck-muc-tot',
-  binh: 'ck-muc-badge ck-muc-binh',
-  xau: 'ck-muc-badge ck-muc-xau',
+const TEN_NGAN_XD: Record<string, string> = {
+  'chi-nam': 'Chi năm',
+  'can-nam': 'Can năm',
+  'chi-chu': 'Chi chủ',
+  'nap-am-chu': 'Nạp âm',
 };
+
+function lamDiuNhanHienThi(s: string): string {
+  return s.replace(/du niên xấu/gi, 'du niên chưa hợp').replace(/\bxấu\b/gi, 'chưa hợp');
+}
 
 const DS_NAM_CHU = Array.from(
   { length: NAM_XEM_TUOI_DEN - NAM_XEM_TUOI_TU + 1 },
@@ -231,47 +239,88 @@ export default async function XongDatPage({
               Đối chiếu 4 tiêu chí: chi khách với chi năm {ketQua.namTet.canChi}, can khách với can
               năm, chi khách với chi gia chủ và nạp âm khách với gia chủ.
             </p>
+            <p className="ck-xd-cg">
+              Tìm thấy <strong>{ketQua.ungVien.length} tuổi gợi ý</strong> · Ký hiệu trên thanh:
+              {' '}<strong>✓ Hợp</strong>, <strong>– Bình thường</strong>,{' '}
+              <strong>! Chưa hợp</strong>.
+            </p>
           </div>
 
           {ketQua.ungVien.length === 0 ? (
             <p className="ck-xd-rong">Không có tuổi nào hợp hoàn toàn với mọi sách</p>
           ) : (
             <div className="ck-xd-ds">
-              {ketQua.ungVien.map((u) => (
-                <article key={u.nam} className="ck-xd-the">
-                  <div className="ck-xd-dau">
-                    <h3>
-                      {daDung.has('/sinh-nam') && namSinhHopLe(u.nam) ? (
-                        <Link href={`/sinh-nam/${u.nam}`}>
-                          {u.nam} — {u.canChi}
-                        </Link>
-                      ) : (
-                        `${u.nam} — ${u.canChi}`
-                      )}
-                    </h3>
-                    <span className="ck-xd-tuoi">{u.tuoiAm} tuổi âm</span>
-                  </div>
+              {ketQua.ungVien.map((u) => {
+                const mucThe = u.xau > 0 ? 'diu' : u.tot >= 3 ? 'tot' : 'binh';
+                return (
+                  <article key={u.nam} className={`ck-xd-the ck-xd-the-${mucThe}`}>
+                    <div className="ck-xd-dau">
+                      <h3>
+                        {daDung.has('/sinh-nam') && namSinhHopLe(u.nam) ? (
+                          <Link href={`/sinh-nam/${u.nam}`}>
+                            {u.nam} — {u.canChi}
+                          </Link>
+                        ) : (
+                          `${u.nam} — ${u.canChi}`
+                        )}
+                      </h3>
+                      <span className="ck-xd-tuoi">{u.tuoiAm} tuổi âm</span>
+                    </div>
 
-                  <p className="ck-xd-nap-am">
-                    Nạp âm: <b>{u.napAm}</b> · {u.tot} tiêu chí tốt, {u.xau} tiêu chí xấu
-                  </p>
+                    <div className="ck-xd-nap-am">
+                      <span>
+                        Nạp âm: <b>{u.napAm}</b>
+                      </span>
+                      <span className="ck-xd-dem">
+                        <strong>{u.tot} hợp</strong> · <span>{u.xau} chưa hợp</span>
+                      </span>
+                    </div>
 
-                  <details className="ck-xd-chi-tiet">
-                    <summary>Xem 4 tiêu chí đối chiếu</summary>
-                    <ul className="ck-xd-tieu-chi">
-                      {u.tieuChi.map((tc) => (
-                        <li key={tc.ma}>
-                          <div className="ck-xd-tieu-chi-dau">
-                            <b>{tc.ten}</b>
-                            <span className={LOP_MUC[tc.muc]}>{NHAN_MUC[tc.muc]}</span>
-                          </div>
-                          <p>{tc.giaiThich}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
-                </article>
-              ))}
+                    <ol
+                      className="ck-xd-thanh"
+                      aria-label={`4 tiêu chí đối chiếu của tuổi ${u.nam} ${u.canChi}`}
+                    >
+                      {u.tieuChi.map((tc) => {
+                        const ttMuc = TRANG_THAI_MUC[tc.muc];
+                        return (
+                          <li
+                            key={tc.ma}
+                            className={`ck-xd-thanh-o ck-xd-thanh-o-${ttMuc.lop}`}
+                          >
+                            <span className="ck-xd-thanh-ky" aria-hidden="true">
+                              {ttMuc.kyHieu}
+                            </span>
+                            <span className="ck-xd-thanh-ten">
+                              {TEN_NGAN_XD[tc.ma] ?? tc.ten}
+                            </span>
+                            <span className="ck-xd-thanh-muc">{ttMuc.nhanNgan}</span>
+                          </li>
+                        );
+                      })}
+                    </ol>
+
+                    <details className="ck-xd-chi-tiet">
+                      <summary>Xem 4 tiêu chí đối chiếu</summary>
+                      <ul className="ck-xd-tieu-chi">
+                        {u.tieuChi.map((tc) => {
+                          const ttMuc = TRANG_THAI_MUC[tc.muc];
+                          return (
+                            <li key={tc.ma} className={`ck-xd-tc-muc-${ttMuc.lop}`}>
+                              <div className="ck-xd-tieu-chi-dau">
+                                <b>{tc.ten}</b>
+                                <span className={`ck-xt-tc-badge ck-xt-tc-badge-${ttMuc.lop}`}>
+                                  <span aria-hidden="true">{ttMuc.kyHieu}</span> {ttMuc.nhan}
+                                </span>
+                              </div>
+                              <p>{lamDiuNhanHienThi(tc.giaiThich)}</p>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </details>
+                  </article>
+                );
+              })}
             </div>
           )}
 

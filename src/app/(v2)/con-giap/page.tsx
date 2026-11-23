@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
+import { VongConGiap } from '@/components/ck/truc-quan';
 import { NguonNapAm } from '@/components/ck/TheCanChi';
 import { CHI_HAN, duongDanConGiap } from '@/components/ck/canChiHelpers';
 import { CON_GIAP } from '@/lib/trang/can-chi';
@@ -29,6 +30,13 @@ export default async function ConGiapIndexPage() {
 
   return (
     <KhungTrang tieuDe={tt.h1} phu={tt.description} duongDan="/con-giap" toi>
+      <section className="ck-td-muc" aria-labelledby="ck-cg-vong-tieu">
+        <h2 id="ck-cg-vong-tieu" className="ck-td-tieu">
+          Vòng tròn 12 con giáp
+        </h2>
+        <VongConGiap />
+      </section>
+
       <section className="ck-td-muc" aria-labelledby="ck-cg-ds-tieu">
         <h2 id="ck-cg-ds-tieu" className="ck-td-tieu">
           12 địa chi từ Tý đến Hợi

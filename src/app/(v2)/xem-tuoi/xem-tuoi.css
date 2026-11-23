@@ -118,13 +118,11 @@
 }
 
 .ck-xt-thanh-o-diu {
-  background: repeating-linear-gradient(
-    -45deg,
-    #FBF4E4,
-    #FBF4E4 6px,
-    #F3E6C8 6px,
-    #F3E6C8 11px
-  );
+  background: repeating-linear-gradient(-45deg,
+      #FBF4E4,
+      #FBF4E4 6px,
+      #F3E6C8 6px,
+      #F3E6C8 11px);
   border-bottom: 4px dashed #B7791F;
   color: #B7791F;
 }
@@ -302,10 +300,18 @@
   color: var(--ck-muc);
 }
 
-.ck-xd-tom-tat p + p {
+.ck-xd-tom-tat p+p {
   margin-top: 6px;
   color: var(--ck-muc-2);
   font-size: 14.5px;
+}
+
+.ck-xd-cg {
+  margin-top: 8px !important;
+  padding-top: 8px;
+  border-top: 1px dotted var(--ck-ke-dam);
+  font-size: 14px;
+  color: var(--ck-muc-2);
 }
 
 .ck-xd-ds {
@@ -318,15 +324,28 @@
   background: var(--ck-the-nen);
   border: 1px solid #C9AE78;
   border-top: 3px solid var(--ck-vang-2);
+  border-radius: 2px;
   padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+}
+
+.ck-xd-the-tot {
+  border-top-color: var(--ck-moc);
+}
+
+.ck-xd-the-binh {
+  border-top-color: var(--ck-vang-2);
+}
+
+.ck-xd-the-diu {
+  border-top: 3px dashed #B7791F;
 }
 
 .ck-xd-dau {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
@@ -339,6 +358,9 @@
 }
 
 .ck-xd-dau h3 a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: inherit;
   text-decoration: none;
   border-bottom: 1px solid rgba(142, 27, 18, 0.35);
@@ -360,17 +382,119 @@
 
 .ck-xd-nap-am {
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 12px;
   font-size: 14.5px;
   color: var(--ck-muc-2);
 }
 
+.ck-xd-dem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 9px;
+  background: var(--ck-nga-1);
+  border: 1px solid var(--ck-ke);
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ck-muc);
+}
+
+.ck-xd-dem strong {
+  color: var(--ck-moc);
+}
+
+/* Thanh 4 ô tiêu chí nhỏ trên mỗi thẻ xông đất (Lệnh 45) */
+.ck-xd-thanh {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--ck-ke-dam);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.ck-xd-thanh-o {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 7px 4px;
+  text-align: center;
+  border-right: 1px solid var(--ck-ke-dam);
+  min-width: 0;
+}
+
+.ck-xd-thanh-o:last-child {
+  border-right: 0;
+}
+
+.ck-xd-thanh-o-tot {
+  background: var(--ck-moc-nhat);
+  border-bottom: 3px solid var(--ck-moc);
+  color: var(--ck-moc);
+}
+
+.ck-xd-thanh-o-binh {
+  background: var(--ck-nga-1);
+  border-bottom: 3px solid var(--ck-ke-dam);
+  color: var(--ck-muc);
+}
+
+.ck-xd-thanh-o-diu {
+  background: repeating-linear-gradient(-45deg,
+      #FBF4E4,
+      #FBF4E4 5px,
+      #F3E6C8 5px,
+      #F3E6C8 10px);
+  border-bottom: 3px dashed #B7791F;
+  color: #8A560F;
+}
+
+.ck-xd-thanh-ky {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  background: rgba(255, 253, 248, 0.9);
+}
+
+.ck-xd-thanh-ten {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ck-muc);
+  line-height: 1.2;
+}
+
+.ck-xd-thanh-muc {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 .ck-xd-chi-tiet {
-  margin-top: 4px;
-  padding-top: 10px;
+  margin-top: auto;
+  padding-top: 8px;
   border-top: 1px dotted var(--ck-ke-dam);
 }
 
 .ck-xd-chi-tiet summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   cursor: pointer;
   font-size: 14.5px;
   font-weight: 600;
@@ -379,7 +503,7 @@
 
 .ck-xd-tieu-chi {
   list-style: none;
-  margin: 10px 0 0;
+  margin: 8px 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -389,8 +513,26 @@
 .ck-xd-tieu-chi li {
   background: var(--ck-nga-1);
   border: 1px solid var(--ck-ke);
+  border-left: 3px solid var(--ck-ke-dam);
   padding: 8px 10px;
   font-size: 13.5px;
+}
+
+.ck-xd-tieu-chi li.ck-xd-tc-muc-tot {
+  background: var(--ck-moc-nhat);
+  border-color: #9CCBA4;
+  border-left-color: var(--ck-moc);
+}
+
+.ck-xd-tieu-chi li.ck-xd-tc-muc-diu {
+  background: #FBF4E4;
+  border-color: #D9B768;
+  border-left: 3px dashed #B7791F;
+}
+
+.ck-xt-tet-banner .ck-nut,
+.ck-o-con select {
+  min-height: 44px;
 }
 
 .ck-xd-tieu-chi-dau {
@@ -415,6 +557,7 @@
 }
 
 @media (max-width: 700px) {
+
   .ck-xt-mang,
   .ck-xt-form-2cot,
   .ck-xt-hai-nguoi,
@@ -422,18 +565,23 @@
   .ck-xd-ds {
     grid-template-columns: 1fr;
   }
+
   .ck-xt-tet-banner {
     padding: 14px 16px;
   }
+
   .ck-xt-thanh-tong-khung {
     padding: 12px 10px;
   }
+
   .ck-xt-thanh-o {
     padding: 10px 4px;
   }
+
   .ck-xt-thanh-ten {
     font-size: 11.5px;
   }
+
   .ck-xt-thanh-muc {
     font-size: 10.5px;
   }

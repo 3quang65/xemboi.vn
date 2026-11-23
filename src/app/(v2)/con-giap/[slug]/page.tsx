@@ -1,9 +1,24 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import type { ReactNode } from 'react';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
+import {
+  MauNetTraCuuSvg,
+  ThuatNgu,
+  TrichNguyenVan,
+  VongConGiap,
+  type KieuNetTraCuuKey,
+} from '@/components/ck/truc-quan';
 import { HuyHieuHanh, NguonNapAm } from '@/components/ck/TheCanChi';
+import {
+  GIAI_NGHIA_BAT_TU,
+  NGUON_BAT_TU,
+  TRICH_BAT_TU,
+  type MaTrichBatTu,
+} from '@/lib/trang/bat-tu-truc-quan';
+import { quanHeConGiap } from '@/lib/trang/tra-cuu-truc-quan';
 import {
   CHI_HAN,
   conGiapLanCan,
@@ -34,6 +49,46 @@ function macDinhConGiap(cg: ConGiap) {
     title: `Tuổi ${cg.chi} (${cg.ten}): năm sinh, mệnh, màu hợp, tuổi hợp`,
     h1: `Tuổi ${cg.chi}`,
   };
+}
+
+const TEN_NHOM_HINH = {
+  'vo-an': 'Hình vô ân',
+  'tri-the': 'Hình trì thế',
+  'vo-le': 'Hình vô lễ',
+} as const;
+
+function SachGhiDetails({ maDs }: { maDs: MaTrichBatTu[] }) {
+  if (maDs.length === 0) return null;
+  return (
+    <details className="ck-tq-sach">
+      <summary className="ck-tq-sach-nut">Sách ghi</summary>
+      {maDs.map((ma) => {
+        const trich = TRICH_BAT_TU[ma];
+        return (
+          <TrichNguyenVan
+            key={ma}
+            trich={trich}
+            nguon={NGUON_BAT_TU[trich.nguon]}
+          />
+        );
+      })}
+    </details>
+  );
+}
+
+function DanhSachChiLienKet({ ds }: { ds: string[] }) {
+  return (
+    <>
+      {ds.map((x, idx) => (
+        <span key={x}>
+          {idx > 0 ? ' – ' : ''}
+          <Link href={duongDanConGiap(x)}>
+            {x} ({tenConGiapTheoChi(x)})
+          </Link>
+        </span>
+      ))}
+    </>
+  );
 }
 
 export function generateStaticParams() {
@@ -84,6 +139,87 @@ export default async function ConGiapChiTietPage({
     noiDungTheoDuongDan(duongDan),
   ]);
   const { truoc, sau } = conGiapLanCan(cg.thuTu);
+  const qh = quanHeConGiap(cg.thuTu - 1);
+  const cacDongQuanHe: {
+    ma: string;
+    net: KieuNetTraCuuKey;
+    lopNhom: string;
+    ten: string;
+    idTn: string;
+    noiDung: ReactNode;
+    trich: MaTrichBatTu[];
+  }[] = [
+    {
+      ma: 'tam-hop',
+      net: 'tamHop',
+      lopNhom: 'hop',
+      ten: 'Tam hợp',
+      idTn: 'ck-cg-tn-tam-hop',
+      noiDung: (
+        <>
+          <DanhSachChiLienKet ds={qh.tamHop.chi} /> ({qh.tamHop.hanh} cục)
+        </>
+      ),
+      trich: qh.trich.tamHop,
+    },
+    {
+      ma: 'tam-hoi',
+      net: 'tamHop',
+      lopNhom: 'hop',
+      ten: 'Tam hội',
+      idTn: 'ck-cg-tn-tam-hoi',
+      noiDung: (
+        <>
+          <DanhSachChiLienKet ds={qh.tamHoi.chi} /> (cùng phương {qh.tamHoi.hanh})
+        </>
+      ),
+      trich: qh.trich.tamHoi,
+    },
+    {
+      ma: 'luc-hop',
+      net: 'lucHop',
+      lopNhom: 'hop',
+      ten: 'Lục hợp',
+      idTn: 'ck-cg-tn-luc-hop',
+      noiDung: <DanhSachChiLienKet ds={[qh.chi, qh.lucHop]} />,
+      trich: qh.trich.lucHop,
+    },
+    {
+      ma: 'xung',
+      net: 'xung',
+      lopNhom: 'xung',
+      ten: 'Lục xung',
+      idTn: 'ck-cg-tn-xung',
+      noiDung: <DanhSachChiLienKet ds={[qh.chi, qh.xung]} />,
+      trich: qh.trich.xung,
+    },
+    {
+      ma: 'hai',
+      net: 'hai',
+      lopNhom: 'hai',
+      ten: 'Lục hại',
+      idTn: 'ck-cg-tn-hai',
+      noiDung: <DanhSachChiLienKet ds={[qh.chi, qh.hai]} />,
+      trich: qh.trich.hai,
+    },
+    {
+      ma: 'hinh',
+      net: 'hinh',
+      lopNhom: 'hinh',
+      ten: qh.hinh ? 'Tương hình' : 'Tự hình',
+      idTn: 'ck-cg-tn-hinh',
+      noiDung: qh.hinh ? (
+        <>
+          {TEN_NHOM_HINH[qh.hinh.nhom]}: <DanhSachChiLienKet ds={qh.hinh.chi} />
+        </>
+      ) : (
+        <>
+          Tự hình {qh.chi} – {qh.chi} (nhóm 4 chi tự hình: Thìn, Ngọ, Dậu, Hợi)
+        </>
+      ),
+      trich: qh.trich.hinh,
+    },
+  ];
 
   return (
     <KhungTrang
@@ -93,7 +229,42 @@ export default async function ConGiapChiTietPage({
       tenCuoi={`Tuổi ${cg.chi}`}
       toi
     >
-      <section className="ck-tom-tat-menh" aria-label={`Đặc điểm địa chi ${cg.chi}`}>
+      <section className="ck-td-muc" aria-labelledby="ck-cg-qh-tieu">
+        <h2 id="ck-cg-qh-tieu" className="ck-td-tieu">
+          Vòng quan hệ địa chi của tuổi {cg.chi} ({cg.ten})
+        </h2>
+
+        <VongConGiap chiChon={cg.chi} />
+
+        <ul
+          className="ck-cg-qh-ds"
+          aria-label={`Danh sách quan hệ địa chi của tuổi ${cg.chi}`}
+        >
+          {cacDongQuanHe.map((dong) => (
+            <li key={dong.ma} className={`ck-cg-qh-dong ck-cg-qh-${dong.lopNhom}`}>
+              <div className="ck-cg-qh-dau">
+                <span className="ck-cg-qh-ten">
+                  <MauNetTraCuuSvg loai={dong.net} />
+                  <ThuatNgu
+                    ten={dong.ten}
+                    nghia={GIAI_NGHIA_BAT_TU[dong.ten] ?? ''}
+                    id={dong.idTn}
+                  />
+                </span>
+                <span className="ck-cg-qh-chi">{dong.noiDung}</span>
+              </div>
+              <SachGhiDetails maDs={dong.trich} />
+            </li>
+          ))}
+        </ul>
+
+        <p className="ck-cg-luu-y">
+          <em>Tam mệnh thông hội</em> ghi gặp xung hay hình có cát có hung, không vội luận là dữ
+          (xem nguyên văn trong mục Sách ghi ở Lục xung và Tương hình).
+        </p>
+      </section>
+
+      <section className="ck-td-muc ck-tom-tat-menh" aria-label={`Đặc điểm địa chi ${cg.chi}`}>
         <div className="ck-luoi-4">
           <div className="ck-the-du-lieu">
             <span className="ck-nhan-nho">Địa chi &amp; chữ Hán</span>

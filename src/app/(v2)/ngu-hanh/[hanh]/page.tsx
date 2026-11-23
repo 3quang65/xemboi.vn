@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
+import { VongNguHanh } from '@/components/ck/truc-quan';
 import { DanhSachMau, HuyHieuHanh, NguonNapAm } from '@/components/ck/TheCanChi';
 import {
   HANH_HAN,
@@ -85,45 +86,48 @@ export default async function NguHanhChiTietPage({
       toi
     >
       <section className="ck-tom-tat-menh" aria-label={`Quan hệ sinh khắc hành ${hanhVal}`}>
-        <div className="ck-luoi-4">
-          <div className="ck-the-du-lieu">
-            <span className="ck-nhan-nho">Sinh ra</span>
-            <div className="ck-gia-lon">
-              <HuyHieuHanh hanh={qh.sinhRa} lienKet />
+        <div className="ck-nh-chi-tiet-dau">
+          <VongNguHanh chon={hanhVal} />
+          <div className="ck-luoi-2">
+            <div className="ck-the-du-lieu">
+              <span className="ck-nhan-nho">Sinh ra</span>
+              <div className="ck-gia-lon">
+                <HuyHieuHanh hanh={qh.sinhRa} lienKet />
+              </div>
+              <p>
+                {hanhVal} ({HANH_HAN[hanhVal]}) sinh {qh.sinhRa}
+              </p>
             </div>
-            <p>
-              {hanhVal} ({HANH_HAN[hanhVal]}) sinh {qh.sinhRa}
-            </p>
-          </div>
 
-          <div className="ck-the-du-lieu">
-            <span className="ck-nhan-nho">Được sinh bởi</span>
-            <div className="ck-gia-lon">
-              <HuyHieuHanh hanh={qh.duocSinhBoi} lienKet />
+            <div className="ck-the-du-lieu">
+              <span className="ck-nhan-nho">Được sinh bởi</span>
+              <div className="ck-gia-lon">
+                <HuyHieuHanh hanh={qh.duocSinhBoi} lienKet />
+              </div>
+              <p>
+                {qh.duocSinhBoi} sinh {hanhVal}
+              </p>
             </div>
-            <p>
-              {qh.duocSinhBoi} sinh {hanhVal}
-            </p>
-          </div>
 
-          <div className="ck-the-du-lieu">
-            <span className="ck-nhan-nho">Khắc</span>
-            <div className="ck-gia-lon">
-              <HuyHieuHanh hanh={qh.khac} lienKet />
+            <div className="ck-the-du-lieu">
+              <span className="ck-nhan-nho">Khắc</span>
+              <div className="ck-gia-lon">
+                <HuyHieuHanh hanh={qh.khac} lienKet />
+              </div>
+              <p>
+                {hanhVal} chế khắc {qh.khac}
+              </p>
             </div>
-            <p>
-              {hanhVal} chế khắc {qh.khac}
-            </p>
-          </div>
 
-          <div className="ck-the-du-lieu">
-            <span className="ck-nhan-nho">Bị khắc bởi</span>
-            <div className="ck-gia-lon">
-              <HuyHieuHanh hanh={qh.biKhacBoi} lienKet />
+            <div className="ck-the-du-lieu">
+              <span className="ck-nhan-nho">Bị khắc bởi</span>
+              <div className="ck-gia-lon">
+                <HuyHieuHanh hanh={qh.biKhacBoi} lienKet />
+              </div>
+              <p>
+                {qh.biKhacBoi} khắc {hanhVal}
+              </p>
             </div>
-            <p>
-              {qh.biKhacBoi} khắc {hanhVal}
-            </p>
           </div>
         </div>
       </section>

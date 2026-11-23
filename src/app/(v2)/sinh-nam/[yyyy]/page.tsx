@@ -3,13 +3,14 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
+import { DocNhanh, ThuatNgu, VongConGiap, VongNguHanh } from '@/components/ck/truc-quan';
 import { DanhSachMau, HuyHieuHanh, NguonNapAm } from '@/components/ck/TheCanChi';
 import {
-  HANH_SLUG,
   duongDanConGiap,
   duongDanHanh,
 } from '@/components/ck/canChiHelpers';
 import { dinhDangNgayVN } from '@/components/ck/lichHelpers';
+import { GIAI_NGHIA_BAT_TU } from '@/lib/trang/bat-tu-truc-quan';
 import {
   NAM_SINH_DEN,
   NAM_SINH_TU,
@@ -18,10 +19,11 @@ import {
   type ThongTinNamSinh,
 } from '@/lib/trang/can-chi';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
-import { ngayHienTaiVN } from '@/lib/trang/lich';
+import { homNay } from '@/lib/trang/lich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
 import { cungTheoTen } from '@/lib/trang/phong-thuy';
+import { docNhanhNamSinh } from '@/lib/trang/tra-cuu-truc-quan';
 import { canChiNam } from '@/lib/tuvi-v2/am-lich';
 
 export const revalidate = 3600;
@@ -95,8 +97,9 @@ export default async function SinhNamChiTietPage({
   const coLinkCungPhi = daDung.has('/phong-thuy/cung-phi');
   const cungNam = coLinkCungPhi ? cungTheoTen(ttNam.cungPhiNam.ten) : undefined;
   const cungNu = coLinkCungPhi ? cungTheoTen(ttNam.cungPhiNu.ten) : undefined;
-  const namHienTai = ngayHienTaiVN().nam;
+  const namHienTai = homNay().am.nam;
   const cacNamXemTuoi = [namHienTai, namHienTai + 1, namHienTai + 2];
+  const dn = docNhanhNamSinh(nam, namHienTai);
 
   const tuNgayVN = dinhDangNgayVN(ttNam.tuNgay);
   const denNgayVN = dinhDangNgayVN(ttNam.denNgay);
@@ -110,7 +113,39 @@ export default async function SinhNamChiTietPage({
       tenCuoi={`Năm ${nam}`}
       toi
     >
-      <section className="ck-tom-tat-menh" aria-label={`Tóm tắt tuổi ${ttNam.canChi} ${nam}`}>
+      <DocNhanh
+        cau={dn.cau}
+        the={dn.the}
+        tieuDeId="ck-sn-dn-tieu"
+        hienNhan={(muc) =>
+          muc.ma === 'nap-am' ? (
+            <ThuatNgu
+              ten="Nạp âm"
+              nghia={GIAI_NGHIA_BAT_TU['Nạp âm']}
+              id="ck-sn-tn-nap-am"
+            />
+          ) : (
+            muc.nhan
+          )
+        }
+      />
+
+      <section className="ck-td-muc ck-sn-hai-hinh" aria-label="Vòng con giáp và vòng ngũ hành">
+        <div className="ck-sn-hinh-hop">
+          <h2 className="ck-sn-hinh-tieu">
+            Quan hệ tuổi {ttNam.chi} ({ttNam.conGiap})
+          </h2>
+          <VongConGiap chiChon={ttNam.chi} nho idPrefix="ck-sn-vcg" />
+        </div>
+        <div className="ck-sn-hinh-hop">
+          <h2 className="ck-sn-hinh-tieu">
+            Ngũ hành nạp âm {ttNam.napAm} ({ttNam.hanh})
+          </h2>
+          <VongNguHanh chon={ttNam.hanh} idPrefix="ck-sn-vnh" />
+        </div>
+      </section>
+
+      <section className="ck-td-muc ck-tom-tat-menh" aria-label={`Tóm tắt tuổi ${ttNam.canChi} ${nam}`}>
         <div className="ck-luoi-4">
           <div className="ck-the-du-lieu">
             <span className="ck-nhan-nho">Tuổi Can Chi</span>

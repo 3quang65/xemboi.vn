@@ -22,3 +22,11 @@ export {
   type TrichNguyenVanItem,
   type TrichNguyenVanProps,
 } from './TrichNguyenVan';
+export {
+  KIEU_NET_TRA_CUU,
+  MauNetTraCuuSvg,
+  VongConGiap,
+  type KieuNetTraCuuKey,
+  type VongConGiapProps,
+} from './VongConGiap';
+export { VongNguHanh, type VongNguHanhProps } from './VongNguHanh';

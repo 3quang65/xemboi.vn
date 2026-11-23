@@ -1050,9 +1050,100 @@ a.ck-tq-nc-the:hover {
 
   .ck-tq-tn-hop,
   .ck-tq-sach-nut,
-  .ck-tq-nc-the {
+  .ck-tq-nc-the,
+  .ck-tq-vnh-nut circle,
+  .ck-tq-vcg-o path {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* ---------- VÒNG NGŨ HÀNH & VÒNG CON GIÁP (LỆNH 45) ---------- */
+.ck-tq-vnh-khung,
+.ck-tq-vcg-khung {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-radius: 2px;
+  padding: 16px 14px;
+  text-align: center;
+}
+
+.ck-tq-vnh-svg {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.ck-tq-vcg-svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.ck-tq-vcg-svg-nho {
+  max-width: 360px;
+}
+
+.ck-tq-vnh-nut,
+.ck-tq-vcg-o {
+  cursor: pointer;
+}
+
+.ck-tq-vnh-nut circle,
+.ck-tq-vcg-o path {
+  transition: filter 0.15s, stroke-width 0.15s;
+}
+
+.ck-tq-vnh-nut:hover circle,
+.ck-tq-vcg-o:hover path {
+  filter: brightness(0.96);
+}
+
+.ck-tq-vnh-cg,
+.ck-tq-vcg-cg {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+  font-size: 13.5px;
+  color: var(--ck-muc-2);
+}
+
+.ck-tq-vnh-cg li,
+.ck-tq-vcg-cg li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.ck-tq-vcg-mau-net {
+  display: inline-block;
+  flex: none;
+}
+
+.ck-tq-vcg-hanh-cg {
+  justify-content: center;
+  margin-top: 12px;
+}
+
+@media (max-width: 520px) {
+  .ck-tq-vnh-khung,
+  .ck-tq-vcg-khung {
+    padding: 10px 6px;
+  }
+
+  .ck-tq-vcg-ten-con {
+    display: none;
+  }
+
+  .ck-tq-vcg-chi {
+    transform: translateY(7px);
   }
 }
 

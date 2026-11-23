@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
-import SoDoNguHanh from '@/components/ck/SoDoNguHanh';
+import { ChuGiaiHanh, VongNguHanh } from '@/components/ck/truc-quan';
 import { DanhSachMau, HuyHieuHanh, NguonNapAm } from '@/components/ck/TheCanChi';
 import { HANH_HAN, duongDanHanh } from '@/components/ck/canChiHelpers';
 import { NGU_HANH, mauHopMenh, quanHeHanh } from '@/lib/trang/can-chi';
@@ -34,7 +34,8 @@ export default async function NguHanhPage() {
         <h2 id="ck-nh-so-do" className="ck-td-tieu">
           Vòng tròn tương sinh và tương khắc
         </h2>
-        <SoDoNguHanh />
+        <VongNguHanh />
+        <ChuGiaiHanh className="ck-td-cg-giua" />
       </section>
 
       <section className="ck-td-muc" aria-labelledby="ck-nh-bang-5">

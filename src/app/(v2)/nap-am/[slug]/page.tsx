@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
+import { VongNguHanh } from '@/components/ck/truc-quan';
 import { DanhSachMau, HuyHieuHanh, NguonNapAm } from '@/components/ck/TheCanChi';
 import {
   NAP_AM_HAN,
@@ -123,6 +124,13 @@ export default async function NapAmChiTietPage({
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="ck-td-muc" aria-labelledby="ck-na-vong-hanh">
+        <h2 id="ck-na-vong-hanh" className="ck-td-tieu">
+          Vòng ngũ hành của {na.ten} (hành {na.hanh})
+        </h2>
+        <VongNguHanh chon={na.hanh} />
       </section>
 
       <section className="ck-td-muc" aria-labelledby="ck-na-nam-sinh">
