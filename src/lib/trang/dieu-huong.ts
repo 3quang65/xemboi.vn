@@ -5,7 +5,7 @@
 export type MucMenu = { ten: string; href: string; moTa?: string; con?: MucMenu[]; them?: boolean };
 
 /** Đợt đã dựng xong. Tăng dần khi nghiệm thu từng đợt (F1 → F5). */
-export const DOT_DA_DUNG = 6;
+export const DOT_DA_DUNG = 7;
 
 const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
   {
