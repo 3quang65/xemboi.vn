@@ -1,0 +1,222 @@
+/* CSS riêng cụm 10 thiên thể Chiêm tinh (Lệnh 50) — tiền tố ck-ht-, <= 30 KB, dùng biến trên .ck */
+
+.ck a.ck-nut-son,
+.ck button.ck-nut-son {
+  color: #FBF1DA;
+}
+
+.ck-ht-nut {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+}
+
+.ck-ht-chip-ds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ck-ht-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 14px;
+  background: var(--ck-nga-1);
+  border: 1px solid var(--ck-ke-dam);
+  border-radius: 2px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ck-muc);
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+a.ck-ht-chip:hover {
+  border-color: var(--ck-son);
+  color: var(--ck-son);
+  background: #FFF6E0;
+}
+
+.ck-ht-hub-hop {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-top: 3px solid var(--ck-son);
+  padding: 18px 20px;
+}
+
+.ck-ht-hub-ghi {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ck-muc-2);
+}
+
+/* Khối Hôm nay ở đâu */
+.ck-ht-hom-nay {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-top: 3px solid var(--ck-son);
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ck-ht-hom-nay-trai {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.ck-ht-hom-nay-dau {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ck-ht-hom-nay-cau {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ck-muc);
+}
+
+.ck-ht-hom-nay-cau a {
+  font-weight: 700;
+}
+
+.ck-ht-hom-nay-phu {
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ck-muc-2);
+}
+
+.ck-ht-vong {
+  flex: none;
+  width: 280px;
+  max-width: 100%;
+}
+
+.ck-ht-vong .ck-ct-vong-nho {
+  max-width: 280px;
+  padding: 8px;
+}
+
+.ck-ht-vong .ck-ct-vong-svg-nho {
+  width: 100%;
+  max-width: 264px;
+  height: auto;
+  display: block;
+}
+
+.ck-ht-vong .ck-ct-vong-ky-nho {
+  font-size: 38px;
+}
+
+.ck-ht-vong .ck-ct-vong-ky-chon {
+  font-size: 40px;
+}
+
+.ck-ht-vong .ck-ct-vong-tam-ky-nho {
+  font-size: 56px;
+}
+
+.ck-ht-vong .ck-ct-vong-tam-ten-nho {
+  font-size: 30px;
+}
+
+.ck-ht-vong .ck-ct-vong-tam-do-nho {
+  font-size: 28px;
+}
+
+/* 3 thẻ Cung trong sách: Nhà, Vượng, Hãm */
+.ck-ht-cung-luoi {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ck-ht-the {
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-top: 3px solid var(--ck-son);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ck-ht-the h3 {
+  margin: 0;
+  font: 700 20px/1.25 var(--ck-f-tieu);
+  color: var(--ck-son);
+}
+
+.ck-ht-khong-ghi {
+  margin: 0;
+  padding: 10px 12px;
+  background: var(--ck-nga-1);
+  border: 1px dashed var(--ck-ke-dam);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ck-muc-2);
+}
+
+/* Danh sách đoạn trích Tetrabiblos trong Sách ghi */
+.ck-ht-trich-ds {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ck-ht-trich-ds .ck-ct-trich {
+  margin-top: 0;
+}
+
+@media (max-width: 960px) {
+  .ck-ht-cung-luoi {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .ck-ht-hom-nay {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+  }
+
+  .ck-ht-hom-nay-dau {
+    align-items: flex-start;
+  }
+
+  .ck-ht-vong {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .ck-ht-vong .ck-ct-vong-nho {
+    max-width: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ck-ht-chip,
+  .ck-ht-nut,
+  .ck-ht-vong * {
+    transition: none;
+    animation: none;
+  }
+}

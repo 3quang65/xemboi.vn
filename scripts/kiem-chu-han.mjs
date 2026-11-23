@@ -20,6 +20,7 @@ const THEM = [
   '/lich-am/ngay-le', '/lich-am/ngay-le?nam=2027', '/lich-am/ngay-le/trung-thu', '/lich-am/ngay-le/giao-thua',
   '/xem-tuoi/con-giap', '/xem-tuoi/dan-va-ti', '/xem-tuoi/thin-va-thin', '/tu-vi/tu-hoa', '/tu-vi/tu-hoa?nam=1990',
   '/bat-tu/thap-than/that-sat', '/bat-tu/thap-than/thien-an', '/can-chi/thien-can/giap', '/can-chi/thien-can/canh',
+  '/chiem-tinh/hanh-tinh/sao-tho', '/chiem-tinh/hanh-tinh/mat-troi', '/chiem-tinh/hanh-tinh/sao-diem-vuong',
 ];
 const HAN = /[㐀-䶿一-鿿豈-﫿　-〿]/g;
 const mau = (p) => p.split('?')[0].replace(/\/[^/]+$/, '/*');

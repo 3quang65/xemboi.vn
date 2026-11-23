@@ -10,6 +10,7 @@ import {
   nhaCuaHanhTinh,
   trichLoai,
 } from '@/lib/trang/chiem-tinh';
+import { HANH_TINH_CHI_TIET } from '@/lib/trang/hanh-tinh';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { ngayHienTaiVN } from '@/lib/trang/lich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
@@ -18,6 +19,7 @@ import {
   BAY_HANH_TINH,
   MAC_DINH_HUB,
   THU_TU_LOAI,
+  kyHieuChu,
   nhanHanhTinh,
   nhanLoai,
   serializeJsonLd,
@@ -29,6 +31,7 @@ import {
   TrichTetrabiblos,
   Vong12CungSvg,
 } from './ChiemTinhUi';
+import './hanh-tinh.css';
 
 export const revalidate = 3600;
 
@@ -140,6 +143,28 @@ export default async function ChiemTinhHubPage() {
             </div>
           </div>
         ) : null}
+      </section>
+
+      {/* 1b. 10 thiên thể trong chiêm tinh */}
+      <section className="ck-td-muc" aria-labelledby="ck-ct-hub-thien-the-tieu">
+        <h2 id="ck-ct-hub-thien-the-tieu" className="ck-td-tieu">
+          10 thiên thể trong chiêm tinh
+        </h2>
+        <div className="ck-ht-hub-hop">
+          <p className="ck-ht-hub-ghi">
+            7 thiên thể cổ theo Tetrabiblos (tính chất, cát hung, nhà, vượng, hãm) và 3 hành tinh ngoài phát hiện thời cận đại.
+          </p>
+          <div className="ck-ht-chip-ds">
+            {HANH_TINH_CHI_TIET.map((ht) => (
+              <Link key={ht.slug} href={ht.duongDan} className="ck-ht-chip">
+                <span className="ck-ct-ky" aria-hidden="true">
+                  {kyHieuChu(ht.kyHieu)}
+                </span>
+                <span>{ht.ten}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* 2. Vòng 12 cung (SVG) */}
