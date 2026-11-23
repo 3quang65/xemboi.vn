@@ -5,8 +5,11 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { HoaVanGoc4, HoaVanMay } from '@/components/r1/HoaVanE3';
 import LaSo12Cung from '@/components/r1/LaSo12Cung';
+import { DocNhanh } from '@/components/ck/truc-quan/DocNhanh';
+import { ThuatNgu } from '@/components/ck/truc-quan/ThuatNgu';
 import { slugViet } from '@/lib/trang/can-chi';
 import type { KetQuaLaSo, PhanHoiLaSo } from '@/lib/trang/la-so';
+import { docNhanhTuVi, tamPhuongTuChinh } from '@/lib/trang/truc-quan-43';
 import { CANH_GIO_OPTIONS, gioSangCanhGioValue } from './BieuTuongE3';
 
 export interface FormLaSoProps {
@@ -71,6 +74,7 @@ export default function FormLaSo({ namXemMacDinh, tronDoi = false }: FormLaSoPro
   const [dangTai, setDangTai] = useState(false);
   const [loi, setLoi] = useState('');
   const [ketQua, setKetQua] = useState<KetQuaLaSo | null>(null);
+  const [chiChon, setChiChon] = useState<number | null>(null);
 
   const formRef = useRef<HTMLFormElement | null>(null);
   const ketQuaRef = useRef<HTMLElement | null>(null);
@@ -124,6 +128,7 @@ export default function FormLaSo({ namXemMacDinh, tronDoi = false }: FormLaSoPro
         }
 
         setKetQua(data.ketQua);
+        setChiChon(null);
         setTimeout(() => {
           ketQuaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 60);
@@ -207,6 +212,7 @@ export default function FormLaSo({ namXemMacDinh, tronDoi = false }: FormLaSoPro
 
   function handleLapLaSoKhac() {
     setKetQua(null);
+    setChiChon(null);
     setLoi('');
     formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     setTimeout(() => dauFormRef.current?.focus(), 120);
@@ -223,6 +229,25 @@ export default function FormLaSo({ namXemMacDinh, tronDoi = false }: FormLaSoPro
       return ketQua.laSo.cung.find((c) => c.chi === chi);
     }).filter((c): c is NonNullable<typeof c> => Boolean(c));
   }, [ketQua]);
+
+  const menhChi = cungMenh?.chi ?? 2;
+  const chiDangChon = chiChon ?? menhChi;
+  const tamPhuongChon = useMemo(() => tamPhuongTuChinh(chiDangChon), [chiDangChon]);
+  const docNhanh = useMemo(() => (ketQua ? docNhanhTuVi(ketQua) : null), [ketQua]);
+  const bonCungTamPhuong = useMemo(() => {
+    if (!ketQua) return [];
+    const vaiTro = ['Bản cung', 'Tam hợp', 'Xung chiếu', 'Tam hợp'] as const;
+    return tamPhuongChon.tatCa
+      .map((chi, idx) => {
+        const cung = ketQua.laSo.cung.find((item) => item.chi === chi);
+        return cung ? { cung, vaiTro: vaiTro[idx] } : null;
+      })
+      .filter(
+        (x): x is { cung: NonNullable<typeof ketQua>['laSo']['cung'][number]; vaiTro: (typeof vaiTro)[number] } =>
+          Boolean(x),
+      );
+  }, [ketQua, tamPhuongChon]);
+  const cungDangChon = bonCungTamPhuong[0]?.cung ?? cungMenh;
 
   return (
     <>
@@ -459,6 +484,128 @@ export default function FormLaSo({ namXemMacDinh, tronDoi = false }: FormLaSoPro
             </div>
           </div>
 
+          {docNhanh && (
+            <div className="ck-tv-dn-boc">
+              <DocNhanh
+                cau={docNhanh.cau}
+                the={docNhanh.the}
+                tieuDeId="ck-tv-dn-tieu"
+                hienNhan={(muc) => {
+                  if (muc.ma === 'tam-phuong') {
+                    return (
+                      <>
+                        <ThuatNgu
+                          ten="Tam phương tứ chính"
+                          nghia="Gồm bản cung, hai cung tam hợp (cách ±4 chi) và cung xung chiếu (cách 6 chi)."
+                          id="ck-tv-tn-tp"
+                        />{' '}
+                        của Mệnh
+                      </>
+                    );
+                  }
+                  if (muc.ma === 'dai-van') {
+                    return (
+                      <>
+                        <ThuatNgu
+                          ten="Đại vận"
+                          nghia="Mỗi đại vận kéo dài 10 năm tuổi mụ, đi lần lượt qua 12 cung từ cung Mệnh."
+                          id="ck-tv-tn-dv"
+                        />{' '}
+                        đang chạy
+                      </>
+                    );
+                  }
+                  return muc.nhan;
+                }}
+              />
+            </div>
+          )}
+
+          <LaSo12Cung
+            laSo={ketQua.laSo}
+            luuNien2027={ketQua.luuNien}
+            moTaQuyUoc={ketQua.moTaQuyUoc}
+            highlightedChis={tamPhuongChon.tatCa}
+          />
+
+          {danhSach12Cung.length > 0 && (
+            <section className="ck-tv-tp-muc" aria-labelledby="ck-tv-tp-tieu">
+              <div className="ck-tv-tp-dau">
+                <h3 id="ck-tv-tp-tieu" className="ck-tv-tp-tieu">
+                  Xem tam phương tứ chính từng cung
+                </h3>
+                <span className="ck-tv-tp-chu-thich">
+                  Chọn cung để soi bản cung, hai cung tam hợp và cung xung chiếu trên lá số.
+                </span>
+              </div>
+
+              <div
+                className="ck-tv-tp-chip-ds"
+                role="group"
+                aria-label="Chọn cung xem tam phương tứ chính"
+              >
+                {danhSach12Cung.map((c) => {
+                  const dangChon = c.chi === chiDangChon;
+                  const trongNhom = !dangChon && tamPhuongChon.tatCa.includes(c.chi);
+                  const cls = [
+                    'ck-tv-tp-chip',
+                    dangChon ? 'ck-tv-tp-chip-chon' : '',
+                    trongNhom ? 'ck-tv-tp-chip-nhom' : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ');
+                  return (
+                    <button
+                      key={c.chi}
+                      type="button"
+                      className={cls}
+                      aria-pressed={dangChon}
+                      onClick={() => setChiChon(c.chi)}
+                    >
+                      {c.ten} · {c.tenChi}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {cungDangChon && bonCungTamPhuong.length > 0 && (
+                <>
+                  <p className="ck-tv-tp-dong">
+                    Tam phương tứ chính của <strong>{cungDangChon.ten}</strong>:{' '}
+                    {bonCungTamPhuong.map(({ cung }) => `${cung.ten} (${cung.tenChi})`).join(', ')}
+                  </p>
+                  <div className="ck-tv-tp-luoi">
+                    {bonCungTamPhuong.map(({ cung, vaiTro }) => (
+                      <article
+                        key={cung.chi}
+                        className={`ck-tv-tp-the${vaiTro === 'Bản cung' ? ' ck-tv-tp-the-ban' : ''}`}
+                      >
+                        <span className="ck-tv-tp-vai-tro">{vaiTro}</span>
+                        <div className="ck-tv-tp-ten">
+                          <Link href={`/tu-vi/cung/${slugViet(cung.ten)}`}>{cung.ten}</Link>{' '}
+                          <span>
+                            ({cung.can} {cung.tenChi})
+                          </span>
+                        </div>
+                        <p className="ck-tv-tp-sao">
+                          {cung.chinhTinh.length > 0
+                            ? cung.chinhTinh.map((s, idx) => (
+                                <React.Fragment key={s.key}>
+                                  {idx > 0 ? ', ' : ''}
+                                  <Link href={`/tu-vi/sao/${slugViet(s.ten)}`}>{s.ten}</Link>
+                                  {s.dacTinhTen ? ` (${s.dacTinhTen})` : ''}
+                                </React.Fragment>
+                              ))
+                            : 'Vô chính diệu'}
+                        </p>
+                      </article>
+                    ))}
+                  </div>
+                </>
+              )}
+            </section>
+          )}
+
           {dongTomTat.length > 0 && (
             <div className="ck-tom-tat">
               <ul className="ck-tom-tat-luoi">
@@ -541,12 +688,6 @@ export default function FormLaSo({ namXemMacDinh, tronDoi = false }: FormLaSoPro
               </ul>
             </div>
           )}
-
-          <LaSo12Cung
-            laSo={ketQua.laSo}
-            luuNien2027={ketQua.luuNien}
-            moTaQuyUoc={ketQua.moTaQuyUoc}
-          />
 
           {tronDoi && ketQua.daiVan.length > 0 && (
             <>

@@ -1,5 +1,6 @@
-import type { BanDoSao, ViTriThienThe } from '@/lib/trang/ban-do-sao';
+import { vietViTri, type BanDoSao, type ViTriThienThe } from '@/lib/trang/ban-do-sao';
 import { CUNG_HOANG_DAO } from '@/lib/trang/chiem-tinh';
+import { gianNhan } from '@/lib/trang/truc-quan-43';
 import { kyHieuChu } from '../ChiemTinhHelpers';
 
 const CX = 270;
@@ -8,13 +9,12 @@ const CY = 270;
 const R_CUNG_OUT = 224;
 const R_CUNG_IN = 186;
 const R_CUNG_MID = 205;
+const R_CHAM = 178;
+const R_KY_HIEU = 150;
+const R_NGHICH = 126;
 const R_NHA_OUT = 72;
 const R_TAM = 42;
 const R_NHA_MID = 57;
-
-// 4 tầng bán kính từ ngoài vào trong để các thiên thể sát độ không chồng chữ.
-const TANG_R = [165, 138, 111, 86] as const;
-const NGUONG_DO = [11.5, 13.5, 16.5, 20.5] as const;
 
 const rad = (deg: number) => (deg * Math.PI) / 180;
 
@@ -37,44 +37,12 @@ function pathQuat(a1: number, a2: number, rOut: number, rIn: number): string {
   return `M ${ox1} ${oy1} A ${rOut} ${rOut} 0 0 0 ${ox2} ${oy2} L ${ix2} ${iy2} A ${rIn} ${rIn} 0 0 1 ${ix1} ${iy1} Z`;
 }
 
-type ThienTheDat = ViTriThienThe & {
-  rDat: number;
+type ThienTheVe = {
+  tt: ViTriThienThe;
+  gocThat: number;
+  gocNhan: number;
+  lechQua1: boolean;
 };
-
-function xepTangThienThe(ds: ViTriThienThe[]): ThienTheDat[] {
-  const sap = [...ds].sort((a, b) => a.kinhDo - b.kinhDo);
-  const daDatTheoTang: number[][] = TANG_R.map(() => []);
-
-  return sap.map((tt) => {
-    let tangChon = -1;
-    for (let t = 0; t < TANG_R.length; t++) {
-      const cachDu = daDatTheoTang[t].every(
-        (k) => khoangGoc(tt.kinhDo, k) >= NGUONG_DO[t],
-      );
-      if (cachDu) {
-        tangChon = t;
-        break;
-      }
-    }
-
-    if (tangChon === -1) {
-      let maxMinDist = -1;
-      tangChon = 0;
-      for (let t = 0; t < TANG_R.length; t++) {
-        const minDist = Math.min(
-          ...daDatTheoTang[t].map((k) => khoangGoc(tt.kinhDo, k)),
-        );
-        if (minDist > maxMinDist) {
-          maxMinDist = minDist;
-          tangChon = t;
-        }
-      }
-    }
-
-    daDatTheoTang[tangChon].push(tt.kinhDo);
-    return { ...tt, rDat: TANG_R[tangChon] };
-  });
-}
 
 function taoMoTaSvg(banDo: BanDoSao, nhanThoiDiem: string): string {
   const mt = banDo.thienThe.find((x) => x.thienThe.ten === 'Mặt Trời');
@@ -102,9 +70,21 @@ export default function VongBanDoSaoSvg({
   const gocGoc = banDo.coGio && banDo.asc ? banDo.asc.kinhDo : 0;
   const gocSvg = (kinhDo: number) => 180 - (kinhDo - gocGoc);
 
-  const thienTheDat = xepTangThienThe(banDo.thienThe);
-  const moTaSvg = taoMoTaSvg(banDo, nhanThoiDiem);
+  const gocDaGian = gianNhan(
+    banDo.thienThe.map((t) => t.kinhDo),
+    9,
+  );
+  const dsVe: ThienTheVe[] = banDo.thienThe.map((tt, i) => {
+    const gocNhan = gocDaGian[i];
+    return {
+      tt,
+      gocThat: tt.kinhDo,
+      gocNhan,
+      lechQua1: khoangGoc(tt.kinhDo, gocNhan) > 1,
+    };
+  });
 
+  const moTaSvg = taoMoTaSvg(banDo, nhanThoiDiem);
   const thetaAsc = banDo.coGio && banDo.asc ? gocSvg(banDo.asc.kinhDo) : null;
   const thetaMc = banDo.coGio && banDo.mc ? gocSvg(banDo.mc.kinhDo) : null;
 
@@ -137,9 +117,7 @@ export default function VongBanDoSaoSvg({
               <path
                 d={pathQuat(a1, a2, R_CUNG_OUT, R_CUNG_IN)}
                 className={
-                  c.duong
-                    ? 'ck-ct-bds-svg-o-duong'
-                    : 'ck-ct-bds-svg-o-am'
+                  c.duong ? 'ck-ct-bds-svg-o-duong' : 'ck-ct-bds-svg-o-am'
                 }
               />
               <text
@@ -156,13 +134,20 @@ export default function VongBanDoSaoSvg({
           );
         })}
 
-        {/* Vòng viền ngoài mảnh */}
+        {/* Vòng viền ngoài mảnh và vòng mốc chấm thật bên trong */}
         <circle
           cx={CX}
           cy={CY}
           r={R_CUNG_OUT + 4}
           fill="none"
           className="ck-ct-bds-svg-vien-ngoai"
+        />
+        <circle
+          cx={CX}
+          cy={CY}
+          r={R_CHAM}
+          fill="none"
+          className="ck-ct-bds-svg-vong-cham"
         />
 
         {/* Khi có giờ sinh: chia 12 nhà trọn cung và đánh số nhà ở vòng trong */}
@@ -211,7 +196,7 @@ export default function VongBanDoSaoSvg({
           </g>
         ) : null}
 
-        {/* Vạch ASC và MC vẽ trước ký hiệu thiên thể để không đè lên chữ */}
+        {/* Vạch ASC và MC vẽ trước ký hiệu thiên thể */}
         {thetaAsc !== null ? (
           <g>
             {(() => {
@@ -288,18 +273,19 @@ export default function VongBanDoSaoSvg({
           </g>
         ) : null}
 
-        {/* Lớp 1: Toàn bộ vạch nối thiên thể vẽ trước để không cắt ngang đĩa/ký hiệu khác */}
-        {thienTheDat.map((tt) => {
-          const theta = gocSvg(tt.kinhDo);
-          const [ox, oy] = pt(R_CUNG_IN, theta);
-          const [tx, ty] = pt(tt.rDat, theta);
+        {/* Lớp 1: Vạch mảnh nối ký hiệu với chấm vị trí thật khi lệch quá 1° */}
+        {dsVe.map(({ tt, gocThat, gocNhan, lechQua1 }) => {
+          if (!lechQua1) return null;
+          const [dx, dy] = pt(R_CHAM, gocSvg(gocThat));
+          const [tx, ty] = pt(R_KY_HIEU, gocSvg(gocNhan));
           return (
             <line
               key={`line-${tt.thienThe.en}`}
-              x1={ox}
-              y1={oy}
+              x1={dx}
+              y1={dy}
               x2={tx}
               y2={ty}
+              data-lech="true"
               className={
                 tt.thienThe.coDien
                   ? 'ck-ct-bds-svg-noi-tt'
@@ -309,16 +295,38 @@ export default function VongBanDoSaoSvg({
           );
         })}
 
-        {/* Lớp 2: Đĩa nền + ký hiệu thiên thể + chữ R */}
-        {thienTheDat.map((tt) => {
-          const theta = gocSvg(tt.kinhDo);
-          const [tx, ty] = pt(tt.rDat, theta);
+        {/* Lớp 2: Chấm nhỏ ở vòng trong tại vị trí thật */}
+        {dsVe.map(({ tt, gocThat }) => {
+          const [dx, dy] = pt(R_CHAM, gocSvg(gocThat));
+          return (
+            <circle
+              key={`cham-${tt.thienThe.en}`}
+              cx={dx}
+              cy={dy}
+              r={2.8}
+              data-cham-that={tt.thienThe.en}
+              className={
+                tt.thienThe.coDien
+                  ? 'ck-ct-bds-svg-cham-tt'
+                  : 'ck-ct-bds-svg-cham-ngoai'
+              }
+            />
+          );
+        })}
+
+        {/* Lớp 3: Đĩa nền + ký hiệu thiên thể tại góc giãn nhãn + chữ R */}
+        {dsVe.map(({ tt, gocNhan }) => {
+          const thetaNhan = gocSvg(gocNhan);
+          const [tx, ty] = pt(R_KY_HIEU, thetaNhan);
+          const [rx, ry] = pt(R_NGHICH, thetaNhan);
           return (
             <g key={tt.thienThe.en}>
+              <title>{`${tt.thienThe.ten}: ${vietViTri(tt)}${tt.nghich ? ' (nghịch hành)' : ''}`}</title>
               <circle
                 cx={tx}
                 cy={ty}
-                r={11.5}
+                r={10.6}
+                data-tt-disc={tt.thienThe.en}
                 className="ck-ct-bds-svg-nen-tt"
               />
               <text
@@ -326,7 +334,7 @@ export default function VongBanDoSaoSvg({
                 y={ty}
                 textAnchor="middle"
                 dominantBaseline="central"
-                fontSize={24}
+                fontSize={19}
                 className={
                   tt.thienThe.coDien
                     ? 'ck-ct-bds-svg-tt'
@@ -337,11 +345,12 @@ export default function VongBanDoSaoSvg({
               </text>
               {tt.nghich ? (
                 <text
-                  x={tx + 12.5}
-                  y={ty - 7}
-                  textAnchor="start"
+                  x={rx}
+                  y={ry}
+                  textAnchor="middle"
                   dominantBaseline="central"
-                  fontSize={18.2}
+                  fontSize={12.5}
+                  data-tt-r={tt.thienThe.en}
                   className="ck-ct-bds-svg-r"
                 >
                   R
@@ -385,6 +394,7 @@ export default function VongBanDoSaoSvg({
         ) : (
           <span>0° Bạch Dương đặt ở bên trái (9 giờ)</span>
         )}
+        <span>Chấm vòng trong: vị trí thật (nối vạch khi nhãn giãn &gt; 1°)</span>
         <span>R: Nghịch hành</span>
         <span>Ký hiệu nhạt: 3 hành tinh ngoài Tetrabiblos</span>
       </div>

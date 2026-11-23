@@ -223,6 +223,8 @@ export default async function BanDoSaoPage({
     banDo?.coGio && banDo.asc && banDo.mc
       ? ((banDo.mc.cung.thu - banDo.asc.cung.thu + 12) % 12) + 1
       : null;
+  const matTroi = banDo?.thienThe.find((t) => t.thienThe.ten === 'Mặt Trời') ?? null;
+  const matTrang = banDo?.thienThe.find((t) => t.thienThe.ten === 'Mặt Trăng') ?? null;
 
   return (
     <KhungTrang
@@ -399,6 +401,114 @@ export default async function BanDoSaoPage({
                   </strong>
                 </p>
               ) : null}
+            </div>
+
+            {/* 2.1b. 4 thẻ mốc ở đầu kết quả */}
+            <div className="ck-ct-bds-moc-luoi" aria-label="Bốn mốc chính trên bản đồ sao">
+              {matTroi ? (
+                <article className="ck-ct-bds-moc-the">
+                  <span className="ck-ct-bds-moc-nhan">
+                    <span className="ck-ct-ky" aria-hidden="true">
+                      {kyHieuChu(matTroi.thienThe.kyHieu)}
+                    </span>{' '}
+                    Mặt Trời
+                  </span>
+                  <strong className="ck-ct-bds-moc-gia">
+                    <ViTriLienKet p={matTroi} />
+                  </strong>
+                  <span className="ck-ct-bds-moc-phu">
+                    {matTroi.nha !== null ? `Nhà ${matTroi.nha}` : 'Vị trí lúc 12:00'}
+                    {matTroi.phamVi ? ` · ${TEN_PHAM_VI[matTroi.phamVi].ten}` : ''}
+                  </span>
+                </article>
+              ) : null}
+
+              {matTrang ? (
+                <article className="ck-ct-bds-moc-the">
+                  <span className="ck-ct-bds-moc-nhan">
+                    <span className="ck-ct-ky" aria-hidden="true">
+                      {kyHieuChu(matTrang.thienThe.kyHieu)}
+                    </span>{' '}
+                    Mặt Trăng
+                  </span>
+                  {banDo.coGio ? (
+                    <>
+                      <strong className="ck-ct-bds-moc-gia">
+                        <ViTriLienKet p={matTrang} />
+                      </strong>
+                      <span className="ck-ct-bds-moc-phu">
+                        Nhà {matTrang.nha}
+                        {matTrang.phamVi ? ` · ${TEN_PHAM_VI[matTrang.phamVi].ten}` : ''}
+                      </span>
+                    </>
+                  ) : matTrang.trongNgay ? (
+                    <>
+                      <strong className="ck-ct-bds-moc-gia ck-ct-bds-moc-gia-dai">
+                        <ViTriLienKet p={matTrang.trongNgay.tu} /> –{' '}
+                        <ViTriLienKet p={matTrang.trongNgay.den} />
+                      </strong>
+                      <span className="ck-ct-bds-moc-phu">
+                        Khoảng trong ngày · lúc 12:00: {vietViTri(matTrang)}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <strong className="ck-ct-bds-moc-gia">
+                        <ViTriLienKet p={matTrang} />
+                      </strong>
+                      <span className="ck-ct-bds-moc-phu">Vị trí lúc 12:00</span>
+                    </>
+                  )}
+                </article>
+              ) : null}
+
+              <article
+                className={`ck-ct-bds-moc-the${banDo.coGio && banDo.asc ? '' : ' ck-ct-bds-moc-cho'}`}
+              >
+                <span className="ck-ct-bds-moc-nhan">Cung mọc (ASC)</span>
+                {banDo.coGio && banDo.asc ? (
+                  <>
+                    <strong className="ck-ct-bds-moc-gia">
+                      <ViTriLienKet p={banDo.asc} />
+                    </strong>
+                    <span className="ck-ct-bds-moc-phu">Nhà 1 · góc mọc phía Đông</span>
+                  </>
+                ) : (
+                  <>
+                    <strong className="ck-ct-bds-moc-gia ck-ct-bds-moc-cho-chu">
+                      Cần giờ sinh
+                    </strong>
+                    <span className="ck-ct-bds-moc-phu">
+                      Nhập giờ sinh để tính cung mọc.
+                    </span>
+                  </>
+                )}
+              </article>
+
+              <article
+                className={`ck-ct-bds-moc-the${banDo.coGio && banDo.mc ? '' : ' ck-ct-bds-moc-cho'}`}
+              >
+                <span className="ck-ct-bds-moc-nhan">Thiên đỉnh (MC)</span>
+                {banDo.coGio && banDo.mc ? (
+                  <>
+                    <strong className="ck-ct-bds-moc-gia">
+                      <ViTriLienKet p={banDo.mc} />
+                    </strong>
+                    <span className="ck-ct-bds-moc-phu">
+                      {nhaThienDinh ? `Nhà ${nhaThienDinh} · ` : ''}kinh tuyến trên
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <strong className="ck-ct-bds-moc-gia ck-ct-bds-moc-cho-chu">
+                      Cần giờ sinh
+                    </strong>
+                    <span className="ck-ct-bds-moc-phu">
+                      Nhập giờ sinh để tính thiên đỉnh.
+                    </span>
+                  </>
+                )}
+              </article>
             </div>
 
             {/* 2.2. Vòng bản đồ SVG */}

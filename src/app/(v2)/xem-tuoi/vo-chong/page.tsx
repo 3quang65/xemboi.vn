@@ -4,11 +4,13 @@ import { HoaVanGoc4, HoaVanMay } from '@/components/r1/HoaVanE3';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
 import { HuyHieuHanh } from '@/components/ck/TheCanChi';
+import { DocNhanh } from '@/components/ck/truc-quan';
 import { namSinhHopLe } from '@/lib/trang/can-chi';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
 import { cungTheoTen } from '@/lib/trang/phong-thuy';
+import { docNhanhXemTuoi } from '@/lib/trang/truc-quan-43';
 import {
   NAM_XEM_TUOI_DEN,
   NAM_XEM_TUOI_TU,
@@ -37,17 +39,25 @@ function kiemCoThamSo(sp: Record<string, string | string[] | undefined>): boolea
   );
 }
 
-const NHAN_MUC: Record<MucDanhGia, string> = {
-  tot: 'Tốt',
-  binh: 'Bình',
-  xau: 'Xấu',
+const TRANG_THAI_MUC: Record<
+  MucDanhGia,
+  { nhan: string; kyHieu: string; lop: 'tot' | 'binh' | 'diu' }
+> = {
+  tot: { nhan: 'Hợp', kyHieu: '✓', lop: 'tot' },
+  binh: { nhan: 'Bình thường', kyHieu: '–', lop: 'binh' },
+  xau: { nhan: 'Chưa hợp', kyHieu: '!', lop: 'diu' },
 };
 
-const LOP_MUC: Record<MucDanhGia, string> = {
-  tot: 'ck-muc-badge ck-muc-tot',
-  binh: 'ck-muc-badge ck-muc-binh',
-  xau: 'ck-muc-badge ck-muc-xau',
+const TEN_NGAN_TIEU_CHI: Record<string, string> = {
+  'nap-am': 'Mệnh',
+  can: 'Thiên can',
+  chi: 'Địa chi',
+  'cung-phi': 'Cung phi',
 };
+
+function lamDiuNhanHienThi(s: string): string {
+  return s.replace(/du niên xấu/gi, 'du niên chưa hợp').replace(/\bxấu\b/gi, 'chưa hợp');
+}
 
 const DS_NAM_LUA_CHON = Array.from(
   { length: NAM_XEM_TUOI_DEN - NAM_XEM_TUOI_TU + 1 },
@@ -127,6 +137,11 @@ export default async function XemTuoiVoChongPage({
       ? voChon
       : 1992;
 
+  const docNhanh = ketQua ? docNhanhXemTuoi(ketQua) : null;
+  const theDocNhanh = docNhanh
+    ? docNhanh.the.map((t) => ({ ...t, chiTiet: lamDiuNhanHienThi(t.chiTiet) }))
+    : [];
+
   return (
     <KhungTrang tieuDe={tt.h1} phu={tt.description} duongDan="/xem-tuoi/vo-chong" toi>
       <div className="ck-xt-form-khung">
@@ -178,11 +193,44 @@ export default async function XemTuoiVoChongPage({
         </form>
       </div>
 
-      {ketQua ? (
+      {ketQua && docNhanh ? (
         <section className="ck-td-muc" aria-labelledby="ck-vc-ket-qua">
           <h2 id="ck-vc-ket-qua" className="ck-td-tieu">
             Kết quả đối chiếu tuổi {ketQua.chong.nam} và {ketQua.vo.nam}
           </h2>
+
+          <DocNhanh
+            cau={docNhanh.cau}
+            the={theDocNhanh}
+            tieuDeId="ck-xt-dn-tieu"
+            luoiCot={4}
+          />
+
+          <div className="ck-xt-thanh-tong-khung" aria-label="Thanh tổng 4 tiêu chí">
+            <p className="ck-xt-thanh-tom-tat">
+              Thanh tổng 4 tiêu chí: <strong>{ketQua.dem.tot} hợp</strong> (✓),{' '}
+              <strong>{ketQua.dem.binh} bình thường</strong> (–),{' '}
+              <strong>{ketQua.dem.xau} chưa hợp</strong> (!).
+            </p>
+            <ol className="ck-xt-thanh-tong">
+              {ketQua.tieuChi.map((tc) => {
+                const ttMuc = TRANG_THAI_MUC[tc.muc];
+                const tenNgan = TEN_NGAN_TIEU_CHI[tc.ma] ?? tc.ten.split(':')[0];
+                return (
+                  <li
+                    key={tc.ma}
+                    className={`ck-xt-thanh-o ck-xt-thanh-o-${ttMuc.lop}`}
+                  >
+                    <span className="ck-xt-thanh-ky" aria-hidden="true">
+                      {ttMuc.kyHieu}
+                    </span>
+                    <span className="ck-xt-thanh-ten">{tenNgan}</span>
+                    <span className="ck-xt-thanh-muc">{ttMuc.nhan}</span>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
 
           <div className="ck-xt-hai-nguoi">
             {[
@@ -193,68 +241,59 @@ export default async function XemTuoiVoChongPage({
                 ? cungTheoTen(nguoi.cungPhi)
                 : undefined;
               return (
-              <article key={vaiTro} className="ck-the-du-lieu">
-                <span className="ck-nhan-nho">{vaiTro}</span>
-                <strong className="ck-gia-lon">
-                  {nguoi.nam} — {nguoi.canChi}
-                </strong>
-                <p>
-                  Nạp âm: <b>{nguoi.napAm}</b> (
-                  <HuyHieuHanh
-                    hanh={nguoi.hanh}
-                    lienKet={daDung.has('/ngu-hanh')}
-                  />
-                  )
-                </p>
-                <p>
-                  Cung phi (Bát trạch):{' '}
-                  {cungObj ? (
-                    <Link href={`/phong-thuy/cung-phi/${cungObj.slug}`}>
+                <article key={vaiTro} className="ck-the-du-lieu">
+                  <span className="ck-nhan-nho">{vaiTro}</span>
+                  <strong className="ck-gia-lon">
+                    {nguoi.nam} — {nguoi.canChi}
+                  </strong>
+                  <p>
+                    Nạp âm: <b>{nguoi.napAm}</b> (
+                    <HuyHieuHanh
+                      hanh={nguoi.hanh}
+                      lienKet={daDung.has('/ngu-hanh')}
+                    />
+                    )
+                  </p>
+                  <p>
+                    Cung phi (Bát trạch):{' '}
+                    {cungObj ? (
+                      <Link href={`/phong-thuy/cung-phi/${cungObj.slug}`}>
+                        <b>{nguoi.cungPhi}</b>
+                      </Link>
+                    ) : (
                       <b>{nguoi.cungPhi}</b>
+                    )}
+                  </p>
+                  {daDung.has('/sinh-nam') && namSinhHopLe(nguoi.nam) ? (
+                    <Link href={`/sinh-nam/${nguoi.nam}`} className="ck-xt-nguoi-link">
+                      Xem chi tiết sinh năm {nguoi.nam} →
                     </Link>
-                  ) : (
-                    <b>{nguoi.cungPhi}</b>
-                  )}
-                </p>
-                {daDung.has('/sinh-nam') && namSinhHopLe(nguoi.nam) ? (
-                  <Link href={`/sinh-nam/${nguoi.nam}`} className="ck-xt-nguoi-link">
-                    Xem chi tiết sinh năm {nguoi.nam} →
-                  </Link>
-                ) : null}
-              </article>
+                  ) : null}
+                </article>
               );
             })}
           </div>
 
-          <div className="ck-bang-khung">
-            <table className="ck-bang ck-bang-the">
-              <thead>
-                <tr>
-                  <th>Tiêu chí truyền thống</th>
-                  <th>Đánh giá</th>
-                  <th>Giải thích</th>
-                </tr>
-              </thead>
-              <tbody>
-                {ketQua.tieuChi.map((tc) => (
-                  <tr key={tc.ma}>
-                    <td data-nhan="Tiêu chí">
-                      <b>{tc.ten}</b>
-                    </td>
-                    <td data-nhan="Đánh giá">
-                      <span className={LOP_MUC[tc.muc]}>{NHAN_MUC[tc.muc]}</span>
-                    </td>
-                    <td data-nhan="Giải thích">{tc.giaiThich}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="ck-xt-tc-luoi">
+            {ketQua.tieuChi.map((tc) => {
+              const ttMuc = TRANG_THAI_MUC[tc.muc];
+              return (
+                <article
+                  key={tc.ma}
+                  className={`ck-xt-tc-the ck-xt-tc-the-${ttMuc.lop}`}
+                >
+                  <div className="ck-xt-tc-dau">
+                    <h3>{tc.ten}</h3>
+                    <span className={`ck-xt-tc-badge ck-xt-tc-badge-${ttMuc.lop}`}>
+                      <span aria-hidden="true">{ttMuc.kyHieu}</span> {ttMuc.nhan}
+                    </span>
+                  </div>
+                  <p>{lamDiuNhanHienThi(tc.giaiThich)}</p>
+                </article>
+              );
+            })}
           </div>
 
-          <div className="ck-xt-tong">
-            Theo 4 tiêu chí truyền thống: {ketQua.dem.tot} tốt, {ketQua.dem.binh} bình,{' '}
-            {ketQua.dem.xau} xấu.
-          </div>
           <p className="ck-xt-luu-y">
             Các sách và trường phái có thể khác nhau; kết quả để tham khảo.
           </p>

@@ -128,8 +128,130 @@ function pathCung(a1: number, a2: number): string {
   return `M ${ox1} ${oy1} A ${R_OUT} ${R_OUT} 0 0 0 ${ox2} ${oy2} L ${ix2} ${iy2} A ${R_IN} ${R_IN} 0 0 1 ${ix1} ${iy1} Z`;
 }
 
-/** Vòng 12 cung hoàng đạo SVG (Bạch Dương bắt đầu ở 9 giờ, ngược chiều kim đồng hồ) kèm 4 mốc phân/chí. */
-export function Vong12CungSvg({ namNay }: { namNay: number }) {
+/** Vòng 12 cung hoàng đạo SVG (Bạch Dương bắt đầu ở 9 giờ, ngược chiều kim đồng hồ) kèm 4 mốc phân/chí (hoặc bản nhỏ tô 1 cung). */
+export function Vong12CungSvg({
+  namNay,
+  cungChon,
+  nho = false,
+}: {
+  namNay: number;
+  cungChon?: string;
+  nho?: boolean;
+}) {
+  const cungActive = cungChon
+    ? CUNG_HOANG_DAO.find((c) => c.slug === cungChon)
+    : undefined;
+
+  if (nho) {
+    const rInNho = 148;
+    const rMidNho = 222;
+    const pathNho = (a1: number, a2: number) => {
+      const [ox1, oy1] = pt(R_OUT, a1);
+      const [ox2, oy2] = pt(R_OUT, a2);
+      const [ix2, iy2] = pt(rInNho, a2);
+      const [ix1, iy1] = pt(rInNho, a1);
+      return `M ${ox1} ${oy1} A ${R_OUT} ${R_OUT} 0 0 0 ${ox2} ${oy2} L ${ix2} ${iy2} A ${rInNho} ${rInNho} 0 0 1 ${ix1} ${iy1} Z`;
+    };
+
+    return (
+      <div className="ck-ct-vong-khung ck-ct-vong-nho">
+        <svg
+          className="ck-ct-vong-svg ck-ct-vong-svg-nho"
+          viewBox="0 0 600 600"
+          role="img"
+          aria-label={
+            cungActive
+              ? `Vòng 12 cung hoàng đạo, đang tô cung ${cungActive.ten} (${cungActive.tuDo}°–${cungActive.tuDo + 30}°)`
+              : 'Vòng 12 cung hoàng đạo'
+          }
+        >
+          <circle
+            cx={TAM_X}
+            cy={TAM_Y}
+            r={R_OUT + 5}
+            fill="none"
+            stroke="#C9A452"
+            strokeWidth="1.5"
+          />
+          {CUNG_HOANG_DAO.map((c) => {
+            const a1 = 180 - c.thu * 30;
+            const a2 = a1 - 30;
+            const mid = (a1 + a2) / 2;
+            const [cx, cy] = pt(rMidNho, mid);
+            const dangChon = c.slug === cungChon;
+            return (
+              <a
+                key={c.slug}
+                href={duongDanCung(c)}
+                className="ck-ct-vong-link"
+                aria-current={dangChon ? 'page' : undefined}
+                aria-label={`Cung ${c.ten} (${c.en}), từ ${c.tuDo}° đến ${c.tuDo + 30}°`}
+              >
+                <g className={dangChon ? 'ck-ct-vong-o ck-ct-vong-o-chon' : 'ck-ct-vong-o'}>
+                  <title>{`Cung ${c.ten} (${c.en})`}</title>
+                  <path
+                    d={pathNho(a1, a2)}
+                    fill={dangChon ? '#8E1B12' : c.duong ? '#FBF7EE' : '#F3E7CF'}
+                    stroke={dangChon ? '#5A0F0A' : '#B8913F'}
+                    strokeWidth={dangChon ? '2.6' : '1.4'}
+                  />
+                  <text
+                    x={cx}
+                    y={cy}
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    className={dangChon ? 'ck-ct-vong-ky ck-ct-vong-ky-chon' : 'ck-ct-vong-ky ck-ct-vong-ky-nho'}
+                  >
+                    {c.kyHieu}
+                  </text>
+                </g>
+              </a>
+            );
+          })}
+          <circle
+            cx={TAM_X}
+            cy={TAM_Y}
+            r="134"
+            fill="#FFFDF8"
+            stroke="#C9A452"
+            strokeWidth="1.5"
+          />
+          {cungActive ? (
+            <>
+              <text
+                x={TAM_X}
+                y={TAM_Y - 34}
+                textAnchor="middle"
+                dominantBaseline="central"
+                className="ck-ct-vong-tam-ky-nho"
+              >
+                {cungActive.kyHieu}
+              </text>
+              <text
+                x={TAM_X}
+                y={TAM_Y + 14}
+                textAnchor="middle"
+                dominantBaseline="central"
+                className="ck-ct-vong-tam-ten-nho"
+              >
+                {cungActive.ten}
+              </text>
+              <text
+                x={TAM_X}
+                y={TAM_Y + 48}
+                textAnchor="middle"
+                dominantBaseline="central"
+                className="ck-ct-vong-tam-do-nho"
+              >
+                {`${cungActive.tuDo}°–${cungActive.tuDo + 30}°`}
+              </text>
+            </>
+          ) : null}
+        </svg>
+      </div>
+    );
+  }
+
   const moc = mocVaoCung(namNay);
   const mocBonDiem = [
     {

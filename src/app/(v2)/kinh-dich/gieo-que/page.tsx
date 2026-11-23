@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import GieoQueClient from '@/components/ck/GieoQueClient';
-import HinhQue from '@/components/ck/HinhQue';
 import KhungTrang from '@/components/ck/KhungTrang';
+import { DocNhanh, ThuatNgu } from '@/components/ck/truc-quan';
 import {
   daDungKinhDich,
   duongDanQue,
@@ -14,10 +14,12 @@ import {
   queMaiHoaHienTai,
   type KetQuaGieo,
 } from '@/lib/trang/kinh-dich';
+import { docNhanhQue } from '@/lib/trang/truc-quan-43';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
 import { khacBanTheoViTri } from '../KinhDichHelpers';
 import { DongVanHan, GhiCongChuDich, LienKetKiem } from '../KinhDichUi';
+import SoDoGieoQue from './SoDoGieoQue';
 
 export const dynamic = 'force-dynamic';
 
@@ -109,6 +111,7 @@ export default async function GieoQuePage({
   }
 
   const chiTietChu = ketQua ? queChiTiet(ketQua.queChu.slug) : null;
+  const docNhanh = ketQua ? docNhanhQue(ketQua) : null;
   const haoDongSapXep = ketQua
     ? [...ketQua.haoDong].sort((a, b) => a - b)
     : [];
@@ -126,68 +129,73 @@ export default async function GieoQuePage({
         </div>
       ) : null}
 
-      {ketQua ? (
+      {ketQua && docNhanh ? (
         <>
+          <DocNhanh
+            cau={docNhanh.cau}
+            the={docNhanh.the}
+            tieuDeId="ck-kd-dn-tieu"
+            luoiCot={ketQua.queBien ? 4 : 3}
+            dongPhu={
+              thoiDiemMaiHoa ? (
+                <>
+                  {ketQua.cach === 'mai-hoa' ? 'Quẻ Mai Hoa · ' : ''}
+                  Thời điểm lập quẻ: <strong>{thoiDiemMaiHoa}</strong>
+                </>
+              ) : ketQua.giaTriHao ? (
+                <>
+                  Giá trị 6 hào (từ Hào 1 đến Hào 6):{' '}
+                  <strong>{ketQua.giaTriHao.join(' · ')}</strong> ·{' '}
+                  {ketQua.haoDong.length > 0
+                    ? `Hào động: hào ${ketQua.haoDong.join(', ')}`
+                    : 'Không có hào động (quẻ tĩnh)'}
+                </>
+              ) : null
+            }
+            hienNhan={(muc) => {
+              if (muc.ma === 'hao-dong') {
+                return (
+                  <ThuatNgu
+                    ten="Hào động"
+                    nghia="Hào có giá trị 6 (lão âm) hoặc 9 (lão dương) khi gieo xu, hoặc hào ứng tổng chia 6 ở phép Mai Hoa; hào này đổi âm dương thành quẻ biến."
+                    id="ck-kd-tn-hao-dong"
+                  />
+                );
+              }
+              if (muc.ma === 'que-ho') {
+                return (
+                  <ThuatNgu
+                    ten="Quẻ hỗ"
+                    nghia="Quẻ dựng từ phần lõi của quẻ chủ: lấy hào 2, 3, 4 làm hạ quái và hào 3, 4, 5 làm thượng quái."
+                    id="ck-kd-tn-que-ho"
+                  />
+                );
+              }
+              return muc.nhan;
+            }}
+          />
+
           <section className="ck-td-muc" aria-labelledby="ck-kd-ket-qua-tieu">
             <h2 id="ck-kd-ket-qua-tieu" className="ck-td-tieu">
               {ketQua.cach === 'mai-hoa'
-                ? 'Quẻ Mai Hoa theo giờ hiện tại'
-                : 'Kết quả quẻ gieo 3 đồng xu'}
+                ? 'Hình quẻ Mai Hoa (quẻ chủ và quẻ biến)'
+                : 'Hình quẻ gieo 3 đồng xu'}
             </h2>
 
-            {thoiDiemMaiHoa ? (
-              <p className="ck-kd-thoi-diem">
-                Thời điểm lập quẻ: <strong>{thoiDiemMaiHoa}</strong>
-              </p>
-            ) : ketQua.giaTriHao ? (
-              <p className="ck-kd-thoi-diem">
-                Giá trị 6 hào (từ Hào 1 đến Hào 6):{' '}
-                <strong>{ketQua.giaTriHao.join(' · ')}</strong> ·{' '}
-                {ketQua.haoDong.length > 0
-                  ? `Hào động: hào ${ketQua.haoDong.join(', ')}`
-                  : 'Không có hào động (quẻ tĩnh)'}
-              </p>
-            ) : null}
-
-            <div className="ck-que-bo-ba">
-              <HinhQue
-                que={ketQua.queChu}
-                nhan="Quẻ Chủ"
-                haoDong={ketQua.haoDong}
-                giaTriHao={ketQua.giaTriHao}
-                daDung={daDung}
-              />
-
-              <HinhQue que={ketQua.queHo} nhan="Quẻ Hỗ" daDung={daDung} />
-
-              {ketQua.queBien ? (
-                <HinhQue
-                  que={ketQua.queBien}
-                  nhan="Quẻ Biến"
-                  haoDong={ketQua.haoDong}
-                  daDung={daDung}
-                />
-              ) : (
-                <article className="ck-que-the ck-que-rong" aria-label="Không có quẻ biến">
-                  <span className="ck-que-nhan">Quẻ Biến</span>
-                  <h3 className="ck-que-ten">Không có quẻ biến</h3>
-                  <p>Cả 6 hào đều tĩnh (không có hào 6 hoặc 9), nên giữ nguyên quẻ chủ.</p>
-                </article>
-              )}
-            </div>
+            <SoDoGieoQue ketQua={ketQua} daDung={daDung} />
           </section>
 
-          <section className="ck-td-muc" aria-labelledby="ck-kd-cach-tinh-tieu">
-            <h2 id="ck-kd-cach-tinh-tieu" className="ck-td-tieu">
-              Cách tính quẻ
-            </h2>
-            <div className="ck-kd-mota">
-              <ul>
-                {ketQua.moTa.map((dong, idx) => (
-                  <li key={idx}>{dong}</li>
-                ))}
-              </ul>
-            </div>
+          <section className="ck-td-muc" aria-label="Cách tính quẻ">
+            <details className="ck-kd-cach-details">
+              <summary>Cách tính quẻ</summary>
+              <div className="ck-kd-mota">
+                <ul>
+                  {ketQua.moTa.map((dong, idx) => (
+                    <li key={idx}>{dong}</li>
+                  ))}
+                </ul>
+              </div>
+            </details>
           </section>
           {chiTietChu ? (
             <section className="ck-td-muc" aria-labelledby="ck-kd-loi-que-tieu">

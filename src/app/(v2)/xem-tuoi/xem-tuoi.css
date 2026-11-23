@@ -49,8 +49,10 @@
 }
 
 .ck-xt-nguoi-link {
-  display: inline-block;
-  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 6px;
   font-size: 14.5px;
   font-weight: 600;
   text-decoration: none;
@@ -59,6 +61,182 @@
 
 .ck-xt-nguoi-link:hover {
   border-bottom-color: var(--ck-son);
+}
+
+/* Thanh tổng 4 ô liền nhau & 4 thẻ tiêu chí (Lệnh 43) */
+.ck-xt-thanh-tong-khung {
+  margin: 20px 0 22px;
+  padding: 16px 18px;
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-radius: 2px;
+}
+
+.ck-xt-thanh-tom-tat {
+  margin: 0 0 12px;
+  font-size: 15px;
+  color: var(--ck-muc);
+}
+
+.ck-xt-thanh-tong {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--ck-ke-dam);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.ck-xt-thanh-o {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 8px;
+  text-align: center;
+  border-right: 1px solid var(--ck-ke-dam);
+  min-width: 0;
+}
+
+.ck-xt-thanh-o:last-child {
+  border-right: 0;
+}
+
+.ck-xt-thanh-o-tot {
+  background: var(--ck-moc-nhat);
+  border-bottom: 4px solid var(--ck-moc);
+  color: var(--ck-moc);
+}
+
+.ck-xt-thanh-o-binh {
+  background: var(--ck-the-nen);
+  border-bottom: 3px solid var(--ck-ke-dam);
+  color: var(--ck-muc);
+}
+
+.ck-xt-thanh-o-diu {
+  background: repeating-linear-gradient(
+    -45deg,
+    #FBF4E4,
+    #FBF4E4 6px,
+    #F3E6C8 6px,
+    #F3E6C8 11px
+  );
+  border-bottom: 4px dashed #B7791F;
+  color: #B7791F;
+}
+
+.ck-xt-thanh-ky {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  background: rgba(255, 253, 248, 0.85);
+}
+
+.ck-xt-thanh-ten {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ck-muc);
+}
+
+.ck-xt-thanh-muc {
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.ck-xt-tc-luoi {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.ck-xt-tc-the {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 18px;
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-left: 4px solid var(--ck-ke-dam);
+  border-radius: 2px;
+}
+
+.ck-xt-tc-the-tot {
+  background: var(--ck-moc-nhat);
+  border-color: #9CCBA4;
+  border-left: 4px solid var(--ck-moc);
+}
+
+.ck-xt-tc-the-binh {
+  background: var(--ck-the-nen);
+  border-left: 4px solid var(--ck-ke-dam);
+}
+
+.ck-xt-tc-the-diu {
+  background: #FBF4E4;
+  border-color: #D9B768;
+  border-left: 4px dashed #B7791F;
+}
+
+.ck-xt-tc-dau {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ck-xt-tc-dau h3 {
+  margin: 0;
+  font: 700 18px/1.3 var(--ck-f-tieu);
+  color: var(--ck-muc);
+}
+
+.ck-xt-tc-the p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ck-muc-2);
+}
+
+.ck-xt-tc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ck-xt-tc-badge-tot {
+  background: rgba(255, 253, 248, 0.85);
+  color: var(--ck-moc);
+}
+
+.ck-xt-tc-badge-binh {
+  background: var(--ck-nga-1);
+  color: var(--ck-muc);
+  border-color: var(--ck-ke-dam);
+}
+
+.ck-xt-tc-badge-diu {
+  background: rgba(255, 253, 248, 0.9);
+  color: #B7791F;
+  border-color: #B7791F;
 }
 
 /* Nhãn đánh giá nhẹ nhàng, không dùng màu đỏ chói */
@@ -240,10 +418,23 @@
   .ck-xt-mang,
   .ck-xt-form-2cot,
   .ck-xt-hai-nguoi,
+  .ck-xt-tc-luoi,
   .ck-xd-ds {
     grid-template-columns: 1fr;
   }
   .ck-xt-tet-banner {
     padding: 14px 16px;
+  }
+  .ck-xt-thanh-tong-khung {
+    padding: 12px 10px;
+  }
+  .ck-xt-thanh-o {
+    padding: 10px 4px;
+  }
+  .ck-xt-thanh-ten {
+    font-size: 11.5px;
+  }
+  .ck-xt-thanh-muc {
+    font-size: 10.5px;
   }
 }

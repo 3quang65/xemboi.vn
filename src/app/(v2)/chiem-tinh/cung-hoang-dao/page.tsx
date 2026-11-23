@@ -4,6 +4,7 @@ import { HoaVanGoc4, HoaVanMay } from '@/components/r1/HoaVanE3';
 import KhungTrang from '@/components/ck/KhungTrang';
 import {
   CUNG_HOANG_DAO,
+  cungTaiThoiDiem,
   duongDanCung,
   khoangCungTrongNam,
   traCung,
@@ -17,6 +18,7 @@ import {
   GOC_SITE,
   MAC_DINH_CUNG_HOANG_DAO,
   docGio,
+  formatKhoangNamNay,
   kiemCoThamSo,
   layMot,
   nhanHanhTinh,
@@ -66,6 +68,7 @@ export default async function CungHoangDaoPage({
   ]);
   const daDung = trangDaDung();
   const namNay = ngayHienTaiVN().nam;
+  const cungHomNay = cungTaiThoiDiem(new Date());
 
   const ngayRaw = layMot(sp.ngay)?.trim() ?? '';
   const gioRaw = layMot(sp.gio)?.trim() ?? '';
@@ -282,61 +285,90 @@ export default async function CungHoangDaoPage({
         </section>
       ) : null}
 
-      {/* 3. Bảng 12 cung (luôn hiện) */}
+      {/* 3. Lưới 12 cung (luôn hiện) + bảng chi tiết */}
       <section className="ck-td-muc" aria-labelledby="ck-ct-bang-12-tieu">
         <h2 id="ck-ct-bang-12-tieu" className="ck-td-tieu">
-          Bảng 12 cung hoàng đạo (năm {namNay})
+          12 cung hoàng đạo (năm {namNay})
         </h2>
 
-        <div className="ck-ct-bang-boc">
-          <table className="ck-ct-bang ck-ct-bang-the">
-            <thead>
-              <tr>
-                <th scope="col">Ký hiệu</th>
-                <th scope="col">Cung</th>
-                <th scope="col">Tiếng Anh</th>
-                <th scope="col">Năm {namNay} (giờ VN)</th>
-                <th scope="col">Chủ nhà</th>
-                <th scope="col">Tam hợp</th>
-              </tr>
-            </thead>
-            <tbody>
-              {CUNG_HOANG_DAO.map((c) => {
-                const k = khoangCungTrongNam(c.thu, namNay);
-                return (
-                  <tr key={c.slug}>
-                    <td data-nhan="Ký hiệu">
-                      <span className="ck-ct-ky" aria-hidden="true">
-                        {c.kyHieu}
-                      </span>
-                    </td>
-                    <th scope="row" data-nhan="Cung">
-                      <div>
-                        <Link href={duongDanCung(c)} className="ck-ct-bang-ten">
-                          {c.ten}
-                        </Link>
-                        {c.tenKhac.length > 0 ? (
-                          <span className="ck-ct-ten-khac">
-                            Tên khác: {c.tenKhac.join(', ')}
-                          </span>
-                        ) : null}
-                      </div>
-                    </th>
-                    <td data-nhan="Tiếng Anh">{c.en}</td>
-                    <td data-nhan={`Năm ${namNay}`}>
-                      <div>
-                        <span className="ck-ct-gio-dong">{vietGioVN(k.batDau)} →</span>
-                        <span className="ck-ct-gio-dong">{vietGioVN(k.ketThuc)}</span>
-                      </div>
-                    </td>
-                    <td data-nhan="Chủ nhà">{nhanHanhTinh(c.chuNha)}</td>
-                    <td data-nhan="Tam hợp">Tam hợp thứ {c.tamHop}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+        <div className="ck-ct-12-luoi">
+          {CUNG_HOANG_DAO.map((c) => {
+            const laHomNay = c.slug === cungHomNay.slug;
+            return (
+              <Link
+                key={c.slug}
+                href={duongDanCung(c)}
+                className={laHomNay ? 'ck-ct-12-the ck-ct-12-the-nay' : 'ck-ct-12-the'}
+              >
+                {laHomNay ? (
+                  <span className="ck-ct-12-nay">Mặt Trời đang ở đây</span>
+                ) : null}
+                <span className="ck-ct-ky ck-ct-12-ky" aria-hidden="true">
+                  {c.kyHieu}
+                </span>
+                <strong className="ck-ct-12-ten">{c.ten}</strong>
+                <span className="ck-ct-12-ngay">
+                  {formatKhoangNamNay(c.thu, namNay)}
+                </span>
+              </Link>
+            );
+          })}
         </div>
+
+        <details className="ck-ct-bang-chi-tiet">
+          <summary>
+            Xem bảng chi tiết 12 cung năm {namNay} (giờ chuyển cung, chủ nhà, tam hợp)
+          </summary>
+          <div className="ck-ct-bang-boc">
+            <table className="ck-ct-bang ck-ct-bang-the">
+              <thead>
+                <tr>
+                  <th scope="col">Ký hiệu</th>
+                  <th scope="col">Cung</th>
+                  <th scope="col">Tiếng Anh</th>
+                  <th scope="col">Năm {namNay} (giờ VN)</th>
+                  <th scope="col">Chủ nhà</th>
+                  <th scope="col">Tam hợp</th>
+                </tr>
+              </thead>
+              <tbody>
+                {CUNG_HOANG_DAO.map((c) => {
+                  const k = khoangCungTrongNam(c.thu, namNay);
+                  return (
+                    <tr key={c.slug}>
+                      <td data-nhan="Ký hiệu">
+                        <span className="ck-ct-ky" aria-hidden="true">
+                          {c.kyHieu}
+                        </span>
+                      </td>
+                      <th scope="row" data-nhan="Cung">
+                        <div>
+                          <Link href={duongDanCung(c)} className="ck-ct-bang-ten">
+                            {c.ten}
+                          </Link>
+                          {c.tenKhac.length > 0 ? (
+                            <span className="ck-ct-ten-khac">
+                              Tên khác: {c.tenKhac.join(', ')}
+                            </span>
+                          ) : null}
+                        </div>
+                      </th>
+                      <td data-nhan="Tiếng Anh">{c.en}</td>
+                      <td data-nhan={`Năm ${namNay}`}>
+                        <div>
+                          <span className="ck-ct-gio-dong">{vietGioVN(k.batDau)} →</span>
+                          <span className="ck-ct-gio-dong">{vietGioVN(k.ketThuc)}</span>
+                        </div>
+                      </td>
+                      <td data-nhan="Chủ nhà">{nhanHanhTinh(c.chuNha)}</td>
+                      <td data-nhan="Tam hợp">Tam hợp thứ {c.tamHop}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </details>
 
         {/* 4. Giải thích xê dịch ngày vào cung */}
         <p className="ck-ct-ghi-chu-xe-dich">

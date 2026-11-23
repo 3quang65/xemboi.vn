@@ -1,4 +1,149 @@
-/* CSS riêng cụm Tử vi (F4: trọn đời, 12 cung, 14 chính tinh, liên kết tóm tắt) — tiền tố ck-, < 30 KB */
+/* CSS riêng cụm Tử vi (F4 + Lệnh 43: đọc nhanh, tam phương tứ chính, trọn đời, 12 cung, 14 chính tinh) — tiền tố ck-, < 30 KB */
+
+.ck-tv-dn-boc {
+  max-width: 1236px;
+  margin: 0 auto 24px;
+}
+
+.ck-tv-dn-boc .ck-tq-dn {
+  margin-top: 0;
+}
+
+.ck-tv-tp-muc {
+  max-width: 1236px;
+  margin: 22px auto 24px;
+  padding: 18px 20px;
+  background: var(--ck-the-nen);
+  border: 1px solid #C9AE78;
+  border-top: 3px solid var(--ck-son);
+  border-radius: 2px;
+}
+
+.ck-tv-tp-dau {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 14px;
+  margin-bottom: 12px;
+}
+
+.ck-tv-tp-tieu {
+  margin: 0;
+  font: 700 22px/1.25 var(--ck-f-tieu);
+  color: var(--ck-son);
+}
+
+.ck-tv-tp-chu-thich {
+  font-size: 13.5px;
+  color: var(--ck-muc-3);
+}
+
+.ck-tv-tp-chip-ds {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.ck-tv-tp-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 10px;
+  background: var(--ck-nga-1);
+  border: 1px solid var(--ck-ke-dam);
+  border-radius: 2px;
+  font: 600 13.5px/1.3 var(--ck-f-chu);
+  color: var(--ck-muc);
+  cursor: pointer;
+  text-align: center;
+}
+
+.ck-tv-tp-chip:hover {
+  border-color: var(--ck-son);
+  background: #FFF9EB;
+}
+
+.ck-tv-tp-chip-nhom {
+  background: #FFF6E0;
+  border-color: var(--ck-son);
+  border-style: dashed;
+  color: var(--ck-son);
+}
+
+.ck-tv-tp-chip-chon,
+.ck-tv-tp-chip-chon:hover {
+  background: var(--ck-son);
+  border-color: var(--ck-do-3);
+  border-style: solid;
+  color: #FBF1DA;
+}
+
+.ck-tv-tp-dong {
+  margin: 14px 0 12px;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--ck-muc);
+}
+
+.ck-tv-tp-luoi {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ck-tv-tp-the {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  background: var(--ck-nga-1);
+  border: 1px solid var(--ck-ke);
+  border-left: 3px solid var(--ck-vang-2);
+  border-radius: 2px;
+  min-width: 0;
+}
+
+.ck-tv-tp-the-ban {
+  background: #FFF9EB;
+  border-color: var(--ck-son);
+  border-left: 4px solid var(--ck-son);
+}
+
+.ck-tv-tp-vai-tro {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ck-muc-3);
+}
+
+.ck-tv-tp-ten {
+  font: 700 17px/1.3 var(--ck-f-tieu);
+  color: var(--ck-muc);
+}
+
+.ck-tv-tp-ten a {
+  color: var(--ck-son);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(142, 27, 18, 0.3);
+}
+
+.ck-tv-tp-ten a:hover {
+  border-bottom-color: var(--ck-son);
+}
+
+.ck-tv-tp-sao {
+  margin: 2px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ck-muc-2);
+}
+
+.ck-tv-tp-sao a {
+  font-weight: 600;
+}
 
 .ck-tom-tat-chu-thich {
   margin: 10px 0 8px;
@@ -382,6 +527,12 @@
 }
 
 @media (max-width: 1000px) {
+  .ck-tv-tp-chip-ds {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .ck-tv-tp-luoi {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .ck-cung-luoi {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -391,6 +542,25 @@
 }
 
 @media (max-width: 700px) {
+  .ck-tv-tp-muc {
+    padding: 14px 12px;
+  }
+  .ck-tv-tp-chip-ds {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 6px;
+  }
+  .ck-tv-tp-chip {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 8px 14px;
+  }
+  .ck-tv-tp-luoi {
+    grid-template-columns: 1fr;
+  }
   .ck-cung-luoi {
     grid-template-columns: 1fr;
   }

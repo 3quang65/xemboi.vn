@@ -39,6 +39,7 @@ import {
   KhoiNguonVaGioiHan,
   Thanh12Cung,
   TrichTetrabiblos,
+  Vong12CungSvg,
 } from '../../ChiemTinhUi';
 
 export const revalidate = 3600;
@@ -124,34 +125,38 @@ export default async function ChiTietCungHoangDaoPage({
       />
 
       {/* 1. Đầu trang */}
-      <section className="ck-ct-dau-the" aria-label={`Tổng quan Cung ${c.ten}`}>
-        <div className="ck-ct-dau-trai">
-          <span className="ck-ct-ky-trien" aria-hidden="true">
-            {c.kyHieu}
-          </span>
-          <div>
-            <h2 className="ck-ct-dau-ten">Cung {c.ten}</h2>
-            <p className="ck-ct-dau-phu">
-              Tiếng Anh: <strong>{c.en}</strong> · Tên Latinh: <strong>{c.la}</strong>
-              {c.tenKhac.length > 0 ? (
-                <>
-                  {' '}
-                  · Tên khác: <strong>{c.tenKhac.join(', ')}</strong>
-                </>
-              ) : null}
-            </p>
-            <p className="ck-ct-dau-phu">
-              Từ <strong>{c.tuDo}°</strong> đến <strong>{c.tuDo + 30}°</strong> kinh độ hoàng
-              đạo
-            </p>
+      <section className="ck-ct-dau-the ck-ct-dau-the-co-vong" aria-label={`Tổng quan Cung ${c.ten}`}>
+        <div className="ck-ct-dau-cot">
+          <div className="ck-ct-dau-trai">
+            <span className="ck-ct-ky-trien" aria-hidden="true">
+              {c.kyHieu}
+            </span>
+            <div>
+              <h2 className="ck-ct-dau-ten">Cung {c.ten}</h2>
+              <p className="ck-ct-dau-phu">
+                Tiếng Anh: <strong>{c.en}</strong> · Tên Latinh: <strong>{c.la}</strong>
+                {c.tenKhac.length > 0 ? (
+                  <>
+                    {' '}
+                    · Tên khác: <strong>{c.tenKhac.join(', ')}</strong>
+                  </>
+                ) : null}
+              </p>
+              <p className="ck-ct-dau-phu">
+                Từ <strong>{c.tuDo}°</strong> đến <strong>{c.tuDo + 30}°</strong> kinh độ hoàng
+                đạo
+              </p>
+            </div>
           </div>
+          <Link
+            href="/chiem-tinh/cung-hoang-dao"
+            className="ck-nut ck-nut-son ck-ct-nut-chinh"
+          >
+            Tra cung ngày sinh
+          </Link>
         </div>
-        <Link
-          href="/chiem-tinh/cung-hoang-dao"
-          className="ck-nut ck-nut-son ck-ct-nut-chinh"
-        >
-          Tra cung ngày sinh
-        </Link>
+
+        <Vong12CungSvg namNay={namNay} cungChon={c.slug} nho />
       </section>
 
       {/* 2. Ngày Mặt Trời ở cung */}
