@@ -49,6 +49,6 @@ Trang nào dùng lại được thì phải dùng các thành phần này, khôn
 | 41 | Xem ngày, lịch âm | `xem-ngay-truc-quan.ts`: daiGio, chonNgayHopNhat, lich.ics (xong, có test) | Xong 24/11 |
 | 42 | Thần số học, hướng nhà / bát trạch, cửu tinh | `phan-truc-quan.ts`: đọc nhanh, la bàn 24 sơn, đường sao bay (xong, có test) | Xong 24/11 |
 | 43 | Tử vi, kinh dịch, bản đồ sao, xem tuổi, cung hoàng đạo | `truc-quan-43.ts`: tam phương tứ chính, đọc nhanh quẻ, xem tuổi, giãn nhãn (xong, có test) | Xong 24/11 |
-| 44 | Bát tự: lưu niên, tam trụ | `bat-tu-luu-nien.ts`: luuNienBatTu, namTrongDaiVan, lapTamTru (có test) | Đang làm |
-| 45 | Ngũ hành, con giáp, 60 hoa giáp, năm sinh, xông đất | `tra-cuu-truc-quan.ts`: vòng ngũ hành, vòng con giáp có trích sách, lưới hoa giáp (có test) | Lệnh đã viết, chờ giao |
+| 44 | Bát tự: lưu niên, tam trụ | `bat-tu-luu-nien.ts`: luuNienBatTu, namTrongDaiVan, lapTamTru (có test) | Xong 24/11 |
+| 45 | Ngũ hành, con giáp, 60 hoa giáp, năm sinh, xông đất | `tra-cuu-truc-quan.ts`: vòng ngũ hành, vòng con giáp có trích sách, lưới hoa giáp (có test) | Đang làm |
 | sau | Mọi công cụ mới | Theo mục 1 và 2 ngay từ lệnh đầu | |

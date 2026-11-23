@@ -3,9 +3,11 @@ import Link from 'next/link';
 import { HoaVanGoc4, HoaVanMay } from '@/components/r1/HoaVanE3';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
+import { DIA_CHI, chiCanhGio } from '@/lib/tuvi-v2/am-lich';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
+import { KhongRoGioClient } from './lap-la-so/KhongRoGioClient';
 
 const MAC_DINH_BAT_TU = {
   title: 'Bát tự là gì? Tứ trụ năm, tháng, ngày, giờ giải thích',
@@ -31,7 +33,7 @@ export default async function BatTuHubPage() {
     <KhungTrang tieuDe={tt.h1} phu={tt.description} duongDan="/bat-tu" toi>
       <section className="ck-td-muc" aria-label="Lập nhanh lá số Bát tự">
         <div className="ck-bt-ngan-khung">
-          <form className="ck-to-giay" action="/bat-tu/lap-la-so" method="get">
+          <form className="ck-to-giay ck-bt-form" action="/bat-tu/lap-la-so" method="get">
             <HoaVanGoc4 />
             <div className="ck-form-tit">
               <HoaVanMay />
@@ -97,12 +99,27 @@ export default async function BatTuHubPage() {
                 <select id="ck-bt-hub-gio" name="gio" defaultValue="12">
                   {Array.from({ length: 24 }, (_, i) => i).map((h) => (
                     <option key={h} value={h}>
-                      {String(h).padStart(2, '0')} giờ
+                      {String(h).padStart(2, '0')} giờ ({DIA_CHI[chiCanhGio(h)]})
                     </option>
                   ))}
                 </select>
               </label>
             </div>
+
+            <label className="ck-tick" htmlFor="ck-bt-hub-khong-ro-gio">
+              <input
+                id="ck-bt-hub-khong-ro-gio"
+                type="checkbox"
+                name="khongRoGio"
+                value="1"
+              />
+              <span>Không rõ giờ sinh (lập tam trụ)</span>
+            </label>
+
+            <KhongRoGioClient
+              checkboxId="ck-bt-hub-khong-ro-gio"
+              targetIds={['ck-bt-hub-gio']}
+            />
 
             <input type="hidden" name="phut" value="0" />
 

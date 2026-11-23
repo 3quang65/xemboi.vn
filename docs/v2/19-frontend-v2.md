@@ -304,5 +304,6 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Xem ngày, lịch âm (Lệnh 41, Antigravity): dải 12 giờ có "Bây giờ", 3 ngày hợp nhất theo việc kèm tệp .ics, lưới tháng tô theo việc, xuất hành 10 ngày Tết dạng thẻ; đáp án khớp số tính sẵn.
   - Thần số, hướng nhà, cửu tinh (Lệnh 42, Antigravity): vòng số chủ đạo, 4 đỉnh cao có "Đang ở đây", lưới ngày sinh có vạch đường; la bàn 24 sơn dùng chung (cát ✦ / không cát ◇ gạch chéo, đọc được ở ảnh xám); cửu tinh có lớp tháng và nút "Xem sao bay".
   - Tử vi, kinh dịch, xem tuổi, bản đồ sao, cung hoàng đạo (Lệnh 43, Antigravity): chip tam phương tứ chính trên lá số; quẻ chủ cạnh quẻ biến có chấm hào động và mũi tên; thanh 4 tiêu chí xem tuổi (✓ – !); bản đồ sao giãn nhãn cụm hành tinh có chấm vị trí thật; lưới 12 cung có "Mặt Trời đang ở đây".
-  - Lệnh 44–45 đã viết, giao lần lượt.
+  - Bát tự lưu niên và tam trụ (Lệnh 44): cột thứ 5 "Lưu niên" viền đứt kèm cung quan hệ tới lá số; chọn năm trong từng đại vận; ô "Không rõ giờ sinh" lập tam trụ, có hộp hổ phách khi trụ năm hoặc tháng đổi trong ngày sinh.
+  - Lệnh 45 đã viết, giao tiếp.
   - Soi thị trường bát tự với 6 công cụ: 4 trụ và mốc khởi vận khớp; các trang lệch nhau ở dụng thần và cách đếm ngũ hành, nên mình không hiện dụng thần.

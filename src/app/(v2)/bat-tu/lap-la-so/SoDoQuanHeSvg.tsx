@@ -1,8 +1,11 @@
+import type { QuanHeLuuNien } from '@/lib/trang/bat-tu-luu-nien';
 import {
   TEN_NHOM_QUAN_HE,
   type NhomQuanHe,
   type QuanHeTru,
 } from '@/lib/trang/bat-tu-truc-quan';
+
+export type MucQuanHeVe = QuanHeTru | QuanHeLuuNien;
 
 export type KieuNetConfig = {
   color: string;
@@ -63,9 +66,11 @@ export const KIEU_NET_QUAN_HE: Record<NhomQuanHe, KieuNetConfig> = {
 };
 
 const THU_TU_NHOM: NhomQuanHe[] = ['hop', 'chua-thanh', 'xung', 'hinh', 'hai'];
-const TEN_TRU_HOA = ['Năm', 'Tháng', 'Ngày', 'Giờ'] as const;
+const TEN_TRU_HOA = ['Năm', 'Tháng', 'Ngày', 'Giờ', 'Lưu niên'] as const;
 
-const COL_X = [50, 150, 250, 350] as const;
+const COL_X_4 = [50, 150, 250, 350] as const;
+const COL_X_5 = [50, 150, 250, 350, 450] as const;
+const sangCotHienThi = (t: number) => (t === 4 ? 4 : 3 - t);
 const LEVEL_STEP = 44;
 const FIRST_DEPTH = 40;
 const BASE_PAD = 6;
@@ -114,7 +119,7 @@ export function ChuGiaiQuanHe() {
   );
 }
 
-export function nhanNganQuanHe(q: QuanHeTru): string {
+export function nhanNganQuanHe(q: MucQuanHeVe): string {
   switch (q.loai) {
     case 'can-hop':
       return 'Can hợp';
@@ -161,7 +166,7 @@ function tinhYCuongCong(
 }
 
 type CungDaXep = {
-  q: QuanHeTru;
+  q: MucQuanHeVe;
   idxGoc: number;
   visCols: number[];
   left: number;
@@ -171,9 +176,9 @@ type CungDaXep = {
   xOffset: number;
 };
 
-function xepTangCung(danhSach: QuanHeTru[]): CungDaXep[] {
+function xepTangCung(danhSach: MucQuanHeVe[]): CungDaXep[] {
   const chuanHoa = danhSach.map((q, idxGoc) => {
-    const visCols = q.tru.map((t) => 3 - t).sort((a, b) => a - b);
+    const visCols = q.tru.map((t) => sangCotHienThi(t)).sort((a, b) => a - b);
     const left = visCols[0];
     const right = visCols[visCols.length - 1];
     return {
@@ -228,19 +233,64 @@ function xepTangCung(danhSach: QuanHeTru[]): CungDaXep[] {
   return daXep;
 }
 
-export function SoDoQuanHeSvg({
+export function DanhSachChipQuanHe({
   quanHe,
-  viTri,
+  ariaLabel,
+  className = 'ck-bt-qh-chip-ds',
 }: {
-  quanHe: QuanHeTru[];
-  viTri: 'tren' | 'duoi';
+  quanHe: MucQuanHeVe[];
+  ariaLabel: string;
+  className?: string;
 }) {
   if (quanHe.length === 0) return null;
 
+  return (
+    <ul className={className} aria-label={ariaLabel}>
+      {quanHe.map((q, idx) => {
+        const cfg = KIEU_NET_QUAN_HE[q.nhom];
+        const tenTru = q.tru.map((t) => TEN_TRU_HOA[t] ?? '').join('–');
+        const chu = q.chu.join(' ');
+        return (
+          <li
+            key={`chip-${q.loai}-${q.tru.join('')}-${idx}`}
+            className="ck-bt-qh-chip"
+            style={{
+              color: cfg.mauChu,
+              background: cfg.mauNen,
+              borderColor: cfg.color,
+              borderStyle: cfg.kieuVien,
+            }}
+          >
+            <MauNetQuanHeSvg nhom={q.nhom} width={20} />
+            <span>
+              {nhanNganQuanHe(q)} · {tenTru} · {chu}
+            </span>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+export function SoDoQuanHeSvg({
+  quanHe,
+  viTri,
+  soCot = 4,
+  chiHienSvg = false,
+}: {
+  quanHe: MucQuanHeVe[];
+  viTri: 'tren' | 'duoi';
+  soCot?: 4 | 5;
+  chiHienSvg?: boolean;
+}) {
+  if (quanHe.length === 0) return null;
+
+  const colX = soCot === 5 ? COL_X_5 : COL_X_4;
+  const viewBoxWidth = soCot * 100;
   const cacCung = xepTangCung(quanHe);
   const maxLevel = Math.max(...cacCung.map((c) => c.level));
   const soTang = maxLevel + 1;
-  const quaNhieuTang = soTang > 2;
+  const quaNhieuTang = !chiHienSvg && soTang > 2;
   const tongCao = BASE_PAD + FIRST_DEPTH + maxLevel * LEVEL_STEP + OUTER_PAD;
   const baseY = viTri === 'duoi' ? BASE_PAD : tongCao - BASE_PAD;
   const huong = viTri === 'duoi' ? 1 : -1;
@@ -258,7 +308,7 @@ export function SoDoQuanHeSvg({
       >
         <svg
           className="ck-bt-qh-svg"
-          viewBox={`0 0 400 ${tongCao}`}
+          viewBox={`0 0 ${viewBoxWidth} ${tongCao}`}
           preserveAspectRatio="none"
           aria-hidden="true"
         >
@@ -267,11 +317,11 @@ export function SoDoQuanHeSvg({
             const depth = FIRST_DEPTH + c.level * LEVEL_STEP;
             const peakY = baseY + huong * depth;
             const ctrlY = baseY + (peakY - baseY) / 0.75;
-            const xStart = Math.max(10, COL_X[c.left] - c.xOffset);
-            const xEnd = Math.min(390, COL_X[c.right] + c.xOffset);
+            const xStart = Math.max(10, colX[c.left] - c.xOffset);
+            const xEnd = Math.min(viewBoxWidth - 10, colX[c.right] + c.xOffset);
 
             const coCotGiua = c.visCols.length === 3;
-            const xMidCol = coCotGiua ? COL_X[c.visCols[1]] : null;
+            const xMidCol = coCotGiua ? colX[c.visCols[1]] : null;
             const yMidCurve =
               xMidCol !== null
                 ? tinhYCuongCong(xMidCol, xStart, xEnd, baseY, ctrlY)
@@ -311,12 +361,12 @@ export function SoDoQuanHeSvg({
           const depth = FIRST_DEPTH + c.level * LEVEL_STEP;
           const peakY = baseY + huong * depth;
           const ctrlY = baseY + (peakY - baseY) / 0.75;
-          const xStart = Math.max(10, COL_X[c.left] - c.xOffset);
-          const xEnd = Math.min(390, COL_X[c.right] + c.xOffset);
+          const xStart = Math.max(10, colX[c.left] - c.xOffset);
+          const xEnd = Math.min(viewBoxWidth - 10, colX[c.right] + c.xOffset);
 
           let labelX = (xStart + xEnd) / 2;
           if (c.visCols.length === 3) {
-            const xMidCol = COL_X[c.visCols[1]];
+            const xMidCol = colX[c.visCols[1]];
             const leftGap = xMidCol - xStart;
             const rightGap = xEnd - xMidCol;
             if (Math.abs(leftGap - rightGap) > 20) {
@@ -327,7 +377,7 @@ export function SoDoQuanHeSvg({
           const anchorXs = c.visCols.map((vc, k) => {
             if (k === 0) return xStart;
             if (k === c.visCols.length - 1) return xEnd;
-            return COL_X[vc];
+            return colX[vc];
           });
 
           return (
@@ -340,7 +390,7 @@ export function SoDoQuanHeSvg({
                   key={k}
                   className="ck-bt-qh-cham"
                   style={{
-                    left: `${(ax / 400) * 100}%`,
+                    left: `${(ax / viewBoxWidth) * 100}%`,
                     top: `${baseY}px`,
                     background: cfg.color,
                   }}
@@ -350,7 +400,7 @@ export function SoDoQuanHeSvg({
               <span
                 className={`ck-bt-qh-nhan ck-bt-qh-nhan-${c.q.nhom}`}
                 style={{
-                  left: `${(labelX / 400) * 100}%`,
+                  left: `${(labelX / viewBoxWidth) * 100}%`,
                   top: `${labelY}px`,
                 }}
               >
@@ -362,37 +412,14 @@ export function SoDoQuanHeSvg({
       </div>
 
       {quaNhieuTang ? (
-        <ul
-          className="ck-bt-qh-chip-ds"
-          aria-label={
+        <DanhSachChipQuanHe
+          quanHe={quanHe}
+          ariaLabel={
             viTri === 'tren'
               ? 'Danh sách quan hệ thiên can'
               : 'Danh sách quan hệ địa chi'
           }
-        >
-          {quanHe.map((q, idx) => {
-            const cfg = KIEU_NET_QUAN_HE[q.nhom];
-            const tenTru = q.tru.map((t) => TEN_TRU_HOA[t]).join('–');
-            const chu = q.chu.join(' ');
-            return (
-              <li
-                key={`chip-${q.loai}-${q.tru.join('')}-${idx}`}
-                className="ck-bt-qh-chip"
-                style={{
-                  color: cfg.mauChu,
-                  background: cfg.mauNen,
-                  borderColor: cfg.color,
-                  borderStyle: cfg.kieuVien,
-                }}
-              >
-                <MauNetQuanHeSvg nhom={q.nhom} width={20} />
-                <span>
-                  {nhanNganQuanHe(q)} · {tenTru} · {chu}
-                </span>
-              </li>
-            );
-          })}
-        </ul>
+        />
       ) : null}
     </>
   );
