@@ -108,7 +108,8 @@
     - Xem tuổi: `/xem-tuoi/kim-lau`, `tam-tai`, `hoang-oc`, `lam-nha`, `nam-tuoi`, `lam-an` (mục 15).
     - Bài viết: `/bat-tu/ngu-hanh-khuyet`, `/tu-vi/cach-doc-la-so`, các bài `/kien-thuc/*`, `/tu-vi-theo-tuoi` và trang tử vi năm theo tuổi (cần lời luận đã duyệt).
     - Cần anh quyết: `/boi-tinh-yeu` (mục 13), `/goi` và `/tu-vi/luan-giai` (mục 7), `/tu-vi/hop-la-so` (Gói 3).
-    - Các trang P3 em chưa làm.
+    - Chiêm tinh `/chiem-tinh/nha/{n}` (12 trang): Tetrabiblos không đặt tên, nghĩa cho 12 nhà; cần nguồn khác dùng được công khai.
+    - Các trang P3 khác em chưa làm (trừ 10 trang hành tinh, Lệnh 50).
 26. **Bước deploy lên VPS cho các đợt 24/11** (em làm khi đưa lên VPS một lần, ghi đây để anh biết):
     - chạy `scripts/seo-chi-tieng-viet.ts` (sửa chữ SEO theo quy tắc chỉ tiếng Việt);
     - nạp riêng các dòng SEO mới bằng `scripts/seo-nap-dong.ts` (để NHAP, không tự xuất bản): các dòng ở mục 23, 24.

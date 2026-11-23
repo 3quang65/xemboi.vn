@@ -53,4 +53,8 @@ Trang nào dùng lại được thì phải dùng các thành phần này, khôn
 | 44 | Bát tự: lưu niên, tam trụ | `bat-tu-luu-nien.ts`: luuNienBatTu, namTrongDaiVan, lapTamTru (có test) | Xong 24/11 |
 | 45 | Ngũ hành, con giáp, 60 hoa giáp, năm sinh, xông đất | `tra-cuu-truc-quan.ts`: vòng ngũ hành, vòng con giáp có trích sách, lưới hoa giáp (có test) | Xong 24/11 (chữ Hán gỡ ở Lệnh 46) |
 | 46 | Chỉ tiếng Việt: gỡ chữ Hán, chữ Anh thừa trên mọi trang | `chu-dich-64-dich.json` (64 quẻ dịch), trường `dich`/`viTriViet`/`vi`, `chu-viet.ts`; test `khong-chu-han.test.mjs`, script `kiem-chu-han.mjs` | Xong 24/11 (quét 118 trang: 0 trang có chữ Hán) |
+| 47 | Lịch P2: giờ hoàng đạo, 24 tiết khí (+72 hậu), ngày lễ âm lịch | `lich-mua.ts` (test `lich-mua.test.mjs`) | Antigravity đang làm |
+| 48 | Con giáp từng cặp (79 trang), Tứ Hóa | `cap-con-giap.ts`, `tu-hoa.ts` (có test) | Chờ, sau 47 |
+| 49 | Thập thần (10), thiên can (10) | `thap-than.ts`, `thien-can.ts` (có test) | Chờ, sau 48 |
+| 50 | Hành tinh chiêm tinh (10) | `hanh-tinh.ts` (có test) | Chờ, sau 49 |
 | sau | Mọi công cụ mới | Theo mục 1 và 2 ngay từ lệnh đầu | |
