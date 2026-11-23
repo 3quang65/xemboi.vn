@@ -14,12 +14,15 @@ import {
 } from '@/lib/trang/chiem-tinh';
 import { pad2, vietGioPhut, vietNgayThang } from './ChiemTinhHelpers';
 
-/** Hiển thị câu trích tiếng Anh nguyên văn trong blockquote lang="en" và vị trí chương/trang ngay dưới. */
+/** Hiển thị đoạn trích Tetrabiblos bằng tiếng Việt kèm vị trí chương/trang và ghi công dịch nghĩa. */
 export function TrichTetrabiblos({ trich }: { trich: TrichAnh }) {
   return (
     <figure className="ck-ct-trich">
-      <blockquote lang="en">{trich.en}</blockquote>
-      <figcaption className="ck-ct-trich-vi-tri">{viTriTrich(trich)}</figcaption>
+      <span className="ck-ct-trich-nhan">Sách ghi</span>
+      <blockquote>{trich.vi}</blockquote>
+      <figcaption className="ck-ct-trich-vi-tri">
+        {viTriTrich(trich)} · <span className="ck-ct-trich-dich-gia">Dịch nghĩa: xemboi</span>
+      </figcaption>
     </figure>
   );
 }
@@ -185,10 +188,10 @@ export function Vong12CungSvg({
                 href={duongDanCung(c)}
                 className="ck-ct-vong-link"
                 aria-current={dangChon ? 'page' : undefined}
-                aria-label={`Cung ${c.ten} (${c.en}), từ ${c.tuDo}° đến ${c.tuDo + 30}°`}
+                aria-label={`Cung ${c.ten}, từ ${c.tuDo}° đến ${c.tuDo + 30}°`}
               >
                 <g className={dangChon ? 'ck-ct-vong-o ck-ct-vong-o-chon' : 'ck-ct-vong-o'}>
-                  <title>{`Cung ${c.ten} (${c.en})`}</title>
+                  <title>{`Cung ${c.ten}`}</title>
                   <path
                     d={pathNho(a1, a2)}
                     fill={dangChon ? '#8E1B12' : c.duong ? '#FBF7EE' : '#F3E7CF'}
@@ -328,7 +331,7 @@ export function Vong12CungSvg({
               key={c.slug}
               href={duongDanCung(c)}
               className="ck-ct-vong-link"
-              aria-label={`Cung ${c.ten} (${c.en}), từ ${c.tuDo}° đến ${c.tuDo + 30}°`}
+              aria-label={`Cung ${c.ten}, từ ${c.tuDo}° đến ${c.tuDo + 30}°`}
             >
               <g className="ck-ct-vong-o">
                 <path

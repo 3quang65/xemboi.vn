@@ -307,3 +307,9 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Bát tự lưu niên và tam trụ (Lệnh 44): cột thứ 5 "Lưu niên" viền đứt kèm cung quan hệ tới lá số; chọn năm trong từng đại vận; ô "Không rõ giờ sinh" lập tam trụ, có hộp hổ phách khi trụ năm hoặc tháng đổi trong ngày sinh.
   - Ngũ hành, con giáp, 60 hoa giáp, năm sinh, xông đất (Lệnh 45, Antigravity): vòng ngũ hành tô đậm 4 quan hệ của hành đang xem; vòng 12 địa chi vẽ 5 kiểu nét (tam hợp, lục hợp, xung, hại, hình) phân biệt được ở ảnh xám; lưới 60 hoa giáp có ô "Năm nay"; thẻ xông đất có thanh 4 tiêu chí.
   - Soi thị trường bát tự với 6 công cụ: 4 trụ và mốc khởi vận khớp; các trang lệch nhau ở dụng thần và cách đếm ngũ hành, nên mình không hiện dụng thần.
+- 24/11: **frontend chỉ tiếng Việt** (yêu cầu của anh: không chữ Hán, không từ tiếng Trung; Lệnh 46 giao diện do Antigravity làm, dữ liệu do Claude Code làm).
+  - Kinh Dịch: 9 quẻ dùng bản dịch Ngô Tất Tố, 55 quẻ xemboi dịch nghĩa; bỏ nguyên văn Hán và phiên âm.
+  - Trích Hiệp kỷ, Tam mệnh thông hội, Ngọc hạp ký, Tetrabiblos, 159 đoạn sách thần số học: chỉ in bản dịch, ghi "Dịch nghĩa: xemboi".
+  - Bỏ chữ Hán cạnh can chi, sao, quái, du niên, nạp âm; bỏ tên tiếng Anh, Latin ở chiêm tinh (ASC, MC thành "Mọc", "Đỉnh").
+  - Chốt chặn: `node scripts/kiem-chu-han.mjs` bò 118 trang, trước 35 trang có chữ Hán, sau 0; test `khong-chu-han.test.mjs`.
+  - **Khi triển khai lên VPS:** chạy thêm `npx tsx --env-file=<env VPS> scripts/seo-chi-tieng-viet.ts` để sửa title, meta, h1 trong `SeoTrang` của CSDL VPS (chạy lại không đổi gì thêm).

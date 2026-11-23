@@ -566,28 +566,26 @@ export function LaBan({
               </summary>
               <div className="ck-tq-lb-body">
                 <p>
-                  Quái <strong>{q.cung.ten}</strong>{' '}
-                  <span lang="zh-Hant">({q.cung.han})</span> · 3 sơn:{' '}
+                  Quái <strong>{q.cung.ten}</strong> · 3 sơn:{' '}
                   <strong>{q.cung.son.join(', ')}</strong> ({dinhDangDoNgan(q.tu)}–
                   {dinhDangDoNgan(q.den)}) · {q.cung.nhom} tứ.
                 </p>
                 {dn ? (
                   <>
                     <p>
-                      Du niên: <strong>{dn.ten}</strong>{' '}
-                      <span lang="zh-Hant">({dn.han})</span> · Sao: <strong>{dn.sao}</strong>{' '}
-                      <span lang="zh-Hant">({dn.saoHan})</span> · {dn.moTaBien} ·{' '}
+                      Du niên: <strong>{dn.ten}</strong> · Sao: <strong>{dn.sao}</strong> ·{' '}
+                      {dn.moTaBien} ·{' '}
                       <span className={dn.cat ? 'ck-tq-chu-tot' : 'ck-tq-chu-diu'}>
                         {dn.cat ? 'Cát' : 'Không cát'}
                       </span>
                       .
                     </p>
                     <figure className="ck-tq-trich">
-                      <blockquote className="ck-tq-trich-han" lang="zh-Hant">
-                        {dn.trich.han}
-                      </blockquote>
+                      <span className="ck-tq-trich-nhan">Sách ghi</span>
+                      <blockquote className="ck-tq-trich-dich">{dn.trich.dich}</blockquote>
                       <figcaption className="ck-tq-trich-nguon">
-                        {dn.trich.phienAm} — {viTriTrich(dn.trich)}.
+                        {viTriTrich(dn.trich)}.
+                        <span className="ck-tq-trich-dich-gia">Dịch nghĩa: xemboi</span>
                       </figcaption>
                     </figure>
                   </>

@@ -16,11 +16,13 @@ import {
   type BanCuuTinh,
   type NamCuuTinh,
 } from '@/lib/trang/cuu-tinh';
+import { boChuHan } from '@/lib/trang/chu-viet';
 import {
   VI_TRI_LUOI_CUU_TINH,
   docNhanhCuuTinh,
   duongBay,
 } from '@/lib/trang/phan-truc-quan';
+import { lamSachChuHanDauCau } from '../PhongThuyHelpers';
 import {
   BON_SAO_HIEP_KY,
   dinhDangNgayGioVN,
@@ -76,9 +78,7 @@ export function BangCuuCung({
                   <span className={`ck-pt-ct-sao-so ck-tq-hanh-${slug}`}>{o.sao.so}</span>
                   <strong className="ck-pt-ct-sao-ten">{o.sao.ten}</strong>
                 </div>
-                <span lang="zh-Hant" className="ck-pt-ct-sao-han">
-                  {o.sao.han}
-                </span>
+                <span className="ck-pt-ct-sao-han">{o.sao.hanh}</span>
               </div>
             );
           })}
@@ -136,9 +136,7 @@ export function BangCuuCung({
                   <strong className="ck-pt-ct-sao-ten">{o.sao.ten}</strong>
                 </div>
 
-                <span className="ck-pt-ct-sao-han">
-                  <span lang="zh-Hant">{o.sao.han}</span> · {o.sao.hanh}
-                </span>
+                <span className="ck-pt-ct-sao-han">{o.sao.hanh}</span>
 
                 {saoNamCung ? (
                   <span className="ck-pt-ct-sao-nam-phu">
@@ -245,13 +243,11 @@ export function BangCuuCung({
               </summary>
               <div className="ck-pt-ct-o-body">
                 <p>
-                  Sao: <strong>{o.sao.so} {o.sao.ten}</strong>{' '}
-                  <span lang="zh-Hant">({o.sao.han})</span> · Tên Bắc Đẩu:{' '}
+                  Sao: <strong>{o.sao.so} {o.sao.ten}</strong> · Tên Bắc Đẩu:{' '}
                   <strong>{o.sao.tenBacDau}</strong> · Hành: <strong>{o.sao.hanh}</strong>.
                 </p>
                 <p>
-                  Vị trí: <strong>{tenViTriCung(o)}</strong>{' '}
-                  <span lang="zh-Hant">({o.han})</span> · Số Lạc thư gốc: {o.soLacThu}.
+                  Vị trí: <strong>{tenViTriCung(o)}</strong> · Số Lạc thư gốc: {o.soLacThu}.
                 </p>
                 {laBonSao ? (
                   <p>Thuộc 4 sao được Hiệp kỷ ghi trong mục &quot;Khai sơn lập hướng tu phương cát&quot;.</p>
@@ -286,9 +282,10 @@ export function KhoiCuuTinhNam({
   thangHienTai?: number;
 }) {
   const dn = docNhanhCuuTinh(data.nam);
-  const theDocNhanh = dn.the.map((t) =>
-    t.ma === 'ngu-hoang' ? { ...t, muc: 'diu' as const } : t,
-  );
+  const theDocNhanh = dn.the.map((t) => {
+    const sach = { ...t, chiTiet: lamSachChuHanDauCau(t.chiTiet) };
+    return sach.ma === 'ngu-hoang' ? { ...sach, muc: 'diu' as const } : sach;
+  });
   const saoTrung = saoSo(data.ban.trung);
   const nguHoang = cungCuaSao(data.ban, 5);
   const nhiHac = cungCuaSao(data.ban, 2);
@@ -384,8 +381,8 @@ export function KhoiCuuTinhNam({
             <b>{dinhDangNgayGioVN(thangObj.batDau)}</b> (giờ Việt Nam) · Trung cung:{' '}
             <b>
               {saoTrungThang.so} {saoTrungThang.ten}
-            </b>{' '}
-            <span lang="zh-Hant">({saoTrungThang.han})</span>.
+            </b>
+            .
           </span>
         </div>
       ) : null}
@@ -401,7 +398,7 @@ export function KhoiCuuTinhNam({
           Năm {data.nam}: Ngũ hoàng ở <strong>{tenViTriCung(nguHoang)}</strong>. Nhị hắc ở{' '}
           <strong>{tenViTriCung(nhiHac)}</strong>.
         </p>
-        <p className="ck-pt-ct-bon-sao-chu">{GHI_CHU_BON_SAO}</p>
+        <p className="ck-pt-ct-bon-sao-chu">{boChuHan(GHI_CHU_BON_SAO)}</p>
         <ul className="ck-pt-ct-bon-sao-ds">
           {BON_SAO_HIEP_KY.map((so) => {
             const c = cungCuaSao(laLopThang ? thangObj.ban : data.ban, so);
@@ -475,10 +472,7 @@ export function KhoiCuuTinhThang({
                     Trung cung:{' '}
                     <b>
                       {saoTrung.so} {saoTrung.ten}
-                    </b>{' '}
-                    <span lang="zh-Hant" className="ck-pt-han-inline">
-                      {saoTrung.han}
-                    </span>
+                    </b>
                   </p>
                   <BangCuuCung ban={t.ban} nho hienChuThich={false} />
                 </article>

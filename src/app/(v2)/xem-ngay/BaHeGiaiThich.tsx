@@ -36,8 +36,14 @@ export default function BaHeGiaiThich({ daDung }: BaHeGiaiThichProps) {
           </div>
 
           <TrichNguyenVan
-            trich={TRICH_DOAN.ngocHapTruc}
-            nguon={NGUON_XEM_NGAY.ngocHap}
+            nhan="Sách ghi"
+            dich={TRICH_DOAN.ngocHapTruc.dich}
+            viTriViet={TRICH_DOAN.ngocHapTruc.viTriViet}
+            tenSach={NGUON_XEM_NGAY.ngocHap.tenHanViet}
+            nienDai={NGUON_XEM_NGAY.ngocHap.nienDai}
+            doanId={TRICH_DOAN.ngocHapTruc.doanId}
+            ghiCong={NGUON_XEM_NGAY.ngocHap.ghiCong}
+            url={NGUON_XEM_NGAY.ngocHap.url}
           />
 
           <div className="ck-xn-bang-cuon">
@@ -45,7 +51,6 @@ export default function BaHeGiaiThich({ daDung }: BaHeGiaiThichProps) {
               <thead>
                 <tr>
                   <th scope="col">Trực</th>
-                  <th scope="col">Chữ Hán</th>
                   <th scope="col">Nhóm</th>
                   <th scope="col">Việc theo câu ca</th>
                 </tr>
@@ -54,9 +59,6 @@ export default function BaHeGiaiThich({ daDung }: BaHeGiaiThichProps) {
                 {TRUC.map((t) => (
                   <tr key={t.chiSo}>
                     <td className="ck-xn-ten-dam">{t.ten}</td>
-                    <td>
-                      <span lang="zh-Hant">{t.han}</span>
-                    </td>
                     <td>
                       <span className={`ck-xn-nhan ck-xn-truc-${t.nhom}`}>
                         {TEN_NHOM_TRUC[t.nhom]}
@@ -77,8 +79,14 @@ export default function BaHeGiaiThich({ daDung }: BaHeGiaiThichProps) {
           </div>
 
           <TrichNguyenVan
-            trich={TRICH_DOAN.hiepKyThan}
-            nguon={NGUON_XEM_NGAY.hiepKy}
+            nhan="Sách ghi"
+            dich={TRICH_DOAN.hiepKyThan.dich}
+            viTriViet={TRICH_DOAN.hiepKyThan.viTriViet}
+            tenSach={NGUON_XEM_NGAY.hiepKy.tenHanViet}
+            nienDai={NGUON_XEM_NGAY.hiepKy.nienDai}
+            doanId={TRICH_DOAN.hiepKyThan.doanId}
+            ghiCong={NGUON_XEM_NGAY.hiepKy.ghiCong}
+            url={NGUON_XEM_NGAY.hiepKy.url}
           />
 
           <div className="ck-xn-bang-cuon">
@@ -86,7 +94,6 @@ export default function BaHeGiaiThich({ daDung }: BaHeGiaiThichProps) {
               <thead>
                 <tr>
                   <th scope="col">Thần</th>
-                  <th scope="col">Chữ Hán</th>
                   <th scope="col">Hoàng / Hắc</th>
                 </tr>
               </thead>
@@ -95,13 +102,9 @@ export default function BaHeGiaiThich({ daDung }: BaHeGiaiThichProps) {
                   <tr key={t.chiSo}>
                     <td className="ck-xn-ten-dam">{t.ten}</td>
                     <td>
-                      <span lang="zh-Hant">{t.han}</span>
-                    </td>
-                    <td>
                       <span
-                        className={`ck-xn-nhan ${
-                          t.hoangDao ? 'ck-xn-hoang' : 'ck-xn-hac'
-                        }`}
+                        className={`ck-xn-nhan ${t.hoangDao ? 'ck-xn-hoang' : 'ck-xn-hac'
+                          }`}
                       >
                         {t.hoangDao ? 'Hoàng đạo' : 'Hắc đạo'}
                       </span>
@@ -114,12 +117,17 @@ export default function BaHeGiaiThich({ daDung }: BaHeGiaiThichProps) {
 
           <div className="ck-xn-nhan-xet">
             <p className="ck-xn-vi-tri">
-              Nhận xét trong{' '}
-              <span lang="zh-Hant">{TRICH_DOAN.hiepKyNhanXet.viTri}</span>:
+              Nhận xét trong {TRICH_DOAN.hiepKyNhanXet.viTriViet}:
             </p>
             <TrichNguyenVan
-              trich={TRICH_DOAN.hiepKyNhanXet}
-              nguon={NGUON_XEM_NGAY.hiepKy}
+              nhan="Sách ghi"
+              dich={TRICH_DOAN.hiepKyNhanXet.dich}
+              viTriViet={TRICH_DOAN.hiepKyNhanXet.viTriViet}
+              tenSach={NGUON_XEM_NGAY.hiepKy.tenHanViet}
+              nienDai={NGUON_XEM_NGAY.hiepKy.nienDai}
+              doanId={TRICH_DOAN.hiepKyNhanXet.doanId}
+              ghiCong={NGUON_XEM_NGAY.hiepKy.ghiCong}
+              url={NGUON_XEM_NGAY.hiepKy.url}
             />
             <p className="ck-xn-nhan-xet-cau">
               Chính Hiệp kỷ ghi rằng không có lý do thiên văn để chỉ sáu thần này là hoàng đạo.

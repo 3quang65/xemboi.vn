@@ -65,21 +65,12 @@ export default async function BatTrachPage() {
               className={`ck-pt-du-nien-the ${d.cat ? 'ck-pt-the-cat' : 'ck-pt-the-hung'}`}
             >
               <div className="ck-pt-du-nien-dau">
-                <h3>
-                  {d.ten}{' '}
-                  <span lang="zh-Hant" className="ck-pt-han-inline">
-                    {d.han}
-                  </span>
-                </h3>
+                <h3>{d.ten}</h3>
                 <HuyHieuCatHung cat={d.cat} />
               </div>
 
               <p className="ck-pt-du-nien-sao">
-                Sao: <b>{d.sao}</b>{' '}
-                <span lang="zh-Hant" className="ck-pt-han-inline">
-                  {d.saoHan}
-                </span>{' '}
-                · Cách lập: <b>{d.moTaBien}</b>
+                Sao: <b>{d.sao}</b> · Cách lập: <b>{d.moTaBien}</b>
               </p>
 
               <HinhBaHaoBien

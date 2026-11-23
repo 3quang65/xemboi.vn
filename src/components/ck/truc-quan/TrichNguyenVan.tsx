@@ -1,41 +1,44 @@
 import './truc-quan.css';
 
-export interface TrichNguyenVanItem {
-  doanId: number;
-  viTri: string;
-  nguyenVan: string;
-}
-
-export interface NguonSachItem {
-  tenGoc: string;
-  tenHanViet: string;
-  tacGia?: string;
-  nienDai?: string;
+export interface TrichNguyenVanProps {
+  dich: string;
+  viTriViet: string;
+  tenSach: string;
   ghiCong: string;
   url: string;
+  tacGia?: string;
+  nienDai?: string;
+  doanId?: number;
+  ghiCongDich?: string;
+  nhan?: string;
 }
 
-export interface TrichNguyenVanProps {
-  trich: TrichNguyenVanItem;
-  nguon: NguonSachItem;
-}
-
-export function TrichNguyenVan({ trich, nguon }: TrichNguyenVanProps) {
-  const phan = [nguon.tacGia, nguon.nienDai, trich.viTri]
-    .filter(Boolean)
-    .join(', ');
+export function TrichNguyenVan({
+  dich,
+  viTriViet,
+  tenSach,
+  ghiCong,
+  url,
+  tacGia,
+  nienDai,
+  doanId,
+  ghiCongDich = 'Dịch nghĩa: xemboi',
+  nhan,
+}: TrichNguyenVanProps) {
+  const phan = [tacGia, nienDai, viTriViet].filter(Boolean).join(', ');
 
   return (
     <figure className="ck-tq-trich">
-      <blockquote className="ck-tq-trich-han" lang="zh-Hant">
-        {trich.nguyenVan}
-      </blockquote>
+      {nhan ? <span className="ck-tq-trich-nhan">{nhan}</span> : null}
+      <blockquote className="ck-tq-trich-dich">{dich}</blockquote>
       <figcaption className="ck-tq-trich-nguon">
-        <em>{nguon.tenHanViet}</em> ({nguon.tenGoc})
-        {phan ? `, ${phan}` : ''} · đoạn {trich.doanId}.{' '}
-        <a href={nguon.url} target="_blank" rel="noopener noreferrer nofollow">
-          {nguon.ghiCong}
+        <em>{tenSach}</em>
+        {phan ? `, ${phan}` : ''}
+        {doanId !== undefined ? ` · đoạn ${doanId}` : ''}.{' '}
+        <a href={url} target="_blank" rel="noopener noreferrer nofollow">
+          {ghiCong}
         </a>
+        <span className="ck-tq-trich-dich-gia">{ghiCongDich}</span>
       </figcaption>
     </figure>
   );

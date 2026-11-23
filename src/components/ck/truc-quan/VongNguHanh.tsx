@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Hanh } from '@/lib/trang/can-chi';
 import { vongNguHanh, type VongNguHanh as VongNguHanhData } from '@/lib/trang/tra-cuu-truc-quan';
-import { HANH_HAN, HANH_SLUG, duongDanHanh } from '@/components/ck/canChiHelpers';
+import { HANH_SLUG, duongDanHanh } from '@/components/ck/canChiHelpers';
 import './truc-quan.css';
 
 export interface VongNguHanhProps {
@@ -247,30 +247,17 @@ export function VongNguHanh({ chon, idPrefix, className }: VongNguHanhProps) {
                     </text>
                   </>
                 ) : (
-                  <>
-                    <text
-                      x={nx}
-                      y={ny - 11}
-                      textAnchor="middle"
-                      dominantBaseline="central"
-                      fontSize={17}
-                      fontWeight={700}
-                      fill={mau}
-                    >
-                      {HANH_HAN[d.hanh]}
-                    </text>
-                    <text
-                      x={nx}
-                      y={ny + 12}
-                      textAnchor="middle"
-                      dominantBaseline="central"
-                      fontSize={16.5}
-                      fontWeight={700}
-                      fill={mau}
-                    >
-                      {d.hanh}
-                    </text>
-                  </>
+                  <text
+                    x={nx}
+                    y={ny}
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    fontSize={17}
+                    fontWeight={700}
+                    fill={mau}
+                  >
+                    {d.hanh}
+                  </text>
                 )}
               </g>
             </Link>

@@ -69,7 +69,6 @@ export default async function NguonChiTietPage({
   ]);
 
   const dongThongTin: { nhan: string; giaTri: string }[] = [
-    { nhan: 'Tên gốc', giaTri: nguon.tenGoc },
     { nhan: 'Tên Hán Việt', giaTri: nguon.tenHanViet ?? '—' },
     { nhan: 'Tác giả', giaTri: nguon.tacGia ?? '—' },
     { nhan: 'Niên đại', giaTri: nguon.nienDai ?? '—' },
@@ -91,9 +90,6 @@ export default async function NguonChiTietPage({
     '@context': 'https://schema.org',
     '@type': 'Book',
     name: nguon.tenHienThi,
-    ...(nguon.tenGoc && nguon.tenGoc !== nguon.tenHienThi
-      ? { alternateName: nguon.tenGoc }
-      : {}),
     ...(nguon.tacGia
       ? { author: { '@type': 'Person', name: nguon.tacGia } }
       : {}),

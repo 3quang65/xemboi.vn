@@ -20,6 +20,8 @@ import {
   docGio,
   formatKhoangNamNay,
   kiemCoThamSo,
+  lamSachMetaChiemTinh,
+  lamSachThongTinChiemTinh,
   layMot,
   nhanHanhTinh,
   pad2,
@@ -43,10 +45,11 @@ export async function generateMetadata({
 }: {
   searchParams: SearchParamsInput;
 }): Promise<Metadata> {
-  const [sp, base] = await Promise.all([
+  const [sp, baseRaw] = await Promise.all([
     searchParams,
     metaTrang('/chiem-tinh/cung-hoang-dao', MAC_DINH_CUNG_HOANG_DAO),
   ]);
+  const base = lamSachMetaChiemTinh(baseRaw);
   if (kiemCoThamSo(sp)) {
     return {
       ...base,
@@ -62,10 +65,11 @@ export default async function CungHoangDaoPage({
 }: {
   searchParams: SearchParamsInput;
 }) {
-  const [tt, sp] = await Promise.all([
+  const [ttRaw, sp] = await Promise.all([
     thongTinTrang('/chiem-tinh/cung-hoang-dao', MAC_DINH_CUNG_HOANG_DAO),
     searchParams,
   ]);
+  const tt = lamSachThongTinChiemTinh(ttRaw);
   const daDung = trangDaDung();
   const namNay = ngayHienTaiVN().nam;
   const cungHomNay = cungTaiThoiDiem(new Date());
@@ -94,12 +98,12 @@ export default async function CungHoangDaoPage({
   const ketQua =
     ngaySinh && loiList.length === 0
       ? traCung(
-          ngaySinh.ngay,
-          ngaySinh.thang,
-          ngaySinh.nam,
-          gioSinh?.gio,
-          gioSinh?.phut,
-        )
+        ngaySinh.ngay,
+        ngaySinh.thang,
+        ngaySinh.nam,
+        gioSinh?.gio,
+        gioSinh?.phut,
+      )
       : null;
 
   const giaTriNgay = ngaySinh
@@ -118,11 +122,11 @@ export default async function CungHoangDaoPage({
   const schemaSet = taoSchemaDefinedTermSet12Cung();
   const hrefBanDoSao = ngaySinh
     ? `/chiem-tinh/ban-do-sao?${new URLSearchParams({
-        ngay: isoNgay(ngaySinh),
-        ...(gioSinh
-          ? { gio: `${pad2(gioSinh.gio)}:${pad2(gioSinh.phut)}` }
-          : {}),
-      }).toString()}`
+      ngay: isoNgay(ngaySinh),
+      ...(gioSinh
+        ? { gio: `${pad2(gioSinh.gio)}:${pad2(gioSinh.phut)}` }
+        : {}),
+    }).toString()}`
     : '/chiem-tinh/ban-do-sao';
 
   return (
@@ -228,7 +232,7 @@ export default async function CungHoangDaoPage({
               <div>
                 <h3 className="ck-ct-dau-ten">
                   <Link href={duongDanCung(ketQua.cung)}>
-                    Cung {ketQua.cung.ten} ({ketQua.cung.en})
+                    Cung {ketQua.cung.ten}
                   </Link>
                 </h3>
                 <p className="ck-ct-dau-phu">
@@ -325,7 +329,6 @@ export default async function CungHoangDaoPage({
                 <tr>
                   <th scope="col">Ký hiệu</th>
                   <th scope="col">Cung</th>
-                  <th scope="col">Tiếng Anh</th>
                   <th scope="col">Năm {namNay} (giờ VN)</th>
                   <th scope="col">Chủ nhà</th>
                   <th scope="col">Tam hợp</th>
@@ -353,7 +356,6 @@ export default async function CungHoangDaoPage({
                           ) : null}
                         </div>
                       </th>
-                      <td data-nhan="Tiếng Anh">{c.en}</td>
                       <td data-nhan={`Năm ${namNay}`}>
                         <div>
                           <span className="ck-ct-gio-dong">{vietGioVN(k.batDau)} →</span>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
 import { HuyHieuHanh, NguonNapAm } from '@/components/ck/TheCanChi';
-import { HANH_SLUG, NAP_AM_HAN } from '@/components/ck/canChiHelpers';
+import { HANH_SLUG } from '@/components/ck/canChiHelpers';
 import { NAP_AM, NGU_HANH } from '@/lib/trang/can-chi';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
@@ -56,7 +56,6 @@ export default async function NapAmIndexPage() {
               {ds.map((na) => (
                 <Link key={na.slug} href={`/nap-am/${na.slug}`} className="ck-na-o">
                   <b>{na.ten}</b>
-                  {NAP_AM_HAN[na.slug] ? <small>{NAP_AM_HAN[na.slug]}</small> : null}
                   <span>
                     {na.hoaGiap[0].ten} · {na.hoaGiap[1].ten}
                   </span>

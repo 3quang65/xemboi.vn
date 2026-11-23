@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { HoaVanGoc4, HoaVanMay } from '@/components/r1/HoaVanE3';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { HuyHieuHanh } from '@/components/ck/TheCanChi';
-import { CAN_HAN, CHI_HAN, HANH_SLUG } from '@/components/ck/canChiHelpers';
+import { HANH_SLUG } from '@/components/ck/canChiHelpers';
 import {
   ChuGiaiHanh,
   DocNhanh,
@@ -73,7 +73,17 @@ function kiemCoThamSo(sp: Record<string, string | string[] | undefined>): boolea
 function giaiTrichBatTu(ma: string): TrichSachDaGiai | null {
   if (!(ma in TRICH_BAT_TU)) return null;
   const trich = TRICH_BAT_TU[ma as MaTrichBatTu];
-  return { trich, nguon: NGUON_BAT_TU[trich.nguon] };
+  const nguon = NGUON_BAT_TU[trich.nguon];
+  return {
+    dich: trich.dich,
+    viTriViet: trich.viTriViet,
+    tenSach: nguon.tenHanViet,
+    tacGia: nguon.tacGia,
+    nienDai: nguon.nienDai,
+    doanId: trich.doanId,
+    ghiCong: nguon.ghiCong,
+    url: nguon.url,
+  };
 }
 
 function dinhDangPhanTram(n: number, tong = 8): string {
@@ -154,24 +164,14 @@ function TheTruChiTiet({ tru, colIdx }: { tru: TruBatTu; colIdx: number }) {
         <strong className={`ck-bt-chu-can-chi ck-tq-hanh-${HANH_SLUG[tru.hanhCan]}`}>
           {tru.can}
         </strong>
-        <span className="ck-bt-chu-phu">
-          <span className={`ck-bt-han-nho ck-tq-hanh-${HANH_SLUG[tru.hanhCan]}`} lang="zh-Hant">
-            {CAN_HAN[tru.can] ?? ''}
-          </span>{' '}
-          · {tru.hanhCan}
-        </span>
+        <span className="ck-bt-chu-phu">{tru.hanhCan}</span>
       </div>
 
       <div className="ck-bt-tru-chu-khoi">
         <strong className={`ck-bt-chu-can-chi ck-tq-hanh-${HANH_SLUG[tru.hanhChi]}`}>
           {tru.chi}
         </strong>
-        <span className="ck-bt-chu-phu">
-          <span className={`ck-bt-han-nho ck-tq-hanh-${HANH_SLUG[tru.hanhChi]}`} lang="zh-Hant">
-            {CHI_HAN[tru.chi] ?? ''}
-          </span>{' '}
-          · {tru.hanhChi}
-        </span>
+        <span className="ck-bt-chu-phu">{tru.hanhChi}</span>
       </div>
 
       <div className="ck-bt-tru-tang">
@@ -259,14 +259,8 @@ function DanhSachQuanHeChiTiet({
                     <summary className="ck-tq-sach-nut">Sách ghi</summary>
                     <div className="ck-bt-qh-trich-ds">
                       {q.trich.map((ma) => {
-                        const tr = TRICH_BAT_TU[ma];
-                        return (
-                          <TrichNguyenVan
-                            key={ma}
-                            trich={tr}
-                            nguon={NGUON_BAT_TU[tr.nguon]}
-                          />
-                        );
+                        const tq = giaiTrichBatTu(ma);
+                        return tq ? <TrichNguyenVan key={ma} {...tq} /> : null;
                       })}
                     </div>
                   </details>
@@ -285,16 +279,10 @@ function DanhSachQuanHeChiTiet({
             Sách ghi về xung, hình (không vội luận là dữ):
           </p>
           {coXung ? (
-            <TrichNguyenVan
-              trich={TRICH_BAT_TU.xungKhongVoiDoan}
-              nguon={NGUON_BAT_TU[TRICH_BAT_TU.xungKhongVoiDoan.nguon]}
-            />
+            <TrichNguyenVan {...giaiTrichBatTu('xungKhongVoiDoan')!} nhan="Sách ghi" />
           ) : null}
           {coHinh ? (
-            <TrichNguyenVan
-              trich={TRICH_BAT_TU.hinhKhongVoiDoan}
-              nguon={NGUON_BAT_TU[TRICH_BAT_TU.hinhKhongVoiDoan.nguon]}
-            />
+            <TrichNguyenVan {...giaiTrichBatTu('hinhKhongVoiDoan')!} nhan="Sách ghi" />
           ) : null}
         </div>
       ) : null}
@@ -353,13 +341,13 @@ export default async function BatTuLapLaSoPage({
 
   const coThamSo = Boolean(
     ngayRaw ||
-      thangRaw ||
-      namRaw ||
-      gioRaw ||
-      phutRaw ||
-      gioiTinhRaw ||
-      tuFormRaw ||
-      khongRoGioRaw,
+    thangRaw ||
+    namRaw ||
+    gioRaw ||
+    phutRaw ||
+    gioiTinhRaw ||
+    tuFormRaw ||
+    khongRoGioRaw,
   );
 
   const doiNgayLuc23 =
@@ -759,22 +747,16 @@ export default async function BatTuLapLaSoPage({
                       </span>
                       <div className="ck-bt-tam-hai">
                         <span className="ck-bt-tam-chu-don">
-                          <b
-                            className={`ck-bt-tam-han ck-tq-hanh-${HANH_SLUG[tru.hanhCan]}`}
-                            lang="zh-Hant"
-                          >
-                            {CAN_HAN[tru.can] ?? ''}
+                          <b className={`ck-bt-tam-viet-lon ck-tq-hanh-${HANH_SLUG[tru.hanhCan]}`}>
+                            {tru.can}
                           </b>
-                          <span className="ck-bt-tam-viet">{tru.can}</span>
+                          <span className="ck-bt-tam-viet">{tru.hanhCan}</span>
                         </span>
                         <span className="ck-bt-tam-chu-don">
-                          <b
-                            className={`ck-bt-tam-han ck-tq-hanh-${HANH_SLUG[tru.hanhChi]}`}
-                            lang="zh-Hant"
-                          >
-                            {CHI_HAN[tru.chi] ?? ''}
+                          <b className={`ck-bt-tam-viet-lon ck-tq-hanh-${HANH_SLUG[tru.hanhChi]}`}>
+                            {tru.chi}
                           </b>
-                          <span className="ck-bt-tam-viet">{tru.chi}</span>
+                          <span className="ck-bt-tam-viet">{tru.hanhChi}</span>
                         </span>
                       </div>
                     </div>
@@ -899,15 +881,7 @@ export default async function BatTuLapLaSoPage({
                           >
                             {lnCan}
                           </strong>
-                          <span className="ck-bt-chu-phu">
-                            <span
-                              className={`ck-bt-han-nho ck-tq-hanh-${HANH_SLUG[luuNien.hanhCan]}`}
-                              lang="zh-Hant"
-                            >
-                              {CAN_HAN[lnCan] ?? ''}
-                            </span>{' '}
-                            · {luuNien.hanhCan}
-                          </span>
+                          <span className="ck-bt-chu-phu">{luuNien.hanhCan}</span>
                         </div>
 
                         <div className="ck-bt-tru-chu-khoi">
@@ -916,15 +890,7 @@ export default async function BatTuLapLaSoPage({
                           >
                             {lnChi}
                           </strong>
-                          <span className="ck-bt-chu-phu">
-                            <span
-                              className={`ck-bt-han-nho ck-tq-hanh-${HANH_SLUG[luuNien.hanhChi]}`}
-                              lang="zh-Hant"
-                            >
-                              {CHI_HAN[lnChi] ?? ''}
-                            </span>{' '}
-                            · {luuNien.hanhChi}
-                          </span>
+                          <span className="ck-bt-chu-phu">{luuNien.hanhChi}</span>
                         </div>
 
                         <footer className="ck-bt-tru-nap-am ck-bt-ln-chan-cot">
@@ -1112,9 +1078,7 @@ export default async function BatTuLapLaSoPage({
                             >
                               {tru.chi}
                             </strong>
-                            <span className="ck-bt-hanh-phu">
-                              {CHI_HAN[tru.chi] ?? ''} · {tru.hanhChi}
-                            </span>
+                            <span className="ck-bt-hanh-phu">{tru.hanhChi}</span>
                           </td>
                         ) : (
                           <td key="bang-gio-chi">—</td>
@@ -1182,7 +1146,7 @@ export default async function BatTuLapLaSoPage({
                 tamTru
                   ? 'Ba trụ năm, tháng, ngày không có cặp hợp, xung, hình, hại nào theo các bảng đang dùng.'
                   : dn.the.find((t) => t.ma === 'quan-he')?.chiTiet ??
-                    'Bốn trụ không có cặp hợp, xung, hình, hại nào theo các bảng đang dùng.'
+                  'Bốn trụ không có cặp hợp, xung, hình, hại nào theo các bảng đang dùng.'
               }
             />
           </section>
@@ -1312,15 +1276,6 @@ export default async function BatTuLapLaSoPage({
                       <span className={`ck-tq-hanh-${HANH_SLUG[dv.hanhCan]}`}>{dvCan}</span>{' '}
                       <span className={`ck-tq-hanh-${HANH_SLUG[dv.hanhChi]}`}>{dvChi}</span>
                     </strong>
-
-                    <div className="ck-bt-dv-han" lang="zh-Hant">
-                      <span className={`ck-tq-hanh-${HANH_SLUG[dv.hanhCan]}`}>
-                        {CAN_HAN[dvCan] ?? ''}
-                      </span>
-                      <span className={`ck-tq-hanh-${HANH_SLUG[dv.hanhChi]}`}>
-                        {CHI_HAN[dvChi] ?? ''}
-                      </span>
-                    </div>
 
                     <div className="ck-bt-dv-moc">
                       <b className="ck-bt-dv-nam">

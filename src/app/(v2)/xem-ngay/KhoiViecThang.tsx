@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { dinhDangNgayVN, duongDanNgayTuIso } from '@/components/ck/lichHelpers';
+import { boChuHan } from '@/lib/trang/chu-viet';
 import {
   TEN_NHOM_TRUC,
   doanThang,
@@ -25,8 +26,7 @@ export function TomTatViec({ viec }: { viec: Viec }) {
             <ul className="ck-xn-chip-ds">
               {viec.chinh.map((han) => (
                 <li key={han} className="ck-xn-chip ck-xn-chip-chinh">
-                  <b>{TEN_NGHI_KY[han] ?? han}</b>{' '}
-                  <span lang="zh-Hant">({han})</span>
+                  <b>{TEN_NGHI_KY[han] ?? han}</b>
                 </li>
               ))}
             </ul>
@@ -38,8 +38,7 @@ export function TomTatViec({ viec }: { viec: Viec }) {
               <ul className="ck-xn-chip-ds">
                 {viec.phu.map((han) => (
                   <li key={han} className="ck-xn-chip">
-                    {TEN_NGHI_KY[han] ?? han}{' '}
-                    <span lang="zh-Hant">({han})</span>
+                    {TEN_NGHI_KY[han] ?? han}
                   </li>
                 ))}
               </ul>
@@ -49,7 +48,7 @@ export function TomTatViec({ viec }: { viec: Viec }) {
 
         {viec.ghiChu ? (
           <p className="ck-xn-ghi-chu" role="note">
-            {viec.ghiChu}
+            {boChuHan(viec.ghiChu)}
           </p>
         ) : null}
       </div>
@@ -137,9 +136,8 @@ function BangNgayViec({
                   <div className="ck-xn-he-nhom">
                     <strong>{n.than.ten}</strong>
                     <span
-                      className={`ck-xn-nhan ${
-                        n.than.hoangDao ? 'ck-xn-hoang' : 'ck-xn-hac'
-                      }`}
+                      className={`ck-xn-nhan ${n.than.hoangDao ? 'ck-xn-hoang' : 'ck-xn-hac'
+                        }`}
                     >
                       {n.than.hoangDao ? 'Hoàng đạo' : 'Hắc đạo'}
                     </span>

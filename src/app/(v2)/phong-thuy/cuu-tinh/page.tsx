@@ -170,7 +170,7 @@ export default async function CuuTinhPage({
         </>
       ) : null}
 
-      {/* Cách tính theo sách (5 câu nguyên văn) */}
+      {/* Cách tính theo sách */}
       <section className="ck-td-muc" aria-labelledby="ck-pt-ct-sach-tieu">
         <h2 id="ck-pt-ct-sach-tieu" className="ck-td-tieu">
           Cách tính theo sách
@@ -191,7 +191,6 @@ export default async function CuuTinhPage({
               <tr>
                 <th>Số</th>
                 <th>Tên sao</th>
-                <th>Chữ Hán</th>
                 <th>Tên Bắc Đẩu</th>
                 <th>Hành</th>
               </tr>
@@ -209,11 +208,6 @@ export default async function CuuTinhPage({
                         aria-hidden="true"
                       />
                       <b>{s.ten}</b>
-                    </span>
-                  </td>
-                  <td data-nhan="Chữ Hán">
-                    <span lang="zh-Hant" className="ck-pt-han-inline">
-                      {s.han}
                     </span>
                   </td>
                   <td data-nhan="Tên Bắc Đẩu">{s.tenBacDau}</td>

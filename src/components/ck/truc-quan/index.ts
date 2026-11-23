@@ -16,12 +16,7 @@ export { LaBan, type LaBanProps } from './LaBan';
 export { MoChiTietAnchorClient } from './MoChiTietAnchorClient';
 export { TheNgayChon, type TheNgayChonProps } from './TheNgayChon';
 export { ThuatNgu, type ThuatNguProps } from './ThuatNgu';
-export {
-  TrichNguyenVan,
-  type NguonSachItem,
-  type TrichNguyenVanItem,
-  type TrichNguyenVanProps,
-} from './TrichNguyenVan';
+export { TrichNguyenVan, type TrichNguyenVanProps } from './TrichNguyenVan';
 export {
   KIEU_NET_TRA_CUU,
   MauNetTraCuuSvg,

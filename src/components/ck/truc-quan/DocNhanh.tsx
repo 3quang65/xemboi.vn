@@ -1,17 +1,10 @@
 import type { ReactNode } from 'react';
 import type { Hanh } from '@/lib/trang/can-chi';
 import { HANH_SLUG } from '@/components/ck/canChiHelpers';
-import {
-  TrichNguyenVan,
-  type NguonSachItem,
-  type TrichNguyenVanItem,
-} from './TrichNguyenVan';
+import { TrichNguyenVan, type TrichNguyenVanProps } from './TrichNguyenVan';
 import './truc-quan.css';
 
-export type TrichSachDaGiai = {
-  trich: TrichNguyenVanItem;
-  nguon: NguonSachItem;
-};
+export type TrichSachDaGiai = TrichNguyenVanProps;
 
 export type MucDocNhanh = 'tot' | 'binh' | 'diu';
 
@@ -101,7 +94,7 @@ export function DocNhanh({
               {sachGhi ? (
                 <details className="ck-tq-sach">
                   <summary className="ck-tq-sach-nut">Sách ghi</summary>
-                  <TrichNguyenVan trich={sachGhi.trich} nguon={sachGhi.nguon} />
+                  <TrichNguyenVan {...sachGhi} />
                 </details>
               ) : null}
             </article>

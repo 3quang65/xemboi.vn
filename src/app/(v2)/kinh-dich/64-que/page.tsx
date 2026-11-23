@@ -51,7 +51,7 @@ export default async function SauMuoiTuQuePage() {
           Danh sách 64 quẻ theo thứ tự Văn Vương
         </h2>
         <div className="ck-kd-luoi-64">
-          {ds64.map(({ que, kyHieu, han }) => {
+          {ds64.map(({ que, kyHieu }) => {
             const quaiTren = quaiTheoTenQ(que.thuong.ten);
             const quaiDuoi = quaiTheoTenQ(que.ha.ten);
             return (
@@ -66,9 +66,6 @@ export default async function SauMuoiTuQuePage() {
                     {kyHieu}
                   </span>
                   <strong className="ck-kd-the-ten">{que.ten}</strong>
-                  <span lang="zh-Hant" className="ck-kd-the-han">
-                    {han}
-                  </span>
                 </LienKetKiem>
                 <div className="ck-kd-the-quai">
                   <span>
@@ -167,7 +164,7 @@ export default async function SauMuoiTuQuePage() {
         </div>
       </nav>
 
-      <GhiCongChuDich hienPhienAm daDung={daDung} />
+      <GhiCongChuDich daDung={daDung} />
     </KhungTrang>
   );
 }

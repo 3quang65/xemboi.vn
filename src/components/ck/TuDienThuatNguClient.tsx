@@ -57,7 +57,7 @@ export default function TuDienThuatNguClient({ nhom }: { nhom: NhomThuatNgu[] })
             className="ck-tdt-loc"
             value={tuKhoa}
             onChange={(e) => setTuKhoa(e.target.value)}
-            placeholder="Nhập tên Hán Việt, chữ Hán hoặc tên gọi khác..."
+            placeholder="Nhập tên thuật ngữ hoặc tên gọi khác..."
           />
           <span className="ck-tdt-dem">
             Đang hiện <strong>{tongHienTai}</strong> / {tongTatCa} mục
@@ -102,7 +102,6 @@ export default function TuDienThuatNguClient({ nhom }: { nhom: NhomThuatNgu[] })
                     ) : (
                       <strong>{t.hanViet}</strong>
                     )}
-                    <span className="ck-tdt-han">{t.han}</span>
                   </div>
                   {t.bienThe.length > 0 ? (
                     <span className="ck-tdt-bien-the">còn gọi: {t.bienThe.join(', ')}</span>

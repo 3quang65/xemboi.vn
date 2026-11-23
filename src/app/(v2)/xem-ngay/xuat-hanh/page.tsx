@@ -174,17 +174,18 @@ export default async function XuatHanhTetPage() {
             <article key={bai.ma} className="ck-xh-sach-the">
               <div className="ck-xh-sach-dau">
                 <h3>
-                  {bai.ten} — <span lang="zh-Hant">{bai.tenBai}</span>
+                  {bai.ten} — {bai.tenBaiViet}
                 </h3>
               </div>
 
               <TrichNguyenVan
-                trich={{
-                  doanId: bai.doanId,
-                  viTri: bai.viTri,
-                  nguyenVan: bai.nguyenVan,
-                }}
-                nguon={NGUON_XUAT_HANH}
+                nhan="Sách ghi"
+                dich={bai.dich}
+                viTriViet={bai.viTriViet}
+                tenSach={NGUON_XUAT_HANH.tenHanViet}
+                doanId={bai.doanId}
+                ghiCong={NGUON_XUAT_HANH.ghiCong}
+                url={NGUON_XUAT_HANH.url}
               />
 
               <table className="ck-xh-can-bang">
@@ -227,10 +228,8 @@ export default async function XuatHanhTetPage() {
               giống các trang lịch khác của xemboi.
             </li>
             <li>
-              Hướng Hỷ thần, Tài thần, Phúc thần theo ba bài ca trong Ngọc hạp ký (
-              <span lang="zh-Hant">玉匣記</span>), mục{' '}
-              <span lang="zh-Hant">民俗吉凶日篇</span>. Sách khác có thể ghi
-              hướng khác; trang này chưa đối chiếu sách thứ hai.
+              Hướng Hỷ thần, Tài thần, Phúc thần theo ba bài ca trong Ngọc hạp ký, thiên Dân tục
+              cát hung nhật. Sách khác có thể ghi hướng khác; trang này chưa đối chiếu sách thứ hai.
             </li>
           </ul>
           <p className="ck-xh-ghi-cong">
@@ -240,7 +239,7 @@ export default async function XuatHanhTetPage() {
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
-              Wikisource: <span lang="zh-Hant">{NGUON_XUAT_HANH.tenGoc}</span>
+              Wikisource: {NGUON_XUAT_HANH.tenHanViet}
             </a>
             {hrefNguon && daDung.has('/nguon') ? (
               <Link href={hrefNguon}>Xem thông tin sách</Link>

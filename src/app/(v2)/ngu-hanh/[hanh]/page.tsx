@@ -6,9 +6,7 @@ import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
 import { VongNguHanh } from '@/components/ck/truc-quan';
 import { DanhSachMau, HuyHieuHanh, NguonNapAm } from '@/components/ck/TheCanChi';
 import {
-  HANH_HAN,
   HANH_SLUG,
-  NAP_AM_HAN,
   SLUG_HANH,
   duongDanHanh,
 } from '@/components/ck/canChiHelpers';
@@ -95,7 +93,7 @@ export default async function NguHanhChiTietPage({
                 <HuyHieuHanh hanh={qh.sinhRa} lienKet />
               </div>
               <p>
-                {hanhVal} ({HANH_HAN[hanhVal]}) sinh {qh.sinhRa}
+                {hanhVal} sinh {qh.sinhRa}
               </p>
             </div>
 
@@ -140,7 +138,6 @@ export default async function NguHanhChiTietPage({
           {dsNapAm.map((na) => (
             <Link key={na.slug} href={`/nap-am/${na.slug}`} className="ck-na-o">
               <b>{na.ten}</b>
-              {NAP_AM_HAN[na.slug] ? <small>{NAP_AM_HAN[na.slug]}</small> : null}
               <span>
                 {na.hoaGiap[0].ten} · {na.hoaGiap[1].ten}
               </span>
@@ -211,7 +208,7 @@ export default async function NguHanhChiTietPage({
           <Link href="/ngu-hanh">Sơ đồ Ngũ hành</Link>
           {hanhKhac.map((x) => (
             <Link key={x} href={duongDanHanh(x)}>
-              Mệnh {x} ({HANH_HAN[x]})
+              Mệnh {x}
             </Link>
           ))}
           <Link href="/ngu-hanh/mau-hop-menh">Màu hợp mệnh</Link>

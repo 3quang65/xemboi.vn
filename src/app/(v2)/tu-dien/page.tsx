@@ -41,7 +41,6 @@ export default async function TuDienPage() {
       g.muc.map((t) => ({
         '@type': 'DefinedTerm',
         name: t.hanViet,
-        ...(t.han ? { alternateName: t.han } : {}),
         ...(t.lienKet ? { url: `https://xemboi.vn${t.lienKet}` } : {}),
       })),
     ),

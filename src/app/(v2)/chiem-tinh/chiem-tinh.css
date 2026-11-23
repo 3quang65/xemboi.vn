@@ -71,7 +71,7 @@
   color: var(--ck-muc-2);
 }
 
-/* Câu trích tiếng Anh Tetrabiblos */
+/* Đoạn trích Tetrabiblos tiếng Việt */
 .ck-ct-trich {
   margin: 10px 0 0;
   padding: 10px 14px;
@@ -80,9 +80,19 @@
   border-left: 3px solid var(--ck-vang-2);
 }
 
+.ck-ct-trich-nhan {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ck-muc-3);
+}
+
 .ck-ct-trich blockquote {
   margin: 0;
-  font: italic 15px/1.6 var(--ck-f-tieu);
+  font: 400 15px/1.65 var(--ck-f-chu);
   color: var(--ck-muc);
 }
 
@@ -90,6 +100,10 @@
   margin-top: 6px;
   font-size: 12.5px;
   color: var(--ck-muc-3);
+}
+
+.ck-ct-trich-dich-gia {
+  white-space: nowrap;
 }
 
 /* Hub: thẻ lớn Tra cung + form ngày sinh nhỏ */
@@ -1001,14 +1015,6 @@ a.ck-ct-thanh-muc:hover {
   display: inline-block;
   font-weight: 700;
   color: var(--ck-son);
-}
-
-.ck-ct-bds-en {
-  display: block;
-  margin-top: 2px;
-  font-size: 12.5px;
-  font-weight: 400;
-  color: var(--ck-muc-3);
 }
 
 .ck-ct-bds-hang-ngoai th,

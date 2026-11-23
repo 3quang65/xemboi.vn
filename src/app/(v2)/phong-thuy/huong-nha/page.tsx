@@ -29,6 +29,7 @@ import {
   NAM_PT_TU,
   dinhDangDo,
   kiemCoThamSo,
+  lamSachChuHanDauCau,
   layMot,
   phanTichDo,
   phanTichGioiTinh,
@@ -122,8 +123,17 @@ export default async function HuongNhaPage({
     ? duNienGiua(ketQuaHuong.cungToa.ten, ketQuaHuong.cungHuong.ten)
     : null;
 
-  const docNhanh = ketQuaNguoi
+  const docNhanhRaw = ketQuaNguoi
     ? docNhanhHuongNha(ketQuaNguoi.nam, ketQuaNguoi.gioiTinh, ketQuaHuong?.doHuong)
+    : null;
+  const docNhanh = docNhanhRaw
+    ? {
+        ...docNhanhRaw,
+        the: docNhanhRaw.the.map((t) => ({
+          ...t,
+          chiTiet: lamSachChuHanDauCau(t.chiTiet),
+        })),
+      }
     : null;
   const ranhSon = ketQuaHuong ? ganRanhSon(ketQuaHuong.doHuong) : null;
   let gocRanhGanNhat: number | undefined;
@@ -368,10 +378,7 @@ export default async function HuongNhaPage({
                 <tr key={c.slug}>
                   <td data-nhan="Quái">
                     <Link href={duongDanCungPhi(c)} className="ck-pt-quai-link">
-                      <span aria-hidden="true">{c.kyHieu}</span> {c.ten}{' '}
-                      <span lang="zh-Hant" className="ck-pt-han-inline">
-                        {c.han}
-                      </span>
+                      <span aria-hidden="true">{c.kyHieu}</span> {c.ten}
                     </Link>
                   </td>
                   <td data-nhan="Phương">{c.phuong}</td>

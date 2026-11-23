@@ -4,7 +4,7 @@ import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
 import { VongConGiap } from '@/components/ck/truc-quan';
 import { NguonNapAm } from '@/components/ck/TheCanChi';
-import { CHI_HAN, duongDanConGiap } from '@/components/ck/canChiHelpers';
+import { duongDanConGiap } from '@/components/ck/canChiHelpers';
 import { CON_GIAP } from '@/lib/trang/can-chi';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
@@ -46,9 +46,6 @@ export default async function ConGiapIndexPage() {
           {CON_GIAP.map((cg) => (
             <Link key={cg.chi} href={duongDanConGiap(cg.chi)} className="ck-giap-the">
               <span className="ck-giap-thu-tu">Thứ {cg.thuTu}</span>
-              <span className="ck-giap-han" aria-hidden="true">
-                {CHI_HAN[cg.chi] ?? cg.chi}
-              </span>
               <b>
                 Tuổi {cg.chi} ({cg.ten})
               </b>

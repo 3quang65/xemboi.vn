@@ -20,7 +20,6 @@ import {
 } from '@/lib/trang/bat-tu-truc-quan';
 import { quanHeConGiap } from '@/lib/trang/tra-cuu-truc-quan';
 import {
-  CHI_HAN,
   conGiapLanCan,
   duongDanConGiap,
   namCuaConGiap,
@@ -64,11 +63,18 @@ function SachGhiDetails({ maDs }: { maDs: MaTrichBatTu[] }) {
       <summary className="ck-tq-sach-nut">Sách ghi</summary>
       {maDs.map((ma) => {
         const trich = TRICH_BAT_TU[ma];
+        const nguon = NGUON_BAT_TU[trich.nguon];
         return (
           <TrichNguyenVan
             key={ma}
-            trich={trich}
-            nguon={NGUON_BAT_TU[trich.nguon]}
+            dich={trich.dich}
+            viTriViet={trich.viTriViet}
+            tenSach={nguon.tenHanViet}
+            tacGia={nguon.tacGia}
+            nienDai={nguon.nienDai}
+            doanId={trich.doanId}
+            ghiCong={nguon.ghiCong}
+            url={nguon.url}
           />
         );
       })}
@@ -149,77 +155,77 @@ export default async function ConGiapChiTietPage({
     noiDung: ReactNode;
     trich: MaTrichBatTu[];
   }[] = [
-    {
-      ma: 'tam-hop',
-      net: 'tamHop',
-      lopNhom: 'hop',
-      ten: 'Tam hợp',
-      idTn: 'ck-cg-tn-tam-hop',
-      noiDung: (
-        <>
-          <DanhSachChiLienKet ds={qh.tamHop.chi} /> ({qh.tamHop.hanh} cục)
-        </>
-      ),
-      trich: qh.trich.tamHop,
-    },
-    {
-      ma: 'tam-hoi',
-      net: 'tamHop',
-      lopNhom: 'hop',
-      ten: 'Tam hội',
-      idTn: 'ck-cg-tn-tam-hoi',
-      noiDung: (
-        <>
-          <DanhSachChiLienKet ds={qh.tamHoi.chi} /> (cùng phương {qh.tamHoi.hanh})
-        </>
-      ),
-      trich: qh.trich.tamHoi,
-    },
-    {
-      ma: 'luc-hop',
-      net: 'lucHop',
-      lopNhom: 'hop',
-      ten: 'Lục hợp',
-      idTn: 'ck-cg-tn-luc-hop',
-      noiDung: <DanhSachChiLienKet ds={[qh.chi, qh.lucHop]} />,
-      trich: qh.trich.lucHop,
-    },
-    {
-      ma: 'xung',
-      net: 'xung',
-      lopNhom: 'xung',
-      ten: 'Lục xung',
-      idTn: 'ck-cg-tn-xung',
-      noiDung: <DanhSachChiLienKet ds={[qh.chi, qh.xung]} />,
-      trich: qh.trich.xung,
-    },
-    {
-      ma: 'hai',
-      net: 'hai',
-      lopNhom: 'hai',
-      ten: 'Lục hại',
-      idTn: 'ck-cg-tn-hai',
-      noiDung: <DanhSachChiLienKet ds={[qh.chi, qh.hai]} />,
-      trich: qh.trich.hai,
-    },
-    {
-      ma: 'hinh',
-      net: 'hinh',
-      lopNhom: 'hinh',
-      ten: qh.hinh ? 'Tương hình' : 'Tự hình',
-      idTn: 'ck-cg-tn-hinh',
-      noiDung: qh.hinh ? (
-        <>
-          {TEN_NHOM_HINH[qh.hinh.nhom]}: <DanhSachChiLienKet ds={qh.hinh.chi} />
-        </>
-      ) : (
-        <>
-          Tự hình {qh.chi} – {qh.chi} (nhóm 4 chi tự hình: Thìn, Ngọ, Dậu, Hợi)
-        </>
-      ),
-      trich: qh.trich.hinh,
-    },
-  ];
+      {
+        ma: 'tam-hop',
+        net: 'tamHop',
+        lopNhom: 'hop',
+        ten: 'Tam hợp',
+        idTn: 'ck-cg-tn-tam-hop',
+        noiDung: (
+          <>
+            <DanhSachChiLienKet ds={qh.tamHop.chi} /> ({qh.tamHop.hanh} cục)
+          </>
+        ),
+        trich: qh.trich.tamHop,
+      },
+      {
+        ma: 'tam-hoi',
+        net: 'tamHop',
+        lopNhom: 'hop',
+        ten: 'Tam hội',
+        idTn: 'ck-cg-tn-tam-hoi',
+        noiDung: (
+          <>
+            <DanhSachChiLienKet ds={qh.tamHoi.chi} /> (cùng phương {qh.tamHoi.hanh})
+          </>
+        ),
+        trich: qh.trich.tamHoi,
+      },
+      {
+        ma: 'luc-hop',
+        net: 'lucHop',
+        lopNhom: 'hop',
+        ten: 'Lục hợp',
+        idTn: 'ck-cg-tn-luc-hop',
+        noiDung: <DanhSachChiLienKet ds={[qh.chi, qh.lucHop]} />,
+        trich: qh.trich.lucHop,
+      },
+      {
+        ma: 'xung',
+        net: 'xung',
+        lopNhom: 'xung',
+        ten: 'Lục xung',
+        idTn: 'ck-cg-tn-xung',
+        noiDung: <DanhSachChiLienKet ds={[qh.chi, qh.xung]} />,
+        trich: qh.trich.xung,
+      },
+      {
+        ma: 'hai',
+        net: 'hai',
+        lopNhom: 'hai',
+        ten: 'Lục hại',
+        idTn: 'ck-cg-tn-hai',
+        noiDung: <DanhSachChiLienKet ds={[qh.chi, qh.hai]} />,
+        trich: qh.trich.hai,
+      },
+      {
+        ma: 'hinh',
+        net: 'hinh',
+        lopNhom: 'hinh',
+        ten: qh.hinh ? 'Tương hình' : 'Tự hình',
+        idTn: 'ck-cg-tn-hinh',
+        noiDung: qh.hinh ? (
+          <>
+            {TEN_NHOM_HINH[qh.hinh.nhom]}: <DanhSachChiLienKet ds={qh.hinh.chi} />
+          </>
+        ) : (
+          <>
+            Tự hình {qh.chi} – {qh.chi} (nhóm 4 chi tự hình: Thìn, Ngọ, Dậu, Hợi)
+          </>
+        ),
+        trich: qh.trich.hinh,
+      },
+    ];
 
   return (
     <KhungTrang
@@ -260,17 +266,15 @@ export default async function ConGiapChiTietPage({
 
         <p className="ck-cg-luu-y">
           <em>Tam mệnh thông hội</em> ghi gặp xung hay hình có cát có hung, không vội luận là dữ
-          (xem nguyên văn trong mục Sách ghi ở Lục xung và Tương hình).
+          (xem mục Sách ghi ở Lục xung và Tương hình).
         </p>
       </section>
 
       <section className="ck-td-muc ck-tom-tat-menh" aria-label={`Đặc điểm địa chi ${cg.chi}`}>
         <div className="ck-luoi-4">
           <div className="ck-the-du-lieu">
-            <span className="ck-nhan-nho">Địa chi &amp; chữ Hán</span>
-            <strong className="ck-gia-lon">
-              {cg.chi} ({CHI_HAN[cg.chi] ?? cg.chi})
-            </strong>
+            <span className="ck-nhan-nho">Địa chi</span>
+            <strong className="ck-gia-lon">{cg.chi}</strong>
             <p>
               Con vật: {cg.ten} · Thứ {cg.thuTu}/12
             </p>

@@ -16,7 +16,7 @@ Cơ sở: tài liệu 21 (học từ 4 repo), các ảnh đối thủ trong `doc
 3. **Antigravity làm giao diện,** theo lệnh có ca mẫu và ảnh tham khảo.
 4. **Claude Code duyệt** bằng cùng ca mẫu ở ba khổ 375, 768 và 1366 px. Phải đúng từng chữ so với lib và đạt đủ mục 2.
 
-## 2. Mười điều một trang kết quả phải có
+## 2. Mười một điều một trang kết quả phải có
 
 | # | Điều | Cách kiểm |
 |---|---|---|
@@ -30,13 +30,14 @@ Cơ sở: tài liệu 21 (học từ 4 repo), các ảnh đối thủ trong `doc
 | 8 | **Chọn lọc:** đưa ít mục mà rõ (ví dụ 3 ngày hợp nhất, mỗi ngày một câu lý do). Danh sách đầy đủ để sau một nút hoặc link | Không chấm điểm %, không xếp hạng hù dọa |
 | 9 | **Màu dịu cho cái "không hợp":** dùng hổ phách hoặc xám, không dùng đỏ báo động. Câu sách "không vội luận là dữ" đặt cạnh xung và hình | Không có nền đỏ đậm |
 | 10 | **Di động trước:** 375px không cuộn ngang trừ dải chủ ý (đại vận, giờ). Lưới lớn (lá số) có thẻ chi tiết hoặc chế độ phóng to. Vùng bấm ≥ 44px. Có `prefers-reduced-motion` | Ảnh 375px trong báo cáo lệnh |
+| 11 | **Chỉ tiếng Việt:** không chữ Hán, không chữ Anh thừa; trích sách in bản dịch kèm dòng nguồn | Chạy `node scripts/kiem-chu-han.mjs` báo 0 trang có chữ Hán trước khi báo xong |
 
 ## 3. Thành phần dùng chung (`src/components/ck/truc-quan/`, làm trong Lệnh 40)
 
 - `DocNhanh`: nhận `{ cau, the[] }`. Thẻ có nhãn nhỏ, chữ lớn tô theo hành, 1–2 dòng chi tiết, trích dẫn nếu có.
 - `ThuatNgu`: nhận `{ ten, nghia }`. Chữ gạch chân chấm, bấm mở hộp nghĩa (thuộc tính `popover`, không JS).
 - `ChuGiaiHanh`: hàng chấm màu ngũ hành.
-- `TrichNguyenVan`: nguyên văn Hán, tên sách, quyển và mục, ghi công giấy phép. Không dịch.
+- `TrichNguyenVan`: nhãn `"Sách ghi"`, bản dịch tiếng Việt, tên sách và vị trí tiếng Việt, ghi công dịch nghĩa và giấy phép. Không in chữ Hán.
 - Token màu nhạt `--ck-<hanh>-nhat`, đặt trong `truc-quan.css` của thư mục này (không sửa `ck.css`).
 
 Trang nào dùng lại được thì phải dùng các thành phần này, không viết lại.
@@ -51,5 +52,5 @@ Trang nào dùng lại được thì phải dùng các thành phần này, khôn
 | 43 | Tử vi, kinh dịch, bản đồ sao, xem tuổi, cung hoàng đạo | `truc-quan-43.ts`: tam phương tứ chính, đọc nhanh quẻ, xem tuổi, giãn nhãn (xong, có test) | Xong 24/11 |
 | 44 | Bát tự: lưu niên, tam trụ | `bat-tu-luu-nien.ts`: luuNienBatTu, namTrongDaiVan, lapTamTru (có test) | Xong 24/11 |
 | 45 | Ngũ hành, con giáp, 60 hoa giáp, năm sinh, xông đất | `tra-cuu-truc-quan.ts`: vòng ngũ hành, vòng con giáp có trích sách, lưới hoa giáp (có test) | Xong 24/11 (chữ Hán gỡ ở Lệnh 46) |
-| 46 | Chỉ tiếng Việt: gỡ chữ Hán, chữ Anh thừa trên mọi trang | `chu-dich-64-dich.json` (64 quẻ dịch), trường `dich`/`viTriViet`/`vi`, `chu-viet.ts`; test `khong-chu-han.test.mjs`, script `kiem-chu-han.mjs` | Đang làm |
+| 46 | Chỉ tiếng Việt: gỡ chữ Hán, chữ Anh thừa trên mọi trang | `chu-dich-64-dich.json` (64 quẻ dịch), trường `dich`/`viTriViet`/`vi`, `chu-viet.ts`; test `khong-chu-han.test.mjs`, script `kiem-chu-han.mjs` | Xong 24/11 (quét 118 trang: 0 trang có chữ Hán) |
 | sau | Mọi công cụ mới | Theo mục 1 và 2 ngay từ lệnh đầu | |

@@ -4,7 +4,7 @@ import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
 import { ChuGiaiHanh, VongNguHanh } from '@/components/ck/truc-quan';
 import { DanhSachMau, HuyHieuHanh, NguonNapAm } from '@/components/ck/TheCanChi';
-import { HANH_HAN, duongDanHanh } from '@/components/ck/canChiHelpers';
+import { duongDanHanh } from '@/components/ck/canChiHelpers';
 import { NGU_HANH, mauHopMenh, quanHeHanh } from '@/lib/trang/can-chi';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
@@ -64,10 +64,7 @@ export default async function NguHanhPage() {
                 return (
                   <tr key={h}>
                     <td data-nhan="Hành">
-                      <div>
-                        <HuyHieuHanh hanh={h} lienKet />{' '}
-                        <small style={{ color: 'var(--ck-muc-3)' }}>({HANH_HAN[h]})</small>
-                      </div>
+                      <HuyHieuHanh hanh={h} lienKet />
                     </td>
                     <td data-nhan="Sinh ra">
                       <HuyHieuHanh hanh={q.sinhRa} lienKet />
@@ -100,7 +97,7 @@ export default async function NguHanhPage() {
         <div className="ck-lien-quan-ds">
           {NGU_HANH.map((h) => (
             <Link key={h} href={duongDanHanh(h)}>
-              Mệnh {h} ({HANH_HAN[h]})
+              Mệnh {h}
             </Link>
           ))}
           <Link href="/ngu-hanh/mau-hop-menh">Bảng màu hợp mệnh</Link>

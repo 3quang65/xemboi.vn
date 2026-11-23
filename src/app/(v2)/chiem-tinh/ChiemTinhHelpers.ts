@@ -1,6 +1,6 @@
+import type { Metadata } from 'next';
 import {
   CUNG_HOANG_DAO,
-  TEN_ANH_HANH_TINH,
   TEN_LOAI,
   duongDanCung,
   khoangCungTrongNam,
@@ -40,17 +40,17 @@ export const MAC_DINH_HUB: MacDinhTrang = {
 };
 
 export const MAC_DINH_CUNG_HOANG_DAO: MacDinhTrang = {
-  title: '12 cung hoàng đạo: ngày sinh, tên tiếng Anh, tra cung',
+  title: '12 cung hoàng đạo: ngày sinh, tra cung',
   h1: '12 cung hoàng đạo',
   description:
-    'Tra cung hoàng đạo theo ngày giờ sinh dương lịch, giờ chuyển cung tính theo kinh độ Mặt Trời. Bảng 12 cung: tên tiếng Anh, ngày bắt đầu, hành tinh chủ nhà.',
+    'Tra cung hoàng đạo theo ngày giờ sinh dương lịch, giờ chuyển cung tính theo kinh độ Mặt Trời. Bảng 12 cung: ngày bắt đầu, hành tinh chủ nhà.',
 };
 
 export const MAC_DINH_BAN_DO_SAO: MacDinhTrang = {
-  title: 'Bản đồ sao cá nhân miễn phí: natal chart tiếng Việt',
+  title: 'Bản đồ sao cá nhân miễn phí tiếng Việt',
   h1: 'Bản đồ sao',
   description:
-    'Lập bản đồ sao (natal chart) theo ngày, giờ, nơi sinh: vị trí hành tinh, cung mọc, 12 nhà. Nguồn lịch thiên văn ghi rõ.',
+    'Lập bản đồ sao cá nhân theo ngày, giờ, nơi sinh: vị trí hành tinh, cung mọc, 12 nhà. Nguồn lịch thiên văn ghi rõ.',
 };
 
 /** Thêm U+FE0E để ký hiệu thiên thể/cung luôn vẽ dạng chữ, không thành emoji. */
@@ -60,9 +60,65 @@ export function kyHieuChu(s: string): string {
 
 export function macDinhCung(c: CungHoangDao, khoang: string): MacDinhTrang {
   return {
-    title: `Cung ${c.ten} (${c.en}): ngày sinh, hành tinh chủ nhà theo sách`,
+    title: `Cung ${c.ten}: ngày sinh, hành tinh chủ nhà theo sách`,
     h1: `Cung ${c.ten}`,
-    description: `Cung ${c.ten} (${c.en}): Mặt Trời vào cung khoảng ${khoang}, giờ chuyển cung từng năm, hành tinh chủ nhà, tam hợp theo Tetrabiblos. Không phán tính cách.`,
+    description: `Cung ${c.ten}: Mặt Trời vào cung khoảng ${khoang}, giờ chuyển cung từng năm, hành tinh chủ nhà, tam hợp theo Tetrabiblos. Không phán tính cách.`,
+  };
+}
+
+export function lamSachChuAnhMeta(s: string): string {
+  return s
+    .replace(/:\s*natal chart\b/gi, '')
+    .replace(/\s*\(natal chart\)/gi, (_m, _off, str) =>
+      /cá nhân/i.test(str) ? '' : ' cá nhân',
+    )
+    .replace(/\bnatal chart\b/gi, 'bản đồ sao cá nhân')
+    .replace(/:\s*tên tiếng Anh,\s*/gi, ': ')
+    .replace(/,\s*tên tiếng Anh(?=[,.:;]|$)/gi, '')
+    .replace(/,\s*tên tiếng Anh\s+/gi, ', ')
+    .replace(
+      /\s*\((?:Aries|Taurus|Gemini|Cancer|Leo|Virgo|Libra|Scorpio|Sagittarius|Capricorn|Aquarius|Pisces|Ascendant|Midheaven)\)/gi,
+      '',
+    )
+    .replace(/\(\s*\)/g, '')
+    .replace(/\s+([,.:;])/g, '$1')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+export function lamSachMetaChiemTinh(meta: Metadata): Metadata {
+  const title =
+    typeof meta.title === 'string'
+      ? lamSachChuAnhMeta(meta.title)
+      : meta.title && typeof meta.title === 'object' && 'absolute' in meta.title
+        ? { ...meta.title, absolute: lamSachChuAnhMeta(String(meta.title.absolute)) }
+        : meta.title;
+  const description =
+    typeof meta.description === 'string'
+      ? lamSachChuAnhMeta(meta.description)
+      : meta.description;
+  const openGraph = meta.openGraph
+    ? {
+        ...meta.openGraph,
+        title:
+          typeof meta.openGraph.title === 'string'
+            ? lamSachChuAnhMeta(meta.openGraph.title)
+            : meta.openGraph.title,
+        description:
+          typeof meta.openGraph.description === 'string'
+            ? lamSachChuAnhMeta(meta.openGraph.description)
+            : meta.openGraph.description,
+      }
+    : meta.openGraph;
+  return { ...meta, title, description, openGraph };
+}
+
+export function lamSachThongTinChiemTinh(tt: ThongTinTrang): ThongTinTrang {
+  return {
+    ...tt,
+    title: lamSachChuAnhMeta(tt.title),
+    h1: lamSachChuAnhMeta(tt.h1),
+    description: tt.description ? lamSachChuAnhMeta(tt.description) : null,
   };
 }
 
@@ -124,7 +180,7 @@ export function thamSoSeoCung(
     cung: c.slug,
     Tên: c.ten,
     tên: c.ten.toLowerCase(),
-    English: c.en,
+    English: '',
     khoang: formatKhoangNamNay(c.thu, namNay),
   };
 }
@@ -135,17 +191,15 @@ export function trichChoHam(ham: HanhTinh): TrichAnh | null {
 }
 
 export function nhanHanhTinh(h: HanhTinh): string {
-  return `${h} (${TEN_ANH_HANH_TINH[h]})`;
+  return h;
 }
 
 export function nhanLoai(l: LoaiCung): string {
-  return `${TEN_LOAI[l].ten} (${TEN_LOAI[l].en})`;
+  return TEN_LOAI[l].ten;
 }
 
 export function nhanAmDuong(duong: boolean): string {
-  return duong
-    ? 'Dương (masculine, diurnal)'
-    : 'Âm (feminine, nocturnal)';
+  return duong ? 'Dương (thuộc ngày)' : 'Âm (thuộc đêm)';
 }
 
 export function serializeJsonLd(obj: unknown): string {
@@ -191,7 +245,7 @@ export function taoSchemaDefinedTermSet12Cung() {
     hasDefinedTerm: CUNG_HOANG_DAO.map((c) => ({
       '@type': 'DefinedTerm',
       name: `Cung ${c.ten}`,
-      alternateName: [c.en, ...c.tenKhac],
+      ...(c.tenKhac.length > 0 ? { alternateName: c.tenKhac } : {}),
       url: `${GOC_SITE}${duongDanCung(c)}`,
     })),
   };
@@ -202,14 +256,12 @@ export function taoSchemaDefinedTermCung(
   canonical: string,
   description: string | null,
 ) {
-  const alternateName = Array.from(
-    new Set([c.en, ...(c.la !== c.en ? [c.la] : []), ...c.tenKhac]),
-  );
+  const alternateName = Array.from(new Set(c.tenKhac));
   return {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
     name: `Cung ${c.ten}`,
-    alternateName,
+    ...(alternateName.length > 0 ? { alternateName } : {}),
     url: canonical,
     inDefinedTermSet: `${GOC_SITE}/chiem-tinh/cung-hoang-dao`,
     ...(description ? { description } : {}),

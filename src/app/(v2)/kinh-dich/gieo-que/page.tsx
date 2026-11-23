@@ -4,6 +4,8 @@ import GieoQueClient from '@/components/ck/GieoQueClient';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { DocNhanh, ThuatNgu } from '@/components/ck/truc-quan';
 import {
+  NGUON_CHU_DICH,
+  NGUON_DICH,
   daDungKinhDich,
   duongDanQue,
   queChiTiet,
@@ -18,7 +20,7 @@ import { docNhanhQue } from '@/lib/trang/truc-quan-43';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
 import { khacBanTheoViTri } from '../KinhDichHelpers';
-import { DongVanHan, GhiCongChuDich, LienKetKiem } from '../KinhDichUi';
+import { DongLoiDich, GhiCongChuDich, LienKetKiem } from '../KinhDichUi';
 import SoDoGieoQue from './SoDoGieoQue';
 
 export const dynamic = 'force-dynamic';
@@ -200,19 +202,13 @@ export default async function GieoQuePage({
           {chiTietChu ? (
             <section className="ck-td-muc" aria-labelledby="ck-kd-loi-que-tieu">
               <h2 id="ck-kd-loi-que-tieu" className="ck-td-tieu">
-                Nguyên văn quẻ chủ: {ketQua.queChu.ten}{' '}
-                <span lang="zh-Hant" className="ck-kd-han-inline">
-                  {chiTietChu.han.ten}
-                </span>
+                Lời quẻ chủ: {ketQua.queChu.ten}
               </h2>
 
               <article className="ck-kd-muc-van ck-kd-que-tu">
-                <h3>
-                  Lời quẻ chủ (<span lang="zh-Hant">卦辭</span>)
-                </h3>
-                <DongVanHan
-                  han={chiTietChu.han.queTu}
-                  phienAm={chiTietChu.phienAm?.queTu ?? null}
+                <h3>Lời quẻ chủ</h3>
+                <DongLoiDich
+                  dich={chiTietChu.dich.queTu}
                   ghiChuKhacBan={khacBanTheoViTri(chiTietChu.khacBan, 'quẻ từ')}
                 />
               </article>
@@ -223,17 +219,15 @@ export default async function GieoQuePage({
                   <ol className="ck-kd-ds-hao">
                     {haoDongSapXep.map((soHao) => {
                       const h = chiTietChu.han.hao[soHao - 1];
-                      if (!h) return null;
-                      const phienAmHao = chiTietChu.phienAm?.hao[soHao - 1]?.van ?? null;
+                      const loiDich = chiTietChu.dich.hao[soHao - 1];
+                      if (!h || !loiDich) return null;
                       return (
                         <li key={soHao} className="ck-kd-muc-van">
                           <h4>
-                            Hào {soHao} · {tenViTriHao(h.viTri)}{' '}
-                            <span lang="zh-Hant">{h.viTri}</span>
+                            Hào {soHao} · {tenViTriHao(h.viTri)}
                           </h4>
-                          <DongVanHan
-                            han={h.van}
-                            phienAm={phienAmHao}
+                          <DongLoiDich
+                            dich={loiDich}
                             ghiChuKhacBan={khacBanTheoViTri(chiTietChu.khacBan, h.viTri)}
                           />
                         </li>
@@ -242,6 +236,11 @@ export default async function GieoQuePage({
                   </ol>
                 </div>
               ) : null}
+
+              <p className="ck-kd-nguon-dich">
+                Sách ghi · Chu Dịch (Kanripo {NGUON_CHU_DICH.ma}) ·{' '}
+                <strong>{NGUON_DICH[chiTietChu.dich.nguon].nhan}</strong>
+              </p>
 
               <div className="ck-kd-doc-du">
                 <LienKetKiem
@@ -262,7 +261,7 @@ export default async function GieoQuePage({
                 ) : null}
               </div>
 
-              <GhiCongChuDich hienPhienAm daDung={daDung} />
+              <GhiCongChuDich nguonDich={chiTietChu.dich.nguon} daDung={daDung} />
             </section>
           ) : null}
         </>

@@ -23,6 +23,8 @@ import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import {
   MAU_SEO_CUNG,
   formatKhoangNamNay,
+  lamSachMetaChiemTinh,
+  lamSachThongTinChiemTinh,
   macDinhCung,
   nhanAmDuong,
   nhanHanhTinh,
@@ -59,11 +61,13 @@ export async function generateMetadata({
 
   const namNay = ngayHienTaiVN().nam;
   const duongDan = duongDanCung(c);
-  return metaTrang(
-    duongDan,
-    macDinhCung(c, formatKhoangNamNay(c.thu, namNay)),
-    MAU_SEO_CUNG,
-    thamSoSeoCung(c, namNay),
+  return lamSachMetaChiemTinh(
+    await metaTrang(
+      duongDan,
+      macDinhCung(c, formatKhoangNamNay(c.thu, namNay)),
+      MAU_SEO_CUNG,
+      thamSoSeoCung(c, namNay),
+    ),
   );
 }
 
@@ -78,11 +82,13 @@ export default async function ChiTietCungHoangDaoPage({
 
   const namNay = ngayHienTaiVN().nam;
   const duongDan = duongDanCung(c);
-  const tt = await thongTinTrang(
-    duongDan,
-    macDinhCung(c, formatKhoangNamNay(c.thu, namNay)),
-    MAU_SEO_CUNG,
-    thamSoSeoCung(c, namNay),
+  const tt = lamSachThongTinChiemTinh(
+    await thongTinTrang(
+      duongDan,
+      macDinhCung(c, formatKhoangNamNay(c.thu, namNay)),
+      MAU_SEO_CUNG,
+      thamSoSeoCung(c, namNay),
+    ),
   );
   const daDung = trangDaDung();
 
@@ -102,7 +108,7 @@ export default async function ChiTietCungHoangDaoPage({
   const daInTrichVuong = Boolean(c.vuong && c.trichVuong);
   const trichHam = c.ham ? trichChoHam(c.ham) ?? c.trichVuong : null;
   const hienTrichHam =
-    Boolean(trichHam) && (!daInTrichVuong || trichHam!.en !== c.trichVuong?.en);
+    Boolean(trichHam) && (!daInTrichVuong || trichHam!.vi !== c.trichVuong?.vi);
 
   const schemaTerm = taoSchemaDefinedTermCung(c, tt.canonical, tt.description);
   const schemaWebPage = taoSchemaWebPage(tt);
@@ -133,15 +139,11 @@ export default async function ChiTietCungHoangDaoPage({
             </span>
             <div>
               <h2 className="ck-ct-dau-ten">Cung {c.ten}</h2>
-              <p className="ck-ct-dau-phu">
-                Tiếng Anh: <strong>{c.en}</strong> · Tên Latinh: <strong>{c.la}</strong>
-                {c.tenKhac.length > 0 ? (
-                  <>
-                    {' '}
-                    · Tên khác: <strong>{c.tenKhac.join(', ')}</strong>
-                  </>
-                ) : null}
-              </p>
+              {c.tenKhac.length > 0 ? (
+                <p className="ck-ct-dau-phu">
+                  Tên khác: <strong>{c.tenKhac.join(', ')}</strong>
+                </p>
+              ) : null}
               <p className="ck-ct-dau-phu">
                 Từ <strong>{c.tuDo}°</strong> đến <strong>{c.tuDo + 30}°</strong> kinh độ hoàng
                 đạo
@@ -267,9 +269,7 @@ export default async function ChiTietCungHoangDaoPage({
                           {cungCungNha.map((x, idx) => (
                             <span key={x.slug}>
                               {idx > 0 ? ', ' : ''}
-                              <Link href={duongDanCung(x)}>
-                                {x.ten} ({x.en})
-                              </Link>
+                              <Link href={duongDanCung(x)}>{x.ten}</Link>
                             </span>
                           ))}
                           )
@@ -334,7 +334,7 @@ export default async function ChiTietCungHoangDaoPage({
                       {c.vuong ? (
                         <div className="ck-ct-muc-nho">
                           <p className="ck-ct-nhom-meta">
-                            Vượng (exaltation): Cung vượng của{' '}
+                            Vượng: Cung vượng của{' '}
                             <strong>{nhanHanhTinh(c.vuong)}</strong>
                           </p>
                           {c.trichVuong ? (
@@ -346,7 +346,7 @@ export default async function ChiTietCungHoangDaoPage({
                       {c.ham ? (
                         <div className="ck-ct-muc-nho">
                           <p className="ck-ct-nhom-meta">
-                            Hãm (fall): Cung hãm của{' '}
+                            Hãm: Cung hãm của{' '}
                             <strong>{nhanHanhTinh(c.ham)}</strong>
                           </p>
                           {hienTrichHam && trichHam ? (
@@ -369,9 +369,7 @@ export default async function ChiTietCungHoangDaoPage({
                       <span className="ck-ct-ky" aria-hidden="true">
                         {doi.kyHieu}
                       </span>
-                      <span>
-                        Cung {doi.ten} ({doi.en})
-                      </span>
+                      <span>Cung {doi.ten}</span>
                     </Link>
                   </div>
                 </td>

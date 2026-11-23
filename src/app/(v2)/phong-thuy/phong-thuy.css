@@ -1,17 +1,5 @@
 /* CSS riêng cụm Phong thủy — tiền tố ck-pt-, <= 30 KB, dùng biến trên .ck */
 
-.ck-pt-han-van,
-.ck-pt-han-inline,
-.ck-pt-han-lon,
-.ck-pt-vong-svg [lang="zh-Hant"] {
-  font-family: "Noto Serif TC", "Songti TC", "PMingLiU", "Noto Serif SC", "Songti SC", Georgia, serif;
-}
-
-.ck-pt-han-inline {
-  font-weight: 600;
-  color: var(--ck-muc-2);
-}
-
 .ck button.ck-pt-nut-chinh {
   color: #FBF1DA;
 }
@@ -52,7 +40,7 @@
   padding: 14px 18px;
 }
 
-.ck-pt-trich + .ck-pt-trich {
+.ck-pt-trich+.ck-pt-trich {
   margin-top: 12px;
 }
 
@@ -70,26 +58,22 @@
   margin: 0;
 }
 
-.ck-pt-han-van {
+.ck-pt-trich-dich {
   margin: 0;
-  font-size: 19.5px;
-  line-height: 1.7;
+  font: 400 15.5px/1.68 var(--ck-f-chu);
   color: var(--ck-muc);
-  letter-spacing: 0.04em;
   overflow-wrap: anywhere;
-}
-
-.ck-pt-phien-am {
-  margin: 5px 0 0;
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--ck-muc-2);
 }
 
 .ck-pt-vi-tri {
   margin-top: 8px;
   font-size: 13px;
   color: var(--ck-muc-3);
+}
+
+.ck-pt-dich-gia {
+  display: inline-block;
+  margin-left: 6px;
 }
 
 /* Ghi chú năm âm & ghi công */
@@ -195,7 +179,7 @@ a.ck-pt-hub-the:hover {
   min-width: 170px;
 }
 
-.ck-pt-mini-o > span {
+.ck-pt-mini-o>span {
   font-size: 13.5px;
   font-weight: 600;
   color: var(--ck-muc-2);
@@ -340,12 +324,6 @@ a.ck-pt-cung-the:hover {
   margin: 0;
   font: 700 28px/1.2 var(--ck-f-tieu);
   color: var(--ck-son);
-}
-
-.ck-pt-han-lon {
-  font-size: 26px;
-  color: var(--ck-muc);
-  margin-left: 4px;
 }
 
 .ck-pt-thong-tin-dong {
@@ -887,8 +865,8 @@ a.ck-pt-thanh-cung-muc:hover {
   border-top: 1px solid var(--ck-ke);
 }
 
-.ck-pt-xem-bang-noi > .ck-bang-khung,
-.ck-pt-xem-bang-noi > .ck-pt-ct-thang-luoi {
+.ck-pt-xem-bang-noi>.ck-bang-khung,
+.ck-pt-xem-bang-noi>.ck-pt-ct-thang-luoi {
   margin-top: 14px;
 }
 
@@ -896,12 +874,14 @@ a.ck-pt-thanh-cung-muc:hover {
   .ck-pt-hub-ba {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   .ck-pt-cung-dau {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 700px) {
+
   .ck-pt-hub-ba,
   .ck-pt-nhom-luoi,
   .ck-pt-form-2cot,
@@ -909,33 +889,42 @@ a.ck-pt-thanh-cung-muc:hover {
   .ck-pt-du-nien-luoi {
     grid-template-columns: 1fr;
   }
+
   .ck-pt-huong-toa-luoi {
     gap: 10px;
   }
+
   .ck-pt-huong-toa-luoi .ck-the-du-lieu {
     padding: 12px 10px;
   }
+
   .ck-pt-huong-toa-luoi .ck-gia-lon {
     font-size: 17px;
   }
+
   .ck-pt-huong-toa-luoi p {
     font-size: 13px;
   }
+
   .ck-pt-nut-nhanh-ds {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   .ck-pt-nam-ds {
     grid-template-columns: 1fr;
   }
+
   .ck-pt-dau-chinh {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .ck-pt-ky-lon {
     width: 68px;
     height: 68px;
     font-size: 40px;
   }
+
   .ck-pt-ten-lon {
     font-size: 23px;
   }
@@ -1270,7 +1259,6 @@ a.ck-pt-ct-o-link:hover {
 }
 
 .ck-pt-ct-sao-han {
-  font-family: "Noto Serif TC", "Songti TC", "PMingLiU", "Noto Serif SC", Georgia, serif;
   font-size: 12.5px;
   color: var(--ck-muc-2);
   line-height: 1.2;
@@ -1316,39 +1304,78 @@ a.ck-pt-ct-o-link:hover {
 }
 
 @keyframes ck-ct-ve-doan {
-  from { stroke-dashoffset: 100; }
-  to { stroke-dashoffset: 0; }
+  from {
+    stroke-dashoffset: 100;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes ck-ct-hien-buoc {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes ck-ct-cham-bay {
-  0% { transform: translate(150px, 150px); }
-  12.5% { transform: translate(250px, 250px); }
-  25% { transform: translate(250px, 150px); }
-  37.5% { transform: translate(50px, 250px); }
-  50% { transform: translate(150px, 50px); }
-  62.5% { transform: translate(150px, 250px); }
-  75% { transform: translate(250px, 50px); }
-  87.5% { transform: translate(50px, 150px); }
-  100% { transform: translate(50px, 50px); }
+  0% {
+    transform: translate(150px, 150px);
+  }
+
+  12.5% {
+    transform: translate(250px, 250px);
+  }
+
+  25% {
+    transform: translate(250px, 150px);
+  }
+
+  37.5% {
+    transform: translate(50px, 250px);
+  }
+
+  50% {
+    transform: translate(150px, 50px);
+  }
+
+  62.5% {
+    transform: translate(150px, 250px);
+  }
+
+  75% {
+    transform: translate(250px, 50px);
+  }
+
+  87.5% {
+    transform: translate(50px, 150px);
+  }
+
+  100% {
+    transform: translate(50px, 50px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ck-pt-ct-bay-overlay {
     display: block;
   }
+
   .ck-pt-ct-bay-doan {
     stroke-dashoffset: 0 !important;
     animation: none !important;
   }
+
   .ck-pt-ct-bay-buoc {
     opacity: 1 !important;
     animation: none !important;
   }
+
   .ck-pt-ct-bay-cham {
     display: none !important;
     animation: none !important;
@@ -1637,6 +1664,7 @@ a.ck-pt-ct-o-link:hover {
   .ck-pt-ct-thang-luoi {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   .ck-pt-ct-bon-sao-ds {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1646,61 +1674,77 @@ a.ck-pt-ct-o-link:hover {
   .ck-pt-ct-thang-chon-ds {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
   .ck-pt-ct-chi-tiet-luoi,
   .ck-pt-ct-bay-tinh-noi {
     grid-template-columns: 1fr;
   }
+
   .ck-pt-ct-thang-luoi {
     grid-template-columns: 1fr;
   }
+
   .ck-pt-ct-vanh {
     padding: 6px 4px;
   }
+
   .ck-pt-ct-vanh-tren,
   .ck-pt-ct-vanh-duoi {
     padding: 0 20px;
     font-size: 11.5px;
   }
+
   .ck-pt-ct-vanh-giua {
     grid-template-columns: 18px minmax(0, 1fr) 18px;
     gap: 4px;
   }
+
   .ck-pt-ct-vanh-trai,
   .ck-pt-ct-vanh-phai {
     font-size: 11px;
   }
+
   .ck-pt-ct-luoi {
     gap: 4px;
   }
+
   .ck-pt-ct-o {
     min-height: 102px;
     aspect-ratio: auto;
     padding: 7px 3px;
     gap: 3px;
   }
+
   .ck-pt-ct-o-phuong {
     font-size: 11px;
   }
+
   .ck-pt-ct-o-cung {
     display: block;
     font-size: 10px;
   }
+
   .ck-pt-ct-sao-so {
     font-size: 32px;
   }
+
   .ck-pt-ct-sao-ten {
     font-size: 12.5px;
   }
+
   .ck-pt-ct-sao-han {
     font-size: 11px;
   }
+
   .ck-pt-ct-sao-nam-phu {
     font-size: 10px;
   }
+
   .ck-pt-ct-dieu-huong {
     flex-direction: column;
     align-items: stretch;
   }
+
   .ck-pt-ct-dieu-huong .ck-nut {
     justify-content: center;
     text-align: center;

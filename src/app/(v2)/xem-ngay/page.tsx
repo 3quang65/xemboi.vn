@@ -14,6 +14,7 @@ import {
   type TheDocNhanhItem,
 } from '@/components/ck/truc-quan';
 import type { Hanh } from '@/lib/trang/can-chi';
+import { boChuHan } from '@/lib/trang/chu-viet';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import {
@@ -116,7 +117,19 @@ export default async function XemNgayHubPage() {
   const { homNay, ngayMai, homNayIso } = homNayVaNgayMaiVN();
   const hn = xemNgay(homNay.ngay, homNay.thang, homNay.nam);
   const nm = xemNgay(ngayMai.ngay, ngayMai.thang, ngayMai.nam);
-  const docNhanh = docNhanhNgay(hn);
+  const docNhanhRaw = docNhanhNgay(hn);
+  const docNhanh = {
+    ...docNhanhRaw,
+    the: docNhanhRaw.the.map((t) => {
+      const sach = boChuHan(t.chiTiet);
+      return {
+        ...t,
+        chiTiet: sach
+          ? sach.charAt(0).toLocaleUpperCase('vi-VN') + sach.slice(1)
+          : '',
+      };
+    }),
+  };
   const daiGioHomNay = daiGio(hn.lich);
   const dsThangNay = thangXemNgay(homNay.nam, homNay.thang);
 
@@ -173,11 +186,7 @@ export default async function XemNgayHubPage() {
                     {nhanNgayAmChu(hn.lich.am.ngay, true)} {hn.lich.tenThangAm}{' '}
                     năm {hn.lich.canChiNam.ten}
                   </strong>{' '}
-                  · Ngày <strong>{hn.lich.canChiNgay.ten}</strong> (
-                  <span lang="zh-Hant" className="ck-xn-han">
-                    {hn.ngayHan}
-                  </span>
-                  , hành {hn.lich.hanhNgay})
+                  · Ngày <strong>{hn.lich.canChiNgay.ten}</strong> (hành {hn.lich.hanhNgay})
                 </p>
               </div>
               {hrefHomNay ? (
@@ -216,19 +225,13 @@ export default async function XemNgayHubPage() {
               <div>
                 <dt>Can chi ngày</dt>
                 <dd>
-                  <strong>{hn.lich.canChiNgay.ten}</strong>{' '}
-                  <span lang="zh-Hant" className="ck-xn-han">
-                    ({hn.ngayHan})
-                  </span>
+                  <strong>{hn.lich.canChiNgay.ten}</strong>
                 </dd>
               </div>
               <div>
                 <dt>Tháng (theo tiết khí)</dt>
                 <dd>
-                  <strong>{hn.thangTiet.canChi.ten}</strong>{' '}
-                  <span lang="zh-Hant" className="ck-xn-han">
-                    ({hn.thangTiet.han})
-                  </span>
+                  <strong>{hn.thangTiet.canChi.ten}</strong>
                 </dd>
               </div>
             </dl>
@@ -237,15 +240,11 @@ export default async function XemNgayHubPage() {
               <div className="ck-xn-lop">
                 <h3>Lớp 1 · 12 thần</h3>
                 <p className="ck-xn-lop-gia-tri">
-                  <strong>{hn.than.ten}</strong>{' '}
-                  <span lang="zh-Hant" className="ck-xn-han">
-                    ({hn.than.han})
-                  </span>
+                  <strong>{hn.than.ten}</strong>
                 </p>
                 <span
-                  className={`ck-xn-nhan ${
-                    hn.than.hoangDao ? 'ck-xn-hoang' : 'ck-xn-hac'
-                  }`}
+                  className={`ck-xn-nhan ${hn.than.hoangDao ? 'ck-xn-hoang' : 'ck-xn-hac'
+                    }`}
                 >
                   {hn.than.hoangDao ? 'Hoàng đạo' : 'Hắc đạo'}
                 </span>
@@ -254,10 +253,7 @@ export default async function XemNgayHubPage() {
               <div className="ck-xn-lop">
                 <h3>Lớp 2 · 12 trực</h3>
                 <p className="ck-xn-lop-gia-tri">
-                  <strong>Trực {hn.truc.ten}</strong>{' '}
-                  <span lang="zh-Hant" className="ck-xn-han">
-                    ({hn.truc.han})
-                  </span>
+                  <strong>Trực {hn.truc.ten}</strong>
                 </p>
                 <span className={`ck-xn-nhan ck-xn-truc-${hn.truc.nhom}`}>
                   {TEN_NHOM_TRUC[hn.truc.nhom]}
@@ -309,9 +305,8 @@ export default async function XemNgayHubPage() {
                 <span>12 thần:</span>{' '}
                 <strong>{nm.than.ten}</strong>{' '}
                 <span
-                  className={`ck-xn-nhan ${
-                    nm.than.hoangDao ? 'ck-xn-hoang' : 'ck-xn-hac'
-                  }`}
+                  className={`ck-xn-nhan ${nm.than.hoangDao ? 'ck-xn-hoang' : 'ck-xn-hac'
+                    }`}
                 >
                   {nm.than.hoangDao ? 'Hoàng đạo' : 'Hắc đạo'}
                 </span>

@@ -16,11 +16,11 @@ export const MAC_DINH_CUU_TINH: MacDinhTrang = {
   title: 'Cửu tinh năm, tháng: sao nào bay tới phương nào',
   h1: 'Cửu tinh năm, tháng',
   description:
-    'Tra Cửu tinh (Tử bạch) theo năm và 12 tháng tiết: sao vào trung cung, vị trí 9 sao ở 9 phương. Tính theo Hiệp kỷ biện phương thư, trích nguyên văn.',
+    'Tra Cửu tinh (Tử bạch) theo năm và 12 tháng tiết: sao vào trung cung, vị trí 9 sao ở 9 phương. Tính theo Hiệp kỷ biện phương thư, trích sách.',
 };
 
 export const PHU_CUU_TINH =
-  'Sao nào vào trung cung, bay tới phương nào theo năm và 12 tháng tiết, trích nguyên văn Hiệp kỷ biện phương thư.';
+  'Sao nào vào trung cung, bay tới phương nào theo năm và 12 tháng tiết, trích sách Hiệp kỷ biện phương thư.';
 
 /** Thứ tự 9 cung theo Lạc thư đặt Nam ở trên: hàng trên Tốn-Ly-Khôn, giữa Chấn-Trung-Đoài, dưới Cấn-Khảm-Càn. */
 export const THU_TU_LUOI_LAC_THU = [4, 9, 2, 3, 5, 7, 8, 1, 6] as const;

@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
 import {
+  NGUON_CHU_DICH,
+  NGUON_DICH,
   bang64,
   daDungKinhDich,
   duongDanQuai,
@@ -25,7 +27,7 @@ import {
   thongTinNganTheoSo,
 } from '../../KinhDichHelpers';
 import {
-  DongVanHan,
+  DongLoiDich,
   GhiCongChuDich,
   HinhHao,
   LienKetKiem,
@@ -72,12 +74,9 @@ export default async function QueChiTietPage({
   const daDung = daDungKinhDich();
   const thuongCt = quaiTheoTenQ(ct.que.thuong.ten);
   const haCt = quaiTheoTenQ(ct.que.ha.ten);
-  const hoInfo = thongTinNganTheoSo(ct.ho.so);
-  const daoInfo = thongTinNganTheoSo(ct.dao.so);
-  const doiInfo = thongTinNganTheoSo(ct.doi.so);
   const doiXung = ct.dao.so === ct.que.so;
 
-  const schemaTerm = taoSchemaDefinedTerm(ct.que.ten, ct.han.ten, tt.canonical);
+  const schemaTerm = taoSchemaDefinedTerm(ct.que.ten, tt.canonical);
   const schemaWebPage = taoSchemaWebPage(tt);
 
   return (
@@ -97,7 +96,7 @@ export default async function QueChiTietPage({
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(schemaWebPage) }}
       />
 
-      {/* 1. Đầu trang: ký hiệu lớn, số, tên, chữ Hán, quái trên/dưới, hình 6 hào */}
+      {/* 1. Đầu trang: ký hiệu lớn, số, tên, quái trên/dưới, hình 6 hào */}
       <section className="ck-kd-que-dau" aria-label={`Tổng quan quẻ ${ct.que.ten}`}>
         <div className="ck-kd-que-tong">
           <div className="ck-kd-dau-chinh">
@@ -106,12 +105,7 @@ export default async function QueChiTietPage({
             </span>
             <div>
               <span className="ck-nhan-nho">Quẻ số {ct.que.so}</span>
-              <h2 className="ck-kd-que-ten-phu">
-                {ct.que.ten}{' '}
-                <span lang="zh-Hant" className="ck-kd-han-lon">
-                  {ct.han.ten}
-                </span>
-              </h2>
+              <h2 className="ck-kd-que-ten-phu">{ct.que.ten}</h2>
             </div>
           </div>
 
@@ -123,8 +117,7 @@ export default async function QueChiTietPage({
             >
               <span>Quái trên</span>
               <strong>
-                {thuongCt.kyHieu} {thuongCt.ten}{' '}
-                <span lang="zh-Hant">{thuongCt.han}</span>
+                {thuongCt.kyHieu} {thuongCt.ten}
               </strong>
               <small>{thuongCt.tuong}</small>
             </LienKetKiem>
@@ -136,8 +129,7 @@ export default async function QueChiTietPage({
             >
               <span>Quái dưới</span>
               <strong>
-                {haCt.kyHieu} {haCt.ten}{' '}
-                <span lang="zh-Hant">{haCt.han}</span>
+                {haCt.kyHieu} {haCt.ten}
               </strong>
               <small>{haCt.tuong}</small>
             </LienKetKiem>
@@ -151,60 +143,60 @@ export default async function QueChiTietPage({
         />
       </section>
 
-      {/* 2. Nguyên văn lời quẻ, lời hào */}
+      {/* 2. Bản dịch lời quẻ, lời hào */}
       <section className="ck-td-muc" aria-labelledby="ck-kd-nguyen-van-tieu">
         <h2 id="ck-kd-nguyen-van-tieu" className="ck-td-tieu">
-          Nguyên văn lời quẻ, lời hào
+          Lời quẻ và lời hào
         </h2>
 
         <article className="ck-kd-muc-van ck-kd-que-tu">
-          <h3>
-            Lời quẻ (<span lang="zh-Hant">卦辭</span>)
-          </h3>
-          <DongVanHan
-            han={ct.han.queTu}
-            phienAm={ct.phienAm?.queTu ?? null}
+          <h3>Lời quẻ</h3>
+          <DongLoiDich
+            dich={ct.dich.queTu}
             ghiChuKhacBan={khacBanTheoViTri(ct.khacBan, 'quẻ từ')}
           />
         </article>
 
         <ol className="ck-kd-ds-hao">
-          {ct.han.hao.map((h, idx) => (
-            <li key={h.viTri} className="ck-kd-muc-van">
-              <h3>
-                {tenViTriHao(h.viTri)} <span lang="zh-Hant">{h.viTri}</span>
-              </h3>
-              <DongVanHan
-                han={h.van}
-                phienAm={ct.phienAm?.hao[idx]?.van ?? null}
-                ghiChuKhacBan={khacBanTheoViTri(ct.khacBan, h.viTri)}
-              />
-            </li>
-          ))}
+          {ct.dich.hao.map((loiDich, idx) => {
+            const viTriHan = ct.han.hao[idx].viTri;
+            return (
+              <li key={idx} className="ck-kd-muc-van">
+                <h3>
+                  Hào {idx + 1} · {tenViTriHao(viTriHan)}
+                </h3>
+                <DongLoiDich
+                  dich={loiDich}
+                  ghiChuKhacBan={khacBanTheoViTri(ct.khacBan, viTriHan)}
+                />
+              </li>
+            );
+          })}
         </ol>
 
-        {ct.han.dung ? (
+        {ct.dich.dung && ct.han.dung ? (
           <article className="ck-kd-muc-van ck-kd-hao-dung">
-            <h3>
-              {tenViTriHao(ct.han.dung.viTri)}{' '}
-              <span lang="zh-Hant">{ct.han.dung.viTri}</span>
-            </h3>
-            <DongVanHan
-              han={ct.han.dung.van}
-              phienAm={ct.phienAm?.dung?.van ?? null}
+            <h3>{tenViTriHao(ct.han.dung.viTri)}</h3>
+            <DongLoiDich
+              dich={ct.dich.dung}
               ghiChuKhacBan={khacBanTheoViTri(ct.khacBan, ct.han.dung.viTri)}
             />
           </article>
         ) : null}
 
+        <p className="ck-kd-nguon-dich">
+          Sách ghi · Chu Dịch (Kanripo {NGUON_CHU_DICH.ma}) ·{' '}
+          <strong>{NGUON_DICH[ct.dich.nguon].nhan}</strong>
+        </p>
+
         {nd ? (
           <KhoiDienGiai
             noiDung={nd}
-            tieuDe={`Bản dịch và lời bình quẻ ${ct.que.ten}`}
+            tieuDe={`Lời bình quẻ ${ct.que.ten}`}
           />
         ) : (
           <p className="ck-kd-dang-bien-tap">
-            Bản dịch và lời bình tiếng Việt đang biên tập.
+            Lời bình chi tiết đang biên tập.
           </p>
         )}
       </section>
@@ -226,21 +218,18 @@ export default async function QueChiTietPage({
               className="ck-kd-que-nho"
             >
               <span className="ck-kd-que-nho-ky" aria-hidden="true">
-                {hoInfo.kyHieu}
+                {thongTinNganTheoSo(ct.ho.so)?.kyHieu}
               </span>
               <div>
                 <b>
                   #{ct.ho.so} {ct.ho.ten}
                 </b>
-                <span lang="zh-Hant">{hoInfo.han}</span>
               </div>
             </LienKetKiem>
           </article>
 
           <article className="ck-kd-lq-the">
-            <h3>
-              Quẻ đảo (<span lang="zh-Hant">綜</span>)
-            </h3>
+            <h3>Quẻ đảo</h3>
             <p className="ck-kd-lq-giai">
               Lật ngược 6 hào.
               {doiXung ? ' Quẻ đối xứng: lật ngược vẫn là chính nó.' : ''}
@@ -248,13 +237,12 @@ export default async function QueChiTietPage({
             {doiXung ? (
               <div className="ck-kd-que-nho ck-kd-que-nho-tinh">
                 <span className="ck-kd-que-nho-ky" aria-hidden="true">
-                  {daoInfo.kyHieu}
+                  {thongTinNganTheoSo(ct.dao.so)?.kyHieu}
                 </span>
                 <div>
                   <b>
                     #{ct.dao.so} {ct.dao.ten}
                   </b>
-                  <span lang="zh-Hant">{daoInfo.han}</span>
                 </div>
               </div>
             ) : (
@@ -264,22 +252,19 @@ export default async function QueChiTietPage({
                 className="ck-kd-que-nho"
               >
                 <span className="ck-kd-que-nho-ky" aria-hidden="true">
-                  {daoInfo.kyHieu}
+                  {thongTinNganTheoSo(ct.dao.so)?.kyHieu}
                 </span>
                 <div>
                   <b>
                     #{ct.dao.so} {ct.dao.ten}
                   </b>
-                  <span lang="zh-Hant">{daoInfo.han}</span>
                 </div>
               </LienKetKiem>
             )}
           </article>
 
           <article className="ck-kd-lq-the">
-            <h3>
-              Quẻ đối (<span lang="zh-Hant">錯</span>)
-            </h3>
+            <h3>Quẻ đối</h3>
             <p className="ck-kd-lq-giai">
               Đổi âm thành dương, dương thành âm cả 6 hào.
             </p>
@@ -289,13 +274,12 @@ export default async function QueChiTietPage({
               className="ck-kd-que-nho"
             >
               <span className="ck-kd-que-nho-ky" aria-hidden="true">
-                {doiInfo.kyHieu}
+                {thongTinNganTheoSo(ct.doi.so)?.kyHieu}
               </span>
               <div>
                 <b>
                   #{ct.doi.so} {ct.doi.ten}
                 </b>
-                <span lang="zh-Hant">{doiInfo.han}</span>
               </div>
             </LienKetKiem>
           </article>
@@ -337,7 +321,7 @@ export default async function QueChiTietPage({
       </nav>
 
       {/* 6. Ghi công */}
-      <GhiCongChuDich hienPhienAm daDung={daDung} />
+      <GhiCongChuDich nguonDich={ct.dich.nguon} daDung={daDung} />
     </KhungTrang>
   );
 }

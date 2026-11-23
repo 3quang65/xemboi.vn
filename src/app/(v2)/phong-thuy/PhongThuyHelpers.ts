@@ -1,4 +1,5 @@
 import type { MacDinhTrang, ThamSoMau, ThongTinTrang } from '@/lib/trang/meta';
+import { boChuHan } from '@/lib/trang/chu-viet';
 import {
   BAT_CUNG,
   DU_NIEN_8,
@@ -6,6 +7,11 @@ import {
   cungTheoTen,
   type CungBatTrach,
 } from '@/lib/trang/phong-thuy';
+
+export function lamSachChuHanDauCau(s: string): string {
+  const k = boChuHan(s);
+  return k ? k.charAt(0).toLocaleUpperCase('vi-VN') + k.slice(1) : '';
+}
 
 export const GOC_SITE = 'https://xemboi.vn';
 export const MAU_SEO_CUNG = '/phong-thuy/cung-phi/{cung}';
@@ -17,21 +23,21 @@ export const MAC_DINH_HUB: MacDinhTrang = {
   title: 'Phong thủy Bát trạch: cung phi, 8 du niên, hướng nhà có nguồn',
   h1: 'Phong thủy có nguồn sách',
   description:
-    'Phong thủy dương trạch theo phép Bát trạch: tính cung phi theo năm sinh, bảng 8 du niên, xem hướng nhà theo 24 sơn. Trích nguyên văn Hiệp kỷ biện phương thư, không bán vật phẩm.',
+    'Phong thủy dương trạch theo phép Bát trạch: tính cung phi theo năm sinh, bảng 8 du niên, xem hướng nhà theo 24 sơn. Trích sách Hiệp kỷ biện phương thư, không bán vật phẩm.',
 };
 
 export const MAC_DINH_CUNG_PHI: MacDinhTrang = {
   title: 'Tra cung phi bát trạch theo năm sinh nam, nữ',
   h1: 'Tra cung phi bát trạch',
   description:
-    'Tính cung phi theo năm sinh âm lịch và giới tính: Đông tứ mệnh hay Tây tứ mệnh, 4 phương cát, 4 phương hung. Cách tính tam nguyên ghi rõ, trích nguyên văn Hiệp kỷ.',
+    'Tính cung phi theo năm sinh âm lịch và giới tính: Đông tứ mệnh hay Tây tứ mệnh, 4 phương cát, 4 phương hung. Cách tính tam nguyên ghi rõ, trích sách Hiệp kỷ.',
 };
 
 export const MAC_DINH_BAT_TRACH: MacDinhTrang = {
   title: 'Bát trạch: 8 du niên theo cung phi, cách lập có nguồn',
   h1: 'Bát trạch: 8 hướng theo cung phi',
   description:
-    'Bảng 8 du niên bát trạch (Sinh khí, Thiên y, Diên niên, Phục vị và 4 du niên hung) cho 8 cung, cách lập bằng biến hào, trích nguyên văn Hiệp kỷ biện phương thư.',
+    'Bảng 8 du niên bát trạch (Sinh khí, Thiên y, Diên niên, Phục vị và 4 du niên hung) cho 8 cung, cách lập bằng biến hào, trích sách Hiệp kỷ biện phương thư.',
 };
 
 export const MAC_DINH_HUONG_NHA: MacDinhTrang = {
@@ -118,7 +124,7 @@ export const CUNG_THEO_CHIEU_KIM: CungBatTrach[] = [
   'Càn',
 ].map((ten) => cungTheoTen(ten)!);
 
-/** Bảng 3 nguyên kèm cung khởi theo nguyên văn 九宫建宅 (quyển 35, tờ 9b). */
+/** Bảng 3 nguyên kèm cung khởi theo Cửu cung kiến trạch (quyển 35, tờ 9b). */
 export const NGUYEN_KHOI = [
   { ...NGUYEN[0], namKhoi: '1 Khảm', nuKhoi: '5 trung' },
   { ...NGUYEN[1], namKhoi: '4 Tốn', nuKhoi: '2 Khôn' },
@@ -180,7 +186,6 @@ export function taoSchemaDefinedTermSetBatTrach(
     hasDefinedTerm: DU_NIEN_8.map((d) => ({
       '@type': 'DefinedTerm',
       name: d.ten,
-      alternateName: d.han,
       additionalType: d.cat ? 'Cát' : 'Hung',
     })),
   };
@@ -194,7 +199,6 @@ export function taoSchemaDefinedTermCung(
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
     name: `Cung ${cung.ten}`,
-    alternateName: cung.han,
     url: canonical,
     inDefinedTermSet: URL_BAT_TRACH,
   };

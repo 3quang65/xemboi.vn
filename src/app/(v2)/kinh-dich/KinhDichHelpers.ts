@@ -14,10 +14,10 @@ export const MAU_SEO_QUAI = '/kinh-dich/bat-quai/{quai}';
 export const URL_64_QUE = `${GOC_SITE}/kinh-dich/64-que`;
 
 export const MAC_DINH_HUB: MacDinhTrang = {
-  title: 'Kinh Dịch: 64 quẻ nguyên văn, bát quái và gieo quẻ',
+  title: 'Kinh Dịch: 64 quẻ, bát quái và gieo quẻ',
   h1: 'Kinh Dịch: 64 quẻ và cách gieo',
   description:
-    '64 quẻ, mỗi quẻ 6 hào, ghép từ 2 trong 8 quái; nguyên văn lời quẻ, lời hào theo bản Chu Dịch Kanripo.',
+    '64 quẻ, mỗi quẻ 6 hào, ghép từ 2 trong 8 quái; bản dịch lời quẻ, lời hào theo Chu Dịch Kanripo.',
 };
 
 export const MAC_DINH_64_QUE: MacDinhTrang = {
@@ -61,9 +61,9 @@ export function thamSoQuai(quai: QuaiChiTiet): ThamSoMau {
 
 export function macDinhQue(que: Que): MacDinhTrang {
   return {
-    title: `Quẻ ${que.ten} (${que.so}) – Kinh Dịch: nguyên văn lời quẻ, lời hào`,
+    title: `Quẻ ${que.ten} (${que.so}) – Kinh Dịch: lời quẻ, lời hào`,
     h1: `Quẻ ${que.ten}`,
-    description: `Quẻ số ${que.so} ${que.ten}: hình 6 hào, nguyên văn lời quẻ và 6 hào theo Chu Dịch Kanripo, cùng quẻ hỗ, quẻ đảo và quẻ đối.`,
+    description: `Quẻ số ${que.so} ${que.ten}: hình 6 hào, bản dịch lời quẻ và 6 hào theo Chu Dịch Kanripo, cùng quẻ hỗ, quẻ đảo và quẻ đối.`,
   };
 }
 
@@ -71,12 +71,12 @@ export function macDinhQuai(quai: QuaiChiTiet): MacDinhTrang {
   return {
     title: `Quái ${quai.ten} trong bát quái: tượng, tính, phương theo Thuyết quái`,
     h1: `Quái ${quai.ten}`,
-    description: `Quái ${quai.ten} (${quai.tuong}): hình 3 hào, trích nguyên văn thiên Thuyết quái và danh sách các quẻ có quái ${quai.ten}.`,
+    description: `Quái ${quai.ten} (${quai.tuong}): hình 3 hào, trích thiên Thuyết quái và danh sách các quẻ có quái ${quai.ten}.`,
   };
 }
 
 /**
- * Lọc ghi chú khác bản cho lời quẻ ("quẻ từ") hoặc một vị trí hào Hán (vd "六五").
+ * Lọc ghi chú khác bản cho lời quẻ ("quẻ từ") hoặc một vị trí hào (vd mã vị trí "Lục Ngũ").
  */
 export function khacBanTheoViTri(ds: typeof KHAC_BAN, viTriCanTim: string) {
   if (ds.length === 0) return [];
@@ -117,7 +117,6 @@ export function taoSchemaDefinedTermSet64(
     hasDefinedTerm: ds64.map((x) => ({
       '@type': 'DefinedTerm',
       name: x.que.ten,
-      alternateName: x.han,
       url: `${GOC_SITE}${duongDanQue(x.que)}`,
     })),
   };
@@ -125,14 +124,12 @@ export function taoSchemaDefinedTermSet64(
 
 export function taoSchemaDefinedTerm(
   ten: string,
-  han: string,
   canonical: string,
 ) {
   return {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
     name: ten,
-    alternateName: han,
     url: canonical,
     inDefinedTermSet: URL_64_QUE,
   };
@@ -140,7 +137,7 @@ export function taoSchemaDefinedTerm(
 
 let bang64Cache: ReturnType<typeof bang64> | null = null;
 
-/** Tra nhanh dòng bang64 (gồm kyHieu, han) theo số Văn Vương 1..64. */
+/** Tra nhanh dòng bang64 (gồm kyHieu) theo số Văn Vương 1..64. */
 export function thongTinNganTheoSo(so: number) {
   if (!bang64Cache) bang64Cache = bang64();
   return bang64Cache[so - 1];

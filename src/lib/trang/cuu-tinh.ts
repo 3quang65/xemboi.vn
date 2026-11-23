@@ -173,4 +173,4 @@ export const TRANG_CUU_TINH = ['/phong-thuy/cuu-tinh', ...NAM_TRANG_CUU_TINH.map
 
 /** Câu tả bảng năm của Hiệp kỷ, chỉ nói điều sách ghi (không thêm cát hung cho 5 sao còn lại). */
 export const GHI_CHU_BON_SAO =
-  'Trong bảng từng năm (quyển 15–19), Hiệp kỷ chỉ ghi chỗ của Nhất bạch, Lục bạch, Bát bạch và Cửu tử, đặt dưới mục "Khai sơn lập hướng tu phương cát" (開山立向修方吉). Năm sao còn lại sách không ghi trong mục này.';
+  'Trong bảng từng năm (quyển 15–19), Hiệp kỷ chỉ ghi chỗ của Nhất bạch, Lục bạch, Bát bạch và Cửu tử, đặt dưới mục "Khai sơn lập hướng tu phương cát" (động thổ, đặt hướng, sửa chữa ở phương tốt). Năm sao còn lại sách không ghi trong mục này.';

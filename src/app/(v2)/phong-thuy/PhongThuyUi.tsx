@@ -10,7 +10,7 @@ import {
   type TrichDan,
 } from '@/lib/trang/phong-thuy';
 
-/** Khối nguyên văn trích sách: Hán (zh-Hant), phiên âm ngay dưới (vi), vị trí trong sách; không tự dịch. */
+/** Khối trích sách: nhãn Sách ghi, bản dịch tiếng Việt, vị trí trong sách và ghi công dịch nghĩa. */
 export function KhoiTrichDan({
   trich,
   nhan,
@@ -20,16 +20,13 @@ export function KhoiTrichDan({
 }) {
   return (
     <figure className="ck-pt-trich">
-      {nhan ? <span className="ck-pt-trich-nhan">{nhan}</span> : null}
+      <span className="ck-pt-trich-nhan">{nhan ?? 'Sách ghi'}</span>
       <blockquote className="ck-pt-trich-noi">
-        <p lang="zh-Hant" className="ck-pt-han-van">
-          {trich.han}
-        </p>
-        <p lang="vi" className="ck-pt-phien-am">
-          {trich.phienAm}
-        </p>
+        <p className="ck-pt-trich-dich">{trich.dich}</p>
       </blockquote>
-      <figcaption className="ck-pt-vi-tri">{viTriTrich(trich)}</figcaption>
+      <figcaption className="ck-pt-vi-tri">
+        {viTriTrich(trich)}. <span className="ck-pt-dich-gia">Dịch nghĩa: xemboi</span>
+      </figcaption>
     </figure>
   );
 }
@@ -105,17 +102,9 @@ export function BangBatPhuong({ cungTen }: { cungTen: string }) {
           {ds.map(({ duNien: d, cung }) => (
             <tr key={d.ten} className={d.cat ? 'ck-pt-hang-cat' : 'ck-pt-hang-hung'}>
               <td data-nhan="Du niên">
-                <b>{d.ten}</b>{' '}
-                <span lang="zh-Hant" className="ck-pt-han-inline">
-                  {d.han}
-                </span>
+                <b>{d.ten}</b>
               </td>
-              <td data-nhan="Sao">
-                {d.sao}{' '}
-                <span lang="zh-Hant" className="ck-pt-han-inline">
-                  {d.saoHan}
-                </span>
-              </td>
+              <td data-nhan="Sao">{d.sao}</td>
               <td data-nhan="Cát / Hung">
                 <HuyHieuCatHung cat={d.cat} />
               </td>
@@ -125,10 +114,7 @@ export function BangBatPhuong({ cungTen }: { cungTen: string }) {
               </td>
               <td data-nhan="Quái">
                 <Link href={duongDanCungPhi(cung)} className="ck-pt-quai-link">
-                  <span aria-hidden="true">{cung.kyHieu}</span> {cung.ten}{' '}
-                  <span lang="zh-Hant" className="ck-pt-han-inline">
-                    {cung.han}
-                  </span>
+                  <span aria-hidden="true">{cung.kyHieu}</span> {cung.ten}
                 </Link>
               </td>
             </tr>

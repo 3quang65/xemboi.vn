@@ -4,10 +4,11 @@ import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
 import {
   BAT_QUAI_CHI_TIET,
+  DICH_THUYET_QUAI,
+  NGUON_CHU_DICH,
+  NGUON_DICH,
   daDungKinhDich,
   duongDanQuai,
-  NGUON_CHU_DICH,
-  NGUON_PHIEN_AM,
 } from '@/lib/trang/chu-dich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
@@ -21,7 +22,7 @@ import { LienKetKiem } from './KinhDichUi';
 export const revalidate = 3600;
 
 const CAU_DAN_HUB =
-  '64 quẻ, mỗi quẻ 6 hào, ghép từ 2 trong 8 quái; nguyên văn lời quẻ, lời hào theo bản Chu Dịch Kanripo.';
+  '64 quẻ, mỗi quẻ 6 hào, ghép từ 2 trong 8 quái; bản dịch lời quẻ, lời hào theo Chu Dịch Kanripo.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaTrang('/kinh-dich', MAC_DINH_HUB);
@@ -96,14 +97,9 @@ export default async function KinhDichHubPage() {
               <span className="ck-kd-quai-ky" aria-hidden="true">
                 {q.kyHieu}
               </span>
-              <strong className="ck-kd-quai-ten">
-                {q.ten}{' '}
-                <span lang="zh-Hant" className="ck-kd-han-inline">
-                  {q.han}
-                </span>
-              </strong>
+              <strong className="ck-kd-quai-ten">{q.ten}</strong>
               <span className="ck-kd-quai-tuong">
-                {q.tuong} · <span lang="zh-Hant">{q.tuongHan}</span>
+                {q.tuong} · {DICH_THUYET_QUAI[q.tuongHan]}
               </span>
             </LienKetKiem>
           ))}
@@ -118,8 +114,7 @@ export default async function KinhDichHubPage() {
         </h2>
         <div className="ck-kd-nguon-khoi">
           <p>
-            <strong>{NGUON_CHU_DICH.tenHanViet}</strong> (
-            <span lang="zh-Hant">{NGUON_CHU_DICH.tenGoc}</span>, mã {NGUON_CHU_DICH.ma}):{' '}
+            <strong>{NGUON_CHU_DICH.tenHanViet}</strong> (mã {NGUON_CHU_DICH.ma}):{' '}
             {NGUON_CHU_DICH.ghiCong} (
             <a
               href={NGUON_CHU_DICH.url}
@@ -132,15 +127,11 @@ export default async function KinhDichHubPage() {
           </p>
           <p>{NGUON_CHU_DICH.doiChieu}</p>
           <p>
-            <strong>{NGUON_PHIEN_AM.ten}</strong>: {NGUON_PHIEN_AM.ghiCong} (
-            <a
-              href={NGUON_PHIEN_AM.url}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              {NGUON_PHIEN_AM.url}
-            </a>
-            ).
+            <strong>{NGUON_DICH['ngo-tat-to'].nhan}:</strong>{' '}
+            {NGUON_DICH['ngo-tat-to'].ghiCong}.
+          </p>
+          <p>
+            <strong>{NGUON_DICH.xemboi.nhan}:</strong> {NGUON_DICH.xemboi.ghiCong}.
           </p>
           {daDung.has('/nguon') ? (
             <p className="ck-kd-nguon-link">

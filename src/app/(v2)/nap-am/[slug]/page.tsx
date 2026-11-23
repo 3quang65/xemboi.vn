@@ -6,10 +6,10 @@ import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
 import { VongNguHanh } from '@/components/ck/truc-quan';
 import { DanhSachMau, HuyHieuHanh, NguonNapAm } from '@/components/ck/TheCanChi';
 import {
-  NAP_AM_HAN,
   duongDanConGiap,
   duongDanHanh,
 } from '@/components/ck/canChiHelpers';
+import { boChuHan } from '@/lib/trang/chu-viet';
 import {
   NAP_AM,
   mauHopMenh,
@@ -25,10 +25,30 @@ import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
 function taoThamSoNapAm(na: NapAm) {
   return {
     'Nạp âm': na.ten,
-    'Hán': NAP_AM_HAN[na.slug] ?? '',
+    'Hán': '',
     'Can Chi 1': na.hoaGiap[0].ten,
     'Can Chi 2': na.hoaGiap[1].ten,
   };
+}
+
+function lamSachMetaNapAm(meta: Metadata): Metadata {
+  const title = typeof meta.title === 'string'
+    ? boChuHan(meta.title)
+    : meta.title && typeof meta.title === 'object' && 'absolute' in meta.title
+      ? { ...meta.title, absolute: boChuHan(String(meta.title.absolute)) }
+      : meta.title;
+  const description = typeof meta.description === 'string' ? boChuHan(meta.description) : meta.description;
+  const openGraph = meta.openGraph
+    ? {
+        ...meta.openGraph,
+        title: typeof meta.openGraph.title === 'string' ? boChuHan(meta.openGraph.title) : meta.openGraph.title,
+        description:
+          typeof meta.openGraph.description === 'string'
+            ? boChuHan(meta.openGraph.description)
+            : meta.openGraph.description,
+      }
+    : meta.openGraph;
+  return { ...meta, title, description, openGraph };
 }
 
 function macDinhNapAm(na: NapAm) {
@@ -52,10 +72,11 @@ export async function generateMetadata({
   if (!na) notFound();
 
   const duongDan = `/nap-am/${na.slug}`;
-  const [meta, nd] = await Promise.all([
+  const [metaRaw, nd] = await Promise.all([
     metaTrang(duongDan, macDinhNapAm(na), '/nap-am/{ten}', taoThamSoNapAm(na)),
     noiDungTheoDuongDan(duongDan),
   ]);
+  const meta = lamSachMetaNapAm(metaRaw);
   return nd ? meta : { ...meta, robots: { index: false, follow: true } };
 }
 
@@ -69,11 +90,16 @@ export default async function NapAmChiTietPage({
   if (!na) notFound();
 
   const duongDan = `/nap-am/${na.slug}`;
-  const [ttTrang, nd] = await Promise.all([
+  const [ttTrangRaw, nd] = await Promise.all([
     thongTinTrang(duongDan, macDinhNapAm(na), '/nap-am/{ten}', taoThamSoNapAm(na)),
     noiDungTheoDuongDan(duongDan),
   ]);
-  const han = NAP_AM_HAN[na.slug] ?? '';
+  const ttTrang = {
+    ...ttTrangRaw,
+    title: boChuHan(ttTrangRaw.title),
+    h1: boChuHan(ttTrangRaw.h1),
+    description: ttTrangRaw.description ? boChuHan(ttTrangRaw.description) : null,
+  };
   const qh = quanHeHanh(na.hanh);
   const mau = mauHopMenh(na.hanh);
   const cungHanh = NAP_AM.filter((x) => x.hanh === na.hanh && x.slug !== na.slug);
@@ -91,7 +117,6 @@ export default async function NapAmChiTietPage({
           <div className="ck-the-du-lieu">
             <span className="ck-nhan-nho">Nạp âm</span>
             <strong className="ck-gia-lon">{na.ten}</strong>
-            {han ? <p>Chữ Hán: {han}</p> : null}
           </div>
 
           <div className="ck-the-du-lieu">

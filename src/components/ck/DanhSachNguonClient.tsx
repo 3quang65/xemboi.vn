@@ -69,7 +69,7 @@ export default function DanhSachNguonClient({
             className="ck-ng-tim"
             value={tuKhoa}
             onChange={(e) => setTuKhoa(e.target.value)}
-            placeholder="Nhập tên sách, chữ Hán hoặc tác giả..."
+            placeholder="Nhập tên sách hoặc tác giả..."
           />
         </div>
 
@@ -125,9 +125,6 @@ export default function DanhSachNguonClient({
               <Link href={`/nguon/${n.slug}`} className="ck-ng-ten">
                 {n.tenHienThi}
               </Link>
-              {n.tenGoc && n.tenGoc !== n.tenHienThi ? (
-                <div className="ck-ng-han">{n.tenGoc}</div>
-              ) : null}
               {n.tacGia || n.nienDai ? (
                 <p className="ck-ng-meta">
                   {[n.tacGia, n.nienDai].filter(Boolean).join(' · ')}

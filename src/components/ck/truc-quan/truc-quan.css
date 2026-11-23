@@ -320,7 +320,7 @@
   background: var(--ck-thuy);
 }
 
-/* ---------- TRÍCH NGUYÊN VĂN & SÁCH GHI ---------- */
+/* ---------- TRÍCH SÁCH & SÁCH GHI ---------- */
 .ck-tq-sach {
   margin-top: auto;
   padding-top: 4px;
@@ -370,9 +370,19 @@
   border-radius: 2px;
 }
 
-.ck-tq-trich-han {
+.ck-tq-trich-nhan {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ck-muc-3);
+}
+
+.ck-tq-trich-dich {
   margin: 0;
-  font: 400 18px/1.75 "Noto Serif TC", "Noto Serif SC", "Songti SC", "PMingLiU", "SimSun", Georgia, serif;
+  font: 400 15.5px/1.68 var(--ck-f-chu);
   color: var(--ck-muc);
   overflow-wrap: anywhere;
 }
@@ -381,6 +391,13 @@
   margin: 8px 0 0;
   font-size: 13px;
   line-height: 1.55;
+  color: var(--ck-muc-3);
+}
+
+.ck-tq-trich-dich-gia {
+  display: block;
+  margin-top: 4px;
+  font-size: 12.5px;
   color: var(--ck-muc-3);
 }
 
@@ -1133,6 +1150,7 @@ a.ck-tq-nc-the:hover {
 }
 
 @media (max-width: 520px) {
+
   .ck-tq-vnh-khung,
   .ck-tq-vcg-khung {
     padding: 10px 6px;

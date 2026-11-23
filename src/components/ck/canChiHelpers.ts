@@ -36,81 +36,12 @@ export const HANH_CLASS: Record<Hanh, string> = {
   Thổ: 'ck-hanh-tho',
 };
 
-export const HANH_HAN: Record<Hanh, string> = {
-  Kim: '金',
-  Mộc: '木',
-  Thủy: '水',
-  Hỏa: '火',
-  Thổ: '土',
-};
-
 export const HANH_MAU_HEX: Record<Hanh, string> = {
   Kim: '#5E6670',
   Mộc: '#1A7429',
   Thủy: '#102A5C',
   Hỏa: '#C8150C',
   Thổ: '#A04F00',
-};
-
-export const CHI_HAN: Record<string, string> = {
-  Tý: '子',
-  Sửu: '丑',
-  Dần: '寅',
-  Mão: '卯',
-  Thìn: '辰',
-  Tỵ: '巳',
-  Ngọ: '午',
-  Mùi: '未',
-  Thân: '申',
-  Dậu: '酉',
-  Tuất: '戌',
-  Hợi: '亥',
-};
-
-export const CAN_HAN: Record<string, string> = {
-  Giáp: '甲',
-  Ất: '乙',
-  Bính: '丙',
-  Đinh: '丁',
-  Mậu: '戊',
-  Kỷ: '己',
-  Canh: '庚',
-  Tân: '辛',
-  Nhâm: '壬',
-  Quý: '癸',
-};
-
-export const NAP_AM_HAN: Record<string, string> = {
-  'hai-trung-kim': '海中金',
-  'lu-trung-hoa': '爐中火',
-  'dai-lam-moc': '大林木',
-  'lo-bang-tho': '路旁土',
-  'kiem-phong-kim': '劍鋒金',
-  'son-dau-hoa': '山頭火',
-  'gian-ha-thuy': '澗下水',
-  'thanh-dau-tho': '城頭土',
-  'bach-lap-kim': '白蠟金',
-  'duong-lieu-moc': '楊柳木',
-  'tuyen-trung-thuy': '泉中水',
-  'oc-thuong-tho': '屋上土',
-  'tich-lich-hoa': '霹靂火',
-  'tung-bach-moc': '松柏木',
-  'truong-luu-thuy': '長流水',
-  'sa-trung-kim': '砂中金',
-  'son-ha-hoa': '山下火',
-  'binh-dia-moc': '平地木',
-  'bich-thuong-tho': '壁上土',
-  'kim-bach-kim': '金箔金',
-  'phu-dang-hoa': '覆燈火',
-  'thien-ha-thuy': '天河水',
-  'dai-trach-tho': '大澤土',
-  'thoa-xuyen-kim': '釵釧金',
-  'tang-do-moc': '桑柘木',
-  'dai-khe-thuy': '大溪水',
-  'sa-trung-tho': '沙中土',
-  'thien-thuong-hoa': '天上火',
-  'thach-luu-moc': '石榴木',
-  'dai-hai-thuy': '大海水',
 };
 
 export const MAU_SAC_HEX: Record<string, string> = {

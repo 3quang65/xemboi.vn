@@ -37,6 +37,8 @@ import {
   docGio,
   kiemCoThamSo,
   kyHieuChu,
+  lamSachMetaChiemTinh,
+  lamSachThongTinChiemTinh,
   layMot,
   pad2,
   serializeJsonLd,
@@ -58,10 +60,11 @@ export async function generateMetadata({
 }: {
   searchParams: SearchParamsInput;
 }): Promise<Metadata> {
-  const [sp, base] = await Promise.all([
+  const [sp, baseRaw] = await Promise.all([
     searchParams,
     metaTrang(DUONG_DAN_BAN_DO, MAC_DINH_BAN_DO_SAO),
   ]);
+  const base = lamSachMetaChiemTinh(baseRaw);
   if (kiemCoThamSo(sp)) {
     return {
       ...base,
@@ -88,10 +91,11 @@ export default async function BanDoSaoPage({
 }: {
   searchParams: SearchParamsInput;
 }) {
-  const [tt, sp] = await Promise.all([
+  const [ttRaw, sp] = await Promise.all([
     thongTinTrang(DUONG_DAN_BAN_DO, MAC_DINH_BAN_DO_SAO),
     searchParams,
   ]);
+  const tt = lamSachThongTinChiemTinh(ttRaw);
   const daDung = trangDaDung();
 
   const ngayRaw = layMot(sp.ngay)?.trim() ?? '';
@@ -465,7 +469,7 @@ export default async function BanDoSaoPage({
               <article
                 className={`ck-ct-bds-moc-the${banDo.coGio && banDo.asc ? '' : ' ck-ct-bds-moc-cho'}`}
               >
-                <span className="ck-ct-bds-moc-nhan">Cung mọc (ASC)</span>
+                <span className="ck-ct-bds-moc-nhan">Cung mọc</span>
                 {banDo.coGio && banDo.asc ? (
                   <>
                     <strong className="ck-ct-bds-moc-gia">
@@ -488,7 +492,7 @@ export default async function BanDoSaoPage({
               <article
                 className={`ck-ct-bds-moc-the${banDo.coGio && banDo.mc ? '' : ' ck-ct-bds-moc-cho'}`}
               >
-                <span className="ck-ct-bds-moc-nhan">Thiên đỉnh (MC)</span>
+                <span className="ck-ct-bds-moc-nhan">Thiên đỉnh</span>
                 {banDo.coGio && banDo.mc ? (
                   <>
                     <strong className="ck-ct-bds-moc-gia">
@@ -541,9 +545,6 @@ export default async function BanDoSaoPage({
                       <tr className="ck-ct-bds-hang-goc">
                         <th scope="row">
                           <span className="ck-ct-bds-goc-ten">Cung mọc</span>
-                          <span className="ck-ct-bds-en">
-                            ASC · Ascendant
-                          </span>
                         </th>
                         <td>
                           <ViTriLienKet p={banDo.asc} />
@@ -554,9 +555,6 @@ export default async function BanDoSaoPage({
                       <tr className="ck-ct-bds-hang-goc">
                         <th scope="row">
                           <span className="ck-ct-bds-goc-ten">Thiên đỉnh</span>
-                          <span className="ck-ct-bds-en">
-                            MC · Midheaven
-                          </span>
                         </th>
                         <td>
                           <ViTriLienKet p={banDo.mc} />
@@ -582,7 +580,7 @@ export default async function BanDoSaoPage({
 
                     return (
                       <tr
-                        key={t.thienThe.en}
+                        key={t.thienThe.ten}
                         className={
                           t.thienThe.coDien ? undefined : 'ck-ct-bds-hang-ngoai'
                         }
@@ -605,7 +603,6 @@ export default async function BanDoSaoPage({
                               ) : null}
                             </span>
                           </span>
-                          <span className="ck-ct-bds-en">{t.thienThe.en}</span>
                         </th>
                         <td>
                           <ViTriLienKet p={t} />
@@ -640,7 +637,7 @@ export default async function BanDoSaoPage({
               {coDienTrongBang.map((t) => {
                 const trich = TRICH_THIEN_THE[t.thienThe.ten as HanhTinh];
                 return (
-                  <details key={t.thienThe.en} className="ck-ct-bds-chi-tiet">
+                  <details key={t.thienThe.ten} className="ck-ct-bds-chi-tiet">
                     <summary>
                       <span className="ck-ct-ky" aria-hidden="true">
                         {kyHieuChu(t.thienThe.kyHieu)}

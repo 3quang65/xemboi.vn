@@ -179,10 +179,7 @@ export default async function CungPhiPage({
               </span>
               <div>
                 <h3 className="ck-pt-ten-lon">
-                  Cung {ketQua.cung.ten} {ketQua.cung.kyHieu}{' '}
-                  <span lang="zh-Hant" className="ck-pt-han-lon">
-                    {ketQua.cung.han}
-                  </span>
+                  Cung {ketQua.cung.ten} {ketQua.cung.kyHieu}
                 </h3>
                 {ketQua.guiCung ? (
                   <p className="ck-pt-gui-cung">{GHI_CHU_GUI_CUNG}</p>

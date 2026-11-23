@@ -27,7 +27,7 @@ import {
 export const revalidate = 3600;
 
 const CAU_DAN_HUB =
-  'Cung phi theo năm sinh âm lịch, bảng 8 du niên Bát trạch, 24 sơn hướng nhà và Cửu tinh năm, tháng theo nguyên văn Hiệp kỷ biện phương thư.';
+  'Cung phi theo năm sinh âm lịch, bảng 8 du niên Bát trạch, 24 sơn hướng nhà và Cửu tinh năm, tháng theo sách Hiệp kỷ biện phương thư.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return metaTrang('/phong-thuy', MAC_DINH_HUB);
@@ -53,12 +53,7 @@ function LuoiNhomCung({
             <span className="ck-pt-cung-ky" aria-hidden="true">
               {c.kyHieu}
             </span>
-            <strong className="ck-pt-cung-ten">
-              {c.ten}{' '}
-              <span lang="zh-Hant" className="ck-pt-han-inline">
-                {c.han}
-              </span>
-            </strong>
+            <strong className="ck-pt-cung-ten">{c.ten}</strong>
             <span className="ck-pt-cung-phuong">Phương {c.phuong}</span>
             <span className="ck-pt-cung-nhom">{c.nhom} tứ</span>
           </Link>
@@ -125,12 +120,8 @@ export default async function PhongThuyHubPage() {
           </Link>
 
           <Link href="/phong-thuy/cuu-tinh" className="ck-pt-hub-the">
-            <span
-              className="ck-pt-hub-ky ck-pt-han-inline"
-              lang="zh-Hant"
-              aria-hidden="true"
-            >
-              九星
+            <span className="ck-pt-hub-ky" aria-hidden="true">
+              ✦ 9 sao
             </span>
             <h2>Cửu tinh năm, tháng</h2>
             <p>
@@ -191,10 +182,10 @@ export default async function PhongThuyHubPage() {
         </div>
       </section>
 
-      {/* 4. Trích nguyên văn */}
+      {/* 4. Trích sách */}
       <section className="ck-td-muc" aria-labelledby="ck-pt-trich-tieu">
         <h2 id="ck-pt-trich-tieu" className="ck-td-tieu">
-          Nguyên văn từ Hiệp kỷ biện phương thư
+          Trích từ Hiệp kỷ biện phương thư
         </h2>
         <KhoiTrichDan trich={TRICH.dongTayTuTrach} />
         <KhoiTrichDan trich={TRICH.daiDuNien} />

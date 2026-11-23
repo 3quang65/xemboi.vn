@@ -93,7 +93,7 @@ export default async function CungPhiChiTietPage({
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(schemaWebPage) }}
       />
 
-      {/* 1. Đầu trang: ký hiệu lớn, tên, chữ Hán, số Lạc thư, hành, nhóm, loại, phương & 3 sơn */}
+      {/* 1. Đầu trang: ký hiệu lớn, tên, số Lạc thư, hành, nhóm, loại, phương & 3 sơn */}
       <section className="ck-pt-cung-dau" aria-label={`Thông tin cung ${cung.ten}`}>
         <div>
           <div className="ck-pt-dau-chinh">
@@ -101,12 +101,7 @@ export default async function CungPhiChiTietPage({
               {cung.kyHieu}
             </span>
             <div>
-              <h2 className="ck-pt-ten-lon">
-                Cung {cung.ten}{' '}
-                <span lang="zh-Hant" className="ck-pt-han-lon">
-                  {cung.han}
-                </span>
-              </h2>
+              <h2 className="ck-pt-ten-lon">Cung {cung.ten}</h2>
               <div className="ck-pt-thong-tin-dong">
                 <span>
                   Số Lạc thư: <b>{cung.so}</b>

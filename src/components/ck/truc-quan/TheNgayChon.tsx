@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { dinhDangNgayVN, duongDanNgayTuIso } from '@/components/ck/lichHelpers';
+import { boChuHan } from '@/lib/trang/chu-viet';
 import type { NgayChon } from '@/lib/trang/xem-ngay-truc-quan';
 import './truc-quan.css';
 
@@ -30,7 +31,7 @@ export function TheNgayChon({ ngay, coLink = true }: TheNgayChonProps) {
 
       <ul className="ck-tq-nc-ly-do">
         {ngay.lyDo.map((cau, i) => (
-          <li key={i}>{cau}</li>
+          <li key={i}>{boChuHan(cau)}</li>
         ))}
       </ul>
 

@@ -51,8 +51,8 @@ function taoMoTaSvg(banDo: BanDoSao, nhanThoiDiem: string): string {
   if (mt) phan.push(`Mặt Trời ở ${mt.cung.ten}`);
   if (mtr) phan.push(`Mặt Trăng ở ${mtr.cung.ten}`);
   if (banDo.coGio && banDo.asc && banDo.mc) {
-    phan.push(`Cung mọc (ASC) ở ${banDo.asc.cung.ten}`);
-    phan.push(`Thiên đỉnh (MC) ở ${banDo.mc.cung.ten}`);
+    phan.push(`Cung mọc ở ${banDo.asc.cung.ten}`);
+    phan.push(`Thiên đỉnh ở ${banDo.mc.cung.ten}`);
     phan.push('chia 12 nhà trọn cung');
   } else {
     phan.push('0 độ Bạch Dương ở bên trái, không có cung mọc và nhà');
@@ -227,7 +227,7 @@ export default function VongBanDoSaoSvg({
                     fontSize={19}
                     className="ck-ct-bds-svg-nhan-asc"
                   >
-                    ASC
+                    Mọc
                   </text>
                 </>
               );
@@ -265,7 +265,7 @@ export default function VongBanDoSaoSvg({
                     fontSize={19}
                     className="ck-ct-bds-svg-nhan-mc"
                   >
-                    MC
+                    Đỉnh
                   </text>
                 </>
               );
@@ -384,11 +384,11 @@ export default function VongBanDoSaoSvg({
           <>
             <span>
               <i className="ck-ct-bds-cham ck-ct-bds-cham-asc" aria-hidden="true" />
-              ASC: Cung mọc
+              Mọc: Cung mọc
             </span>
             <span>
               <i className="ck-ct-bds-cham ck-ct-bds-cham-mc" aria-hidden="true" />
-              MC: Thiên đỉnh
+              Đỉnh: Thiên đỉnh
             </span>
           </>
         ) : (

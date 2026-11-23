@@ -3,11 +3,11 @@ import { notFound } from 'next/navigation';
 import KhungTrang from '@/components/ck/KhungTrang';
 import {
   BAT_QUAI_CHI_TIET,
+  DICH_THUYET_QUAI,
+  NGUON_CHU_DICH,
   daDungKinhDich,
   duongDanQuai,
   duongDanQue,
-  NGUON_CHU_DICH,
-  PHIEN_AM_THUYET_QUAI,
   quaiTheoSlug,
   queCoQuai,
 } from '@/lib/trang/chu-dich';
@@ -77,7 +77,6 @@ function NhomQueTheoQuai({
                 <b>
                   #{q.so} {q.ten}
                 </b>
-                <span lang="zh-Hant">{info.han}</span>
               </div>
             </LienKetKiem>
           );
@@ -106,14 +105,14 @@ export default async function BatQuaiChiTietPage({
   const daDung = daDungKinhDich();
   const { tren, duoi } = queCoQuai(quai.ten);
 
-  const schemaTerm = taoSchemaDefinedTerm(quai.ten, quai.han, tt.canonical);
+  const schemaTerm = taoSchemaDefinedTerm(quai.ten, tt.canonical);
   const schemaWebPage = taoSchemaWebPage(tt);
 
   const cacMucThuyetQuai = [
-    { nhan: 'Tính', han: quai.thuyetQuai.tinh },
-    { nhan: 'Vật', han: quai.thuyetQuai.vat },
-    { nhan: 'Thân thể', han: quai.thuyetQuai.thanThe },
-    { nhan: 'Gia đình', han: quai.thuyetQuai.giaDinh },
+    { nhan: 'Tính', cau: quai.thuyetQuai.tinh },
+    { nhan: 'Vật', cau: quai.thuyetQuai.vat },
+    { nhan: 'Thân thể', cau: quai.thuyetQuai.thanThe },
+    { nhan: 'Gia đình', cau: quai.thuyetQuai.giaDinh },
   ];
 
   return (
@@ -133,7 +132,7 @@ export default async function BatQuaiChiTietPage({
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(schemaWebPage) }}
       />
 
-      {/* 1. Đầu trang: ký hiệu lớn, tên, chữ Hán, tượng, hình 3 hào */}
+      {/* 1. Đầu trang: ký hiệu lớn, tên, tượng, hình 3 hào */}
       <section className="ck-kd-que-dau" aria-label={`Tổng quan quái ${quai.ten}`}>
         <div className="ck-kd-que-tong">
           <div className="ck-kd-dau-chinh">
@@ -144,16 +143,9 @@ export default async function BatQuaiChiTietPage({
               <span className="ck-nhan-nho">
                 Bát quái · Số Tiên thiên {quai.soTienThien}
               </span>
-              <h2 className="ck-kd-que-ten-phu">
-                Quái {quai.ten}{' '}
-                <span lang="zh-Hant" className="ck-kd-han-lon">
-                  {quai.han}
-                </span>
-              </h2>
+              <h2 className="ck-kd-que-ten-phu">Quái {quai.ten}</h2>
               <p className="ck-kd-tuong-dong">
-                Tượng: <strong>{quai.tuong}</strong> ·{' '}
-                <span lang="zh-Hant">{quai.tuongHan}</span> (
-                <span lang="vi">{PHIEN_AM_THUYET_QUAI[quai.tuongHan]}</span>)
+                Tượng: <strong>{quai.tuong}</strong> · {DICH_THUYET_QUAI[quai.tuongHan]}
               </p>
             </div>
           </div>
@@ -175,7 +167,7 @@ export default async function BatQuaiChiTietPage({
             <thead>
               <tr>
                 <th scope="col">Mục</th>
-                <th scope="col">Nguyên văn và phiên âm</th>
+                <th scope="col">Bản dịch Thuyết quái</th>
               </tr>
             </thead>
             <tbody>
@@ -183,12 +175,7 @@ export default async function BatQuaiChiTietPage({
                 <tr key={m.nhan}>
                   <th scope="row">{m.nhan}</th>
                   <td>
-                    <span lang="zh-Hant" className="ck-kd-tq-han">
-                      {m.han}
-                    </span>
-                    <span lang="vi" className="ck-kd-tq-am">
-                      {PHIEN_AM_THUYET_QUAI[m.han]}
-                    </span>
+                    <span className="ck-kd-tq-dich">{DICH_THUYET_QUAI[m.cau]}</span>
                   </td>
                 </tr>
               ))}
@@ -201,11 +188,8 @@ export default async function BatQuaiChiTietPage({
                     </span>
                   ) : (
                     <>
-                      <span lang="zh-Hant" className="ck-kd-tq-han">
-                        {quai.thuyetQuai.phuong}
-                      </span>
-                      <span lang="vi" className="ck-kd-tq-am">
-                        {PHIEN_AM_THUYET_QUAI[quai.thuyetQuai.phuong]}
+                      <span className="ck-kd-tq-dich">
+                        {DICH_THUYET_QUAI[quai.thuyetQuai.phuong]}
                         {quai.phuongSachGhi ? ` → ${quai.phuongSachGhi}` : ''}
                       </span>
                       {quai.phuongSachGhi === null ? (
@@ -222,8 +206,8 @@ export default async function BatQuaiChiTietPage({
         </div>
 
         <p className="ck-nguon-nho">
-          Trích thiên Thuyết quái <span lang="zh-Hant">說卦</span>, bản Chu Dịch Kanripo{' '}
-          {NGUON_CHU_DICH.ma}. {NGUON_CHU_DICH.ghiCong} (
+          Trích thiên Thuyết quái, bản Chu Dịch Kanripo {NGUON_CHU_DICH.ma}.{' '}
+          {NGUON_CHU_DICH.ghiCong} (
           <a
             href={NGUON_CHU_DICH.url}
             target="_blank"
@@ -231,7 +215,7 @@ export default async function BatQuaiChiTietPage({
           >
             Kanripo {NGUON_CHU_DICH.ma}
           </a>
-          ).
+          ). Dịch nghĩa: xemboi.
         </p>
 
         {/* 3. Ngũ hành */}

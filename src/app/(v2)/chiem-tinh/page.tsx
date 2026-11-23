@@ -189,7 +189,7 @@ export default async function ChiemTinhHubPage() {
             <div className="ck-ct-nhom-luoi">
               <div>
                 <p className="ck-ct-nhom-meta">
-                  <strong>Dương (masculine, diurnal)</strong>
+                  <strong>Dương (thuộc ngày)</strong>
                 </p>
                 <div className="ck-ct-chip-ds">
                   {cungDuong.map((c) => (
@@ -204,7 +204,7 @@ export default async function ChiemTinhHubPage() {
               </div>
               <div>
                 <p className="ck-ct-nhom-meta">
-                  <strong>Âm (feminine, nocturnal)</strong>
+                  <strong>Âm (thuộc đêm)</strong>
                 </p>
                 <div className="ck-ct-chip-ds">
                   {cungAm.map((c) => (
@@ -264,7 +264,7 @@ export default async function ChiemTinhHubPage() {
                 <tr>
                   <th scope="col">Hành tinh</th>
                   <th scope="col">Cung chủ nhà</th>
-                  <th scope="col">Nguyên văn Tetrabiblos</th>
+                  <th scope="col">Tetrabiblos ghi</th>
                 </tr>
               </thead>
               <tbody>
@@ -283,9 +283,7 @@ export default async function ChiemTinhHubPage() {
                               <span className="ck-ct-ky" aria-hidden="true">
                                 {c.kyHieu}
                               </span>
-                              <span>
-                                {c.ten} ({c.en})
-                              </span>
+                              <span>{c.ten}</span>
                             </Link>
                           ))}
                         </div>

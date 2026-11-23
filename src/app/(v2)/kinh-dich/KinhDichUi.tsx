@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {
   KHAC_BAN,
   NGUON_CHU_DICH,
-  NGUON_PHIEN_AM,
+  NGUON_DICH,
 } from '@/lib/trang/chu-dich';
 import type { Hao } from '@/lib/trang/kinh-dich';
 
@@ -87,30 +87,21 @@ export function HinhHao({
   );
 }
 
-/** Hiển thị nguyên văn chữ Hán (lang="zh-Hant"), phiên âm ngay dưới (lang="vi") nếu có, và ghi chú khác bản. */
-export function DongVanHan({
-  han,
-  phienAm,
+/** Hiển thị bản dịch tiếng Việt lời quẻ / lời hào và ghi chú khác bản (nếu có). */
+export function DongLoiDich({
+  dich,
   ghiChuKhacBan,
 }: {
-  han: string;
-  phienAm?: string | null;
+  dich: string;
   ghiChuKhacBan?: typeof KHAC_BAN;
 }) {
   return (
     <div className="ck-kd-van-khoi">
-      <p lang="zh-Hant" className="ck-kd-han-van">
-        {han}
-      </p>
-      {phienAm ? (
-        <p lang="vi" className="ck-kd-phien-am">
-          {phienAm}
-        </p>
-      ) : null}
+      <p className="ck-kd-dich-van">{dich}</p>
       {ghiChuKhacBan && ghiChuKhacBan.length > 0
         ? ghiChuKhacBan.map((k, idx) => (
             <p key={idx} className="ck-kd-khac-ban">
-              Bản gốc ghi <span lang="zh-Hant">{k.banGoc}</span>; {k.ghiChu}
+              {k.ghiChuViet}
             </p>
           ))
         : null}
@@ -120,10 +111,10 @@ export function DongVanHan({
 
 /** Khối ghi công cuối trang theo quy định dữ liệu Chu Dịch. */
 export function GhiCongChuDich({
-  hienPhienAm = true,
+  nguonDich,
   daDung,
 }: {
-  hienPhienAm?: boolean;
+  nguonDich?: keyof typeof NGUON_DICH;
   daDung: Set<string>;
 }) {
   return (
@@ -139,17 +130,9 @@ export function GhiCongChuDich({
         </a>
         ).
       </p>
-      {hienPhienAm ? (
+      {nguonDich ? (
         <p>
-          {NGUON_PHIEN_AM.ghiCong} (
-          <a
-            href={NGUON_PHIEN_AM.url}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-          >
-            KasaiDanto/vietnamese_nom_scripts
-          </a>
-          ).
+          <strong>{NGUON_DICH[nguonDich].nhan}</strong> — {NGUON_DICH[nguonDich].ghiCong}.
         </p>
       ) : null}
       {daDung.has('/nguon') ? (

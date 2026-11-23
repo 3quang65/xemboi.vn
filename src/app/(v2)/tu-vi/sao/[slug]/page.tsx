@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { KhoiDienGiai } from '@/components/ck/NoiDungMd';
 import { HuyHieuHanh } from '@/components/ck/TheCanChi';
-import { CHI_HAN, duongDanHanh } from '@/components/ck/canChiHelpers';
+import { duongDanHanh } from '@/components/ck/canChiHelpers';
+import { boChuHan } from '@/lib/trang/chu-viet';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
@@ -26,6 +27,26 @@ function macDinhSao(sao: ChinhTinh) {
   };
 }
 
+function lamSachMetaSao(meta: Metadata): Metadata {
+  const title = typeof meta.title === 'string'
+    ? boChuHan(meta.title)
+    : meta.title && typeof meta.title === 'object' && 'absolute' in meta.title
+      ? { ...meta.title, absolute: boChuHan(String(meta.title.absolute)) }
+      : meta.title;
+  const description = typeof meta.description === 'string' ? boChuHan(meta.description) : meta.description;
+  const openGraph = meta.openGraph
+    ? {
+        ...meta.openGraph,
+        title: typeof meta.openGraph.title === 'string' ? boChuHan(meta.openGraph.title) : meta.openGraph.title,
+        description:
+          typeof meta.openGraph.description === 'string'
+            ? boChuHan(meta.openGraph.description)
+            : meta.openGraph.description,
+      }
+    : meta.openGraph;
+  return { ...meta, title, description, openGraph };
+}
+
 export function generateStaticParams() {
   return CHINH_TINH.map((s) => ({ slug: s.slug }));
 }
@@ -40,10 +61,11 @@ export async function generateMetadata({
   if (!sao) notFound();
 
   const duongDan = `/tu-vi/sao/${sao.slug}`;
-  const [meta, nd] = await Promise.all([
-    metaTrang(duongDan, macDinhSao(sao), '/tu-vi/sao/{sao}', { Tên: sao.ten, Hán: sao.han, nguồn: NGUON_AN_SAO }),
+  const [metaRaw, nd] = await Promise.all([
+    metaTrang(duongDan, macDinhSao(sao), '/tu-vi/sao/{sao}', { Tên: sao.ten, Hán: '', nguồn: NGUON_AN_SAO }),
     noiDungTheoDuongDan(duongDan),
   ]);
+  const meta = lamSachMetaSao(metaRaw);
   return nd ? meta : { ...meta, robots: { index: false, follow: true } };
 }
 
@@ -57,10 +79,16 @@ export default async function TuViSaoChiTietPage({
   if (!sao) notFound();
 
   const duongDan = `/tu-vi/sao/${sao.slug}`;
-  const [ttTrang, nd] = await Promise.all([
-    thongTinTrang(duongDan, macDinhSao(sao), '/tu-vi/sao/{sao}', { Tên: sao.ten, Hán: sao.han, nguồn: NGUON_AN_SAO }),
+  const [ttTrangRaw, nd] = await Promise.all([
+    thongTinTrang(duongDan, macDinhSao(sao), '/tu-vi/sao/{sao}', { Tên: sao.ten, Hán: '', nguồn: NGUON_AN_SAO }),
     noiDungTheoDuongDan(duongDan),
   ]);
+  const ttTrang = {
+    ...ttTrangRaw,
+    title: boChuHan(ttTrangRaw.title),
+    h1: boChuHan(ttTrangRaw.h1),
+    description: ttTrangRaw.description ? boChuHan(ttTrangRaw.description) : null,
+  };
   const daDung = trangDaDung();
 
   const idx = CHINH_TINH.findIndex((s) => s.slug === sao.slug);
@@ -138,9 +166,7 @@ export default async function TuViSaoChiTietPage({
               {sao.dacTinh.map((dt) => (
                 <tr key={dt.chi}>
                   <td data-nhan="Địa chi">
-                    <b>
-                      {dt.chi} ({CHI_HAN[dt.chi] ?? dt.chi})
-                    </b>
+                    <b>{dt.chi}</b>
                   </td>
                   <td data-nhan="Ký hiệu">
                     <b>{dt.ma}</b>

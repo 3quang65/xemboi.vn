@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import type { Hanh } from '@/lib/trang/can-chi';
 import {
-  HANH_HAN,
   HANH_MAU_HEX,
   HANH_SLUG,
 } from './canChiHelpers';
@@ -189,20 +188,10 @@ export default function SoDoNguHanh() {
                 />
                 <text
                   x={nut.x}
-                  y={nut.y - 4}
+                  y={nut.y + 5}
                   textAnchor="middle"
                   fill={mau}
-                  fontSize="19"
-                  fontWeight="700"
-                >
-                  {HANH_HAN[nut.hanh]}
-                </text>
-                <text
-                  x={nut.x}
-                  y={nut.y + 17}
-                  textAnchor="middle"
-                  fill="#1F140D"
-                  fontSize="13.5"
+                  fontSize="16"
                   fontWeight="700"
                 >
                   {nut.hanh}
