@@ -284,3 +284,11 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Kèm theo: tắt ba API chat cũ thời v1 (`BAT_CHAT_CU=1` để bật lại).
   - 147/147 test, tsc 0 lỗi, build qua.
 - Deploy lần tới phải chạy `npm ci` vì có gói mới `astronomy-engine`.
+- 23/11: **triển khai lên v3.xemtuvi.vn** (bản `releases/20261123-2345`, mã commit c0abafd, đã push `lam-lai-v2`).
+  - Gồm mọi việc từ bản 22/11: Xem ngày (Lệnh 33–34), Phong thủy + Cửu tinh, Kinh Dịch, Thần số học (cả phần ý nghĩa Nhật Nguyệt), Chiêm tinh + Bản đồ sao.
+  - `npm ci` (gói mới `lunar-javascript`, `astronomy-engine`), `migrate status` không có migration mới, build qua.
+  - Sao lưu CSDL trước khi chuyển: `~/sao-luu/xemboi/xemboi-20261123-2347.dump`.
+  - SEO: nạp lại 31 dòng XN, PT, KD, TSH, CT bằng `napTrangCsv` với tập trang rỗng. NHAP 154 → 156, XUAT_BAN giữ 7 (không tự xuất bản).
+  - Chuyển hướng: bật thêm 25 dòng 301 mà đích đã trả 200; còn 32 dòng chờ trang `/xem-tuoi/*`. Bảng chỉ khớp miền `xemboi.vn`, nên trên `v3.xemtuvi.vn` các URL cũ vẫn 404 cho tới khi chuyển tên miền.
+  - Kiểm: 8 trang ngoài trả 200 (0,2–0,6 giây); API chat cũ trả 410; log dịch vụ sạch.
+  - Quay lại: trỏ `current` về `releases/20261122-2118`, restart.
