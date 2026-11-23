@@ -63,6 +63,7 @@ Tra ngày 20–21/11/2026. Danh sách đủ 144 repo ở [`13-repo-tham-khao.csv
 | **Tướng số / chỉ tay** | [MediaPipe](https://github.com/google-ai-edge/mediapipe) (R130), [yeonsumia/palmistry](https://github.com/yeonsumia/palmistry) (R131) | Thư viện / tham khảo | Apache-2.0 | Khả thi kỹ thuật (mốc mặt, mốc tay chạy trên trình duyệt). Rủi ro cao, xem mục 6. |
 | **AI / RAG / dataset** | [ChenJiangxi/BaziQA](https://github.com/ChenJiangxi/BaziQA) (R136), [DestinyLinker/MingLi-Bench](https://github.com/DestinyLinker/MingLi-Bench) (R137) | Đối chiếu tầng AI | MIT (đề gốc có chủ) | Benchmark nội bộ cho tầng luận. Không đăng lại đề. |
 | | [ChesterRa/mingpan](https://github.com/ChesterRa/mingpan) (R096), `taibu/packages/core` (R095) | Tham khảo kiến trúc | Apache-2.0 / MIT (chỉ packages) | Mẫu "engine trả dữ kiện, AI chỉ luận" giống hướng xemboi đang đi. |
+| | [voidforall/fengshui.skill](https://github.com/voidforall/fengshui.skill) (R145), [fanzr-arch/numerologist_skills](https://github.com/fanzr-arch/numerologist_skills) (R146) | Học ý prompt + bảng xuất xứ; vector phong thủy | MIT từ fe2a025 / không có LICENSE | Phân tích và so sánh ở [20-hoc-tu-4-repo.md](20-hoc-tu-4-repo.md). |
 | **Trang tử vi Việt mã mở** | `lasotuvi-django`, `astro-lens`, `0xaldric/tuvi`, `tuvi-api` | Tham khảo cấu trúc | Phần lớn chưa rõ | Đều nhỏ (0–20 sao). Không có trang Việt mã mở nào ở quy mô sản phẩm. |
 
 ---

@@ -2,9 +2,10 @@
 // Chạy: npx tsx --test tests/trang/than-so-hoc.test.mjs
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import {
   BANG_CHU, DUONG_BIEU_DO, SO_CHU_DAO, TRANG_THAN_SO_HOC, bieuDoNgaySinh, bonDinhCao, docNgay, giaTriChu, namCaNhan,
-  ngayCoNamCaNhan, rutGon, soChuDao, soTuSlug, theoTen, thongKeSoChuDao, tongDanToi, viDuNgay, viDuTheoNam,
+  boDauTen, ngayCoNamCaNhan, rutDon, rutGon, soChuDao, soTuSlug, theoTen, thongKeSoChuDao, tongDanToi, viDuNgay, viDuTheoNam,
 } from '../../src/lib/trang/than-so-hoc.ts';
 
 test('Rút gọn giữ 11, 22, 33', () => {
@@ -105,4 +106,29 @@ test('Danh sách trang và slug', () => {
   assert.equal(soTuSlug('33', SO_CHU_DAO), 33);
   assert.equal(soTuSlug('10', SO_CHU_DAO), undefined);
   assert.equal(soTuSlug('07', SO_CHU_DAO), undefined);
+});
+
+// Ca kiểm Nhật Nguyệt (CC BY 4.0, commit 708b5c3), 600 người. Họ coi Y là phụ âm và giữ 11/22/33 ở đỉnh cao
+// khi cộng chữ số thô; mình coi Y là nguyên âm và rút ngày/tháng/năm trước. Hai chỗ đó so theo quy ước.
+test('Đối chiếu 600 ca Nhật Nguyệt: số chủ đạo, tên, năm cá nhân, đỉnh cao', () => {
+  const { ca } = JSON.parse(readFileSync(new URL('./doi-chieu/nhat-nguyet-than-so-hoc.json', import.meta.url), 'utf8'));
+  assert.equal(ca.length, 600);
+  let khongY = 0;
+  for (const { vao, ra } of ca) {
+    const d = { ngay: vao.dd, thang: vao.mm, nam: vao.yyyy };
+    const k = `${vao.hoTen} ${vao.dd}/${vao.mm}/${vao.yyyy}`;
+    assert.equal(soChuDao(d).cach1.so, ra.soDuongDoi, k);
+    assert.equal(namCaNhan(vao.dd, vao.mm, vao.namXem).so, ra.soNamCaNhan, k);
+    const t = theoTen(vao.hoTen);
+    assert.equal(t.ten.so, ra.soSuMenh, k);
+    if (!/Y/i.test(boDauTen(vao.hoTen))) {
+      khongY++;
+      assert.equal(t.linhHon.so, ra.soLinhHon, k);
+      assert.equal(t.nhanCach.so, ra.soNhanCach, k);
+    }
+    const dc = bonDinhCao(d), r = ra.soDinhCao;
+    assert.deepEqual(dc.map((x) => rutDon(x.so)), [r.dinh1, r.dinh2, r.dinh3, r.dinh4].map(rutDon), k);
+    assert.deepEqual(dc.slice(0, 3).map((x) => x.denTuoi), [r.tuoiKetThucDinh1, r.tuoiKetThucDinh2, r.tuoiKetThucDinh3], k);
+  }
+  assert.equal(khongY, 380);
 });

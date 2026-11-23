@@ -15,10 +15,11 @@ Lập ngày 21/11/2026 theo lời anh Cường: "tải thoải mái tất cả c
 | 23/11/2026 | [kanripo/KR1a0001](https://github.com/kanripo/KR1a0001) 周易 (bản TLS; đối chiếu KR1a0006) | Quẻ từ, hào từ, dụng của 64 quẻ (tệp 001–064); câu Thuyết quái (tệp 067) | `src/lib/trang/du-lieu/chu-dich-64.json`, `src/lib/trang/chu-dich.ts`; trang `/kinh-dich/que/*`, `/kinh-dich/bat-quai/*`; test `tests/trang/chu-dich*.test.mjs` | CC BY-SA 4.0 (dùng thương mại được, chia sẻ tương tự) | Không cần xin. Mỗi trang ghi "Văn bản: Kanripo, CC BY-SA 4.0" kèm liên kết. Tệp JSON dẫn xuất (nguyên văn và phiên âm) phải giữ CC BY-SA 4.0 nếu công bố riêng. |
 | 23/11/2026 | [kanripo/KR3g0051](https://github.com/kanripo/KR3g0051) 欽定協紀辨方書 (bản Văn Uyên Các) | Trích quyển 2 (二十四方位, 大遊年變卦), quyển 8 (năm Khang Hy 23), quyển 34 (男女九宫); đối chiếu trực và 12 thần ở cụm Xem ngày | `src/lib/trang/phong-thuy.ts`; trang `/phong-thuy/*`; test `tests/trang/phong-thuy.test.mjs` | CC BY-SA 4.0 (dùng thương mại được, chia sẻ tương tự) | Không cần xin. Mỗi trang ghi "Văn bản: Kanripo, CC BY-SA 4.0" kèm liên kết. Dấu câu trong phần trích do xemboi thêm, ghi rõ trên trang. |
 | 23/11/2026 | [KasaiDanto/vietnamese_nom_scripts](https://github.com/KasaiDanto/vietnamese_nom_scripts) (DS05, câu song ngữ Hán–Việt) | Thống kê âm đọc từng chữ từ 32.540 câu gióng 1:1; chữ đa âm và chữ thiếu chọn tay (danh sách `quyetDinh`) | `src/lib/trang/du-lieu/chu-dich-64-phien-am.json` (chỉ còn phiên âm, không chép câu nào của kho); trang `/kinh-dich/que/*`; test `tests/trang/chu-dich-64-phien-am.test.mjs` | Apache-2.0 (dùng thương mại được) | Không cần xin. Ghi công trên trang (`NGUON_PHIEN_AM`). Script sinh không nằm trong repo. |
+| 23/11/2026 | [Nhat-Nguyet/nhatnguyet-lunar-ziwei-bazi-numerology](https://github.com/Nhat-Nguyet/nhatnguyet-lunar-ziwei-bazi-numerology) (commit 708b5c3) | `ca-kiem/than-so-hoc.json`, rút gọn còn đầu vào và các số đối chiếu (600 ca) | `tests/trang/doi-chieu/nhat-nguyet-than-so-hoc.json`, chỉ dùng trong `tests/trang/than-so-hoc.test.mjs`, không chạy trên web | CC BY 4.0 (dùng thương mại được, ghi "Dữ liệu: Nhật Nguyệt (nhatnguyet.org)" trong tệp). Không dùng `du-lieu/knowledge/` và `*-readings` (CC BY-NC từ 20/11/2026) | Không cần xin phép |
 
 Dùng ngoài xemboi, chỉ để đối chiếu (không nhúng): iztro (MIT), lunar-javascript (MIT), astronomy-engine (MIT). Script nằm ở `repo-huyen-hoc\doi-chieu\`.
 
-## 2. Nhóm cần xin phép tác giả nếu nhúng (52 repo)
+## 2. Nhóm cần xin phép tác giả nếu nhúng (53 repo)
 
 Gồm AGPL/GPL/LGPL, phi thương mại (CC BY-NC), không có tệp giấy phép, và các bản dựa trên mã Hồ Ngọc Đức (chỉ cho phi thương mại).
 
@@ -76,8 +77,9 @@ Gồm AGPL/GPL/LGPL, phi thương mại (CC BY-NC), không có tệp giấy phé
 | R139 | [AmareshHebbar/bazi-sft](https://huggingface.co/datasets/AmareshHebbar/bazi-sft) | KHÔNG CÓ TỆP GIẤY PHÉP | chưa rõ |
 | R142 | [huy555huy/suan](https://github.com/huy555huy/suan) | KHÔNG CÓ TỆP GIẤY PHÉP | chưa rõ |
 | R144 | [codeaholicguy/amlich.js](https://github.com/codeaholicguy/amlich.js) | package.json: MIT | package.json ghi MIT nhưng chép mã Hồ Ngọc Đức (theo 05a mục 4) |
+| R146 | [fanzr-arch/numerologist_skills](https://github.com/fanzr-arch/numerologist_skills) | KHÔNG CÓ TỆP GIẤY PHÉP | Claude Skills tử vi, kỳ môn, bát tự. Chỉ học ý (xem 20-hoc-tu-4-repo), không chép mã hay văn bản |
 
-## 3. Nhóm giấy phép mở, chỉ cần ghi công (88 repo)
+## 3. Nhóm giấy phép mở, chỉ cần ghi công (89 repo)
 
 MIT, Apache-2.0, BSD, ISC, Unlicense: được dùng thương mại, phải giữ thông báo bản quyền trong tệp NOTICE của xemboi.
 
@@ -171,3 +173,4 @@ MIT, Apache-2.0, BSD, ISC, Unlicense: được dùng thương mại, phải gi�
 | R137 | [DestinyLinker/MingLi-Bench](https://github.com/DestinyLinker/MingLi-Bench) | MIT (LICENSE) |
 | R141 | [RoxyAPI/astrology-ai-chatbot](https://github.com/RoxyAPI/astrology-ai-chatbot) | MIT (LICENSE) |
 | R143 | [tf1993614/Know-your-fate](https://github.com/tf1993614/Know-your-fate) | MIT (LICENSE) |
+| R145 | [voidforall/fengshui.skill](https://github.com/voidforall/fengshui.skill) | MIT (LICENSE, thêm ở commit fe2a025 ngày 23/11/2026) | Chỉ lấy từ fe2a025 trở đi, giữ "Copyright (c) 2026 voidforall". Dữ liệu bản đồ city-wuxing-map theo ODbL / CC BY, không thuộc MIT |
