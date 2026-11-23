@@ -84,7 +84,7 @@ export function xemTuoiVoChong(namChong: number, namVo: number): KetQuaVoChong {
     { ...quanHeNapAm(chong.hanh, vo.hanh, 'Chồng', 'vợ'), ten: `Mệnh (nạp âm): ${chong.napAm} – ${vo.napAm}` },
     quanHeCan(ccC.can, ccV.can),
     quanHeChi(ccC.chi, ccV.chi),
-    { ma: 'cung-phi', ten: `Cung phi (Bát trạch): ${chong.cungPhi} – ${vo.cungPhi}`, muc: DU_NIEN_TOT.has(dn) ? 'tot' : 'xau', giaiThich: `Hai cung phối thành ${dn}${DU_NIEN_TOT.has(dn) ? ' (thuộc nhóm du niên tốt)' : ' (thuộc nhóm du niên xấu)'}.` },
+    { ma: 'cung-phi', ten: `Cung phi (Bát trạch): ${chong.cungPhi} – ${vo.cungPhi}`, muc: DU_NIEN_TOT.has(dn) ? 'tot' : 'xau', giaiThich: `Hai cung phối thành ${dn}${DU_NIEN_TOT.has(dn) ? ' (thuộc nhóm du niên tốt)' : ' (thuộc nhóm du niên không cát)'}.` },
   ];
   const dem = { tot: 0, binh: 0, xau: 0 } as Record<MucDanhGia, number>;
   tieuChi.forEach((t) => dem[t.muc]++);
