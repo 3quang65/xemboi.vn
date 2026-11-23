@@ -1,7 +1,6 @@
-// Thần số học (numerology, hệ Pythagoras hiện đại): chỉ phần TÍNH, không có phần luận tính cách.
-// Lý do: chưa có nguồn loại A (docs/v2/12-thu-vien-rag.md mục 3, docs/v2/16-seo-kien-truc.md bảng nguồn),
-// nên trang chỉ trình bày quy ước cộng số và điều đếm được. Các quy ước khác nhau giữa các sách được ghi rõ.
-// Tệp này nhẹ, không import gì: component client (công cụ tính theo tên) dùng được.
+// Thần số học (numerology, hệ Pythagoras hiện đại): phần TÍNH. Phần ý nghĩa (lời Nhật Nguyệt + đoạn sách cổ)
+// nằm ở than-so-hoc-y-nghia.ts để tệp này nhẹ, không import gì: component client (công cụ tính theo tên) dùng được.
+// Các quy ước khác nhau giữa các sách được ghi rõ ở QUY_UOC.
 
 /** 12 số chủ đạo có trang riêng: 1–9 và 3 số "master" 11, 22, 33. */
 export const SO_CHU_DAO = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33] as const;
@@ -259,6 +258,35 @@ export function tongDanToi(so: number, tongMin = 1, tongMax = 54): number[] {
   return kq;
 }
 
+// ---------- Thái độ, thách thức, nợ nghiệp ----------
+// Đối chiếu 600 ca Nhật Nguyệt trong tests/trang/than-so-hoc.test.mjs.
+
+/** Số thái độ (attitude): tổng chữ số của ngày và tháng sinh, giữ 11, 22, 33. */
+export function thaiDo(d: NgaySinh): CachTinh {
+  const cs = [...String(d.ngay), ...String(d.thang)].map(Number);
+  const tong = cs.reduce((a, b) => a + b, 0);
+  const r = rutGon(tong);
+  return { phepCong: `${cs.join(' + ')} = ${tong}`, tong, buoc: r.buoc, so: r.so };
+}
+
+export type ThachThuc = { thu: number; so: number; phepTru: string };
+
+/** 4 số thách thức (0–8): rút riêng tháng, ngày, năm về 1 chữ số rồi lấy hiệu tuyệt đối. */
+export function thachThuc(d: NgaySinh): ThachThuc[] {
+  const [t, n, y] = [rutDon(d.thang), rutDon(d.ngay), rutDon(d.nam)];
+  const t1 = Math.abs(t - n), t2 = Math.abs(n - y);
+  return [
+    { thu: 1, so: t1, phepTru: `|${t} − ${n}|` },
+    { thu: 2, so: t2, phepTru: `|${n} − ${y}|` },
+    { thu: 3, so: Math.abs(t1 - t2), phepTru: `|${t1} − ${t2}|` },
+    { thu: 4, so: Math.abs(t - y), phepTru: `|${t} − ${y}|` },
+  ];
+}
+
+export const SO_NO_NGHIEP = [13, 14, 16, 19] as const;
+/** Nợ nghiệp xét trên ngày sinh: ngày 13, 14, 16, 19. Trả undefined nếu không phải. */
+export const noNghiepNgaySinh = (ngay: number) => (SO_NO_NGHIEP as readonly number[]).includes(ngay) ? ngay : undefined;
+
 // ---------- Đường dẫn ----------
 
 export const duongDanSoChuDao = (n: number) => `/than-so-hoc/so-chu-dao/${n}`;
@@ -286,6 +314,6 @@ export const QUY_UOC: readonly string[] = [
   'Tên tiếng Việt: bỏ dấu, Đ tính như D, Y tính là nguyên âm.',
 ];
 
-/** Vì sao trang không có phần "ý nghĩa", "hợp nghề gì". */
+/** Ghi chú nguồn phần ý nghĩa: đặt ngay trên phần ý nghĩa ở mọi trang. */
 export const GHI_CHU_Y_NGHIA =
-  'Các sách thần số học mô tả tính cách, nghề hợp cho từng số, nhưng mỗi sách một kiểu và xemboi chưa có bản nào được phép trích. Vì vậy trang chưa đăng phần ý nghĩa, chỉ đăng cách tính và số liệu đếm được.';
+  'Phần ý nghĩa dưới đây là lời của Nhật Nguyệt (nhatnguyet.org), không phải của xemboi. Đoạn tiếng Anh là nguyên văn các sách thần số học in 1905–1926 (đã thuộc phạm vi công cộng), để nguyên, không dịch. Mỗi sách một kiểu, nên đọc như quan niệm của trường phái, không phải lời đoán về một người cụ thể.';

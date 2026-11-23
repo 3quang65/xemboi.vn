@@ -15,6 +15,7 @@ import {
   soChuDao,
   vietNgay,
 } from '@/lib/trang/than-so-hoc';
+import { yNghia } from '@/lib/trang/than-so-hoc-y-nghia';
 import {
   GOC_SITE,
   MAC_DINH_SO_CHU_DAO,
@@ -30,8 +31,8 @@ import {
 import {
   DanhSachQuyUoc,
   GhiChuNgayDuong,
-  KhoiGhiChuYNghia,
   KhoiGioiHan,
+  KhoiYNghia,
   ThanhSoChuDao,
 } from '../ThanSoHocUi';
 
@@ -272,7 +273,8 @@ export default async function CongCuSoChuDaoPage({
             </Link>
           </div>
 
-          <KhoiGhiChuYNghia />
+          <h3 className="ck-tsh-nhom-so-tieu">Ý nghĩa số chủ đạo {ketQua.cach1.so}</h3>
+          <KhoiYNghia y={yNghia('so-chu-dao', ketQua.cach1.so)} gon capTieuDe="h4" />
         </section>
       ) : null}
 

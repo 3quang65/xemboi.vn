@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { HoaVanGoc4, HoaVanMay } from '@/components/r1/HoaVanE3';
 import { theoTen, type KetQuaTen } from '@/lib/trang/than-so-hoc';
-import { KetQuaTenHienThi, KhoiGhiChuYNghia } from '../ThanSoHocUi';
+import { KetQuaTenHienThi } from './KetQuaTenUi';
 
 export default function TinhTheoTenClient() {
   const [nhap, setNhap] = useState('');
@@ -68,7 +68,6 @@ export default function TinhTheoTenClient() {
             Kết quả quy đổi cho {ketQua.hoTen}
           </h2>
           <KetQuaTenHienThi ketQua={ketQua.duLieu} hoTenGoc={ketQua.hoTen} />
-          <KhoiGhiChuYNghia />
         </section>
       ) : null}
     </>

@@ -11,6 +11,7 @@ import {
   ngayCoNamCaNhan,
   soTuSlug,
 } from '@/lib/trang/than-so-hoc';
+import { yNghia } from '@/lib/trang/than-so-hoc-y-nghia';
 import {
   MAU_SEO_NAM_CA_NHAN,
   dinhDangBuoc,
@@ -20,8 +21,8 @@ import {
   taoSchemaWebPage,
 } from '../../ThanSoHocHelpers';
 import {
-  KhoiGhiChuYNghia,
   KhoiGioiHan,
+  KhoiYNghia,
   ThanhNamCaNhan,
 } from '../../ThanSoHocUi';
 
@@ -106,6 +107,7 @@ export default async function NamCaNhanChiTietPage({
   const ngayDau = dongDau.ngay[0];
   const thangDau = dongDau.thang;
   const kqViDu = namCaNhan(ngayDau, thangDau, namNay);
+  const yNghiaSo = yNghia('nam-ca-nhan', n);
 
   const schemaTerm = taoSchemaDefinedTermNamCaNhan(n, tt.canonical);
   const schemaWebPage = taoSchemaWebPage(tt);
@@ -156,7 +158,15 @@ export default async function NamCaNhanChiTietPage({
         </Link>
       </section>
 
-      {/* 2. Bảng ngày sinh năm nay và năm sau */}
+      {/* 2. Ý nghĩa năm cá nhân {n} */}
+      <section className="ck-td-muc" aria-labelledby="ck-tsh-yn-tieu">
+        <h2 id="ck-tsh-yn-tieu" className="ck-td-tieu">
+          Ý nghĩa năm cá nhân {n}
+        </h2>
+        <KhoiYNghia y={yNghiaSo} />
+      </section>
+
+      {/* 3. Bảng ngày sinh năm nay và năm sau */}
       <section className="ck-td-muc" aria-labelledby="ck-tsh-ncn-bang-tieu">
         <h2 id="ck-tsh-ncn-bang-tieu" className="ck-td-tieu">
           Ngày sinh có năm cá nhân {n} ({namNay} và {namSau})
@@ -171,9 +181,6 @@ export default async function NamCaNhanChiTietPage({
       <p className="ck-tsh-so-sanh-dong">
         Sách lấy mốc đổi năm cá nhân là 1/1, sách lấy ngày sinh nhật.
       </p>
-
-      {/* 4. Ghi chú phạm vi nội dung */}
-      <KhoiGhiChuYNghia />
 
       {/* 5. Thanh 9 số & liên kết */}
       <section className="ck-td-muc" aria-labelledby="ck-tsh-ncn-thanh">

@@ -5,19 +5,28 @@ import KhungTrang from '@/components/ck/KhungTrang';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import {
+  SO_MASTER,
   bieuDoNgaySinh,
   bonDinhCao,
   docNgay,
   duongDanSoChuDao,
   isoNgay,
+  noNghiepNgaySinh,
+  rutDon,
+  rutGon,
+  thachThuc,
+  thaiDo,
   vietNgay,
 } from '@/lib/trang/than-so-hoc';
+import { yNghia } from '@/lib/trang/than-so-hoc-y-nghia';
 import {
   GOC_SITE,
   MAC_DINH_BIEU_DO,
   NGAY_VI_DU,
+  dinhDangBuoc,
   kiemCoThamSo,
   laSoChuDaoHopLe,
+  laSoMaster,
   layMot,
   serializeJsonLd,
   taoSchemaWebApplication,
@@ -27,6 +36,7 @@ import {
   GhiChuNgayDuong,
   KhoiGhiChuYNghia,
   KhoiGioiHan,
+  KhoiYNghia,
   LuoiBieuDoNgaySinh,
 } from '../ThanSoHocUi';
 
@@ -73,6 +83,11 @@ export default async function BieuDoNgaySinhPage({
 
   const bieuDo = ngaySinh ? bieuDoNgaySinh(ngaySinh) : null;
   const dinhCao = ngaySinh ? bonDinhCao(ngaySinh) : null;
+  const dsThachThuc = ngaySinh ? thachThuc(ngaySinh) : null;
+  const kqThaiDo = ngaySinh ? thaiDo(ngaySinh) : null;
+  const soNgaySinh = ngaySinh ? rutDon(ngaySinh.ngay) : null;
+  const buocNgaySinh = ngaySinh ? rutGon(ngaySinh.ngay, []).buoc : null;
+  const soNoNghiep = ngaySinh ? noNghiepNgaySinh(ngaySinh.ngay) : undefined;
   const bieuDoMau = bieuDoNgaySinh(NGAY_VI_DU);
 
   const giaTriInput = ngaySinh
@@ -132,8 +147,8 @@ export default async function BieuDoNgaySinhPage({
         </form>
       </div>
 
-      {/* 2. Kết quả biểu đồ 3 × 3 và 4 đỉnh cao */}
-      {bieuDo && dinhCao && ngaySinh ? (
+      {/* 2. Kết quả biểu đồ 3 × 3 và các chỉ số kèm ý nghĩa */}
+      {bieuDo && dinhCao && dsThachThuc && kqThaiDo && soNgaySinh && buocNgaySinh && ngaySinh ? (
         <section className="ck-td-muc" aria-labelledby="ck-tsh-bd-kq">
           <h2 id="ck-tsh-bd-kq" className="ck-td-tieu">
             Biểu đồ ngày sinh {vietNgay(ngaySinh)}
@@ -145,8 +160,10 @@ export default async function BieuDoNgaySinhPage({
           />
 
           <p className="ck-tsh-so-sanh-dong">
-            Một số sách gọi các đường này là 'mũi tên' và đặt tên riêng cho từng đường; tên gọi khác nhau giữa các sách nên trang chỉ ghi vị trí.
+            Một số sách gọi các đường này là &apos;mũi tên&apos; và đặt tên riêng cho từng đường; tên gọi khác nhau giữa các sách nên trang chỉ ghi vị trí.
           </p>
+
+          <KhoiGhiChuYNghia />
 
           <h3 className="ck-tsh-nhom-so-tieu">4 đỉnh cao theo tuổi</h3>
           <div className="ck-bang-khung">
@@ -194,6 +211,136 @@ export default async function BieuDoNgaySinhPage({
             Đỉnh 1 kết thúc ở tuổi 36 trừ số chủ đạo (rút về 1 chữ số); mỗi đỉnh sau dài 9 năm. Sách khác có thể lấy mốc tuổi khác.
           </p>
 
+          <div className="ck-tsh-yn-ds-chi-so">
+            {dinhCao.map((dc) => {
+              const khoangTuoi =
+                dc.denTuoi !== null
+                  ? `${dc.tuTuoi}–${dc.denTuoi} tuổi`
+                  : `${dc.tuTuoi} tuổi trở đi`;
+              return (
+                <article key={dc.thu} className="ck-tsh-yn-the">
+                  <div className="ck-tsh-yn-the-dau">
+                    <h4>
+                      Đỉnh {dc.thu} · Số {dc.so}
+                    </h4>
+                    <span className="ck-tsh-yn-the-phu">{khoangTuoi}</span>
+                  </div>
+                  <KhoiYNghia
+                    y={yNghia('dinh-cao', dc.so)}
+                    gon
+                    anGhiChu
+                    thuGonTrichChung
+                    capTieuDe="h4"
+                  />
+                </article>
+              );
+            })}
+          </div>
+
+          <h3 className="ck-tsh-nhom-so-tieu">4 số thách thức</h3>
+          <div className="ck-bang-khung">
+            <table className="ck-bang ck-bang-the">
+              <thead>
+                <tr>
+                  <th>Thứ tự</th>
+                  <th>Phép trừ</th>
+                  <th>Số</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dsThachThuc.map((item) => (
+                  <tr key={item.thu}>
+                    <td data-nhan="Thứ tự">
+                      <b>Thách thức {item.thu}</b>
+                    </td>
+                    <td data-nhan="Phép trừ">
+                      <code>{item.phepTru}</code>
+                    </td>
+                    <td data-nhan="Số">
+                      <strong>{item.so}</strong>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="ck-tsh-yn-ds-chi-so">
+            {dsThachThuc.map((item) => (
+              <article key={item.thu} className="ck-tsh-yn-the">
+                <div className="ck-tsh-yn-the-dau">
+                  <h4>
+                    Thách thức {item.thu} · Số {item.so}
+                  </h4>
+                  <code className="ck-tsh-yn-the-phu">{item.phepTru}</code>
+                </div>
+                <KhoiYNghia
+                  y={yNghia('thach-thuc', item.so)}
+                  gon
+                  anGhiChu
+                  capTieuDe="h4"
+                />
+              </article>
+            ))}
+          </div>
+
+          <h3 className="ck-tsh-nhom-so-tieu">Số thái độ</h3>
+          <article className="ck-tsh-yn-the">
+            <div className="ck-tsh-yn-the-dau">
+              <h4>Số thái độ {kqThaiDo.so}</h4>
+              <span className="ck-tsh-cach-so">{kqThaiDo.so}</span>
+            </div>
+            <p className="ck-tsh-phep-cong">{kqThaiDo.phepCong}</p>
+            {kqThaiDo.buoc.length > 1 || laSoMaster(kqThaiDo.so) ? (
+              <p className="ck-tsh-buoc-dong">
+                Rút gọn: {dinhDangBuoc(kqThaiDo.buoc, SO_MASTER)}
+              </p>
+            ) : null}
+            <KhoiYNghia
+              y={yNghia('thai-do', kqThaiDo.so)}
+              gon
+              anGhiChu
+              capTieuDe="h4"
+            />
+          </article>
+
+          <h3 className="ck-tsh-nhom-so-tieu">Số ngày sinh</h3>
+          <article className="ck-tsh-yn-the">
+            <div className="ck-tsh-yn-the-dau">
+              <h4>Số ngày sinh {soNgaySinh}</h4>
+              <span className="ck-tsh-cach-so">{soNgaySinh}</span>
+            </div>
+            <p className="ck-tsh-buoc-dong">
+              {ngaySinh.ngay > 9
+                ? `Ngày sinh ${ngaySinh.ngay} rút gọn: ${dinhDangBuoc(buocNgaySinh, [])}`
+                : `Ngày sinh ${ngaySinh.ngay} (số ${soNgaySinh})`}
+            </p>
+            <KhoiYNghia
+              y={yNghia('ngay-sinh', soNgaySinh)}
+              gon
+              anGhiChu
+              capTieuDe="h4"
+            />
+          </article>
+
+          {soNoNghiep !== undefined ? (
+            <>
+              <h3 className="ck-tsh-nhom-so-tieu">Nợ nghiệp (số {soNoNghiep})</h3>
+              <article className="ck-tsh-yn-the">
+                <p className="ck-tsh-yn-no-nghiep-cau">
+                  Ngày sinh {ngaySinh.ngay} được thần số học xếp vào nhóm nợ nghiệp (13, 14, 16, 19).
+                </p>
+                <KhoiYNghia
+                  y={yNghia('no-nghiep', soNoNghiep)}
+                  gon
+                  anGhiChu
+                  thuGonTrichChung
+                  capTieuDe="h4"
+                />
+              </article>
+            </>
+          ) : null}
+
           <div className="ck-tsh-hanh-dong-dong">
             <Link
               href={`/than-so-hoc/so-chu-dao?ngay=${isoNgay(ngaySinh)}`}
@@ -202,8 +349,6 @@ export default async function BieuDoNgaySinhPage({
               Xem số chủ đạo của ngày này →
             </Link>
           </div>
-
-          <KhoiGhiChuYNghia />
         </section>
       ) : null}
 

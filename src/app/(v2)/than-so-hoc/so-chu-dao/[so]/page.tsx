@@ -15,6 +15,7 @@ import {
   viDuTheoNam,
   vietNgay,
 } from '@/lib/trang/than-so-hoc';
+import { yNghia } from '@/lib/trang/than-so-hoc-y-nghia';
 import {
   MAU_SEO_SO_CHU_DAO,
   dinhDangBuoc,
@@ -28,8 +29,8 @@ import {
   taoSchemaWebPage,
 } from '../../ThanSoHocHelpers';
 import {
-  KhoiGhiChuYNghia,
   KhoiGioiHan,
+  KhoiYNghia,
   ThanhSoChuDao,
 } from '../../ThanSoHocUi';
 
@@ -77,6 +78,7 @@ export default async function SoChuDaoChiTietPage({
 
   const masterGiu = laSoMaster(n);
   const soMasterUng = n === 2 ? 11 : n === 4 ? 22 : n === 6 ? 33 : null;
+  const yNghiaSo = yNghia('so-chu-dao', n);
 
   const schemaTerm = taoSchemaDefinedTermSoChuDao(n, tt.canonical);
   const schemaWebPage = taoSchemaWebPage(tt);
@@ -146,6 +148,14 @@ export default async function SoChuDaoChiTietPage({
             </p>
           ) : null}
         </div>
+      </section>
+
+      {/* 2b. Ý nghĩa số chủ đạo {n} */}
+      <section className="ck-td-muc" aria-labelledby="ck-tsh-yn-tieu">
+        <h2 id="ck-tsh-yn-tieu" className="ck-td-tieu">
+          Ý nghĩa số chủ đạo {n}
+        </h2>
+        <KhoiYNghia y={yNghiaSo} />
       </section>
 
       {/* 3. Ví dụ ngày sinh: hai năm gần 1990, 2000 nhất có ví dụ (viDuTheoNam) */}
@@ -222,10 +232,7 @@ export default async function SoChuDaoChiTietPage({
         </p>
       </section>
 
-      {/* 5. Ghi chú phạm vi nội dung */}
-      <KhoiGhiChuYNghia />
-
-      {/* 6. Thanh 12 số & liên kết */}
+      {/* 5. Thanh 12 số & liên kết */}
       <section className="ck-td-muc" aria-labelledby="ck-tsh-chuyen-12">
         <h2 id="ck-tsh-chuyen-12" className="ck-td-tieu">
           Chuyển nhanh 12 số chủ đạo

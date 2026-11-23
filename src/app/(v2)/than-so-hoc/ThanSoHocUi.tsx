@@ -1,3 +1,4 @@
+// Component dùng chung cho cụm /than-so-hoc — CHỈ dùng ở server component (import kho ý nghĩa ~160 KB).
 import React from 'react';
 import Link from 'next/link';
 import {
@@ -8,21 +9,38 @@ import {
   NAM_CA_NHAN,
   QUY_UOC,
   SO_CHU_DAO,
-  SO_MASTER,
   duongDanNamCaNhan,
   duongDanSoChuDao,
   type BieuDo,
-  type CachTinh,
-  type KetQuaTen,
 } from '@/lib/trang/than-so-hoc';
-import { dinhDangBuoc, laSoChuDaoHopLe } from './ThanSoHocHelpers';
+import {
+  NGUON_Y_NGHIA,
+  sachDuocTrich,
+  type ChiSoTSH,
+  type TrichSach,
+  type YNghiaSo,
+} from '@/lib/trang/than-so-hoc-y-nghia';
+import { laSoChuDaoHopLe } from './ThanSoHocHelpers';
 
-/** Ghi chú giải thích vì sao trang chưa có phần ý nghĩa, tính cách, nghề hợp. */
+/** Ghi chú nguồn lời Nhật Nguyệt và đoạn sách tiếng Anh: đặt ngay trên phần ý nghĩa. */
 export function KhoiGhiChuYNghia() {
   return (
-    <aside className="ck-tsh-ghi-chu-y-nghia" aria-label="Ghi chú phạm vi nội dung">
+    <aside className="ck-tsh-ghi-chu-y-nghia" aria-label="Ghi chú nguồn phần ý nghĩa">
       <p>{GHI_CHU_Y_NGHIA}</p>
     </aside>
+  );
+}
+
+/** Dòng ghi công bắt buộc cuối mỗi khối ý nghĩa dùng kho Nhật Nguyệt. */
+export function DongGhiCongYNghia({ className }: { className?: string }) {
+  return (
+    <p className={`ck-tsh-yn-nguon${className ? ` ${className}` : ''}`}>
+      Dữ liệu: {NGUON_Y_NGHIA.ten} (
+      <a href={NGUON_Y_NGHIA.url} target="_blank" rel="noopener">
+        nhatnguyet.org
+      </a>
+      )
+    </p>
   );
 }
 
@@ -263,82 +281,157 @@ export function LuoiBieuDoNgaySinh({
   );
 }
 
-function TheChiSoTen({
-  nhan,
-  moTa,
-  chiSo,
-}: {
-  nhan: string;
-  moTa: string;
-  chiSo: CachTinh;
-}) {
-  const coTrang = laSoChuDaoHopLe(chiSo.so);
+function duongDanTrangSo(chiSo: ChiSoTSH, so: number): string | null {
+  if (chiSo === 'so-chu-dao' && laSoChuDaoHopLe(so)) {
+    return duongDanSoChuDao(so);
+  }
+  if (chiSo === 'nam-ca-nhan' && (NAM_CA_NHAN as readonly number[]).includes(so)) {
+    return duongDanNamCaNhan(so);
+  }
+  return null;
+}
+
+function TrichSachItem({ trich }: { trich: TrichSach }) {
+  const dai = trich.en.length > 600;
+  if (dai) {
+    return (
+      <figure className="ck-tsh-yn-trich ck-tsh-yn-trich-dai">
+        <figcaption className="ck-tsh-yn-trich-nguon">
+          <em>{trich.sach}</em>, {trich.tacGia}, {trich.chuong}.
+        </figcaption>
+        <details className="ck-tsh-yn-chi-tiet">
+          <summary>Đọc đoạn trích (tiếng Anh)</summary>
+          <blockquote lang="en">{trich.en}</blockquote>
+        </details>
+      </figure>
+    );
+  }
   return (
-    <div className="ck-tsh-chi-so-the">
-      <div className="ck-tsh-chi-so-dau">
-        <div>
-          <h3>{nhan}</h3>
-          <p className="ck-tsh-chi-so-phu">{moTa}</p>
-        </div>
-        {coTrang ? (
-          <Link
-            href={duongDanSoChuDao(chiSo.so)}
-            className="ck-tsh-so-nho-link"
-            aria-label={`${nhan}: số ${chiSo.so}`}
-          >
-            {chiSo.so}
-          </Link>
-        ) : (
-          <span className="ck-tsh-so-nho-link ck-tsh-so-khong-link">{chiSo.so}</span>
-        )}
-      </div>
-      <p className="ck-tsh-phep-cong">{chiSo.phepCong}</p>
-      <p className="ck-tsh-buoc-dong">Rút gọn: {dinhDangBuoc(chiSo.buoc, SO_MASTER)}</p>
-      {coTrang ? (
-        <p className="ck-tsh-chi-so-xem">
-          <Link href={duongDanSoChuDao(chiSo.so)}>Xem cách tính số {chiSo.so} →</Link>
-        </p>
-      ) : null}
-    </div>
+    <figure className="ck-tsh-yn-trich">
+      <blockquote lang="en">{trich.en}</blockquote>
+      <figcaption className="ck-tsh-yn-trich-nguon">
+        <em>{trich.sach}</em>, {trich.tacGia}, {trich.chuong}.
+      </figcaption>
+    </figure>
   );
 }
 
-/** Hiển thị từng chữ đã bỏ dấu + 3 chỉ số theo tên (dùng được ở cả client và server). */
-export function KetQuaTenHienThi({
-  ketQua,
-  hoTenGoc,
+/**
+ * Khối hiển thị ý nghĩa Nhật Nguyệt + đoạn nguyên văn sách cổ (server only).
+ * Khi `gon` bật: chỉ hiện `loi` và tối đa 2 đoạn `trichRieng` kèm liên kết "Xem thêm" nếu có trang riêng.
+ * Có thể bật `thuGonTrichChung` để thu gọn `trichChung` vào `<details>` khi ở chế độ `gon`.
+ */
+export function KhoiYNghia({
+  y,
+  gon = false,
+  anGhiChu = false,
+  thuGonTrichChung = false,
+  capTieuDe = 'h3',
 }: {
-  ketQua: KetQuaTen;
-  hoTenGoc: string;
+  y: YNghiaSo | undefined;
+  gon?: boolean;
+  anGhiChu?: boolean;
+  thuGonTrichChung?: boolean;
+  capTieuDe?: 'h3' | 'h4';
 }) {
+  if (!y) return null;
+
+  const TieuDe = capTieuDe;
+  const tenChiSoThuong = y.tenChiSo.toLocaleLowerCase('vi-VN');
+  const trichRiengHien = gon ? y.trichRieng.slice(0, 2) : y.trichRieng;
+  const hienTrichChungTrucTiep = !gon && y.trichChung.length > 0;
+  const hienTrichChungThuGon = gon && thuGonTrichChung && y.trichChung.length > 0;
+  const trichDaHien = [
+    ...trichRiengHien,
+    ...(hienTrichChungTrucTiep || hienTrichChungThuGon ? y.trichChung : []),
+  ];
+  const sach = sachDuocTrich(trichDaHien);
+  const linkXemThem = gon ? duongDanTrangSo(y.chiSo, y.so) : null;
+
   return (
-    <div className="ck-tsh-ten-kq">
-      <p className="ck-tsh-ten-tom-tat">
-        Chuỗi chữ sau khi bỏ dấu cho <strong>{hoTenGoc}</strong>:{' '}
-        <code className="ck-tsh-chuoi-bo-dau">
-          {ketQua.chu.map((c) => c.chu).join('')}
-        </code>{' '}
-        ({ketQua.chu.length} chữ cái)
-      </p>
+    <div className={`ck-tsh-yn-khoi${gon ? ' ck-tsh-yn-gon' : ''}`}>
+      {!anGhiChu ? <KhoiGhiChuYNghia /> : null}
 
-      <div className="ck-tsh-chu-luoi" aria-label="Bảng quy đổi từng chữ cái">
-        {ketQua.chu.map((c, idx) => (
-          <div
-            key={`${c.chu}-${idx}`}
-            className={`ck-tsh-chu-o${c.nguyenAm ? ' ck-tsh-chu-nguyen-am' : ''}`}
-          >
-            <span className="ck-tsh-chu-goc">{c.goc}</span>
-            <span className="ck-tsh-chu-bo-dau">{c.chu}</span>
-            <strong className="ck-tsh-chu-so">{c.so}</strong>
-            <span className="ck-tsh-chu-loai">{c.nguyenAm ? 'nguyên âm' : 'phụ âm'}</span>
+      {y.moTaChiSo ? <p className="ck-tsh-yn-mota">{y.moTaChiSo}</p> : null}
+
+      {y.loi.length > 0 ? (
+        <dl className="ck-tsh-yn-dl">
+          {y.loi.map((muc) => (
+            <div key={muc.k} className="ck-tsh-yn-dong">
+              <dt>{muc.ten}</dt>
+              <dd>{muc.vb}</dd>
+            </div>
+          ))}
+        </dl>
+      ) : null}
+
+      {trichRiengHien.length > 0 ? (
+        <div className="ck-tsh-yn-nhom-trich">
+          <TieuDe className="ck-tsh-yn-trich-tieu">
+            Sách cổ viết về {tenChiSoThuong} {y.so}
+          </TieuDe>
+          <div className="ck-tsh-yn-ds-trich">
+            {trichRiengHien.map((t) => (
+              <TrichSachItem key={t.id} trich={t} />
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      ) : null}
 
-      <div className="ck-tsh-ba-chi-so">
-        <TheChiSoTen nhan="Chỉ số tên" moTa="Cộng mọi chữ cái" chiSo={ketQua.ten} />
-        <TheChiSoTen nhan="Linh hồn" moTa="Cộng các nguyên âm" chiSo={ketQua.linhHon} />
-        <TheChiSoTen nhan="Nhân cách" moTa="Cộng các phụ âm" chiSo={ketQua.nhanCach} />
+      {hienTrichChungTrucTiep ? (
+        <div className="ck-tsh-yn-nhom-trich">
+          <TieuDe className="ck-tsh-yn-trich-tieu">
+            Sách cổ viết về con số {y.so} nói chung
+          </TieuDe>
+          <p className="ck-tsh-yn-ghi-chung">
+            Các đoạn này nói về con số {y.so}, không riêng cho {tenChiSoThuong}.
+          </p>
+          <div className="ck-tsh-yn-ds-trich">
+            {y.trichChung.map((t) => (
+              <TrichSachItem key={t.id} trich={t} />
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      {hienTrichChungThuGon ? (
+        <details className="ck-tsh-yn-chi-tiet ck-tsh-yn-chi-tiet-nhom">
+          <summary>
+            Sách cổ viết về con số {y.so} nói chung ({y.trichChung.length} đoạn trích)
+          </summary>
+          <p className="ck-tsh-yn-ghi-chung">
+            Các đoạn này nói về con số {y.so}, không riêng cho {tenChiSoThuong}.
+          </p>
+          <div className="ck-tsh-yn-ds-trich">
+            {y.trichChung.map((t) => (
+              <TrichSachItem key={t.id} trich={t} />
+            ))}
+          </div>
+        </details>
+      ) : null}
+
+      {linkXemThem ? (
+        <p className="ck-tsh-yn-xem-them">
+          <Link href={linkXemThem} aria-label={`Xem thêm ý nghĩa ${tenChiSoThuong} ${y.so}`}>
+            Xem thêm →
+          </Link>
+        </p>
+      ) : null}
+
+      <div className="ck-tsh-yn-chan">
+        <DongGhiCongYNghia />
+        {sach.length > 0 ? (
+          <p className="ck-tsh-yn-sach">
+            Sách được trích:{' '}
+            {sach.map((s, i) => (
+              <React.Fragment key={s.sach}>
+                {i > 0 ? '; ' : null}
+                <em>{s.sach}</em> ({s.tacGia})
+              </React.Fragment>
+            ))}
+            .
+          </p>
+        ) : null}
       </div>
     </div>
   );

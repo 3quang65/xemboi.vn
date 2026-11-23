@@ -5,8 +5,9 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   BANG_CHU, DUONG_BIEU_DO, SO_CHU_DAO, TRANG_THAN_SO_HOC, bieuDoNgaySinh, bonDinhCao, docNgay, giaTriChu, namCaNhan,
-  boDauTen, ngayCoNamCaNhan, rutDon, rutGon, soChuDao, soTuSlug, theoTen, thongKeSoChuDao, tongDanToi, viDuNgay, viDuTheoNam,
+  boDauTen, ngayCoNamCaNhan, noNghiepNgaySinh, rutDon, rutGon, soChuDao, thachThuc, thaiDo, soTuSlug, theoTen, thongKeSoChuDao, tongDanToi, viDuNgay, viDuTheoNam,
 } from '../../src/lib/trang/than-so-hoc.ts';
+import { NGUON_Y_NGHIA, SUA_OCR, sachDuocTrich, soCoYNghia, yNghia } from '../../src/lib/trang/than-so-hoc-y-nghia.ts';
 
 test('Rút gọn giữ 11, 22, 33', () => {
   assert.deepEqual(rutGon(29).buoc, [29, 11]);
@@ -131,4 +132,49 @@ test('Đối chiếu 600 ca Nhật Nguyệt: số chủ đạo, tên, năm cá n
     assert.deepEqual(dc.slice(0, 3).map((x) => x.denTuoi), [r.tuoiKetThucDinh1, r.tuoiKetThucDinh2, r.tuoiKetThucDinh3], k);
   }
   assert.equal(khongY, 380);
+});
+
+test('Thái độ, ngày sinh, thách thức, nợ nghiệp khớp 600 ca Nhật Nguyệt', () => {
+  const { ca } = JSON.parse(readFileSync(new URL('./doi-chieu/nhat-nguyet-than-so-hoc.json', import.meta.url), 'utf8'));
+  for (const { vao, ra } of ca) {
+    const d = { ngay: vao.dd, thang: vao.mm, nam: vao.yyyy };
+    const k = `${vao.dd}/${vao.mm}/${vao.yyyy}`;
+    assert.equal(thaiDo(d).so, ra.soThaiDo, k);
+    assert.equal(rutDon(vao.dd), ra.soNgaySinh, k);
+    const t = ra.soThachThuc;
+    assert.deepEqual(thachThuc(d).map((x) => x.so), [t.thachThuc1, t.thachThuc2, t.thachThuc3, t.thachThuc4], k);
+  }
+  assert.equal(noNghiepNgaySinh(13), 13); assert.equal(noNghiepNgaySinh(15), undefined);
+});
+
+test('Ý nghĩa Nhật Nguyệt: đủ số, có nguồn, đoạn sách không rỗng', () => {
+  assert.deepEqual(soCoYNghia('so-chu-dao'), [...SO_CHU_DAO]);
+  assert.deepEqual(soCoYNghia('nam-ca-nhan'), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  assert.deepEqual(soCoYNghia('no-nghiep'), [13, 14, 16, 19]);
+  for (const n of SO_CHU_DAO) {
+    const y = yNghia('so-chu-dao', n);
+    assert.ok(y && y.loi.find((l) => l.k === 'manh') && y.loi.find((l) => l.k === 'yeu'), `so ${n}`);
+    for (const t of [...y.trichRieng, ...y.trichChung]) assert.ok(t.en.length > 10 && t.sach && t.tacGia, t.id);
+  }
+  assert.ok(yNghia('nam-ca-nhan', 7).loi[0].k === 'yNghia');
+  assert.equal(yNghia('nam-ca-nhan', 11), undefined);
+  assert.equal(NGUON_Y_NGHIA.url, 'https://nhatnguyet.org');
+  const y33 = yNghia('so-chu-dao', 33);
+  const sach = sachDuocTrich([...y33.trichRieng, ...y33.trichChung]);
+  assert.ok(sach.length >= 2 && new Set(sach.map((s) => s.sach)).size === sach.length);
+});
+
+test('Đoạn sách đã sửa lỗi OCR hiển nhiên, mỗi mục sửa đều trúng ít nhất một chỗ', () => {
+  const chiSo = ['so-chu-dao', 'ngay-sinh', 'thai-do', 'dinh-cao', 'thach-thuc', 'nam-ca-nhan', 'no-nghiep'];
+  const tatCa = new Map();
+  for (const cs of chiSo) for (const so of soCoYNghia(cs)) {
+    const y = yNghia(cs, so);
+    for (const t of [...y.trichRieng, ...y.trichChung]) tatCa.set(t.id, t.en);
+  }
+  const vb = [...tatCa.values()].join('\n');
+  for (const [sai, dung] of SUA_OCR) {
+    assert.ok(!vb.includes(sai), `còn "${sai}"`);
+    assert.ok(vb.includes(dung), `không thấy "${dung}"`);
+  }
+  assert.ok(!/,,/.test(vb));
 });

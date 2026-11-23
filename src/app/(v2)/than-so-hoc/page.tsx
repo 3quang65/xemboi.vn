@@ -11,6 +11,7 @@ import {
   duongDanNamCaNhan,
   duongDanSoChuDao,
 } from '@/lib/trang/than-so-hoc';
+import { yNghia } from '@/lib/trang/than-so-hoc-y-nghia';
 import {
   MAC_DINH_HUB,
   dinhDangTiLe,
@@ -21,6 +22,7 @@ import {
 import {
   BangChuPythagoras,
   DanhSachQuyUoc,
+  DongGhiCongYNghia,
   GhiChuNgayDuong,
   KhoiGioiHan,
 } from './ThanSoHocUi';
@@ -130,29 +132,42 @@ export default async function ThanSoHocHubPage() {
         </h2>
 
         <div className="ck-tsh-so-luoi">
-          {SO_CO_BAN.map((n) => (
-            <Link key={n} href={duongDanSoChuDao(n)} className="ck-tsh-so-o">
-              <strong>{n}</strong>
-              <span>{dinhDangTiLe(tk.cach1[n], tk.tongNgay)}</span>
-              <small>Cách tính số {n}</small>
-            </Link>
-          ))}
+          {SO_CO_BAN.map((n) => {
+            const manh = yNghia('so-chu-dao', n)?.loi.find((l) => l.k === 'manh')?.vb;
+            return (
+              <Link key={n} href={duongDanSoChuDao(n)} className="ck-tsh-so-o">
+                <div className="ck-tsh-so-dau">
+                  <strong>{n}</strong>
+                  <span>{dinhDangTiLe(tk.cach1[n], tk.tongNgay)}</span>
+                </div>
+                {manh ? <p className="ck-tsh-yn-tom-luoc">{manh}</p> : null}
+                <small>Cách tính số {n}</small>
+              </Link>
+            );
+          })}
         </div>
 
         <h3 className="ck-tsh-nhom-so-tieu">Số giữ nguyên</h3>
         <div className="ck-tsh-so-luoi ck-tsh-so-luoi-master">
-          {SO_MASTER.map((n) => (
-            <Link
-              key={n}
-              href={duongDanSoChuDao(n)}
-              className="ck-tsh-so-o ck-tsh-so-o-master"
-            >
-              <strong>{n}</strong>
-              <span>{dinhDangTiLe(tk.cach1[n], tk.tongNgay)}</span>
-              <small>Giữ nguyên, không rút tiếp</small>
-            </Link>
-          ))}
+          {SO_MASTER.map((n) => {
+            const manh = yNghia('so-chu-dao', n)?.loi.find((l) => l.k === 'manh')?.vb;
+            return (
+              <Link
+                key={n}
+                href={duongDanSoChuDao(n)}
+                className="ck-tsh-so-o ck-tsh-so-o-master"
+              >
+                <div className="ck-tsh-so-dau">
+                  <strong>{n}</strong>
+                  <span>{dinhDangTiLe(tk.cach1[n], tk.tongNgay)}</span>
+                </div>
+                {manh ? <p className="ck-tsh-yn-tom-luoc">{manh}</p> : null}
+                <small>Giữ nguyên, không rút tiếp</small>
+              </Link>
+            );
+          })}
         </div>
+        <DongGhiCongYNghia className="ck-tsh-yn-nguon-luoi" />
       </section>
 
       {/* 4. Năm cá nhân 1–9 */}
@@ -161,13 +176,20 @@ export default async function ThanSoHocHubPage() {
           9 số năm cá nhân
         </h2>
         <div className="ck-tsh-nam-hang">
-          {NAM_CA_NHAN.map((n) => (
-            <Link key={n} href={duongDanNamCaNhan(n)} className="ck-tsh-nam-o">
-              <strong>{n}</strong>
-              <span>Năm cá nhân {n}</span>
-            </Link>
-          ))}
+          {NAM_CA_NHAN.map((n) => {
+            const moTa = yNghia('nam-ca-nhan', n)?.loi.find((l) => l.k === 'yNghia')?.vb;
+            return (
+              <Link key={n} href={duongDanNamCaNhan(n)} className="ck-tsh-nam-o">
+                <div className="ck-tsh-so-dau">
+                  <strong>{n}</strong>
+                  <span>Năm cá nhân {n}</span>
+                </div>
+                {moTa ? <p className="ck-tsh-yn-tom-luoc">{moTa}</p> : null}
+              </Link>
+            );
+          })}
         </div>
+        <DongGhiCongYNghia className="ck-tsh-yn-nguon-luoi" />
       </section>
 
       {/* 5. Cách tính tóm tắt + bảng chữ cái */}

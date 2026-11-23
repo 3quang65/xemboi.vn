@@ -265,4 +265,9 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Antigravity làm giao diện (Lệnh 36): hub có vòng 12 cung SVG, công cụ tra cung + bảng 12 cung, 12 trang cung. Đã duyệt chữ: không có tính cách, nguyên tố, hợp cung, bản dịch.
   - Menu "Thêm" có Chiêm tinh. Không làm bản đồ sao, hành tinh, nhà (để sau).
   - 129/129 test, tsc 0 lỗi.
+- 23/11: **Thần số học: phần ý nghĩa.**
+  - Lib `than-so-hoc-y-nghia.ts` (chỉ server) + `du-lieu/than-so-hoc-nhat-nguyet.json` sinh từ kho Nhật Nguyệt (commit 708b5c3): 65 đơn vị, 159 đoạn sách. Bảng `SUA_OCR` sửa 14 lỗi OCR, JSON giữ nguyên nguồn.
+  - `than-so-hoc.ts` thêm thái độ, 4 thách thức, nợ nghiệp ngày sinh; khớp 600/600 ca Nhật Nguyệt.
+  - Antigravity làm giao diện (Lệnh 37): `KhoiYNghia` (lời, đoạn sách riêng và chung tách rõ, ghi công cuối khối), trang số chủ đạo, năm cá nhân, biểu đồ ngày sinh, dòng ngắn trên hub. Tách `KetQuaTenUi.tsx` để JSON không vào bundle client (build: 0 chỗ "Cheasley" trong `.next/static`).
+  - Đã duyệt: lời in đúng nguyên chữ, tiếng Anh không dịch, mọi khối có ghi công. 138/138 test, tsc 0 lỗi, build 617 trang.
 - Deploy lần tới phải chạy `npm ci` vì có gói mới `lunar-javascript`.

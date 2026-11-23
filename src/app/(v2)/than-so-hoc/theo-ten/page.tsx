@@ -11,9 +11,9 @@ import {
 } from '../ThanSoHocHelpers';
 import {
   BangChuPythagoras,
-  KetQuaTenHienThi,
   KhoiGioiHan,
 } from '../ThanSoHocUi';
+import { KetQuaTenHienThi } from './KetQuaTenUi';
 import TinhTheoTenClient from './TinhTheoTenClient';
 
 export const revalidate = 3600;
