@@ -28,6 +28,13 @@ test('lưu niên: quét 1990–2040 không lẫn quan hệ nội bộ 4 trụ', 
   assert.equal(quanHeTru(ca1).length, noiBo);
 });
 
+test('lưu niên 2027 Đinh Mùi: Tỷ kiên (cùng can), tam hội Hỏa và lục hợp Ngọ–Mùi', () => {
+  const l = luuNienBatTu(ca1, 2027);
+  assert.equal(l.thapThanCan, 'Tỷ kiên');
+  assert.ok(l.cau.includes('Tỷ kiên của nhật chủ (cùng can)'));
+  assert.deepEqual(l.quanHe.map((q) => q.loai).sort(), ['luc-hop', 'tam-hoi']);
+});
+
 test('namTrongDaiVan: 10 năm liên tiếp, can chi đúng vòng 60', () => {
   const ds = namTrongDaiVan(ca1, 3);
   assert.equal(ds.length, 10);

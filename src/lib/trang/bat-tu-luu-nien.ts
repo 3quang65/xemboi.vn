@@ -20,7 +20,7 @@ export type LuuNienBatTu = {
   canChi: string;
   hanhCan: Hanh;
   hanhChi: Hanh;
-  thapThanCan: ThapThan | 'Nhật chủ';
+  thapThanCan: ThapThan;
   /** Chỉ các quan hệ có lưu niên tham gia. */
   quanHe: QuanHeLuuNien[];
   cau: string;
@@ -36,9 +36,9 @@ export function luuNienBatTu(laSo: LaSoBatTu, nam: number): LuuNienBatTu {
   const ds = quanHeMang([...can, cc.can], [...chi, cc.chi], [...TEN_TRU.map((t) => `trụ ${t}`), `năm ${nam}`])
     .filter((q) => q.tru.includes(4)) as QuanHeLuuNien[];
   const nhatChu = can[2];
-  const thapThanCan = cc.can === nhatChu ? ('Nhật chủ' as const) : thapThan(nhatChu, cc.can);
+  const thapThanCan = thapThan(nhatChu, cc.can);
   const cau = `Năm ${nam} là năm ${cc.ten} (tính từ Lập xuân), can ${cc.tenCan} là `
-    + `${thapThanCan === 'Nhật chủ' ? 'cùng can với nhật chủ' : `${thapThanCan} của nhật chủ`}; `
+    + `${thapThanCan} của nhật chủ${cc.can === nhatChu ? ' (cùng can)' : ''}; `
     + (ds.length
       ? `${ds.length} quan hệ với lá số: ${ds.map((q) => `${q.ten.toLowerCase()} ${q.chu.join('–')}`).join(', ')}.`
       : 'không có hợp, xung, hình, hại với bốn trụ.');
