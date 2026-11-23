@@ -16,8 +16,9 @@ const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
       { ten: 'Lá số trọn đời', href: '/tu-vi/tron-doi' },
       { ten: '12 cung', href: '/tu-vi/cung' },
       { ten: '14 chính tinh', href: '/tu-vi/sao' },
+      { ten: 'Tứ Hóa', href: '/tu-vi/tu-hoa' },
     ],
-    conDot: [1, 1, 4, 4, 4],
+    conDot: [1, 1, 4, 4, 4, 7],
   },
   {
     dot: 2, ten: 'Lịch âm', href: '/lich-am', moTa: 'Âm lịch hôm nay, đổi ngày, lịch vạn niên',
@@ -61,8 +62,9 @@ const TAT_CA: (MucMenu & { dot: number; conDot?: number[] })[] = [
     con: [
       { ten: 'Xem tuổi vợ chồng', href: '/xem-tuoi/vo-chong' },
       { ten: 'Tuổi xông đất', href: '/xem-tuoi/xong-dat' },
+      { ten: '12 con giáp hợp nhau', href: '/xem-tuoi/con-giap' },
     ],
-    conDot: [4, 4],
+    conDot: [4, 4, 7],
   },
   {
     dot: 4, ten: 'Bát tự', href: '/bat-tu', moTa: 'Tứ trụ năm, tháng, ngày, giờ',
@@ -135,13 +137,13 @@ export function chanTrang(dot = DOT_DA_DUNG): CotChanTrang[] {
 
 // Tên ngắn cho breadcrumb. Đoạn không có trong bảng thì trang tự truyền tên (vd năm, tên sao).
 const TEN_DOAN: Record<string, string> = {
-  '/tu-vi': 'Tử vi', '/tu-vi/lap-la-so': 'Lập lá số', '/tu-vi/tron-doi': 'Trọn đời', '/tu-vi/cung': '12 cung', '/tu-vi/sao': 'Chính tinh',
+  '/tu-vi': 'Tử vi', '/tu-vi/lap-la-so': 'Lập lá số', '/tu-vi/tron-doi': 'Trọn đời', '/tu-vi/cung': '12 cung', '/tu-vi/sao': 'Chính tinh', '/tu-vi/tu-hoa': 'Tứ Hóa',
   '/tu-vi/luan-giai': 'Luận giải', '/tu-vi-2027': 'Tử vi 2027',
   '/lich-am': 'Lịch âm', '/lich-am/doi-ngay': 'Đổi ngày', '/lich-am/lich-van-nien': 'Lịch vạn niên', '/lich-am/ngay-mai': 'Ngày mai',
   '/lich-am/gio-hoang-dao': 'Giờ hoàng đạo', '/tiet-khi': '24 tiết khí', '/lich-am/ngay-le': 'Ngày lễ âm lịch',
   '/can-chi': 'Can chi & mệnh', '/can-chi/60-hoa-giap': '60 hoa giáp', '/sinh-nam': 'Sinh năm', '/nap-am': 'Nạp âm',
   '/ngu-hanh': 'Ngũ hành', '/ngu-hanh/mau-hop-menh': 'Màu hợp mệnh', '/con-giap': 'Con giáp',
-  '/xem-tuoi': 'Xem tuổi', '/xem-tuoi/vo-chong': 'Vợ chồng', '/xem-tuoi/xong-dat': 'Xông đất',
+  '/xem-tuoi': 'Xem tuổi', '/xem-tuoi/vo-chong': 'Vợ chồng', '/xem-tuoi/xong-dat': 'Xông đất', '/xem-tuoi/con-giap': 'Con giáp hợp nhau',
   '/bat-tu': 'Bát tự', '/bat-tu/lap-la-so': 'Lập lá số bát tự', '/kinh-dich': 'Kinh Dịch', '/kinh-dich/gieo-que': 'Gieo quẻ', '/kinh-dich/64-que': '64 quẻ',
   '/tet': 'Tết', '/xem-ngay': 'Xem ngày', '/xem-ngay/xuat-hanh': 'Xuất hành',
   '/phong-thuy': 'Phong thủy', '/phong-thuy/cung-phi': 'Cung phi', '/phong-thuy/bat-trach': 'Bát trạch', '/phong-thuy/huong-nha': 'Hướng nhà', '/phong-thuy/cuu-tinh': 'Cửu tinh',
@@ -187,7 +189,8 @@ export function breadcrumb(duongDan: string, tenCuoi?: string): MatXich[] {
   while (p && p !== '/' && !daQua.has(p)) {
     daQua.add(p);
     chuoi.unshift(p);
-    p = CHA_RIENG[p] ?? CHA_THEO_TIEN_TO.find(([t]) => p.startsWith(t))?.[1] ?? (p.slice(0, p.lastIndexOf('/')) || '/');
+    p = CHA_RIENG[p] ?? (/^\/xem-tuoi\/[a-z]+-va-[a-z]+$/.test(p) ? '/xem-tuoi/con-giap' : undefined)
+      ?? CHA_THEO_TIEN_TO.find(([t]) => p.startsWith(t))?.[1] ?? (p.slice(0, p.lastIndexOf('/')) || '/');
   }
   const kq: MatXich[] = [{ ten: 'Trang chủ', href: '/' }];
   chuoi.forEach((h, i) => {

@@ -451,7 +451,7 @@ function khoiTao(L) {
   }
 
   // xemboi v2 (19-frontend-v2): xuất thêm danh mục sao và bảng đặc tính để dựng trang từ điển sao.
-  return { anLaSo: anLaSo, anLuuNien: anLuuNien, tomTat: tomTat, CUNG: CUNG, DAC_TEN: DAC_TEN, QUY_UOC_MAC_DINH: QUY_UOC_MAC_DINH, SAO: SAO, DAC_TINH: DAC_TINH };
+  return { anLaSo: anLaSo, anLuuNien: anLuuNien, tomTat: tomTat, CUNG: CUNG, DAC_TEN: DAC_TEN, QUY_UOC_MAC_DINH: QUY_UOC_MAC_DINH, SAO: SAO, DAC_TINH: DAC_TINH, TU_HOA_VIET: TU_HOA_VIET, TU_HOA_TQ: TU_HOA_TQ };
 }
 
 var TuVi = khoiTao(AmLich);
