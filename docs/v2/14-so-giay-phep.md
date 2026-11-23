@@ -11,6 +11,7 @@ Lập ngày 21/11/2026 theo lời anh Cường: "tải thoải mái tất cả c
 | Ngày | Repo | Tệp hoặc phần đã dùng | Dùng ở đâu trong xemboi | Giấy phép | Trạng thái xin phép |
 |---|---|---|---|---|---|
 | 21/11/2026 | [Nhat-Nguyet/nhatnguyet-lunar-ziwei-bazi-numerology](https://github.com/Nhat-Nguyet/nhatnguyet-lunar-ziwei-bazi-numerology) (commit 708b5c3) | `ca-kiem/am-lich.json`, `ca-kiem/tu-vi.json`, rút gọn còn đầu vào và vị trí sao | `tests/tuvi-v2/doi-chieu/nhat-nguyet-*.json`, chỉ dùng trong test `doi-chieu-nhat-nguyet.test.mjs`, không chạy trên web | CC BY 4.0 (dùng thương mại được) | Không cần xin. Phải ghi nguồn: đã ghi trong fixture và docs/v2/15. Nếu công bố bộ test, ghi thêm tên tác giả. |
+| 23/11/2026 | [6tail/lunar-javascript](https://github.com/6tail/lunar-javascript) (npm `lunar-javascript` 1.7.8, ghim đúng bản) | Bảng nghi kỵ theo ngày (`LunarUtil.getDayYi/getDayJi`) và thần sát (`getDayJiShen/getDayXiongSha`); tháng và ngày can chi do xemboi tự tính theo giờ Việt Nam rồi truyền vào | `src/lib/trang/xem-ngay.ts`, chạy trên web (cụm `/xem-ngay`); test `tests/trang/xem-ngay.test.mjs` | MIT (dùng thương mại được) | Không cần xin. Giữ LICENSE trong node_modules; trang ghi "theo bảng của lunar-javascript, không rõ sách gốc". |
 
 Dùng ngoài xemboi, chỉ để đối chiếu (không nhúng): iztro (MIT), lunar-javascript (MIT), astronomy-engine (MIT). Script nằm ở `repo-huyen-hoc\doi-chieu\`.
 
