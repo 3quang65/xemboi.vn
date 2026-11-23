@@ -2,9 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { HuyHieuHanh } from '@/components/ck/TheCanChi';
+import { DocNhanh, LaBan } from '@/components/ck/truc-quan';
 import { namSinhHopLe } from '@/lib/trang/can-chi';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
+import {
+  docNhanhHuongNha,
+  ganRanhSon,
+  laBanCaNhan,
+} from '@/lib/trang/phan-truc-quan';
 import {
   GHI_CHU_GUI_CUNG,
   TRICH,
@@ -32,12 +38,13 @@ import {
   type SearchParamsInput,
 } from '../PhongThuyHelpers';
 import {
+  BangBatPhuong,
   GhiCongHiepKy,
   HuyHieuCatHung,
   KhoiTrichDan,
 } from '../PhongThuyUi';
 import FormHuongNhaClient from './FormHuongNhaClient';
-import VongHaiTuSonSvg from './VongHaiTuSonSvg';
+import { NutSaoChepLienKetClient } from './NutSaoChepLienKetClient';
 
 export const revalidate = 3600;
 
@@ -75,6 +82,7 @@ export default async function HuongNhaPage({
   const doRaw = layMot(sp.do)?.trim() ?? '';
   const namRaw = layMot(sp.nam)?.trim() ?? '';
   const gtRaw = layMot(sp.gt)?.trim() ?? '';
+  const xoayRaw = layMot(sp.xoay)?.trim() ?? '';
   const coNhap = doRaw !== '' || namRaw !== '' || gtRaw !== '';
 
   let loi: string | null = null;
@@ -83,9 +91,7 @@ export default async function HuongNhaPage({
 
   if (coNhap) {
     const doSo = doRaw ? phanTichDo(doRaw) : null;
-    if (!doRaw) {
-      loi = 'Vui lòng nhập độ la bàn của hướng nhà (từ 0 đến 359,9).';
-    } else if (doSo === null) {
+    if (doRaw !== '' && doSo === null) {
       loi = 'Độ la bàn hợp lệ nằm trong khoảng 0 đến 359,9.';
     } else if (namRaw !== '' || gtRaw !== '') {
       const nam = phanTichNam(namRaw);
@@ -95,10 +101,10 @@ export default async function HuongNhaPage({
       } else if (!gt) {
         loi = 'Khi nhập năm sinh, vui lòng chọn giới tính (Nam hoặc Nữ).';
       } else {
-        ketQuaHuong = xetHuong(doSo);
         ketQuaNguoi = tinhCungPhi(nam, gt);
+        if (doSo !== null) ketQuaHuong = xetHuong(doSo);
       }
-    } else {
+    } else if (doSo !== null) {
       ketQuaHuong = xetHuong(doSo);
     }
   }
@@ -112,6 +118,39 @@ export default async function HuongNhaPage({
     ketQuaHuong && ketQuaNguoi
       ? duNienGiua(ketQuaNguoi.cung.ten, ketQuaHuong.cungToa.ten)
       : null;
+  const dnTrachHuong = ketQuaHuong
+    ? duNienGiua(ketQuaHuong.cungToa.ten, ketQuaHuong.cungHuong.ten)
+    : null;
+
+  const docNhanh = ketQuaNguoi
+    ? docNhanhHuongNha(ketQuaNguoi.nam, ketQuaNguoi.gioiTinh, ketQuaHuong?.doHuong)
+    : null;
+  const ranhSon = ketQuaHuong ? ganRanhSon(ketQuaHuong.doHuong) : null;
+  let gocRanhGanNhat: number | undefined;
+  if (ketQuaHuong && ranhSon?.gan) {
+    const d = ((ketQuaHuong.doHuong % 360) + 360) % 360;
+    const trong = (d + 7.5) % 15;
+    const iNay = Math.floor((d + 7.5) / 15) % 24;
+    gocRanhGanNhat = ((iNay * 15 + (trong >= 7.5 ? 7.5 : -7.5)) % 360 + 360) % 360;
+  }
+
+  const xoayTheoHuong = xoayRaw === 'huong' && ketQuaHuong !== null;
+  const laBan = laBanCaNhan(ketQuaNguoi?.cung.ten, ketQuaHuong?.doHuong);
+
+  let lienKetXoay: { href: string; nhan: string } | undefined;
+  if (ketQuaHuong) {
+    const qs = new URLSearchParams();
+    if (ketQuaNguoi) {
+      qs.set('nam', String(ketQuaNguoi.nam));
+      qs.set('gt', ketQuaNguoi.gioiTinh);
+    }
+    qs.set('do', String(ketQuaHuong.doHuong));
+    if (!xoayTheoHuong) qs.set('xoay', 'huong');
+    lienKetXoay = {
+      href: `/phong-thuy/huong-nha?${qs.toString()}#ck-hn-vong-tieu`,
+      nhan: xoayTheoHuong ? 'Đặt lại Bắc ở trên' : 'Xoay hướng nhà lên trên',
+    };
+  }
 
   return (
     <KhungTrang
@@ -137,53 +176,76 @@ export default async function HuongNhaPage({
       </div>
 
       {/* 2. Kết quả hướng, tọa, trạch & đối chiếu cung phi */}
-      {ketQuaHuong ? (
+      {ketQuaHuong || ketQuaNguoi ? (
         <section className="ck-td-muc" aria-labelledby="ck-hn-ket-qua">
-          <h2 id="ck-hn-ket-qua" className="ck-td-tieu">
-            Kết quả hướng {dinhDangDo(ketQuaHuong.doHuong)}
-          </h2>
-
-          <div className="ck-pt-huong-toa-luoi">
-            <article className="ck-the-du-lieu">
-              <span className="ck-nhan-nho">Hướng nhà</span>
-              <strong className="ck-gia-lon">
-                {dinhDangDo(ketQuaHuong.doHuong)} — Sơn {ketQuaHuong.sonHuong}
-              </strong>
-              <p>
-                Quái:{' '}
-                <Link href={duongDanCungPhi(ketQuaHuong.cungHuong)}>
-                  {ketQuaHuong.cungHuong.kyHieu} {ketQuaHuong.cungHuong.ten}
-                </Link>{' '}
-                · Phương: <b>{ketQuaHuong.cungHuong.phuong}</b>
-              </p>
-            </article>
-
-            <article className="ck-the-du-lieu">
-              <span className="ck-nhan-nho">Tọa (phía sau nhà, ngược hướng)</span>
-              <strong className="ck-gia-lon">
-                {dinhDangDo(ketQuaHuong.doToa)} — Sơn {ketQuaHuong.sonToa}
-              </strong>
-              <p>
-                Quái:{' '}
-                <Link href={duongDanCungPhi(ketQuaHuong.cungToa)}>
-                  {ketQuaHuong.cungToa.kyHieu} {ketQuaHuong.cungToa.ten}
-                </Link>{' '}
-                · Phương: <b>{ketQuaHuong.cungToa.phuong}</b>
-              </p>
-            </article>
+          <div className="ck-pt-kq-dau-hang">
+            <h2 id="ck-hn-ket-qua" className="ck-td-tieu">
+              {ketQuaHuong
+                ? `Kết quả hướng ${dinhDangDo(ketQuaHuong.doHuong)}`
+                : `Kết quả cung phi năm ${ketQuaNguoi!.nam} (${ketQuaNguoi!.gioiTinh === 'nam' ? 'Nam' : 'Nữ'})`}
+            </h2>
+            <NutSaoChepLienKetClient />
           </div>
 
-          <KhoiTrichDan trich={TRICH.sonHuong} />
+          {docNhanh ? (
+            <DocNhanh
+              cau={docNhanh.cau}
+              the={docNhanh.the}
+              tieuDeId="ck-hn-dn"
+            />
+          ) : null}
 
-          <p className="ck-pt-trach-dong">
-            Nhà thuộc <strong>{ketQuaHuong.trach} tứ trạch</strong> (tính theo quái của tọa:{' '}
-            {ketQuaHuong.cungToa.ten}).
-          </p>
+          {ketQuaHuong ? (
+            <>
+              <div className="ck-pt-huong-toa-luoi" style={{ marginTop: 18 }}>
+                <article className="ck-the-du-lieu">
+                  <span className="ck-nhan-nho">Hướng nhà</span>
+                  <strong className="ck-gia-lon">
+                    {dinhDangDo(ketQuaHuong.doHuong)} · Sơn {ketQuaHuong.sonHuong}
+                  </strong>
+                  <p>
+                    Quái:{' '}
+                    <Link href={duongDanCungPhi(ketQuaHuong.cungHuong)}>
+                      {ketQuaHuong.cungHuong.kyHieu} {ketQuaHuong.cungHuong.ten}
+                    </Link>{' '}
+                    · <b>{ketQuaHuong.cungHuong.phuong}</b>
+                  </p>
+                </article>
 
-          {ketQuaNguoi && dnHuong && dnToa ? (
+                <article className="ck-the-du-lieu">
+                  <span className="ck-nhan-nho">Tọa (lưng nhà)</span>
+                  <strong className="ck-gia-lon">
+                    {dinhDangDo(ketQuaHuong.doToa)} · Sơn {ketQuaHuong.sonToa}
+                  </strong>
+                  <p>
+                    Quái:{' '}
+                    <Link href={duongDanCungPhi(ketQuaHuong.cungToa)}>
+                      {ketQuaHuong.cungToa.kyHieu} {ketQuaHuong.cungToa.ten}
+                    </Link>{' '}
+                    · <b>{ketQuaHuong.cungToa.phuong}</b>
+                  </p>
+                </article>
+              </div>
+
+              {ranhSon?.gan && ranhSon.cau ? (
+                <aside className="ck-pt-ranh-canh-bao" role="note" aria-label="Lưu ý sát ranh giới sơn">
+                  <strong>Sát ranh sơn:</strong> {ranhSon.cau}
+                </aside>
+              ) : null}
+
+              <KhoiTrichDan trich={TRICH.sonHuong} />
+
+              <p className="ck-pt-trach-dong">
+                Nhà thuộc <strong>{ketQuaHuong.trach} tứ trạch</strong> (tính theo quái của tọa:{' '}
+                {ketQuaHuong.cungToa.ten}).
+              </p>
+            </>
+          ) : null}
+
+          {ketQuaNguoi ? (
             <div className="ck-pt-ket-qua-dau">
               <h3 className="ck-pt-ten-lon" style={{ fontSize: 22 }}>
-                Đối chiếu với cung {ketQuaNguoi.cung.ten} {ketQuaNguoi.cung.kyHieu} ({ketQuaNguoi.nam}{' '}
+                Cung phi {ketQuaNguoi.cung.ten} {ketQuaNguoi.cung.kyHieu} ({ketQuaNguoi.nam}{' '}
                 {ketQuaNguoi.canChi}, {ketQuaNguoi.gioiTinh === 'nam' ? 'Nam' : 'Nữ'})
               </h3>
               {ketQuaNguoi.guiCung ? (
@@ -205,7 +267,7 @@ export default async function HuongNhaPage({
                   />
                 </span>
                 <span>·</span>
-                <b>{ketQuaNguoi.nhom}</b>
+                <b>{ketQuaNguoi.nhom} tứ mệnh</b>
                 <span>·</span>
                 <Link href={duongDanCungPhi(ketQuaNguoi.cung)}>
                   Trang cung {ketQuaNguoi.cung.ten} →
@@ -220,35 +282,63 @@ export default async function HuongNhaPage({
                 ) : null}
               </div>
 
-              <ul className="ck-pt-so-sanh-ds">
-                <li>
-                  <span>
-                    Phương hướng nhà ({ketQuaHuong.cungHuong.phuong}) với cung{' '}
-                    {ketQuaNguoi.cung.ten}: <b>{dnHuong.ten}</b>,{' '}
-                    {dnHuong.cat ? 'cát' : 'hung'}
-                  </span>
-                  <HuyHieuCatHung cat={dnHuong.cat} />
-                </li>
-                <li>
-                  <span>
-                    Quái tọa {ketQuaHuong.cungToa.ten} với cung{' '}
-                    {ketQuaNguoi.cung.ten}: <b>{dnToa.ten}</b>,{' '}
-                    {dnToa.cat ? 'cát' : 'hung'}
-                  </span>
-                  <HuyHieuCatHung cat={dnToa.cat} />
-                </li>
-              </ul>
+              {ketQuaHuong && dnHuong && dnToa && dnTrachHuong ? (
+                <ul className="ck-pt-so-sanh-ds">
+                  <li>
+                    <span>
+                      <strong>Mệnh – Hướng</strong> ({ketQuaNguoi.cung.ten} với{' '}
+                      {ketQuaHuong.cungHuong.phuong} · {ketQuaHuong.cungHuong.ten}):{' '}
+                      <b>{dnHuong.ten}</b> ({dnHuong.sao})
+                    </span>
+                    <HuyHieuCatHung cat={dnHuong.cat} />
+                  </li>
+                  <li>
+                    <span>
+                      <strong>Mệnh – Tọa</strong> ({ketQuaNguoi.cung.ten} với tọa{' '}
+                      {ketQuaHuong.cungToa.ten}): <b>{dnToa.ten}</b> ({dnToa.sao})
+                    </span>
+                    <HuyHieuCatHung cat={dnToa.cat} />
+                  </li>
+                  <li>
+                    <span>
+                      <strong>Trạch (tọa) – Hướng</strong> (tọa {ketQuaHuong.cungToa.ten} nhìn{' '}
+                      {ketQuaHuong.cungHuong.ten}): <b>{dnTrachHuong.ten}</b> ({dnTrachHuong.sao})
+                    </span>
+                    <HuyHieuCatHung cat={dnTrachHuong.cat} />
+                  </li>
+                </ul>
+              ) : null}
             </div>
           ) : null}
         </section>
       ) : null}
 
-      {/* 3. Vòng 24 sơn (SVG) */}
+      {/* 3. La bàn cá nhân 24 sơn và 8 quái */}
       <section className="ck-td-muc" aria-labelledby="ck-hn-vong-tieu">
         <h2 id="ck-hn-vong-tieu" className="ck-td-tieu">
-          Vòng 24 sơn và 8 quái
+          {ketQuaNguoi
+            ? `La bàn 8 phương theo cung ${ketQuaNguoi.cung.ten}`
+            : 'La bàn 24 sơn và 8 quái'}
         </h2>
-        <VongHaiTuSonSvg ketQua={ketQuaHuong} />
+        <LaBan
+          laBan={laBan}
+          doHuong={ketQuaHuong?.doHuong}
+          xoayTheoHuong={xoayTheoHuong}
+          gocRanhGanNhat={gocRanhGanNhat}
+          lienKetXoay={lienKetXoay}
+          idPrefix="ck-hn-lb"
+        />
+
+        {ketQuaNguoi ? (
+          <details className="ck-pt-xem-bang">
+            <summary className="ck-pt-xem-bang-nut">
+              Xem dạng bảng (8 phương theo cung {ketQuaNguoi.cung.ten})
+            </summary>
+            <div className="ck-pt-xem-bang-noi">
+              <BangBatPhuong cungTen={ketQuaNguoi.cung.ten} />
+            </div>
+          </details>
+        ) : null}
       </section>
 
       {/* 4. Cách tính (luôn hiện) */}

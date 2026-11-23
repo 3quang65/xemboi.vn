@@ -302,5 +302,6 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
     - `phan-truc-quan.ts`;
     - `truc-quan-43.ts`.
   - Xem ngày, lịch âm (Lệnh 41, Antigravity): dải 12 giờ có "Bây giờ", 3 ngày hợp nhất theo việc kèm tệp .ics, lưới tháng tô theo việc, xuất hành 10 ngày Tết dạng thẻ; đáp án khớp số tính sẵn.
-  - Lệnh 42–45 đã viết, giao lần lượt.
+  - Thần số, hướng nhà, cửu tinh (Lệnh 42, Antigravity): vòng số chủ đạo, 4 đỉnh cao có "Đang ở đây", lưới ngày sinh có vạch đường; la bàn 24 sơn dùng chung (cát ✦ / không cát ◇ gạch chéo, đọc được ở ảnh xám); cửu tinh có lớp tháng và nút "Xem sao bay".
+  - Lệnh 43–45 đã viết, giao lần lượt.
   - Soi thị trường bát tự với 6 công cụ: 4 trụ và mốc khởi vận khớp; các trang lệch nhau ở dụng thần và cách đếm ngũ hành, nên mình không hiện dụng thần.

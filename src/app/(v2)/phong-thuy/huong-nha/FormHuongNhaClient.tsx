@@ -41,7 +41,7 @@ export default function FormHuongNhaClient({
 
       <div className="ck-o-nhap">
         <label htmlFor="ck-hn-do">
-          Độ la bàn hướng nhà (0–359,9°; 0° là chính Bắc)
+          Độ la bàn hướng nhà (0–359,9°; 0° là chính Bắc; để trống nếu chỉ xem cung phi)
         </label>
         <input
           id="ck-hn-do"
@@ -51,7 +51,6 @@ export default function FormHuongNhaClient({
           value={doText}
           onChange={(e) => setDoText(e.target.value)}
           placeholder="Ví dụ: 180 hoặc 135,5"
-          required
         />
       </div>
 

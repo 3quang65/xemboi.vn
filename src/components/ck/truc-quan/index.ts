@@ -12,6 +12,8 @@ export {
   type TheDocNhanhItem,
   type TrichSachDaGiai,
 } from './DocNhanh';
+export { LaBan, type LaBanProps } from './LaBan';
+export { MoChiTietAnchorClient } from './MoChiTietAnchorClient';
 export { TheNgayChon, type TheNgayChonProps } from './TheNgayChon';
 export { ThuatNgu, type ThuatNguProps } from './ThuatNgu';
 export {

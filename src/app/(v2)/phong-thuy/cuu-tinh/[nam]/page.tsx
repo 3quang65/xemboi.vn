@@ -10,12 +10,20 @@ import {
 } from '@/lib/trang/cuu-tinh';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
-import { serializeJsonLd } from '../../PhongThuyHelpers';
+import {
+  GOC_SITE,
+  kiemCoThamSo,
+  layMot,
+  serializeJsonLd,
+  type SearchParamsInput,
+} from '../../PhongThuyHelpers';
 import { GhiCongHiepKy } from '../../PhongThuyUi';
 import {
   MAU_SEO_CUU_TINH_NAM,
   macDinhCuuTinhNam,
+  phanTichLop,
   phanTichNamTrangRieng,
+  phanTichThangTiet,
   taoSchemaCuuTinhWebPage,
   thamSoCuuTinhNam,
 } from '../CuuTinhHelpers';
@@ -34,28 +42,42 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ nam: string }>;
+  searchParams: SearchParamsInput;
 }): Promise<Metadata> {
-  const nam = phanTichNamTrangRieng((await params).nam);
+  const [{ nam: namParam }, sp] = await Promise.all([params, searchParams]);
+  const nam = phanTichNamTrangRieng(namParam);
   if (nam === null) notFound();
 
   const data = cuuTinhNam(nam);
   const duongDan = duongDanCuuTinh(nam);
-  return metaTrang(
+  const base = await metaTrang(
     duongDan,
     macDinhCuuTinhNam(data),
     MAU_SEO_CUU_TINH_NAM,
     thamSoCuuTinhNam(data),
   );
+  if (kiemCoThamSo(sp)) {
+    return {
+      ...base,
+      alternates: { canonical: `${GOC_SITE}${duongDan}` },
+      robots: { index: false, follow: true },
+    };
+  }
+  return base;
 }
 
 export default async function CuuTinhNamPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ nam: string }>;
+  searchParams: SearchParamsInput;
 }) {
-  const nam = phanTichNamTrangRieng((await params).nam);
+  const [{ nam: namParam }, sp] = await Promise.all([params, searchParams]);
+  const nam = phanTichNamTrangRieng(namParam);
   if (nam === null) notFound();
 
   const data = cuuTinhNam(nam);
@@ -69,6 +91,10 @@ export default async function CuuTinhNamPage({
   const daDung = trangDaDung();
   const hienTai = thangTietTai(new Date());
   const jsonLd = taoSchemaCuuTinhWebPage(tt);
+
+  const lop = phanTichLop(layMot(sp.lop)?.trim());
+  const thangMacDinh = data.nam === hienTai.nam ? hienTai.thang : 1;
+  const thangChon = phanTichThangTiet(layMot(sp.thang)?.trim(), thangMacDinh);
 
   const coNamTruoc = NAM_TRANG_CUU_TINH.includes(nam - 1);
   const coNamSau = NAM_TRANG_CUU_TINH.includes(nam + 1);
@@ -86,7 +112,13 @@ export default async function CuuTinhNamPage({
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
-      <KhoiCuuTinhNam data={data} />
+      <KhoiCuuTinhNam
+        data={data}
+        basePath={duongDan}
+        lop={lop}
+        thangChon={thangChon}
+        thangHienTai={data.nam === hienTai.nam ? hienTai.thang : undefined}
+      />
 
       <KhoiCuuTinhThang
         data={data}

@@ -2,11 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { HoaVanGoc4, HoaVanMay } from '@/components/r1/HoaVanE3';
 import KhungTrang from '@/components/ck/KhungTrang';
+import { DocNhanh, ThuatNgu, type TheDocNhanhItem } from '@/components/ck/truc-quan';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { ngayHienTaiVN } from '@/lib/trang/lich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
+import { docNhanhThanSo } from '@/lib/trang/phan-truc-quan';
 import {
   SO_MASTER,
+  bieuDoNgaySinh,
   docNgay,
   duongDanNamCaNhan,
   duongDanSoChuDao,
@@ -29,11 +32,15 @@ import {
   type SearchParamsInput,
 } from '../ThanSoHocHelpers';
 import {
+  BonDinhCaoTrucQuan,
   DanhSachQuyUoc,
   GhiChuNgayDuong,
   KhoiGioiHan,
   KhoiYNghia,
+  LuoiBieuDoNgaySinh,
+  NGHIA_THUAT_NGU_TSH,
   ThanhSoChuDao,
+  VongTronSoChuDao,
 } from '../ThanSoHocUi';
 
 export const revalidate = 3600;
@@ -82,6 +89,39 @@ export default async function CongCuSoChuDaoPage({
   const namSau = namNay + 1;
   const ncnNay = ngaySinh ? namCaNhan(ngaySinh.ngay, ngaySinh.thang, namNay) : null;
   const ncnSau = ngaySinh ? namCaNhan(ngaySinh.ngay, ngaySinh.thang, namSau) : null;
+  const docNhanh = ngaySinh ? docNhanhThanSo(ngaySinh, namNay) : null;
+  const bieuDo = ngaySinh ? bieuDoNgaySinh(ngaySinh) : null;
+
+  const hienNhanDocNhanh = (muc: TheDocNhanhItem) => {
+    if (muc.ma === 'so-chu-dao') {
+      return (
+        <ThuatNgu
+          ten={muc.nhan}
+          nghia={NGHIA_THUAT_NGU_TSH.soChuDao}
+          id="ck-scd-tn-scd"
+        />
+      );
+    }
+    if (muc.ma === 'nam-ca-nhan') {
+      return (
+        <ThuatNgu
+          ten={muc.nhan}
+          nghia={NGHIA_THUAT_NGU_TSH.namCaNhan}
+          id="ck-scd-tn-ncn"
+        />
+      );
+    }
+    if (muc.ma === 'dinh-cao') {
+      return (
+        <ThuatNgu
+          ten={muc.nhan}
+          nghia={NGHIA_THUAT_NGU_TSH.dinhCao}
+          id="ck-scd-tn-dc"
+        />
+      );
+    }
+    return muc.nhan;
+  };
 
   const viDu = soChuDao(NGAY_VI_DU);
   const giaTriInput = ngaySinh
@@ -142,32 +182,30 @@ export default async function CongCuSoChuDaoPage({
       </div>
 
       {/* 2. Kết quả tính số chủ đạo */}
-      {ketQua && ngaySinh && ncnNay && ncnSau ? (
+      {ketQua && ngaySinh && ncnNay && ncnSau && docNhanh && bieuDo ? (
         <section className="ck-td-muc" aria-labelledby="ck-tsh-scd-kq">
           <h2 id="ck-tsh-scd-kq" className="ck-td-tieu">
             Kết quả cho ngày {vietNgay(ngaySinh)}
           </h2>
 
-          <div className="ck-tsh-dau-the">
-            <div className="ck-tsh-dau-trai">
-              <span className="ck-tsh-so-trien" aria-hidden="true">
-                {ketQua.cach1.so}
-              </span>
-              <div>
-                <h3 className="ck-tsh-dau-ten">
-                  <Link href={duongDanSoChuDao(ketQua.cach1.so)}>
-                    Số chủ đạo {ketQua.cach1.so}
-                  </Link>
-                </h3>
-                <p className="ck-tsh-dau-phu">
-                  Tính theo cách 1 (cộng dồn chữ số ngày {vietNgay(ngaySinh)}).
-                </p>
-              </div>
-            </div>
-            <Link href={duongDanSoChuDao(ketQua.cach1.so)} className="ck-nut ck-nut-vien">
-              Xem trang số {ketQua.cach1.so} →
-            </Link>
-          </div>
+          <DocNhanh
+            cau={docNhanh.cau}
+            the={docNhanh.the}
+            luoiCot={4}
+            tieuDeId="ck-tsh-scd-dn"
+            hienNhan={hienNhanDocNhanh}
+          />
+
+          <VongTronSoChuDao
+            so={ketQua.cach1.so}
+            phepCong={ketQua.cach1.phepCong}
+            buoc={ketQua.cach1.buoc}
+            nhan="Số chủ đạo"
+            href={duongDanSoChuDao(ketQua.cach1.so)}
+            thuatNguId="ck-scd-vong-tn"
+            thuatNguNghia={NGHIA_THUAT_NGU_TSH.soChuDao}
+            phu={`Tính theo cách 1 (cộng dồn chữ số ngày ${vietNgay(ngaySinh)}).`}
+          />
 
           <div className="ck-tsh-hai-cach">
             <div className="ck-tsh-cach-the">
@@ -236,7 +274,14 @@ export default async function CongCuSoChuDaoPage({
             </p>
           )}
 
-          <h3 className="ck-tsh-nhom-so-tieu">Năm cá nhân năm nay và năm sau</h3>
+          <h3 className="ck-tsh-nhom-so-tieu">
+            <ThuatNgu
+              ten="Năm cá nhân"
+              nghia={NGHIA_THUAT_NGU_TSH.namCaNhan}
+              id="ck-scd-tieu-ncn"
+            />{' '}
+            năm nay và năm sau
+          </h3>
           <div className="ck-tsh-nam-cap">
             {[
               { nam: namNay, nhan: 'Năm nay', kq: ncnNay },
@@ -263,6 +308,29 @@ export default async function CongCuSoChuDaoPage({
               </div>
             ))}
           </div>
+
+          <h3 className="ck-tsh-nhom-so-tieu">
+            4{' '}
+            <ThuatNgu
+              ten="đỉnh cao"
+              nghia={NGHIA_THUAT_NGU_TSH.dinhCao}
+              id="ck-scd-tieu-dc"
+            />{' '}
+            theo tuổi
+          </h3>
+          <BonDinhCaoTrucQuan
+            ngaySinh={ngaySinh}
+            namXet={namNay}
+            dinhCao={docNhanh.dinhCao}
+            chiSoDinhHienTai={docNhanh.chiSoDinhHienTai}
+          />
+
+          <h3 className="ck-tsh-nhom-so-tieu">Lưới ngày sinh 3 × 3</h3>
+          <LuoiBieuDoNgaySinh
+            bieuDo={bieuDo}
+            idPrefix="ck-scd-bd"
+            moTa={`Lưới 3 × 3 biểu đồ ngày sinh ${vietNgay(ngaySinh)}`}
+          />
 
           <div className="ck-tsh-hanh-dong-dong">
             <Link

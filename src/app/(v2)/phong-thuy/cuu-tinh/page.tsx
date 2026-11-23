@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { HuyHieuHanh } from '@/components/ck/TheCanChi';
+import { HANH_SLUG } from '@/components/ck/canChiHelpers';
 import {
   CUU_TINH,
   NAM_CUU_TINH_DEN,
@@ -25,8 +26,9 @@ import {
   MAC_DINH_CUU_TINH,
   PHU_CUU_TINH,
   TRICH_DAN_CUU_TINH,
-  lopMauSao,
+  phanTichLop,
   phanTichNamCuuTinh,
+  phanTichThangTiet,
 } from './CuuTinhHelpers';
 import {
   DanhSachNamCuuTinh,
@@ -69,6 +71,7 @@ export default async function CuuTinhPage({
   const jsonLd = taoSchemaWebApplication(tt);
 
   const namRaw = layMot(sp.nam)?.trim() ?? '';
+  const lop = phanTichLop(layMot(sp.lop)?.trim());
   let loi: string | null = null;
   let data: NamCuuTinh | null = null;
 
@@ -82,6 +85,9 @@ export default async function CuuTinhPage({
       data = cuuTinhNam(namHopLe);
     }
   }
+
+  const thangMacDinh = data && data.nam === hienTai.nam ? hienTai.thang : 1;
+  const thangChon = phanTichThangTiet(layMot(sp.thang)?.trim(), thangMacDinh);
 
   return (
     <KhungTrang
@@ -148,7 +154,15 @@ export default async function CuuTinhPage({
       {/* Khối năm & 12 tháng */}
       {data ? (
         <>
-          <KhoiCuuTinhNam data={data} hienLienKetTrangNam />
+          <KhoiCuuTinhNam
+            data={data}
+            hienLienKetTrangNam
+            basePath="/phong-thuy/cuu-tinh"
+            giuThamSoNam={namRaw !== ''}
+            lop={lop}
+            thangChon={thangChon}
+            thangHienTai={data.nam === hienTai.nam ? hienTai.thang : undefined}
+          />
           <KhoiCuuTinhThang
             data={data}
             thangHienTai={data.nam === hienTai.nam ? hienTai.thang : undefined}
@@ -191,7 +205,7 @@ export default async function CuuTinhPage({
                   <td data-nhan="Tên sao">
                     <span className="ck-pt-ct-bang-ten">
                       <i
-                        className={`ck-pt-ct-cham ${lopMauSao(s.so)}`}
+                        className={`ck-tq-hanh-cham ck-tq-cham-${HANH_SLUG[s.hanh]}`}
                         aria-hidden="true"
                       />
                       <b>{s.ten}</b>

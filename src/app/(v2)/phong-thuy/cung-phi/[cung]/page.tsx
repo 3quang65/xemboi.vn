@@ -3,9 +3,12 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import KhungTrang from '@/components/ck/KhungTrang';
 import { HuyHieuHanh } from '@/components/ck/TheCanChi';
+import { HANH_SLUG } from '@/components/ck/canChiHelpers';
+import { LaBan } from '@/components/ck/truc-quan';
 import { namSinhHopLe } from '@/lib/trang/can-chi';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
+import { laBanCaNhan } from '@/lib/trang/phan-truc-quan';
 import {
   BAT_CUNG,
   GHI_CHU_GUI_CUNG,
@@ -67,6 +70,8 @@ export default async function CungPhiChiTietPage({
   const dsNam = namTheoCung(cung.ten);
   const coGuiCung =
     dsNam.nam.some((x) => x.guiCung) || dsNam.nu.some((x) => x.guiCung);
+  const laBan = laBanCaNhan(cung.ten);
+  const hanhSlug = HANH_SLUG[cung.hanh];
 
   const schemaTerm = taoSchemaDefinedTermCung(cung, tt.canonical);
   const schemaWebPage = taoSchemaWebPage(tt);
@@ -92,7 +97,7 @@ export default async function CungPhiChiTietPage({
       <section className="ck-pt-cung-dau" aria-label={`Thông tin cung ${cung.ten}`}>
         <div>
           <div className="ck-pt-dau-chinh">
-            <span className="ck-pt-ky-lon" aria-hidden="true">
+            <span className={`ck-pt-ky-lon ck-tq-hanh-${hanhSlug}`} aria-hidden="true">
               {cung.kyHieu}
             </span>
             <div>
@@ -138,12 +143,18 @@ export default async function CungPhiChiTietPage({
         <HinhBaHaoQuai hao={cung.hao} ten={cung.ten} />
       </section>
 
-      {/* 2. 8 phương theo cung */}
+      {/* 2. 8 phương theo cung (la bàn trực quan + bảng gập gọn) */}
       <section className="ck-td-muc" aria-labelledby="ck-pt-cung-phuong-tieu">
         <h2 id="ck-pt-cung-phuong-tieu" className="ck-td-tieu">
-          8 phương theo cung {cung.ten}
+          La bàn 8 phương theo cung {cung.ten}
         </h2>
-        <BangBatPhuong cungTen={cung.ten} />
+        <LaBan laBan={laBan} idPrefix={`ck-cp-${cung.slug}`} />
+        <details className="ck-pt-xem-bang">
+          <summary className="ck-pt-xem-bang-nut">Xem dạng bảng</summary>
+          <div className="ck-pt-xem-bang-noi">
+            <BangBatPhuong cungTen={cung.ten} />
+          </div>
+        </details>
       </section>
 
       {/* 3. Năm sinh có cung {ten} (1930–2030) */}

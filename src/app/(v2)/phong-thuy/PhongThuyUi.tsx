@@ -77,16 +77,16 @@ export function GhiChuNamAm({ daDung }: { daDung: Set<string> }) {
   );
 }
 
-/** Huy hiệu Cát / Hung luôn kèm chữ, không chỉ phân biệt bằng màu. */
+/** Huy hiệu Cát / Không cát luôn kèm chữ, không chỉ phân biệt bằng màu. */
 export function HuyHieuCatHung({ cat }: { cat: boolean }) {
   return (
     <span className={`ck-pt-badge ${cat ? 'ck-pt-cat' : 'ck-pt-hung'}`}>
-      {cat ? 'Cát' : 'Hung'}
+      {cat ? '✦ Cát' : '◇ Không cát'}
     </span>
   );
 }
 
-/** Bảng 8 phương ứng 8 du niên của một cung (4 cát trên, 4 hung dưới). */
+/** Bảng 8 phương ứng 8 du niên của một cung (4 cát trên, 4 không cát dưới). */
 export function BangBatPhuong({ cungTen }: { cungTen: string }) {
   const ds = batPhuong(cungTen);
   return (
@@ -96,7 +96,7 @@ export function BangBatPhuong({ cungTen }: { cungTen: string }) {
           <tr>
             <th>Du niên</th>
             <th>Sao</th>
-            <th>Cát / Hung</th>
+            <th>Nhóm</th>
             <th>Phương</th>
             <th>Quái của phương</th>
           </tr>

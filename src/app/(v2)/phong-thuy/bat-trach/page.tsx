@@ -2,8 +2,10 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import KhungTrang from '@/components/ck/KhungTrang';
+import { LaBan } from '@/components/ck/truc-quan';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
+import { laBanCaNhan } from '@/lib/trang/phan-truc-quan';
 import {
   BAT_CUNG,
   DU_NIEN_8,
@@ -89,6 +91,14 @@ export default async function BatTrachPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      {/* 1b. La bàn mẫu 24 sơn và 8 quái */}
+      <section className="ck-td-muc" aria-labelledby="ck-bt-la-ban-tieu">
+        <h2 id="ck-bt-la-ban-tieu" className="ck-td-tieu">
+          Cách chia 8 quái và 24 sơn trên la bàn
+        </h2>
+        <LaBan laBan={laBanCaNhan()} idPrefix="ck-bt-mau" />
       </section>
 
       {/* 2. Bảng 8 × 8 */}

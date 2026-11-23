@@ -2,28 +2,44 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import KhungTrang from '@/components/ck/KhungTrang';
+import { DocNhanh, ThuatNgu, type TheDocNhanhItem } from '@/components/ck/truc-quan';
 import { ngayHienTaiVN } from '@/lib/trang/lich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
+import { docNhanhThanSo } from '@/lib/trang/phan-truc-quan';
 import {
   NAM_CA_NHAN,
+  bieuDoNgaySinh,
+  docNgay,
   duongDanNamCaNhan,
+  duongDanSoChuDao,
+  isoNgay,
   namCaNhan,
   ngayCoNamCaNhan,
+  soChuDao,
   soTuSlug,
+  vietNgay,
 } from '@/lib/trang/than-so-hoc';
 import { yNghia } from '@/lib/trang/than-so-hoc-y-nghia';
 import {
+  GOC_SITE,
   MAU_SEO_NAM_CA_NHAN,
   dinhDangBuoc,
+  kiemCoThamSo,
+  layMot,
   macDinhNamCaNhan,
   serializeJsonLd,
   taoSchemaDefinedTermNamCaNhan,
   taoSchemaWebPage,
+  type SearchParamsInput,
 } from '../../ThanSoHocHelpers';
 import {
+  BonDinhCaoTrucQuan,
   KhoiGioiHan,
   KhoiYNghia,
+  LuoiBieuDoNgaySinh,
+  NGHIA_THUAT_NGU_TSH,
   ThanhNamCaNhan,
+  VongTronSoChuDao,
 } from '../../ThanSoHocUi';
 
 export const revalidate = 3600;
@@ -34,17 +50,27 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ so: string }>;
+  searchParams: SearchParamsInput;
 }): Promise<Metadata> {
-  const { so } = await params;
+  const [{ so }, sp] = await Promise.all([params, searchParams]);
   const n = soTuSlug(so, NAM_CA_NHAN);
   if (n === undefined) notFound();
 
   const duongDan = duongDanNamCaNhan(n);
-  return metaTrang(duongDan, macDinhNamCaNhan(n), MAU_SEO_NAM_CA_NHAN, {
+  const base = await metaTrang(duongDan, macDinhNamCaNhan(n), MAU_SEO_NAM_CA_NHAN, {
     n: String(n),
   });
+  if (kiemCoThamSo(sp)) {
+    return {
+      ...base,
+      alternates: { canonical: `${GOC_SITE}${duongDan}` },
+      robots: { index: false, follow: true },
+    };
+  }
+  return base;
 }
 
 function BangNgayTrongNam({
@@ -83,10 +109,12 @@ function BangNgayTrongNam({
 
 export default async function NamCaNhanChiTietPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ so: string }>;
+  searchParams: SearchParamsInput;
 }) {
-  const { so } = await params;
+  const [{ so }, sp] = await Promise.all([params, searchParams]);
   const n = soTuSlug(so, NAM_CA_NHAN);
   if (n === undefined) notFound();
 
@@ -98,6 +126,13 @@ export default async function NamCaNhanChiTietPage({
     { n: String(n) },
   );
 
+  const ngayRaw = layMot(sp.ngay)?.trim() ?? '';
+  const ngaySinh = ngayRaw ? docNgay(ngayRaw) : undefined;
+  const loiNgay =
+    ngayRaw && !ngaySinh
+      ? 'Ngày sinh dương lịch không hợp lệ (1900–2100).'
+      : null;
+
   const namNay = ngayHienTaiVN().nam;
   const namSau = namNay + 1;
   const bangNay = ngayCoNamCaNhan(n, namNay);
@@ -108,6 +143,47 @@ export default async function NamCaNhanChiTietPage({
   const thangDau = dongDau.thang;
   const kqViDu = namCaNhan(ngayDau, thangDau, namNay);
   const yNghiaSo = yNghia('nam-ca-nhan', n);
+
+  const docNhanh = ngaySinh ? docNhanhThanSo(ngaySinh, namNay) : null;
+  const kqSoChuDao = ngaySinh ? soChuDao(ngaySinh) : null;
+  const bieuDo = ngaySinh ? bieuDoNgaySinh(ngaySinh) : null;
+
+  const hienNhanDocNhanh = (muc: TheDocNhanhItem) => {
+    if (muc.ma === 'so-chu-dao') {
+      return (
+        <ThuatNgu
+          ten={muc.nhan}
+          nghia={NGHIA_THUAT_NGU_TSH.soChuDao}
+          id="ck-ncn-tn-scd"
+        />
+      );
+    }
+    if (muc.ma === 'nam-ca-nhan') {
+      return (
+        <ThuatNgu
+          ten={muc.nhan}
+          nghia={NGHIA_THUAT_NGU_TSH.namCaNhan}
+          id="ck-ncn-tn-ncn"
+        />
+      );
+    }
+    if (muc.ma === 'dinh-cao') {
+      return (
+        <ThuatNgu
+          ten={muc.nhan}
+          nghia={NGHIA_THUAT_NGU_TSH.dinhCao}
+          id="ck-ncn-tn-dc"
+        />
+      );
+    }
+    return muc.nhan;
+  };
+
+  const giaTriInput = ngaySinh
+    ? isoNgay(ngaySinh)
+    : /^\d{4}-\d{2}-\d{2}$/.test(ngayRaw)
+      ? ngayRaw
+      : '';
 
   const schemaTerm = taoSchemaDefinedTermNamCaNhan(n, tt.canonical);
   const schemaWebPage = taoSchemaWebPage(tt);
@@ -129,14 +205,21 @@ export default async function NamCaNhanChiTietPage({
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(schemaWebPage) }}
       />
 
-      {/* 1. Đầu trang: số lớn + cách tính + ví dụ đầu tiên */}
+      {/* 1. Đầu trang: vòng tròn số lớn + cách tính + ví dụ đầu tiên */}
       <section className="ck-tsh-dau-the" aria-label={`Cách tính năm cá nhân ${n}`}>
         <div className="ck-tsh-dau-trai">
-          <span className="ck-tsh-so-trien" aria-hidden="true">
-            {n}
+          <span className="ck-tsh-vong-so ck-tsh-vong-nho" aria-hidden="true">
+            <span className="ck-tsh-vong-chu">{n}</span>
           </span>
           <div>
-            <h2 className="ck-tsh-dau-ten">Năm cá nhân {n}</h2>
+            <h2 className="ck-tsh-dau-ten">
+              <ThuatNgu
+                ten="Năm cá nhân"
+                nghia={NGHIA_THUAT_NGU_TSH.namCaNhan}
+                id="ck-ncn-dau-tn"
+              />{' '}
+              {n}
+            </h2>
             <p className="ck-tsh-dau-phu">
               Cộng chữ số ngày sinh, tháng sinh với năm đang xét, rút về 1–9.
             </p>
@@ -156,6 +239,83 @@ export default async function NamCaNhanChiTietPage({
         >
           Tính năm cá nhân của bạn
         </Link>
+      </section>
+
+      {/* 1b. Nhập ngày sinh để xem trực quan ngay trên trang */}
+      <section className="ck-td-muc" aria-labelledby="ck-tsh-ncn-tra-tieu">
+        <h2 id="ck-tsh-ncn-tra-tieu" className="ck-td-tieu">
+          Kiểm tra theo ngày sinh của bạn
+        </h2>
+        <form className="ck-tsh-mini-form" action={duongDan} method="get">
+          {loiNgay ? (
+            <div className="ck-loi" role="alert" style={{ marginBottom: 12 }}>
+              {loiNgay}
+            </div>
+          ) : null}
+          <div className="ck-tsh-mini-hang">
+            <label className="ck-tsh-mini-o" htmlFor="ck-tsh-ncn-ngay">
+              <span>Ngày sinh dương lịch (1900–2100)</span>
+              <input
+                id="ck-tsh-ncn-ngay"
+                name="ngay"
+                type="date"
+                min="1900-01-01"
+                max="2100-12-31"
+                defaultValue={giaTriInput}
+                required
+              />
+            </label>
+            <button type="submit" className="ck-nut ck-nut-son ck-tsh-nut-chinh">
+              Xem chỉ số ngày sinh
+            </button>
+          </div>
+        </form>
+
+        {ngaySinh && docNhanh && kqSoChuDao && bieuDo ? (
+          <div style={{ marginTop: 20 }}>
+            <DocNhanh
+              cau={docNhanh.cau}
+              the={docNhanh.the}
+              luoiCot={4}
+              tieuDe={`Kết quả ngày ${vietNgay(ngaySinh)}`}
+              tieuDeId="ck-tsh-ncn-dn"
+              hienNhan={hienNhanDocNhanh}
+            />
+
+            <VongTronSoChuDao
+              so={kqSoChuDao.cach1.so}
+              phepCong={kqSoChuDao.cach1.phepCong}
+              buoc={kqSoChuDao.cach1.buoc}
+              nhan="Số chủ đạo"
+              href={duongDanSoChuDao(kqSoChuDao.cach1.so)}
+              thuatNguId="ck-ncn-vong-scd"
+              thuatNguNghia={NGHIA_THUAT_NGU_TSH.soChuDao}
+            />
+
+            <h3 className="ck-tsh-nhom-so-tieu">
+              4{' '}
+              <ThuatNgu
+                ten="đỉnh cao"
+                nghia={NGHIA_THUAT_NGU_TSH.dinhCao}
+                id="ck-ncn-tieu-dc"
+              />{' '}
+              theo tuổi
+            </h3>
+            <BonDinhCaoTrucQuan
+              ngaySinh={ngaySinh}
+              namXet={namNay}
+              dinhCao={docNhanh.dinhCao}
+              chiSoDinhHienTai={docNhanh.chiSoDinhHienTai}
+            />
+
+            <h3 className="ck-tsh-nhom-so-tieu">Lưới ngày sinh 3 × 3</h3>
+            <LuoiBieuDoNgaySinh
+              bieuDo={bieuDo}
+              idPrefix="ck-ncn-bd"
+              moTa={`Lưới 3 × 3 biểu đồ ngày sinh ${vietNgay(ngaySinh)}`}
+            />
+          </div>
+        ) : null}
       </section>
 
       {/* 2. Ý nghĩa năm cá nhân {n} */}

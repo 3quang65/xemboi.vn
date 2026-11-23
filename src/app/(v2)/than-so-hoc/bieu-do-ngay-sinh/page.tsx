@@ -2,8 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { HoaVanGoc4, HoaVanMay } from '@/components/r1/HoaVanE3';
 import KhungTrang from '@/components/ck/KhungTrang';
+import { DocNhanh, ThuatNgu, type TheDocNhanhItem } from '@/components/ck/truc-quan';
 import { trangDaDung } from '@/lib/trang/dieu-huong';
+import { ngayHienTaiVN } from '@/lib/trang/lich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
+import { docNhanhThanSo } from '@/lib/trang/phan-truc-quan';
 import {
   SO_MASTER,
   bieuDoNgaySinh,
@@ -14,6 +17,7 @@ import {
   noNghiepNgaySinh,
   rutDon,
   rutGon,
+  soChuDao,
   thachThuc,
   thaiDo,
   vietNgay,
@@ -33,11 +37,14 @@ import {
   type SearchParamsInput,
 } from '../ThanSoHocHelpers';
 import {
+  BonDinhCaoTrucQuan,
   GhiChuNgayDuong,
   KhoiGhiChuYNghia,
   KhoiGioiHan,
   KhoiYNghia,
   LuoiBieuDoNgaySinh,
+  NGHIA_THUAT_NGU_TSH,
+  VongTronSoChuDao,
 } from '../ThanSoHocUi';
 
 export const revalidate = 3600;
@@ -81,14 +88,48 @@ export default async function BieuDoNgaySinhPage({
       'Ngày sinh dương lịch không hợp lệ. Vui lòng chọn ngày có thật từ 01/01/1900 đến 31/12/2100.';
   }
 
+  const namNay = ngayHienTaiVN().nam;
+  const docNhanh = ngaySinh ? docNhanhThanSo(ngaySinh, namNay) : null;
+  const kqSoChuDao = ngaySinh ? soChuDao(ngaySinh) : null;
   const bieuDo = ngaySinh ? bieuDoNgaySinh(ngaySinh) : null;
-  const dinhCao = ngaySinh ? bonDinhCao(ngaySinh) : null;
+  const dinhCao = docNhanh?.dinhCao ?? (ngaySinh ? bonDinhCao(ngaySinh) : null);
   const dsThachThuc = ngaySinh ? thachThuc(ngaySinh) : null;
   const kqThaiDo = ngaySinh ? thaiDo(ngaySinh) : null;
   const soNgaySinh = ngaySinh ? rutDon(ngaySinh.ngay) : null;
   const buocNgaySinh = ngaySinh ? rutGon(ngaySinh.ngay, []).buoc : null;
   const soNoNghiep = ngaySinh ? noNghiepNgaySinh(ngaySinh.ngay) : undefined;
   const bieuDoMau = bieuDoNgaySinh(NGAY_VI_DU);
+
+  const hienNhanDocNhanh = (muc: TheDocNhanhItem) => {
+    if (muc.ma === 'so-chu-dao') {
+      return (
+        <ThuatNgu
+          ten={muc.nhan}
+          nghia={NGHIA_THUAT_NGU_TSH.soChuDao}
+          id="ck-bd-tn-scd"
+        />
+      );
+    }
+    if (muc.ma === 'nam-ca-nhan') {
+      return (
+        <ThuatNgu
+          ten={muc.nhan}
+          nghia={NGHIA_THUAT_NGU_TSH.namCaNhan}
+          id="ck-bd-tn-ncn"
+        />
+      );
+    }
+    if (muc.ma === 'dinh-cao') {
+      return (
+        <ThuatNgu
+          ten={muc.nhan}
+          nghia={NGHIA_THUAT_NGU_TSH.dinhCao}
+          id="ck-bd-tn-dc"
+        />
+      );
+    }
+    return muc.nhan;
+  };
 
   const giaTriInput = ngaySinh
     ? isoNgay(ngaySinh)
@@ -148,14 +189,38 @@ export default async function BieuDoNgaySinhPage({
       </div>
 
       {/* 2. Kết quả biểu đồ 3 × 3 và các chỉ số kèm ý nghĩa */}
-      {bieuDo && dinhCao && dsThachThuc && kqThaiDo && soNgaySinh && buocNgaySinh && ngaySinh ? (
+      {docNhanh && kqSoChuDao && bieuDo && dinhCao && dsThachThuc && kqThaiDo && soNgaySinh && buocNgaySinh && ngaySinh ? (
         <section className="ck-td-muc" aria-labelledby="ck-tsh-bd-kq">
           <h2 id="ck-tsh-bd-kq" className="ck-td-tieu">
             Biểu đồ ngày sinh {vietNgay(ngaySinh)}
           </h2>
 
+          <DocNhanh
+            cau={docNhanh.cau}
+            the={docNhanh.the}
+            luoiCot={4}
+            tieuDeId="ck-tsh-bd-dn"
+            hienNhan={hienNhanDocNhanh}
+          />
+
+          <VongTronSoChuDao
+            so={kqSoChuDao.cach1.so}
+            phepCong={kqSoChuDao.cach1.phepCong}
+            buoc={kqSoChuDao.cach1.buoc}
+            nhan="Số chủ đạo"
+            href={duongDanSoChuDao(kqSoChuDao.cach1.so)}
+            thuatNguId="ck-bd-vong-scd"
+            thuatNguNghia={NGHIA_THUAT_NGU_TSH.soChuDao}
+            phu={
+              kqSoChuDao.khac
+                ? `Cách 1 (cộng dồn) ra ${kqSoChuDao.cach1.so}; cách 2 (rút từng phần) ra ${kqSoChuDao.cach2.so}.`
+                : `Cộng dồn chữ số ngày ${vietNgay(ngaySinh)}.`
+            }
+          />
+
           <LuoiBieuDoNgaySinh
             bieuDo={bieuDo}
+            idPrefix="ck-bd-kq"
             moTa={`Lưới 3 × 3 biểu đồ ngày sinh ${vietNgay(ngaySinh)}`}
           />
 
@@ -165,47 +230,72 @@ export default async function BieuDoNgaySinhPage({
 
           <KhoiGhiChuYNghia />
 
-          <h3 className="ck-tsh-nhom-so-tieu">4 đỉnh cao theo tuổi</h3>
-          <div className="ck-bang-khung">
-            <table className="ck-bang ck-bang-the">
-              <thead>
-                <tr>
-                  <th>Thứ tự</th>
-                  <th>Phép cộng</th>
-                  <th>Số</th>
-                  <th>Khoảng tuổi</th>
-                </tr>
-              </thead>
-              <tbody>
-                {dinhCao.map((dc) => {
-                  const khoangTuoi =
-                    dc.denTuoi !== null
-                      ? `${dc.tuTuoi}–${dc.denTuoi}`
-                      : `${dc.tuTuoi} trở đi`;
-                  return (
-                    <tr key={dc.thu}>
-                      <td data-nhan="Thứ tự">
-                        <b>Đỉnh {dc.thu}</b>
-                      </td>
-                      <td data-nhan="Phép cộng">
-                        <code>{dc.phepCong}</code>
-                      </td>
-                      <td data-nhan="Số">
-                        {laSoChuDaoHopLe(dc.so) ? (
-                          <Link href={duongDanSoChuDao(dc.so)}>
+          <h3 className="ck-tsh-nhom-so-tieu">
+            4{' '}
+            <ThuatNgu
+              ten="đỉnh cao"
+              nghia={NGHIA_THUAT_NGU_TSH.dinhCao}
+              id="ck-bd-tieu-dc"
+            />{' '}
+            theo tuổi
+          </h3>
+
+          <BonDinhCaoTrucQuan
+            ngaySinh={ngaySinh}
+            namXet={namNay}
+            dinhCao={dinhCao}
+            chiSoDinhHienTai={docNhanh.chiSoDinhHienTai}
+          />
+
+          <details className="ck-tsh-bang-details">
+            <summary className="ck-tsh-bang-summary">Xem dạng bảng 4 đỉnh cao</summary>
+            <div className="ck-bang-khung">
+              <table className="ck-bang ck-bang-the">
+                <thead>
+                  <tr>
+                    <th>Thứ tự</th>
+                    <th>Phép cộng</th>
+                    <th>Số</th>
+                    <th>Khoảng tuổi</th>
+                    <th>Năm dương lịch</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {dinhCao.map((dc) => {
+                    const khoangTuoi =
+                      dc.denTuoi !== null
+                        ? `${dc.tuTuoi}–${dc.denTuoi}`
+                        : `từ ${dc.tuTuoi}`;
+                    const khoangNam =
+                      dc.denTuoi !== null
+                        ? `${ngaySinh.nam + dc.tuTuoi}–${ngaySinh.nam + dc.denTuoi}`
+                        : `từ ${ngaySinh.nam + dc.tuTuoi}`;
+                    return (
+                      <tr key={dc.thu}>
+                        <td data-nhan="Thứ tự">
+                          <b>Đỉnh {dc.thu}</b>
+                        </td>
+                        <td data-nhan="Phép cộng">
+                          <code>{dc.phepCong}</code>
+                        </td>
+                        <td data-nhan="Số">
+                          {laSoChuDaoHopLe(dc.so) ? (
+                            <Link href={duongDanSoChuDao(dc.so)}>
+                              <strong>{dc.so}</strong>
+                            </Link>
+                          ) : (
                             <strong>{dc.so}</strong>
-                          </Link>
-                        ) : (
-                          <strong>{dc.so}</strong>
-                        )}
-                      </td>
-                      <td data-nhan="Khoảng tuổi">{khoangTuoi}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+                          )}
+                        </td>
+                        <td data-nhan="Khoảng tuổi">{khoangTuoi}</td>
+                        <td data-nhan="Năm dương lịch">{khoangNam}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </details>
 
           <p className="ck-tsh-so-sanh-dong">
             Đỉnh 1 kết thúc ở tuổi 36 trừ số chủ đạo (rút về 1 chữ số); mỗi đỉnh sau dài 9 năm. Sách khác có thể lấy mốc tuổi khác.
@@ -362,6 +452,7 @@ export default async function BieuDoNgaySinhPage({
         </p>
         <LuoiBieuDoNgaySinh
           bieuDo={bieuDoMau}
+          idPrefix="ck-bd-mau"
           moTa={`Lưới mẫu ngày ${vietNgay(NGAY_VI_DU)}`}
         />
       </section>

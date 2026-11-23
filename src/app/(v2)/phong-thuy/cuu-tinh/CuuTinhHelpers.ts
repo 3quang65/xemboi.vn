@@ -108,28 +108,14 @@ export function tenThangTiet(thang: number): string {
   return thang === 1 ? 'Tháng giêng' : `Tháng ${thang}`;
 }
 
-/** Lớp điểm nhấn màu theo đúng tên màu của sao (bạch, hắc, bích, lục, hoàng, xích, tử). */
-export function lopMauSao(so: number): string {
-  switch (so) {
-    case 1:
-    case 6:
-    case 8:
-      return 'ck-pt-ct-mau-bach';
-    case 2:
-      return 'ck-pt-ct-mau-hac';
-    case 3:
-      return 'ck-pt-ct-mau-bich';
-    case 4:
-      return 'ck-pt-ct-mau-luc';
-    case 5:
-      return 'ck-pt-ct-mau-hoang';
-    case 7:
-      return 'ck-pt-ct-mau-xich';
-    case 9:
-      return 'ck-pt-ct-mau-tu';
-    default:
-      return 'ck-pt-ct-mau-bach';
-  }
+export function phanTichLop(raw: string | undefined): 'nam' | 'thang' {
+  return raw === 'thang' ? 'thang' : 'nam';
+}
+
+export function phanTichThangTiet(raw: string | undefined, macDinh = 1): number {
+  if (!raw || !/^\d{1,2}$/.test(raw)) return macDinh;
+  const n = Number(raw);
+  return Number.isInteger(n) && n >= 1 && n <= 12 ? n : macDinh;
 }
 
 export function taoSchemaCuuTinhWebPage(
