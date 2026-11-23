@@ -1,3 +1,4 @@
+import { chanChatCu } from '@/lib/ai/chat-cu';
 import { NextResponse } from 'next/server';
 import { TuVi } from '@/lib/core/tuvi';
 import { streamChatResponse } from '@/lib/ai/rag-engine';
@@ -28,6 +29,8 @@ function detectInquiryCategory(question: string): { category: string; categoryNa
 }
 
 export async function POST(req: Request) {
+  const chan = chanChatCu();
+  if (chan) return chan;
   try {
     const body = await req.json();
 

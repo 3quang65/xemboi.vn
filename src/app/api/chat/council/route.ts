@@ -1,3 +1,4 @@
+import { chanChatCu } from '@/lib/ai/chat-cu';
 import {
   parseChartForCouncil,
   diagnoseChartAfflictions,
@@ -78,6 +79,8 @@ const MASTER_METAS: Record<string, { badge: string; statusPrep: string; statusCo
 };
 
 export async function POST(req: Request) {
+  const chan = chanChatCu();
+  if (chan) return chan;
   await lamMoiFewShot(prisma);
   try {
     const body = await req.json();

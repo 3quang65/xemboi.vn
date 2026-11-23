@@ -80,13 +80,18 @@
 20. **Xin phép tác giả sau khi xong sản phẩm** (anh cho dùng trước ngày 23/11/2026). Danh sách đầy đủ ở `14-so-giay-phep.md` mục 1, cột "CẦN XIN PHÉP". Hiện có:
     - **Nhật Nguyệt** (nhatnguyet.org, lienhe@nhatnguyet.org): lời ý nghĩa thần số học, CC BY-NC 4.0. Dùng ở mọi trang `/than-so-hoc/*`. Kho của họ còn lời luận tử vi (2.016 dòng sao tại cung) và bát tự, chưa dùng.
     - **taibu** (hhszzzz): ý 8 điều luận giải cho chat, viết lại bằng tiếng Việt (AGPL).
-    - Còn tồn ở chat cũ: `conversation-store.ts`, `dialogue-simulation.ts`, `council-orchestrator.ts` vẫn có đoạn mẫu nói "vật phẩm", "cải vận". Em đã sửa phần định nghĩa trợ lý và thêm luật cấm; các đoạn mẫu cũ em dọn khi quay lại phần chat trả phí.
+    - Chat cũ: ba API thời v1 (`/api/hoi-thay`, `/api/chat/stream`, `/api/chat/council`) không còn giao diện nào gọi, chưa có xác thực và giới hạn lượt, vẫn trả đoạn mẫu "vật phẩm", "cải vận". Từ 23/11/2026 em tắt mặc định (trả 410, bật lại bằng `BAT_CHAT_CU=1`). Khoảng 150 đoạn mẫu trong `src/lib/ai` (`council-orchestrator.ts`, `dialogue-simulation.ts`, `conversation-store.ts`, các tệp `seeded-knowledge*.json`, `customer-inquiry-bank.json`, `few-shot-dialogues.json`) em viết lại khi làm phần chat trả phí. Khu quản trị (giả lập tọa đàm) vẫn đọc các đoạn này.
 21. **Cửu tinh năm, tháng (cụm Phong thủy) đã dựng, chờ xuất bản.** Gồm `/phong-thuy/cuu-tinh` (chọn năm 1901–2099) và 16 trang năm 2020–2035.
     - Tính theo Hiệp kỷ biện phương thư quyển 8 (sao năm, sao tháng, thuận bố cửu cung), khớp 600 ô bảng từng năm (quyển 15–19; bản Kanripo thiếu quyển 14) và 36 ô bảng tháng.
     - Năm đổi ở Lập xuân, tháng theo tiết; trang ghi rõ Hiệp kỷ chỉ chép "chính nguyệt", cách tính theo tiết là cách các sách lịch dùng.
     - Chỉ cho biết sao ở phương nào và sách nói gì. Không có "hóa giải", vật phẩm, "sát khí".
     - **Cần anh:** bấm xuất bản `PT-CUUTINH`, `PT-CUUTINH-NAM` khi thấy ổn. Hai dòng này đã nạp ở CSDL máy trạm dạng NHAP.
     - **Lưu ý deploy:** đừng chạy lại cả `scripts/seo-nap-ban-dau.ts` trên VPS. Script tự chuyển XUAT_BAN mọi dòng có trang đang chạy, tức sẽ tự xuất bản luôn TSH, CT, PT-CUUTINH khi anh chưa duyệt. Em sẽ nạp riêng 2 dòng Cửu tinh bằng `napTrangCsv` với tập trang rỗng như đã làm ở máy trạm.
+22. **Bản đồ sao (cụm Chiêm tinh) đang dựng, chờ xuất bản.** Trang `/chiem-tinh/ban-do-sao`: nhập ngày, giờ (có thể bỏ trống), tỉnh sinh.
+    - Vị trí 10 thiên thể tính bằng astronomy-engine (MIT), khớp JPL Horizons dưới 1 phút cung; cung mọc, thiên đỉnh, 12 nhà chia trọn cung.
+    - Múi giờ tự chọn theo năm và nơi sinh (vd 1960–6/1975 miền Nam UTC+8, miền Bắc UTC+7); 1947–1955 ghi rõ "chưa chắc" và cho chọn lại.
+    - Chỉ ghi vị trí, phẩm vị và câu Tetrabiblos; không luận tính cách. Tọa độ tỉnh từ GeoNames (CC BY 4.0, trang có ghi công).
+    - Dòng SEO `CT-BANDOSAO` để NHAP, anh duyệt xuất bản.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026

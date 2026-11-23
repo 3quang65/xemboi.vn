@@ -1,9 +1,12 @@
+import { chanChatCu } from '@/lib/ai/chat-cu';
 import { streamChatResponse } from '@/lib/ai/rag-engine';
 import { upsertCustomerLead } from '@/lib/crm/customer-service';
 import { prisma } from '@/lib/prisma';
 import { cacheGet } from '@/lib/redis';
 
 export async function POST(req: Request) {
+  const chan = chanChatCu();
+  if (chan) return chan;
   try {
     const body = await req.json();
     const { message, conversationHistory = [], chartData, activeChartId, visitorId, agentSlug } = body;
