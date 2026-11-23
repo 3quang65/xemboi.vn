@@ -71,6 +71,12 @@
     - Menu: thêm nút "Thêm" ở desktop gom các hub phụ (cờ `them` trong `dieu-huong.ts`), bỏ mục "Trang chủ" trên desktop vì logo đã dẫn về trang chủ. Chiêm tinh, Phong tục sau này cũng vào nhóm này.
     - SEO nhóm TSH đã sửa chữ cho khớp (bỏ "tính cách, nghề", "ý nghĩa"); CSDL máy trạm đã sửa, deploy tới sửa VPS bằng `may-tram/seo-tsh-moi.json`.
     - **Cần anh:** bấm xuất bản các dòng `TSH`, `TSH-TINH`, `TSH-SO`, `TSH-TEN`, `TSH-BIEUDO`, `TSH-NAMCANHAN` khi anh thấy ổn.
+19. **Cụm Chiêm tinh (F6) đã dựng, chờ xuất bản.** Gồm `/chiem-tinh`, `/chiem-tinh/cung-hoang-dao` (tra cung theo ngày giờ sinh, bảng 12 cung) và 12 trang cung.
+    - Nguồn duy nhất là *Tetrabiblos* của Ptolemy, bản dịch Anh Ashmand 1822 (Gutenberg, phạm vi công cộng). Trang trích nguyên văn tiếng Anh, không dịch: loại cung, dương/âm, nhà của hành tinh, tam hợp, vượng/hãm.
+    - Giờ Mặt Trời vào cung tính bằng VSOP87D, khớp tiết khí chẵn 30° tới dưới 2 giây (2000–2030).
+    - **Không có** tính cách 12 cung, hợp cung, nguyên tố: Tetrabiblos không viết những thứ này. Trang ghi rõ vì sao.
+    - Chưa làm: bản đồ sao (sẽ làm bằng `astronomy-engine`, MIT, theo 20-hoc-tu-4-repo), trang hành tinh, trang nhà.
+    - **Cần anh:** bấm xuất bản các dòng `CT`, `CT-CHD`, `CT-CUNG` khi anh thấy ổn. Deploy tới sửa VPS bằng `may-tram/seo-ct-moi.json`.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026

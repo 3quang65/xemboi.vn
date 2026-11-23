@@ -54,8 +54,9 @@ test('menu chỉ hiện trang đã dựng; breadcrumb đi theo cha', () => {
   const f1 = menuChinh(1);
   assert.deepEqual(f1.map((m) => m.href), ['/tu-vi']);
   assert.deepEqual(f1[0].con.map((m) => m.href), ['/tu-vi/lap-la-so', '/tu-vi-2027']);
-  assert.equal(menuChinh(5).length, 9);
-  assert.deepEqual(menuChinh(5).filter((m) => m.them).map((m) => m.href), ['/than-so-hoc']);
+  assert.equal(menuChinh(5).length, 10);
+  assert.deepEqual(menuChinh(5).filter((m) => m.them).map((m) => m.href), ['/than-so-hoc', '/chiem-tinh']);
+  assert.deepEqual(breadcrumb('/chiem-tinh/cung-hoang-dao/bo-cap', 'Cung Bọ Cạp').map((m) => m.ten), ['Trang chủ', 'Chiêm tinh', '12 cung hoàng đạo', 'Cung Bọ Cạp']);
   assert.deepEqual(breadcrumb('/than-so-hoc/so-chu-dao/7', 'Số chủ đạo 7').map((m) => m.ten), ['Trang chủ', 'Thần số học', 'Số chủ đạo', 'Số chủ đạo 7']);
   assert.deepEqual(breadcrumb('/than-so-hoc/nam-ca-nhan/3', 'Năm cá nhân 3').map((m) => m.href), ['/', '/than-so-hoc', '/than-so-hoc/nam-ca-nhan/3']);
   assert.deepEqual(breadcrumb('/phong-thuy/cung-phi/kham-thuy', 'Cung Khảm').map((m) => m.ten), ['Trang chủ', 'Phong thủy', 'Cung phi', 'Cung Khảm']);

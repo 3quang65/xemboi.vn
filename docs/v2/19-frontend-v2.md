@@ -260,4 +260,9 @@ Một trang v2 chỉ được index khi `SeoTrang` của nó có `trangThai = XU
   - Menu: cờ `them` trong `dieu-huong.ts`; desktop gom hub phụ vào nút "Thêm" và bỏ mục "Trang chủ" (logo đã dẫn về). Một hàng ở 1001–1920px.
   - SEO nhóm TSH sửa chữ cho khớp (bỏ "tính cách, nghề", "ý nghĩa"); deploy tới sửa VPS bằng `may-tram/seo-tsh-moi.json`. Không có URL cũ nào chuyển hướng sang cụm này.
   - Quét dev: 1.483 trang, 1.473 trả 200; 10 trang 500 lúc dev biên dịch song song, gọi lại đều 200 (build qua). 0 chỗ trống, 0 trang v1. 121/121 test, tsc 0 lỗi.
+- 23/11: **F6 Chiêm tinh.**
+  - Lib `src/lib/trang/chiem-tinh.ts`: 12 cung, giờ Mặt Trời vào cung (VSOP87D, tìm quanh mốc ước rồi chia đôi), tra cung theo ngày giờ sinh có báo ngày chuyển cung, dữ liệu Tetrabiblos quyển I (ch. XIV, XV, XX, XXI, XXII) kèm câu trích nguyên văn Ashmand 1822, đã kiểm khớp từng chữ với tệp Gutenberg.
+  - Antigravity làm giao diện (Lệnh 36): hub có vòng 12 cung SVG, công cụ tra cung + bảng 12 cung, 12 trang cung. Đã duyệt chữ: không có tính cách, nguyên tố, hợp cung, bản dịch.
+  - Menu "Thêm" có Chiêm tinh. Không làm bản đồ sao, hành tinh, nhà (để sau).
+  - 129/129 test, tsc 0 lỗi.
 - Deploy lần tới phải chạy `npm ci` vì có gói mới `lunar-javascript`.
