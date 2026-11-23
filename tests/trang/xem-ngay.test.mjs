@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import L from 'lunar-javascript';
 import {
-  TRUC, THAN_12, TRICH_DOAN, chiSoTruc, chiSoThan, chiKhoiThanhLong, thangTiet, xemNgay, ngayTheoViec, VIEC,
+  TRUC, THAN_12, TRICH_DOAN, phanTichThangXemNgay, thangKe, thangXemNgay, laMaViec, chiSoTruc, chiSoThan, chiKhoiThanhLong, thangTiet, xemNgay, ngayTheoViec, VIEC,
 } from '../../src/lib/trang/xem-ngay.ts';
 import { TEN_NGHI_KY, TEN_THAN_SAT } from '../../src/lib/trang/xem-ngay-thuat-ngu.ts';
 import { lietKeTietKhi } from '../../src/lib/tuvi-v2/tiet-khi.mjs';
@@ -126,4 +126,13 @@ test('Báo lỗi ngoài phạm vi', () => {
   assert.throws(() => xemNgay(30, 2, 2027), RangeError);
   assert.throws(() => xemNgay(1, 1, 1899), RangeError);
   assert.throws(() => ngayTheoViec('cuoi-hoi', 2027, 13), RangeError);
+});
+
+test('Đoạn đường dẫn tháng và tháng kề', () => {
+  assert.deepEqual(phanTichThangXemNgay('thang-02-2027'), { nam: 2027, thang: 2 });
+  for (const x of ['thang-2-2027', 'thang-13-2027', 'thang-01-2019', 'thang-01-2036', 'cuoi-hoi']) assert.equal(phanTichThangXemNgay(x), null, x);
+  assert.deepEqual(thangKe(2027, 1).truoc, { nam: 2026, thang: 12 });
+  assert.equal(thangKe(2035, 12).sau, null);
+  assert.equal(thangXemNgay(2028, 2).length, 29);
+  assert.ok(laMaViec('mua-xe') && !laMaViec('xuat-hanh') && !laMaViec('thang-01-2027'));
 });

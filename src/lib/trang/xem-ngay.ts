@@ -259,3 +259,45 @@ export function ngayTheoViec(ma: MaViec, nam: number, thang: number): ThangTheoV
   }
   return { viec, nam, thang, ngay: ds, hop: ds.filter((n) => n.ket === 'hop'), ky: ds.filter((n) => n.ket === 'ky') };
 }
+
+// ---------- Trang tháng (/xem-ngay/thang-mm-yyyy và /xem-ngay/{viec}/thang-mm-yyyy) ----------
+
+/** Năm có trang tháng (ngoài khoảng: 404). Cùng khoảng với trang lịch năm được index. */
+export const NAM_TRANG_THANG_TU = 2020;
+export const NAM_TRANG_THANG_DEN = 2035;
+
+/** Đọc đoạn "thang-11-2026" (tháng 2 chữ số). Sai mẫu hoặc ngoài khoảng năm thì null. */
+export function phanTichThangXemNgay(doan: string): { nam: number; thang: number } | null {
+  const m = /^thang-(\d{2})-(\d{4})$/.exec(doan);
+  if (!m) return null;
+  const thang = Number(m[1]);
+  const nam = Number(m[2]);
+  if (thang < 1 || thang > 12 || nam < NAM_TRANG_THANG_TU || nam > NAM_TRANG_THANG_DEN) return null;
+  return { nam, thang };
+}
+
+export const doanThang = (nam: number, thang: number) => `thang-${String(thang).padStart(2, '0')}-${nam}`;
+
+/** Tháng trước và sau (null nếu ra ngoài khoảng có trang). */
+export function thangKe(nam: number, thang: number): { truoc: { nam: number; thang: number } | null; sau: { nam: number; thang: number } | null } {
+  const t = thang === 1 ? { nam: nam - 1, thang: 12 } : { nam, thang: thang - 1 };
+  const s = thang === 12 ? { nam: nam + 1, thang: 1 } : { nam, thang: thang + 1 };
+  const trong = (x: { nam: number }) => x.nam >= NAM_TRANG_THANG_TU && x.nam <= NAM_TRANG_THANG_DEN;
+  return { truoc: trong(t) ? t : null, sau: trong(s) ? s : null };
+}
+
+/** Mọi ngày của một tháng dương lịch, đủ ba lớp. */
+export function thangXemNgay(nam: number, thang: number): NgayXem[] {
+  kiemNam(nam);
+  if (!Number.isInteger(thang) || thang < 1 || thang > 12) throw new RangeError(`Tháng không hợp lệ: ${thang}`);
+  const ds: NgayXem[] = [];
+  for (let d = 1; d <= 31 && ngayHopLe(d, thang, nam); d++) ds.push(xemNgay(d, thang, nam));
+  return ds;
+}
+
+/**
+ * Việc có trang riêng /xem-ngay/{ma} và /xem-ngay/{ma}/thang-mm-yyyy. Không có 'xuat-hanh':
+ * /xem-ngay/xuat-hanh là trang giờ xuất hành Tết (XN-XUATHANH), việc xuất hành chỉ hiện ở trang hub và trang ngày.
+ */
+export const MA_VIEC_CO_TRANG: MaViec[] = ['cuoi-hoi', 'khai-truong', 'dong-tho', 'nhap-trach', 'mua-xe', 'cat-toc'];
+export const laMaViec = (s: string): s is MaViec => (MA_VIEC_CO_TRANG as string[]).includes(s);
