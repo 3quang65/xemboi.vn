@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
+    "astronomy-engine": "2.1.19",
     "html2canvas": "^1.4.1",
     "ioredis": "^5.4.1",
     "lunar-javascript": "1.7.8",
