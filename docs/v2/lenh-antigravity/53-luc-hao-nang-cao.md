@@ -61,6 +61,7 @@ Chi lấy theo chỉ số Tý 0 … Hợi 11. Trang Lục hào đã có `thoiGia
      - tô hào dụng thần (và hào `haoVuong` nếu có);
      - ghi nhãn nhỏ "Nguyên" / "Kỵ" / "Cừu" cạnh các hào tương ứng;
      - khối "Dụng thần: {lucThan}" nêu các hào, hoặc phục thần nếu vắng;
+     - gọi `dungThanTheoViec(qa, hao, viec, chiThang)`; khi `nguyetKien` là true, ghi thêm "Nguyệt kiến mang đúng hành dụng thần" và trích `TRICH_NANG_CAO.nguyetKienDung` (sách lấy nguyệt kiến làm dụng thần, không cần tìm phục); phục thần vẫn in như cũ;
      - có trích `dungThan` hoặc `tuXem` (theo `viec.trich`), `nguyenKyCuu`; có `chonHaoVuong` khi có nhiều hào.
 4. **Ứng kỳ:** khi có `viec`, thêm khối `<details>` "Mốc ứng kỳ theo sách". Mỗi hào dụng thần in các dòng `dieuKien → ngày …(tháng …)`, kèm trích `ungKy`.
    - Ghi rõ một câu: "Sách nêu các mốc có thể ứng; trang không chọn mốc nào."

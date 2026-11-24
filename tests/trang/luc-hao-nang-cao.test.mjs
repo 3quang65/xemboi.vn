@@ -81,6 +81,10 @@ test('dụng thần theo việc: hào Thế, vắng dụng thần thì lấy ph�
   assert.deepEqual(ban.cacHao.map((x) => x.viTri), [3]);
   assert.equal(ban.lucThan, 'Huynh đệ');
   assert.equal(dungThanTheoViec(qa, h, 'khong-co'), null);
+  // Nguyệt kiến mang hành dụng thần (23872): tháng Ngọ Hỏa là Thê tài của cung Khảm → lấy nguyệt kiến, không cần phục.
+  assert.equal(dungThanTheoViec(qa, h, 'tien-cua', 11).nguyetKien, false);
+  assert.equal(dungThanTheoViec(qa, h, 'tien-cua', 6).nguyetKien, true);
+  assert.equal(dungThanTheoViec(qa, h, 'cha-me', 6).nguyetKien, false); // có hào Phụ mẫu thì không xét
   assert.equal(new Set(VIEC_HOI.map((v) => v.ma)).size, VIEC_HOI.length);
 });
 

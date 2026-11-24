@@ -20,6 +20,11 @@ export const NGUON_HOA_CHAU_LAM = {
 export type TrichNangCao = TrichLucHao & { nguon: 'WS07' | 'WS09' };
 
 export const TRICH_NANG_CAO = {
+  nguyetKienDung: {
+    nguon: 'WS07', doanId: 23872, viTriViet: 'Chương 16 · Nguyệt kiến',
+    nguyenVan: '卦無用神卽以月建爲用神，不必尋伏神也。',
+    dich: 'Trong quẻ không có dụng thần thì lấy nguyệt kiến làm dụng thần, không cần tìm phục thần.',
+  },
   dungThan: {
     nguon: 'WS07', doanId: 23859, viTriViet: 'Chương 8 · Dụng thần',
     nguyenVan: '父母爻：占父母卽以卦中之父母爻爲神。…占天地、城池、墻垣，宅捨、屋宇，舟車、衣服、雨具、綢緞，布匹、章奏、文書及書館文契也以父母爻爲用神…官鬼爻：占功名、官府、雷霆鬼神、妻占夫皆以官鬼爻爲用神。占亂臣賊盜邪崇也以官鬼爻爲用神…兄弟爻：占兄弟、姐妹、族中兄弟、姑姨、妹夫及結拜兄弟都以兄弟爻爲用神。…占姊丈妹夫以世爻爲用神…妻財爻：占妻妾、婢、僕、役，我驅使之人皆以要財爻爲用神。占貨財、珠寶、倉庫一切使用之財物亦以妻財爻爲用神。子孫爻：占子孫、占女、女婿、侄、甥、門生凡在我子孫輩中皆以子孫爻爲用神。占忠臣、良將、醫藥、僧、道、兵卒皆以子孫爻爲用神。占六畜、禽獸亦以子孫爻爲用神。',
@@ -155,6 +160,8 @@ export type KetQuaDungThan = {
   cacHao: HaoNangCao[];
   /** Dụng thần vắng trong quẻ: phục thần cùng loại. */
   phuc: PhucThan[];
+  /** Dụng thần vắng mà nguyệt kiến mang đúng hành ấy: sách lấy nguyệt kiến làm dụng thần, không cần tìm phục (23872). */
+  nguyetKien: boolean;
   /** Có từ hai hào trở lên: hào lâm nguyệt kiến hoặc vượng (theo câu "chọn hào vượng mà dùng"); null nếu không phân được. */
   haoVuong: number | null;
   nguyen: { lucThan: LucThan; cacHao: number[] };
@@ -173,7 +180,7 @@ export function haoNangCao(qa: QueAn, chiThang: number | null, chiNgay: number |
 
 const DIEM_VUONG = (h: HaoNangCao) => (!h.vuongSuy ? 0 : h.vuongSuy.lamNguyetKien ? 3 : h.vuongSuy.muc === 'Vượng' ? 2 : h.vuongSuy.muc === 'Tướng' ? 1 : 0);
 
-export function dungThanTheoViec(qa: QueAn, hao: HaoNangCao[], maViec: string): KetQuaDungThan | null {
+export function dungThanTheoViec(qa: QueAn, hao: HaoNangCao[], maViec: string, chiThang: number | null = null): KetQuaDungThan | null {
   const viec = VIEC_HOI.find((v) => v.ma === maViec);
   if (!viec) return null;
   const haoThe = hao.find((h) => h.theUng === 'Thế')!;
@@ -190,6 +197,7 @@ export function dungThanTheoViec(qa: QueAn, hao: HaoNangCao[], maViec: string): 
   return {
     viec, lucThan, cacHao, haoVuong,
     phuc: cacHao.length ? [] : phucThan(qa).filter((p) => p.lucThan === lucThan),
+    nguyetKien: !cacHao.length && chiThang !== null && lucThanCua(qa.hanhCung, HANH_CHI[chiThang]) === lucThan,
     nguyen: { lucThan: nkc.nguyen, cacHao: tim(nkc.nguyen) },
     ky: { lucThan: nkc.ky, cacHao: tim(nkc.ky) },
     cuu: { lucThan: nkc.cuu, cacHao: tim(nkc.cuu) },
