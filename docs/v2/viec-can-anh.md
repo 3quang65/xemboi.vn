@@ -132,7 +132,11 @@
     - **Cần anh quyết hai khối chưa làm:**
       - **Khối xem tuổi 4 tầng:** tầng cung phi đang dùng bảng đại du niên (bảng xem nhà); *Hiệp kỷ* ghi hợp hôn dùng tiểu du niên. Cần anh chọn bảng trước khi đưa vào (cũng ảnh hưởng `/xem-tuoi/vo-chong`).
       - **Khối so Mặt Trời, Mặt Trăng hai người:** em đã kiểm câu ở Tetrabiblos quyển IV chương V (bản Ashmand 1822, tr. 125). Sách viết: hai vầng sáng thành tam hợp, lục hợp thì ở với nhau lâu; đối xung, vuông góc thì "sớm tan, dẫn tới chia lìa". Câu này trái với tiêu chí "không phán chia tay" của trang, nên em chưa làm.
-30. **Bài kiến thức nháp** `/kien-thuc/vi-sao-hai-trang-ra-hai-la-so-khac-nhau` (`KT-HAILASO`) và `/kien-thuc/vi-sao-cac-noi-xem-tuoi-khac-nhau` (`KT-KHACNHAU`): em soạn bản nháp từ số đo đối chiếu có sẵn (`docs/v2/bai-nhap/`), nạp vào quản trị ở trạng thái nháp. Cần biên tập viên đọc và bấm xuất bản. Phần Kim lâu chỉ nêu các cách tính đang lưu hành, không chọn cách nào (mục 15).
+30. **Bài kiến thức nháp** `/kien-thuc/vi-sao-hai-trang-ra-hai-la-so-khac-nhau` (`KT-HAILASO`) và `/kien-thuc/vi-sao-cac-noi-xem-tuoi-khac-nhau` (`KT-KHACNHAU`): đã soạn (khoảng 1.500 và 1.350 từ, mọi con số lấy từ biên bản đối chiếu) và nạp vào quản trị ở trạng thái nháp (`scripts/nap-bai-nhap.ts`, bản gốc ở `docs/v2/bai-nhap/`). Cần biên tập viên đọc và bấm xuất bản. Lưu ý khi duyệt:
+    - lá số xemboi chưa có tùy chọn đổi quy ước an sao, nên mục "Tự kiểm" hướng dẫn cách so tương đương (chọn Tý sớm, tự trừ một giờ cho người sinh ở miền Nam 1960–1975);
+    - bài 2 có câu "trang xem tuổi vợ chồng của xemboi hiện cũng dùng bảng xem nhà" (đúng sự thật, bỏ nếu anh không muốn nói);
+    - phần Kim lâu chỉ nêu các cách tính đang lưu hành, không chọn cách nào (mục 15).
+    - Khi đưa lên VPS: chạy lại `scripts/nap-bai-nhap.ts KT-HAILASO docs/v2/bai-nhap/kt-hailaso.md` và `KT-KHACNHAU …kt-khacnhau.md`.
 31. **`/goi`, `/tu-vi/luan-giai`, `/tu-vi/hop-la-so`, `/tu-vi-theo-tuoi`:** đã đối chiếu giá và nội dung đối thủ (`tinh-yeu-goi-bai.md` mục 2, 3.5 và 4). Vẫn chờ anh như mục 7: giá, nội dung gói, SePay, chính sách bảo mật. Em chưa dựng.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
