@@ -103,8 +103,8 @@
     - Tứ Hóa: câu phú Tử Vi Đẩu Số toàn thư quyển 2 ghi can Canh "Nhật Vũ Âm Đồng" (Khoa Thái Âm, Kỵ Thiên Đồng), khác bảng sách Việt mình đang dùng ("Nhật Vũ Đồng Âm"). Can Nhâm thì Toàn thư khớp sách Việt (Khoa Thiên Phủ). Trang hiện cả ba cách ghi. **Em đang để:** lá số vẫn dùng bảng Việt. Người duyệt nên xem lại.
     - **Cần anh:** bấm xuất bản `XT-CAP-IDX`, `XT-CAP`, `TUVI-TUHOA` khi thấy ổn.
 25. **Trang trong kế hoạch SEO còn chưa dựng vì cần người viết hoặc cần anh quyết** (rà 24/11):
-    - Văn khấn: 21 trang `/van-khan/*` và hub. Cần nguồn văn khấn dùng được công khai hoặc người soạn; em không tự viết lời khấn.
-    - Phong tục: `/phong-tuc`, `/phong-tuc/cung-duong`, `/phong-tuc/xin-xam`; phần phong tục của trang ngày lễ (mục 23).
+    - Văn khấn: hub và 20 trang `/van-khan/*`. Riêng `/van-khan/ngay-gio` đang dựng từ sách 1932 (mục 32). Các trang còn lại cần nguồn dùng được công khai hoặc người soạn; em không tự viết lời khấn.
+    - Phong tục: `/phong-tuc`, `/phong-tuc/cung-duong`, `/phong-tuc/xin-xam`. Phần phong tục của trang ngày lễ đang dựng từ sách 1915 (mục 32).
     - Xem tuổi: `/xem-tuoi/kim-lau`, `tam-tai`, `hoang-oc`, `lam-nha`, `nam-tuoi`, `lam-an` (mục 15).
     - Bài viết: `/bat-tu/ngu-hanh-khuyet`, `/tu-vi/cach-doc-la-so`, các bài `/kien-thuc/*`, `/tu-vi-theo-tuoi` và trang tử vi năm theo tuổi (cần lời luận đã duyệt).
     - Cần anh quyết: `/goi` và `/tu-vi/luan-giai` (mục 7, 31), `/tu-vi/hop-la-so` (Gói 3). `/boi-tinh-yeu` đang dựng phần không cần quyết (mục 29).
@@ -119,7 +119,7 @@
     - Cần người am hiểu đọc lại bản dịch các câu sách (Mai hoa 10 câu, Lục hào 8 câu) trước khi xuất bản.
     - Phục thần, dụng thần theo việc hỏi, vượng suy, ứng kỳ (lục hào) và thịnh suy Mai hoa: đang dựng ở Lệnh 53, xem mục 28.
     - **Đã xuất bản 24/11** (anh cho xuất bản nếu đối chiếu đạt): khớp daogiao.io.vn, maihoa.kabala.vn, thayungkhiem.vn; biên bản `docs/v2/doi-chieu/mai-hoa-luc-hao.md`. Mới xuất bản trên máy anh; khi đưa lên VPS em chạy lại bước ở mục 26.
-28. **Lục hào nâng cao và thịnh suy Mai hoa (Lệnh 53) đang dựng.** Thêm vào hai trang đã xuất bản: vượng suy theo tháng, nhật thần (ám động, nhật phá), phục thần, dụng thần theo 16 việc hỏi (nguyên, kỵ, cừu thần), các mốc ứng kỳ sách nêu; Mai hoa thêm thịnh suy theo tháng, ngày.
+28. **Lục hào nâng cao và thịnh suy Mai hoa (Lệnh 53) đã xong 24/11 (commit 3e360fc)**, nằm trong hai trang đã xuất bản. Thêm vào hai trang đã xuất bản: vượng suy theo tháng, nhật thần (ám động, nhật phá), phục thần, dụng thần theo 16 việc hỏi (nguyên, kỵ, cừu thần), các mốc ứng kỳ sách nêu; Mai hoa thêm thịnh suy theo tháng, ngày.
     - Đối chiếu 14 trang Việt và sách (*Tăng san bốc Dịch*, *Hỏa châu lâm*, bản dịch *Lục hào bảo điển*): `docs/v2/doi-chieu/luc-hao-nang-cao.md`.
     - Phục thần khớp daogiao.io.vn (Ký Tế phục Thê tài Ngọ dưới hào 3). Thêm quy tắc chương 16: quẻ vắng dụng thần mà nguyệt kiến mang đúng hành ấy thì sách lấy nguyệt kiến, không cần phục.
     - **Em đang làm theo sách, anh xem có muốn khác không:**
@@ -138,6 +138,17 @@
     - phần Kim lâu chỉ nêu các cách tính đang lưu hành, không chọn cách nào (mục 15).
     - Khi đưa lên VPS: chạy lại `scripts/nap-bai-nhap.ts KT-HAILASO docs/v2/bai-nhap/kt-hailaso.md` và `KT-KHACNHAU …kt-khacnhau.md`.
 31. **`/goi`, `/tu-vi/luan-giai`, `/tu-vi/hop-la-so`, `/tu-vi-theo-tuoi`:** đã đối chiếu giá và nội dung đối thủ (`tinh-yeu-goi-bai.md` mục 2, 3.5 và 4). Vẫn chờ anh như mục 7: giá, nội dung gói, SePay, chính sách bảo mật. Em chưa dựng.
+32. **Văn khấn và phong tục theo sách hết bản quyền (Lệnh 55) đang dựng.** Đối chiếu: `docs/v2/doi-chieu/van-khan-phong-tuc.md`.
+    - **Thị trường:** các trang văn khấn lớn chép cùng một sách còn bản quyền (*Văn khấn cổ truyền Việt Nam*) và không ghi người soạn. Phần phong tục thường tự viết, không dẫn sách.
+    - **Mình dùng hai sách hết bản quyền, in nguyên văn, ghi năm in:**
+      - *Việt Nam phong tục* của Phan Kế Bính (1915) cho khối phong tục ở 8 trang lễ, `/tet` và tiết Thanh minh;
+      - *Gia lễ giản yếu* của Dương Bá Trạc (1932) cho trang `/van-khan/ngay-gio`: điền tên, ngày để in ra, chữ sách giữ nguyên.
+    - **Anh nên biết:**
+      - Sách 1932 có 5 bài khấn (tang, giỗ, tiết lệ, thần trong nhà), không có cúng 49 ngày, Thần Tài, rằm mùng một.
+      - Tác giả còn khuyên bỏ các tết Đoan ngọ, Thượng nguyên, Trung nguyên, Trung thu (chỉ giữ Tết, Thanh minh, cơm mới); trang in nguyên câu ấy kèm năm in.
+      - Vía Thần Tài, Giỗ Tổ Hùng Vương, Phật đản không có trong sách 1915 nên trang lễ đó không có khối phong tục.
+    - **Cần anh nếu muốn đủ 21 trang văn khấn:** người soạn, hoặc xin phép tác giả sách còn bản quyền. Em chưa dựng các trang đó.
+    - **Chờ duyệt:** dòng SEO `VK-GIO` để NHAP. Em sẽ xuất bản khi trang dựng xong và kiểm đạt, theo lời anh "Ok thì xuất bản".
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026
