@@ -113,10 +113,11 @@
 26. **Bước deploy lên VPS cho các đợt 24/11** (em làm khi đưa lên VPS một lần, ghi đây để anh biết):
     - chạy `scripts/seo-chi-tieng-viet.ts` (sửa chữ SEO theo quy tắc chỉ tiếng Việt);
     - nạp riêng các dòng SEO mới bằng `scripts/seo-nap-dong.ts` (để NHAP, không tự xuất bản): các dòng ở mục 23, 24, 27 (lệnh đủ ở 19 nhật ký).
-27. **Kinh Dịch: Mai hoa Dịch số và Lục hào (Lệnh 51, 52) đang dựng, chờ xuất bản.** `/kinh-dich/mai-hoa-dich-so`, `/kinh-dich/luc-hao` (SEO `KD-MAIHOA`, `KD-LUCHAO` để NHAP).
+27. **Kinh Dịch: Mai hoa Dịch số và Lục hào (Lệnh 51, 52) đã dựng (commit d6ece9e), chờ xuất bản.** `/kinh-dich/mai-hoa-dich-so`, `/kinh-dich/luc-hao` (SEO `KD-MAIHOA`, `KD-LUCHAO` để NHAP).
     - Cả hai chỉ tính quẻ theo sách, không luận việc. Mai hoa khớp hai ví dụ chép trong sách (xem hoa mai, xem hoa mẫu đơn). Lục hào khớp bảng an sẵn 64 quẻ của *Tăng san bốc Dịch* 383/384 hào; hào lệch là lỗi chép của bảng (hào đầu quẻ Khốn), em theo quy tắc nạp chi của chính sách.
-    - Cần người am hiểu đọc lại bản dịch các câu sách (Mai hoa 12 câu, Lục hào 8 câu) trước khi xuất bản.
+    - Cần người am hiểu đọc lại bản dịch các câu sách (Mai hoa 10 câu, Lục hào 8 câu) trước khi xuất bản.
     - Chưa làm, cần người duyệt: phục thần, dụng thần theo việc hỏi, vượng suy theo mùa, ứng kỳ (lục hào); vượng suy theo mùa (Mai hoa: sách ghi tháng tứ quý chồng lên mùa, chưa rõ cách lấy).
+    - **Cần anh:** bấm xuất bản `KD-MAIHOA`, `KD-LUCHAO` khi thấy ổn.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026
