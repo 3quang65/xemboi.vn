@@ -1264,6 +1264,17 @@ export default async function BatTuLapLaSoPage({
 
               <div className="ck-bt-nh-duoi">
                 <ChuGiaiHanh />
+                <p className="ck-bt-nh-phu" style={{ marginTop: '0.75rem' }}>
+                  <Link
+                    href={
+                      !tamTru && ketQua
+                        ? `/bat-tu/ngu-hanh-khuyet?ngay=${ketQua.dauVao.ngay}&thang=${ketQua.dauVao.thang}&nam=${ketQua.dauVao.nam}&gio=${ketQua.dauVao.gio}&phut=${ketQua.dauVao.phut}&gioiTinh=${ketQua.dauVao.gioiTinh}`
+                        : '/bat-tu/ngu-hanh-khuyet'
+                    }
+                  >
+                    Vì sao đếm khác nhau ra khuyết khác nhau
+                  </Link>
+                </p>
               </div>
             </div>
           </section>

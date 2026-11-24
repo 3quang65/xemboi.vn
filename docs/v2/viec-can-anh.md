@@ -106,14 +106,14 @@
     - Văn khấn: hub và 20 trang `/van-khan/*`. Riêng `/van-khan/ngay-gio` đang dựng từ sách 1932 (mục 32). Các trang còn lại cần nguồn dùng được công khai hoặc người soạn; em không tự viết lời khấn.
     - Phong tục: `/phong-tuc`, `/phong-tuc/cung-duong`, `/phong-tuc/xin-xam`. Phần phong tục của trang ngày lễ đang dựng từ sách 1915 (mục 32).
     - Xem tuổi: `/xem-tuoi/kim-lau`, `tam-tai`, `hoang-oc`, `lam-nha`, `nam-tuoi`, `lam-an` (mục 15).
-    - Bài viết: `/bat-tu/ngu-hanh-khuyet`, `/tu-vi/cach-doc-la-so`, các bài `/kien-thuc/*`, `/tu-vi-theo-tuoi` và trang tử vi năm theo tuổi (cần lời luận đã duyệt).
+    - Bài viết: `/tu-vi/cach-doc-la-so`, các bài `/kien-thuc/*`, `/tu-vi-theo-tuoi` và trang tử vi năm theo tuổi (cần lời luận đã duyệt).
     - Cần anh quyết: `/goi` và `/tu-vi/luan-giai` (mục 7, 31), `/tu-vi/hop-la-so` (Gói 3). `/boi-tinh-yeu` đang dựng phần không cần quyết (mục 29).
     - Chiêm tinh `/chiem-tinh/nha/{n}` (12 trang): Tetrabiblos không đặt tên, nghĩa cho 12 nhà; cần nguồn khác dùng được công khai.
     - Các trang P3 khác em chưa làm (trừ 10 trang hành tinh, Lệnh 50; Mai hoa Dịch số, Lệnh 51; Lục hào, Lệnh 52).
 26. **Bước deploy lên VPS cho các đợt 24/11** (em làm khi đưa lên VPS một lần, ghi đây để anh biết):
     - chạy `scripts/seo-chi-tieng-viet.ts` (sửa chữ SEO theo quy tắc chỉ tiếng Việt);
     - nạp riêng các dòng SEO mới bằng `scripts/seo-nap-dong.ts` (để NHAP, không tự xuất bản): các dòng ở mục 23, 24, 27 (lệnh đủ ở 19 nhật ký).
-    - xuất bản lại trên VPS các trang anh đã cho: `scripts/seo-xuat-ban.ts KD-MAIHOA KD-LUCHAO XT-BOITINHYEU VK-GIO` (sau khi nạp dòng; dòng `VK-GIO` lấy tiêu đề mới trong `16-seo-trang.csv`).
+    - xuất bản lại trên VPS các trang anh đã cho: `scripts/seo-xuat-ban.ts KD-MAIHOA KD-LUCHAO XT-BOITINHYEU VK-GIO BT-KHUYET` (sau khi nạp dòng; dòng `VK-GIO`, `BT-KHUYET` lấy tiêu đề, mô tả mới trong `16-seo-trang.csv`).
 27. **Kinh Dịch: Mai hoa Dịch số và Lục hào (Lệnh 51, 52) đã dựng (commit d6ece9e), đã xuất bản 24/11.** `/kinh-dich/mai-hoa-dich-so`, `/kinh-dich/luc-hao` (SEO `KD-MAIHOA`, `KD-LUCHAO` để NHAP).
     - Cả hai chỉ tính quẻ theo sách, không luận việc. Mai hoa khớp hai ví dụ chép trong sách (xem hoa mai, xem hoa mẫu đơn). Lục hào khớp bảng an sẵn 64 quẻ của *Tăng san bốc Dịch* 383/384 hào; hào lệch là lỗi chép của bảng (hào đầu quẻ Khốn), em theo quy tắc nạp chi của chính sách.
     - Cần người am hiểu đọc lại bản dịch các câu sách (Mai hoa 10 câu, Lục hào 8 câu) trước khi xuất bản.
@@ -149,6 +149,7 @@
       - Vía Thần Tài, Giỗ Tổ Hùng Vương, Phật đản không có trong sách 1915 nên trang lễ đó không có khối phong tục.
     - **Cần anh nếu muốn đủ 21 trang văn khấn:** người soạn, hoặc xin phép tác giả sách còn bản quyền. Em chưa dựng các trang đó.
     - **Chờ duyệt:** dòng SEO `VK-GIO` để NHAP. Em sẽ xuất bản khi trang dựng xong và kiểm đạt, theo lời anh "Ok thì xuất bản".
+33. **Ngũ hành khuyết `/bat-tu/ngu-hanh-khuyet` (Lệnh 56) đã dựng và xuất bản trên máy anh 24/11.** Đối chiếu: `tinh-yeu-goi-bai.md` mục 3.2 (bài top phần lớn là trang bán đá, vòng, chỉ đếm một cách). Trang đếm ba cách trên cùng lá số (8 chữ; thêm tàng can; vượng tướng hưu tù tử theo tháng, *Tam mệnh thông hội* quyển 2), không kết luận "mệnh thiếu gì", không bổ khuyết. Mô tả SEO trong kế hoạch có chữ "vật phẩm" (từ cấm) nên em viết lại. Cần người am hiểu đọc lại hai câu dịch sách.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026
