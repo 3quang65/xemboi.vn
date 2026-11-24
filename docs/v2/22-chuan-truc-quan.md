@@ -60,6 +60,6 @@ Trang nào dùng lại được thì phải dùng các thành phần này, khôn
 | 51 | Mai hoa Dịch số (lập quẻ theo thời gian, theo số; thể dụng; 2 ví dụ sách) | `mai-hoa.ts` (test `mai-hoa.test.mjs`) | Xong 24/11 (2 ví dụ sách khớp; thẻ ở /kinh-dich và /kinh-dich/gieo-que) |
 | 52 | Lục hào: gieo 3 xu, an quẻ nạp giáp (cung, thế ứng, lục thân, lục thần, tuần không, nguyệt phá) | `luc-hao.ts` (test `luc-hao.test.mjs`, đối chiếu bảng 64 quẻ của sách) | Xong 24/11 (khớp ví dụ sách; bảng 375px không cuộn ngang) |
 | 53 | Lục hào nâng cao (vượng suy, nhật thần, phục thần, dụng thần theo 16 việc, nguyên kỵ cừu, ứng kỳ) và thịnh suy Mai hoa | `luc-hao-nang-cao.ts`, `mai-hoa.ts` (test `luc-hao-nang-cao.test.mjs`) | Xong 24/11 (khớp daogiao.io.vn phần phục thần; 375px không cuộn ngang; quét 300 trang 0 chữ Hán) |
-| 54 | Bói tình yêu: con giáp năm sinh, cung hoàng đạo và góc chiếu (Tetrabiblos I.XVI), số chủ đạo hai người; không điểm | `boi-tinh-yeu.ts` (test `boi-tinh-yeu.test.mjs`) | Đang làm |
+| 54 | Bói tình yêu: con giáp năm sinh, cung hoàng đạo và góc chiếu (Tetrabiblos I.XVI), số chủ đạo hai người; không điểm | `boi-tinh-yeu.ts` (test `boi-tinh-yeu.test.mjs`) | Xong 24/11 (375px không cuộn ngang; quét 300 trang 0 chữ Hán; tsc 0 lỗi) |
 | 55 | Phong tục theo sách (Phan Kế Bính 1915) ở trang lễ, Tết, Thanh minh; văn khấn ngày giỗ điền sẵn (Dương Bá Trạc 1932) | `phong-tuc-ngay-le.ts`, `van-khan.ts` (test cùng tên) | Đang làm |
 | sau | Mọi công cụ mới | Theo mục 1 và 2 ngay từ lệnh đầu | |

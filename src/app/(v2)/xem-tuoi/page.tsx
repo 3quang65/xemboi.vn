@@ -32,6 +32,12 @@ const CONG_CU_XEM_TUOI: {
     href: '/xem-tuoi/xong-dat',
     loai: 'xong-dat',
   },
+  {
+    ten: 'Bói tình yêu theo ngày sinh',
+    moTa: 'Đặt cạnh nhau ba hệ có sách dẫn: địa chi năm sinh, cung hoàng đạo và thần số học; không cộng điểm.',
+    href: '/boi-tinh-yeu',
+    loai: 'vo-chong',
+  },
 ];
 
 export async function generateMetadata(): Promise<Metadata> {
