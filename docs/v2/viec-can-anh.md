@@ -107,7 +107,7 @@
     - Phong tục: `/phong-tuc`, `/phong-tuc/cung-duong`, `/phong-tuc/xin-xam`; phần phong tục của trang ngày lễ (mục 23).
     - Xem tuổi: `/xem-tuoi/kim-lau`, `tam-tai`, `hoang-oc`, `lam-nha`, `nam-tuoi`, `lam-an` (mục 15).
     - Bài viết: `/bat-tu/ngu-hanh-khuyet`, `/tu-vi/cach-doc-la-so`, các bài `/kien-thuc/*`, `/tu-vi-theo-tuoi` và trang tử vi năm theo tuổi (cần lời luận đã duyệt).
-    - Cần anh quyết: `/boi-tinh-yeu` (mục 13), `/goi` và `/tu-vi/luan-giai` (mục 7), `/tu-vi/hop-la-so` (Gói 3).
+    - Cần anh quyết: `/goi` và `/tu-vi/luan-giai` (mục 7, 31), `/tu-vi/hop-la-so` (Gói 3). `/boi-tinh-yeu` đang dựng phần không cần quyết (mục 29).
     - Chiêm tinh `/chiem-tinh/nha/{n}` (12 trang): Tetrabiblos không đặt tên, nghĩa cho 12 nhà; cần nguồn khác dùng được công khai.
     - Các trang P3 khác em chưa làm (trừ 10 trang hành tinh, Lệnh 50; Mai hoa Dịch số, Lệnh 51; Lục hào, Lệnh 52).
 26. **Bước deploy lên VPS cho các đợt 24/11** (em làm khi đưa lên VPS một lần, ghi đây để anh biết):
@@ -117,8 +117,23 @@
 27. **Kinh Dịch: Mai hoa Dịch số và Lục hào (Lệnh 51, 52) đã dựng (commit d6ece9e), đã xuất bản 24/11.** `/kinh-dich/mai-hoa-dich-so`, `/kinh-dich/luc-hao` (SEO `KD-MAIHOA`, `KD-LUCHAO` để NHAP).
     - Cả hai chỉ tính quẻ theo sách, không luận việc. Mai hoa khớp hai ví dụ chép trong sách (xem hoa mai, xem hoa mẫu đơn). Lục hào khớp bảng an sẵn 64 quẻ của *Tăng san bốc Dịch* 383/384 hào; hào lệch là lỗi chép của bảng (hào đầu quẻ Khốn), em theo quy tắc nạp chi của chính sách.
     - Cần người am hiểu đọc lại bản dịch các câu sách (Mai hoa 10 câu, Lục hào 8 câu) trước khi xuất bản.
-    - Chưa làm, cần người duyệt: phục thần, dụng thần theo việc hỏi, vượng suy theo mùa, ứng kỳ (lục hào); vượng suy theo mùa (Mai hoa: sách ghi tháng tứ quý chồng lên mùa, chưa rõ cách lấy).
+    - Phục thần, dụng thần theo việc hỏi, vượng suy, ứng kỳ (lục hào) và thịnh suy Mai hoa: đang dựng ở Lệnh 53, xem mục 28.
     - **Đã xuất bản 24/11** (anh cho xuất bản nếu đối chiếu đạt): khớp daogiao.io.vn, maihoa.kabala.vn, thayungkhiem.vn; biên bản `docs/v2/doi-chieu/mai-hoa-luc-hao.md`. Mới xuất bản trên máy anh; khi đưa lên VPS em chạy lại bước ở mục 26.
+28. **Lục hào nâng cao và thịnh suy Mai hoa (Lệnh 53) đang dựng.** Thêm vào hai trang đã xuất bản: vượng suy theo tháng, nhật thần (ám động, nhật phá), phục thần, dụng thần theo 16 việc hỏi (nguyên, kỵ, cừu thần), các mốc ứng kỳ sách nêu; Mai hoa thêm thịnh suy theo tháng, ngày.
+    - Đối chiếu 14 trang Việt và sách (*Tăng san bốc Dịch*, *Hỏa châu lâm*, bản dịch *Lục hào bảo điển*): `docs/v2/doi-chieu/luc-hao-nang-cao.md`.
+    - Phục thần khớp daogiao.io.vn (Ký Tế phục Thê tài Ngọ dưới hào 3). Thêm quy tắc chương 16: quẻ vắng dụng thần mà nguyệt kiến mang đúng hành ấy thì sách lấy nguyệt kiến, không cần phục.
+    - **Em đang làm theo sách, anh xem có muốn khác không:**
+      1. Vượng suy in **3 bậc** như sách (vượng, tướng, hưu tù); các trang Việt in 5 bậc (vượng, tướng, hưu, tù, tử), sách không có.
+      2. "Vượng" để phân ám động với nhật phá: em lấy theo tháng (vượng hoặc tướng). Sách có ví dụ tự gọi một hào hưu tù là ám động, em ghi chỗ lệch trong test.
+      3. Mai hoa lấy tháng theo **âm lịch** như hai ví dụ sách; vài trang lấy theo tiết.
+      4. Khi có nhiều hào dụng thần, trang tô hào vượng nhất theo tháng (ví dụ sách ch. 9), không tự chọn khi bằng nhau.
+    - Chưa làm: thần sát, quái thân, tiến thoái thần (bản chép 7 cặp, một trang ghi 8 cặp, cần đối bản quét), chương 27–32 (kho chưa nạp chữ quyển 2–4 phần này).
+29. **Bói tình yêu `/boi-tinh-yeu` đang dựng (Lệnh 54)**, theo đối chiếu `docs/v2/doi-chieu/tinh-yeu-goi-bai.md`. Ba khối đặt cạnh nhau, ghi sách, không điểm, không phần trăm, không bói theo tên: địa chi năm sinh (năm âm đổi ở Tết), cung hoàng đạo và góc giữa hai cung (Tetrabiblos I.XVI), số chủ đạo hai người (lời "Tình cảm" của Nhật Nguyệt).
+    - **Cần anh quyết hai khối chưa làm:**
+      - **Khối xem tuổi 4 tầng:** tầng cung phi đang dùng bảng đại du niên (bảng xem nhà); *Hiệp kỷ* ghi hợp hôn dùng tiểu du niên. Cần anh chọn bảng trước khi đưa vào (cũng ảnh hưởng `/xem-tuoi/vo-chong`).
+      - **Khối so Mặt Trời, Mặt Trăng hai người:** em đã kiểm câu ở Tetrabiblos quyển IV chương V (bản Ashmand 1822, tr. 125). Sách viết: hai vầng sáng thành tam hợp, lục hợp thì ở với nhau lâu; đối xung, vuông góc thì "sớm tan, dẫn tới chia lìa". Câu này trái với tiêu chí "không phán chia tay" của trang, nên em chưa làm.
+30. **Bài kiến thức nháp** `/kien-thuc/vi-sao-hai-trang-ra-hai-la-so-khac-nhau` (`KT-HAILASO`) và `/kien-thuc/vi-sao-cac-noi-xem-tuoi-khac-nhau` (`KT-KHACNHAU`): em soạn bản nháp từ số đo đối chiếu có sẵn (`docs/v2/bai-nhap/`), nạp vào quản trị ở trạng thái nháp. Cần biên tập viên đọc và bấm xuất bản. Phần Kim lâu chỉ nêu các cách tính đang lưu hành, không chọn cách nào (mục 15).
+31. **`/goi`, `/tu-vi/luan-giai`, `/tu-vi/hop-la-so`, `/tu-vi-theo-tuoi`:** đã đối chiếu giá và nội dung đối thủ (`tinh-yeu-goi-bai.md` mục 2, 3.5 và 4). Vẫn chờ anh như mục 7: giá, nội dung gói, SePay, chính sách bảo mật. Em chưa dựng.
 5. **xemtuvi.vn** (site riêng của anh, em không sửa): `horoscopes.xml` đang công khai lá số người dùng (giới tính, giờ, ngày sinh) và cho index.
 
 ## Anh đã trả lời ngày 22/11/2026
