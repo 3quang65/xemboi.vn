@@ -552,6 +552,51 @@
   margin: 0 0 10px;
 }
 
+/* Thịnh suy theo thời lệnh (Lệnh 53) */
+.ck-mh-ts-ghi {
+  margin: 0 0 12px;
+  padding: 12px 16px;
+  background: var(--ck-nga-1);
+  border: 1px solid #C9AE78;
+  border-left: 4px solid var(--ck-vang-2);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ck-muc);
+}
+
+.ck-mh-ts-quai {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ck-mh-ts-nhan {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ck-mh-ts-thinh {
+  background: #E8F3EC;
+  border: 1px solid #7BB08A;
+  color: #1F572D;
+}
+
+.ck-mh-ts-binh {
+  background: #F1F4F7;
+  border: 1px solid #C2CBD4;
+  color: #364554;
+}
+
+.ck-mh-ts-suy {
+  background: #FDF5E6;
+  border: 1px solid #D9A74A;
+  color: #7C4F0F;
+}
+
 @media (max-width: 900px) {
   .ck-mh-bo-ba,
   .ck-mh-td-luoi,

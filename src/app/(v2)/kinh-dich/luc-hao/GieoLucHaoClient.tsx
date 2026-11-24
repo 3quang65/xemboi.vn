@@ -2,22 +2,26 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { VIEC_HOI } from '@/lib/trang/luc-hao-nang-cao';
 
 export interface GieoLucHaoClientProps {
   xuMacDinh: string;
   ngayMacDinh: string;
   gioMacDinh: string;
+  viecMacDinh: string;
 }
 
 export default function GieoLucHaoClient({
   xuMacDinh,
   ngayMacDinh,
   gioMacDinh,
+  viecMacDinh,
 }: GieoLucHaoClientProps) {
   const router = useRouter();
   const [xu, setXu] = useState(xuMacDinh);
   const [ngay, setNgay] = useState(ngayMacDinh);
   const [gio, setGio] = useState(gioMacDinh);
+  const [viec, setViec] = useState(viecMacDinh);
 
   function gieo3Xu(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
@@ -31,12 +35,17 @@ export default function GieoLucHaoClient({
     const p = new URLSearchParams({ xu: chuoi });
     if (ngay) p.set('ngay', ngay);
     if (gio) p.set('gio', gio);
+    if (viec) p.set('viec', viec);
     router.push(`/kinh-dich/luc-hao?${p.toString()}`);
   }
 
+  const hrefDuPhong = viec
+    ? `/kinh-dich/luc-hao?gieo=1&viec=${encodeURIComponent(viec)}`
+    : '/kinh-dich/luc-hao?gieo=1';
+
   return (
     <form className="ck-lh-form-khung" action="/kinh-dich/luc-hao" method="get">
-      <div className="ck-lh-form-luoi">
+      <div className="ck-lh-form-luoi ck-lh-form-luoi-4">
         <label className="ck-lh-o" htmlFor="ck-lh-xu">
           <span>6 số gieo xu (6, 7, 8, 9 từ hào 1 dưới lên)</span>
           <input
@@ -74,11 +83,28 @@ export default function GieoLucHaoClient({
             onChange={(e) => setGio(e.target.value)}
           />
         </label>
+
+        <label className="ck-lh-o" htmlFor="ck-lh-viec">
+          <span>Việc hỏi (không bắt buộc)</span>
+          <select
+            id="ck-lh-viec"
+            name="viec"
+            value={viec}
+            onChange={(e) => setViec(e.target.value)}
+          >
+            <option value="">— Không chọn (chỉ an quẻ) —</option>
+            {VIEC_HOI.map((v) => (
+              <option key={v.ma} value={v.ma}>
+                {`${v.ten} (${v.dung})`}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
 
       <div className="ck-lh-hanh-dong">
         <a
-          href={`/kinh-dich/luc-hao?gieo=1`}
+          href={hrefDuPhong}
           className="ck-nut ck-nut-son ck-lh-nut"
           onClick={gieo3Xu}
         >

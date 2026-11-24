@@ -21,6 +21,21 @@ import {
   type QueTrongCung,
   type TrichLucHao,
 } from '@/lib/trang/luc-hao';
+import {
+  NGUON_HOA_CHAU_LAM,
+  TRICH_NANG_CAO,
+  VIEC_HOI,
+  dungThanTheoViec,
+  haoNangCao,
+  phucThan,
+  ungKy,
+  type HaoNangCao,
+  type KetQuaDungThan,
+  type MucVuong,
+  type PhucThan,
+  type QuanHeNgay,
+  type TrichNangCao,
+} from '@/lib/trang/luc-hao-nang-cao';
 import { metaTrang, thongTinTrang, type MacDinhTrang } from '@/lib/trang/meta';
 import { GOC_SITE, serializeJsonLd, taoSchemaWebPage } from '../KinhDichHelpers';
 import { LienKetKiem } from '../KinhDichUi';
@@ -116,6 +131,41 @@ function trichProps(t: TrichLucHao, nhan?: string) {
   };
 }
 
+function trichNangCaoProps(t: TrichNangCao, nhan?: string) {
+  const nguon = t.nguon === 'WS09' ? NGUON_HOA_CHAU_LAM : NGUON_LUC_HAO;
+  return {
+    dich: t.dich,
+    viTriViet: t.viTriViet,
+    doanId: t.doanId,
+    tenSach: nguon.tenHanViet,
+    tacGia: nguon.tacGia,
+    nienDai: nguon.nienDai,
+    ghiCong: nguon.ghiCong,
+    url: nguon.url,
+    nhan,
+  };
+}
+
+function classVuongSuy(muc: MucVuong): string {
+  if (muc === 'Hưu tù') return 'ck-lh-nhan-vs ck-lh-nhan-hp';
+  return 'ck-lh-nhan-vs ck-lh-nhan-tot';
+}
+
+function classNhatThan(qh: QuanHeNgay): string {
+  if (qh === 'Nhật phá' || qh === 'Ngày khắc' || qh === 'Ngày xung') {
+    return 'ck-lh-nhan-nt ck-lh-nhan-hp';
+  }
+  return 'ck-lh-nhan-nt ck-lh-nhan-tot';
+}
+
+function chuVuongSuy(h: HaoNangCao): string {
+  if (!h.vuongSuy) return '';
+  const phu: string[] = [];
+  if (h.vuongSuy.lamNguyetKien) phu.push('lâm nguyệt kiến');
+  if (h.vuongSuy.duKhi) phu.push('dư khí');
+  return phu.length ? `${h.vuongSuy.muc}, ${phu.join(', ')}` : h.vuongSuy.muc;
+}
+
 export async function generateMetadata({
   searchParams,
 }: {
@@ -156,6 +206,8 @@ export default async function LucHaoPage({
   const gieoRaw = layMot(sp.gieo)?.trim();
   const ngayRaw = layMot(sp.ngay)?.trim();
   const gioRaw = layMot(sp.gio)?.trim();
+  const viecRaw = layMot(sp.viec)?.trim() ?? '';
+  const viecHopLe = VIEC_HOI.some((v) => v.ma === viecRaw) ? viecRaw : '';
 
   let loi: string | null = null;
   let giaTri: number[] | null = null;
@@ -176,6 +228,7 @@ export default async function LucHaoPage({
 
   let qa: QueAn | null = null;
   let dongHaoSo: number[] = [];
+  let tgSo: ReturnType<typeof thoiGianAnQue> | null = null;
 
   if (giaTri && !loi) {
     const ngayOk = ngayRaw ? docNgayIso(ngayRaw) : docNgayIso(ngayMacDinh);
@@ -194,18 +247,32 @@ export default async function LucHaoPage({
       gioForm = `${pad2(gioOk.gio)}:${pad2(gioOk.phut)}`;
       const hao = giaTri.map((x) => (x % 2) as Hao);
       dongHaoSo = giaTri.flatMap((x, i) => (x === 6 || x === 9 ? [i + 1] : []));
-      const tg = thoiGianAnQue(
+      tgSo = thoiGianAnQue(
         ngayOk.ngay,
         ngayOk.thang,
         ngayOk.nam,
         gioOk.gio,
         gioOk.phut,
       );
-      qa = anQue(hao, dongHaoSo, tg);
+      qa = anQue(hao, dongHaoSo, tgSo);
     }
   } else if (ngayRaw && !ngayRaw.match(/^\d{4}-\d{2}-\d{2}$/)) {
     loi = 'Ngày gieo không hợp lệ (cần dạng YYYY-MM-DD trong khoảng 1900–2100).';
   }
+
+  const dsHaoNC: HaoNangCao[] =
+    qa && tgSo ? haoNangCao(qa, tgSo.chiThang, tgSo.chiNgay) : [];
+  const dsPhuc: PhucThan[] = qa ? phucThan(qa) : [];
+  const phucTheoViTri = new Map<number, PhucThan[]>();
+  for (const p of dsPhuc) {
+    const arr = phucTheoViTri.get(p.viTri) ?? [];
+    arr.push(p);
+    phucTheoViTri.set(p.viTri, arr);
+  }
+  const kqDung: KetQuaDungThan | null =
+    qa && tgSo && viecHopLe
+      ? dungThanTheoViec(qa, dsHaoNC, viecHopLe, tgSo.chiThang)
+      : null;
 
   const theDocNhanh: TheDocNhanhItem[] = qa
     ? [
@@ -271,7 +338,7 @@ export default async function LucHaoPage({
       return { cung: ds[0].cung, ds };
     });
 
-  const cacHaoTuTren = qa ? [...qa.hao].reverse() : [];
+  const cacHaoTuTren = [...dsHaoNC].reverse();
 
   return (
     <KhungTrang
@@ -304,11 +371,12 @@ export default async function LucHaoPage({
           Gieo hoặc nhập 6 hào đồng xu
         </h2>
 
-        <div key={`${giaTri?.join('') ?? ''}-${ngayForm}-${gioForm}`}>
+        <div key={`${giaTri?.join('') ?? ''}-${ngayForm}-${gioForm}-${viecHopLe}`}>
           <GieoLucHaoClient
             xuMacDinh={giaTri ? giaTri.join('') : xuRaw ?? ''}
             ngayMacDinh={ngayForm}
             gioMacDinh={gioForm}
+            viecMacDinh={viecHopLe}
           />
         </div>
 
@@ -377,6 +445,12 @@ export default async function LucHaoPage({
                   </th>
                   <th scope="col">Lục thân</th>
                   <th scope="col">Chi · Hành</th>
+                  <th scope="col" className="ck-lh-col-vs">
+                    Vượng suy
+                  </th>
+                  <th scope="col" className="ck-lh-col-nhat">
+                    Nhật thần
+                  </th>
                   <th scope="col" className="ck-lh-col-hinh">
                     Hình hào
                   </th>
@@ -390,17 +464,54 @@ export default async function LucHaoPage({
                   const xuHao = giaTri[h.viTri - 1];
                   const kyDong = h.hao === 1 ? '○' : '×';
                   const slugBien = h.bien ? HANH_SLUG[h.bien.hanh] : null;
+                  const phucTaiHao = phucTheoViTri.get(h.viTri) ?? [];
+
+                  const laDung = kqDung
+                    ? kqDung.cacHao.some((x) => x.viTri === h.viTri)
+                    : false;
+                  const laChonVuong = kqDung ? kqDung.haoVuong === h.viTri : false;
+                  const laNguyen = kqDung
+                    ? kqDung.nguyen.cacHao.includes(h.viTri)
+                    : false;
+                  const laKy = kqDung ? kqDung.ky.cacHao.includes(h.viTri) : false;
+                  const laCuu = kqDung ? kqDung.cuu.cacHao.includes(h.viTri) : false;
+
+                  const rowCls = [
+                    h.dong ? 'ck-lh-hang-dong' : '',
+                    laDung ? 'ck-lh-hang-dung' : '',
+                    laChonVuong ? 'ck-lh-hang-vuong' : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ');
 
                   return (
-                    <tr
-                      key={h.viTri}
-                      className={h.dong ? 'ck-lh-hang-dong' : undefined}
-                    >
+                    <tr key={h.viTri} className={rowCls || undefined}>
                       <td className="ck-lh-col-than6">{h.lucThan6 ?? '—'}</td>
 
                       <td>
-                        <span className="ck-lh-hao-vi">H{h.viTri}</span>
-                        <span className="ck-lh-luc-than">{h.lucThan}</span>
+                        <div className="ck-lh-than-dong">
+                          <span className="ck-lh-hao-vi">H{h.viTri}</span>
+                          <span className="ck-lh-luc-than">{h.lucThan}</span>
+                        </div>
+                        {laDung || laNguyen || laKy || laCuu ? (
+                          <div className="ck-lh-vai-ds">
+                            {laDung ? (
+                              <span className="ck-lh-vai ck-lh-vai-tot">Dụng</span>
+                            ) : null}
+                            {laChonVuong ? (
+                              <span className="ck-lh-vai ck-lh-vai-tot">Chọn vượng</span>
+                            ) : null}
+                            {laNguyen ? (
+                              <span className="ck-lh-vai ck-lh-vai-tot">Nguyên</span>
+                            ) : null}
+                            {laKy ? (
+                              <span className="ck-lh-vai ck-lh-vai-hp">Kỵ</span>
+                            ) : null}
+                            {laCuu ? (
+                              <span className="ck-lh-vai ck-lh-vai-hp">Cừu</span>
+                            ) : null}
+                          </div>
+                        ) : null}
                         {h.lucThan6 ? (
                           <span className="ck-lh-than6-phu">{h.lucThan6}</span>
                         ) : null}
@@ -420,6 +531,21 @@ export default async function LucHaoPage({
                             </span>
                           ) : null}
                         </span>
+                        {phucTaiHao.map((p) => {
+                          const trungDung = Boolean(
+                            kqDung?.phuc.some(
+                              (x) => x.viTri === p.viTri && x.lucThan === p.lucThan,
+                            ),
+                          );
+                          return (
+                            <div
+                              key={`${p.viTri}-${p.lucThan}`}
+                              className={`ck-lh-phuc-dong${trungDung ? ' ck-lh-phuc-dung' : ''}`}
+                            >
+                              Phục: <strong>{p.lucThan}</strong> {p.chi} {p.hanh}
+                            </div>
+                          );
+                        })}
                         {h.tuanKhong || h.nguyetPha ? (
                           <div className="ck-lh-tag-list">
                             {h.tuanKhong ? (
@@ -430,6 +556,55 @@ export default async function LucHaoPage({
                             ) : null}
                           </div>
                         ) : null}
+                        {h.vuongSuy ? (
+                          <div className="ck-lh-vs-phu">
+                            <span className={classVuongSuy(h.vuongSuy.muc)}>
+                              {chuVuongSuy(h)}
+                            </span>
+                            {h.nhatThan.map((nt) => (
+                              <span key={nt} className={classNhatThan(nt)}>
+                                {nt}
+                              </span>
+                            ))}
+                          </div>
+                        ) : null}
+                      </td>
+
+                      <td className="ck-lh-col-vs">
+                        {h.vuongSuy ? (
+                          <div className="ck-lh-vs-o">
+                            <span className={classVuongSuy(h.vuongSuy.muc)}>
+                              {h.vuongSuy.muc}
+                            </span>
+                            {h.vuongSuy.lamNguyetKien || h.vuongSuy.duKhi ? (
+                              <span className="ck-lh-vs-chu">
+                                {', '}
+                                {[
+                                  h.vuongSuy.lamNguyetKien ? 'lâm nguyệt kiến' : '',
+                                  h.vuongSuy.duKhi ? 'dư khí' : '',
+                                ]
+                                  .filter(Boolean)
+                                  .join(', ')}
+                              </span>
+                            ) : null}
+                          </div>
+                        ) : (
+                          <span className="ck-lh-tinh">—</span>
+                        )}
+                      </td>
+
+                      <td className="ck-lh-col-nhat">
+                        {h.nhatThan.length > 0 ? (
+                          <div className="ck-lh-nt-ds">
+                            {h.nhatThan.map((nt) => (
+                              <span key={nt} className={classNhatThan(nt)}>
+                                {nt}
+                              </span>
+                            ))}
+                          </div>
+                        ) : (
+                          <span className="ck-lh-tinh">—</span>
+                        )}
                       </td>
 
                       <td className="ck-lh-col-hinh">
@@ -491,6 +666,151 @@ export default async function LucHaoPage({
             <ChuGiaiHanh />
           </div>
 
+          {dsPhuc.length > 0 ? (
+            <div className="ck-lh-khoi-phu">
+              <p className="ck-lh-phuc-tomtat">
+                <strong>Phục thần vắng trong quẻ:</strong>{' '}
+                {dsPhuc
+                  .map((p) => `${p.lucThan} ${p.chi} ${p.hanh} (dưới hào ${p.viTri} ${p.phiThan.chi})`)
+                  .join('; ')}
+                .
+              </p>
+              <TrichNguyenVan {...trichNangCaoProps(TRICH_NANG_CAO.phucThan, 'Phục thần')} />
+            </div>
+          ) : null}
+
+          {kqDung && tgSo ? (
+            <div className="ck-lh-dung-khung">
+              <div className="ck-lh-dung-dau">
+                <div>
+                  <h3 className="ck-lh-dung-tieu">Dụng thần: {kqDung.lucThan}</h3>
+                  <p className="ck-lh-dung-viec">Việc hỏi: {kqDung.viec.ten}</p>
+                </div>
+              </div>
+
+              {kqDung.cacHao.length > 0 ? (
+                <p className="ck-lh-dung-dong">
+                  <strong>Hào dụng thần trong quẻ:</strong>{' '}
+                  {kqDung.cacHao.map((h) => `hào ${h.viTri} (${h.chi} ${h.hanh})`).join(', ')}.
+                  {kqDung.haoVuong !== null
+                    ? ` Theo sách chọn hào vượng: hào ${kqDung.haoVuong}.`
+                    : ''}
+                </p>
+              ) : (
+                <p className="ck-lh-dung-dong">
+                  <strong>Dụng thần: {kqDung.lucThan}</strong> — vắng trong quẻ chính, nằm ở phục thần:{' '}
+                  {kqDung.phuc.length > 0
+                    ? kqDung.phuc
+                        .map((p) => `${p.lucThan} ${p.chi} ${p.hanh} (dưới hào ${p.viTri})`)
+                        .join('; ')
+                    : 'không có trong bản cung'}
+                  .
+                </p>
+              )}
+
+              {kqDung.nguyetKien ? (
+                <div className="ck-lh-nguyet-kien-box">
+                  <p className="ck-lh-dung-dong">
+                    <strong>Nguyệt kiến mang đúng hành dụng thần</strong> — sách lấy nguyệt kiến làm dụng thần, không cần tìm phục.
+                  </p>
+                  <TrichNguyenVan
+                    {...trichNangCaoProps(TRICH_NANG_CAO.nguyetKienDung, 'Nguyệt kiến làm dụng thần')}
+                  />
+                </div>
+              ) : null}
+
+              <div className="ck-lh-nkc-luoi">
+                <div className="ck-lh-nkc-the ck-lh-nkc-tot">
+                  <span className="ck-lh-nkc-nhan">Nguyên thần</span>
+                  <strong>{kqDung.nguyen.lucThan}</strong>
+                  <small>
+                    {kqDung.nguyen.cacHao.length > 0
+                      ? `Hào ${kqDung.nguyen.cacHao.join(', ')}`
+                      : 'Vắng trong quẻ chính'}
+                  </small>
+                </div>
+                <div className="ck-lh-nkc-the ck-lh-nkc-hp">
+                  <span className="ck-lh-nkc-nhan">Kỵ thần</span>
+                  <strong>{kqDung.ky.lucThan}</strong>
+                  <small>
+                    {kqDung.ky.cacHao.length > 0
+                      ? `Hào ${kqDung.ky.cacHao.join(', ')}`
+                      : 'Vắng trong quẻ chính'}
+                  </small>
+                </div>
+                <div className="ck-lh-nkc-the ck-lh-nkc-hp">
+                  <span className="ck-lh-nkc-nhan">Cừu thần</span>
+                  <strong>{kqDung.cuu.lucThan}</strong>
+                  <small>
+                    {kqDung.cuu.cacHao.length > 0
+                      ? `Hào ${kqDung.cuu.cacHao.join(', ')}`
+                      : 'Vắng trong quẻ chính'}
+                  </small>
+                </div>
+              </div>
+
+              <div className="ck-lh-trich-ds">
+                <TrichNguyenVan
+                  {...trichNangCaoProps(TRICH_NANG_CAO[kqDung.viec.trich], 'Dụng thần')}
+                />
+                <TrichNguyenVan
+                  {...trichNangCaoProps(TRICH_NANG_CAO.nguyenKyCuu, 'Nguyên, Kỵ, Cừu thần')}
+                />
+                {kqDung.cacHao.length > 1 ? (
+                  <TrichNguyenVan
+                    {...trichNangCaoProps(TRICH_NANG_CAO.chonHaoVuong, 'Nhiều hào dụng thần')}
+                  />
+                ) : null}
+              </div>
+
+              <div style={{ marginTop: 14 }}>
+                <details className="ck-lh-details">
+                  <summary>Mốc ứng kỳ theo sách</summary>
+                  <div className="ck-lh-ung-than">
+                    <p className="ck-lh-ung-luu-y">
+                      Sách nêu các mốc có thể ứng; trang không chọn mốc nào.
+                    </p>
+                    {kqDung.cacHao.length > 0 ? (
+                      <div className="ck-lh-ung-ds">
+                        {kqDung.cacHao.map((h) => {
+                          const dsMoc = ungKy(h, tgSo.chiThang, tgSo.chiNgay);
+                          return (
+                            <div key={h.viTri} className="ck-lh-ung-hao">
+                              <h4>
+                                Hào {h.viTri} · {h.lucThan} {h.chi} ({h.hanh})
+                              </h4>
+                              <ul>
+                                {dsMoc.map((m, idx) => (
+                                  <li key={idx}>
+                                    <span>{m.dieuKien}</span> →{' '}
+                                    <strong>ngày {m.ngay.join(', ')}</strong>
+                                    {m.thang?.length ? (
+                                      <>
+                                        {' '}
+                                        (<strong>tháng {m.thang.join(', ')}</strong>)
+                                      </>
+                                    ) : null}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <p className="ck-lh-ung-luu-y">
+                        Dụng thần vắng trong quẻ chính, nằm ở phục thần (xem phục thần ở bảng trên).
+                      </p>
+                    )}
+                    <div style={{ marginTop: 12 }}>
+                      <TrichNguyenVan {...trichNangCaoProps(TRICH_NANG_CAO.ungKy, 'Ứng kỳ')} />
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          ) : null}
+
           <div style={{ marginTop: 16 }}>
             <details className="ck-lh-details">
               <summary>Các bước an quẻ theo sách</summary>
@@ -503,6 +823,8 @@ export default async function LucHaoPage({
                 <TrichNguyenVan {...trichProps(TRICH_LUC_HAO.lucThan6, 'Lục thần')} />
                 <TrichNguyenVan {...trichProps(TRICH_LUC_HAO.tuanKhong, 'Tuần không')} />
                 <TrichNguyenVan {...trichProps(TRICH_LUC_HAO.lucHop, 'Lục hợp và Lục xung')} />
+                <TrichNguyenVan {...trichNangCaoProps(TRICH_NANG_CAO.vuongTuong, 'Vượng tướng bốn mùa')} />
+                <TrichNguyenVan {...trichNangCaoProps(TRICH_NANG_CAO.amDong, 'Ám động và Nhật phá')} />
               </div>
             </details>
           </div>

@@ -11,17 +11,21 @@ import {
 import type { Hanh } from '@/lib/trang/can-chi';
 import { daDungKinhDich, duongDanQue } from '@/lib/trang/chu-dich';
 import { BAT_QUAI, type KetQuaGieo, type Que } from '@/lib/trang/kinh-dich';
+import { thoiGianAnQue } from '@/lib/trang/luc-hao';
 import {
   LOI_SACH_THE_DUNG,
   NGUON_MAI_HOA,
   TEN_QUAN_HE,
   TRICH_MAI_HOA,
+  TRICH_MAI_HOA_THINH_SUY,
   VI_DU_SACH,
   phanTichMaiHoa,
   queMaiHoaLuc,
   queMaiHoaTheoSo,
   queMaiHoaTheoThoiGian,
+  thinhSuyMaiHoa,
   type QuanHeTheDung,
+  type ThinhSuy,
   type TrichMaiHoa,
 } from '@/lib/trang/mai-hoa';
 import { metaTrang, thongTinTrang, type MacDinhTrang } from '@/lib/trang/meta';
@@ -105,6 +109,12 @@ function classLoiSach(qh: QuanHeTheDung): string {
   if (qh === 'ty-hoa') return 'ck-mh-loi-sach ck-mh-loi-sach-ty';
   if (qh === 'the-khac') return 'ck-mh-loi-sach ck-mh-loi-sach-khac';
   return 'ck-mh-loi-sach ck-mh-loi-sach-hp';
+}
+
+function classThinhSuy(ts: ThinhSuy): string {
+  if (ts === 'Thịnh') return 'ck-mh-ts-nhan ck-mh-ts-thinh';
+  if (ts === 'Suy') return 'ck-mh-ts-nhan ck-mh-ts-suy';
+  return 'ck-mh-ts-nhan ck-mh-ts-binh';
 }
 
 function TheQueBa({
@@ -194,6 +204,9 @@ export default async function MaiHoaDichSoPage({
   let ketQua: KetQuaGieo | null = null;
   let moTaDauVao = '';
   let laViDuSach: (typeof VI_DU_SACH)[number] | null = null;
+  let chiThangLenh: number | null = null;
+  let chiNgayLenh: number | null = null;
+  let ghiChuThoiLenh = '';
 
   let ngayForm = ngayRaw || ngayMacDinh;
   let gioForm = gioRaw || gioMacDinh;
@@ -213,6 +226,9 @@ export default async function MaiHoaDichSoPage({
         found.chiGio,
       );
       moTaDauVao = `${found.ten}: năm ${DIA_CHI[found.chiNam]}, tháng ${found.thang} âm, ngày ${found.ngay} âm, giờ ${DIA_CHI[found.chiGio]}.`;
+      chiThangLenh = (found.thang + 1) % 12;
+      chiNgayLenh = null;
+      ghiChuThoiLenh = `Thời lệnh đang dùng: tháng ${DIA_CHI[chiThangLenh]} (theo tháng ${found.thang} âm trong ví dụ sách; ví dụ không ghi ngày).`;
     }
   } else if (soRaw !== undefined && soRaw !== '') {
     cheDoTab = 'so';
@@ -233,6 +249,16 @@ export default async function MaiHoaDichSoPage({
         try {
           ketQua = queMaiHoaTheoSo(soNum, chiGio);
           moTaDauVao = `Số đã nhập: ${soNum} · Giờ ${DIA_CHI[chiGio]} (${KHUNG_GIO[chiGio]})`;
+          const tg = thoiGianAnQue(
+            vnHienTai.getUTCDate(),
+            vnHienTai.getUTCMonth() + 1,
+            vnHienTai.getUTCFullYear(),
+            vnHienTai.getUTCHours(),
+            vnHienTai.getUTCMinutes(),
+          );
+          chiThangLenh = tg.chiThang;
+          chiNgayLenh = tg.chiNgay;
+          ghiChuThoiLenh = `Thời lệnh đang dùng: tháng ${DIA_CHI[chiThangLenh]} · ngày ${DIA_CHI[chiNgayLenh]} (theo ngày giờ hiện tại).`;
         } catch (err) {
           loi = err instanceof Error ? err.message : 'Số lập quẻ không hợp lệ.';
         }
@@ -257,10 +283,24 @@ export default async function MaiHoaDichSoPage({
       );
       ketQua = kqLuc;
       moTaDauVao = kqLuc.thoiDiem;
+      const tg = thoiGianAnQue(
+        ngayOk.ngay,
+        ngayOk.thang,
+        ngayOk.nam,
+        gioOk.gio,
+        gioOk.phut,
+      );
+      chiThangLenh = tg.chiThang;
+      chiNgayLenh = tg.chiNgay;
+      ghiChuThoiLenh = `Thời lệnh đang dùng: tháng ${DIA_CHI[chiThangLenh]} · ngày ${DIA_CHI[chiNgayLenh]}.`;
     }
   }
 
   const pt = ketQua ? phanTichMaiHoa(ketQua) : null;
+  const bangThinhSuy =
+    pt && chiThangLenh !== null
+      ? thinhSuyMaiHoa(pt, chiThangLenh, chiNgayLenh)
+      : [];
 
   const theDocNhanh: TheDocNhanhItem[] = pt
     ? [
@@ -574,6 +614,79 @@ export default async function MaiHoaDichSoPage({
               </div>
             </div>
           </section>
+
+          {bangThinhSuy.length > 0 && chiThangLenh !== null ? (
+            <section className="ck-td-muc" aria-labelledby="ck-mh-thinh-suy-tieu">
+              <h2 id="ck-mh-thinh-suy-tieu" className="ck-td-tieu">
+                Thịnh suy theo thời lệnh
+              </h2>
+
+              <p className="ck-mh-ts-ghi">{ghiChuThoiLenh}</p>
+
+              <div className="ck-mh-bang-boc">
+                <table className="ck-mh-bang ck-mh-ts-bang">
+                  <thead>
+                    <tr>
+                      <th scope="col">Vai</th>
+                      <th scope="col">Quái · Hành</th>
+                      <th scope="col">{`Tháng (${DIA_CHI[chiThangLenh]})`}</th>
+                      {chiNgayLenh !== null ? (
+                        <th scope="col">{`Ngày (${DIA_CHI[chiNgayLenh]})`}</th>
+                      ) : null}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {bangThinhSuy.map((dong) => {
+                      const slug = HANH_SLUG[dong.quai.hanh as Hanh];
+                      return (
+                        <tr key={dong.vai}>
+                          <td>
+                            <strong>{dong.vai}</strong>
+                          </td>
+                          <td>
+                            <span className="ck-mh-ts-quai">
+                              <i
+                                className={`ck-tq-hanh-cham ck-tq-cham-${slug}`}
+                                aria-hidden="true"
+                              />
+                              <span>
+                                {dong.quai.ten} ({dong.quai.hanh})
+                              </span>
+                            </span>
+                          </td>
+                          <td>
+                            <span className={classThinhSuy(dong.thang)}>
+                              {dong.thang}
+                            </span>
+                          </td>
+                          {chiNgayLenh !== null && dong.ngay !== null ? (
+                            <td>
+                              <span className={classThinhSuy(dong.ngay)}>
+                                {dong.ngay}
+                              </span>
+                            </td>
+                          ) : null}
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+
+              <div style={{ marginTop: 12 }}>
+                <details className="ck-mh-details">
+                  <summary>Sách ghi về thịnh suy và thời lệnh</summary>
+                  <div className="ck-mh-details-than">
+                    <div className="ck-mh-trich-ds">
+                      <TrichNguyenVan {...trichProps(TRICH_MAI_HOA_THINH_SUY.queKhi)} />
+                      <TrichNguyenVan {...trichProps(TRICH_MAI_HOA_THINH_SUY.thinhSuy)} />
+                      <TrichNguyenVan {...trichProps(TRICH_MAI_HOA_THINH_SUY.thoiLenh)} />
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </section>
+          ) : null}
 
           <section className="ck-td-muc" aria-labelledby="ck-mh-sach-ghi-tieu">
             <h2 id="ck-mh-sach-ghi-tieu" className="ck-td-tieu">
