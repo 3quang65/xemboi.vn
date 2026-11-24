@@ -22,6 +22,11 @@ import {
   type LeAm,
 } from '@/lib/trang/lich-mua';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
+import {
+  GHI_CHU_PHONG_TUC,
+  NGUON_PHONG_TUC,
+  phongTucLe,
+} from '@/lib/trang/phong-tuc-ngay-le';
 import { serializeJsonLd, taoSchemaWebPage } from '../../LichMuaHelpers';
 import '../../lich-mua.css';
 
@@ -96,6 +101,7 @@ export default async function ChiTietNgayLePage({
   if (!sapToi) notFound();
 
   const quaCacNam = leQuaCacNam(le.slug);
+  const phongTuc = phongTucLe(le.slug);
   const tt = await thongTinTrang(
     `/lich-am/ngay-le/${le.slug}`,
     macDinhLe(le, sapToi),
@@ -238,12 +244,44 @@ export default async function ChiTietNgayLePage({
         </div>
       </section>
 
-      {/* 3. Chỗ phong tục giữ nguyên theo lệnh */}
-      <section className="ck-lm-muc" aria-label="Thông tin phong tục">
-        <div className="ck-cho-noi-dung ck-lm-cho-phong-tuc">
-          <p>Phần phong tục đang biên tập, chưa đăng.</p>
-        </div>
-      </section>
+      {/* 3. Phong tục xưa theo sách Việt Nam phong tục (1915) */}
+      {phongTuc ? (
+        <section className="ck-lm-muc" aria-labelledby="ck-pt-tieu">
+          <div className="ck-pt-khung">
+            <h2 id="ck-pt-tieu" className="ck-lm-tieu">
+              Phong tục xưa theo sách <em>Việt Nam phong tục</em> (1915)
+            </h2>
+            <p className="ck-pt-ghi-chu">{GHI_CHU_PHONG_TUC}</p>
+            <p className="ck-pt-tom-tat">{phongTuc.tomTat}</p>
+            <div className="ck-pt-ds">
+              {phongTuc.trich.map((muc, idx) => (
+                <figure key={idx} className="ck-pt-trich">
+                  <blockquote className="ck-pt-van">{muc.van}</blockquote>
+                  <figcaption className="ck-pt-nguon-doan">
+                    <span>{muc.viTriViet}</span>
+                    {muc.url ? (
+                      <>
+                        {' · '}
+                        <a href={muc.url} target="_blank" rel="noopener noreferrer nofollow">
+                          Đọc nguyên chương
+                        </a>
+                      </>
+                    ) : null}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <footer className="ck-pt-chan">
+              Nguồn: {NGUON_PHONG_TUC.tacGia}, <em>{NGUON_PHONG_TUC.tenSach}</em> (
+              {NGUON_PHONG_TUC.nam}), phạm vi công cộng;{' '}
+              <a href={NGUON_PHONG_TUC.url} target="_blank" rel="noopener noreferrer nofollow">
+                bản chép Wikisource, CC BY-SA 4.0
+              </a>
+              .
+            </footer>
+          </div>
+        </section>
+      ) : null}
 
       {/* 4. Ghi chú thuật toán */}
       <section className="ck-lm-muc" aria-label="Ghi chú đổi ngày">

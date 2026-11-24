@@ -113,7 +113,7 @@
 26. **Bước deploy lên VPS cho các đợt 24/11** (em làm khi đưa lên VPS một lần, ghi đây để anh biết):
     - chạy `scripts/seo-chi-tieng-viet.ts` (sửa chữ SEO theo quy tắc chỉ tiếng Việt);
     - nạp riêng các dòng SEO mới bằng `scripts/seo-nap-dong.ts` (để NHAP, không tự xuất bản): các dòng ở mục 23, 24, 27 (lệnh đủ ở 19 nhật ký).
-    - xuất bản lại trên VPS các trang anh đã cho: `scripts/seo-xuat-ban.ts KD-MAIHOA KD-LUCHAO` (sau khi nạp dòng).
+    - xuất bản lại trên VPS các trang anh đã cho: `scripts/seo-xuat-ban.ts KD-MAIHOA KD-LUCHAO XT-BOITINHYEU VK-GIO` (sau khi nạp dòng; dòng `VK-GIO` lấy tiêu đề mới trong `16-seo-trang.csv`).
 27. **Kinh Dịch: Mai hoa Dịch số và Lục hào (Lệnh 51, 52) đã dựng (commit d6ece9e), đã xuất bản 24/11.** `/kinh-dich/mai-hoa-dich-so`, `/kinh-dich/luc-hao` (SEO `KD-MAIHOA`, `KD-LUCHAO` để NHAP).
     - Cả hai chỉ tính quẻ theo sách, không luận việc. Mai hoa khớp hai ví dụ chép trong sách (xem hoa mai, xem hoa mẫu đơn). Lục hào khớp bảng an sẵn 64 quẻ của *Tăng san bốc Dịch* 383/384 hào; hào lệch là lỗi chép của bảng (hào đầu quẻ Khốn), em theo quy tắc nạp chi của chính sách.
     - Cần người am hiểu đọc lại bản dịch các câu sách (Mai hoa 10 câu, Lục hào 8 câu) trước khi xuất bản.
@@ -138,7 +138,7 @@
     - phần Kim lâu chỉ nêu các cách tính đang lưu hành, không chọn cách nào (mục 15).
     - Khi đưa lên VPS: chạy lại `scripts/nap-bai-nhap.ts KT-HAILASO docs/v2/bai-nhap/kt-hailaso.md` và `KT-KHACNHAU …kt-khacnhau.md`.
 31. **`/goi`, `/tu-vi/luan-giai`, `/tu-vi/hop-la-so`, `/tu-vi-theo-tuoi`:** đã đối chiếu giá và nội dung đối thủ (`tinh-yeu-goi-bai.md` mục 2, 3.5 và 4). Vẫn chờ anh như mục 7: giá, nội dung gói, SePay, chính sách bảo mật. Em chưa dựng.
-32. **Văn khấn và phong tục theo sách hết bản quyền (Lệnh 55) đang dựng.** Đối chiếu: `docs/v2/doi-chieu/van-khan-phong-tuc.md`.
+32. **Văn khấn và phong tục theo sách hết bản quyền (Lệnh 55) đã dựng 24/11; `/van-khan/ngay-gio` đã xuất bản trên máy anh** (tiêu đề SEO sửa bỏ chữ "giỗ đầu" vì sách không có bài riêng cho giỗ đầu). Khối phong tục nằm trong các trang lễ ở mục 23, xuất bản cùng các trang đó. Đối chiếu: `docs/v2/doi-chieu/van-khan-phong-tuc.md`.
     - **Thị trường:** các trang văn khấn lớn chép cùng một sách còn bản quyền (*Văn khấn cổ truyền Việt Nam*) và không ghi người soạn. Phần phong tục thường tự viết, không dẫn sách.
     - **Mình dùng hai sách hết bản quyền, in nguyên văn, ghi năm in:**
       - *Việt Nam phong tục* của Phan Kế Bính (1915) cho khối phong tục ở 8 trang lễ, `/tet` và tiết Thanh minh;

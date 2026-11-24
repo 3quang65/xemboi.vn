@@ -26,6 +26,11 @@ import {
 } from '@/lib/trang/lich-mua';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
 import {
+  GHI_CHU_PHONG_TUC,
+  NGUON_PHONG_TUC,
+  PHONG_TUC_TIET_KHI,
+} from '@/lib/trang/phong-tuc-ngay-le';
+import {
   DS_NAM_LICH_MUA,
   kepNamLichMua,
   muaCuaTiet,
@@ -100,6 +105,7 @@ export default async function ChiTietTietKhiPage({
 
   const mua = muaCuaTiet(tiet.thangTiet);
   const ke = tietKe(tiet.slug);
+  const phongTuc = PHONG_TUC_TIET_KHI[tiet.slug];
   const thangTietTen = tenThangTiet(tiet.thangTiet);
   const laTietDau = tiet.loai === 'tiet';
 
@@ -262,7 +268,46 @@ export default async function ChiTietTietKhiPage({
         </div>
       </section>
 
-      {/* 4. Liên kết Bát tự: chỉ hiện ở 12 trang loại 'tiet' */}
+      {/* 4. Phong tục xưa theo sách Việt Nam phong tục (1915) */}
+      {phongTuc ? (
+        <section className="ck-lm-muc" aria-labelledby="ck-pt-tiet-tieu">
+          <div className="ck-pt-khung">
+            <h2 id="ck-pt-tiet-tieu" className="ck-lm-tieu">
+              Phong tục xưa theo sách <em>Việt Nam phong tục</em> (1915)
+            </h2>
+            <p className="ck-pt-ghi-chu">{GHI_CHU_PHONG_TUC}</p>
+            <p className="ck-pt-tom-tat">{phongTuc.tomTat}</p>
+            <div className="ck-pt-ds">
+              {phongTuc.trich.map((muc, idx) => (
+                <figure key={idx} className="ck-pt-trich">
+                  <blockquote className="ck-pt-van">{muc.van}</blockquote>
+                  <figcaption className="ck-pt-nguon-doan">
+                    <span>{muc.viTriViet}</span>
+                    {muc.url ? (
+                      <>
+                        {' · '}
+                        <a href={muc.url} target="_blank" rel="noopener noreferrer nofollow">
+                          Đọc nguyên chương
+                        </a>
+                      </>
+                    ) : null}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <footer className="ck-pt-chan">
+              Nguồn: {NGUON_PHONG_TUC.tacGia}, <em>{NGUON_PHONG_TUC.tenSach}</em> (
+              {NGUON_PHONG_TUC.nam}), phạm vi công cộng;{' '}
+              <a href={NGUON_PHONG_TUC.url} target="_blank" rel="noopener noreferrer nofollow">
+                bản chép Wikisource, CC BY-SA 4.0
+              </a>
+              .
+            </footer>
+          </div>
+        </section>
+      ) : null}
+
+      {/* 5. Liên kết Bát tự: chỉ hiện ở 12 trang loại 'tiet' */}
       {laTietDau ? (
         <section className="ck-lm-muc" aria-label="Ứng dụng trong bát tự">
           <div className="ck-lm-bat-tu">

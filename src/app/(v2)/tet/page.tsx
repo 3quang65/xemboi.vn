@@ -10,7 +10,13 @@ import {
 import { trangDaDung } from '@/lib/trang/dieu-huong';
 import { leAmTrongNam, tetSapToi } from '@/lib/trang/lich';
 import { metaTrang, thongTinTrang } from '@/lib/trang/meta';
+import {
+  GHI_CHU_PHONG_TUC,
+  NGUON_PHONG_TUC,
+  phongTucLe,
+} from '@/lib/trang/phong-tuc-ngay-le';
 import { canChiNam } from '@/lib/tuvi-v2/am-lich';
+import '../lich-am/lich-mua.css';
 
 export const revalidate = 3600;
 
@@ -38,6 +44,8 @@ export default async function TetPage() {
     .map((l) => ({ ...l, namHienThi: tet.canChi }));
 
   const cacLeQuanhTet = [...leTruoc, ...leTrong];
+  const ptTet = phongTucLe('tet-nguyen-dan');
+  const ptGiaoThua = phongTucLe('giao-thua');
   const [yTet, mTet] = tet.ngay.split('-');
   const hrefNgayTet = duongDanNgayTuIso(tet.ngay);
   const hrefThangTet =
@@ -126,12 +134,69 @@ export default async function TetPage() {
         </div>
       </section>
 
-      <section className="ck-muc-lich" aria-labelledby="ck-tet-phong-tuc">
-        <div className="ck-cho-noi-dung">
-          <h2 id="ck-tet-phong-tuc">Phong tục Tết Nguyên Đán</h2>
-          <p>Phần giới thiệu phong tục ngày Tết đang biên tập.</p>
-        </div>
-      </section>
+      {ptTet ? (
+        <section className="ck-muc-lich" aria-labelledby="ck-tet-phong-tuc">
+          <div className="ck-pt-khung">
+            <h2 id="ck-tet-phong-tuc" className="ck-pt-tieu">
+              Phong tục xưa theo sách <em>Việt Nam phong tục</em> (1915)
+            </h2>
+            <p className="ck-pt-ghi-chu">{GHI_CHU_PHONG_TUC}</p>
+            <p className="ck-pt-tom-tat">{ptTet.tomTat}</p>
+            <div className="ck-pt-ds">
+              {ptTet.trich.map((muc, idx) => (
+                <figure key={idx} className="ck-pt-trich">
+                  <blockquote className="ck-pt-van">{muc.van}</blockquote>
+                  <figcaption className="ck-pt-nguon-doan">
+                    <span>{muc.viTriViet}</span>
+                    {muc.url ? (
+                      <>
+                        {' · '}
+                        <a href={muc.url} target="_blank" rel="noopener noreferrer nofollow">
+                          Đọc nguyên chương
+                        </a>
+                      </>
+                    ) : null}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+
+            {ptGiaoThua ? (
+              <div className="ck-pt-nhom-phu">
+                <h3>Đêm Giao thừa và ngày Trừ tịch</h3>
+                <p className="ck-pt-tom-tat">{ptGiaoThua.tomTat}</p>
+                <div className="ck-pt-ds">
+                  {ptGiaoThua.trich.map((muc, idx) => (
+                    <figure key={idx} className="ck-pt-trich">
+                      <blockquote className="ck-pt-van">{muc.van}</blockquote>
+                      <figcaption className="ck-pt-nguon-doan">
+                        <span>{muc.viTriViet}</span>
+                        {muc.url ? (
+                          <>
+                            {' · '}
+                            <a href={muc.url} target="_blank" rel="noopener noreferrer nofollow">
+                              Đọc nguyên chương
+                            </a>
+                          </>
+                        ) : null}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
+            <footer className="ck-pt-chan">
+              Nguồn: {NGUON_PHONG_TUC.tacGia}, <em>{NGUON_PHONG_TUC.tenSach}</em> (
+              {NGUON_PHONG_TUC.nam}), phạm vi công cộng;{' '}
+              <a href={NGUON_PHONG_TUC.url} target="_blank" rel="noopener noreferrer nofollow">
+                bản chép Wikisource, CC BY-SA 4.0
+              </a>
+              .
+            </footer>
+          </div>
+        </section>
+      ) : null}
     </KhungTrang>
   );
 }
