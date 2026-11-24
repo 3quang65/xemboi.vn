@@ -187,3 +187,45 @@ export function queMaiHoaLuc(ngay: number, thang: number, nam: number, gio: numb
 }
 
 export { queMaiHoaTheoThoiGian };
+
+// ---------- Thịnh suy theo thời lệnh (Lệnh 53) ----------
+// Quẻ khí vượng (7395), thịnh suy (7509), thời lệnh theo chi tháng và ngày (7498). Tháng tứ quý xét theo chi tháng:
+// tháng, ngày Thìn Tuất Sửu Mùi thì Thổ vượng (7498), nên không cần gán tháng âm 3, 6, 9, 12 vào mùa.
+
+export const TRICH_MAI_HOA_THINH_SUY = {
+  queKhi: {
+    doanId: 7395, viTriViet: 'Quyển 1 · Tượng số dịch lý, Quẻ khí vượng',
+    nguyenVan: '震、巽木旺於春，離火旺于夏，乾、兌金旺於秋，坎水旺於冬，坤、艮土旺於辰戌丑未月。',
+    dich: 'Chấn, Tốn thuộc Mộc vượng mùa xuân; Ly thuộc Hỏa vượng mùa hạ; Càn, Đoài thuộc Kim vượng mùa thu; Khảm thuộc Thủy vượng mùa đông; Khôn, Cấn thuộc Thổ vượng vào các tháng Thìn, Tuất, Sửu, Mùi.',
+  },
+  thinhSuy: {
+    doanId: 7509, viTriViet: 'Quyển 2 · Thể dụng sinh khắc, Luận suy vượng',
+    nguyenVan: '既明生克，當看衰旺。旺者，如春震、巽木，夏離火，秋乾、兌金，冬坎水，四季之月坤、艮土是也。衰者，如春坤、艮，夏乾、兌，秋震、巽，冬離，四季之月坎是也。凡占卜，體卦宜盛旺。',
+    dich: 'Đã rõ sinh khắc thì phải xem suy vượng. Vượng như mùa xuân Chấn, Tốn (Mộc), mùa hạ Ly (Hỏa), mùa thu Càn, Đoài (Kim), mùa đông Khảm (Thủy), bốn tháng cuối mùa Khôn, Cấn (Thổ). Suy như mùa xuân Khôn, Cấn, mùa hạ Càn, Đoài, mùa thu Chấn, Tốn, mùa đông Ly, bốn tháng cuối mùa Khảm. Phàm xem bói, quái thể nên thịnh vượng.',
+  },
+  thoiLenh: {
+    doanId: 7498, viTriViet: 'Quyển 2 · Thể dụng sinh khắc, Thời lệnh ứng',
+    nguyenVan: '時令不必論卦象，但詳其令，月日值之五行衰旺之氣。旺者，如寅卯之月日則木旺，巳午之月日火旺，申酉之月日金旺，亥子之月日水旺，辰戌丑未之月日土旺。衰者，如木旺則土衰，土旺則水衰，水旺火衰，火旺則金衰，金旺則木衰。',
+    dich: 'Thời lệnh không cần bàn tượng quẻ, chỉ xét lệnh: khí suy vượng của ngũ hành theo tháng và ngày. Vượng như tháng, ngày Dần Mão thì Mộc vượng; Tỵ Ngọ thì Hỏa vượng; Thân Dậu thì Kim vượng; Hợi Tý thì Thủy vượng; Thìn Tuất Sửu Mùi thì Thổ vượng. Suy như Mộc vượng thì Thổ suy, Thổ vượng thì Thủy suy, Thủy vượng thì Hỏa suy, Hỏa vượng thì Kim suy, Kim vượng thì Mộc suy.',
+  },
+} as const satisfies Record<string, TrichMaiHoa>;
+
+export type ThinhSuy = 'Thịnh' | 'Suy' | 'Bình';
+const HANH_CHI_MH: Hanh[] = ['Thủy', 'Thổ', 'Mộc', 'Mộc', 'Thổ', 'Hỏa', 'Hỏa', 'Thổ', 'Kim', 'Kim', 'Thổ', 'Thủy'];
+
+/** Thịnh: cùng hành với chi tháng (hoặc ngày); suy: bị hành ấy khắc (7498, 7509); còn lại sách không nói, ghi "Bình". */
+export function thinhSuyQuai(quai: Quai, chi: number): ThinhSuy {
+  const h = HANH_CHI_MH[chi];
+  if (quai.hanh === h) return 'Thịnh';
+  if (quanHeHanh(h).khac === quai.hanh) return 'Suy';
+  return 'Bình';
+}
+
+export type ThinhSuyMaiHoa = { vai: string; quai: Quai; thang: ThinhSuy; ngay: ThinhSuy | null }[];
+
+/** Thịnh suy của thể và bốn quái kia theo chi tháng (và chi ngày nếu có). */
+export function thinhSuyMaiHoa(pt: PhanTichMaiHoa, chiThang: number, chiNgay: number | null): ThinhSuyMaiHoa {
+  return [{ vai: 'Thể', quai: pt.the }, ...pt.cacQuai.map((q) => ({ vai: q.tenVai, quai: q.quai }))].map((x) => ({
+    ...x, thang: thinhSuyQuai(x.quai, chiThang), ngay: chiNgay === null ? null : thinhSuyQuai(x.quai, chiNgay),
+  }));
+}

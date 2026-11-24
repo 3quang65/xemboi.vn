@@ -57,3 +57,22 @@ test('câu sách: có nguyên văn để đối chiếu, bản dịch không có
     assert.ok(!coChuHan(t.dich) && !coChuHan(t.viTriViet), String(t.doanId));
   }
 });
+
+test('thịnh suy theo thời lệnh (7395, 7498, 7509)', async () => {
+  const { thinhSuyQuai, thinhSuyMaiHoa, phanTichMaiHoa, queMaiHoaTheoThoiGian, TRICH_MAI_HOA_THINH_SUY } = await import('../../src/lib/trang/mai-hoa.ts');
+  const { BAT_QUAI } = await import('../../src/lib/trang/kinh-dich.ts');
+  const { coChuHan } = await import('../../src/lib/trang/chu-viet.ts');
+  const q = (t) => BAT_QUAI.find((x) => x.ten === t);
+  // Xuân (Dần): Chấn thịnh, Khôn suy, Ly bình; tháng Thìn: Cấn thịnh, Khảm suy; tháng Hợi: Khảm thịnh, Ly suy.
+  assert.equal(thinhSuyQuai(q('Chấn'), 2), 'Thịnh');
+  assert.equal(thinhSuyQuai(q('Khôn'), 2), 'Suy');
+  assert.equal(thinhSuyQuai(q('Ly'), 2), 'Bình');
+  assert.equal(thinhSuyQuai(q('Cấn'), 4), 'Thịnh');
+  assert.equal(thinhSuyQuai(q('Khảm'), 7), 'Suy');
+  assert.equal(thinhSuyQuai(q('Ly'), 11), 'Suy');
+  // Quán mai, tháng 12 (Sửu, Thổ): thể Đoài bình, dụng Ly bình, biến Cấn thịnh.
+  const pt = phanTichMaiHoa(queMaiHoaTheoThoiGian(4, 12, 17, 8));
+  const ts = thinhSuyMaiHoa(pt, 1, null);
+  assert.deepEqual(ts.map((x) => `${x.vai} ${x.quai.ten} ${x.thang}`), ['Thể Đoài Bình', 'Dụng Ly Bình', 'Hỗ dưới Tốn Bình', 'Hỗ trên Càn Bình', 'Biến Cấn Thịnh']);
+  for (const t of Object.values(TRICH_MAI_HOA_THINH_SUY)) assert.equal(coChuHan(t.dich), false);
+});
