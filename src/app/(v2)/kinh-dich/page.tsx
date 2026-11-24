@@ -18,6 +18,8 @@ import {
   taoSchemaWebPage,
 } from './KinhDichHelpers';
 import { LienKetKiem } from './KinhDichUi';
+import './mai-hoa.css';
+import './luc-hao.css';
 
 export const revalidate = 3600;
 
@@ -49,7 +51,7 @@ export default async function KinhDichHubPage() {
       />
 
       <section className="ck-td-muc" aria-label="Công cụ và bảng tra Kinh Dịch">
-        <div className="ck-kd-hub-doi">
+        <div className="ck-kd-hub-bon">
           <LienKetKiem
             href="/kinh-dich/64-que"
             daDung={daDung}
@@ -79,6 +81,28 @@ export default async function KinhDichHubPage() {
             </p>
             <span className="ck-nut ck-nut-son">Mở trang gieo quẻ</span>
           </LienKetKiem>
+
+          <Link href="/kinh-dich/mai-hoa-dich-so" className="ck-kd-hub-the">
+            <span className="ck-kd-hub-ky" aria-hidden="true">
+              ☷ · ☰
+            </span>
+            <h2>Mai hoa Dịch số</h2>
+            <p>
+              Lập quẻ theo ngày giờ âm lịch hoặc số đếm được; xét thể, dụng, hỗ, biến theo sách.
+            </p>
+            <span className="ck-nut ck-nut-vien">Mở Mai hoa Dịch số</span>
+          </Link>
+
+          <Link href="/kinh-dich/luc-hao" className="ck-kd-hub-the">
+            <span className="ck-kd-hub-ky" aria-hidden="true">
+              ☰ · ☵
+            </span>
+            <h2>Lục hào</h2>
+            <p>
+              Gieo 3 đồng xu an tám cung, thế ứng, nạp chi, lục thân, lục thần và tuần không theo Tăng san bốc Dịch.
+            </p>
+            <span className="ck-nut ck-nut-vien">An quẻ Lục hào</span>
+          </Link>
         </div>
       </section>
 

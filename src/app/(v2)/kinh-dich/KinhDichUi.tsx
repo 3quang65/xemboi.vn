@@ -41,10 +41,12 @@ export function HinhHao({
   hao,
   moTa,
   tachQuai = false,
+  haoDong,
 }: {
   hao: Hao[];
   moTa: string;
   tachQuai?: boolean;
+  haoDong?: number[];
 }) {
   const chiSoTuTren = Array.from({ length: hao.length }, (_, k) => hao.length - 1 - k);
 
@@ -53,6 +55,7 @@ export function HinhHao({
       {chiSoTuTren.map((idx) => {
         const viTri = idx + 1;
         const laDuong = hao[idx] === 1;
+        const laDong = haoDong ? haoDong.includes(viTri) : false;
         const nhanViTri =
           hao.length === 6
             ? `Hào ${viTri} (${TEN_VI_TRI_6[idx]})`
@@ -63,7 +66,7 @@ export function HinhHao({
             {tachQuai && hao.length === 6 && idx === 2 ? (
               <div className="ck-kd-vach-chia-quai" aria-hidden="true" />
             ) : null}
-            <div className="ck-kd-hao-hang">
+            <div className={`ck-kd-hao-hang${laDong ? ' ck-kd-hao-hang-dong' : ''}`}>
               <span className="ck-kd-hao-nhan">{nhanViTri}</span>
               <span
                 className={`ck-kd-vach ${laDuong ? 'ck-kd-vach-duong' : 'ck-kd-vach-am'}`}
@@ -78,7 +81,10 @@ export function HinhHao({
                   </>
                 )}
               </span>
-              <span className="ck-kd-hao-cuc">{laDuong ? 'Dương' : 'Âm'}</span>
+              <span className="ck-kd-hao-cuc">
+                {laDuong ? 'Dương' : 'Âm'}
+                {laDong ? ' · Động' : ''}
+              </span>
             </div>
           </React.Fragment>
         );
@@ -100,10 +106,10 @@ export function DongLoiDich({
       <p className="ck-kd-dich-van">{dich}</p>
       {ghiChuKhacBan && ghiChuKhacBan.length > 0
         ? ghiChuKhacBan.map((k, idx) => (
-            <p key={idx} className="ck-kd-khac-ban">
-              {k.ghiChuViet}
-            </p>
-          ))
+          <p key={idx} className="ck-kd-khac-ban">
+            {k.ghiChuViet}
+          </p>
+        ))
         : null}
     </div>
   );

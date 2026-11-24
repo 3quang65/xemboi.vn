@@ -22,6 +22,7 @@ import { noiDungTheoDuongDan } from '@/lib/trang/noi-dung';
 import { khacBanTheoViTri } from '../KinhDichHelpers';
 import { DongLoiDich, GhiCongChuDich, LienKetKiem } from '../KinhDichUi';
 import SoDoGieoQue from './SoDoGieoQue';
+import '../mai-hoa.css';
 
 export const dynamic = 'force-dynamic';
 
@@ -96,6 +97,7 @@ export default async function GieoQuePage({
   let loi: string | null = null;
   let ketQua: KetQuaGieo | null = null;
   let thoiDiemMaiHoa: string | null = null;
+  let linkMaiHoaChiTiet: string | null = null;
   let giaTriBanDau: number[] | undefined;
 
   if (xuRaw) {
@@ -107,9 +109,15 @@ export default async function GieoQuePage({
       ketQua = gieoDongXu(parsed.giaTri);
     }
   } else if (cachRaw === 'mai-hoa') {
-    const kq = queMaiHoaHienTai();
+    const lucLap = new Date();
+    const kq = queMaiHoaHienTai(lucLap);
     ketQua = kq;
     thoiDiemMaiHoa = kq.thoiDiem;
+    const vn = new Date(lucLap.getTime() + 7 * 3600_000);
+    const pad2 = (n: number) => String(n).padStart(2, '0');
+    const ngayStr = `${vn.getUTCFullYear()}-${pad2(vn.getUTCMonth() + 1)}-${pad2(vn.getUTCDate())}`;
+    const gioStr = `${pad2(vn.getUTCHours())}:${pad2(vn.getUTCMinutes())}`;
+    linkMaiHoaChiTiet = `/kinh-dich/mai-hoa-dich-so?ngay=${ngayStr}&gio=${gioStr}`;
   }
 
   const chiTietChu = ketQua ? queChiTiet(ketQua.queChu.slug) : null;
@@ -185,6 +193,23 @@ export default async function GieoQuePage({
             </h2>
 
             <SoDoGieoQue ketQua={ketQua} daDung={daDung} />
+            {linkMaiHoaChiTiet ? (
+              <p className="ck-kd-hanh-dong-phu">
+                <Link href={linkMaiHoaChiTiet} className="ck-nut ck-nut-vien ck-mh-nut">
+                  Xem thể, dụng và các bước tính
+                </Link>
+              </p>
+            ) : null}
+            {ketQua.cach === 'dong-xu' && ketQua.giaTriHao ? (
+              <p className="ck-kd-hanh-dong-phu">
+                <Link
+                  href={`/kinh-dich/luc-hao?xu=${ketQua.giaTriHao.join('')}`}
+                  className="ck-nut ck-nut-vien ck-mh-nut"
+                >
+                  An quẻ lục hào
+                </Link>
+              </p>
+            ) : null}
           </section>
 
           <section className="ck-td-muc" aria-label="Cách tính quẻ">

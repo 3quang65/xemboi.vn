@@ -57,6 +57,6 @@ Trang nào dùng lại được thì phải dùng các thành phần này, khôn
 | 48 | Con giáp từng cặp (79 trang), Tứ Hóa | `cap-con-giap.ts`, `tu-hoa.ts` (có test) | Xong 24/11 (80 trang; menu đợt 7 đã bật) |
 | 49 | Thập thần (10), thiên can (10) | `thap-than.ts`, `thien-can.ts` (có test) | Xong 24/11 (20 trang; tên thần trên lá số bát tự thành liên kết) |
 | 50 | Hành tinh chiêm tinh (10) | `hanh-tinh.ts` (có test) | Xong 24/11 (10 trang; trang /chiem-tinh có hàng 10 thiên thể) |
-| 51 | Mai hoa Dịch số (lập quẻ theo thời gian, theo số; thể dụng; 2 ví dụ sách) | `mai-hoa.ts` (test `mai-hoa.test.mjs`) | Chờ, sau 50 |
-| 52 | Lục hào: gieo 3 xu, an quẻ nạp giáp (cung, thế ứng, lục thân, lục thần, tuần không, nguyệt phá) | `luc-hao.ts` (test `luc-hao.test.mjs`, đối chiếu bảng 64 quẻ của sách) | Chờ, sau 51 |
+| 51 | Mai hoa Dịch số (lập quẻ theo thời gian, theo số; thể dụng; 2 ví dụ sách) | `mai-hoa.ts` (test `mai-hoa.test.mjs`) | Xong 24/11 (2 ví dụ sách khớp; thẻ ở /kinh-dich và /kinh-dich/gieo-que) |
+| 52 | Lục hào: gieo 3 xu, an quẻ nạp giáp (cung, thế ứng, lục thân, lục thần, tuần không, nguyệt phá) | `luc-hao.ts` (test `luc-hao.test.mjs`, đối chiếu bảng 64 quẻ của sách) | Xong 24/11 (khớp ví dụ sách; bảng 375px không cuộn ngang) |
 | sau | Mọi công cụ mới | Theo mục 1 và 2 ngay từ lệnh đầu | |

@@ -7,7 +7,7 @@ import { BAT_QUAI, queHo, queTheoHao, queMaiHoaHienTai, queMaiHoaTheoThoiGian, t
 import { quanHeHanh, type Hanh } from './can-chi';
 
 export const NGUON_MAI_HOA = {
-  ma: 'WS06', tenHanViet: 'Mai hoa Dịch số', tacGia: 'tương truyền của Thiệu Ung (Thiệu Khang Tiết)', nienDai: 'tương truyền đời Tống',
+  ma: 'WS06', tenHanViet: 'Mai hoa Dịch số', tacGia: 'tương truyền của Thiệu Ung (Thiệu Khang Tiết)', nienDai: 'Tống',
   ghiCong: 'Văn bản: Wikisource, CC BY-SA 4.0', url: 'https://zh.wikisource.org/wiki/梅花易數',
 } as const;
 
